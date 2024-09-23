@@ -1,0 +1,12 @@
+name: lessons
+channels:
+  - conda-forge
+dependencies:
+  - jupyterlab-myst
+  - jupyterlab
+  - pandas
+  - habanero
+  - black 
+  - ruff 
+  - isort 
+  - jupyterlab_code_formatter
