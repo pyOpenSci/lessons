@@ -30,6 +30,7 @@ Python Code Style <python-pep-8>
 Don't Repeat Yourself <python-dry-modular-code>
 Expressive Code <python-expressive-code>
 Tests Checks <tests-checks>
+Get data <joss-pyos-data>
 :::
 
 
