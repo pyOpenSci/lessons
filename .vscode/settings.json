@@ -1,0 +1,7 @@
+{
+    "python.terminal.executeInFileDir": true,
+    "python.terminal.launchArgs": [
+        "-m",
+        "lessons"
+    ]
+}
