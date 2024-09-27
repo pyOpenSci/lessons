@@ -10,3 +10,4 @@ dependencies:
   - ruff 
   - isort 
   - jupyterlab_code_formatter
+  - jupytext
