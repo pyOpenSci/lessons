@@ -151,11 +151,14 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
-# Cython debug symbols
-cython_debug/
-
-# ignore jupyter notebooks
+# ignore jupyter notebooks given we use jupytext for cleaner difs on md files
 *.ipynb 
+**.ipynb**
 
 # ignore local sphinx build dir
 _build/*
+# PyCharm
+.idea/
+.vscode/*
+
+
