@@ -38,4 +38,12 @@ View contributors
 
 ## Who this guidebook is for
 
-This is a living guide that is updated as tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
+This living guide is updated tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
+
+:::{toctree}
+:hidden:
+:caption: Lessons
+:maxdepth: 2
+
+Lessons <clean-modular-code/intro-clean-code>
+:::
