@@ -21,12 +21,17 @@ kernelspec:
 3. add a section on different types of Python errors to think about
 ::: 
 
-Adding tests and checks to your Python code, such as try-except blocks and conditional statements, will help you write code that can: 
+Adding tests and checks to your Python code, in the form of:
+
+* try-except blocks, and
+* conditional statements,
+
+helps you write code that can: 
 
 * Better handle errors and edge cases gracefully, and
 * Provide useful output about why things are going wrong for a user of your code.
 
-These tests and checks allow your code to either continue processing when it encounters an issue or fail in a controlled and graceful way. They can also provide useful error messages that help users debug the problem. 
+Tests and checks allow your code to either continue processing when it encounters an issue or fail in a controlled and graceful way. They can also provide useful error messages that help users debug the problem. 
 
 Adding checks to your code is crucial for maintaining robust, reliable code.
 

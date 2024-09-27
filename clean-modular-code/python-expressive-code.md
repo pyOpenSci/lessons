@@ -28,7 +28,7 @@ authors: ['Leah Wasser', 'Jenny Palomino']
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-# Make Your Code Easier to Read By Using Expressive Variable Names in Python
+# Make Your Code Easier to Read Using Expressive Variable Names in Python
 
 :::{admonition} Learning Objectives
 
@@ -37,11 +37,11 @@ authors: ['Leah Wasser', 'Jenny Palomino']
 * Describe the PEP 8 recommendations for Python object names.
 :::
 
-## Why Use Expressive Names?
+## Why use expressive names?
 
 Expressive names describe the contents of the object itself. So for example you probably expect a directory called `data` to contain data within it.
 
-:::{figure} /images/clean-code/expressive-file-names.png
+:::{figure} /images/clean-code/open-science-expressive-file-names.png
 :alt: "File and directory names that clearly indicate the type of information stored within that file or directory are the most useful or expressive to your colleagues or your future self as they allow you to quickly understand the structure and contents of a project directory."
 
 Compare the list of file names on the LEFT to those on the right - which ones are easier to quickly understand? File and directory names that clearly indicate the type of information stored within that file or directory are the most useful or expressive to your colleagues or your future self as they allow you to quickly understand the structure and contents of a project directory. Source: Jenny Bryan, Reproducible Science Curriculum.
@@ -51,18 +51,18 @@ Expressive code is also important for naming variables and functions in your **P
 
 Expressive code is another part of clean coding - that is, writing code that is easier for you, your future self, and for someone else to look at and understand. After you've been programming for a while, you will begin to see that consistently formatted code is much easier for your eye to scan and quickly understand.
 
-```{figure} /images/clean-code/expressive-variable-names-basmati-rice.png
+:::{figure} /images/clean-code/clean-code-expressive-variable-names-basmati-rice.png
 :alt: "alt here."
 
 This container clearly contains cookies, yet it's labeled "rice." This might be confusing to someone who is looking for rice in your kitchen! Consider this when writing code. It's easier for someone to understand your code without running it when your code variables describe the objects that they contain. Source: Jenny Bryan, Reproducible Science Curriculum.
-```
+::
 
-expressive-variable-names-basmati-rice.png
 
-<i class="fa fa-star"></i> **Data Tip:** The <a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">the PEP 8 Style Guide</a> suggests that all objects (variables, functions and methods) in your code are named using meaningful words.
-{: .notice--success}
+:::{tip}
+The <a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">the PEP 8 Style Guide</a> suggests that all objects (variables, functions and methods) in your code are named using meaningful words.
+:::
 
-## Best Practices For Naming Objects
+## Best practices for naming objects
 
 PEP 8 style guide has a suite of recommendations that focus on making Python code more readable. Below are some of the PEP 8 guidelines related to expressive object names.  
 
@@ -82,9 +82,9 @@ A few other notes about object names in **Python**:
 * Avoid using dots in object names - e.g. `precip.boulder` - dots have a special meaning in **Python** (for methods - the dot indicates a function that is connected to a particular **Python** object) and other programming languages.
   * Instead, use underscores `precip_boulder`.
 
-## Recommendations For Naming Conventions
+## Recommendations for naming conventions
 
-### Best Practices for Directory and File Names
+### Best practices for directory and file names
 
 We suggest that you use directory and file names that contain words that describe the contents of the file or directory, separated using dashes - like this:
 
@@ -92,9 +92,9 @@ We suggest that you use directory and file names that contain words that describ
 
 Directory and files names should be kept as short and concise as possible, while also clearly indicating what is contained within the directory or file.
 
-### Best Practices Variable Names In Python
+### Best practices for Python variable names
 
-For variables, we suggest that you use `lowercase` for short variable names and `lower_case_with_underscores` for longer and more descriptive variable names. Variable names should be kept as short and concise as possible, while also clearly indicating the kind of data or information contained in the variable.
+For variables, we suggest that you use `lowercase` for short variable names and `lower_case_with_underscores` for longer and more descriptive variable names. Variable names should be kept as short and concise as possible while also clearly indicating the kind of data or information contained in the variable.
 
 Examples include:
 
@@ -110,7 +110,7 @@ The variable names should be driven by the overall goals and purpose of the code
 
 For example, in some cases, it may be more important to distinguish the units of measurement, the location, or the year or range of years covered by the data. Use your best judgment and modify variable names as needed.  
 
-### Best Practices for Naming Functions and Methods in Python
+### Best practices for naming Python functions and methods
 
 Following PEP 8 guidelines, function names should be formatted using  
 `words_separated_by_underscores`. The words that you use to name your function should clearly describe the function's intent (what the function does). Ideally this name is a very specific name that describes what the function does. For example, if you write a function that removes hyphens from some text a name like `remove_hyphens` might be appropriate.  
@@ -123,10 +123,10 @@ text_edit()
 remove_hyphens()
 ```
 
-## Example Function
+## Example function
 
 The function below is designed to convert a temperature provided
-in a numeric format in degrees fahrenheit to kelvin.
+in a numeric format in degrees Fahrenheit to Kelvin.
 
 ```python
 
@@ -136,7 +136,7 @@ def fahr_to_kelvin(fahr):
     Parameters:
     -----------
     fahr: int or float
-        The tempature in Fahrenheit.
+        The temperature in Fahrenheit.
     
     Returns:
     -----------
@@ -159,5 +159,6 @@ convert_temperature()
 fahr_to_kelvin()
 ```
 
-<i class="fa fa-star"></i> **Data Tip:** While this book does not go into great depth on creating classes, PEP 8 suggests that class names should use `mixedCase`.
-{: .notice--success}
+:::{tip}
+PEP 8 suggests that class names should use `mixedCase`.
+:::
