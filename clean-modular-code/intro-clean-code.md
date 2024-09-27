@@ -2,7 +2,7 @@
 layout: single
 title: 'Write Clean, Modular, DRY Pythonic Code'
 excerpt: "Clean code refers to writing code that runs efficiently, is not redundant, and is easy for anyone to understand. Learn about the characteristics and benefits of writing clean, expressive code in Python."
-authors: ['Leah Wasser', 'Jenny Palomino']
+authors: ['Leah Wasser']
 estimated-time: "2-3 hours"
 difficulty: "beginner"
 jupyter:
@@ -22,17 +22,28 @@ jupyter:
 <!-- #region editable=true slideshow={"slide_type": ""} tags=["hide-content"] -->
 :::{toctree}
 :hidden:
-:caption: Tutorials
+:caption: Lessons
 :maxdepth: 2
 
 Intro <self>
 Python Code Style <python-pep-8>
+Tests & Checks <pep8-package-imports>
 Don't Repeat Yourself <python-dry-modular-code>
+Functions <python-functions>
 Expressive Code <python-expressive-code>
-Tests Checks <tests-checks>
-Get data <joss-pyos-data>
+Tests & Checks <tests-checks>
 :::
 
+
+
+:::{toctree}
+:hidden:
+:caption: Activities
+:maxdepth: 2
+
+Clean Code: Activity 1 <clean-code-part-1>
+Clean Code: Activity 2 <clean-code-part-2>
+:::
 
 <!-- #endregion -->
 
@@ -56,9 +67,9 @@ Pythonic code also takes full advantage of Python's features which include:
   
 to write more elegant and efficient code.
 
-## Characteristics of Pythonic Code:
+## Characteristics of Pythonic code:
 
-### **It's Readabile**: 
+### **It's Readable**: 
 
 Pythonic code is easy to read and understand, often adhering to the **Zen of Python** (a set of guiding principles for Python’s design).
 
@@ -124,15 +135,15 @@ for i, language in enumerate(languages):
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-### It's DRY / Avoids Repitation 
+### Clean code is DRY & avoids repitition 
 
-Pythonic code avoids repetition. DRY (Don't Repeat Yourself) code is code that is written in a way that both avoids repitetion and is well organized. This makes it easier to maintain and extend.
+Pythonic code avoids repetition. DRY (Don't Repeat Yourself) code is written in a way that both avoids repetition and is well organized. This makes it easier to maintain and extend.
 
-### Pythonic code is Expressive 
+### Pythonic code is expressive 
 
-Pythonic code communicates the intent of the programmer clearly, making it easier for others to understand the purpose of the code at a glance.
+Pythonic code communicates the programmer's intent clearly, making it easier for others to understand the purpose of the code at a glance.
 
-Note that the function below has an easy to understand name and has a clear docstring. Some people will even suggest adding a verb that explains what the function does such as:
+Note that the function below has an easy-to-understand name and clear docstring. Some people will even suggest adding a verb that explains what the function does, such as:
 
 `convert_fahr_kelvin()`
 
@@ -143,7 +154,7 @@ def fahr_to_kelvin(fahr):
     return ((fahr - 32) * (5 / 9)) + 273.15
 ```
 
-### Pythonic code is Well-documented 
+### Pythonic code is well-documented 
 
 Docstrings are Pythonic because they prioritize code readability and clarity, providing clear descriptions of a function’s purpose, parameters, and return values. By embedding documentation directly in the code, docstrings make it easy for developers to understand and use functions or classes without needing to read the implementation details.
 
@@ -207,13 +218,3 @@ Code formatters like:
 
 
 <!-- #endregion -->
-
-<!-- #region editable=true slideshow={"slide_type": ""} -->
-# Hidden cell (when published)
-
-for each of the above, we will have a page and tools that they can use to do that specific thing. 
-<!-- #endregion -->
-
-```python editable=true slideshow={"slide_type": ""}
-
-```

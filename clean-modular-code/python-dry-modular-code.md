@@ -54,9 +54,9 @@ Efficient coding will make your life easier, too.
 
 :::{figure-md} package-decision-tree
 
-<img src="/images/clean-code/reproducible-science-hadley-wickham.png" alt="An image that shows a visual representation of a tweet with Hadley Wickham's profile picture on it. It says: Reproducibility is actually all about being as lazy as possible." width="700px">
+<img src="/images/clean-code/clean-code-being-lazy-hadley-wickham.png" alt="An image that shows a visual representation of a tweet with Hadley Wickham's profile picture on it. It says: Reproducibility is actually all about being as lazy as possible." width="700px">
 
-Reproducibility can mean being as lazy as possible. When you can avoid repeating steps and code, you should do just that. Source: [Twitter](https://twitter.com/hadleywickham/status/598532170160873472).
+Reproducibility can mean being as lazy as possible. When you can avoid repeating steps and code, you should do just that. Source: [Twitter/X](https://twitter.com/hadleywickham/status/598532170160873472).
 :::
 
 ### Don’t Repeat Yourself - DRY

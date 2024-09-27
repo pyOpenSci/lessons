@@ -175,7 +175,7 @@ def calculate_sum(rainfall, time="month"):
 
 """Returns a single sum value of all precipitation. 
 
-This function takes a pandas dataframe with time series as the index, 
+This function takes a Pandas DataFrame with time series as the index, 
 and calculates the total sum, aggregated by month. 
 """
 # Code here 
@@ -185,10 +185,12 @@ return the_total_sum
 
 ## Line Length
 
-PEP 8 guidelines suggest that each line of code (as well as comment lines) should be 79 characters wide or less. This is a common standard that is also used in other languages including **R**.
+PEP 8 guidelines suggest that each line of code (as well as comment lines) should be 79 characters wide or less. This is a common standard used in other languages, including **R**.
 
-<i fa fa-star></i>**Data Tip:** Most text editors allow you to set up guides that allow you to see how long your code is. You can then use these guides to create line breaks in your code.
-{: .notice--success }
+:::{tip}
+Most text editors allow you to set up guides to see how long your code is. You can then use these guides to create line breaks in your code.
+:::
+
 
 ## Python PEP 8 Rules for White Space
 
