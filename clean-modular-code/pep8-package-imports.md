@@ -11,6 +11,8 @@ kernelspec:
   name: python3
 ---
 
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
 # Best Practices for Importing Python Packages In Scientific Code
 
 There are a set of best practices that you should follow when importing **Python** packages in your code. These best practices are outlined in the <a href="https://www.python.org/dev/peps/pep-0008/#imports" target="_blank">PEP 8 guidelines</a> and apply to both **Python** scripts and to working in **Jupyter Notebook** files.
@@ -21,12 +23,12 @@ It is good practice to import all of the packages that you will need at the top 
 
 This allows anyone looking at your code to immediately know what packages they need to have installed in order to successfully run the code. This rule also follows the PEP 8 conventions for **Python** code.
 
-<figure>
- <a href="/images/jupyter/import-packages-first-cell.png">
- <img src="/images/jupyter/import-packages-first-cell.png" alt= "Jupyter Notebook with the first code cell importing the numpy package (and many others) to be used with abbreviations or aliases (e.g. np)."></a>
- <figcaption> Jupyter Notebook with the first code cell importing the numpy package (and many others) to be used with abbreviations or aliases (e.g. np for numpy).
- </figcaption>
-</figure>
+```python
+import os 
+
+import pandas as pd
+import numpy as np
+```
 
 Once you have imported all of the packages that you need to run your code in a script, you have access to all of the functions and classes defined in each package. 
 
