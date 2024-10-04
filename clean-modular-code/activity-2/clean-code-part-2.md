@@ -155,6 +155,8 @@ combined_papers_df = pd.concat([papers_df_1, papers_df_2], axis=0)
 combined_papers_df.shape
 ```
 
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
 ## On your own 1
 
 If you get through the above activity with time to spare, here are a few additional tasks that you can work on. 
