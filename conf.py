@@ -25,6 +25,9 @@ organization_name = "pyOpenSci"
 project = "pyOpenSci Python Package Guide"
 copyright = f"{current_year}, {organization_name}"
 author = "pyOpenSci Community"
+# Version is needed to avoid "cant describe anything fatal error"
+version = "0.1"
+release = "0.1"
 
 # Get the latest Git tag - there might be a prettier way to do this but...
 try:
@@ -132,12 +135,15 @@ exclude_patterns = [
     ".DS_Store",
     ".github",
     ".nox",
-    "README.md",
+    "**/README.md",
     "styles/write-good/README.md",
     "styles/*",
     ".pytest_cache/README.md",
     "vale-styles/*",
     "CODE_OF_CONDUCT.md",
+    "**/data/**",
+    "_law_tests",
+    "**/*.ipynb",  # we use myst notebooks for publishing
 ]
 
 # For sitemap generation

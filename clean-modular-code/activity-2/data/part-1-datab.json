@@ -1,0 +1,3075 @@
+[
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2023,
+          11,
+          28
+        ]
+      ],
+      "date-time": "2023-11-28T18:59:30Z",
+      "timestamp": 1701197970378
+    },
+    "reference-count": 13,
+    "publisher": "The Open Journal",
+    "issue": "66",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              5
+            ]
+          ],
+          "date-time": "2021-10-05T00:00:00Z",
+          "timestamp": 1633392000000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              5
+            ]
+          ],
+          "date-time": "2021-10-05T00:00:00Z",
+          "timestamp": 1633392000000
+        },
+        "content-version": "am",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              5
+            ]
+          ],
+          "date-time": "2021-10-05T00:00:00Z",
+          "timestamp": 1633392000000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "JOSS"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          5
+        ]
+      ]
+    },
+    "DOI": "10.21105/joss.02752",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          5
+        ]
+      ],
+      "date-time": "2021-10-05T12:27:50Z",
+      "timestamp": 1633436870000
+    },
+    "page": "2752",
+    "source": "Crossref",
+    "is-referenced-by-count": 1,
+    "title": [
+      "The o80 C++ templated toolbox: Designing customized Python APIs for synchronizing realtime processes"
+    ],
+    "prefix": "10.21105",
+    "volume": "6",
+    "author": [
+      {
+        "given": "Vincent",
+        "family": "Berenz",
+        "sequence": "first",
+        "affiliation": []
+      },
+      {
+        "given": "Maximilien",
+        "family": "Naveau",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "given": "Felix",
+        "family": "Widmaier",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "given": "Manuel",
+        "family": "W\u00fcthrich",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "given": "Jean-Claude",
+        "family": "Passy",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "given": "Simon",
+        "family": "Guist",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "given": "Dieter",
+        "family": "B\u00fcchler",
+        "sequence": "additional",
+        "affiliation": []
+      }
+    ],
+    "member": "8722",
+    "reference": [
+      {
+        "key": "ref1",
+        "unstructured": "Schling, Boris, The Boost C++ Libraries, 2011, 0982219199, XML Press, https://www.boost.org/doc/libs/1_63_0/doc/html/interprocess.html"
+      },
+      {
+        "key": "ref2",
+        "unstructured": "Kyrylo, Sovailo, o80 Franka, 2021, https://github.com/Data-Science-in-Mechanical-Engineering/franka_o80"
+      },
+      {
+        "key": "ref3",
+        "unstructured": "W., Shane Grant and Voorhies, Randolph, 2017, http://uscilab.github.io/cereal/, cereal - A C++11 library for serialization"
+      },
+      {
+        "key": "ref4",
+        "unstructured": "Naveau, Maximilien and Berenz, Vincent and Widemaier, Felix and Viereck, Julian and W\u00fcthrich, Manuel, corerobotics, 2020, http://people.tuebingen.mpg.de/mpi-is-software/corerobotics/docs"
+      },
+      {
+        "key": "ref5",
+        "unstructured": "Carroll, Michael and Perron, Jakob and Marder-Eppstein, Eitan and Pradeep, Vijay and Arguedas, Mikael, actionlib, 2009, http://wiki.ros.org/actionlib"
+      },
+      {
+        "key": "ref6",
+        "unstructured": "Wenzel, Jakob and Rhinelander, Jason and Moldovan, Dean, 2016, https://github.com/pybind/pybind11, pybind11 \u2014 Seamless operability between C++11 and Python"
+      },
+      {
+        "key": "ref7",
+        "unstructured": "Schaal, Stefan, 2009, http://www-clmc.usc.edu/publications/S/schaal-TRSL.pdf, The SL simulation and real-time control software package"
+      },
+      {
+        "key": "ref8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/LRA.2018.2795645"
+      },
+      {
+        "key": "ref9",
+        "unstructured": "Identifying Causal Structure in Dynamical Systems, Baumann, Dominik and Solowjow, Friedrich and Johansson, Karl H. and Trimpe, Sebastian, 2020, 2006.03906, arXiv, cs.LG"
+      },
+      {
+        "key": "ref10",
+        "unstructured": "Learning to Play Table Tennis From Scratch using Muscular Robots, B\u00fcchler, Dieter and Guist, Simon and Calandra, Roberto and Vincent, Berenz and Sch\u00f6lkopf, Bernhard and Peters, Jan, 2020, 2006.05935, arXiv, cs.RO"
+      },
+      {
+        "key": "ref11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/iros.2012.6386109"
+      },
+      {
+        "key": "ref12",
+        "unstructured": "OpenAI Gym, Brockman, Greg and Cheung, Vicki and Pettersson, Ludwig and Schneider, Jonas and Schulman, John and Tang, Jie and Zaremba, Wojciech, 2016, 1606.01540, arXiv, cs.LG"
+      },
+      {
+        "key": "ref13",
+        "unstructured": "Berenz, Vincent and Guist, Simon and B\u00fcchler, Dieter, PAM Robot Software documentation, 2020, http://people.tuebingen.mpg.de/mpi-is-software/pam/docs/"
+      }
+    ],
+    "container-title": [
+      "Journal of Open Source Software"
+    ],
+    "link": [
+      {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.02752.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          5
+        ]
+      ],
+      "date-time": "2021-10-05T12:27:59Z",
+      "timestamp": 1633436879000
+    },
+    "score": 0.0,
+    "resource": {
+      "primary": {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.02752"
+      }
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          5
+        ]
+      ]
+    },
+    "references-count": 13,
+    "journal-issue": {
+      "issue": "66",
+      "published-online": {
+        "date-parts": [
+          [
+            2021,
+            10
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.21105/joss.02752"
+    ],
+    "URL": "http://dx.doi.org/10.21105/joss.02752",
+    "relation": {
+      "references": [
+        {
+          "id-type": "doi",
+          "id": "\u201chttps://doi.org/10.5281/zenodo.5357876\u201d",
+          "asserted-by": "subject"
+        }
+      ],
+      "has-review": [
+        {
+          "id-type": "uri",
+          "id": "https://github.com/openjournals/joss-reviews/issues/2752",
+          "asserted-by": "subject"
+        }
+      ]
+    },
+    "ISSN": [
+      "2475-9066"
+    ],
+    "issn-type": [
+      {
+        "value": "2475-9066",
+        "type": "electronic"
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          5
+        ]
+      ]
+    }
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2022,
+          3,
+          30
+        ]
+      ],
+      "date-time": "2022-03-30T18:59:45Z",
+      "timestamp": 1648666785922
+    },
+    "reference-count": 34,
+    "publisher": "The Open Journal",
+    "issue": "68",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              12,
+              2
+            ]
+          ],
+          "date-time": "2021-12-02T00:00:00Z",
+          "timestamp": 1638403200000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              12,
+              2
+            ]
+          ],
+          "date-time": "2021-12-02T00:00:00Z",
+          "timestamp": 1638403200000
+        },
+        "content-version": "am",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              12,
+              2
+            ]
+          ],
+          "date-time": "2021-12-02T00:00:00Z",
+          "timestamp": 1638403200000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "JOSS"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          12,
+          2
+        ]
+      ]
+    },
+    "DOI": "10.21105/joss.03917",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          12,
+          2
+        ]
+      ],
+      "date-time": "2021-12-02T19:14:56Z",
+      "timestamp": 1638472496000
+    },
+    "page": "3917",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+      "CR-Sparse: Hardware accelerated functional algorithms for sparse signal processing in Python using JAX"
+    ],
+    "prefix": "10.21105",
+    "volume": "6",
+    "author": [
+      {
+        "ORCID": "http://orcid.org/0000-0003-2217-4768",
+        "authenticated-orcid": false,
+        "given": "Shailesh",
+        "family": "Kumar",
+        "sequence": "first",
+        "affiliation": []
+      }
+    ],
+    "member": "8722",
+    "reference": [
+      {
+        "key": "ref1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3088525.3088527"
+      },
+      {
+        "key": "ref2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1137/080716542"
+      },
+      {
+        "key": "ref3",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s12532-011-0029-5"
+      },
+      {
+        "key": "ref4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.acha.2009.04.002"
+      },
+      {
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/jstsp.2010.2042411"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.crma.2008.03.014"
+      },
+      {
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1137/S003614450037906X"
+      },
+      {
+        "key": "ref8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tit.2009.2016006"
+      },
+      {
+        "key": "ref9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1002/cpa.20042"
+      },
+      {
+        "key": "ref10",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tit.2010.2054653"
+      },
+      {
+        "key": "ref11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tit.2006.871582"
+      },
+      {
+        "key": "ref12",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/978-1-4419-7011-4"
+      },
+      {
+        "key": "ref13",
+        "unstructured": "Recovering jointly sparse vectors via hard thresholding pursuit, Foucart, Simon, Proc. Sampling Theory and Applications (SampTA)],(May 2-6 2011), 2011"
+      },
+      {
+        "key": "ref14",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/978-0-8176-4948-7"
+      },
+      {
+        "key": "ref15",
+        "unstructured": "Bradbury, James and Frostig, Roy and Hawkins, Peter and Johnson, Matthew James and Leary, Chris and Maclaurin, Dougal and Necula, George and Paszke, Adam and VanderPlas, Jake and Wanderman-Milne, Skye and Zhang, Qiao, JAX: composable transformations of Python+NumPy programs, http://github.com/google/jax, 0.2.5, 2018"
+      },
+      {
+        "key": "ref16",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/JSTSP.2007.910971"
+      },
+      {
+        "key": "ref17",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.21105/joss.01237"
+      },
+      {
+        "key": "ref18",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/b978-0-12-374370-1.x0001-8"
+      },
+      {
+        "key": "ref19",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/ACCESS.2018.2886471"
+      },
+      {
+        "key": "ref20",
+        "unstructured": "2018, MATLAB, 9.7.0.1190202 (R2019b), The MathWorks Inc., Natick, Massachusetts"
+      },
+      {
+        "key": "ref21",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.acha.2008.07.002"
+      },
+      {
+        "key": "ref22",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/355984.355989"
+      },
+      {
+        "key": "ref23",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1561/2400000003"
+      },
+      {
+        "key": "ref24",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/acssc.1993.342465"
+      },
+      {
+        "key": "ref25",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.sigpro.2020.107548"
+      },
+      {
+        "key": "ref26",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/JCN.2013.000083"
+      },
+      {
+        "key": "ref27",
+        "unstructured": "PyLops\u2013A Linear-Operator Python Library for large scale optimization, Ravasi, Matteo and Vasconcelos, Ivan, arXiv preprint arXiv:1907.12349, 2019, https://arxiv.org/abs/1907.12349"
+      },
+      {
+        "key": "ref28",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5281/zenodo.5749656"
+      },
+      {
+        "key": "ref29",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.21105/joss.02844"
+      },
+      {
+        "key": "ref30",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1175/1520-0477(1998)079"
+      },
+      {
+        "key": "ref31",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/TIT.2004.834793"
+      },
+      {
+        "key": "ref32",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1137/090777761"
+      },
+      {
+        "key": "ref33",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/CVPR.2016.425"
+      },
+      {
+        "key": "ref34",
+        "unstructured": "User\u2019s guide for YALL1: Your algorithms for L1 optimization, Zhang, Yin and Yang, Junfeng and Yin, Wotao, 2010, https://www.caam.rice.edu/\u00a0optimization/L1/YALL1/User_Guide/YALL1v1.0_User_Guide.pdf"
+      }
+    ],
+    "container-title": [
+      "Journal of Open Source Software"
+    ],
+    "link": [
+      {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03917.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2021,
+          12,
+          2
+        ]
+      ],
+      "date-time": "2021-12-02T19:15:06Z",
+      "timestamp": 1638472506000
+    },
+    "score": 0.0,
+    "resource": {
+      "primary": {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03917"
+      }
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          12,
+          2
+        ]
+      ]
+    },
+    "references-count": 34,
+    "journal-issue": {
+      "issue": "68",
+      "published-online": {
+        "date-parts": [
+          [
+            2021,
+            12
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.21105/joss.03917"
+    ],
+    "URL": "http://dx.doi.org/10.21105/joss.03917",
+    "relation": {
+      "references": [
+        {
+          "id-type": "doi",
+          "id": "\u201chttps://doi.org/10.5281/zenodo.5749792\u201d",
+          "asserted-by": "subject"
+        }
+      ],
+      "has-review": [
+        {
+          "id-type": "uri",
+          "id": "https://github.com/openjournals/joss-reviews/issues/3917",
+          "asserted-by": "subject"
+        }
+      ]
+    },
+    "ISSN": [
+      "2475-9066"
+    ],
+    "issn-type": [
+      {
+        "value": "2475-9066",
+        "type": "electronic"
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          12,
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2024,
+          9,
+          14
+        ]
+      ],
+      "date-time": "2024-09-14T11:16:46Z",
+      "timestamp": 1726312606947
+    },
+    "reference-count": 8,
+    "publisher": "The Open Journal",
+    "issue": "65",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              30
+            ]
+          ],
+          "date-time": "2021-09-30T00:00:00Z",
+          "timestamp": 1632960000000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              30
+            ]
+          ],
+          "date-time": "2021-09-30T00:00:00Z",
+          "timestamp": 1632960000000
+        },
+        "content-version": "am",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              30
+            ]
+          ],
+          "date-time": "2021-09-30T00:00:00Z",
+          "timestamp": 1632960000000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "JOSS"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          30
+        ]
+      ]
+    },
+    "DOI": "10.21105/joss.03598",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          30
+        ]
+      ],
+      "date-time": "2021-09-30T17:52:14Z",
+      "timestamp": 1633024334000
+    },
+    "page": "3598",
+    "source": "Crossref",
+    "is-referenced-by-count": 11,
+    "title": [
+      "bfit: A Python Application For Beta-Detected NMR"
+    ],
+    "prefix": "10.21105",
+    "volume": "6",
+    "author": [
+      {
+        "ORCID": "http://orcid.org/0000-0003-2847-2053",
+        "authenticated-orcid": false,
+        "given": "Derek",
+        "family": "Fujimoto",
+        "sequence": "first",
+        "affiliation": []
+      }
+    ],
+    "member": "8722",
+    "reference": [
+      {
+        "key": "ref1",
+        "unstructured": "Vancouver, Whidden, Ted and Arseneau, Donald and Daviel, Suzannah, MUon Data access, http://musr.ca/mud/, 1994"
+      },
+      {
+        "key": "ref2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/s41592-019-0686-2"
+      },
+      {
+        "key": "ref3",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.7566/JPSCP.21.011049"
+      },
+      {
+        "key": "ref4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.phpro.2012.04.042"
+      },
+      {
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.nima.2014.07.029"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/S0921-4526(00)00328-8"
+      },
+      {
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.ssnmr.2015.02.004"
+      },
+      {
+        "key": "ref8",
+        "unstructured": "Cook, J. D., https://www.codeproject.com/Articles/31550/Fast-Numerical-Integration, 2014, Retrieved 2019/11/11"
+      }
+    ],
+    "container-title": [
+      "Journal of Open Source Software"
+    ],
+    "link": [
+      {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03598.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          30
+        ]
+      ],
+      "date-time": "2021-09-30T17:52:17Z",
+      "timestamp": 1633024337000
+    },
+    "score": 0.0,
+    "resource": {
+      "primary": {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03598"
+      }
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          30
+        ]
+      ]
+    },
+    "references-count": 8,
+    "journal-issue": {
+      "issue": "65",
+      "published-online": {
+        "date-parts": [
+          [
+            2021,
+            9
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.21105/joss.03598"
+    ],
+    "URL": "http://dx.doi.org/10.21105/joss.03598",
+    "relation": {
+      "references": [
+        {
+          "id-type": "doi",
+          "id": "\u201chttps://doi.org/10.5281/zenodo.5519795\u201d",
+          "asserted-by": "subject"
+        }
+      ],
+      "has-review": [
+        {
+          "id-type": "uri",
+          "id": "https://github.com/openjournals/joss-reviews/issues/3598",
+          "asserted-by": "subject"
+        }
+      ]
+    },
+    "ISSN": [
+      "2475-9066"
+    ],
+    "issn-type": [
+      {
+        "value": "2475-9066",
+        "type": "electronic"
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2022,
+          3,
+          29
+        ]
+      ],
+      "date-time": "2022-03-29T22:48:09Z",
+      "timestamp": 1648594089347
+    },
+    "reference-count": 15,
+    "publisher": "The Open Journal",
+    "issue": "64",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              8,
+              8
+            ]
+          ],
+          "date-time": "2021-08-08T00:00:00Z",
+          "timestamp": 1628380800000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              8,
+              8
+            ]
+          ],
+          "date-time": "2021-08-08T00:00:00Z",
+          "timestamp": 1628380800000
+        },
+        "content-version": "am",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              8,
+              8
+            ]
+          ],
+          "date-time": "2021-08-08T00:00:00Z",
+          "timestamp": 1628380800000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "JOSS"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          8,
+          8
+        ]
+      ]
+    },
+    "DOI": "10.21105/joss.03452",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          8,
+          8
+        ]
+      ],
+      "date-time": "2021-08-08T13:54:05Z",
+      "timestamp": 1628430845000
+    },
+    "page": "3452",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+      "bmgarch: An R-Package for Bayesian Multivariate GARCH models"
+    ],
+    "prefix": "10.21105",
+    "volume": "6",
+    "author": [
+      {
+        "ORCID": "http://orcid.org/0000-0003-3630-6629",
+        "authenticated-orcid": false,
+        "given": "Philippe",
+        "family": "Rast",
+        "sequence": "first",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0001-8085-2390",
+        "authenticated-orcid": false,
+        "given": "Stephen",
+        "family": "Martin",
+        "sequence": "additional",
+        "affiliation": []
+      }
+    ],
+    "member": "8722",
+    "reference": [
+      {
+        "key": "ref1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/0304-4076(86)90063-1"
+      },
+      {
+        "key": "ref2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2307/2109358"
+      },
+      {
+        "key": "ref3",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/00949655.2020.1783262"
+      },
+      {
+        "key": "ref4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1515/snde-2012-0065"
+      },
+      {
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/J.IJFORECAST.2017.08.003"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2307/1912773"
+      },
+      {
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1198/073500102288618487"
+      },
+      {
+        "key": "ref8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1017/S0266466600009063"
+      },
+      {
+        "key": "ref9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1037/met0000357"
+      },
+      {
+        "key": "ref10",
+        "unstructured": "rmgarch: Multivariate GARCH models, Ghalanos, Alexios, 2019, R package version 1.3-7."
+      },
+      {
+        "key": "ref11",
+        "unstructured": "mgarchBEKK: Simulating, Estimating and Diagnosing MGARCH (BEKK and mGJR) Processes, Schmidbauer, Harald and Roesch, Angi and Tunalioglu, Vehbi Sinan, 2016, R package version 0.0.2"
+      },
+      {
+        "key": "ref12",
+        "unstructured": "RStan: the R interface to Stan, Stan Development Team, R package version 2.21.2, 2020, http://mc-stan.org/"
+      },
+      {
+        "key": "ref13",
+        "unstructured": "Stan Development Team, 2.14.0, The Stan C++ Library, http://mc-stan.org, 2016"
+      },
+      {
+        "key": "ref14",
+        "unstructured": "Hoboken, NJ, Tsay, Ruey S., 978-0-470-89081-3, 416, John Wiley & Sons, An Introduction to Analysis of Financial Data with R, 2013"
+      },
+      {
+        "key": "ref15",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/17-BA1091"
+      }
+    ],
+    "container-title": [
+      "Journal of Open Source Software"
+    ],
+    "link": [
+      {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03452.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2021,
+          8,
+          8
+        ]
+      ],
+      "date-time": "2021-08-08T13:54:10Z",
+      "timestamp": 1628430850000
+    },
+    "score": 0.0,
+    "resource": {
+      "primary": {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03452"
+      }
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          8,
+          8
+        ]
+      ]
+    },
+    "references-count": 15,
+    "journal-issue": {
+      "issue": "64",
+      "published-online": {
+        "date-parts": [
+          [
+            2021,
+            8
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.21105/joss.03452"
+    ],
+    "URL": "http://dx.doi.org/10.21105/joss.03452",
+    "relation": {
+      "references": [
+        {
+          "id-type": "doi",
+          "id": "\u201chttps://doi.org/10.5281/zenodo.5168675\u201d",
+          "asserted-by": "subject"
+        }
+      ],
+      "has-review": [
+        {
+          "id-type": "uri",
+          "id": "https://github.com/openjournals/joss-reviews/issues/3452",
+          "asserted-by": "subject"
+        }
+      ]
+    },
+    "ISSN": [
+      "2475-9066"
+    ],
+    "issn-type": [
+      {
+        "value": "2475-9066",
+        "type": "electronic"
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          8,
+          8
+        ]
+      ]
+    }
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2024,
+          6,
+          16
+        ]
+      ],
+      "date-time": "2024-06-16T05:19:26Z",
+      "timestamp": 1718515166499
+    },
+    "reference-count": 17,
+    "publisher": "The Open Journal",
+    "issue": "57",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              1,
+              17
+            ]
+          ],
+          "date-time": "2021-01-17T00:00:00Z",
+          "timestamp": 1610841600000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              1,
+              17
+            ]
+          ],
+          "date-time": "2021-01-17T00:00:00Z",
+          "timestamp": 1610841600000
+        },
+        "content-version": "am",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              1,
+              17
+            ]
+          ],
+          "date-time": "2021-01-17T00:00:00Z",
+          "timestamp": 1610841600000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "JOSS"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          17
+        ]
+      ]
+    },
+    "DOI": "10.21105/joss.02844",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          17
+        ]
+      ],
+      "date-time": "2021-01-17T09:12:11Z",
+      "timestamp": 1610874731000
+    },
+    "page": "2844",
+    "source": "Crossref",
+    "is-referenced-by-count": 7,
+    "title": [
+      "c-lasso - a Python package for constrained sparse and robust regression and classification"
+    ],
+    "prefix": "10.21105",
+    "volume": "6",
+    "author": [
+      {
+        "given": "L\u00e9o",
+        "family": "Simpson",
+        "sequence": "first",
+        "affiliation": []
+      },
+      {
+        "given": "Patrick",
+        "family": "Combettes",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0002-3821-7083",
+        "authenticated-orcid": false,
+        "given": "Christian",
+        "family": "M\u00fcller",
+        "sequence": "additional",
+        "affiliation": []
+      }
+    ],
+    "member": "8722",
+    "reference": [
+      {
+        "key": "ref1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/biomet/71.2.323"
+      },
+      {
+        "key": "ref2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1101/2020.09.01.277632"
+      },
+      {
+        "key": "ref3",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s10957-018-1430-2"
+      },
+      {
+        "key": "ref4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s11228-011-0191-y"
+      },
+      {
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/19-EJS1662"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s12561-020-09283-2"
+      },
+      {
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/10618600.2018.1473777"
+      },
+      {
+        "key": "ref8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/01621459.2019.1609970"
+      },
+      {
+        "key": "ref9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/bf02985802"
+      },
+      {
+        "key": "ref10",
+        "unstructured": "Wiley Series in Probability and Mathematical Statistics, Huber, P, 0-471-41805-6, John Wiley & Sons Inc., Robust statistics, 1981"
+      },
+      {
+        "key": "ref11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.csda.2020.106958"
+      },
+      {
+        "key": "ref12",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1162/NECO_a_00434"
+      },
+      {
+        "key": "ref13",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/biomet/asu031"
+      },
+      {
+        "key": "ref14",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1467-9868.2010.00740.x"
+      },
+      {
+        "key": "ref15",
+        "unstructured": "arXiv, 1909.04990, Mishra, Aditya and M\u00fcller, Christian L., 1909.04990, Robust regression with compositional covariates, http://arxiv.org/abs/1909.04990, 2019"
+      },
+      {
+        "key": "ref16",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/009053606000001370"
+      },
+      {
+        "key": "ref17",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/16-AOAS928"
+      }
+    ],
+    "container-title": [
+      "Journal of Open Source Software"
+    ],
+    "link": [
+      {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.02844.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          17
+        ]
+      ],
+      "date-time": "2021-01-17T09:12:16Z",
+      "timestamp": 1610874736000
+    },
+    "score": 0.0,
+    "resource": {
+      "primary": {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.02844"
+      }
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          17
+        ]
+      ]
+    },
+    "references-count": 17,
+    "journal-issue": {
+      "issue": "57",
+      "published-online": {
+        "date-parts": [
+          [
+            2021,
+            1
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.21105/joss.02844"
+    ],
+    "URL": "http://dx.doi.org/10.21105/joss.02844",
+    "relation": {
+      "references": [
+        {
+          "id-type": "doi",
+          "id": "\u201chttps://doi.org/10.6084/m9.figshare.13589585.v1\u201d",
+          "asserted-by": "subject"
+        }
+      ],
+      "has-review": [
+        {
+          "id-type": "uri",
+          "id": "https://github.com/openjournals/joss-reviews/issues/2844",
+          "asserted-by": "subject"
+        }
+      ]
+    },
+    "ISSN": [
+      "2475-9066"
+    ],
+    "issn-type": [
+      {
+        "value": "2475-9066",
+        "type": "electronic"
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          17
+        ]
+      ]
+    }
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2024,
+          3,
+          11
+        ]
+      ],
+      "date-time": "2024-03-11T21:06:43Z",
+      "timestamp": 1710191203675
+    },
+    "reference-count": 32,
+    "publisher": "The Open Journal",
+    "issue": "58",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              2,
+              24
+            ]
+          ],
+          "date-time": "2021-02-24T00:00:00Z",
+          "timestamp": 1614124800000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              2,
+              24
+            ]
+          ],
+          "date-time": "2021-02-24T00:00:00Z",
+          "timestamp": 1614124800000
+        },
+        "content-version": "am",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              2,
+              24
+            ]
+          ],
+          "date-time": "2021-02-24T00:00:00Z",
+          "timestamp": 1614124800000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "JOSS"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          2,
+          24
+        ]
+      ]
+    },
+    "DOI": "10.21105/joss.02891",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          2,
+          24
+        ]
+      ],
+      "date-time": "2021-02-24T15:51:07Z",
+      "timestamp": 1614181867000
+    },
+    "page": "2891",
+    "source": "Crossref",
+    "is-referenced-by-count": 3,
+    "title": [
+      "Learning Simulator: A simulation software for animal and human learning"
+    ],
+    "prefix": "10.21105",
+    "volume": "6",
+    "author": [
+      {
+        "ORCID": "http://orcid.org/0000-0003-1242-3599",
+        "authenticated-orcid": false,
+        "given": "Markus",
+        "family": "Jonsson",
+        "sequence": "first",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0002-7270-9612",
+        "authenticated-orcid": false,
+        "given": "Stefano",
+        "family": "Ghirlanda",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0002-4159-6926",
+        "authenticated-orcid": false,
+        "given": "Johan",
+        "family": "Lind",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "given": "Vera",
+        "family": "Vinken",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "given": "Magnus",
+        "family": "Enquist",
+        "sequence": "additional",
+        "affiliation": []
+      }
+    ],
+    "member": "8722",
+    "reference": [
+      {
+        "key": "ref1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/MCSE.2007.55"
+      },
+      {
+        "key": "ref2",
+        "unstructured": "Mastering chess and shogi by self-play with a general reinforcement learning algorithm, Silver, David and Hubert, Thomas and Schrittwieser, Julian and Antonoglou, Ioannis and Lai, Matthew and Guez, Arthur and Lanctot, Marc and Sifre, Laurent and Kumaran, Dharshan and Graepel, Thore and others, arXiv preprint arXiv:1712.01815, 2017"
+      },
+      {
+        "key": "ref3",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Mastering the game of Go with deep neural networks and tree search, Silver, David and Huang, Aja and Maddison, Chris J and Guez, Arthur and Sifre, Laurent and Van Den Driessche, George and Schrittwieser, Julian and Antonoglou, Ioannis and Panneershelvam, Veda and Lanctot, Marc and others, nature, 529, 7587, 484\u2013489, 2016, Nature Publishing Group",
+        "DOI": "10.1038/nature16961"
+      },
+      {
+        "key": "ref4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1098/rsos.160734"
+      },
+      {
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/j.1751-0813.2010.00653.x"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/s0899-9007(98)00192-0"
+      },
+      {
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.4324/9780203803509"
+      },
+      {
+        "key": "ref8",
+        "unstructured": "Associative learning and conditioning theory: Human and non-human applications, Schachtman, Todd R. and Reilly, Steve S., 2011, OUP USA"
+      },
+      {
+        "key": "ref9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/tsmcc.2012.2218595"
+      },
+      {
+        "key": "ref10",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1101/446906"
+      },
+      {
+        "key": "ref11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1098/rsos.180778"
+      },
+      {
+        "key": "ref12",
+        "unstructured": "Animal learning and cognition: An introduction, Pearce, John M, 2013, Psychology Press, Hove, Sussex"
+      },
+      {
+        "key": "ref13",
+        "unstructured": "Learning and behavior: a modern synthesis, Bouton, ME, 2016, Sinauer, 2nd, Sunderland, MA"
+      },
+      {
+        "key": "ref14",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1098/rsos.161011"
+      },
+      {
+        "key": "ref15",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3758/brm.40.2.442"
+      },
+      {
+        "key": "ref16",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3758/lb.38.1.1"
+      },
+      {
+        "key": "ref17",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.cmpb.2012.02.004"
+      },
+      {
+        "key": "ref18",
+        "unstructured": "George, David N, learnSim, 2019, GitHub, GitHub repository, https://github.com/DavidNGeorge/learnSim"
+      },
+      {
+        "key": "ref19",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3758/brm.41.1.29"
+      },
+      {
+        "key": "ref20",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3758/brm.40.2.435"
+      },
+      {
+        "key": "ref21",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1037/h0054388"
+      },
+      {
+        "key": "ref22",
+        "unstructured": "Rescorla, R. A. and Wagner, A. R., A theory of Pavlovian conditioning: Variations in the effectiveness of reinforcement and nonreinforcement, Classical conditioning: Current research and theory, Black, A. H. and Prokasy, W. F., 64-99, Appleton-Century-Crofts, 1972, incollection, conditioning, theory, stefano, 2016.08.02"
+      },
+      {
+        "key": "ref23",
+        "unstructured": "Learning from delayed rewards, Watkins, Christopher John Cornish Hellaby, 1989, King\u2019s College, Cambridge"
+      },
+      {
+        "key": "ref24",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Q-learning, Watkins, Christopher John Cornish Hellaby and Dayan, Peter, Machine learning, 8, 3-4, 279\u2013292, 1992, Springer",
+        "DOI": "10.1023/A:1022676722315"
+      },
+      {
+        "key": "ref25",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/adprl.2009.4927542"
+      },
+      {
+        "key": "ref26",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/s0019-9958(77)90354-0"
+      },
+      {
+        "key": "ref27",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3758/s13423-020-01749-0"
+      },
+      {
+        "key": "ref28",
+        "unstructured": "Q-Learning Simulator, https://www.mladdict.com/q-learning-simulator, Accessed: 2020-11-11"
+      },
+      {
+        "key": "ref29",
+        "unstructured": "Smith, A., Fidgit: An ungodly union of GitHub and Figshare, 2020, GitHub, GitHub repository, https://github.com/arfon/fidgit"
+      },
+      {
+        "key": "ref30",
+        "unstructured": "Reinforcement learning: An introduction, Sutton, Richard S and Barto, Andrew G, 2018, MIT press"
+      },
+      {
+        "key": "ref31",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Reinforcement learning: The good, the bad and the ugly, Dayan, Peter and Niv, Yael, Current Opinion in Neurobiology, 18, 2, 185\u2013196, 2008, Elsevier",
+        "DOI": "10.1016/j.conb.2008.08.003"
+      },
+      {
+        "key": "ref32",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Reinforcement learning in the brain, Niv, Yael, Journal of Mathematical Psychology, 53, 3, 139\u2013154, 2009, Elsevier",
+        "DOI": "10.1016/j.jmp.2008.12.005"
+      }
+    ],
+    "container-title": [
+      "Journal of Open Source Software"
+    ],
+    "link": [
+      {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.02891.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2021,
+          2,
+          24
+        ]
+      ],
+      "date-time": "2021-02-24T15:51:41Z",
+      "timestamp": 1614181901000
+    },
+    "score": 0.0,
+    "resource": {
+      "primary": {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.02891"
+      }
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          2,
+          24
+        ]
+      ]
+    },
+    "references-count": 32,
+    "journal-issue": {
+      "issue": "58",
+      "published-online": {
+        "date-parts": [
+          [
+            2021,
+            2
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.21105/joss.02891"
+    ],
+    "URL": "http://dx.doi.org/10.21105/joss.02891",
+    "relation": {
+      "references": [
+        {
+          "id-type": "doi",
+          "id": "\u201chttps://doi.org/10.5281/zenodo.4544535\u201d",
+          "asserted-by": "subject"
+        }
+      ],
+      "has-review": [
+        {
+          "id-type": "uri",
+          "id": "https://github.com/openjournals/joss-reviews/issues/2891",
+          "asserted-by": "subject"
+        }
+      ]
+    },
+    "ISSN": [
+      "2475-9066"
+    ],
+    "issn-type": [
+      {
+        "value": "2475-9066",
+        "type": "electronic"
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          2,
+          24
+        ]
+      ]
+    }
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2024,
+          9,
+          19
+        ]
+      ],
+      "date-time": "2024-09-19T16:09:26Z",
+      "timestamp": 1726762166957
+    },
+    "reference-count": 16,
+    "publisher": "The Open Journal",
+    "issue": "57",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              1,
+              7
+            ]
+          ],
+          "date-time": "2021-01-07T00:00:00Z",
+          "timestamp": 1609977600000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              1,
+              7
+            ]
+          ],
+          "date-time": "2021-01-07T00:00:00Z",
+          "timestamp": 1609977600000
+        },
+        "content-version": "am",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              1,
+              7
+            ]
+          ],
+          "date-time": "2021-01-07T00:00:00Z",
+          "timestamp": 1609977600000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "JOSS"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          7
+        ]
+      ]
+    },
+    "DOI": "10.21105/joss.02906",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          7
+        ]
+      ],
+      "date-time": "2021-01-07T14:29:29Z",
+      "timestamp": 1610029769000
+    },
+    "page": "2906",
+    "source": "Crossref",
+    "is-referenced-by-count": 156,
+    "title": [
+      "Augur: a bioinformatics toolkit for phylogenetic analyses of human pathogens"
+    ],
+    "prefix": "10.21105",
+    "volume": "6",
+    "author": [
+      {
+        "ORCID": "http://orcid.org/0000-0002-4250-2063",
+        "authenticated-orcid": false,
+        "given": "John",
+        "family": "Huddleston",
+        "sequence": "first",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0002-4118-6468",
+        "authenticated-orcid": false,
+        "given": "James",
+        "family": "Hadfield",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0001-5269-2297",
+        "authenticated-orcid": false,
+        "given": "Thomas",
+        "family": "Sibley",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0002-2391-0512",
+        "authenticated-orcid": false,
+        "given": "Jover",
+        "family": "Lee",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0002-6529-9205",
+        "authenticated-orcid": false,
+        "given": "Kairsten",
+        "family": "Fay",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0002-1468-7697",
+        "authenticated-orcid": false,
+        "given": "Misja",
+        "family": "Ilcisin",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0001-6525-9134",
+        "authenticated-orcid": false,
+        "given": "Elias",
+        "family": "Harkins",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0002-4039-5794",
+        "authenticated-orcid": false,
+        "given": "Trevor",
+        "family": "Bedford",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0003-2525-1407",
+        "authenticated-orcid": false,
+        "given": "Richard",
+        "family": "Neher",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0002-0078-2212",
+        "authenticated-orcid": false,
+        "given": "Emma",
+        "family": "Hodcroft",
+        "sequence": "additional",
+        "affiliation": []
+      }
+    ],
+    "member": "8722",
+    "reference": [
+      {
+        "key": "ref1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.20944/preprints202008.0220.v1"
+      },
+      {
+        "key": "ref2",
+        "unstructured": "nextstrain/ncov, MIT License, https://github.com/nextstrain/ncov, Nextstrain build for novel coronavirus SARS-CoV-2, 2020-11-09, The Nextstrain Team, nov, 2020, original-date: 2020-01-19T17:23:17Z, ncov, nextstrain, sars-cov-2, 11"
+      },
+      {
+        "key": "ref3",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2807/1560-7917.ES.2020.25.32.2001410"
+      },
+      {
+        "key": "ref4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1186/s13059-015-0726-x"
+      },
+      {
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1371/journal.pone.0009490"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/bioinformatics/btu033"
+      },
+      {
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/s41591-020-0935-z"
+      },
+      {
+        "key": "ref8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1126/science.abc0523"
+      },
+      {
+        "key": "ref9",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/bioinformatics/btv381"
+      },
+      {
+        "key": "ref10",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/bioinformatics/bty407"
+      },
+      {
+        "key": "ref11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/bioinformatics/btp352"
+      },
+      {
+        "key": "ref12",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/bioinformatics/btr509"
+      },
+      {
+        "key": "ref13",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/nar/gkf436"
+      },
+      {
+        "key": "ref14",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/molbev/msu300"
+      },
+      {
+        "key": "ref15",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/bioinformatics/bts480"
+      },
+      {
+        "key": "ref16",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/ve/vex042"
+      }
+    ],
+    "container-title": [
+      "Journal of Open Source Software"
+    ],
+    "link": [
+      {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.02906.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          7
+        ]
+      ],
+      "date-time": "2021-01-07T14:30:08Z",
+      "timestamp": 1610029808000
+    },
+    "score": 0.0,
+    "resource": {
+      "primary": {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.02906"
+      }
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          7
+        ]
+      ]
+    },
+    "references-count": 16,
+    "journal-issue": {
+      "issue": "57",
+      "published-online": {
+        "date-parts": [
+          [
+            2021,
+            1
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.21105/joss.02906"
+    ],
+    "URL": "http://dx.doi.org/10.21105/joss.02906",
+    "relation": {
+      "references": [
+        {
+          "id-type": "doi",
+          "id": "\u201chttps://doi.org/10.5281/zenodo.4421955\u201d",
+          "asserted-by": "subject"
+        }
+      ],
+      "has-review": [
+        {
+          "id-type": "uri",
+          "id": "https://github.com/openjournals/joss-reviews/issues/2906",
+          "asserted-by": "subject"
+        }
+      ]
+    },
+    "ISSN": [
+      "2475-9066"
+    ],
+    "issn-type": [
+      {
+        "value": "2475-9066",
+        "type": "electronic"
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          1,
+          7
+        ]
+      ]
+    }
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2022,
+          4,
+          6
+        ]
+      ],
+      "date-time": "2022-04-06T13:54:25Z",
+      "timestamp": 1649253265695
+    },
+    "reference-count": 12,
+    "publisher": "The Open Journal",
+    "issue": "65",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              9
+            ]
+          ],
+          "date-time": "2021-09-09T00:00:00Z",
+          "timestamp": 1631145600000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              9
+            ]
+          ],
+          "date-time": "2021-09-09T00:00:00Z",
+          "timestamp": 1631145600000
+        },
+        "content-version": "am",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              9
+            ]
+          ],
+          "date-time": "2021-09-09T00:00:00Z",
+          "timestamp": 1631145600000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "JOSS"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          9
+        ]
+      ]
+    },
+    "DOI": "10.21105/joss.03464",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          9
+        ]
+      ],
+      "date-time": "2021-09-09T07:10:51Z",
+      "timestamp": 1631171451000
+    },
+    "page": "3464",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+      "epimargin: A Toolkit for Epidemiological Estimation, Prediction, and Policy Evaluation"
+    ],
+    "prefix": "10.21105",
+    "volume": "6",
+    "author": [
+      {
+        "ORCID": "http://orcid.org/0000-0001-8450-7025",
+        "authenticated-orcid": false,
+        "given": "Satej",
+        "family": "Soman",
+        "sequence": "first",
+        "affiliation": []
+      },
+      {
+        "given": "Caitlin",
+        "family": "Loftus",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "given": "Steven",
+        "family": "Buschbach",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "given": "Manasi",
+        "family": "Phadnis",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0001-6176-5160",
+        "authenticated-orcid": false,
+        "given": "Lu\u00eds",
+        "family": "Bettencourt",
+        "sequence": "additional",
+        "affiliation": []
+      }
+    ],
+    "member": "8722",
+    "reference": [
+      {
+        "key": "ref1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Array programming with NumPy, Harris, Charles R and Millman, K Jarrod and van der Walt, St\u00e9fan J and Gommers, Ralf and Virtanen, Pauli and Cournapeau, David and Wieser, Eric and Taylor, Julian and Berg, Sebastian and Smith, Nathaniel J and others, Nature, 585, 7825, 357\u2013362, 2020, Nature Publishing Group",
+        "DOI": "10.1038/s41586-020-2649-2"
+      },
+      {
+        "key": "ref2",
+        "unstructured": "SciPy 1.0: fundamental algorithms for scientific computing in Python, Virtanen, Pauli and Gommers, Ralf and Oliphant, Travis E and Haberland, Matt and Reddy, Tyler and Cournapeau, David and Burovski, Evgeni and Peterson, Pearu and Weckesser, Warren and Bright, Jonathan and others, Nature methods, 17, 3, 261\u2013272, 2020, Nature Publishing Group"
+      },
+      {
+        "key": "ref3",
+        "unstructured": "pandas: a foundational Python library for data analysis and statistics, McKinney, Wes and others, Python for High Performance and Scientific Computing, 14, 9, 1\u20139, 2011, Seattle"
+      },
+      {
+        "key": "ref4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1371/journal.pcbi.1008409"
+      },
+      {
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1101/2020.09.08.20190629"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2139/ssrn.3748704"
+      },
+      {
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3386/w27532"
+      },
+      {
+        "key": "ref8",
+        "unstructured": "South Asia Vaccinates, World Bank, South Asia Economic Focus: Spring 2021, 2021"
+      },
+      {
+        "key": "ref9",
+        "unstructured": "Vaccine Allocation Priorities Using Disease Surveillance and Economic Data, Malani, Anup and Soman, Satej and Ramachandran, Sabareesh and Chen, Alice and Lakdawalla, Darius and others, 2021, forthcoming"
+      },
+      {
+        "key": "ref10",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.21105/joss.03290"
+      },
+      {
+        "key": "ref11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1093/aje/kwt133"
+      },
+      {
+        "key": "ref12",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.12688/wellcomeopenres.16006.2"
+      }
+    ],
+    "container-title": [
+      "Journal of Open Source Software"
+    ],
+    "link": [
+      {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03464.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          9
+        ]
+      ],
+      "date-time": "2021-09-09T07:11:14Z",
+      "timestamp": 1631171474000
+    },
+    "score": 0.0,
+    "resource": {
+      "primary": {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03464"
+      }
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          9
+        ]
+      ]
+    },
+    "references-count": 12,
+    "journal-issue": {
+      "issue": "65",
+      "published-online": {
+        "date-parts": [
+          [
+            2021,
+            9
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.21105/joss.03464"
+    ],
+    "URL": "http://dx.doi.org/10.21105/joss.03464",
+    "relation": {
+      "references": [
+        {
+          "id-type": "doi",
+          "id": "\u201chttps://doi.org/10.5281/zenodo.5430698\u201d",
+          "asserted-by": "subject"
+        }
+      ],
+      "has-review": [
+        {
+          "id-type": "uri",
+          "id": "https://github.com/openjournals/joss-reviews/issues/3464",
+          "asserted-by": "subject"
+        }
+      ]
+    },
+    "ISSN": [
+      "2475-9066"
+    ],
+    "issn-type": [
+      {
+        "value": "2475-9066",
+        "type": "electronic"
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          9
+        ]
+      ]
+    }
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2022,
+          4,
+          1
+        ]
+      ],
+      "date-time": "2022-04-01T13:06:38Z",
+      "timestamp": 1648818398176
+    },
+    "reference-count": 10,
+    "publisher": "The Open Journal",
+    "issue": "66",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              14
+            ]
+          ],
+          "date-time": "2021-10-14T00:00:00Z",
+          "timestamp": 1634169600000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              14
+            ]
+          ],
+          "date-time": "2021-10-14T00:00:00Z",
+          "timestamp": 1634169600000
+        },
+        "content-version": "am",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              14
+            ]
+          ],
+          "date-time": "2021-10-14T00:00:00Z",
+          "timestamp": 1634169600000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "JOSS"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          14
+        ]
+      ]
+    },
+    "DOI": "10.21105/joss.03679",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          14
+        ]
+      ],
+      "date-time": "2021-10-14T18:56:55Z",
+      "timestamp": 1634237815000
+    },
+    "page": "3679",
+    "source": "Crossref",
+    "is-referenced-by-count": 0,
+    "title": [
+      "Devicely: A Python package for reading, timeshifting and writing sensor data"
+    ],
+    "prefix": "10.21105",
+    "volume": "6",
+    "author": [
+      {
+        "ORCID": "http://orcid.org/0000-0002-3669-4599",
+        "authenticated-orcid": false,
+        "given": "Ariane",
+        "family": "Sasso",
+        "sequence": "first",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0001-6268-9948",
+        "authenticated-orcid": false,
+        "given": "Jost",
+        "family": "Morgenstern",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0001-5365-0785",
+        "authenticated-orcid": false,
+        "given": "Felix",
+        "family": "Musmann",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0001-8380-7667",
+        "authenticated-orcid": false,
+        "given": "Bert",
+        "family": "Arnrich",
+        "sequence": "additional",
+        "affiliation": []
+      }
+    ],
+    "member": "8722",
+    "reference": [
+      {
+        "key": "ref1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/s18061714"
+      },
+      {
+        "key": "ref2",
+        "unstructured": "IDC, 2020, Shipments of Wearable Devices Leap to 125 Million Units, Up 35.1% in the Third Quarter, According to IDC, https://www.idc.com/getdoc.jsp?containerId=prUS47067820, 2021-03-15, 2020"
+      },
+      {
+        "key": "ref3",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/s41569-021-00522-7"
+      },
+      {
+        "key": "ref4",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/s41551-020-00640-6"
+      },
+      {
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.21105/joss.02106"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.21105/joss.01663"
+      },
+      {
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.21105/joss.01867"
+      },
+      {
+        "key": "ref8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.21105/joss.01778"
+      },
+      {
+        "key": "ref9",
+        "unstructured": "Maritsch, Martin and F\u00f6ll, Simon and Fleisch, Elgar and Kowatsch, Tobias and Wortmann, Felix and Spinola, Federica, Chair of Information Management at ETH Zurich and the Institute of Technology Management at University of St.\u00a0Gallen, FLIRT: Feature generation tooLkIt for weaRable daTa, https://github.com/im-ethz/flirt, 2020"
+      },
+      {
+        "key": "ref10",
+        "unstructured": "Bent, Brinnae, DBDP (Digital Biomarker Discovery Pipeline), wearablecompute is an open source Python package containing over 50 data and domain-driven features, https://github.com/brinnaebent/wearablecompute, 2020"
+      }
+    ],
+    "container-title": [
+      "Journal of Open Source Software"
+    ],
+    "link": [
+      {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03679.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          14
+        ]
+      ],
+      "date-time": "2021-10-14T18:58:19Z",
+      "timestamp": 1634237899000
+    },
+    "score": 0.0,
+    "resource": {
+      "primary": {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03679"
+      }
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          14
+        ]
+      ]
+    },
+    "references-count": 10,
+    "journal-issue": {
+      "issue": "66",
+      "published-online": {
+        "date-parts": [
+          [
+            2021,
+            10
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.21105/joss.03679"
+    ],
+    "URL": "http://dx.doi.org/10.21105/joss.03679",
+    "relation": {
+      "references": [
+        {
+          "id-type": "doi",
+          "id": "\u201chttps://doi.org/10.5281/zenodo.5243494\u201d",
+          "asserted-by": "subject"
+        }
+      ],
+      "has-review": [
+        {
+          "id-type": "uri",
+          "id": "https://github.com/openjournals/joss-reviews/issues/3679",
+          "asserted-by": "subject"
+        }
+      ]
+    },
+    "ISSN": [
+      "2475-9066"
+    ],
+    "issn-type": [
+      {
+        "value": "2475-9066",
+        "type": "electronic"
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          14
+        ]
+      ]
+    }
+  },
+  {
+    "indexed": {
+      "date-parts": [
+        [
+          2024,
+          8,
+          28
+        ]
+      ],
+      "date-time": "2024-08-28T05:46:49Z",
+      "timestamp": 1724824009846
+    },
+    "reference-count": 14,
+    "publisher": "The Open Journal",
+    "issue": "65",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              28
+            ]
+          ],
+          "date-time": "2021-09-28T00:00:00Z",
+          "timestamp": 1632787200000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              28
+            ]
+          ],
+          "date-time": "2021-09-28T00:00:00Z",
+          "timestamp": 1632787200000
+        },
+        "content-version": "am",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              9,
+              28
+            ]
+          ],
+          "date-time": "2021-09-28T00:00:00Z",
+          "timestamp": 1632787200000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "JOSS"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          28
+        ]
+      ]
+    },
+    "DOI": "10.21105/joss.03471",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          28
+        ]
+      ],
+      "date-time": "2021-09-28T12:09:04Z",
+      "timestamp": 1632830944000
+    },
+    "page": "3471",
+    "source": "Crossref",
+    "is-referenced-by-count": 7,
+    "title": [
+      "pointcloudset: Efficient Analysis of Large Datasets of Point Clouds Recorded Over Time"
+    ],
+    "prefix": "10.21105",
+    "volume": "6",
+    "author": [
+      {
+        "ORCID": "http://orcid.org/0000-0002-3925-6260",
+        "authenticated-orcid": false,
+        "given": "Thomas",
+        "family": "Goelles",
+        "sequence": "first",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0003-3290-5333",
+        "authenticated-orcid": false,
+        "given": "Birgit",
+        "family": "Schlager",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "ORCID": "http://orcid.org/0000-0003-1920-8437",
+        "authenticated-orcid": false,
+        "given": "Stefan",
+        "family": "Muckenhuber",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "given": "Sarah",
+        "family": "Haas",
+        "sequence": "additional",
+        "affiliation": []
+      },
+      {
+        "given": "Tobias",
+        "family": "Hammer",
+        "sequence": "additional",
+        "affiliation": []
+      }
+    ],
+    "member": "8722",
+    "reference": [
+      {
+        "key": "ref1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5281/zenodo.3509134"
+      },
+      {
+        "key": "ref2",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.25080/Majora-92bf1922-00a"
+      },
+      {
+        "key": "ref3",
+        "unstructured": "Zhou, Qian-Yi and Park, Jaesik and Koltun, Vladlen, Open3D: A Modern Library for 3D Data Processing, arXiv:1801.09847, 2018"
+      },
+      {
+        "key": "ref4",
+        "unstructured": "Plotly Technologies Inc., Collaborative data science, Plotly Technologies Inc., Montreal, QC, 2015, https://plot.ly"
+      },
+      {
+        "key": "ref5",
+        "unstructured": "Stanford Artificial Intelligence Laboratory et al., Robotic Operating System, https://www.ros.org, ROS Melodic Morenia, 2018-05-23"
+      },
+      {
+        "key": "ref6",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1364/OPN.29.1.000026"
+      },
+      {
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/MCE.2016.2556878"
+      },
+      {
+        "key": "ref8",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.23919/VLSIC.2019.8777993"
+      },
+      {
+        "key": "ref9",
+        "unstructured": "Dask: Library for dynamic task scheduling, Dask Development Team, 2016, https://dask.org"
+      },
+      {
+        "key": "ref10",
+        "unstructured": "pyntcloud, Pyntcloud Development Team, 2021, https://pyntcloud.readthedocs.io/en/latest/introduction.html"
+      },
+      {
+        "key": "ref11",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.25080/majora-7b98e3ed-013"
+      },
+      {
+        "key": "ref12",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5281/zenodo.2556738"
+      },
+      {
+        "key": "ref13",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/icra.2011.5980567"
+      },
+      {
+        "key": "ref14",
+        "unstructured": "Python-PCL Contributors, Python-PCL: Python bindings to the pointcloud library (pcl), https://github.com/strawlab/python-pcl, v0.2.0, 2017-12-07"
+      }
+    ],
+    "container-title": [
+      "Journal of Open Source Software"
+    ],
+    "link": [
+      {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03471.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          28
+        ]
+      ],
+      "date-time": "2021-09-28T12:09:11Z",
+      "timestamp": 1632830951000
+    },
+    "score": 0.0,
+    "resource": {
+      "primary": {
+        "URL": "https://joss.theoj.org/papers/10.21105/joss.03471"
+      }
+    },
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          28
+        ]
+      ]
+    },
+    "references-count": 14,
+    "journal-issue": {
+      "issue": "65",
+      "published-online": {
+        "date-parts": [
+          [
+            2021,
+            9
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.21105/joss.03471"
+    ],
+    "URL": "http://dx.doi.org/10.21105/joss.03471",
+    "relation": {
+      "references": [
+        {
+          "id-type": "doi",
+          "id": "\u201chttps://doi.org/10.5281/zenodo.5529805\u201d",
+          "asserted-by": "subject"
+        }
+      ],
+      "has-review": [
+        {
+          "id-type": "uri",
+          "id": "https://github.com/openjournals/joss-reviews/issues/3471",
+          "asserted-by": "subject"
+        }
+      ]
+    },
+    "ISSN": [
+      "2475-9066"
+    ],
+    "issn-type": [
+      {
+        "value": "2475-9066",
+        "type": "electronic"
+      }
+    ],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          9,
+          28
+        ]
+      ]
+    }
+  }
+]

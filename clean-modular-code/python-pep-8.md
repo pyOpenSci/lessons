@@ -12,20 +12,6 @@ kernelspec:
   name: python3
 ---
 
-```{raw-cell}
----
-authors: [Leah Wasser, Jenny Palomino]
-editable: true
-excerpt: Using a standard format and syntax when programming makes your code easier
-  to read. Learn more about PEP 8, a set of guidelines for writing clean code in Python.
-raw_mimetype: ''
-slideshow:
-  slide_type: ''
-title: Use PEP 8 To Write Easier-to-Read Code
----
-
-```
-
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 # Use PEP 8 To Write Easier-to-Read Code

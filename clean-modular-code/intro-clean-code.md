@@ -27,11 +27,21 @@ jupyter:
 
 Intro <self>
 Python Code Style <python-pep-8>
-Tests & Checks <pep8-package-imports>
+Package imports <pep8-package-imports>
 Don't Repeat Yourself <python-dry-modular-code>
 Functions <python-functions>
+Function checks <python-function-checks>
 Expressive Code <python-expressive-code>
-Tests & Checks <tests-checks>
+:::
+
+:::{toctree}
+:hidden:
+:caption: Checks & Tests
+:maxdepth: 2
+
+Multi-variable functions <checks-conditionals/python-functions-multiple-conditions>
+Conditional statements <checks-conditionals/python-conditionals>
+Tests & Checks <checks-conditionals/tests-checks>
 :::
 
 
@@ -41,8 +51,9 @@ Tests & Checks <tests-checks>
 :caption: Activities
 :maxdepth: 2
 
-Clean Code: Activity 1 <clean-code-part-1>
-Clean Code: Activity 2 <clean-code-part-2>
+Clean Code: Activity 1 <activity-1/clean-code-part-1>
+Clean Code: Activity 2 <activity-2/clean-code-part-2>
+Clean Code: Activity 3 <activity-3/clean-code-part-3>
 :::
 
 <!-- #endregion -->
