@@ -23,6 +23,14 @@ the Python open source tools that drive open science. We do this through:
 pyOpenSci is an independent organization, fiscally sponsored by Community
 Initiatives.
 
+## About this repo
+
+This repo contains a set of lessons being developed for pyOpenSci training
+events. as of early October 2024 it is a new repo being rapidly developed.
+
+Please expect the contents to change at any time!
+With that said all contributions are always welcome!
+
 ## Contributing statement
 
 ## How to setup
