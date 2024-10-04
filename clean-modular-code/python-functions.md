@@ -1,7 +1,6 @@
 ---
 title: "Introduction to Writing Functions in Python"
 excerpt: "A function is a reusable block of code that performs a specific task. Learn how to use functions to write DRY (Do Not Repeat Yourself) code in Python."
-authors: ['Leah Wasser','Jenny Palomino']
 jupyter:
   jupytext:
     formats: ipynb,md
@@ -16,46 +15,48 @@ jupyter:
     name: python3
 ---
 
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 # Write Efficient Modular Code Using Functions
 
-Three strategies for eliminating repetition and improving the efficiency of your code: 
+Three strategies for eliminating repetition and improving the efficiency of your code:
 
-1. loops, 
-2. conditional statements, and 
-3. functions. 
+1. loops,
+2. conditional statements, and
+3. functions.
 
 Here you will learn how writing functions in **Python** can help you to execute a specific task while also making your code more maintainable.
 
-A function is a reusable block of code that performs a specific task. Functions receive inputs to which code is applied and return outputs (or results) of the code. 
+A function is a reusable block of code that performs a specific task. Functions receive inputs to which code is applied and return outputs (or results) of the code.
 
 `input parameter –> function does something –> output results`
 
 For example:
+<!-- #endregion -->
 
-```python
+```python editable=true slideshow={"slide_type": ""}
 x = 5
 # The print statement is a function that provides output.
 print(x)
 ```
 
-<!-- #region -->
-Functions can help you to both eliminate repetition and improve efficiency in your code through modularity. 
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+Functions can help you to both eliminate repetition and improve efficiency in your code through modularity.
 
-Modularity means that code is separated into independent units that can be reused and even be combined to complete a longer chain of tasks. 
+Modularity means that code is separated into independent units that can be reused and even be combined to complete a longer chain of tasks.
 
-<figure>
- <a href="/images/clean-code/write-functions-for-all-things.png">
- <img src="{{ site.url }}/images/earth-analytics/clean-code/write-functions-for-all-things.png" alt="You can implement strategies such as loops and functions in your code to replace tasks that you are performing over and over. Source: Francois Michonneau."></a>
- <figcaption> You can implement strategies such as loops and functions in your code to replace tasks that you are performing over and over. Source: Francois Michonneau.
- </figcaption>
-</figure>
+:::{figure} /images/clean-code/functions-for-all-things.png
+:alt: You can implement strategies such as loops and functions in your code to replace tasks that you are performing over and over. Source: Francois Michonneau.
+:target: /images/clean-code/write-functions-for-all-things.png
 
+You can use loops and functions in your code to replace repeating tasks.  
+Source: Francois Michonneau.
+:::
 
 ## The Benefits of Functions
 
 * Modularity: Functions only need to be defined once in a workflow. Functions that you write for specific tasks can be used over and over, without needing to redefine the function again. A function that you write for one **Python** workflow can also be reused in other workflows especially if you make your code installable.
 
-* Fewer variables: When you run a function, the intermediate variables (i.e. placeholders) that it creates are not stored as explicit variables unless you specify otherwise. This saves memory and keeps your **Python** environment cleaner. 
+* Fewer variables: When you run a function, the intermediate variables (i.e. placeholders) that it creates are not stored as explicit variables unless you specify otherwise. This saves memory and keeps your **Python** environment cleaner.
 
 * Better documentation: Well-documented functions help other users understand the steps of your processing and helps your future self to understand previously written code.
 
@@ -63,14 +64,13 @@ Modularity means that code is separated into independent units that can be reuse
 
 * Tests & checks: Writing functions allows you you to your code to handle issues and edge cases in your code. It also can make it easier to write tests for your code.
 
-
 ### Write Modular Functions and Code
 
-A well-defined function only does one thing, but it does it well and often in various contexts. Often, the operations contained in a good function are generally useful for many tasks. 
+A well-defined function only does one thing, but it does it well and often in various contexts. Often, the operations contained in a good function are generally useful for many tasks.
 
 Take, for instance, the **numpy** function called `mean()`, which computes mean values from a **numpy** array.
 
-This function only does one thing (i.e. computes a mean); however, you may use the `np.mean()` function many times in your code on multiple **numpy** arrays because it has been defined to take any **numpy** array as an input. 
+This function only does one thing (i.e. computes a mean); however, you may use the `np.mean()` function many times in your code on multiple **numpy** arrays because it has been defined to take any **numpy** array as an input.
 
 For example:
 <!-- #endregion -->
@@ -83,19 +83,18 @@ arr = np.array([1, 2, 3])
 np.mean(arr)
 ```
 
-<!-- #region -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 The `np.mean()` function is modular, and it can be easily combined with other functions to accomplish a variety of tasks.
 
 When you write modular functions, you can reuse them for other workflows and projects. Some people even write their own **Python** packages for personal and professional use that contain custom functions for tasks that they have to complete regularly.
 
 ### Functions Create Fewer Variables
 
-When you code tasks line by line, you often create numerous intermediate variables that you do not need to use again. 
+When you code tasks line by line, you often create numerous intermediate variables that you do not need to use again.
 
-This is inefficient and can cause your code to be repetitive, if you are constantly creating variables that you will not use again. 
+This is inefficient and can cause your code to be repetitive, if you are constantly creating variables that you will not use again.
 
 Functions allow you to focus on the inputs and the outputs of your workflow, rather than the intermediate steps, such as creating extra variables that are not needed.
-
 
 ## Reasons Why Functions Improve Code Readability
 
@@ -104,16 +103,15 @@ Functions allow you to focus on the inputs and the outputs of your workflow, rat
 Ideally, your code is easy to understand and is well-documented with **Python** comments (and **Markdown** in **Jupyter Notebook**). However, what might seem clear to you now might not be clear 6 months from now, or even 3 weeks from now.
 
 Well-written functions help you document your workflow because:
+
 * They are well-documented by clearly outlining the inputs and outputs.
 * They use descriptive names that help you better understand the task that the function performs.
 
-
 ### Expressive Function Names Make Code Self-Describing
 
-When writing your own functions, you should name functions using verbs and/or clear labels to indicate what the function does (i.e. `in_to_mm` for converting inches to millimeters). 
+When writing your own functions, you should name functions using verbs and/or clear labels to indicate what the function does (i.e. `in_to_mm` for converting inches to millimeters).
 
 This makes your code more expressive (or self-describing), and in turn, makes it easier to read for you, your future self, and your colleagues.
-
 
 ### Modular Code is Easier to Maintain and Edit
 
@@ -121,23 +119,21 @@ If all your code is written line by line (with repeated code in multiple parts o
 
 Imagine having to fix one element of a line of code that is repeated many times. You will have to find and replace that code to implement the fix in EVERY INSTANCE it occurs in your code!
 
-You may also be duplicating your comments where you duplicate parts of your code. So how do you keep the duplicated comments in sync? 
+You may also be duplicating your comments where you duplicate parts of your code. So how do you keep the duplicated comments in sync?
 
 A comment that is misleading because the code changed is actually worse than no comment at all.
 
 Organizing your code using functions from the beginning allows you to explicitly document the tasks that your code performs, as all code and documentation for the function is contained in the function definition.
 
-
 ### You Can Incorporate Testing To Ensure Code Runs Properly
 
-While you will not learn about testing in this chapter, note that functions are also very useful for testing. 
+While you will not learn about testing in this chapter, note that functions are also very useful for testing.
 
 As your code gets longer and more complex, it is more prone to mistakes. For example, if your analysis relies on data that gets updated often, you may want to make sure that all the columns in your spreadsheet are present before performing an analysis. Or, that the new data are not formatted in a different way.
 
 Changes in data structure and format could cause your code to not run. Or, in the worse case scenario, your code may run but return the wrong values!
 
 If all your code is made up of functions (with built-in tests to ensure that they run as expected), then you can control the input to the function and test that the output returned is correct for that input. It is something that would be difficult to do if all of your code is written line by line with repeated steps.
-
 
 ## Summary of Writing Modular Code with Functions
 
