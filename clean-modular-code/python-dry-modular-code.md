@@ -39,7 +39,7 @@ After completing this lesson, you will be able to:
 * Explain how these strategies help you write DRY code.
 :::
 
-### Don't Repeat Yourself  (DRY)
+## Don't Repeat Yourself  (DRY)
 
 The DRY approach to programming refers to writing functions and automating repeated sections of code. If you perform the same task multiple times in your code, consider a function or a loop to make your workflow more
 efficient.

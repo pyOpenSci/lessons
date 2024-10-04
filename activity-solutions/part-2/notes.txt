@@ -1,0 +1,6 @@
+part 2 redundancies
+
+* each file is processed individually. Could create a list of files using `pathlib.Path.glob`
+* they might not know about `pd.apply`. I could potentially ask about that and then show them how .apply works to ensure that the entire room knows that. 
+
+
