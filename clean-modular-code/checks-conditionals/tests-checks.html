@@ -1,0 +1,1305 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Tests, Checks & Failing Gracefully" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/tests-checks.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="Adding tests and checks to your Python code, in the form of: try-except blocks, and, conditional statements,. helps you write code that can: Better handle errors and edge cases gracefully, and, Pro..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_checks-conditionals_tests-checks_2b3d2c90.png" />
+<meta property="og:image:alt" content="Adding tests and checks to your Python code, in the form of: try-except blocks, and, conditional statements,. helps you write code that can: Better handle er..." />
+<meta name="description" content="Adding tests and checks to your Python code, in the form of: try-except blocks, and, conditional statements,. helps you write code that can: Better handle errors and edge cases gracefully, and, Pro..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Tests, Checks &amp; Failing Gracefully &#8212; pyOpenSci Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/pyos-sphinx-theme.css?v=fb569b27" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Itim&family=Poppins:wght@400;700&family=Work+Sans:wght@400;700" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/checks-conditionals/tests-checks';</script>
+    <script src="../../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/tests-checks.html" />
+    <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Clean, Modular Code: Part 1" href="../activity-1/clean-code-part-1.html" />
+    <link rel="prev" title="Conditional statements in Python" href="python-conditionals.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+  </div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../intro-clean-code.html">
+                        Lessons
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/lessons" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../intro-clean-code.html">
+                        Lessons
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/lessons" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro-clean-code.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-pep-8.html">Python Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pep8-package-imports.html">Package imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-dry-modular-code.html">Don't Repeat Yourself</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-function-checks.html">Function checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-expressive-code.html">Expressive Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Checks &amp; Tests</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-functions-multiple-conditions.html">Multi-variable functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Conditional statements</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tests &amp; Checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activity-1/clean-code-part-1.html">Clean Code: Activity 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity-2/clean-code-part-2.html">Clean Code: Activity 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity-3/clean-code-part-3.html">Clean Code: Activity 3</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../intro-clean-code.html" class="nav-link">Write Clean, Modular, DRY Code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Tests,...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="tests-checks-failing-gracefully">
+<h1>Tests, Checks &amp; Failing Gracefully<a class="headerlink" href="#tests-checks-failing-gracefully" title="Link to this heading">#</a></h1>
+<p>Adding tests and checks to your Python code, in the form of:</p>
+<ul class="simple">
+<li><p>try-except blocks, and</p></li>
+<li><p>conditional statements,</p></li>
+</ul>
+<p>helps you write code that can:</p>
+<ul class="simple">
+<li><p>Better handle errors and edge cases gracefully, and</p></li>
+<li><p>Provide useful output about why things are going wrong for a user of your code.</p></li>
+</ul>
+<p>Tests and checks allow your code to either continue processing when it encounters an issue or fail in a controlled and graceful way. They can also provide useful error messages that help users debug the problem.</p>
+<p>Adding checks to your code is crucial for maintaining robust, reliable code.</p>
+<section id="what-you-will-learn-here">
+<h2>What you will learn here<a class="headerlink" href="#what-you-will-learn-here" title="Link to this heading">#</a></h2>
+<p>In this interactive lesson, you will learn how to create a workflow that:</p>
+<ol class="arabic simple">
+<li><p>Incorporates the clean code best practices you learned in the previous lessons, including following Pep 8 style standards, writing expressive code, and making your code DRY and modular.</p></li>
+<li><p>Adds tests and checks using Python <code class="docutils literal notranslate"><span class="pre">try/except</span></code> blocks to capture common errors in the code.</p></li>
+</ol>
+<p>By the end of this lesson, you will have a script that runs a workflow combined with a small module that contains functions that you can use to create a Python package.</p>
+<section id="types-of-checks">
+<h3>Types of checks<a class="headerlink" href="#types-of-checks" title="Link to this heading">#</a></h3>
+<p>You can add checks to your workflow that either:</p>
+<ol class="arabic simple">
+<li><p>continue processing the code even when it encounters a problem or</p></li>
+<li><p>fail gracefully in a way that you can see what went wrong</p></li>
+</ol>
+<p>Below you will develop a workflow that parses software and journal paper DOI (Digital Object Identifiers) in URL format and returns reference information for each published entity.</p>
+<p>Most of the DOIs on this page represent pyOpenSci packages that have also been reviewed by the <a class="reference external" href="https://joss.theoj.org/">Journal of Open Source Software</a>.</p>
+</section>
+</section>
+<section id="some-common-errors-that-you-will-see">
+<h2>Some common errors that you will see<a class="headerlink" href="#some-common-errors-that-you-will-see" title="Link to this heading">#</a></h2>
+<p>Python has dozens of specific errors that can be raised when code fails to run. Understanding what the error codes mean is helpful for both troubleshooting code and also adding checks to your code to address specific errors.</p>
+<p>Below are a few of the common errors that Python can raise.</p>
+<section id="typeerror">
+<h3>TypeError<a class="headerlink" href="#typeerror" title="Link to this heading">#</a></h3>
+<p>Occurs when an operation is applied to an object of an inappropriate type.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: Trying to add a number and a string</span>
+<span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;string&#39;</span>  <span class="c1"># This will raise a TypeError</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Example: Trying to add a number and a string</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;string&#39;</span>  <span class="c1"># This will raise a TypeError</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="valueerror">
+<h3>ValueError<a class="headerlink" href="#valueerror" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Raised when</strong> a function receives an argument of the right type but an invalid value.</p></li>
+<li><p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">int('abc')</span></code> (trying to convert an invalid string to an integer).</p></li>
+</ul>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span> 
+
+<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;abc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="keyerror">
+<h3>KeyError<a class="headerlink" href="#keyerror" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Raised when</strong> a dictionary key is not found.</p></li>
+<li><p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">my_dict['nonexistent_key']</span></code> (trying to access a key that doesn’t exist in the dictionary).</p></li>
+</ul>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: Accessing a nonexistent key in a dictionary</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;nonexistent_key&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Example: Accessing a nonexistent key in a dictionary</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;nonexistent_key&#39;</span><span class="p">]</span>
+
+<span class="ne">KeyError</span>: &#39;nonexistent_key&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="indexerror">
+<h3>IndexError:<a class="headerlink" href="#indexerror" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Raised when</strong> an invalid index is used to access a list or tuple.</p></li>
+<li><p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">my_list[10]</span></code> (trying to access the 11th element of a list with fewer elements).</p></li>
+</ul>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">my_list</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> 
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="attributeerror">
+<h3>AttributeError:<a class="headerlink" href="#attributeerror" title="Link to this heading">#</a></h3>
+<p>Raised when an object does not have a specific attribute or method.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="n">my_string</span><span class="o">.</span><span class="n">nonexistent_method</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">my_string</span><span class="o">.</span><span class="n">nonexistent_method</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;str&#39; object has no attribute &#39;nonexistent_method&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">habanero</span> <span class="kn">import</span> <span class="n">Crossref</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">habanero</span> <span class="kn">import</span> <span class="n">Crossref</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;habanero&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <strong>.csv file</strong> that you read in contains a list of doi urls.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the data</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;doi_urls.csv&quot;</span>
+<span class="n">doi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="n">doi_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this lesson, you will build a workflow around citable published software. You will use a pre-created dataset that contains cross-ref citations for open source software reviewed by the Journal of Open Source Software (JOSS).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>All the data used in this lesson can be accessed using Python using the Habanero package. However, you will be using a pre-processed dataset containing some “features” that you will have to work around to successfully process your data.</p>
+</div>
+</section>
+</section>
+<section id="about-doi-s">
+<h2>About DOI’s<a class="headerlink" href="#about-doi-s" title="Link to this heading">#</a></h2>
+<div class="admonition-what-is-a-doi admonition">
+<p class="admonition-title">What is a DOI?</p>
+<p>A DOI, or <a class="reference external" href="https://www.doi.org/">Digital Object Identifier</a>, is a unique identifier that references a paper. A DOI acts as a URL, resolving to a specific location—in this case, the location is associated with citation information for a scientific paper or Python package that has been accepted into a journal such as the <a class="reference external" href="https://joss.theoj.org/">Journal of Open Source Software (JOSS)</a>.</p>
+<p>In this lesson, you use cross-ref DOIs, which resolve to the cross-ref database. Cross-ref also lets you see what other publications have cited for that specific DOI.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doi_df</span><span class="p">[</span><span class="s2">&quot;doi_url&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-a-workflow-that-processes-a-list-of-doi-s">
+<h2>Create a workflow that processes a list of DOi’s<a class="headerlink" href="#create-a-workflow-that-processes-a-list-of-doi-s" title="Link to this heading">#</a></h2>
+<p>In this lesson, you will process a list of DOIs contained in a .csv file for pyOpenSci-accepted packages that both pyOpenSci and JOSS have also accepted through our software peer review partnership.</p>
+<section id="workflow-goals">
+<h3>Workflow goals<a class="headerlink" href="#workflow-goals" title="Link to this heading">#</a></h3>
+<p>Your goal is to process all of the URLs in the citation file and get both the author(s) and titles of the reference. You then want to return the following values:</p>
+<ol class="arabic simple">
+<li><p>the authors of the paper</p></li>
+<li><p>the paper title</p></li>
+<li><p>the number of references the paper has</p></li>
+</ol>
+<p>Like any URL, not all DOIs will resolve properly.</p>
+<p>You will use Pandas to read the .csv file with the DOI. You will then use the <a class="reference external" href="https://habanero.readthedocs.io/en/latest/">habanero</a> package to parse that cross-ref DOI and return metadata about the published item.</p>
+<p>Below you open the data for a single DOI. Notice that the citation data for that DOI is to Python and stored as a <code class="docutils literal notranslate"><span class="pre">Dictionary.</span></code></p>
+<p>There is a lot of information to process. Luckily, for your work today, you only need to process a few items in this dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cr</span> <span class="o">=</span> <span class="n">Crossref</span><span class="p">()</span>
+<span class="c1"># Grab a single doi</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">doi_df</span><span class="p">[</span><span class="s2">&quot;doi_url&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># View reference information for that DOI</span>
+<span class="n">ref_dict</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">works</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
+<span class="n">ref_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ref_dict</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ref_dict</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">author_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ref_dict</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;author&quot;</span><span class="p">])</span>
+<span class="n">author_count</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can access the specific reference information including journal title, year, author using the <code class="docutils literal notranslate"><span class="pre">[&quot;reference&quot;]</span></code> key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># View first reference for this citation</span>
+<span class="n">ref_dict</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;reference&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">citation_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ref_dict</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;reference&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The package has </span><span class="si">{</span><span class="n">citation_count</span><span class="si">}</span><span class="s2"> citations and </span><span class="si">{</span><span class="n">author_count</span><span class="si">}</span><span class="s2"> authors.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="process-all-doi-urls-in-the-csv-file">
+<h2>Process all DOI URLs in the .csv file<a class="headerlink" href="#process-all-doi-urls-in-the-csv-file" title="Link to this heading">#</a></h2>
+<p>Next, creat a workflow that processes each DOI in your dataframe of DOIs.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Without the function, your code would look like this:</span>
+<span class="n">cr</span> <span class="o">=</span> <span class="n">Crossref</span><span class="p">()</span>
+<span class="n">all_refs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">adoi</span> <span class="ow">in</span> <span class="n">doi_df</span><span class="p">[</span><span class="s2">&quot;doi_url&quot;</span><span class="p">]:</span>
+    <span class="c1">#print(adoi)</span>
+    <span class="n">ref_info</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">works</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="n">adoi</span><span class="p">)</span>
+    <span class="n">all_refs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">all_refs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ref_info</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;reference&quot;</span><span class="p">,</span> <span class="p">[])))</span>
+
+<span class="n">all_refs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Oops looks like you have a point of failure.</em></p>
+</section>
+<section id="some-issues">
+<h2>Some issues:<a class="headerlink" href="#some-issues" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Once you hit a point of failure, processing stops.</p></li>
+<li><p>You are not sure where it fails or why</p></li>
+</ol>
+</section>
+<section id="when-workflows-fail">
+<h2>When Workflows Fail<a class="headerlink" href="#when-workflows-fail" title="Link to this heading">#</a></h2>
+<p>Sometimes your code may fail in certain scenarios. Having checks in place in your code to catch these points of failure can be useful for many reasons:</p>
+<ol class="arabic simple">
+<li><p>If your workflow is big, it’s often time consuming to start over</p></li>
+<li><p>If your workflow is big, it can be challening to identify where the point of failure is and what is causing it.</p></li>
+</ol>
+<p>If you are using LLM’s to help you code, you may find that the LLM can’t correctly guess the types of errors that you may encounter with downloaded data such as the DOI reference data that you are working with here. However, it can help you create checks for issues that you find in the data if you wish to use it that way.</p>
+<p>Here, you receive a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> in your code that tells you that the
+The “reference” key for the DOI data can not be found for at least one of your DOIs.</p>
+<p>How can you troubleshoot this?</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Tips to troubleshoot your KeyError</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">There are a few different ways that you can troubleshoot this problem.</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">A simple way is to add a print statement to your loop to identify what URL it’s failing on. You can then look at the data and add a workaround.</p></li>
+<li><p class="sd-card-text">You can add a breakpoint in your code if you work in an IDE with a debugger. This breakpoint will allow you to identify where the error is occurring.</p></li>
+<li><p class="sd-card-text">You can add a try/except statement to print out the error but allow your code to keep running. You will learn more about try/except statements below.</p></li>
+<li><p class="sd-card-text">Add a conditional statement to your look that catches a url with a missing reference key and sets the reference count to <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+</ol>
+<ul class="simple">
+<li><p class="sd-card-text">debugger in JupyterLab</p></li>
+<li><p class="sd-card-text">debugger using vscode</p></li>
+</ul>
+<p class="sd-card-text">For this lesson, if you are not already familiar with a debugger, you can add a print statement or an iterator to determine what URL it’s failing on.</p>
+</div>
+</details></section>
+<section id="llm-s-and-error-messages">
+<h2>LLM’s and error messages<a class="headerlink" href="#llm-s-and-error-messages" title="Link to this heading">#</a></h2>
+<p>In some cases, particularly with Python, LLMs can be particularly useful for troubleshooting long error messages.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This returns a key error</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">doi_df</span><span class="p">[</span><span class="s2">&quot;doi_url&quot;</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">ref_dict</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">works</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
+<span class="c1"># View first reference in dics</span>
+<span class="n">ref_dict</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">][</span><span class="s2">&quot;reference&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="check-to-see-if-the-key-exists">
+<h2>Check To See if the Key Exists<a class="headerlink" href="#check-to-see-if-the-key-exists" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Does the reference exist in the data?</span>
+<span class="s2">&quot;reference&quot;</span> <span class="ow">in</span> <span class="n">ref_dict</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="write-a-function-that-checks-that-the-reference-exists-in-the-data">
+<h2>Write a Function that Checks that the Reference Exists in the Data<a class="headerlink" href="#write-a-function-that-checks-that-the-reference-exists-in-the-data" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will return True if the reference exists, false if not</span>
+<span class="k">def</span> <span class="nf">check_reference_data</span><span class="p">(</span><span class="n">doi</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks to see if a specific doi has a list of references associated with it</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    doi : string</span>
+<span class="sd">        DOI string for a reference</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        Boolean : True if exists, False if not</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">works</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="n">doi</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;reference&quot;</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code is easier to read with a function</span>
+<span class="n">cr</span> <span class="o">=</span> <span class="n">Crossref</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">adoi</span> <span class="ow">in</span> <span class="n">doi_df</span><span class="p">[</span><span class="s2">&quot;doi_url&quot;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">adoi</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">check_reference_data</span><span class="p">(</span><span class="n">adoi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Your workflow is failing. A
+404 error which means that the URL for the doi is bad.</p>
+<p><code class="docutils literal notranslate"><span class="pre">404</span> <span class="pre">Client</span> <span class="pre">Error:</span> <span class="pre">Not</span> <span class="pre">Found</span> <span class="pre">for</span> <span class="pre">url:</span> <span class="pre">https://api.crossref.org/works/https://doi.org/10.5066/P9MR4XN4</span></code></p>
+<p>To handle this error, you can consider implementing a try/except block:</p>
+<ul class="simple">
+<li><p>Try will attempt to run something and if it fails, it moves on to the except statement.</p></li>
+<li><p>Let’s add a try/except statement that returns None is the DOI url can’t be accessed</p></li>
+</ul>
+<p><a class="reference external" href="https://mq-software-carpentry.github.io/python-testing/03-exceptions/">A Good Carpentry Lesson on try/except</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is formatted as code</span>
+</pre></div>
+</div>
+<p>A try/except allows  you to try a function or some code
+If it doesn’t run properly, you can then tell it what  to return instead</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">works</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="s2">&quot;bad url here&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Great - it runs with a good doi url.&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="c1"># If the function fails to get a return for the DOI, return None</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oops, it didn&#39;t work out as planned, did it?&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here your code runs as planned</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">works</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="n">doi_df</span><span class="p">[</span><span class="s2">&quot;doi_url&quot;</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Great - it runs with a good doi url.&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="c1"># If the function fails to get a return for the DOI, return None</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oops, it didn&#39;t work out as planned, did it?&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Add your try/except block to your function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add try/except to your function</span>
+<span class="k">def</span> <span class="nf">check_reference_data_err</span><span class="p">(</span><span class="n">doi</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Checks to see if a specific doi has a list of</span>
+<span class="sd">    references associated with it</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">works</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="n">doi</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="c1"># If the function fails to get a return for the DOI, return None</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1"># Otherwise return true or false</span>
+    <span class="k">return</span> <span class="s2">&quot;reference&quot;</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This check in your code allows the code to
+continue to run even when it encounters an error!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">adoi</span> <span class="ow">in</span> <span class="n">doi_df</span><span class="p">[</span><span class="s2">&quot;doi_url&quot;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">check_reference_data_err</span><span class="p">(</span><span class="n">adoi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>italicized text</em>## Problem: Your Workflow Fails Quietly</p>
+<p>What if you wanted to catch and print out the error so that you can
+better troubleshoot? For instance, what doi is it failing on?</p>
+<p>Notice that below you “catch” the error thrown and print it. What this means
+is that you can keep running your code, and the error will be printed bu
+it will NOT halt processing.</p>
+</section>
+<section id="two-options">
+<h2>Two options<a class="headerlink" href="#two-options" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Catch the exception as a generic exception and print out the return.</p></li>
+<li><p>Catch the specific exception (this is more advanced - don’t worry about it for now)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add an exception that captures the error</span>
+<span class="k">def</span> <span class="nf">check_reference_data_try_err</span><span class="p">(</span><span class="n">doi</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks to see if a specific doi  has a list of references associated with it&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">works</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="n">doi</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+        <span class="c1"># Print the error message</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+        <span class="c1"># If the function fails to get a return for the Doi, return None</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="s2">&quot;reference&quot;</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">adoi</span> <span class="ow">in</span> <span class="n">doi_df</span><span class="p">[</span><span class="s2">&quot;doi_url&quot;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">check_reference_data_try_err</span><span class="p">(</span><span class="n">adoi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, your function returns a 404 error.
+But what if the URL was actually NOT a url at all?
+Is your code robust enough to tell you that?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This returns a 404 but there is no URL in the string &quot;Cookies&quot;</span>
+<span class="n">check_reference_data_try_err</span><span class="p">(</span><span class="s2">&quot;Cookies&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mess up one of the url&#39;s in your pdf</span>
+<span class="n">doi_df</span><span class="p">[</span><span class="s2">&quot;doi_url&quot;</span><span class="p">][</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;cookies!&quot;</span>
+<span class="n">doi_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="test-that-the-url-begins-with-http">
+<h2>Test that the URL Begins with “http”<a class="headerlink" href="#test-that-the-url-begins-with-http" title="Link to this heading">#</a></h2>
+<p>Above you are assuming that the user has provided your function with a URL
+however, you could also begin your function with a test to ensure that
+the doi provided is in fact a URL.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doi</span><span class="o">=</span><span class="s2">&quot;cake&quot;</span>
+<span class="k">if</span> <span class="n">doi</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Great - this is a proper url&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, human. I don&#39;t see a proper url here.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here you provide a URL:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doi</span><span class="o">=</span><span class="s2">&quot;https://www.pyopensci.org&quot;</span>
+<span class="k">if</span> <span class="n">doi</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Great - this is a proper url&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sorry, human. I don&#39;t see a proper url here.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Add this check to your function. Below the function will now
+return a different value if the URL is bad.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add an exception that captures the error</span>
+<span class="k">def</span> <span class="nf">check_reference_data_try_err</span><span class="p">(</span><span class="n">doi</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Checks to see if a specific doi  has a list of references associated with it&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">doi</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">works</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="n">doi</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+            <span class="c1"># If the function fails to get a return for the Doi, return None</span>
+            <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Missing Valid URL - &quot;</span> <span class="o">+</span> <span class="n">doi</span>
+    <span class="k">return</span> <span class="s2">&quot;reference&quot;</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s try out the final function</span>
+<span class="k">for</span> <span class="n">adoi</span> <span class="ow">in</span> <span class="n">doi_df</span><span class="p">[</span><span class="s2">&quot;doi_url&quot;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">check_reference_data_try_err</span><span class="p">(</span><span class="n">adoi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="on-your-own-challenge">
+<h2>On Your Own Challenge<a class="headerlink" href="#on-your-own-challenge" title="Link to this heading">#</a></h2>
+<p>Run the code cell below.
+Answer the following questions:</p>
+<ol class="arabic simple">
+<li><p>What happens when you run the cell below?</p></li>
+<li><p>What could you do to address the issue below?</p></li>
+</ol>
+<p>If you have time, try out some solutions in this notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_reference_data_try_err</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize Crossref API client</span>
+<span class="n">cr</span> <span class="o">=</span> <span class="n">Crossref</span><span class="p">()</span>
+
+<span class="c1"># Define the ISSN of JOSS</span>
+<span class="n">joss_issn</span> <span class="o">=</span> <span class="s2">&quot;2475-9066&quot;</span>
+
+<span class="c1"># Fetch DOIs of articles published in JOSS</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">works</span><span class="p">(</span><span class="nb">filter</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;issn&quot;</span><span class="p">:</span> <span class="n">joss_issn</span><span class="p">},</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span> 
+<span class="c1">#results</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>https://github.com/lwasser/usgs-citations</p>
+<p>The problem here with LLM’s is that they will often provide answers that are only partially correct. The code below was provided on 12 Sept 2024 by ChatGPT 4o.</p>
+<p>There are parts of it that are good - for instance, it</p>
+<ol class="arabic simple">
+<li><p>DRY:</p></li>
+<li><p>create a function to gather data for a single doi</p></li>
+<li><p>Uses a loop to iterate over the list of URLs</p></li>
+<li><p>Tests &amp; Checks: provides a nice try/except statement within the get_</p></li>
+</ol>
+<p>It also</p>
+<ul class="simple">
+<li><p>doesn’t run</p></li>
+<li><p>suggests that you visbalize the data using a internal chatgpt tool.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is what chatgpt provides - 12 Sept 2024</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">habanero</span> <span class="kn">import</span> <span class="n">Crossref</span>
+
+<span class="c1"># Initialize the Crossref client</span>
+<span class="n">cr</span> <span class="o">=</span> <span class="n">Crossref</span><span class="p">()</span>
+
+<span class="c1"># Function to fetch paper details using habanero</span>
+<span class="k">def</span> <span class="nf">get_paper_details</span><span class="p">(</span><span class="n">doi</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Query CrossRef for the DOI</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cr</span><span class="o">.</span><span class="n">works</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="n">doi</span><span class="p">)</span>
+        
+        <span class="c1"># Extract the required information</span>
+        <span class="n">authors</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">author</span><span class="p">[</span><span class="s1">&#39;given&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">author</span><span class="p">[</span><span class="s1">&#39;family&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">author</span> <span class="ow">in</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;author&#39;</span><span class="p">]]</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">references</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;reference-count&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>  <span class="c1"># Some papers may not have this info</span>
+        
+        <span class="k">return</span> <span class="n">authors</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">references</span>
+    
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error fetching data for DOI </span><span class="si">{</span><span class="n">doi</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+<span class="c1"># Load the CSV file</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;doi_urls.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Initialize a list to store the results</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Process each DOI</span>
+<span class="k">for</span> <span class="n">doi</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;DOI&#39;</span><span class="p">]:</span>
+    <span class="n">authors</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">references</span> <span class="o">=</span> <span class="n">get_paper_details</span><span class="p">(</span><span class="n">doi</span><span class="p">)</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">&#39;DOI&#39;</span><span class="p">:</span> <span class="n">doi</span><span class="p">,</span>
+        <span class="s1">&#39;Title&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+        <span class="s1">&#39;Authors&#39;</span><span class="p">:</span> <span class="n">authors</span><span class="p">,</span>
+        <span class="s1">&#39;Reference Count&#39;</span><span class="p">:</span> <span class="n">references</span>
+    <span class="p">})</span>
+
+<span class="c1"># Create a new DataFrame from the results</span>
+<span class="n">results_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="c1"># Display the results - this is using a internal openai tool :) </span>
+<span class="kn">import</span> <span class="nn">ace_tools</span> <span class="k">as</span> <span class="nn">tools</span><span class="p">;</span> <span class="n">tools</span><span class="o">.</span><span class="n">display_dataframe_to_user</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Paper Details&quot;</span><span class="p">,</span> <span class="n">dataframe</span><span class="o">=</span><span class="n">results_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="python-conditionals.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Conditional statements in Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activity-1/clean-code-part-1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Clean, Modular Code: Part 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn-here">What you will learn here</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-checks">Types of checks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-common-errors-that-you-will-see">Some common errors that you will see</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror">TypeError</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">ValueError</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyerror">KeyError</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">IndexError:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributeerror">AttributeError:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-doi-s">About DOI’s</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-workflow-that-processes-a-list-of-doi-s">Create a workflow that processes a list of DOi’s</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-goals">Workflow goals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-all-doi-urls-in-the-csv-file">Process all DOI URLs in the .csv file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-issues">Some issues:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-workflows-fail">When Workflows Fail</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#llm-s-and-error-messages">LLM’s and error messages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-to-see-if-the-key-exists">Check To See if the Key Exists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-a-function-that-checks-that-the-reference-exists-in-the-data">Write a Function that Checks that the Reference Exists in the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#two-options">Two options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-that-the-url-begins-with-http">Test that the URL Begins with “http”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-your-own-challenge">On Your Own Challenge</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/checks-conditionals/tests-checks.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/clean-modular-code/checks-conditionals/tests-checks.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+    pyOpensci is dedicated to creating a welcoming, supportive and diverse
+    community around the open source Python tools that drive open science. Our
+    <a
+      href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+      target="_blank"
+      >Code of Conduct</a
+    >
+    defines expected behavior and guidelines that help create such a community.
+  </p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

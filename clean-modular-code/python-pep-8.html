@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Use PEP 8 To Write Easier-to-Read Code" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/python-pep-8.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="What is Python PEP 8 code style?: Code syntax standards refer to rules associated with how code is formatted. These rules can including things like: How to space code elements in a script,, How to ..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_python-pep-8_6d4d1978.png" />
+<meta property="og:image:alt" content="What is Python PEP 8 code style?: Code syntax standards refer to rules associated with how code is formatted. These rules can including things like: How to s..." />
+<meta name="description" content="What is Python PEP 8 code style?: Code syntax standards refer to rules associated with how code is formatted. These rules can including things like: How to space code elements in a script,, How to ..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Use PEP 8 To Write Easier-to-Read Code &#8212; pyOpenSci Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pyos-sphinx-theme.css?v=fb569b27" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Itim&family=Poppins:wght@400;700&family=Work+Sans:wght@400;700" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/python-pep-8';</script>
+    <script src="../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/python-pep-8.html" />
+    <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Best Practices for Importing Python Packages In Scientific Code" href="pep8-package-imports.html" />
+    <link rel="prev" title="Write Clean, Modular, DRY Code" href="intro-clean-code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+  </div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro-clean-code.html">
+                        Lessons
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/lessons" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="intro-clean-code.html">
+                        Lessons
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/lessons" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro-clean-code.html">Intro</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pep8-package-imports.html">Package imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-dry-modular-code.html">Don't Repeat Yourself</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-function-checks.html">Function checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-expressive-code.html">Expressive Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Checks &amp; Tests</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="checks-conditionals/python-functions-multiple-conditions.html">Multi-variable functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checks-conditionals/python-conditionals.html">Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checks-conditionals/tests-checks.html">Tests &amp; Checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="activity-1/clean-code-part-1.html">Clean Code: Activity 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-2/clean-code-part-2.html">Clean Code: Activity 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-3/clean-code-part-3.html">Clean Code: Activity 3</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="intro-clean-code.html" class="nav-link">Write Clean, Modular, DRY Code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Use PEP 8...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="use-pep-8-to-write-easier-to-read-code">
+<h1>Use PEP 8 To Write Easier-to-Read Code<a class="headerlink" href="#use-pep-8-to-write-easier-to-read-code" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Learning Objectives</p>
+<ul class="simple">
+<li><p>Describe the benefits of using code standards.</p></li>
+<li><p>Explain the PEP 8 style guide and how it helps promote code readability.</p></li>
+<li><p>Describe key components of the PEP 8 style guide, including naming conventions and white space.</p></li>
+<li><p>List tools to help you apply the PEP 8 style guide to your code.</p></li>
+</ul>
+</div>
+<section id="what-is-python-pep-8-code-style">
+<h2>What is Python PEP 8 code style?<a class="headerlink" href="#what-is-python-pep-8-code-style" title="Link to this heading">#</a></h2>
+<p>Code syntax standards refer to rules associated with how code is formatted. These rules can including things like:</p>
+<ul class="simple">
+<li><p>How to space code elements in a script,</p></li>
+<li><p>How to format and create comments, and</p></li>
+<li><p>Naming conventions for variables, functions and classes</p></li>
+</ul>
+</section>
+<section id="why-use-code-standards-when-writing-python-code">
+<h2>Why Use Code Standards When Writing Python Code<a class="headerlink" href="#why-use-code-standards-when-writing-python-code" title="Link to this heading">#</a></h2>
+<p>Code standards help make your code more readable. Consider this page that you are reading right now. Some conventions are followed that most of us are familiar with (but may not even think about). These conventions include:</p>
+<ul class="simple">
+<li><p>Capitalize the first letter of a sentence.</p></li>
+<li><p>Capitalize the first letter of someone’s name.</p></li>
+<li><p>Add a space after the end of a sentence.</p></li>
+<li><p>Add a space after each word.</p></li>
+</ul>
+<p>These conventions lead to text that you can read easily, like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">sentence.</span> <span class="pre">And</span> <span class="pre">another</span> <span class="pre">sentence</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">Name</span> <span class="pre">and</span> <span class="pre">a</span> <span class="pre">location</span> <span class="pre">like</span> <span class="pre">Florida,</span> <span class="pre">USA.</span></code></p>
+<p>Now imagine reading a book that has no spacing, no capitalization and didn’t follow the regular English language writing conventions that you know. This book would become increasingly hard to read. For example have a look at the example below:</p>
+<p><code class="docutils literal notranslate"><span class="pre">this</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">sentence.and</span> <span class="pre">another</span> <span class="pre">sentence</span> <span class="pre">with</span> <span class="pre">a</span> <span class="pre">name.this</span> <span class="pre">text</span> <span class="pre">could</span> <span class="pre">go</span> <span class="pre">on</span> <span class="pre">forever.</span> <span class="pre">whatwouldhappenifweneverusedspaces?</span></code></p>
+<p>Code standards, just like any other language standard, are designed to make code easier to understand.</p>
+<p>Below, you will learn about the PEP 8 standard for the <strong>Python</strong> scientific programming language. This is the standard used by many <strong>Python</strong> users.</p>
+</section>
+<section id="about-the-pep-8-standard-for-python">
+<h2>About the PEP 8 Standard for Python<a class="headerlink" href="#about-the-pep-8-standard-for-python" title="Link to this heading">#</a></h2>
+<p>PEP 8 is the style guide that is widely used in the <strong>Python</strong> community. This guide includes rules about naming objects, spacing rules and even how the code is laid out.</p>
+<p><strong>Python</strong> is developed and maintained by an open source community, and thus, it is not really possible to enforce the standard in mandatory way. Rather, community members choose to adhere to PEP 8 recommendations whenever possible, so that they can contribute code that can easily be read and used by the greater community of users.</p>
+<p>PEP 8 covers many aspects of code readability including:</p>
+<ul class="simple">
+<li><p>naming conventions</p></li>
+<li><p>use of comments</p></li>
+<li><p>line lengths</p></li>
+<li><p>use of white space</p></li>
+</ul>
+</section>
+<section id="pep-8-naming-conventions">
+<h2>PEP 8 Naming Conventions<a class="headerlink" href="#pep-8-naming-conventions" title="Link to this heading">#</a></h2>
+<p>The text in this section is summarized from the <a href="https://www.python.org/dev/peps/pep-0008/#naming-conventions" target="_blank">PEP 8 Style Guide published by the Python Software Foundation</a>.</p>
+<section id="naming-convention-terminology-review">
+<h3>Naming Convention Terminology Review<a class="headerlink" href="#naming-convention-terminology-review" title="Link to this heading">#</a></h3>
+<p>First, let’s review some terminology associated with naming conventions.</p>
+<ul class="simple">
+<li><p><strong>Lowercase letter:</strong> <code class="docutils literal notranslate"><span class="pre">b</span></code></p></li>
+<li><p><strong>Uppercase letter:</strong> <code class="docutils literal notranslate"><span class="pre">B</span></code></p></li>
+<li><p><strong>lowercase:</strong> <code class="docutils literal notranslate"><span class="pre">this</span> <span class="pre">is</span> <span class="pre">all</span> <span class="pre">lowercase</span> <span class="pre">words</span></code></p></li>
+<li><p><strong>snake case:</strong> when words are separated by underscores: <code class="docutils literal notranslate"><span class="pre">lower_case_with_underscores</span></code></p></li>
+<li><p><strong>Uppercase:</strong> All words are all uppercase letters: <code class="docutils literal notranslate"><span class="pre">UPPERCASE</span></code></p></li>
+<li><p><strong>Snake case</strong> upper case: <code class="docutils literal notranslate"><span class="pre">UPPER_CASE_WITH_UNDERSCORES</span></code></p></li>
+<li><p><strong>CamelCase:</strong> Every word is capitalized so they visually stand out: <code class="docutils literal notranslate"><span class="pre">CapitalizedWords</span></code>. This is sometimes also referred to as CapWords or StudlyCaps.</p>
+<ul>
+<li><p>Note: When using acronyms in CamelCase, capitalize all the letters of the acronym. Thus HTTPServerError is better than HttpServerError.</p></li>
+</ul>
+</li>
+<li><p><strong>mixedCase:</strong> (differs from CapitalizedWords by initial lowercase character!)</p></li>
+<li><p><strong>Capitalized_Words_With_Underscores:</strong> This approach is not recommended. Use one convention and stick with it.</p></li>
+</ul>
+</section>
+<section id="name-variables-using-snake-case-and-all-lower-case">
+<h3>Name Variables Using snake_case And All Lower Case<a class="headerlink" href="#name-variables-using-snake-case-and-all-lower-case" title="Link to this heading">#</a></h3>
+<p>In general, it is recommended that you keep naming conventions standard in your code. We suggest a convention that uses <strong>snake_case</strong> and all lowercase letters in your code for variable and function names.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">variable_one</span>
+<span class="n">variable_two</span>
+</pre></div>
+</div>
+</section>
+<section id="name-classes-using-camelcase-or-capscase">
+<h3>Name Classes Using CamelCase or CapsCase<a class="headerlink" href="#name-classes-using-camelcase-or-capscase" title="Link to this heading">#</a></h3>
+<p>While regular variables and functions should use snake_case, PEP 8
+suggests that you use <code class="docutils literal notranslate"><span class="pre">CamelCase</span></code> for class definitions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">PlotBasicObject</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</pre></div>
+</div>
+</section>
+<section id="avoid-using-single-character-letters-that-could-be-confused-with-numbers">
+<h3>Avoid Using Single Character Letters That Could Be Confused with Numbers<a class="headerlink" href="#avoid-using-single-character-letters-that-could-be-confused-with-numbers" title="Link to this heading">#</a></h3>
+<p>Avoid using the characters:</p>
+<ul class="simple">
+<li><p>‘l’ (lowercase letter el),</p></li>
+<li><p>‘O’ (uppercase letter oh), or</p></li>
+<li><p>‘I’ (uppercase letter eye)</p></li>
+</ul>
+<p>as single character variable names.</p>
+<p>These characters can be difficult to distinguish from numbers when
+using certain font families.</p>
+<p>For example, the letter <code class="docutils literal notranslate"><span class="pre">l</span></code> can sometimes look a lot like the number <code class="docutils literal notranslate"><span class="pre">1</span></code>. If you need to use the letter <code class="docutils literal notranslate"><span class="pre">l</span></code> as a variable (this is not suggested!), considering user an uppercase letter instead.</p>
+</section>
+</section>
+<section id="python-pep-8-documentation-standards-for-comments">
+<h2>Python PEP 8 Documentation Standards for Comments<a class="headerlink" href="#python-pep-8-documentation-standards-for-comments" title="Link to this heading">#</a></h2>
+<p>Documentation is an important part of writing great code. Below are some
+of the important PEP 8 conventions associated with documentation.</p>
+<section id="python-comments-should-have-a-space-after-the-sign-with-the-first-word-capitalized">
+<h3>1. Python Comments Should Have a Space After the <code class="docutils literal notranslate"><span class="pre">#</span></code> Sign with the First Word Capitalized<a class="headerlink" href="#python-comments-should-have-a-space-after-the-sign-with-the-first-word-capitalized" title="Link to this heading">#</a></h3>
+<p>Following <a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">the PEP8 style guide</a>, single line comments should
+start with the <code class="docutils literal notranslate"><span class="pre">#</span></code> sign followed by a space. The first word of the comment should be capitalized. Like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">PEP</span> <span class="pre">8</span> <span class="pre">conforming</span> <span class="pre">comment</span></code></p>
+<p>The comment below does NOT conform to PEP8 standards</p>
+<p><code class="docutils literal notranslate"><span class="pre">#this</span> <span class="pre">comment</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">conform</span> <span class="pre">to</span> <span class="pre">PEP</span> <span class="pre">8</span> <span class="pre">standards</span></code></p>
+</section>
+<section id="multi-line-comments-used-in-functions-docstrings-should-have-a-short-single-line-description-followed-by-more-text">
+<h3>2. Multi-line comments Used in Functions (docstrings) Should Have a Short Single Line Description Followed By More Text<a class="headerlink" href="#multi-line-comments-used-in-functions-docstrings-should-have-a-short-single-line-description-followed-by-more-text" title="Link to this heading">#</a></h3>
+<p>Multi-line comments are most commonly used when creating docstrings. A docstring is the text that follows a function definition. This text helps you or someone using a function understand what the function does.</p>
+<p>Following <a href="https://www.python.org/dev/peps/pep-0008/#documentation-strings" target="_blank">the PEP8 style guide</a>, you create a function docstring using three quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>. The first line or text following the quotes should be a short, concise description of what the function does.</p>
+<p>Below that, you can add as much text as you’d like that provides more detail about what the function does.</p>
+<p>example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_sum</span><span class="p">(</span><span class="n">rainfall</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">):</span>
+
+<span class="sd">&quot;&quot;&quot;Returns a single sum value of all precipitation. </span>
+
+<span class="sd">This function takes a Pandas DataFrame with time series as the index, </span>
+<span class="sd">and calculates the total sum, aggregated by month. </span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># Code here </span>
+
+<span class="k">return</span> <span class="n">the_total_sum</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="line-length">
+<h2>Line Length<a class="headerlink" href="#line-length" title="Link to this heading">#</a></h2>
+<p>PEP 8 guidelines suggest that each line of code (as well as comment lines) should be 79 characters wide or less. This is a common standard used in other languages, including <strong>R</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Most text editors allow you to set up guides to see how long your code is. You can then use these guides to create line breaks in your code.</p>
+</div>
+</section>
+<section id="python-pep-8-rules-for-white-space">
+<h2>Python PEP 8 Rules for White Space<a class="headerlink" href="#python-pep-8-rules-for-white-space" title="Link to this heading">#</a></h2>
+<p>Some of the white space rules have already been discussed above. These including adding a single space after a comment <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Comment</span> <span class="pre">here</span></code>.</p>
+<p>There are also rules associated with spacing throughout your code. These include:</p>
+<ul class="simple">
+<li><p><strong>Add blank line before a single line comment (unless it is the first line of a cell in Jupyter Notebook)</strong> Blank lines help to visually break up code. Consider reading this page, if all of the text was mashed together in one long paragraph, it would be more difficult to read. However, when you break the text up into related paragraphs, it becomes a lot easier to read.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># Perform some math</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="mi">2</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="o">+</span><span class="mi">4</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> 
+
+<span class="c1"># Read in and plot some </span>
+<span class="n">precip_timeseries</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">readcsv</span><span class="p">(</span><span class="s2">&quot;precip-2019.csv&quot;</span><span class="p">)</span>
+<span class="n">precip_timeseries</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The code below is more difficult to read as the spacing does not break up the text.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform some math and do some things </span>
+<span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span>
+<span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span> 
+<span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">readcsv</span><span class="p">(</span><span class="s2">&quot;precip-2019.csv&quot;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Break up sections of code with white space:</strong> As you are writing code, it’s always good to consider readability and to break up sections of code accordingly. Breaking up your
+code becomes even more important when you start working in Jupyter Notebooks which offer individual cells where you can add Markdown and code.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Process some data here </span>
+<span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">readcsv</span><span class="p">(</span><span class="s2">&quot;precip-2019.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot data - notice how separating code into sections makes it easier to read</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="summary-pep-8-and-python">
+<h2>Summary – PEP 8 and Python<a class="headerlink" href="#summary-pep-8-and-python" title="Link to this heading">#</a></h2>
+<p>The text above provides a broad overview of some of the PEP 8 guidelines and conventions for writing <strong>Python</strong> code. It is not fully inclusive all of all the standards which are included in the full, online PEP 8 documentation.</p>
+</section>
+<section id="tools-for-applying-pep-8-formatting-to-your-code">
+<h2>Tools For Applying PEP 8 Formatting To Your Code<a class="headerlink" href="#tools-for-applying-pep-8-formatting-to-your-code" title="Link to this heading">#</a></h2>
+<p>There are many different tools that can help you write code that is PEP 8 compliant. A tool that checks the format of your code is called a linter.</p>
+<p>Some linters will reformat your code for you to match the standards. These include tools like Black. Or the autopep8 tool for Jupyter Notebook.</p>
+<p>Other linters will simply check your code and tell you if things need to be fixed. A few <strong>Python</strong> packages that perform linting are listed below.</p>
+<ul class="simple">
+<li><p><a href="https://pep8.readthedocs.io/en/release-1.7.x/" target="_blank">pep8</a>, a <code class="docutils literal notranslate"><span class="pre">Python</span></code> package that can help you check your code for adherence to the PEP 8 style guide.</p></li>
+<li><p><a href="https://github.com/hhatto/autopep8" target="_blank">autopep8</a>, another <code class="docutils literal notranslate"><span class="pre">Python</span></code> package that can be used to modify files to the PEP 8 style guide.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> community members expect that your code will adhere to the PEP 8 standard, and if it does not, they generally will not be shy to tell you that your code is not “Pythonic”!</p>
+</section>
+<section id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">The PEP 8 Style Guide</a></p></li>
+<li><p><a href="https://realpython.com/python-pep8/" target="_blank">How To Write Beautiful Python Code with PEP 8</a></p></li>
+<li><p><a href="https://www.safaribooksonline.com/library/view/the-hitchhikers-guide/9781491933213/ch04.html" target="_blank">The Hitchhiker’s Guide to Python by Tanya Schlusser and Kenneth Reitz</a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro-clean-code.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Write Clean, Modular, DRY Code</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pep8-package-imports.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Best Practices for Importing Python Packages In Scientific Code</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-python-pep-8-code-style">What is Python PEP 8 code style?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-code-standards-when-writing-python-code">Why Use Code Standards When Writing Python Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-pep-8-standard-for-python">About the PEP 8 Standard for Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pep-8-naming-conventions">PEP 8 Naming Conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-convention-terminology-review">Naming Convention Terminology Review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#name-variables-using-snake-case-and-all-lower-case">Name Variables Using snake_case And All Lower Case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#name-classes-using-camelcase-or-capscase">Name Classes Using CamelCase or CapsCase</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avoid-using-single-character-letters-that-could-be-confused-with-numbers">Avoid Using Single Character Letters That Could Be Confused with Numbers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-pep-8-documentation-standards-for-comments">Python PEP 8 Documentation Standards for Comments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-comments-should-have-a-space-after-the-sign-with-the-first-word-capitalized">1. Python Comments Should Have a Space After the <code class="docutils literal notranslate"><span class="pre">#</span></code> Sign with the First Word Capitalized</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-line-comments-used-in-functions-docstrings-should-have-a-short-single-line-description-followed-by-more-text">2. Multi-line comments Used in Functions (docstrings) Should Have a Short Single Line Description Followed By More Text</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-length">Line Length</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-pep-8-rules-for-white-space">Python PEP 8 Rules for White Space</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-pep-8-and-python">Summary – PEP 8 and Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-for-applying-pep-8-formatting-to-your-code">Tools For Applying PEP 8 Formatting To Your Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/python-pep-8.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/clean-modular-code/python-pep-8.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+    pyOpensci is dedicated to creating a welcoming, supportive and diverse
+    community around the open source Python tools that drive open science. Our
+    <a
+      href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+      target="_blank"
+      >Code of Conduct</a
+    >
+    defines expected behavior and guidelines that help create such a community.
+  </p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Conditional Statements With Alternative Conditions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/python-functions-multiple-conditions.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="Describe the syntax for conditional statements with alternative conditions or combinations of conditions in Python., Write conditional statements with alternative conditions or combinations of cond..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_checks-conditionals_python-functions-multiple-conditions_b1040275.png" />
+<meta property="og:image:alt" content="Describe the syntax for conditional statements with alternative conditions or combinations of conditions in Python., Write conditional statements with altern..." />
+<meta name="description" content="Describe the syntax for conditional statements with alternative conditions or combinations of conditions in Python., Write conditional statements with alternative conditions or combinations of cond..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Conditional Statements With Alternative Conditions &#8212; pyOpenSci Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/pyos-sphinx-theme.css?v=fb569b27" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Itim&family=Poppins:wght@400;700&family=Work+Sans:wght@400;700" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/checks-conditionals/python-functions-multiple-conditions';</script>
+    <script src="../../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/python-functions-multiple-conditions.html" />
+    <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Conditional statements in Python" href="python-conditionals.html" />
+    <link rel="prev" title="Make Your Code Easier to Read Using Expressive Variable Names in Python" href="../python-expressive-code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+  </div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../intro-clean-code.html">
+                        Lessons
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/lessons" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../intro-clean-code.html">
+                        Lessons
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/lessons" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro-clean-code.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-pep-8.html">Python Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pep8-package-imports.html">Package imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-dry-modular-code.html">Don't Repeat Yourself</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-function-checks.html">Function checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-expressive-code.html">Expressive Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Checks &amp; Tests</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Multi-variable functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests-checks.html">Tests &amp; Checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activity-1/clean-code-part-1.html">Clean Code: Activity 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity-2/clean-code-part-2.html">Clean Code: Activity 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity-3/clean-code-part-3.html">Clean Code: Activity 3</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../intro-clean-code.html" class="nav-link">Write Clean, Modular, DRY Code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Conditional...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <!-- #region -->
+<section id="conditional-statements-with-alternative-conditions">
+<h1>Conditional Statements With Alternative Conditions<a class="headerlink" href="#conditional-statements-with-alternative-conditions" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Describe the syntax for conditional statements with alternative conditions or combinations of conditions in <strong>Python</strong>.</p></li>
+<li><p>Write conditional statements with alternative conditions or combinations of conditions in <strong>Python</strong>.</p></li>
+</ul>
+<p>On the previous page, you learned how to write conditional statements that check for one condition before executing some code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Condition is true.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Condition is false (i.e. not true).&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can expand on this syntax to check for an alternative condition with an <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="n">some</span> <span class="n">code</span> <span class="n">here</span>
+<span class="k">elif</span> <span class="n">alternative_condition</span><span class="p">:</span>
+    <span class="n">some</span> <span class="n">other</span> <span class="n">code</span> <span class="n">here</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">some</span> <span class="n">final</span> <span class="n">code</span> <span class="n">here</span>
+</pre></div>
+</div>
+<p>If the first condition provided with the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is not satisfied (i.e. results in value of <code class="docutils literal notranslate"><span class="pre">False</span></code>) , then <strong>Python</strong> will check the condition provided with the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement.</p>
+<p>If the condition for <code class="docutils literal notranslate"><span class="pre">elif</span></code> is satisfied, then the code provided with it will execute.</p>
+<p>However, if neither the <code class="docutils literal notranslate"><span class="pre">if</span></code> nor <code class="docutils literal notranslate"><span class="pre">elif</span></code> conditions are satisfied, then the code provided with <code class="docutils literal notranslate"><span class="pre">else</span></code> will execute.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First condition is true.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">alternative_condition</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First condition is not true but alternative condition is true.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Neither of these conditions is true, so this statement is printed.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="spacing-and-execution-of-code-lines">
+<h2>Spacing and Execution of Code Lines<a class="headerlink" href="#spacing-and-execution-of-code-lines" title="Link to this heading">#</a></h2>
+<p>Recall that the <code class="docutils literal notranslate"><span class="pre">print</span></code> code in the examples above can be replaced by any code that will execute in <strong>Python</strong>.</p>
+<p>As the code provided with the <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements gets longer, it is common to add blank lines to make it easier to see which code will be executed with whitch statement. However, the indentation remains an important part of the syntax of the conditional statement.</p>
+<p>Check out the examples below to see <code class="docutils literal notranslate"><span class="pre">elif</span></code> in action and see how <code class="docutils literal notranslate"><span class="pre">print</span></code> statements can be replaced with other code.</p>
+<p>In the first example, <code class="docutils literal notranslate"><span class="pre">x</span></code> is compared to <code class="docutils literal notranslate"><span class="pre">y</span></code>. The first condition checks whether <code class="docutils literal notranslate"><span class="pre">x</span></code> is less than <code class="docutils literal notranslate"><span class="pre">y</span></code>, while the alternative condition checks whether <code class="docutils literal notranslate"><span class="pre">x</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<p>As <code class="docutils literal notranslate"><span class="pre">x</span></code> is equal to a value less than <code class="docutils literal notranslate"><span class="pre">y</span></code>, the first condition is satisfied, which results in a value of 5 being added to <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<!-- #endregion -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set x equal to 5 and y equal to 10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Execute code based on comparison of x to y</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x started with value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It now has a value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;which is equal to y.&quot;</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x started with value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">-=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It now has a value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;which is equal to y.&quot;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x started with a value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;which is already equal to y.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this second example below, <code class="docutils literal notranslate"><span class="pre">x</span></code> is equal to a value greater than <code class="docutils literal notranslate"><span class="pre">y</span></code>, so the first condition is no longer satisfied. However, the second condition is satisfied, which results in a value of 5 being subtracted from <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set x equal to 15 </span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="c1"># Execute code based on comparison of x to y</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x started with value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It now has a value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;which is equal to y.&quot;</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x started with value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">-=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It now has a value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;which is equal to y.&quot;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x started with a value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;which is already equal to y.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However, if <code class="docutils literal notranslate"><span class="pre">x</span></code> is set to same value as <code class="docutils literal notranslate"><span class="pre">y</span></code>, neither the first nor second conditions are met, and the code provided with <code class="docutils literal notranslate"><span class="pre">else</span></code> is executed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set x equal to 10 </span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Execute code based on comparison of x to y</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x started with value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It now has a value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;which is equal to y.&quot;</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x started with value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">-=</span> <span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It now has a value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;which is equal to y.&quot;</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x started with a value of&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;which is already equal to y.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also apply the <code class="docutils literal notranslate"><span class="pre">elif</span></code> syntax to structure conditional statements that use other operators or check values for text strings or objects.</p>
+<p>For example, you can check if a text string is contained within another text string and define a filename based on which condition is satisfied.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set fname based on which text string contains &quot;precip&quot;</span>
+<span class="k">if</span> <span class="s2">&quot;precip&quot;</span> <span class="ow">in</span> <span class="s2">&quot;avg_monthly_temp&quot;</span><span class="p">:</span>
+    <span class="n">fname</span> <span class="o">=</span> <span class="s2">&quot;avg_monthly_temp&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+<span class="k">elif</span> <span class="s2">&quot;precip&quot;</span> <span class="ow">in</span> <span class="s2">&quot;avg_monthly_precip&quot;</span><span class="p">:</span>
+    <span class="n">fname</span> <span class="o">=</span> <span class="s2">&quot;avg_monthly_precip&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>  
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Neither textstring contains the word precip.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As another example, you can add values to a list depending on which condition is satisfied.</p>
+<p>In the example below, the first condition checks whether the last value of the list (using index <code class="docutils literal notranslate"><span class="pre">[-1]</span></code>) is equal to 0.84, the average precipitation value for December.</p>
+<p>As the last value in the list is actually 1.39 (November precipitation), the first condition is not satisfied.</p>
+<p>Thus, the second condition is initiated to check whether the last value is 1.39. Since it is indeed the last value in the list, the second condition results in value of <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>The code provided for <code class="docutils literal notranslate"><span class="pre">elif</span></code> is then executed, adding the value of December to the list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># List of average monthly precip (inches) in Boulder, CO without Dec value</span>
+<span class="n">avg_monthly_precip</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.70</span><span class="p">,</span>  <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.85</span><span class="p">,</span> <span class="mf">2.93</span><span class="p">,</span> <span class="mf">3.05</span><span class="p">,</span> <span class="mf">2.02</span><span class="p">,</span> 
+                      <span class="mf">1.93</span><span class="p">,</span> <span class="mf">1.62</span><span class="p">,</span> <span class="mf">1.84</span><span class="p">,</span> <span class="mf">1.31</span><span class="p">,</span> <span class="mf">1.39</span><span class="p">]</span>
+
+<span class="c1"># Add value to list depending on existing last value</span>
+<span class="k">if</span> <span class="n">avg_monthly_precip</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.84</span><span class="p">:</span>   
+    <span class="nb">print</span><span class="p">(</span><span class="n">avg_monthly_precip</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Print last value in the list</span>
+
+<span class="k">elif</span> <span class="n">avg_monthly_precip</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mf">1.39</span><span class="p">:</span>   
+    <span class="n">avg_monthly_precip</span> <span class="o">+=</span> <span class="p">[</span><span class="mf">0.84</span><span class="p">]</span> <span class="c1"># Add Dec value</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">avg_monthly_precip</span><span class="p">)</span>    
+
+<span class="k">else</span><span class="p">:</span>     
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The last item in the list is neither 0.84 nor 1.39.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- #region -->
+</section>
+<section id="conditional-statements-with-combinations-of-conditions">
+<h2>Conditional Statements With Combinations of Conditions<a class="headerlink" href="#conditional-statements-with-combinations-of-conditions" title="Link to this heading">#</a></h2>
+<p>Logical operators (e.g. <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>) allow you to create conditional statements that can check for combinations of conditions.  You can use:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code> to execute code if all specified conditions have been met</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code> to execute code if at least one specified condition has been met</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code> to execute code only if the specified condition has not been met (note that you can use <code class="docutils literal notranslate"><span class="pre">not</span></code> in combination with <code class="docutils literal notranslate"><span class="pre">and</span></code> or <code class="docutils literal notranslate"><span class="pre">or</span></code> to check whether multiple conditions are not met)</p></li>
+</ul>
+<section id="check-for-two-conditions-using-and">
+<h3>Check For Two Conditions Using <code class="docutils literal notranslate"><span class="pre">and</span></code><a class="headerlink" href="#check-for-two-conditions-using-and" title="Link to this heading">#</a></h3>
+<p>You can check for multiple conditions by including <code class="docutils literal notranslate"><span class="pre">and</span></code> between two conditions.</p>
+<p>Both conditions have to be satisfied in order for the code provided with the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to be executed.</p>
+<p>This means that if one condition is not satisfied, then the conditional statement executes the code provided with <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check that both conditions are true</span>
+<span class="k">if</span> <span class="n">condition1</span> <span class="ow">and</span> <span class="n">condition2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conditions 1 and 2 are both true.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;One condition (either 1 or 2) is not true.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For example, you can check whether two variables are both integers, and if so, then add them together.</p>
+<!-- #endregion -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set x equal to 5 and y equal to 10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Add x and y if they are both integers</span>
+<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Either x or y is not an integer.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set x equal to 5 and y equal to text string</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Some text&quot;</span>
+
+<span class="c1"># Add x and y if they are both integers</span>
+<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Either x or y is not an integer, so they cannot be added.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also check whether two objects are of the same type and length, such as two lists.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create list of abbreviated month names without Dec</span>
+<span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jan&quot;</span><span class="p">,</span> <span class="s2">&quot;Feb&quot;</span><span class="p">,</span> <span class="s2">&quot;Mar&quot;</span><span class="p">,</span> <span class="s2">&quot;Apr&quot;</span><span class="p">,</span> <span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;June&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;July&quot;</span><span class="p">,</span> <span class="s2">&quot;Aug&quot;</span><span class="p">,</span> <span class="s2">&quot;Sept&quot;</span><span class="p">,</span> <span class="s2">&quot;Oct&quot;</span><span class="p">,</span> <span class="s2">&quot;Nov&quot;</span><span class="p">]</span>
+
+<span class="c1"># Length of avg_monthly_precip</span>
+<span class="n">precip_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">avg_monthly_precip</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">precip_len</span><span class="p">)</span>
+
+<span class="c1"># Length of months</span>
+<span class="n">months_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">months</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">months_len</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check whether both type and length of avg_monthly_precip and months match</span>
+<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">avg_monthly_precip</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">type</span><span class="p">(</span><span class="n">months</span><span class="p">)</span> <span class="ow">and</span> <span class="n">precip_len</span> <span class="o">==</span> <span class="n">months_len</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objects are of the same type and have the same length.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objects are not of the same type or do not have same length.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- #region -->
+<p>In the example above, the first condition is satisfied because both objects are lists.</p>
+<p>However, the second condition is not satistifed because the <code class="docutils literal notranslate"><span class="pre">months</span></code> list is missing <code class="docutils literal notranslate"><span class="pre">Dec</span></code> (leaving it with only 11 values).</p>
+<p>Because one of the conditions is not satisfied, the conditional statement executes the code provided with <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+</section>
+<section id="check-for-at-least-one-condition-using-or">
+<h3>Check For At Least One Condition Using <code class="docutils literal notranslate"><span class="pre">or</span></code><a class="headerlink" href="#check-for-at-least-one-condition-using-or" title="Link to this heading">#</a></h3>
+<p>You can also write conditional statements that check whether at least one condition is true by including <code class="docutils literal notranslate"><span class="pre">or</span></code> between two conditions.</p>
+<p>Only one condition has to pass in order for the conditional statement to execute code provided with <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check that at least one condition is true</span>
+<span class="k">if</span> <span class="n">condition1</span> <span class="ow">or</span> <span class="n">condition2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Either condition 1 or 2 is true.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Neither of these conditions is true.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For example:</p>
+<!-- #endregion -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set x equal to 0 and y equal to 10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Check whether either is equal to zero</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Either x or y is equal to 0.&quot;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is now&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;and y is now&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Neither x nor y is equal to 0.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For another example, recall the conditional statement comparing the types and lengths of two lists.</p>
+<p>The first condition is true, as both objects are lists, but the second condition is not true because the <code class="docutils literal notranslate"><span class="pre">months</span></code> list is missing <code class="docutils literal notranslate"><span class="pre">Dec</span></code> (leaving it with only 11 values).</p>
+<p>By using the <code class="docutils literal notranslate"><span class="pre">or</span></code> statement, only one condition has to be true, in order for the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to be satisfied and for the code provided with <code class="docutils literal notranslate"><span class="pre">if</span></code> to execute.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check match for either type and length of avg_monthly_precip and months</span>
+<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">avg_monthly_precip</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">type</span><span class="p">(</span><span class="n">months</span><span class="p">)</span> <span class="ow">or</span> <span class="n">precip_len</span> <span class="o">==</span> <span class="n">months_len</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objects have either the same type or length.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Objects either do not have the same type or same length.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You have now learned how to control the flow of your code using conditional statements. In the next chapter, you will learn how to write loops, in order to execute a task multiple times without having to repeat the code.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../python-expressive-code.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Make Your Code Easier to Read Using Expressive Variable Names in Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="python-conditionals.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Conditional statements in Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spacing-and-execution-of-code-lines">Spacing and Execution of Code Lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements-with-combinations-of-conditions">Conditional Statements With Combinations of Conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-for-two-conditions-using-and">Check For Two Conditions Using <code class="docutils literal notranslate"><span class="pre">and</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-for-at-least-one-condition-using-or">Check For At Least One Condition Using <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/checks-conditionals/python-functions-multiple-conditions.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/clean-modular-code/checks-conditionals/python-functions-multiple-conditions.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+    pyOpensci is dedicated to creating a welcoming, supportive and diverse
+    community around the open source Python tools that drive open science. Our
+    <a
+      href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+      target="_blank"
+      >Code of Conduct</a
+    >
+    defines expected behavior and guidelines that help create such a community.
+  </p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

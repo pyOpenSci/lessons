@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Part 2 - Functions & DRY code" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/activity-2/clean-code-part-2.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="In part 1, you took some code and worked to make it cleaner using expressive variable names. In part 2, you will focus on making the code more DRY. Remember that DRY refers to “Don’t Repeat Yoursel..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_activity-2_clean-code-part-2_67c844ed.png" />
+<meta property="og:image:alt" content="In part 1, you took some code and worked to make it cleaner using expressive variable names. In part 2, you will focus on making the code more DRY. Remember..." />
+<meta name="description" content="In part 1, you took some code and worked to make it cleaner using expressive variable names. In part 2, you will focus on making the code more DRY. Remember that DRY refers to “Don’t Repeat Yoursel..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Part 2 - Functions &amp; DRY code &#8212; pyOpenSci Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/pyos-sphinx-theme.css?v=fb569b27" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Itim&family=Poppins:wght@400;700&family=Work+Sans:wght@400;700" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/activity-2/clean-code-part-2';</script>
+    <script src="../../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/activity-2/clean-code-part-2.html" />
+    <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 3 - Tests &amp; Checks for your code" href="../activity-3/clean-code-part-3.html" />
+    <link rel="prev" title="Clean, Modular Code: Part 1" href="../activity-1/clean-code-part-1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+  </div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../intro-clean-code.html">
+                        Lessons
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/lessons" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../intro-clean-code.html">
+                        Lessons
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/lessons" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro-clean-code.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-pep-8.html">Python Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pep8-package-imports.html">Package imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-dry-modular-code.html">Don't Repeat Yourself</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-function-checks.html">Function checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-expressive-code.html">Expressive Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Checks &amp; Tests</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-functions-multiple-conditions.html">Multi-variable functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-conditionals.html">Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/tests-checks.html">Tests &amp; Checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activity-1/clean-code-part-1.html">Clean Code: Activity 1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Clean Code: Activity 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity-3/clean-code-part-3.html">Clean Code: Activity 3</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../intro-clean-code.html" class="nav-link">Write Clean, Modular, DRY Code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Part 2 -...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="part-2-functions-dry-code">
+<h1>Part 2 - Functions &amp; DRY code<a class="headerlink" href="#part-2-functions-dry-code" title="Link to this heading">#</a></h1>
+<p>In part 1, you took some code and worked to make it cleaner using expressive variable names. In part 2, you will focus on making the code more DRY.</p>
+<p>Remember that DRY refers to “Don’t Repeat Yourself”.</p>
+<p>You are welcome to use the script you worked on in part 1. Or you can use the cleaned-up script below.</p>
+<section id="remember-the-strategies">
+<h2>Remember the strategies<a class="headerlink" href="#remember-the-strategies" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Write functions for a task that is performed over and over.</p>
+<ul>
+<li><p>Then clearly document what the document does to help your future self or another user understand its intent.</p></li>
+</ul>
+</li>
+<li><p>REMOVE - part 3 Create loops that iterate over repetitive tasks.</p></li>
+<li><p>Use conditional statements to control if and when code is executed.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">os</span></code> or <code class="docutils literal notranslate"><span class="pre">pathlib</span></code> to create paths to ensure that your code runs across operating systems</p></li>
+</ul>
+</section>
+<section id="to-begin-identify-the-parts-of-this-code-that-are-redundant">
+<h2>To begin - identify the parts of this code that are redundant<a class="headerlink" href="#to-begin-identify-the-parts-of-this-code-that-are-redundant" title="Link to this heading">#</a></h2>
+<p>Create pseudocode (or text) describing the process steps represented in the code below. How could the code be organized differently and more efficiently?</p>
+<p>What tools could make the code more DRY?</p>
+</section>
+<section id="reproducibility-will-this-code-run-on-other-machines">
+<h2>Reproducibility: will this code run on other machines?<a class="headerlink" href="#reproducibility-will-this-code-run-on-other-machines" title="Link to this heading">#</a></h2>
+<p>One big challenge when considering the reproducibility of workflows is ensuring that your code runs seamlessly on different machines or environments. One key issue is file paths. Hard-coded paths, like “data/part-1-data.json”, can lead to errors if the directory structure on another machine differs from your setup. Paths should be constructed dynamically, using tools like Python’s pathlib or environment variables to ensure flexibility across different systems.</p>
+<section id="applying-functions-to-dataframe-values-apply">
+<h3>Applying functions to dataframe values - .apply<a class="headerlink" href="#applying-functions-to-dataframe-values-apply" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">.apply()</span></code> function in pandas allows you to apply any function to rows or columns in a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. For example, You can use it to perform operations on specific column or row values. When you use .apply(), you can specify whether you want to apply the function across columns (axis=0, the default) or across rows (axis=1). For example, if you want to apply a function to each row of a DataFrame, you would use df.apply(your_function, axis=1). This function is especially useful for applying logic that can’t be easily achieved with built-in pandas functions, allowing for more flexibility in data processing.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">.apply</span></code> in pandas as an efficient replacement for <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loops</span></code> to process row and column values in a df.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Example DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">]})</span>
+
+<span class="c1"># Function to categorize the sum of columns &quot;A&quot; and &quot;B&quot;</span>
+<span class="k">def</span> <span class="nf">categorize_sum</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;high&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;low&quot;</span>
+
+<span class="c1"># Apply the function to each row</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">categorize_sum</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>4</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10</td>
+      <td>5</td>
+      <td>low</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>15</td>
+      <td>high</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Examine the code below.</p>
+<ol class="arabic simple">
+<li><p>Identify what areas of the code are redundant.</p></li>
+<li><p>Create pseudo code of the steps that are repeatied each time</p></li>
+<li><p>identify sections of the code that could be combined into functions</p></li>
+<li><p>When you are done with the above, refactor the code so that it is cleaner and more modular.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is what the code could look like after part 1. In part 2, </span>
+<span class="c1"># you will take this code and make it more DRY.</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Use pathlib to ensure your code runs on other machines (assuming relative paths)</span>
+<span class="c1"># Should we do this in part 2 or part 1??</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;part-1-data.json&quot;</span>
+
+<span class="c1"># Load JSON data</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+    <span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
+
+<span class="c1"># Normalize JSON data into a flat table</span>
+<span class="n">normalized_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
+
+<span class="c1"># Define columns to keep</span>
+<span class="n">columns_to_keep</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;publisher&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DOI&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;author&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;is-referenced-by-count&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;published.date-parts&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Filter the DataFrame by the desired columns</span>
+<span class="n">papers_df_1</span> <span class="o">=</span> <span class="n">normalized_data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="n">columns_to_keep</span><span class="p">)</span>
+
+<span class="c1"># Iterate through each row and extract date and title</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">papers_df_1</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">date_parts</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;published.date-parts&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">papers_df_1</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">papers_df_1</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">formatted_date</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">date_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">date_parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">date_parts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">published_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">formatted_date</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">papers_df_1</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;published_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">published_date</span>
+
+<span class="c1"># Drop the original &quot;published.date-parts&quot; column</span>
+<span class="n">papers_df_1</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;published.date-parts&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Print the shape of the first DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">papers_df_1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Load and process the second JSON data</span>
+<span class="n">file_path_b</span> <span class="o">=</span> <span class="s2">&quot;data/part-1-datab.json&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path_b</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file_b</span><span class="p">:</span>
+    <span class="n">json_data_b</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file_b</span><span class="p">)</span>
+
+<span class="n">normalized_data_b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">json_data_b</span><span class="p">)</span>
+
+<span class="c1"># Filter the second DataFrame by the same columns</span>
+<span class="n">papers_df_2</span> <span class="o">=</span> <span class="n">normalized_data_b</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="n">columns_to_keep</span><span class="p">)</span>
+
+<span class="c1"># Iterate through each row and extract date and title for the second DataFrame</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">papers_df_2</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">date_parts_b</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;published.date-parts&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">papers_df_2</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">papers_df_1</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">formatted_date_b</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">date_parts_b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">date_parts_b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">date_parts_b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="n">published_date_b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">formatted_date_b</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">papers_df_2</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s2">&quot;published_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">published_date_b</span>
+
+<span class="c1"># Drop the original &quot;published.date-parts&quot; column from the second DataFrame</span>
+<span class="n">papers_df_2</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;published.date-parts&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Concatenate the two DataFrames</span>
+<span class="n">combined_papers_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">papers_df_1</span><span class="p">,</span> <span class="n">papers_df_2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Print the shape of the combined DataFrame</span>
+<span class="n">combined_papers_df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(17, 7)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(27, 7)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="on-your-own-1">
+<h2>On your own 1<a class="headerlink" href="#on-your-own-1" title="Link to this heading">#</a></h2>
+<p>If you get through the above activity with time to spare, here are a few additional tasks that you can work on.</p>
+<ol class="arabic simple">
+<li><p>In this file, the package titles can be found in the title column, as follows:</p></li>
+</ol>
+<p>“package-name: title here.”</p>
+<p>Add a component to the code that pulls the package name out from the title column and creates a new column called <code class="docutils literal notranslate"><span class="pre">package-name</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Then, create a workflow that calculates how many packages in that list are pyOpenSci packages.</p></li>
+</ol>
+<p>to complete this, you will need the <code class="docutils literal notranslate"><span class="pre">pyos-joss-accepted-packages.csv</span></code> file, which has a list of all pyOpenSci packages that have also gone through JOSS review.</p>
+</section>
+<section id="on-your-own-2">
+<h2>On your own 2<a class="headerlink" href="#on-your-own-2" title="Link to this heading">#</a></h2>
+<p>Create a new workflow that calculates how many packages were submitted to JOSS each month.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../activity-1/clean-code-part-1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Clean, Modular Code: Part 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activity-3/clean-code-part-3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Part 3 - Tests &amp; Checks for your code</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-the-strategies">Remember the strategies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-begin-identify-the-parts-of-this-code-that-are-redundant">To begin - identify the parts of this code that are redundant</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-will-this-code-run-on-other-machines">Reproducibility: will this code run on other machines?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-functions-to-dataframe-values-apply">Applying functions to dataframe values - .apply</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-your-own-1">On your own 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-your-own-2">On your own 2</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/activity-2/clean-code-part-2.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/clean-modular-code/activity-2/clean-code-part-2.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+    pyOpensci is dedicated to creating a welcoming, supportive and diverse
+    community around the open source Python tools that drive open science. Our
+    <a
+      href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+      target="_blank"
+      >Code of Conduct</a
+    >
+    defines expected behavior and guidelines that help create such a community.
+  </p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

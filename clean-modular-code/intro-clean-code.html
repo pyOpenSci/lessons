@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Write Clean, Modular, DRY Code" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/intro-clean-code.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="“Pythonic” code is code that follows the conventions and best practices of the Python programming language. It emphasizes code that is clear, concise, and readable–principles that adhere to Python’..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_intro-clean-code_cc245685.png" />
+<meta property="og:image:alt" content="“Pythonic” code is code that follows the conventions and best practices of the Python programming language. It emphasizes code that is clear, concise, and re..." />
+<meta name="description" content="“Pythonic” code is code that follows the conventions and best practices of the Python programming language. It emphasizes code that is clear, concise, and readable–principles that adhere to Python’..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Write Clean, Modular, DRY Code &#8212; pyOpenSci Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/pyos-sphinx-theme.css?v=fb569b27" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Itim&family=Poppins:wght@400;700&family=Work+Sans:wght@400;700" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/intro-clean-code';</script>
+    <script src="../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/intro-clean-code.html" />
+    <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Use PEP 8 To Write Easier-to-Read Code" href="python-pep-8.html" />
+    <link rel="prev" title="pyOpenSci Lessons" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+  </div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Lessons
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/lessons" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Lessons
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/lessons" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-pep-8.html">Python Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pep8-package-imports.html">Package imports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-dry-modular-code.html">Don't Repeat Yourself</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-function-checks.html">Function checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-expressive-code.html">Expressive Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Checks &amp; Tests</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="checks-conditionals/python-functions-multiple-conditions.html">Multi-variable functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checks-conditionals/python-conditionals.html">Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checks-conditionals/tests-checks.html">Tests &amp; Checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="activity-1/clean-code-part-1.html">Clean Code: Activity 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-2/clean-code-part-2.html">Clean Code: Activity 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity-3/clean-code-part-3.html">Clean Code: Activity 3</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Write...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <!-- #region editable=true slideshow={"slide_type": ""} tags=["hide-content"] -->
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<!-- #endregion -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+<section id="write-clean-modular-dry-code">
+<h1>Write Clean, Modular, DRY Code<a class="headerlink" href="#write-clean-modular-dry-code" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After completing this lesson, you will be able to:</p>
+<ul class="simple">
+<li><p>List 2-4 characteristics of writing clean code.</p></li>
+<li><p>Apply the PEP 8 Style Guide standards to your <strong>Python</strong> code.</p></li>
+</ul>
+</div>
+<p>“Pythonic” code is code that follows the conventions and best practices of the Python programming language. It emphasizes code that is clear, concise, and readable–principles that adhere to Python’s design philosophy. <link to zen of python></p>
+<p>Pythonic code also takes full advantage of Python’s features which include:</p>
+<ul class="simple">
+<li><p>list comprehensions,</p></li>
+<li><p>generators, and</p></li>
+<li><p>context managers,</p></li>
+</ul>
+<p>to write more elegant and efficient code.</p>
+<section id="characteristics-of-pythonic-code">
+<h2>Characteristics of Pythonic code:<a class="headerlink" href="#characteristics-of-pythonic-code" title="Link to this heading">#</a></h2>
+<section id="it-s-readable">
+<h3><strong>It’s Readable</strong>:<a class="headerlink" href="#it-s-readable" title="Link to this heading">#</a></h3>
+<p>Pythonic code is easy to read and understand, often adhering to the <strong>Zen of Python</strong> (a set of guiding principles for Python’s design).</p>
+<p>Readable code uses descriptive (expressive) variable names and adheres to PEP 8 style guidelines.</p>
+<!-- #endregion -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The Zen of Python </span>
+<span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Not Pythonic</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">foovar</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">foovar</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pythonic</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">todays_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">todays_date</span>
+</pre></div>
+</div>
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+<p>Compare the variable <code class="docutils literal notranslate"><span class="pre">foovar</span></code> to <code class="docutils literal notranslate"><span class="pre">todays_date</span></code>. Which variable name tells you more about the information that it contains?</p>
+</section>
+<section id="it-s-concise">
+<h3><strong>It’s Concise</strong><a class="headerlink" href="#it-s-concise" title="Link to this heading">#</a></h3>
+<p>Pythonic code is concise but not at the expense of clarity. An example of concise code is to use features like list comprehensions and built-in functions.</p>
+<!-- #endregion -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Non-Pythonic</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+   <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pythonic</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># More Pythonic</span>
+<span class="n">languages</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;julia&quot;</span><span class="p">,</span> <span class="s2">&quot;rust&quot;</span><span class="p">]</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">language</span> <span class="ow">in</span><span class="p">(</span><span class="n">languages</span><span class="p">):</span>
+    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># More Pythonic</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;julia&quot;</span><span class="p">,</span> <span class="s2">&quot;rust&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">language</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">languages</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+</section>
+<section id="clean-code-is-dry-avoids-repitition">
+<h3>Clean code is DRY &amp; avoids repitition<a class="headerlink" href="#clean-code-is-dry-avoids-repitition" title="Link to this heading">#</a></h3>
+<p>Pythonic code avoids repetition. DRY (Don’t Repeat Yourself) code is written in a way that both avoids repetition and is well organized. This makes it easier to maintain and extend.</p>
+</section>
+<section id="pythonic-code-is-expressive">
+<h3>Pythonic code is expressive<a class="headerlink" href="#pythonic-code-is-expressive" title="Link to this heading">#</a></h3>
+<p>Pythonic code communicates the programmer’s intent clearly, making it easier for others to understand the purpose of the code at a glance.</p>
+<p>Note that the function below has an easy-to-understand name and clear docstring. Some people will even suggest adding a verb that explains what the function does, such as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">convert_fahr_kelvin()</span></code></p>
+<!-- #endregion -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fahr_to_kelvin</span><span class="p">(</span><span class="n">fahr</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">fahr</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span><span class="p">))</span> <span class="o">+</span> <span class="mf">273.15</span>
+</pre></div>
+</div>
+</section>
+<section id="pythonic-code-is-well-documented">
+<h3>Pythonic code is well-documented<a class="headerlink" href="#pythonic-code-is-well-documented" title="Link to this heading">#</a></h3>
+<p>Docstrings are Pythonic because they prioritize code readability and clarity, providing clear descriptions of a function’s purpose, parameters, and return values. By embedding documentation directly in the code, docstrings make it easy for developers to understand and use functions or classes without needing to read the implementation details.</p>
+<p>Documentation can mean many different things. When you are writing code, a combination of expressive names combined with sparsely added comments can go a long way towards making your code easier to read.</p>
+<p>Pythonic code reflects Python’s emphasis on readability and simplicity. A well-known phrase from the <strong>Zen of Python</strong> is: “There should be one—and preferably only one—obvious way to do it,” which is a core idea behind writing Pythonic code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fahr_to_kelvin</span><span class="p">(</span><span class="n">fahr</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert temperature from Fahrenheit to Kelvin.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    fahr : float</span>
+<span class="sd">        Temperature in Fahrenheit.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        Temperature in Kelvin.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">fahr</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span><span class="p">))</span> <span class="o">+</span> <span class="mf">273.15</span>
+</pre></div>
+</div>
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #endregion -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+</section>
+</section>
+<section id="tools-to-help-you-write-better-more-pythonic-code-code-formatters-linters-and-llm-s">
+<h2>Tools to help you write better, more Pythonic code - code formatters, linters and LLM’s<a class="headerlink" href="#tools-to-help-you-write-better-more-pythonic-code-code-formatters-linters-and-llm-s" title="Link to this heading">#</a></h2>
+<p>While the above tasks used to require manual code editing, in today’s world, you can use a suite of automated tools such as linters and code formatters, combined with LLM’s to help you write better, cleaner and more Pythonic code for scientific workflows.</p>
+<section id="llms">
+<h3>LLMS<a class="headerlink" href="#llms" title="Link to this heading">#</a></h3>
+<p>LLMs (Large Language Models) can be useful for…</p>
+<p>however, it’s important that you are careful about how you use them because</p>
+<ul class="simple">
+<li><p>ethical issues</p></li>
+<li><p>they are often wrong</p></li>
+<li><p>they make up stuff</p></li>
+<li><p>etc.
+however with correct promots, and if you build your eye for identifying problems, and combined with tools that will help you with your code, as you write it, they can be effective tools in your workfhlow dev process.</p></li>
+</ul>
+<p>In the next lessons, you will learn more about making tools and approaches to making your code more Pythonic</p>
+<p>You will then learn about tools that you can use to format your code and identify problem points including:</p>
+<ul class="simple">
+<li><p>LLM’s like GitHub co-pilot</p></li>
+<li><p>ChatGPT</p></li>
+<li><p>Google Gemini</p></li>
+</ul>
+<p>Code formatters like:</p>
+<ul class="simple">
+<li><p>black</p></li>
+<li><p>ruff</p></li>
+</ul>
+<!-- #endregion -->
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pyOpenSci Lessons</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="python-pep-8.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Use PEP 8 To Write Easier-to-Read Code</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-pythonic-code">Characteristics of Pythonic code:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#it-s-readable"><strong>It’s Readable</strong>:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#it-s-concise"><strong>It’s Concise</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-code-is-dry-avoids-repitition">Clean code is DRY &amp; avoids repitition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pythonic-code-is-expressive">Pythonic code is expressive</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pythonic-code-is-well-documented">Pythonic code is well-documented</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tools-to-help-you-write-better-more-pythonic-code-code-formatters-linters-and-llm-s">Tools to help you write better, more Pythonic code - code formatters, linters and LLM’s</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llms">LLMS</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/intro-clean-code.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/clean-modular-code/intro-clean-code.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+    pyOpensci is dedicated to creating a welcoming, supportive and diverse
+    community around the open source Python tools that drive open science. Our
+    <a
+      href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+      target="_blank"
+      >Code of Conduct</a
+    >
+    defines expected behavior and guidelines that help create such a community.
+  </p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>
