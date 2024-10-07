@@ -13,13 +13,22 @@ kernelspec:
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-# Write Flexible Functions to Handle Messy Data
+# Write Flexible Functions for Messy Data
 
-When dealing with messy or unpredictable data, [using functions](python-functions) is an excellent first step in creating a robust and maintainable data processing workflow. Functions provide modular units that can be tested independently, allowing you to handle various edge cases and unexpected scenarios effectively.
+When dealing with messy or unpredictable data, using functions is an excellent first step in creating a robust and maintainable data processing workflow. Functions provide modular units that can be tested independently, allowing you to handle various edge cases and unexpected scenarios effectively.
+
+## Function benefits
+
+Using functions in your data processing pipeline offers several advantages:
+
+1. **Modularity**: Functions encapsulate specific tasks, making your code more organized and easier to understand.
+2. **Testability**: You can test functions individually, outside of the main workflow, to ensure they handle different scenarios correctly.
+3. **Flexibility**: As you build out your workflow, you can easily add elements to functions to handle new processing requirements or edge cases.
+4. **Reusability**: Well-designed functions can be reused across different parts of your project or even in other projects.
 
 ## Handling edge cases
 
-When working with messy data, you'll often encounter edge cases - unusual or unexpected data that can break your processing pipeline. You can add checks to your functions to handle potentail errors you may encounter in your data.
+When working with messy data, you'll often encounter edge cases - unusual or unexpected data that can break your processing pipeline. Functions allow you to implement robust error handling and data validation. Here are some techniques you can use:
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
@@ -83,7 +92,7 @@ There are two main approaches to handling potential errors:
 **LBYL (Look Before You Leap)**: Check for conditions before making calls or accessing data.
 **EAFP (Easier to Ask for Forgiveness than Permission)**: Assume the operation will succeed and handle any exceptions if they occur.
 
-Pythonic code generally favors the EAFP approach. 
+Pythonic code generally favors the EAFP approach.
 
 ```{code-cell} ipython3
 ---
@@ -134,10 +143,10 @@ As long as you consider edge cases, you're writing great code! You don’t need 
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-## Common Python exceptions 
+## Common Python exceptions
 
-Python has dozens of specific errors that can be raised when code fails to run. Below are a few common ones that you may encounter in the activity 3. 
-	
+Python has dozens of specific errors that can be raised when code fails to run. Below are a few common ones that you may encounter in the activity 3.
+ 
 ### TypeError
 
 Occurs when an operation is applied to an object of an inappropriate type.
@@ -157,8 +166,8 @@ tags: [raises-exception]
 
 ### ValueError
 
-- **Raised when** a function receives an argument of the right type but an invalid value.
-- **Example:** `int('abc')` (trying to convert an invalid string to an integer).
+* **Raised when** a function receives an argument of the right type but an invalid value.
+* **Example:** `int('abc')` (trying to convert an invalid string to an integer).
 
 ```{code-cell} ipython3
 ---
@@ -174,8 +183,8 @@ int("abc")
 
 ### KeyError
 
-- **Raised when** a dictionary key is not found.
-- **Example:** `my_dict['nonexistent_key']` (trying to access a key that doesn’t exist in the dictionary).
+* **Raised when** a dictionary key is not found.
+* **Example:** `my_dict['nonexistent_key']` (trying to access a key that doesn’t exist in the dictionary).
 
 ```{code-cell} ipython3
 ---
@@ -191,10 +200,10 @@ my_dict['nonexistent_key']
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-### IndexError:
+### IndexError
 
-- **Raised when** an invalid index is used to access a list or tuple.
-- **Example:** `my_list[10]` (trying to access the 11th element of a list with fewer elements).
+* **Raised when** an invalid index is used to access a list or tuple.
+* **Example:** `my_list[10]` (trying to access the 11th element of a list with fewer elements).
 
 ```{code-cell} ipython3
 ---
@@ -209,7 +218,7 @@ my_list[10]
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-### AttributeError:
+### AttributeError
 
 Raised when an object does not have a specific attribute or method.
 
