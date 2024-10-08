@@ -236,7 +236,7 @@ plt.show()
 ## PEP 8 naming conventions
 
 :::{seealso}
-The text in this section is summarized from the <a href="" target="_blank">PEP 8 Style Guide published by the Python Software Foundation</a>.
+For the entire pep-8 style guide see: <a href="https://peps.python.org/pep-0008/" target="_blank">PEP 8 Style Guide published by the Python Software Foundation</a>.
 
 :::
 
@@ -270,7 +270,7 @@ It’s good practice to import all required libraries at the top of your **Pytho
 
 PEP 8 recommends organizing imports in the following order:
 
-1. **Standard Library Imports**: These are built-in modules that come with Python, such as `os` and `glob`. You can find the full list [here](https://docs.python.org/3/library/index.html).
+1. **Standard Library Imports**: These built-in modules come with Python, such as `os` and `glob`. You can find the full list [here](https://docs.python.org/3/library/index.html).
 2. **Third-Party Imports**: Libraries that you install via `pip`, like `numpy` and `pandas`.
 3. **Local Imports**: Code or modules specific to your project.
 
