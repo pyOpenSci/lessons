@@ -14,218 +14,207 @@ kernelspec:
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-# Python code style for readability and usability 
+# Use PEP 8 To Write Easier-to-Read Code
 
-:::{admonition} What you will learn
+:::{admonition} Learning Objectives
 :class: tip
 
-* How to follow the PEP 8 style guide to write Python code that’s easy to read and understand.
-* Best practices for naming variables, using comments, and formatting code.
-* Tools to help you apply PEP 8 to your code automatically.
+* Describe the benefits of using code standards.
+* Explain the PEP 8 style guide and how it helps promote code readability.
+* Describe key components of the PEP 8 style guide, including naming conventions and white space.
+* List tools to help you apply the PEP 8 style guide to your code.  
 
 :::
 
-## Why code style and Python PEP 8 matters 
+## What is Python PEP 8 code style?
 
-Just like good grammar makes text easier to read, PEP 8 helps make your code easier to understand. It enforces rules on naming variables, capitalization, formatting code, and structuring your script. Well-formatted code also makes it easier for you to share code, given it will be easier for others to understand.  
+Code syntax standards refer to rules associated with how code is formatted. These rules can including things like:
 
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
----
-#some data analysis with poor formatting
-import pandas as pd
-from datetime import datetime
-def classify_precipitation(precip_list):
- avg_precip=pd.Series(precip_list).mean()
- if avg_precip<100:
-  return'Low'
- elif avg_precip>=100 and avg_precip<=150:
-  return'Medium'
- else:
-  return'High'
-data={'location':['Station1','Station2','Station3','Station4'],'year':[2021,2021,2021,2021],'monthly_precipitation':[[50.0,70.0,90.0,80.0],[100.0,110.0,120.0,130.0],[150.0,160.0,170.0,180.0],[200.0,210.0,220.0,230.0]],'start_date':["2021-01-01","2021-01-01","2021-01-01","2021-01-01"]}
-df=pd.DataFrame(data)
-df['start_date']=pd.to_datetime(df['start_date'])
-df['precipitation_category']=df['monthly_precipitation'].apply(classify_precipitation)
-df
+* How to space code elements in a script,
+* How to format and create comments, and
+* Naming conventions for variables, functions and classes
+
+## Why Use Code Standards When Writing Python Code
+
+Code standards help make your code more readable. Consider this page that you are reading right now. Some conventions are followed that most of us are familiar with (but may not even think about). These conventions include:  
+
+* Capitalize the first letter of a sentence.
+* Capitalize the first letter of someone's name.
+* Add a space after the end of a sentence.
+* Add a space after each word.
+
+These conventions lead to text that you can read easily, like this:
+
+`This is a sentence. And another sentence with a Name and a location like Florida, USA.`
+
+Now imagine reading a book that has no spacing, no capitalization and didn't follow the regular English language writing conventions that you know. This book would become increasingly hard to read. For example have a look at the example below:
+
+`this is a sentence.and another sentence with a name.this
+text could go on forever. whatwouldhappenifweneverusedspaces?`
+
+Code standards, just like any other language standard, are designed to make code easier to understand.
+
+Below, you will learn about the PEP 8 standard for the **Python** scientific programming language. This is the standard used by many **Python** users.
+
+## About the PEP 8 Standard for Python
+
+PEP 8 is the style guide that is widely used in the **Python** community. This guide includes rules about naming objects, spacing rules and even how the code is laid out.  
+
+**Python** is developed and maintained by an open source community, and thus, it is not really possible to enforce the standard in mandatory way. Rather, community members choose to adhere to PEP 8 recommendations whenever possible, so that they can contribute code that can easily be read and used by the greater community of users.
+
+PEP 8 covers many aspects of code readability including:
+
+* naming conventions
+* use of comments
+* line lengths
+* use of white space
+
+## PEP 8 Naming Conventions
+
+The text in this section is summarized from the <a href="https://www.python.org/dev/peps/pep-0008/#naming-conventions" target="_blank">PEP 8 Style Guide published by the Python Software Foundation</a>.
+
+### Naming Convention Terminology Review
+
+First, let's review some terminology associated with naming conventions.
+
+* **Lowercase letter:** `b`
+
+* **Uppercase letter:** `B`
+
+* **lowercase:** `this is all lowercase words`
+
+* **snake case:** when words are separated by underscores: `lower_case_with_underscores`
+
+* **Uppercase:** All words are all uppercase letters: `UPPERCASE`
+
+* **Snake case** upper case: `UPPER_CASE_WITH_UNDERSCORES`
+
+* **CamelCase:** Every word is capitalized so they visually stand out: `CapitalizedWords`. This is sometimes also referred to as CapWords or StudlyCaps.
+
+  * Note: When using acronyms in CamelCase, capitalize all the letters of the acronym. Thus HTTPServerError is better than HttpServerError.
+
+* **mixedCase:** (differs from CapitalizedWords by initial lowercase character!)
+
+* **Capitalized_Words_With_Underscores:** This approach is not recommended. Use one convention and stick with it.
+
+### Name Variables Using snake_case And All Lower Case
+
+In general, it is recommended that you keep naming conventions standard in your code. We suggest a convention that uses **snake_case** and all lowercase letters in your code for variable and function names.
+
+```
+variable_one
+variable_two
 ```
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
+### Name Classes Using CamelCase or CapsCase
 
-Notice that by adding docstrings, spacing to the the code.... 
+While regular variables and functions should use snake_case, PEP 8
+suggests that you use `CamelCase` for class definitions.
 
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
----
-# Built-in libraries are imported first
-from datetime import datetime
-import pandas as pd
-
-# Function to classify precipitation levels
-def classify_precipitation(precip_list):
-    """Classify average monthly precipitation into low, medium, or high.
-
-    Parameters
-    ----------
-    precip_list : list of float
-        A list of monthly precipitation values (in mm).
-
-    Returns
-    -------
-    str
-        The precipitation category: 'Low', 'Medium', or 'High'.
-    """
-    avg_precip = pd.Series(precip_list).mean()
-
-    # Define the precipitation ranges
-    if avg_precip < 100:
-        return 'Low'
-    elif 100 <= avg_precip <= 150:
-        return 'Medium'
-    else:
-        return 'High'
-
-
-# Sample data for precipitation values (in mm) for different locations
-data = {
-    'location': ['Station1', 'Station2', 'Station3', 'Station4'],
-    'year': [2021, 2021, 2021, 2021],
-    'monthly_precipitation': [
-        [50.0, 70.0, 90.0, 80.0],  # Station1
-        [100.0, 110.0, 120.0, 130.0],   # Station2
-        [150.0, 160.0, 170.0, 180.0],   # Station3
-        [200.0, 210.0, 220.0, 230.0]    # Station4
-    ],
-    'start_date': ["2021-01-01", "2021-01-01", "2021-01-01", "2021-01-01"]
-}
-
-df = pd.DataFrame(data)
-df['start_date'] = pd.to_datetime(df['start_date'])
-
-# Classify precipitation levels based on ranges
-df['precipitation_category'] = df['monthly_precipitation'].apply(classify_precipitation)
-
-df
+```
+class PlotBasicObject(object):
 ```
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
+### Avoid Using Single Character Letters That Could Be Confused with Numbers  
 
-## How to Apply PEP 8 Code Style Standards
+Avoid using the characters:
 
-It may seem overwhelming to remember all the PEP 8 rules, but tools called **code formatters** can automatically apply these standards for you.
+* 'l' (lowercase letter el),
+* 'O' (uppercase letter oh), or
+* 'I' (uppercase letter eye)
 
-### For `.py` Files
+as single character variable names.
 
-Use popular tools like **Black** or **Ruff**:
+These characters can be difficult to distinguish from numbers when
+using certain font families.
 
-- **[Black](https://black.readthedocs.io/en/stable/)**: Automatically reformats code according to PEP 8.
-- **[Ruff](https://docs.astral.sh/ruff/configuration/#jupyter-notebook-discovery)**: A linter and formatter that also supports import sorting with **isort**.
+For example, the letter `l` can sometimes look a lot like the number `1`. If you need to use the letter `l` as a variable (this is not suggested!), considering user an uppercase letter instead.
 
-Both tools can be run manually or integrated into **pre-commit hooks** with Git to check your code before each commit. You can also configure them in your IDE (like VSCode, PyCharm, or Spyder) to format your code every time you save.
+## Python PEP 8 Documentation Standards for Comments
 
+Documentation is an important part of writing great code. Below are some
+of the important PEP 8 conventions associated with documentation.
 
-:::{note}
-Ruff doesn’t fully support Jupyter/MyST markdown notebooks yet but can be integrated into a pre-commit workflow for GitHub repositories.
-:::
+### 1. Python Comments Should Have a Space After the `#` Sign with the First Word Capitalized
 
+Following <a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">the PEP8 style guide</a>, single line comments should
+start with the `#` sign followed by a space. The first word of the comment should be capitalized. Like this:
 
-### For Jupyter Notebooks
+`# This is a PEP 8 conforming comment`
 
-For Jupyter Notebooks, try:
-- **Notebook extensions**: Add extensions to your interface to format cells automatically.
-- **nbQA**: A command-line tool that applies Black or Ruff to Jupyter Notebooks via the CLI.
+The comment below does NOT conform to PEP8 standards
 
-### Running These Tools
-These tools can be used in the following ways:
-- **Manually**: Run on-demand to check and format your code.
-- **Pre-commit hook**: Enforce code style checks before every commit.
-- **IDE integration**: Automatically format code in your editor.
+`#this comment does not conform to PEP 8 standards`
 
-Using these tools ensures your code remains consistent, readable, and compliant with PEP 8, without memorizing all the rules.
+### 2. Multi-line comments Used in Functions (docstrings) Should Have a Short Single Line Description Followed By More Text
 
-:::{admonition} Linter vs. Code Formatter
-:class: note
+Multi-line comments are most commonly used when creating docstrings. A docstring is the text that follows a function definition. This text helps you or someone using a function understand what the function does.
 
-- **Linter**: Checks your code and highlights issues but doesn’t automatically fix them.
-- **Code Formatter**: Automatically reformats your code according to style rules.
+Following <a href="https://www.python.org/dev/peps/pep-0008/#documentation-strings" target="_blank">the PEP8 style guide</a>, you create a function docstring using three quotes `"""`. The first line or text following the quotes should be a short, concise description of what the function does.
 
-Ruff acts as both a linter and formatter, making it ideal for `.py` file workflows.
-:::
+Below that, you can add as much text as you'd like that provides more detail about what the function does.  
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-
-## Why use code standards when writing Python code
-
-Code standards make your code more readable and easier to maintain, just like writing conventions make text easier to read. Think about how we capitalize the first word of a sentence or add spaces between words—without those conventions, text would be hard to follow. Similarly, code with inconsistent formatting is difficult to understand and debug.
-  
-For example:
-
-* Readable sentence: This is a sentence.
-* Unformatted sentence: thisisasentence.withoutspacesitgetsconfusing.
-
-Using code standards like PEP 8 helps avoid such confusion, making code clearer and more professional.
-
-### Some PEP 8 rules to remember 
-
-There is a style guide devoted to Python pep 8 standards that you can read [here](https://www.python.org/dev/peps/pep-0008/#naming-conventions). However, below are a handful of PEP 8 Rules that you can consider following when writing code. 
-
-* Naming Conventions: Use **snake_case** for variables/functions and **CamelCase** for class names.
+example:
 
 ```python
-# This is a class definition
-class MyClass:
-    """A class to process data and calculate statistics."""
+def calculate_sum(rainfall, time="month"):
 
-    # This is a function 
-    def calculate_average(self, data_list):
-        """Calculate the average of a list of numbers."""
-        total_sum = sum(data_list)
-        count = len(data_list)
-        return total_sum / count
+"""Returns a single sum value of all precipitation. 
 
-# Example variable names and function call
-data_processor = DataProcessor()
-numbers = [10, 20, 30, 40, 50]
-average_value = data_processor.calculate_average(numbers)
+This function takes a Pandas DataFrame with time series as the index, 
+and calculates the total sum, aggregated by month. 
+"""
+# Code here 
 
-print(f"The average value is: {average_value}")
+return the_total_sum
 ```
 
-* Line Length: Limit all lines to 79 characters for better readability.
+## Line Length
+
+PEP 8 guidelines suggest that each line of code (as well as comment lines) should be 79 characters wide or less. This is a common standard used in other languages, including **R**.
 
 :::{tip}
 Most text editors allow you to set up guides to see how long your code is. You can then use these guides to create line breaks in your code.
 :::
 
-* Comments: Add a space after the `#` sign and capitalize the first letter of a comment:
 
-`# This is a PEP 8 conforming comment`
+## Python PEP 8 Rules for White Space
 
-* White Space: Add space between sections of code to improve clarity.
-* Avoid using single-character letters that could be confused with numbers  (ie the letter `l` looks similar to the number one  `1` 
-* Add a blank line before a single-line comment (unless it is the first line of a cell in Jupyter Notebook)
+Some of the white space rules have already been discussed above. These including adding a single space after a comment `# Comment here`.
+
+There are also rules associated with spacing throughout your code. These include:
+
+* **Add blank line before a single line comment (unless it is the first line of a cell in Jupyter Notebook)** Blank lines help to visually break up code. Consider reading this page, if all of the text was mashed together in one long paragraph, it would be more difficult to read. However, when you break the text up into related paragraphs, it becomes a lot easier to read.
 
 ```python
-a = 1 
 
-# Here is a commment
-b = 2 
+# Perform some math
+a = 1+2
+b = 3+4
+c = a+b 
 
+# Read in and plot some 
+precip_timeseries = pd.readcsv("precip-2019.csv")
+precip_timeseries.plot()
 ```
 
-* **Break up sections of code with white space:** Breaking up your
+The code below is more difficult to read as the spacing does not break up the text.
+
+```python
+# Perform some math and do some things 
+a=1+2
+b=3+4
+c=a+b 
+data=pd.readcsv("precip-2019.csv")
+data.plot()
+```
+
+* **Break up sections of code with white space:** As you are writing code, it's always good to consider readability and to break up sections of code accordingly. Breaking up your
 code becomes even more important when you start working in Jupyter Notebooks which offer individual cells where you can add Markdown and code.
 
 ```python
 # Process some data here 
-data=pd.readcsv("pyos-data.csv")
+data=pd.readcsv("precip-2019.csv")
 
 # Plot data - notice how separating code into sections makes it easier to read
 fig, ax = plot.subplots()
@@ -233,60 +222,29 @@ data.plot(ax=ax)
 plt.show()
 ```
 
-## PEP 8 naming conventions
+## Summary -- PEP 8 and Python
 
-:::{seealso}
-For the entire pep-8 style guide see: <a href="https://peps.python.org/pep-0008/" target="_blank">PEP 8 Style Guide published by the Python Software Foundation</a>.
+The text above provides a broad overview of some of the PEP 8 guidelines and conventions for writing **Python** code. It is not fully inclusive all of all the standards which are included in the full, online PEP 8 documentation.
 
-:::
+## Tools For Applying PEP 8 Formatting To Your Code
 
-:::{admonition} Terminology Review
-:class: tip
+There are many different tools that can help you write code that is PEP 8 compliant. A tool that checks the format of your code is called a linter.
 
-First, let's review some terminology associated with naming conventions.
+Some linters will reformat your code for you to match the standards. These include tools like Black. Or the autopep8 tool for Jupyter Notebook.
 
-* **Lowercase letter:** `b`
-* **Uppercase letter:** `B`
-* **lowercase:** `this is all lowercase words`
-* **snake case:** when words are separated by underscores: `lower_case_with_underscores`
-* **Uppercase:** All words are all uppercase letters: `UPPERCASE`
-* **Snake case** upper case: `UPPER_CASE_WITH_UNDERSCORES`
-* **CamelCase:** Every word is capitalized so they visually stand out: `CapitalizedWords`. This is sometimes also referred to as CapWords or StudlyCaps.
-  * Note: When using acronyms in CamelCase, capitalize all the letters of the acronym. Thus HTTPServerError is better than HttpServerError.
-* **mixedCase:** (differs from CapitalizedWords by initial lowercase character!)
-* **Capitalized_Words_With_Underscores:** This approach is not recommended. Use one convention and stick with it.
+Other linters will simply check your code and tell you if things need to be fixed. A few **Python** packages that perform linting are listed below.
 
-:::
+* <a href="https://pep8.readthedocs.io/en/release-1.7.x/" target="_blank">pep8</a>, a `Python` package that can help you check your code for adherence to the PEP 8 style guide.
+* <a href="https://github.com/hhatto/autopep8" target="_blank">autopep8</a>, another `Python` package that can be used to modify files to the PEP 8 style guide.
+
+`Python` community members expect that your code will adhere to the PEP 8 standard, and if it does not, they generally will not be shy to tell you that your code is not "Pythonic"!
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-## Best practices for importing libraries
+## Additional Resources
 
-### Import Python libraries at the top of your code
+* <a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">The PEP 8 Style Guide</a>
 
-It’s good practice to import all required libraries at the top of your **Python** script or in the first cell of a **Jupyter Notebook**. This helps anyone understand what packages are needed to run your code. It also follows PEP 8 conventions.
+* <a href="https://realpython.com/python-pep8/" target="_blank">How To Write Beautiful Python Code with PEP 8</a>
 
-### Organize your imports into groups
-
-PEP 8 recommends organizing imports in the following order:
-
-1. **Standard Library Imports**: These built-in modules come with Python, such as `os` and `glob`. You can find the full list [here](https://docs.python.org/3/library/index.html).
-2. **Third-Party Imports**: Libraries that you install via `pip`, like `numpy` and `pandas`.
-3. **Local Imports**: Code or modules specific to your project.
-
-Here’s an example following PEP 8 conventions:
-
-```python
-import os
-import glob
-
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-
-from my_module import my_function
-```
-
-### Why organize imports?
-
-Organizing your imports this way ensures your code is readable and follows widely accepted practices. Importing libraries at the top also makes it easier to debug and see which dependencies are required to run the code.
+* <a href="https://www.safaribooksonline.com/library/view/the-hitchhikers-guide/9781491933213/ch04.html" target="_blank">The Hitchhiker's Guide to Python by Tanya Schlusser and Kenneth Reitz</a>
