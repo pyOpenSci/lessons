@@ -42,7 +42,7 @@ Expressive Code <python-expressive-code>
 
 Multi-variable functions <checks-conditionals/python-functions-multiple-conditions>
 Conditional statements <checks-conditionals/python-conditionals>
-Tests & Checks <checks-conditionals/tests-checks>
+Tests & Checks <checks-conditionals/python-function-checks>
 :::
 
 :::{toctree}

@@ -48,7 +48,7 @@ IN THIS PR:
 https://github.com/pyOpenSci/lessons/pull/14/files#diff-7f4ff1b75e85d38f3955cca051e68e8746773c279b34c9a0a400b9c2dc1240ff 
 :::
 
-When you can, try to use the Pythonic approach of asking for forgiveness later (ie use try/except blocks) rather than conditional statements. 
+When you can, try to use the Pythonic approach of asking for forgiveness later (ie use try/except blocks) rather than conditional statements.
 
 ```{code-cell} ipython3
 ---
@@ -89,33 +89,30 @@ def clean_title(title):
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["hide-output", "hide-cell"]}
 
-TODO - move this to activity 2 it doesn't belong in activity 3! 
+:::{tip}
+### Applying functions to DataFrame values--`.apply` 
 
-### Applying functions to dataframe values - .apply 
+The `.apply()` function in pandas allows you to apply any function to rows or columns in a `pandas.DataFrame`. For example, You can use it to perform operations on specific column or row values. When you use `.apply()`, you can specify whether you want to apply the function across columns `(axis=0)` (the default) or across rows `(axis=1)`. For example, if you want to apply a function to each row of a DataFrame, you would use `df.apply(your_function, axis=1)`. This function is especially useful for applying logic that can’t be easily achieved with built-in pandas functions, allowing for more flexibility in data processing.
 
-The `.apply()` function in pandas allows you to apply any function to rows or columns in a `pandas.DataFrame`. For example, You can use it to perform operations on specific column or row values. When you use .apply(), you can specify whether you want to apply the function across columns (axis=0, the default) or across rows (axis=1). For example, if you want to apply a function to each row of a DataFrame, you would use df.apply(your_function, axis=1). This function is especially useful for applying logic that can’t be easily achieved with built-in pandas functions, allowing for more flexibility in data processing.
+You can use `.apply` in pandas to efficiently replace `for loops` to process row and column values in a `pandas.DataFrame`.
 
-You can use `.apply` in pandas as an efficient replacement for `for loops` to process row and column values in a df.
-
-```{code-cell} ipython3
-a=1
-```
+:::
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-The code below is an example of what your code might look like after completing activity 2.
+### What's changed in your workflow?
 
-You can choose to work with this code, or you can use the code that you completed in activity 2.
+:::{warning}
+You have a new data file to open in your list of `.json` files in this activity. This file has some unexpected "features" that your code needs to handle gracefully so it can process all of the data.
+:::
 
-### What's changed
-
-For this activity, you now have a new data file to open in your list of .json files. This file has some unexpected "features" that you will need to ensure your code handles gracefully. 
-
-Your goal is similar to ensure that the code below runs. 
+Your goal is to make the code below run on the data provided in the activity-3 `data/` directory.  
 
 :::{tip}
 The code below will fail. You will likely want to use a debugger to determine why it's failing and get the code running. 
 :::
+
+The code below is an example of what your code might look like after completing activity 2. You can choose to work with this code, or you can use the code that you completed in activity 2.
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["raises-exception"]}
 
@@ -220,6 +217,23 @@ all_papers_df = pd.concat(all_papers_list, axis=0, ignore_index=True)
 
 print("Final shape of combined DataFrame:", all_papers_df.shape)
 ```
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+:::{admonition} On your own 1
+:class: attention
+
+Ideas for on your own welcome!
+:::
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+:::{admonition} On your own 2
+:class: attention
+Ideas welcome?
+:::
+
+I want to have them move their code into a module if possible during this workshop but we could also kick that off in the day 2 workshop. 
 
 ```{code-cell} ipython3
 ---
