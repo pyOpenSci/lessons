@@ -51,8 +51,8 @@ Tests & Checks <checks-conditionals/tests-checks>
 :maxdepth: 2
 
 Clean Code: Activity 1 <activity-1/clean-code-activity-1>
-Clean Code: Activity 2 <activity-2/clean-code-part-2>
-Clean Code: Activity 3 <activity-3/clean-code-part-3>
+Clean Code: Activity 2 <activity-2/clean-code-activity-2>
+Clean Code: Activity 3 <activity-3/clean-code-activity-3>
 :::
 
 :::{note}
@@ -205,7 +205,7 @@ however, it's important that you are careful about how you use them because
 * they are often wrong
 * they make up stuff
 * etc.
-however with correct promots, and if you build your eye for identifying problems, and combined with tools that will help you with your code, as you write it, they can be effective tools in your workfhlow dev process.
+however with correct prompts, and if you build your eye for identifying problems, and combined with tools that will help you with your code, as you write it, they can be effective tools in your workflow dev process.
 
 In the next lessons, you will learn more about making tools and approaches to making your code more Pythonic
 
