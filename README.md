@@ -7,6 +7,8 @@
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/lessons?color=purple&display_name=tag&style=plastic)
 
+[![DOI](https://zenodo.org/badge/855935338.svg)](https://doi.org/10.5281/zenodo.13910245)
+
 
 [![CircleCI](https://circleci.com/gh/pyOpenSci/python-package-guide.svg?style=svg)](https://circleci.com/gh/pyOpenSci/python-package-guide)
 
