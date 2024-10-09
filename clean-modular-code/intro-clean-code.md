@@ -52,9 +52,9 @@ Tests & Checks <checks-conditionals/tests-checks>
 :caption: Activities
 :maxdepth: 2
 
-Clean Code: Activity 1 <activity-1/clean-code-part-1>
-Clean Code: Activity 2 <activity-2/clean-code-part-2>
-Clean Code: Activity 3 <activity-3/clean-code-part-3>
+Clean Code: Activity 1 <activity-1/clean-code-activity-1>
+Clean Code: Activity 2 <activity-2/clean-code-activity-2>
+Clean Code: Activity 3 <activity-3/clean-code-activity-3>
 :::
 
 
