@@ -19,7 +19,9 @@ jupyter:
     name: python3
 ---
 
-<!-- #region editable=true slideshow={"slide_type": ""} tags=["hide-content"] -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+# Write Clean, Modular, DRY Code
+
 :::{toctree}
 :hidden:
 :caption: Lessons
@@ -27,7 +29,6 @@ jupyter:
 
 Intro <self>
 Python Code Style <python-pep-8>
-Package imports <pep8-package-imports>
 Don't Repeat Yourself <python-dry-modular-code>
 Functions <python-functions>
 Function checks <python-function-checks>
@@ -56,10 +57,6 @@ Clean Code: Activity 2 <activity-2/clean-code-part-2>
 Clean Code: Activity 3 <activity-3/clean-code-part-3>
 :::
 
-<!-- #endregion -->
-
-<!-- #region editable=true slideshow={"slide_type": ""} -->
-# Write Clean, Modular, DRY Code
 
 :::{note}
 After completing this lesson, you will be able to:
@@ -68,7 +65,7 @@ After completing this lesson, you will be able to:
 * Apply the PEP 8 Style Guide standards to your **Python** code.
 :::
 
-"Pythonic" code is code that follows the conventions and best practices of the Python programming language. It emphasizes code that is clear, concise, and readable--principles that adhere to Python's design philosophy. <link to zen of python>
+"Pythonic" code is code that follows the conventions and best practices of the Python programming language. It emphasizes code that is clear, concise, and readable--principles that adhere to Python's design philosophy. 
 
 Pythonic code also takes full advantage of Python's features which include:
 
