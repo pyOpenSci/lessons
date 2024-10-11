@@ -93,18 +93,23 @@ df
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-:::{admonition} Activity 2
+:::{admonition} Activity 2: Part 1
 :class: attention
 
 Examine the code in the cell below and do the following: 
 
 1. Identify what areas of the code are redundant.
 2. Create pseudocode for the repeated steps; use that pseudocode to clean up the code. Important: Don't skip ahead and write any code yet.
+:::
 
-When you are happy with your pseudocode, it's time to refactor the code. 
+:::{admonition} Activity 2: Part 2
+:class: attention
 
-3. Identify sections of the code that could be combined into functions
-4. When you finish the above, refactor the code so it is cleaner and more modular.
+When you are happy with your pseudocode, refactor the code. Refactoring means improving your code’s structure and readability without changing its behavior. It makes the code cleaner, more efficient, and easier to maintain.
+
+1. Identify sections of the code that could be combined into functions
+1. When you finish the above, refactor the code so it is cleaner and more modular.
+
 :::
 
 ```{code-cell} ipython3
