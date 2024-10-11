@@ -124,7 +124,7 @@ df_combined.shape
 ```
 
 :::{admonition} Part 2
-:class: tip
+:class: attention
 
 Take the code above and clean it up. Make the code:
 
@@ -134,7 +134,7 @@ Take the code above and clean it up. Make the code:
 :::
 
 :::{admonition} Part 3
-:class: tip
+:class: attention
 
 Evaluate the code to determine whether it could be more DRY. 
 * Create a list of items that you notice are repeated and could be cleaned up in the code
