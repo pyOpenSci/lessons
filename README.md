@@ -6,7 +6,7 @@
 
 [![DOI](https://zenodo.org/badge/855935338.svg)](https://doi.org/10.5281/zenodo.13910245)
 
-[![CircleCI](https://circleci.com/gh/pyOpenSci/python-package-guide.svg?style=svg)](https://circleci.com/gh/pyOpenSci/python-package-guide)
+[![CircleCI](https://circleci.com/gh/pyOpenSci/lessons.svg?style=svg)](https://circleci.com/gh/pyOpenSci/lessons)
 
 ## What is pyOpenSci?
 
@@ -72,10 +72,10 @@ To build live documentation that updates when you update local files, run the fo
 nox -s docs-live
 ```
 
-## Contributing to this guide
+## Contributing to pyOpenSci lessons
 
 We welcome and issues and pull requests to improve the content of this guide.
-If you'd like to see an improvement, please [open an issue](https://github.com/pyOpenSci/python-package-guide/issues/new/choose).
+If you'd like to see an improvement, please [open an issue](https://github.com/pyOpenSci/lessons/issues/new/choose).
 
 ## Contributors ✨
 
@@ -118,4 +118,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=pyOpenSci/python-package-guide&type=Date)](https://star-history.com/#pyOpenSci/python-package-guide&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=pyOpenSci/lessons&type=Date)](https://star-history.com/#pyOpenSci/lessons&Date)
