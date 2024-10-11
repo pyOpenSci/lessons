@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Clean, Modular Code: Part 1" />
+<meta property="og:title" content="Clean, Modular Code: Activity 1" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/activity-1/clean-code-part-1.html" />
+<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/activity-1/clean-code-activity-1.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="Below is some code that processes cross-ref citation data for JOSS publications. The data were pulled directly from the cross-ref API but then modified to support this workshop. Your goal: Your goa..." />
+<meta property="og:description" content="Writing clean, modular code takes practice but is a habit worth building. Over time as you incorporate clean code strategies that improve code quality and maintainability, these strategies will bec..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_activity-1_clean-code-part-1_383869a8.png" />
-<meta property="og:image:alt" content="Below is some code that processes cross-ref citation data for JOSS publications. The data were pulled directly from the cross-ref API but then modified to su..." />
-<meta name="description" content="Below is some code that processes cross-ref citation data for JOSS publications. The data were pulled directly from the cross-ref API but then modified to support this workshop. Your goal: Your goa..." />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_activity-1_clean-code-activity-1_31588273.png" />
+<meta property="og:image:alt" content="Writing clean, modular code takes practice but is a habit worth building. Over time as you incorporate clean code strategies that improve code quality and ma..." />
+<meta name="description" content="Writing clean, modular code takes practice but is a habit worth building. Over time as you incorporate clean code strategies that improve code quality and maintainability, these strategies will bec..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Clean, Modular Code: Part 1 &#8212; pyOpenSci Lessons</title>
+    <title>Clean, Modular Code: Activity 1 &#8212; pyOpenSci Lessons</title>
   
   
   
@@ -52,14 +52,14 @@
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="../../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/activity-1/clean-code-part-1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/activity-1/clean-code-activity-1';</script>
     <script src="../../_static/matomo.js?v=918da087"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/activity-1/clean-code-part-1.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/activity-1/clean-code-activity-1.html" />
     <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -463,29 +463,66 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="clean-modular-code-part-1">
-<h1>Clean, Modular Code: Part 1<a class="headerlink" href="#clean-modular-code-part-1" title="Link to this heading">#</a></h1>
-<p>Below is some code that processes cross-ref citation data for JOSS publications. The data were pulled directly from the cross-ref API but then modified to support this workshop.</p>
+  <section id="clean-modular-code-activity-1">
+<span id="clean-code-activity-1"></span><h1>Clean, Modular Code: Activity 1<a class="headerlink" href="#clean-modular-code-activity-1" title="Link to this heading">#</a></h1>
+<p>Writing clean, modular code takes practice but is a habit worth building. Over time as you incorporate clean code strategies that improve code quality and maintainability, these strategies will become second nature. Writing cleaner code will make your code easier to read, maintain, and share with others. It will also make your work easier for others (and your future self) to use.</p>
+<p>In this exercise, you’ll focus on using three key clean code strategies:</p>
+<ol class="arabic simple">
+<li><p><strong>Use expressive names</strong>: Assign meaningful names to all variables and functions to make your code more readable. <a class="reference internal" href="../python-expressive-code.html"><span class="std std-doc">Learn more about expressive names.</span></a></p></li>
+<li><p><strong>Use a Python style guide (PEP8) for consistent syntax</strong>: Adhere to <a class="reference internal" href="../python-pep-8.html"><span class="std std-doc">PEP8 Python code style rules</span></a>, including proper spacing and naming conventions, to maintain a consistent and readable codebase.</p></li>
+<li><p><strong>Identify opportunities to make your code DRY (Don’t Repeat Yourself)</strong>: In this activity, you will use pseudocode to identify areas where the code can be simplified and made DRY. In the next activity, you will implement DRY best practices using loops and functions.</p></li>
+</ol>
+<p>By practicing these strategies, you are well on your way to writing clean, efficient, and maintainable code.</p>
+<section id="activity-data">
+<h2>Activity data<a class="headerlink" href="#activity-data" title="Link to this heading">#</a></h2>
+<p>This activity begins with some code that you “inherited from a former lab mate”. This code processes <a class="reference external" href="https://www.crossref.org/">cross-ref</a> citation data for <a class="reference external" href="https://joss.theoj.org/">The Journal of Open Source Software (JOSS)</a> publications. The data are pulled directly from the crossref API but then modified with specific “features” to help you learn better coding practices when completing the activities.</p>
+</section>
 <section id="your-goal">
 <h2>Your goal<a class="headerlink" href="#your-goal" title="Link to this heading">#</a></h2>
-<p>Your goal  is to take the code below and turn it into a script that has the following characteristics:</p>
+<p>Your goal is to take the code below and turn it into a script that has the following characteristics:</p>
 <ul class="simple">
 <li><p>The code uses clean, expressive naming conventions</p></li>
-<li><p>the code follows the PEP 8 style guide</p></li>
-<li><p>The code uses expressive names wherever possible</p></li>
-<li><p>The code is DRY - elements in it aren’t repeated.</p></li>
-<li><p>The code uses principles of modularity.</p></li>
+<li><p>The code follows the PEP 8 style guide</p></li>
 </ul>
+<p>In this part of the activity, you will create pseudocode to identify:</p>
+<ul class="simple">
+<li><p>How the code could be more DRY. Are elements repeated?</p></li>
+<li><p>How the code could be made more modular.</p></li>
+</ul>
+<p>In the next activity, you will modify the code.</p>
 <section id="if-you-want-to-use-an-llm-to-support-your-learning">
 <h3>If you want to use an LLM to support your learning<a class="headerlink" href="#if-you-want-to-use-an-llm-to-support-your-learning" title="Link to this heading">#</a></h3>
-<p>These cleanup steps are all things that a LLn LLM can support you in doing. But remember that if you are using LLMs, they likely will not always give you the right answer—especially on the first, second, even sometimes the third try.</p>
-<p>If you are using an LLM,</p>
+<p>The cleanup steps discussed above are things a LLM (Large Language Model) like ChatGPT and Anthropic’s Claude can help you with. However, remember that LLMs often return wrong or partially wrong answers. This means that if you use LLM’s, you must have a keen eye to catch issues in LLM-generated code.</p>
+<p>If you are using a LLM:</p>
 <ul class="simple">
-<li><p>provide it with descriptive, leading prompts that allow it to better perform the task.</p></li>
-<li><p>Be sure to closely check it’s work -</p></li>
+<li><p>provide it with descriptive, leading prompts that allow it to perform the task better. So you might write:</p></li>
 </ul>
-<p>The data used in this part of the workshop hasn’t been modified; the code below should run.</p>
-<p>Your job is to make it cleaner and more maintainable.</p>
+<blockquote>
+<div><p>Make the variable names in the code below more expressive.</p>
+</div></blockquote>
+<p>or</p>
+<blockquote>
+<div><p>Identify areas of the code below that could be more DRY. Write pseudocode that identifies the processing steps that are repeated in the code.</p>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you use an LLM for this activity, consider adding any odd or incorrect code it returns to our shared workshop document.</p>
+</div>
+</section>
+</section>
+<section id="your-task">
+<h2>Your task<a class="headerlink" href="#your-task" title="Link to this heading">#</a></h2>
+<p>The workflow below should open the data stored in the <code class="docutils literal notranslate"><span class="pre">/data</span></code> directory for this activity. The code should run if you have a proper Python environment setup.</p>
+</section>
+<section id="part-1-evaluate-with-a-partner">
+<h2>Part 1 - evaluate with a partner<a class="headerlink" href="#part-1-evaluate-with-a-partner" title="Link to this heading">#</a></h2>
+<p>To begin, look at the code.</p>
+<ul class="simple">
+<li><p>Create a list of any issues that you see with it.</p></li>
+<li><p>What is the code supposed to do?</p></li>
+<li><p>Does the code run?</p></li>
+<li><p>What ideas do you have to make it more efficient?</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -494,7 +531,6 @@ document.write(`
 <span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span> 
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
 
 <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;data/part-1-data.json&quot;</span>
 
@@ -548,7 +584,27 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
+<div class="tip admonition">
+<p class="admonition-title">Part 2</p>
+<p>Take the code above and clean it up. Make the code:</p>
+<ul class="simple">
+<li><p>PEP8 compliant</p></li>
+<li><p>Add expressive names to make it more readable</p></li>
+<li><p>Add a docstring to the top of the script to help a user understand what the code does.</p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Part 3</p>
+<p>Evaluate the code to determine whether it could be more DRY.</p>
+<ul class="simple">
+<li><p>Create a list of items that you notice are repeated and could be cleaned up in the code</p></li>
+<li><p>Write pseudocode that describes what the code intends to do step by step</p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">One your own 1</p>
+<p>Begin cleaning up the code. In the next activity, we will discuss loops and functions in more detail.</p>
+</div>
 </section>
 </section>
 
@@ -598,10 +654,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-data">Activity data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-goal">Your goal</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-you-want-to-use-an-llm-to-support-your-learning">If you want to use an LLM to support your learning</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-task">Your task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-evaluate-with-a-partner">Part 1 - evaluate with a partner</a></li>
 </ul>
   </nav></div>
 
@@ -609,7 +668,7 @@ document.write(`
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/activity-1/clean-code-part-1.md">
+    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/activity-1/clean-code-activity-1.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -624,7 +683,7 @@ document.write(`
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../../_sources/clean-modular-code/activity-1/clean-code-part-1.md.txt">
+    <a href="../../_sources/clean-modular-code/activity-1/clean-code-activity-1.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
