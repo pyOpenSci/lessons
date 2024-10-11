@@ -37,7 +37,7 @@ Your goal is to take the code below and turn it into a script that has the follo
 While you will implement the items below in the next activity, you will create pseudocode in this activity to identify:
 
 * How the code could be more DRY. Are elements repeated? 
-* How the code could be more modular. 
+* How the code could be made more modular. 
 
 ### If you want to use an LLM to support your learning 
 
