@@ -1,14 +1,10 @@
 # <img src="https://www.pyopensci.org/images/logo.png" width=100 /> pyOpenSci Lessons
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![All Contributors](https://img.shields.io/github/all-contributors/pyOpenSci/lessons?color=ee8449)](#contributors-)
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/lessons?color=purple&display_name=tag&style=plastic)
 
 [![DOI](https://zenodo.org/badge/855935338.svg)](https://doi.org/10.5281/zenodo.13910245)
-
 
 [![CircleCI](https://circleci.com/gh/pyOpenSci/python-package-guide.svg?style=svg)](https://circleci.com/gh/pyOpenSci/python-package-guide)
 
