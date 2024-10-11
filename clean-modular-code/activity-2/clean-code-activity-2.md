@@ -15,18 +15,18 @@ kernelspec:
 
 # Activity 2 - DRY Code & Functions
 
-In [activity 1](/activity-1/clean-code-activity-1), you took some code and made  it cleaner and easier to understand by:
+In [activity 1](../activity-1/clean-code-activity-1), you took some code and made  it cleaner and easier to understand by:
 
 * using expressive variable names, 
 * following PEP8 code style guidelines, and
 * creating pseudocode as a way to create a plan to clean up the code and make it easier to maintain.  
 
-In this activity, you will make the code more [DRY which stands for Don't Repeat Yourself](../python-dry-modular-code.html). 
+In this activity, you will make the code [DRY which stands for Don't Repeat Yourself](../python-dry-modular-code). 
 
-You can use the script you worked on in Activity 1 here, or you can use the cleaned-up script provided below.
+You can use the script you worked on in Activity 1 here or the cleaned-up script provided below.
 
 :::{note}
-In the [final activity](/activity-3/clean-code-activity-3), you will
+In [activity 3](../activity-3/clean-code-activity-3), you will
 
 * Use conditional statements to control if and when code is executed.
 * Add checks to your code
