@@ -41,7 +41,7 @@ While you will implement the items below in the next activity, you will create p
 
 ### If you want to use an LLM to support your learning 
 
-The cleanup steps discussed above are things an LLM can help you with. However, remember that if you use LLMs, they likely will not always give you the right answer. In fact more often than not, part of the answer is wrong. This means that you need to have a keen eye to catch issues in your code.
+The cleanup steps discussed above are things an LLM can help you with. However, remember that if you use LLMs, they likely will not always give you the right answer. In fact more often than not, part of the answer is wrong. This means that you need to have a keen eye to catch issues in LLM-generated code.
 
 If you are using a LLM: 
 
