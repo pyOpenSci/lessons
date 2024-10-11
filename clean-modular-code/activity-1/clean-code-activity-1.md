@@ -26,7 +26,7 @@ By practicing these strategies, you are well on your way to writing clean, effic
 
 ## Activity data 
 
-Below is some code that processes cross-ref citation data for JOSS publications. The data were pulled directly from the cross-ref API but then modified with some specific features to help you learn when completing the activities.
+Today's activity begins with some code that processes cross-ref citation data for JOSS publications. The data were pulled directly from the cross-ref API but then modified with specific features to help you learn when completing the activities.
 
 ## Your goal 
 Your goal is to take the code below and turn it into a script that has the following characteristics:
