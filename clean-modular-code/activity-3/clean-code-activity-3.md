@@ -22,7 +22,7 @@ In this activity, you will build checks into your workflow to handle data proces
 
 
 ### Real world data processing & workflows and edge cases 
-Real-world data rarely can be imported without "work arounds". You will often find unusual data entries and values you don't expect. Sometimes, these values are documented - for example, a 9999 may represent a missing value in a dataset. Other times, there are typos and other errors in the data that you need to handle. Sometimes, call these unusual values or instances in a dataset or workflow "edge cases".  
+Real-world data rarely can be imported without "work arounds". You will often find unusual data entries and values you don't expect. Sometimes, these values are documented - for example, a 9999 may represent a missing value in a dataset. Other times, there are typos and other errors in the data that you need to handle. These unusual values or instances in a dataset or workflow are sometimes called "edge cases".  
 
 Writing robust code that handles unexpected values will make your code run smoothly and fail gracefully. This type of code, which combines functions (or classes) and checks within the functions that handle messy data, will make your code easier to maintain over time. 
 
