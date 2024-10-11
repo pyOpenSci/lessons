@@ -20,9 +20,9 @@ kernelspec:
 :class: tip
 
 * Describe the benefits of using code standards.
-* Explain the PEP 8 style guide and how it helps promote code readability.
+* Explain the `PEP 8` style guide and how it helps promote code readability.
 * Describe key components of the PEP 8 style guide, including naming conventions and white space.
-* List tools to help you apply the PEP 8 style guide to your code.  
+* List tools to help you apply the `PEP 8` style guide to your code.  
 
 :::
 

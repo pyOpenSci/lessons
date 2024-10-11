@@ -15,55 +15,62 @@ kernelspec:
 
 # Activity 2 - DRY Code & Functions
 
-In [activity 1](/activity-1/clean-code-activity-1), you took some code and worked to make it cleaner and easier to understand by
+In [activity 1](/activity-1/clean-code-activity-1), you took some code and made  it cleaner and easier to understand by:
 
-* using expressive variable names and
-* following PEP8 code style guidelines.
+* using expressive variable names, 
+* following PEP8 code style guidelines, and
+* creating pseudocode as a way to create a plan to clean up the code and make it easier to maintain.  
 
-In part 2, you will focus on making the code more [DRY which stands for Don't Repeat Yourself](../python-dry-modular-code.html). 
+In this activity, you will make the code more [DRY which stands for Don't Repeat Yourself](../python-dry-modular-code.html). 
 
-You can use the script you worked on in Activity 1 here. Or you can use the cleaned-up script provided below. 
+You can use the script you worked on in Activity 1 here, or you can use the cleaned-up script provided below.
+
+:::{note}
+In the [final activity](/activity-3/clean-code-activity-3), you will
+
+* Use conditional statements to control if and when code is executed.
+* Add checks to your code
+:::
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-## Remember the strategies for cleaner code 
+## The clean code strategies 
 
-* Document what the code does by adding a docstring at the top of the script to help your future self, a future lab mate, or another user understand that tasks that your code performs.
+In this activity, you will focus on the following clean code strategies:
 
-In this exercise, you will focus specifically on:
+* **Document:** Document what the code does by adding a docstring at the top of the script to help your future self, a future lab member, or another user understand your code's tasks. Use Numpy-style docstrings when possible. 
+* **Modularize** Make your code more modular by adding functions that perform small, repeated tasks. Functions should also have docstrings and expressive names for added readability and usability.
+* **Use Loops** Eliminate repetition by using loops that will iterate over specific tasks. In this case, you will iterate over processing several files. 
+* **Create dynamic paths:** Dynamic paths ensure that your code will run on other machines regardless of operating system. To achieve this in Python, you can use `os` or `pathlib` to create paths
 
-* Writing functions for a task that is performed over and over.
-* Creating loops that iterate over repetitive tasks.
-* Use `os` or `pathlib` to create paths to ensure that your code runs across operating systems
-
-:::{note}
-In the final activity, you will
-
-* Use conditional statements to control if and when code is executed.
-* Add tests and checks 
-:::
-
-## To begin - identify the parts of this code that are redundant 
+## To begin - identify redundant parts of this code 
 
 Create pseudocode (or text) describing the process steps represented in the code below. How could the code be organized differently and more efficiently? 
 
 What tools could make the code more DRY?
 
-## Reproducibility: will this code run on other machines?
+## Reproducibility: will your code run on other machines?
 
-One big challenge when considering the reproducibility of workflows is ensuring that your code runs seamlessly on different machines or environments. One key issue is file paths. Hard-coded paths, like `data/part-1-data.json`, can lead to errors if the directory structure on another machine differs from your setup. Paths should be constructed dynamically, using tools like Python’s `pathlib` or environment variables to ensure flexibility across different systems.
+When considering workflow reproducibility, a key challenge is ensuring that your code runs seamlessly across different machines. Hard-coded paths, like data/part-1-data.json, can cause errors if created on a Windows machine but run on a Mac (Unix-based/POSIX) machine.
+
+To avoid these issues, file paths should be constructed dynamically using tools like Python’s `pathlib`, which ensures compatibility across different operating systems.
+
+:::{tip} 
+“POSIX” refers to a set of standards for maintaining compatibility between operating systems, and Mac systems are POSIX-compliant.
+:::
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 ### Applying functions to `pandas.DataFrame` values - `.apply` 
 
-The `.apply()` function in pandas allows you to apply any function to rows or columns in a `pandas.DataFrame`. For example, you can use it to perform operations on specific column or row values. When you use `.apply()`, you can specify whether you want to apply the function across columns (axis=0, the default) or across rows (axis=1). 
+The `pandas.DataFrame.apply()` function allows you to apply any function to the rows or columns of a `pandas.DataFrame`. You can use it to perform operations on specific column or row values. When using `.apply()`, you can specify whether the function should be applied across columns (`axis=0`, the default) or across rows (`axis=1`).
 
-For example, if you want to apply a function to each row of a DataFrame, you would use `df.apply(your_function, axis=1)`. 
+- To apply a function to each row of a `pandas.DataFrame`, use `df.apply(your_function, axis=1)`.
+- To apply a function to a specific column across all rows, use `df["column-name"].apply(your_function)`.
 
-You can use `.apply` in pandas to efficiently replace `for loops` to process row and column values in a DataFrame.
+The `.apply()` method in pandas is an efficient way to replace `for` loops for processing row and column values in a `DataFrame`.
 
-In this activity, we encourage you to test out using apply as an efficient way to process data in each cell of a `DataFrame`. An example of using `.apply` is below. 
+In this activity, we encourage you to test out using apply as an efficient way to process data in each cell of a `DataFrame`. An example of using `.apply` is below.
 
 ```{code-cell} ipython3
 import pandas as pd
