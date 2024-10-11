@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Part 3 - Tests & Checks for your code" />
+<meta property="og:title" content="Activity 3: Tests & Checks for your code" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/activity-3/clean-code-part-3.html" />
+<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/activity-3/clean-code-activity-3.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="In part 1, you took some code and worked to make it cleaner using expressive variable names. In part 2, you focused on making your code more DRY (“Don’t Repeat Yourself”). In this section you will ..." />
+<meta property="og:description" content="In activity 1, you took some code and made it cleaner using expressive variable names and docstrings to document the module., In activity 2, you made your code more DRY (“Don’t Repeat Yourself”) us..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_activity-3_clean-code-part-3_a5f316b7.png" />
-<meta property="og:image:alt" content="In part 1, you took some code and worked to make it cleaner using expressive variable names. In part 2, you focused on making your code more DRY (“Don’t Repe..." />
-<meta name="description" content="In part 1, you took some code and worked to make it cleaner using expressive variable names. In part 2, you focused on making your code more DRY (“Don’t Repeat Yourself”). In this section you will ..." />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_activity-3_clean-code-activity-3_7ad8d4be.png" />
+<meta property="og:image:alt" content="In activity 1, you took some code and made it cleaner using expressive variable names and docstrings to document the module., In activity 2, you made your co..." />
+<meta name="description" content="In activity 1, you took some code and made it cleaner using expressive variable names and docstrings to document the module., In activity 2, you made your code more DRY (“Don’t Repeat Yourself”) us..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Part 3 - Tests &amp; Checks for your code &#8212; pyOpenSci Lessons</title>
+    <title>Activity 3: Tests &amp; Checks for your code &#8212; pyOpenSci Lessons</title>
   
   
   
@@ -57,13 +57,13 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/activity-3/clean-code-part-3';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/activity-3/clean-code-activity-3';</script>
     <script src="../../_static/matomo.js?v=918da087"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/activity-3/clean-code-part-3.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/activity-3/clean-code-activity-3.html" />
     <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Part 2 - Functions &amp; DRY code" href="../activity-2/clean-code-part-2.html" />
+    <link rel="prev" title="Clean, Modular Code: Activity 1" href="../activity-1/clean-code-activity-1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -388,7 +388,6 @@ document.write(`
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro-clean-code.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-pep-8.html">Python Code Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pep8-package-imports.html">Package imports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-dry-modular-code.html">Don't Repeat Yourself</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-function-checks.html">Function checks</a></li>
@@ -398,12 +397,11 @@ document.write(`
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-functions-multiple-conditions.html">Multi-variable functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-conditionals.html">Conditional statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/tests-checks.html">Tests &amp; Checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-function-checks.html">Tests &amp; Checks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../activity-1/clean-code-activity-1.html">Clean Code: Activity 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../activity-2/clean-code-part-2.html">Clean Code: Activity 2</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Clean Code: Activity 3</a></li>
 </ul>
 </div>
@@ -445,7 +443,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../intro-clean-code.html" class="nav-link">Write Clean, Modular, DRY Code</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Part 3 -...</li>
+    <li class="breadcrumb-item active" aria-current="page">Activity 3:...</li>
   </ul>
 </nav>
 </div>
@@ -462,25 +460,40 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="part-3-tests-checks-for-your-code">
-<h1>Part 3 - Tests &amp; Checks for your code<a class="headerlink" href="#part-3-tests-checks-for-your-code" title="Link to this heading">#</a></h1>
-<p>In part 1, you took some code and worked to make it cleaner using expressive variable names. In part 2, you focused on making your code more DRY (“Don’t Repeat Yourself”).</p>
-<p>In this section you will learn how to build in checks to your workflow to handle data processing “features”. Messy data rarely are perfect when processing. you will most often find unusual data entries and values that you don’t expdect. writing robust code that can handle unexpected values will make your code…</p>
-<p>Using functions is a great first step to handleing messy data because they rpovide a modular unit that you can test outside of the workflow for the edge cases that you may encounter. Also, because you have funtions you can add elements to them to handle unexpected processing features as you build out your workflow.</p>
-<p>You will learn about using:</p>
+  <section id="activity-3-tests-checks-for-your-code">
+<h1>Activity 3: Tests &amp; Checks for your code<a class="headerlink" href="#activity-3-tests-checks-for-your-code" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p>conditional statements</p></li>
+<li><p>In <a class="reference internal" href="../activity-1/clean-code-activity-1.html"><span class="doc std std-doc">activity 1</span></a>, you took some code and made it cleaner using expressive variable names and docstrings to document the module.</p></li>
+<li><p>In <a class="reference internal" href="#../activity-2/clean-code-activity-2"><span class="xref myst">activity 2</span></a>, you made your code more DRY (“Don’t Repeat Yourself”) using documented functions and conditionals.</p></li>
+</ul>
+<p>In this activity, you will build checks into your workflow to handle data processing “features”.</p>
+<section id="real-world-data-processing-workflows-and-edge-cases">
+<h2>Real world data processing &amp; workflows and edge cases<a class="headerlink" href="#real-world-data-processing-workflows-and-edge-cases" title="Link to this heading">#</a></h2>
+<p>Real-world data rarely can be imported without “work arounds”. You will often find unusual data entries and values you don’t expect. Sometimes, these values are documented - for example, a 9999 may represent a missing value in a dataset. Other times, there are typos and other errors in the data that you need to handle. These unusual values or instances in a dataset or workflow are sometimes called “edge cases”.</p>
+<p>Writing robust code that handles unexpected values will make your code run smoothly and fail gracefully. This type of code, which combines functions (or classes) and checks within the functions that handle messy data, will make your code easier to maintain over time.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Using functions, classes, and methods (functions within a class) is a great first step in handling messy data. A function or method provides a modular unit you can test outside of the workflow for the edge cases you may encounter. Also, because a function is a modular unit, you can add elements to handle unexpected processing features as you build your workflow.</p>
+</div>
+<p>something about debuggers?</p>
+<ul class="simple">
+<li><p>https://jupyterlab.readthedocs.io/en/stable/user/debugger.html</p></li>
+</ul>
+</section>
+<section id="manage-the-unexpected">
+<h2>Manage the unexpected<a class="headerlink" href="#manage-the-unexpected" title="Link to this heading">#</a></h2>
+<p>In this activity, you will apply the following strategies:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../checks-conditionals/python-conditionals.html"><span class="doc std std-doc">conditional statements</span></a></p></li>
 <li><p>try/except blocks</p></li>
 </ul>
-<section id="making-checks-pythonic">
-<h2>Making checks Pythonic<a class="headerlink" href="#making-checks-pythonic" title="Link to this heading">#</a></h2>
-<p>The mantra of the zen of python includes :
-“Easier to Ask for Forgiveness than Permission”)</p>
-<p>this means…</p>
+<p>to process the JOSS citation data.</p>
+<p>When you can, try to use the Pythonic approach of asking for forgiveness later (ie use try/except blocks) rather than conditional statements.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Notice that this function checks explicetiy to see if it&#39;s a list and then it proesses the data.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This works but is less pythonic</span>
+<span class="k">def</span> <span class="nf">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Notice that this function checks explicitly to see if it&#39;s a list and then processes the data.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -495,9 +508,10 @@ document.write(`
 <p>easier to ask for forgiveness</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the preferred way to catch an error </span>
+<span class="k">def</span> <span class="nf">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    It&#39;s more pythonic to try first and then ask for forgiveneess later. </span>
+<span class="sd">    It&#39;s more Pythonic to try first and then ask for forgiveness later. </span>
 <span class="sd">    If you are writing tests this also makes your code easier to test. </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
@@ -508,20 +522,25 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="applying-functions-to-dataframe-values-apply">
-<h3>Applying functions to dataframe values - .apply<a class="headerlink" href="#applying-functions-to-dataframe-values-apply" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">.apply()</span></code> function in pandas allows you to apply any function to rows or columns in a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. For example, You can use it to perform operations on specific column or row values. When you use .apply(), you can specify whether you want to apply the function across columns (axis=0, the default) or across rows (axis=1). For example, if you want to apply a function to each row of a DataFrame, you would use df.apply(your_function, axis=1). This function is especially useful for applying logic that can’t be easily achieved with built-in pandas functions, allowing for more flexibility in data processing.</p>
-<p>You can use <code class="docutils literal notranslate"><span class="pre">.apply</span></code> in pandas as an efficient replacement for <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loops</span></code> to process row and column values in a df.</p>
-<p>Examine the code below.</p>
-<ol class="arabic simple">
-<li><p>Identify what areas of the code are redundant.</p></li>
-<li><p>Create pseudo code of the steps that are repeatied each time</p></li>
-<li><p>identify sections of the code that could be combined into functions</p></li>
-<li><p>When you are done with the above, refactor the code so that it is cleaner and more modular.</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="rubric" id="applying-functions-to-dataframe-values-apply">Applying functions to DataFrame values–<code class="docutils literal notranslate"><span class="pre">.apply</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.apply()</span></code> function in pandas allows you to apply any function to rows or columns in a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. For example, You can use it to perform operations on specific column or row values. When you use <code class="docutils literal notranslate"><span class="pre">.apply()</span></code>, you can specify whether you want to apply the function across columns <code class="docutils literal notranslate"><span class="pre">(axis=0)</span></code> (the default) or across rows <code class="docutils literal notranslate"><span class="pre">(axis=1)</span></code>. For example, if you want to apply a function to each row of a DataFrame, you would use <code class="docutils literal notranslate"><span class="pre">df.apply(your_function,</span> <span class="pre">axis=1)</span></code>. This function is especially useful for applying logic that can’t be easily achieved with built-in pandas functions, allowing for more flexibility in data processing.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">.apply</span></code> in pandas to efficiently replace <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loops</span></code> to process row and column values in a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p>
+</div>
+<section id="what-s-changed-in-your-workflow">
+<h3>What’s changed in your workflow?<a class="headerlink" href="#what-s-changed-in-your-workflow" title="Link to this heading">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You have a new data file to open in your list of <code class="docutils literal notranslate"><span class="pre">.json</span></code> files in this activity. This file has some unexpected “features” that your code needs to handle gracefully so it can process all of the data.</p>
+</div>
+<p>Your goal is to make the code below run on the data provided in the activity-3 <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The code below will fail. You will likely want to use a debugger to determine why it’s failing and get the code running.</p>
+</div>
+<p>The code below is an example of what your code might look like after completing activity 2. You can choose to work with this code, or you can use the code that you completed in activity 2.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -604,8 +623,7 @@ document.write(`
     <span class="s2">&quot;published.date-parts&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
-<span class="n">current_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
-<span class="n">data_dir</span> <span class="o">=</span> <span class="n">current_dir</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
 
 <span class="n">all_papers_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">json_file</span> <span class="ow">in</span> <span class="n">data_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.json&quot;</span><span class="p">):</span>
@@ -623,27 +641,15 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final shape of combined DataFrame:&quot;</span><span class="p">,</span> <span class="n">all_papers_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="attention admonition">
+<p class="admonition-title">On your own 1</p>
+<p>Ideas for on your own welcome!</p>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">84</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">date_str</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="n">columns_to_keep</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="s2">&quot;publisher&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="s2">&quot;DOI&quot;</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="s2">&quot;published.date-parts&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="p">]</span>
-<span class="ne">---&gt; </span><span class="mi">84</span> <span class="n">current_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
-<span class="g g-Whitespace">     </span><span class="mi">85</span> <span class="n">data_dir</span> <span class="o">=</span> <span class="n">current_dir</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="n">all_papers_list</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="ne">NameError</span>: name &#39;__file__&#39; is not defined
-</pre></div>
+<div class="attention admonition">
+<p class="admonition-title">On your own 2</p>
+<p>Ideas welcome?</p>
 </div>
-</div>
-</div>
+<p>I want to have them move their code into a module if possible during this workshop but we could also kick that off in the day 2 workshop.</p>
 </section>
 </section>
 </section>
@@ -659,12 +665,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../activity-2/clean-code-part-2.html"
+       href="../activity-1/clean-code-activity-1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Part 2 - Functions &amp; DRY code</p>
+        <p class="prev-next-title">Clean, Modular Code: Activity 1</p>
       </div>
     </a>
 </div>
@@ -685,9 +691,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-checks-pythonic">Making checks Pythonic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-data-processing-workflows-and-edge-cases">Real world data processing &amp; workflows and edge cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manage-the-unexpected">Manage the unexpected</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-pythonic-ask-for-forgiveness">More “pythonic” - ask for forgiveness</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-functions-to-dataframe-values-apply">Applying functions to dataframe values - .apply</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-changed-in-your-workflow">What’s changed in your workflow?</a></li>
 </ul>
 </li>
 </ul>
@@ -697,7 +704,7 @@ document.write(`
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/activity-3/clean-code-part-3.md">
+    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/activity-3/clean-code-activity-3.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -712,7 +719,7 @@ document.write(`
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../../_sources/clean-modular-code/activity-3/clean-code-part-3.md.txt">
+    <a href="../../_sources/clean-modular-code/activity-3/clean-code-activity-3.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
