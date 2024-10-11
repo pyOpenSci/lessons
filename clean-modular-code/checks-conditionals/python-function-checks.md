@@ -28,7 +28,7 @@ Using functions in your data processing pipeline offers several advantages:
 
 Your goal is to identify detect and data processing or workflow problems immediately when they occur, rather than allowing
 them to propagate through your code. This approach saves time and makes
-debugging easier, as it provides clearer, more useful error outputs (known as stack traces).
+debugging easier, providing clearer, more useful error outputs (known as stack traces).
 
 When working with messy data, you'll often encounter edge cases - unusual or unexpected data that can break your processing pipeline. Functions allow you to implement robust error handling and data validation. Here are some techniques you can use
 
