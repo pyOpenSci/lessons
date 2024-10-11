@@ -15,7 +15,7 @@ kernelspec:
 
 # Activity 3: Tests & Checks for your code
 
-* In [activity 1](../activity-1/clean-code-activity-1), you took some code and made it cleaner using expressive variable names and docstrings to document the module. 
+* In [activity 1](../activity-1/clean-code-activity-1), you made your code cleaner and more usable using expressive variable names and docstrings to document the module. 
 * In [activity 2](../activity-2/clean-code-activity-2), you made your code more DRY ("Don't Repeat Yourself") using documented functions and conditionals. 
 
 In this activity, you will build checks into your workflow to handle data processing "features". 
@@ -26,8 +26,10 @@ In this activity, you will build checks into your workflow to handle data proces
 
 Real-world data rarely can be imported without "work arounds". You will often find unusual data entries and values you don't expect. Sometimes, these values are documented - for example, a 9999 may represent a missing value in a dataset. Other times, there are typos and other errors in the data that you need to handle. These unusual values or instances in a dataset or workflow are sometimes called "edge cases".  
 
-Writing robust code that handles unexpected values will make your code run smoothly and fail gracefully. This type of code, which combines functions (or classes) and checks within the functions that handle messy data, will make your code easier to maintain over time. 
+Writing robust code that handles unexpected values will make your code run smoothly and fail gracefully. This type of code, which combines functions (or classes) and checks within the functions that handle messy data, will make your code easier to maintain.
 
+Things like helpful error messages and fast failing will also improve the experience for someone else using your code - OR your future self. 
+ 
 :::{tip}
 Using functions, classes, and methods (functions within a class) is a great first step in handling messy data. A function or method provides a modular unit you can test outside of the workflow for the edge cases you may encounter. Also, because a function is a modular unit, you can add elements to handle unexpected processing features as you build your workflow.
 
@@ -43,14 +45,12 @@ In this activity, you will apply the following strategies to make your code more
   and communicated clearly. This helps the user quickly understand what went 
   wrong and where.
 * Use **[conditional statements](../checks-conditionals/python-conditionals)** 
-  to check for specific conditions before executing certain parts of your code, 
-  which can help catch issues early.
+  to check for specific conditions before executing certain parts. This allows you to create specific workflows that your code followed based on specific conditions.
 * **[Try/except blocks](../checks-conditionals/python-function-checks)** allow 
   you to handle potential errors by attempting an operation and catching any 
-  exceptions if they occur, providing useful feedback without crashing the 
-  entire program.
+  exceptions if they occur, providing useful feedback. In some cases you may want the program to end on an error. In other cases, you may want to handle it in a specific way. 
 
-When you can, try to use a [Pythonic approach](pythonic-checks) to catch errors early. This means asking for forgiveness later (often using try/except blocks) vs using conditional statements to check the state or type of an object.
+When you can, try to use a [Pythonic approach](pythonic-checks) to catch errors early; this means asking for forgiveness later (often using try/except blocks) vs. using conditional statements to check an object's state or type.
 
 ```{code-cell} ipython3
 ---
@@ -67,9 +67,9 @@ def clean_title(title):
     return title
 ```
 
-## More "pythonic" - ask for forgiveness 
++++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-easier to ask for forgiveness
+
 
 ```{code-cell} ipython3
 ---
@@ -95,10 +95,14 @@ print(clean_title(title))  # This will raise an IndexError with the friendly mes
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["hide-output", "hide-cell"]}
 
+In this activity, you will be working with Pandas dataframes. You may find the .apply function to be particularly useful. 
+
 :::{tip}
 ### Applying functions to DataFrame values--`.apply` 
 
-The `.apply()` function in pandas allows you to apply any function to rows or columns in a `pandas.DataFrame`. For example, You can use it to perform operations on specific column or row values. When you use `.apply()`, you can specify whether you want to apply the function across columns `(axis=0)` (the default) or across rows `(axis=1)`. For example, if you want to apply a function to each row of a DataFrame, you would use `df.apply(your_function, axis=1)`. This function is especially useful for applying logic that can’t be easily achieved with built-in pandas functions, allowing for more flexibility in data processing.
+The `.apply()` function in pandas allows you to apply any function to rows or columns in a `pandas.DataFrame`. For example, you can use it to perform operations on specific column or row values. When you use `.apply()`, you can specify whether you want to apply the function across columns `(axis=0)` (the default) or across rows `(axis=1)`. 
+
+For example, if you want to apply a function to each row of a DataFrame, you would use `df.apply(your_function, axis=1)`. This function is especially useful for applying logic that can’t be easily achieved with built-in pandas functions, allowing for more flexibility in data processing.
 
 You can use `.apply` in pandas to efficiently replace `for loops` to process row and column values in a `pandas.DataFrame`.
 
@@ -112,7 +116,8 @@ You can use `.apply` in pandas to efficiently replace `for loops` to process row
 You have a new data file to open in your list of `.json` files in this activity. This file has some unexpected "features" that your code needs to handle gracefully to process all of the data.
 :::
 
-The code below is an example of what your code might look like after completing activity 2. You can choose to work with this code, or you can use the code that you completed in activity 2. 
+The code below is an example of what your code might look like after completing [activity 2](../activity-2/clean-code-activity-2). You can choose to work with this code, or you can use the code that you completed in activity 2. 
+
 Your goal is to make the code below run on the data provided in the activity-3 `data/` directory.
 
 The code below will fail. You will need to do the following:
@@ -128,7 +133,6 @@ Your end goal is to make the code below run.
 
 :::
 
-
 Important: It is ok if you can't get the code to run fully by the end of this workshop. If you can:
 
 1. identify at least one of the data processing "bugs" (even if you can't fix it) and/or
@@ -137,8 +141,6 @@ Important: It is ok if you can't get the code to run fully by the end of this wo
 You can consider your effort today as a success!
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["raises-exception"]}
-
-## TODO: double check this is the right code from activity 2 - there are clear errors that i just fixed. but it needs to actually run
 
 ```python
 # Note that this code has no checks or tests in the functions provided. You will need to add them to make the code run. 
@@ -188,13 +190,16 @@ def format_date(date_parts: list) -> str:
     pd.datetime
         A date formatted as a pd.datetime object.
     """
-    date_str = f("{date_parts[0]}-{date_parts[1]:02d}-{date_parts[2]:02d}")
+    date_str = (
+        f"{date_parts[0][0]}-{date_parts[0][1]:02d}-{date_parts[0][2]:02d}"
+    )
     return pd.to_datetime(date_str, format="%Y-%m-%d")
 
 
 def clean_title(value):
     """A function that removes a value contained in a list."""
     return value[0]
+
 
 columns_to_keep = [
     "publisher",
@@ -214,7 +219,7 @@ for json_file in data_dir.glob("*.json"):
 
     papers_df["title"] = papers_df["title"].apply(clean_title)
     papers_df["published_date"] = papers_df["published.date-parts"].apply(
-        process_published_date
+        format_date
     )
 
     all_papers_list.append(papers_df)
@@ -226,17 +231,98 @@ print("Final shape of combined DataFrame:", all_papers_df.shape)
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-:::{admonition} On your own 1
-:class: attention
+## What i don't like
 
-Ideas for on your own welcome!
-:::
+What I don't like about this is that the file not found error isn't too bad to figure out. things like keyerrors and value errors are more amorphous. so this could be an OYO 2 
+
+and we could work through a index error or a key error instead?  Becuase in that case they may want to return a default value or something else.... 
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-:::{admonition} On your own 2
+:::{admonition} Part 1 - What happens when your code can't find the data?
 :class: attention
-Ideas welcome?
+
+Let's break the code below and see how our code performs. 
+
+* Note that the code below has a modified `/data` directory path (that doesn't exist!).
+
+Questions:
+* What type of error do you expect Python to throw? Use Google, LLMs or our [tests and checks](common-exceptions) lesson to help figure this out. 
+* Does your code handle this error gracefully?
+* How can we make the code handle it better?
+
+```python
+import json
+from pathlib import Path
+
+import pandas as pd
+
+def load_clean_json(file_path, columns_to_keep):
+    """
+    Load JSON data from a file. Drop unnecessary columns and normalize
+    to DataFrame.
+
+    Parameters
+    ----------
+    file_path : Path
+        Path to the JSON file.
+    columns_to_keep : list
+        List of columns to keep in the DataFrame.
+
+    Returns
+    -------
+    dict
+        Loaded JSON data.
+    """
+
+    with file_path.open("r") as json_file:
+        json_data = json.load(json_file)
+    normalized_data = pd.json_normalize(json_data)
+
+    # Return the pandas DataFrame, filtering out some of the columns that we don't need
+    return normalized_data.filter(items=columns_to_keep)
+
+
+columns_to_keep = [
+    "publisher",
+    "DOI",
+    "type",
+    "author",
+    "is-referenced-by-count",
+    "title",
+    "published.date-parts",
+]
+
+# Break this data path by giving it a dir name that doesn't exist - what happens when your code runs?
+data_dir = Path("bad-bad-data")
+
+all_papers_list = []
+for json_file in data_dir.glob("*.json"):
+    papers_df = load_clean_json(json_file, columns_to_keep)
+    papers_df["title"] = papers_df["title"].apply(clean_title)
+
+    all_papers_list.append(papers_df)
+
+all_papers_df = pd.concat(all_papers_list, axis=0, ignore_index=True)
+
+print("Final shape of combined DataFrame:", all_papers_df.shape)
+```
+
+Your goal is to troubleshoot any issues associated with cleaning up the title so you can work with it later in a `pandas.DataFrame`.
+
+:::
+
++++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["hide-cell"]}
+
+Note: we can have two groups - one that wants to work on their own and another that wants to work with the instructor together. 
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+:::{admonition} On your own 1
+:class: attention
+
+What happens 
+
 :::
 
 I want to have them move their code into a module if possible during this workshop but we could also kick that off in the day 2 workshop.
