@@ -47,11 +47,11 @@ If you are using a LLM:
 
 * provide it with descriptive, leading prompts that allow it to perform the task better. So you might write:
 
-> Make the variables in the code below.
+> Make the variable names in the code below more expressive.
 
 or
 
-> Identify areas of the code below that could be more DRY. Write Pseudocode that identifies the core steps that are repeated.
+> Identify areas of the code below that could be more DRY. Write pseudocode that identifies the processing steps that are repeated in the code.
 
 :::{important}  
 If you use an LLM for this activity, be sure to double-check that it works. Add anything you notice it does wrong or oddly to our workshop document.  
@@ -71,7 +71,7 @@ To begin, look at the code.
 * Create a list of any issues that you see with it.
 * What is the code supposed to do?
 * Does the code run?
-* What ideas do you have to make it more efficient? 
+* What ideas do you have to make it more efficient?
 
 ```{code-cell} ipython3
 import os
