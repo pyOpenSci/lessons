@@ -14,34 +14,37 @@ kernelspec:
 (clean-code-activity-1)=
 # Clean, Modular Code: Activity 1
 
-Writing clean, modular code takes practice but is a habit worth building. Over time as you incorporate clean code strategies that improve code quality and maintainability, these strategies will become second nature. This, in turn, will make your code easier to read, maintain, and share with others. It will also make your work easier for others (and your future self) to use. 
+Writing clean, modular code takes practice but is a habit worth building. Over time as you incorporate clean code strategies that improve code quality and maintainability, these strategies will become second nature. Writing cleaner code will make your code easier to read, maintain, and share with others. It will also make your work easier for others (and your future self) to use. 
 
-In this exercise, you'll focus on three key clean coding strategies:
+In this exercise, you'll focus on using three key clean code strategies:
 
 1. **Use expressive names**: Assign meaningful names to all variables and functions to make your code more readable. [Learn more about expressive names.](../python-expressive-code.md)
-2. **Follow PEP8 guidelines**: Adhere to [PEP8 Python code style rules](../python-pep-8.md), including proper spacing and naming conventions, to maintain a consistent and readable codebase.
-3. **Identify opportunities to make your code DRY (Don't Repeat Yourself)**: In this activity, you will use pseudocode to pinpoint areas where the code can be simplified and made DRY. In the next activity, you will implement DRY best practices using loops and functions. 
+2. **Use a Python style guide (PEP8) for consistent syntax**: Adhere to [PEP8 Python code style rules](../python-pep-8.md), including proper spacing and naming conventions, to maintain a consistent and readable codebase.
+3. **Identify opportunities to make your code DRY (Don't Repeat Yourself)**: In this activity, you will use pseudocode to identify areas where the code can be simplified and made DRY. In the next activity, you will implement DRY best practices using loops and functions. 
 
 By practicing these strategies, you are well on your way to writing clean, efficient, and maintainable code.
 
 ## Activity data 
 
-Today's activity begins with some code that processes cross-ref citation data for JOSS publications. The data were pulled directly from the cross-ref API but then modified with specific features to help you learn when completing the activities.
+This activity begins with some code that you "inherited from a former lab mate". This code processes [cross-ref](https://www.crossref.org/) citation data for [The Journal of Open Source Software (JOSS)](https://joss.theoj.org/) publications. The data are pulled directly from the crossref API but then modified with specific "features" to help you learn better coding practices when completing the activities.
 
 ## Your goal 
+
 Your goal is to take the code below and turn it into a script that has the following characteristics:
 
 * The code uses clean, expressive naming conventions
-* the code follows the PEP 8 style guide
+* The code follows the PEP 8 style guide
 
-While you will implement the items below in the next activity, you will create pseudocode in this activity to identify:
+In this part of the activity, you will create pseudocode to identify:
 
 * How the code could be more DRY. Are elements repeated? 
-* How the code could be made more modular. 
+* How the code could be made more modular.
+
+In the next activity, you will modify the code.
 
 ### If you want to use an LLM to support your learning 
 
-The cleanup steps discussed above are things an LLM can help you with. However, remember that if you use LLMs, they likely will not always give you the right answer. In fact more often than not, part of the answer is wrong. This means that you need to have a keen eye to catch issues in LLM-generated code.
+The cleanup steps discussed above are things a LLM (Large Language Model) like ChatGPT and Anthropic's Claude can help you with. However, remember that LLMs often return wrong or partially wrong answers. This means that if you use LLM's, you must have a keen eye to catch issues in LLM-generated code.
 
 If you are using a LLM: 
 
@@ -54,15 +57,12 @@ or
 > Identify areas of the code below that could be more DRY. Write pseudocode that identifies the processing steps that are repeated in the code.
 
 :::{important}  
-If you use an LLM for this activity, be sure to double-check that it works. Add anything you notice it does wrong or oddly to our workshop document.  
+If you use an LLM for this activity, consider adding any odd or incorrect code it returns to our shared workshop document.  
 :::
 
 ## Your task
 
-The workflow below should open the data stored in the data directory for this activity. It should run without issues if you have a proper Python environment setup. 
-
-In part 1, your job is to make the code cleaner, easier to understand and more maintainable.
-
+The workflow below should open the data stored in the `/data` directory for this activity. The code should run if you have a proper Python environment setup. 
 
 ## Part 1 - evaluate with a partner 
 
@@ -123,22 +123,26 @@ df_combined = pd.concat([df, df2], axis=0)
 df_combined.shape
 ```
 
-## Part 2 
+:::{admonition} Part 2
+:class: tip
 
 Take the code above and clean it up. Make the code:
 
 * PEP8 compliant
 * Add expressive names to make it more readable
 * Add a docstring to the top of the script to help a user understand what the code does.
+:::
 
-
-## Part 3
+:::{admonition} Part 3
+:class: tip
 
 Evaluate the code to determine whether it could be more DRY. 
-* Create a list of items that you notice are repeated could be cleaned up in the code
+* Create a list of items that you notice are repeated and could be cleaned up in the code
 * Write pseudocode that describes what the code intends to do step by step 
+:::
 
+:::{admonition} One your own 1
+:class: tip
 
-## Part 4 
-
-Once you are done with the above, if you have time, begin to clean up the code. We will discuss loops and functions in the next activity in more detail.
+Begin cleaning up the code. In the next activity, we will discuss loops and functions in more detail.
+:::
