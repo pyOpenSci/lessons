@@ -14,7 +14,7 @@ kernelspec:
 (clean-code-activity-1)=
 # Clean, Modular Code: Activity 1
 
-Writing clean, modular code takes practice but is a habit worth building. Over time as you incorporate clean code strategies that improve code quality and maintainability, these strategies will become second nature. This, in turn, will make your code easier to read, maintain, and share with others. It will also make it easier for others (and your future self) to use. 
+Writing clean, modular code takes practice but is a habit worth building. Over time as you incorporate clean code strategies that improve code quality and maintainability, these strategies will become second nature. This, in turn, will make your code easier to read, maintain, and share with others. It will also make your work easier for others (and your future self) to use. 
 
 In this exercise, you'll focus on three key clean coding strategies:
 
