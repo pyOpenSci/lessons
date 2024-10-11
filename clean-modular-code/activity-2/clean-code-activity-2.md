@@ -51,7 +51,7 @@ What tools could make the code more DRY?
 
 ## Reproducibility: will your code run on other machines?
 
-When considering workflow reproducibility, a key challenge is ensuring that your code runs seamlessly across different machines. Hard-coded paths, like data/part-1-data.json, can cause errors if created on a Windows machine but run on a Mac (Unix-based/POSIX) machine.
+When considering workflow reproducibility, a key challenge is ensuring that your code runs seamlessly across different machines. Hard-coded paths, like `data/part-1-data.json`, can cause errors if created on a Windows machine but run on a Mac (Unix-based/POSIX) machine.
 
 To avoid these issues, file paths should be constructed dynamically using tools like Python’s `pathlib`, which ensures compatibility across different operating systems.
 
