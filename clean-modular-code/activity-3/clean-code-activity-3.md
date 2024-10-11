@@ -20,25 +20,34 @@ kernelspec:
 
 In this activity, you will build checks into your workflow to handle data processing "features". 
 
-
 ### Real world data processing & workflows and edge cases 
+
 Real-world data rarely can be imported without "work arounds". You will often find unusual data entries and values you don't expect. Sometimes, these values are documented - for example, a 9999 may represent a missing value in a dataset. Other times, there are typos and other errors in the data that you need to handle. These unusual values or instances in a dataset or workflow are sometimes called "edge cases".  
 
 Writing robust code that handles unexpected values will make your code run smoothly and fail gracefully. This type of code, which combines functions (or classes) and checks within the functions that handle messy data, will make your code easier to maintain over time. 
 
 :::{tip}
 Using functions, classes, and methods (functions within a class) is a great first step in handling messy data. A function or method provides a modular unit you can test outside of the workflow for the edge cases you may encounter. Also, because a function is a modular unit, you can add elements to handle unexpected processing features as you build your workflow.
+
+Once you have these functions and methods, you can add checks using conditional statements and try/except blocks that anticipate edge cases and errors that you may encounter when processing your data. 
 :::
 
-something about debuggers? 
-* https://jupyterlab.readthedocs.io/en/stable/user/debugger.html
+<!-- From JEREMY: Two suggestions I have for this lesson:
+encourage attendees to "fail fast"
+only when it is unrecoverable
+this makes the failure happen earlier, wasting less time waiting
+this can make the stack trace more useful, as it points the the code experiencing the error
+
+clearly describe the error.
+rather than just printing out "exiting now", try to tell the caller why it was a mistake, and what they could maybe do to fix it.
+maybe also explain that exceptions can (most of the time) take a message string, and it doesn't have to be printed also. -->
 
 ## Manage the unexpected 
 
-In this activity, you will apply the following strategies:
+In this activity, you will apply the following strategies to make your code more robust,  maintainable & usable:
 
-* [conditional statements](../checks-conditionals/python-conditionals)
-* try/except blocks
+* Fail fast strategy: more here
+* Use [conditional statements](../checks-conditionals/python-conditionals) and/or try/except blocks to catch errors and return useful output
 
 to process the JOSS citation data. 
 
@@ -110,6 +119,10 @@ Your goal is to make the code below run on the data provided in the activity-3 `
 
 :::{tip}
 The code below will fail. You will likely want to use a debugger to determine why it's failing and get the code running. 
+
+* If you are using Jupyter, then you might [find this page helpful when setting up debugging.](https://jupyterlab.readthedocs.io/en/stable/user/debugger.html)
+* VSCODE has a nice visual debugger that you can use.
+
 :::
 
 The code below is an example of what your code might look like after completing activity 2. You can choose to work with this code, or you can use the code that you completed in activity 2.
@@ -233,7 +246,7 @@ Ideas for on your own welcome!
 Ideas welcome?
 :::
 
-I want to have them move their code into a module if possible during this workshop but we could also kick that off in the day 2 workshop. 
+I want to have them move their code into a module if possible during this workshop but we could also kick that off in the day 2 workshop.
 
 ```{code-cell} ipython3
 ---

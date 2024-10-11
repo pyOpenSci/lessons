@@ -26,9 +26,11 @@ Using functions in your data processing pipeline offers several advantages:
 3. **Flexibility**: As you build out your workflow, you can easily add elements to functions to handle new processing requirements or edge cases.
 4. **Reusability**: Well-designed functions can be reused across different parts of your project or even in other projects.
 
-## Handling edge cases
+Your goal is to identify detect and data processing or workflow problems immediately when they occur, rather than allowing
+them to propagate through your code. This approach saves time and makes
+debugging easier, as it provides clearer, more useful error outputs (known as stack traces).
 
-When working with messy data, you'll often encounter edge cases - unusual or unexpected data that can break your processing pipeline. Functions allow you to implement robust error handling and data validation. Here are some techniques you can use:
+When working with messy data, you'll often encounter edge cases - unusual or unexpected data that can break your processing pipeline. Functions allow you to implement robust error handling and data validation. Here are some techniques you can use
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
@@ -134,8 +136,8 @@ convert_to_int("a")
 
 The EAFP (Easier to Ask for Forgiveness than Permission) approach is more Pythonic because:
 
-* It’s often faster, avoiding redundant checks when operations succeed.
-* It’s more readable, separating the intended operation and error handling.
+- It’s often faster, avoiding redundant checks when operations succeed.
+- It’s more readable, separating the intended operation and error handling.
 
 ## Any Check is a Good Check
 
@@ -146,7 +148,7 @@ As long as you consider edge cases, you're writing great code! You don’t need 
 ## Common Python exceptions
 
 Python has dozens of specific errors that can be raised when code fails to run. Below are a few common ones that you may encounter in the activity 3.
- 
+
 ### TypeError
 
 Occurs when an operation is applied to an object of an inappropriate type.
@@ -166,8 +168,8 @@ tags: [raises-exception]
 
 ### ValueError
 
-* **Raised when** a function receives an argument of the right type but an invalid value.
-* **Example:** `int('abc')` (trying to convert an invalid string to an integer).
+- **Raised when** a function receives an argument of the right type but an invalid value.
+- **Example:** `int('abc')` (trying to convert an invalid string to an integer).
 
 ```{code-cell} ipython3
 ---
@@ -183,8 +185,8 @@ int("abc")
 
 ### KeyError
 
-* **Raised when** a dictionary key is not found.
-* **Example:** `my_dict['nonexistent_key']` (trying to access a key that doesn’t exist in the dictionary).
+- **Raised when** a dictionary key is not found.
+- **Example:** `my_dict['nonexistent_key']` (trying to access a key that doesn’t exist in the dictionary).
 
 ```{code-cell} ipython3
 ---
@@ -202,8 +204,8 @@ my_dict['nonexistent_key']
 
 ### IndexError
 
-* **Raised when** an invalid index is used to access a list or tuple.
-* **Example:** `my_list[10]` (trying to access the 11th element of a list with fewer elements).
+- **Raised when** an invalid index is used to access a list or tuple.
+- **Example:** `my_list[10]` (trying to access the 11th element of a list with fewer elements).
 
 ```{code-cell} ipython3
 ---
