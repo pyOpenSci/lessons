@@ -51,13 +51,34 @@ What tools could make the code more DRY?
 
 ## Reproducibility: will your code run on other machines?
 
-When considering workflow reproducibility, a key challenge is ensuring that your code runs seamlessly across different machines. Hard-coded paths, like `data/part-1-data.json`, can cause errors if created on a Windows machine but run on a Mac (Unix-based/POSIX) machine.
+When considering workflow reproducibility, ensuring that your code runs seamlessly across different machines is important. Hard-coded paths (e.g., `data\part-1-data.json`) can cause errors. For example:
 
-To avoid these issues, file paths should be constructed dynamically using tools like Python’s `pathlib`, which ensures compatibility across different operating systems.
+* The path `data/part-1-data.json` is a POSIX path, which works on Mac and Linux machines but will fail on Windows because Windows uses backslashes (`\`) for paths.
+* Similarly, a path like `data\part-1-data.json`, written for Windows, will fail on Mac and Linux systems, which expect forward slashes (`/`) in their paths.
+
+To avoid these issues, file paths should be constructed dynamically using tools like Python’s `pathlib`. Using `pathlib` will ensure path compatibility across different operating systems by automatically using the correct path format for the system on which your code is running.
 
 :::{tip} 
-“POSIX” refers to a set of standards for maintaining compatibility between operating systems, and Mac systems are POSIX-compliant.
+* “POSIX” refers to a set of standards for maintaining compatibility between operating systems, and Mac systems are POSIX-compliant.
+* You can also use `os.path.join` to create paths; however, using `pathlib` is a more modern and flexible approach. 
 :::
+
+```{code-cell} ipython3
+import pathlib
+
+# Dynamically generate a path so it will be correct on a Windows vs MAC vs Linux machine
+path = pathlib.Path("") / "data" / "data.json"
+print(path)
+```
+
+```{code-cell} ipython3
+data_dir = pathlib.Path("") / "data"
+
+# Use pathlib.path.glob to find all .json files in the 'data' directory
+json_files = data_dir.glob("*.json")
+for json_file in json_files:
+    print(json_file)
+```
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
