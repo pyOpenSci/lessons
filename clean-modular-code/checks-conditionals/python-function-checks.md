@@ -31,7 +31,7 @@ Using functions in your data processing pipeline offers several advantages:
 3. **Flexibility**: As you build out your workflow, you can easily add elements to functions to handle new processing requirements or edge cases.
 4. **Reusability**: Well-designed functions can be reused across different parts of your project or even in other projects.
 
-Your goal is to identify detect and data processing or workflow problems immediately when they occur, rather than allowing
+Your goal is to identify data processing or workflow problems immediately when they occur, rather than allowing
 them to propagate through your code. This approach saves time and makes
 debugging easier, as it provides clearer, more useful error outputs (known as stack traces).
 
@@ -88,7 +88,6 @@ This code example below is better than the examples above for three reasons:
 1. It's pythonic: it asks for forgiveness later by using a try/except
 2. it fails quickly - as soon as it tries to open the file. The code won't continue to run after this step fails.
 3. it raises a clean, useful error that the user can undersatnd
-is an example of Pythonic code. Here, a file is read in and
 
 The code anticipates what will happen if it can't find the file. Here you can raise a `FileNotFoundError` and provide a useful message to the user. 
 
@@ -104,8 +103,8 @@ def read_file(file_path):
         with open(file_path, 'r') as file:
             data = file.read()
         return data
-    except FileNotFoundError as e:
-        raise FileNotFoundError(f"Oops! I could find the file located at: {file_path}. Please check to see if it exists")
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Oops! I couldn't find the file located at: {file_path}. Please check to see if it exists")
 
 # Raises an error immediately if the file doesn't exist
 file_data = read_file("nonexistent_file.txt")
