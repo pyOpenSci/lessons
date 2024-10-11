@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Part 2 - Functions & DRY code" />
+<meta property="og:title" content="Activity 2 - DRY Code & Functions" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/activity-2/clean-code-part-2.html" />
+<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/activity-2/clean-code-activity-2.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="In part 1, you took some code and worked to make it cleaner using expressive variable names. In part 2, you will focus on making the code more DRY. Remember that DRY refers to “Don’t Repeat Yoursel..." />
+<meta property="og:description" content="In activity 1, you took some code and made it cleaner and easier to understand by: using expressive variable names,, following PEP8 code style guidelines, and, creating pseudocode as a way to creat..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_activity-2_clean-code-part-2_67c844ed.png" />
-<meta property="og:image:alt" content="In part 1, you took some code and worked to make it cleaner using expressive variable names. In part 2, you will focus on making the code more DRY. Remember..." />
-<meta name="description" content="In part 1, you took some code and worked to make it cleaner using expressive variable names. In part 2, you will focus on making the code more DRY. Remember that DRY refers to “Don’t Repeat Yoursel..." />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_activity-2_clean-code-activity-2_4fc2c0ab.png" />
+<meta property="og:image:alt" content="In activity 1, you took some code and made it cleaner and easier to understand by: using expressive variable names,, following PEP8 code style guidelines, an..." />
+<meta name="description" content="In activity 1, you took some code and made it cleaner and easier to understand by: using expressive variable names,, following PEP8 code style guidelines, and, creating pseudocode as a way to creat..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Part 2 - Functions &amp; DRY code &#8212; pyOpenSci Lessons</title>
+    <title>Activity 2 - DRY Code &amp; Functions &#8212; pyOpenSci Lessons</title>
   
   
   
@@ -57,12 +57,14 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/activity-2/clean-code-part-2';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/activity-2/clean-code-activity-2';</script>
     <script src="../../_static/matomo.js?v=918da087"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/activity-2/clean-code-part-2.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/activity-2/clean-code-activity-2.html" />
     <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Activity 3: Tests &amp; Checks for your code" href="../activity-3/clean-code-activity-3.html" />
+    <link rel="prev" title="Clean, Modular Code: Activity 1" href="../activity-1/clean-code-activity-1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,7 +163,7 @@
 <nav class="navbar-nav">
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../intro-clean-code.html">
                         Lessons
                       </a>
@@ -285,9 +287,7 @@ document.write(`
       
       
       
-        
-      
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -300,7 +300,7 @@ document.write(`
 <nav class="navbar-nav">
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
+                    <li class="nav-item current active">
                       <a class="nav-link nav-internal" href="../intro-clean-code.html">
                         Lessons
                       </a>
@@ -380,6 +380,36 @@ document.write(`
     
   </div>
   
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro-clean-code.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-pep-8.html">Python Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-dry-modular-code.html">Don't Repeat Yourself</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-function-checks.html">Function checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-expressive-code.html">Expressive Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Checks &amp; Tests</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-functions-multiple-conditions.html">Multi-variable functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-conditionals.html">Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-function-checks.html">Tests &amp; Checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activity-1/clean-code-activity-1.html">Clean Code: Activity 1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Clean Code: Activity 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity-3/clean-code-activity-3.html">Clean Code: Activity 3</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -412,7 +442,10 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Part 2 -...</li>
+    
+    <li class="breadcrumb-item"><a href="../intro-clean-code.html" class="nav-link">Write Clean, Modular, DRY Code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Activity 2...</li>
   </ul>
 </nav>
 </div>
@@ -429,36 +462,97 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="part-2-functions-dry-code">
-<h1>Part 2 - Functions &amp; DRY code<a class="headerlink" href="#part-2-functions-dry-code" title="Link to this heading">#</a></h1>
-<p>In part 1, you took some code and worked to make it cleaner using expressive variable names. In part 2, you will focus on making the code more DRY.</p>
-<p>Remember that DRY refers to “Don’t Repeat Yourself”.</p>
-<p>You are welcome to use the script you worked on in part 1. Or you can use the cleaned-up script below.</p>
-<section id="remember-the-strategies">
-<h2>Remember the strategies<a class="headerlink" href="#remember-the-strategies" title="Link to this heading">#</a></h2>
+  <section id="activity-2-dry-code-functions">
+<h1>Activity 2 - DRY Code &amp; Functions<a class="headerlink" href="#activity-2-dry-code-functions" title="Link to this heading">#</a></h1>
+<p>In <a class="reference internal" href="../activity-1/clean-code-activity-1.html"><span class="doc std std-doc">activity 1</span></a>, you took some code and made  it cleaner and easier to understand by:</p>
 <ul class="simple">
-<li><p>Write functions for a task that is performed over and over.</p>
-<ul>
-<li><p>Then clearly document what the document does to help your future self or another user understand its intent.</p></li>
+<li><p>using expressive variable names,</p></li>
+<li><p>following PEP8 code style guidelines, and</p></li>
+<li><p>creating pseudocode as a way to create a plan to clean up the code and make it easier to maintain.</p></li>
 </ul>
-</li>
-<li><p>REMOVE - part 3 Create loops that iterate over repetitive tasks.</p></li>
+<p>In this activity, you will make the code <a class="reference internal" href="../python-dry-modular-code.html"><span class="doc std std-doc">DRY which stands for Don’t Repeat Yourself</span></a>.</p>
+<p>You can use the script you worked on in Activity 1 here or the cleaned-up script provided below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In <a class="reference internal" href="../activity-3/clean-code-activity-3.html"><span class="doc std std-doc">activity 3</span></a>, you will</p>
+<ul class="simple">
 <li><p>Use conditional statements to control if and when code is executed.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">os</span></code> or <code class="docutils literal notranslate"><span class="pre">pathlib</span></code> to create paths to ensure that your code runs across operating systems</p></li>
+<li><p>Add checks to your code</p></li>
+</ul>
+</div>
+<section id="the-clean-code-strategies">
+<h2>The clean code strategies<a class="headerlink" href="#the-clean-code-strategies" title="Link to this heading">#</a></h2>
+<p>In this activity, you will focus on the following clean code strategies:</p>
+<ul class="simple">
+<li><p><strong>Document:</strong> Document what the code does by adding a docstring at the top of the script to help your future self, a future lab member, or another user understand your code’s tasks. Use Numpy-style docstrings when possible.</p></li>
+<li><p><strong>Modularize</strong> Make your code more modular by adding functions that perform small, repeated tasks. Functions should also have docstrings and expressive names for added readability and usability.</p></li>
+<li><p><strong>Use Loops</strong> Eliminate repetition by using loops that will iterate over specific tasks. In this case, you will iterate over processing several files.</p></li>
+<li><p><strong>Create dynamic paths:</strong> Dynamic paths ensure that your code will run on other machines regardless of operating system. To achieve this in Python, you can use <code class="docutils literal notranslate"><span class="pre">os</span></code> or <code class="docutils literal notranslate"><span class="pre">pathlib</span></code> to create paths</p></li>
 </ul>
 </section>
-<section id="to-begin-identify-the-parts-of-this-code-that-are-redundant">
-<h2>To begin - identify the parts of this code that are redundant<a class="headerlink" href="#to-begin-identify-the-parts-of-this-code-that-are-redundant" title="Link to this heading">#</a></h2>
+<section id="to-begin-identify-redundant-parts-of-this-code">
+<h2>To begin - identify redundant parts of this code<a class="headerlink" href="#to-begin-identify-redundant-parts-of-this-code" title="Link to this heading">#</a></h2>
 <p>Create pseudocode (or text) describing the process steps represented in the code below. How could the code be organized differently and more efficiently?</p>
 <p>What tools could make the code more DRY?</p>
 </section>
-<section id="reproducibility-will-this-code-run-on-other-machines">
-<h2>Reproducibility: will this code run on other machines?<a class="headerlink" href="#reproducibility-will-this-code-run-on-other-machines" title="Link to this heading">#</a></h2>
-<p>One big challenge when considering the reproducibility of workflows is ensuring that your code runs seamlessly on different machines or environments. One key issue is file paths. Hard-coded paths, like “data/part-1-data.json”, can lead to errors if the directory structure on another machine differs from your setup. Paths should be constructed dynamically, using tools like Python’s pathlib or environment variables to ensure flexibility across different systems.</p>
-<section id="applying-functions-to-dataframe-values-apply">
-<h3>Applying functions to dataframe values - .apply<a class="headerlink" href="#applying-functions-to-dataframe-values-apply" title="Link to this heading">#</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">.apply()</span></code> function in pandas allows you to apply any function to rows or columns in a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. For example, You can use it to perform operations on specific column or row values. When you use .apply(), you can specify whether you want to apply the function across columns (axis=0, the default) or across rows (axis=1). For example, if you want to apply a function to each row of a DataFrame, you would use df.apply(your_function, axis=1). This function is especially useful for applying logic that can’t be easily achieved with built-in pandas functions, allowing for more flexibility in data processing.</p>
-<p>You can use <code class="docutils literal notranslate"><span class="pre">.apply</span></code> in pandas as an efficient replacement for <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loops</span></code> to process row and column values in a df.</p>
+<section id="reproducibility-will-your-code-run-on-other-machines">
+<h2>Reproducibility: will your code run on other machines?<a class="headerlink" href="#reproducibility-will-your-code-run-on-other-machines" title="Link to this heading">#</a></h2>
+<p>When considering workflow reproducibility, ensuring that your code runs seamlessly across different machines is important. Hard-coded paths (e.g., <code class="docutils literal notranslate"><span class="pre">data\part-1-data.json</span></code>) can cause errors. For example:</p>
+<ul class="simple">
+<li><p>The path <code class="docutils literal notranslate"><span class="pre">data/part-1-data.json</span></code> is a POSIX path, which works on Mac and Linux machines but will fail on Windows because Windows uses backslashes (<code class="docutils literal notranslate"><span class="pre">\</span></code>) for paths.</p></li>
+<li><p>Similarly, a path like <code class="docutils literal notranslate"><span class="pre">data\part-1-data.json</span></code>, written for Windows, will fail on Mac and Linux systems, which expect forward slashes (<code class="docutils literal notranslate"><span class="pre">/</span></code>) in their paths.</p></li>
+</ul>
+<p>To avoid these issues, file paths should be constructed dynamically using tools like Python’s <code class="docutils literal notranslate"><span class="pre">pathlib</span></code>. Using <code class="docutils literal notranslate"><span class="pre">pathlib</span></code> will ensure path compatibility across different operating systems by automatically using the correct path format for the system on which your code is running.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p>“POSIX” refers to a set of standards for maintaining compatibility between operating systems, and Mac systems are POSIX-compliant.</p></li>
+<li><p>You can also use <code class="docutils literal notranslate"><span class="pre">os.path.join</span></code> to create paths; however, using <code class="docutils literal notranslate"><span class="pre">pathlib</span></code> is a more modern and flexible approach.</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
+
+<span class="c1"># Dynamically generate a path so it will be correct on a Windows vs MAC vs Linux machine</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;data.json&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data/data.json
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span>
+
+<span class="c1"># Use pathlib.path.glob to find all .json files in the &#39;data&#39; directory</span>
+<span class="n">json_files</span> <span class="o">=</span> <span class="n">data_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.json&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">json_file</span> <span class="ow">in</span> <span class="n">json_files</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data/part-1-data.json
+data/part-1-datab.json
+</pre></div>
+</div>
+</div>
+</div>
+<section id="applying-functions-to-pandas-dataframe-values-apply">
+<h3>Applying functions to <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> values - <code class="docutils literal notranslate"><span class="pre">.apply</span></code><a class="headerlink" href="#applying-functions-to-pandas-dataframe-values-apply" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.apply()</span></code> function allows you to apply any function to the rows or columns of a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. You can use it to perform operations on specific column or row values. When using <code class="docutils literal notranslate"><span class="pre">.apply()</span></code>, you can specify whether the function should be applied across columns (<code class="docutils literal notranslate"><span class="pre">axis=0</span></code>, the default) or across rows (<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>).</p>
+<ul class="simple">
+<li><p>To apply a function to each row of a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>, use <code class="docutils literal notranslate"><span class="pre">df.apply(your_function,</span> <span class="pre">axis=1)</span></code>.</p></li>
+<li><p>To apply a function to a specific column across all rows, use <code class="docutils literal notranslate"><span class="pre">df[&quot;column-name&quot;].apply(your_function)</span></code>.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">.apply()</span></code> method in pandas is an efficient way to replace <code class="docutils literal notranslate"><span class="pre">for</span></code> loops for processing row and column values in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<p>In this activity, we encourage you to test out using apply as an efficient way to process data in each cell of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. An example of using <code class="docutils literal notranslate"><span class="pre">.apply</span></code> is below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -527,13 +621,22 @@ document.write(`
 </table>
 </div></div></div>
 </div>
-<p>Examine the code below.</p>
+<div class="attention admonition">
+<p class="admonition-title">Activity 2: Part 1</p>
+<p>Examine the code in the cell below and do the following:</p>
 <ol class="arabic simple">
 <li><p>Identify what areas of the code are redundant.</p></li>
-<li><p>Create pseudo code of the steps that are repeatied each time</p></li>
-<li><p>identify sections of the code that could be combined into functions</p></li>
-<li><p>When you are done with the above, refactor the code so that it is cleaner and more modular.</p></li>
+<li><p>Create pseudocode for the repeated steps; use that pseudocode to clean up the code. Important: Don’t skip ahead and write any code yet.</p></li>
 </ol>
+</div>
+<div class="attention admonition">
+<p class="admonition-title">Activity 2: Part 2</p>
+<p>When you are happy with your pseudocode, refactor the code. Refactoring means improving your code’s structure and readability without changing its behavior. It makes the code cleaner, more efficient, and easier to maintain.</p>
+<ol class="arabic simple">
+<li><p>Identify sections of the code that could be combined into functions</p></li>
+<li><p>When you finish the above, refactor the code so it is cleaner and more modular.</p></li>
+</ol>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is what the code could look like after part 1. In part 2, </span>
@@ -628,24 +731,29 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="on-your-own-1">
-<h2>On your own 1<a class="headerlink" href="#on-your-own-1" title="Link to this heading">#</a></h2>
-<p>If you get through the above activity with time to spare, here are a few additional tasks that you can work on.</p>
+<div class="attention admonition">
+<p class="admonition-title">On Your Own 1</p>
+<p>If you complete the above activity with time to spare, here are a few additional tasks you can work on.</p>
+<p>In the JSON data that you have been processing, the package titles can be found in the title column as follows: <code class="docutils literal notranslate"><span class="pre">&quot;package-name:</span> <span class="pre">title</span> <span class="pre">here.&quot;</span></code></p>
 <ol class="arabic simple">
-<li><p>In this file, the package titles can be found in the title column, as follows:</p></li>
+<li><p>Add a processing step to the code that pulls the package name out from the title column and creates a new column called <code class="docutils literal notranslate"><span class="pre">package-name</span></code>.</p></li>
+<li><p>Create a workflow that calculates how many packages in that list are pyOpenSci packages. To calculate how many are pyOpenSci packages,   you will need the <code class="docutils literal notranslate"><span class="pre">pyos-joss-accepted-packages.csv</span></code> file in the <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory with the activity 2 JSON data. This .csv file lists all pyOpenSci packages that have also gone through JOSS review.</p></li>
 </ol>
-<p>“package-name: title here.”</p>
-<p>Add a component to the code that pulls the package name out from the title column and creates a new column called <code class="docutils literal notranslate"><span class="pre">package-name</span></code>.</p>
-<ol class="arabic simple">
-<li><p>Then, create a workflow that calculates how many packages in that list are pyOpenSci packages.</p></li>
-</ol>
-<p>to complete this, you will need the <code class="docutils literal notranslate"><span class="pre">pyos-joss-accepted-packages.csv</span></code> file, which has a list of all pyOpenSci packages that have also gone through JOSS review.</p>
-</section>
-<section id="on-your-own-2">
-<h2>On your own 2<a class="headerlink" href="#on-your-own-2" title="Link to this heading">#</a></h2>
-<p>Create a new workflow that calculates how many packages were submitted to JOSS each month.</p>
+</div>
+<p>If you still have time, below is another challenge for you to try!</p>
+<div class="attention admonition">
+<p class="admonition-title">On Your Own 2</p>
+<p>Create a new workflow that calculates how many packages were submitted to JOSS each month. Add documented functions that process the data.</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text"><i class="fa-solid fa-eye"></i> TODOs– Click to expand dropdown</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Hidden content</p>
+<ul class="simple">
+<li><p class="sd-card-text">TODO: add drop-downs with answers to each of the OYOs.</p></li>
+</ul>
+</div>
+</details></section>
 </section>
 </section>
 
@@ -659,6 +767,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../activity-1/clean-code-activity-1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Clean, Modular Code: Activity 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../activity-3/clean-code-activity-3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Activity 3: Tests &amp; Checks for your code</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -677,14 +803,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-the-strategies">Remember the strategies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-begin-identify-the-parts-of-this-code-that-are-redundant">To begin - identify the parts of this code that are redundant</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-will-this-code-run-on-other-machines">Reproducibility: will this code run on other machines?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-functions-to-dataframe-values-apply">Applying functions to dataframe values - .apply</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-clean-code-strategies">The clean code strategies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-begin-identify-redundant-parts-of-this-code">To begin - identify redundant parts of this code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-will-your-code-run-on-other-machines">Reproducibility: will your code run on other machines?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-functions-to-pandas-dataframe-values-apply">Applying functions to <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> values - <code class="docutils literal notranslate"><span class="pre">.apply</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-your-own-1">On your own 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-your-own-2">On your own 2</a></li>
 </ul>
   </nav></div>
 
@@ -692,7 +816,7 @@ document.write(`
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/activity-2/clean-code-part-2.md">
+    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/activity-2/clean-code-activity-2.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -707,7 +831,7 @@ document.write(`
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../../_sources/clean-modular-code/activity-2/clean-code-part-2.md.txt">
+    <a href="../../_sources/clean-modular-code/activity-2/clean-code-activity-2.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
