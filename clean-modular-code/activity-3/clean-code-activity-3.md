@@ -18,7 +18,7 @@ kernelspec:
 * In [activity 1](../activity-1/clean-code-activity-1), you made your code cleaner and more usable using expressive variable names and docstrings to document the module. 
 * In [activity 2](../activity-2/clean-code-activity-2), you made your code more DRY ("Don't Repeat Yourself") using documented functions and conditionals. 
 
-In this activity, you will build checks into your workflow to handle data processing "features". 
+In this activity, you will build checks into your workflow to handle data processing "features".
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
@@ -67,9 +67,7 @@ def clean_title(title):
     return title
 ```
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-
+The function below raises an error with a custom error message. but you can still see the 
 
 ```{code-cell} ipython3
 ---
@@ -86,7 +84,47 @@ def clean_title(title):
     try:
         return title[0]
     except IndexError as e:
-        raise IndexError(f"Oops! You provided a title in an unexpected format. I expected the title to be provided in a list and you provided a {type(title)}.") from e
+        raise IndexError(f"Oops! You provided a title in an unexpected format. "
+                         f"I expected the title to be provided in a list and you provided "
+                         f"a {type(title)}.") from e
+
+# Example usage:
+title = ""
+print(clean_title(title))  # This will raise an IndexError with the friendly message
+```
+
+```{code-cell} ipython3
+# This is the preferred way to catch an error 
+def clean_title(title):
+    """
+    Attempts to return the first character of the title.
+    Raises the same error with a friendly message if the input is invalid.
+    """
+    try:
+        return title[0]
+    except IndexError as e:
+        raise IndexError(f"Oops! You provided a title in an unexpected format. I expected the title to be provided in a list and you provided a {type(title)}.") 
+
+# Example usage:
+title = ""
+print(clean_title(title))  # This will raise an IndexError with the friendly message
+```
+
+If you wish, you can shorten the amount of information returned in the exception by adding `from None` to your exception. This will look nicer to a user but you lose some information in the exception feedback. 
+
+```{code-cell} ipython3
+# This is the preferred way to catch an error 
+def clean_title(title):
+    """
+    Attempts to return the first character of the title.
+    Raises the same error with a friendly message if the input is invalid.
+    """
+    try:
+        return title[0]
+    except IndexError as e:
+        raise IndexError(f"Oops! You provided a title in an unexpected format. "
+                         f"I expected the title to be provided in a list and you provided "
+                         f"a {type(title)}.") from None 
 
 # Example usage:
 title = ""
@@ -138,7 +176,93 @@ Important: It is ok if you can't get the code to run fully by the end of this wo
 1. identify at least one of the data processing "bugs" (even if you can't fix it) and/or
 2. fix at least one bug
 
-You can consider your effort today as a success!
+You can consider your effort today as a success! We will work on the first element together as a group. 
+
+```{code-cell} ipython3
+import json
+from pathlib import Path
+
+import pandas as pd
+
+
+def load_clean_json(file_path, columns_to_keep):
+    """
+    Load JSON data from a file. Drop unnecessary columns and normalize
+    to DataFrame.
+
+    Parameters
+    ----------
+    file_path : Path
+        Path to the JSON file.
+    columns_to_keep : list
+        List of columns to keep in the DataFrame.
+
+    Returns
+    -------
+    dict
+        Loaded JSON data.
+    """
+
+    with file_path.open("r") as json_file:
+        json_data = json.load(json_file)
+    normalized_data = pd.json_normalize(json_data)
+
+    return normalized_data.filter(items=columns_to_keep)
+
+
+def format_date(date_parts: list) -> str:
+    """
+    Format date parts into a string.
+
+    Parameters
+    ----------
+    date_parts : list
+        List containing year, month, and day.
+
+    Returns
+    -------
+    pd.datetime
+        A date formatted as a pd.datetime object.
+    """
+    date_str = (
+        f"{date_parts[0][0]}-{date_parts[0][1]:02d}-{date_parts[0][2]:02d}"
+    )
+    return pd.to_datetime(date_str, format="%Y-%m-%d")
+
+
+def clean_title(value):
+    """A function that removes a value contained in a list."""
+    print("hi", value)
+    return value[0]
+
+
+columns_to_keep = [
+    "publisher",
+    "DOI",
+    "type",
+    "author",
+    "is-referenced-by-count",
+    "title",
+    "published.date-parts",
+]
+
+data_dir = Path("data")
+
+all_papers_list = []
+for json_file in data_dir.glob("*.json"):
+    papers_df = load_clean_json(json_file, columns_to_keep)
+
+    papers_df["title"] = papers_df["title"].apply(clean_title)
+    papers_df["published_date"] = papers_df["published.date-parts"].apply(
+        format_date
+    )
+
+    all_papers_list.append(papers_df)
+
+all_papers_df = pd.concat(all_papers_list, axis=0, ignore_index=True)
+
+print("Final shape of combined DataFrame:", all_papers_df.shape)
+```
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["raises-exception"]}
 
@@ -235,7 +359,7 @@ print("Final shape of combined DataFrame:", all_papers_df.shape)
 
 What I don't like about this is that the file not found error isn't too bad to figure out. things like keyerrors and value errors are more amorphous. so this could be an OYO 2 
 
-and we could work through a index error or a key error instead?  Becuase in that case they may want to return a default value or something else.... 
+and we could work through a index error or a key error instead?  Becuase in that case they may want to return a default value or something else....
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
@@ -314,7 +438,7 @@ Your goal is to troubleshoot any issues associated with cleaning up the title so
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["hide-cell"]}
 
-Note: we can have two groups - one that wants to work on their own and another that wants to work with the instructor together. 
+Note: we can have two groups - one that wants to work on their own and another that wants to work with the instructor together.
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
