@@ -30,17 +30,25 @@ jupyter:
 Intro <self>
 Python Code Style <python-pep-8>
 Don't Repeat Yourself <python-dry-modular-code>
-Functions <python-functions>
-Function checks <python-function-checks>
 Expressive Code <python-expressive-code>
 :::
 
 :::{toctree}
 :hidden:
-:caption: Checks & Tests
+:caption: Functions, Checks & Tests
 :maxdepth: 2
 
-Multi-variable functions <checks-conditionals/python-functions-multiple-conditions>
+Functions <checks-conditionals/python-functions>
+Functions <checks-conditionals/write-python-functions>
+Function checks <checks-conditionals/python-function-checks>
+Function Tests & Checks <checks-conditionals/tests-checks>
+:::
+
+:::{toctree}
+:hidden:
+:caption: Conditional statements
+:maxdepth: 2
+
 Conditional statements <checks-conditionals/python-conditionals>
 Tests & Checks <checks-conditionals/python-function-checks>
 :::

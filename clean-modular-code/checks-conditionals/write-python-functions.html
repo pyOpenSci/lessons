@@ -1,0 +1,797 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="How to write a Python function" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/write-python-functions.html" />
+<meta property="og:site_name" content="pyOpenSci Python Package Guide" />
+<meta property="og:description" content="To define a function in Python, you need: The def keyword to start the function definition., A function name that follows PEP 8 guidelines for naming., Input parameters (optional), defined inside p..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_checks-conditionals_write-python-functions_ece2787c.png" />
+<meta property="og:image:alt" content="To define a function in Python, you need: The def keyword to start the function definition., A function name that follows PEP 8 guidelines for naming., Input..." />
+<meta name="description" content="To define a function in Python, you need: The def keyword to start the function definition., A function name that follows PEP 8 guidelines for naming., Input parameters (optional), defined inside p..." />
+<meta name="twitter:card" content="summary_large_image" />
+    <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
+    <title>How to write a Python function &#8212; pyOpenSci Lessons</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/pyos-sphinx-theme.css?v=fb569b27" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Itim&family=Poppins:wght@400;700&family=Work+Sans:wght@400;700" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/checks-conditionals/write-python-functions';</script>
+    <script src="../../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/write-python-functions.html" />
+    <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Write Flexible Functions for Messy Data" href="python-function-checks.html" />
+    <link rel="prev" title="Why write functions?" href="python-functions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content"><p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p></div>
+  </div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../intro-clean-code.html">
+                        Lessons
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/lessons" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../intro-clean-code.html">
+                        Lessons
+                      </a>
+                    </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org">
+                    pyOpenSci Website
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://www.pyopensci.org/software-peer-review">
+                    Peer Review Guide
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://pyopensci.org/handbook">
+                    Handbook
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyopensci/lessons" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://fosstodon.org/@pyOpenSci" title="Mastodon" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-mastodon fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">Mastodon</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro-clean-code.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-pep-8.html">Python Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-dry-modular-code.html">Don't Repeat Yourself</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-expressive-code.html">Expressive Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions, Checks &amp; Tests</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-functions.html">Functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to write a Python function</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="python-function-checks.html">Function checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conditional statements</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-function-checks.html">Tests &amp; Checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../activity-1/clean-code-activity-1.html">Clean Code: Activity 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity-2/clean-code-activity-2.html">Clean Code: Activity 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity-3/clean-code-activity-3.html">Clean Code: Activity 3</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../intro-clean-code.html" class="nav-link">Write Clean, Modular, DRY Code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">How to...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="how-to-write-a-python-function">
+<h1>How to write a Python function<a class="headerlink" href="#how-to-write-a-python-function" title="Link to this heading">#</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="rubric" id="what-you-will-learn">What you will learn</p>
+<ul class="simple">
+<li><p>Describe the components needed to define a function in <strong>Python</strong>.</p></li>
+<li><p>Write and execute a custom function in <strong>Python</strong>.</p></li>
+</ul>
+</div>
+<p>To define a function in Python, you need:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword to start the function definition.</p></li>
+<li><p>A function name that follows <a class="reference internal" href="../python-expressive-code.html"><span class="std std-doc">PEP 8 guidelines</span></a> for naming.</p></li>
+<li><p>Input parameters (optional), defined inside parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">return</span></code> statement that specifies the output of the function.</p></li>
+<li><p>A docstring that explains what the function does and defines the function’s inputs and outputs. We suggest that you use numpy style docstrings for scientific Python code.</p></li>
+<li></li>
+</ul>
+<section id="an-example-python-function">
+<h2>An example Python function<a class="headerlink" href="#an-example-python-function" title="Link to this heading">#</a></h2>
+<p>An example Python function with two input variables is below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A function that adds two numbers together&quot;</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    a: int</span>
+<span class="sd">    b: int </span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">add_numbers</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- #region -->
+</section>
+</section>
+<section id="how-to-define-functions-in-python">
+<h1>How to Define Functions in Python<a class="headerlink" href="#how-to-define-functions-in-python" title="Link to this heading">#</a></h1>
+<p>There are several components needed to define a function in <strong>Python</strong>, including the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword, function name, parameters (inputs), and the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, which specifies the output of the function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameter</span><span class="p">):</span>
+    <span class="n">some</span> <span class="n">code</span> <span class="n">here</span>    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+<section id="def-keyword-and-function-name">
+<h2>def keyword and function Name<a class="headerlink" href="#def-keyword-and-function-name" title="Link to this heading">#</a></h2>
+<p>In <strong>Python</strong>, function definitions begin with the keyword <strong><code class="docutils literal notranslate"><span class="pre">def</span></code></strong> to indicate the start of a definition for a new function. The function name follows this keyword.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">():</span>
+</pre></div>
+</div>
+<p>The function name is the name you use when calling the function (e.g. <code class="docutils literal notranslate"><span class="pre">print()</span></code>).</p>
+<p>You can think of functions as inline documentation. Function names should be concise but descriptive of what the function does.</p>
+</section>
+<section id="input-parameter-s">
+<h2>Input Parameter(s)<a class="headerlink" href="#input-parameter-s" title="Link to this heading">#</a></h2>
+<p>The input parameter is the required information you pass to the function to run successfully. The function will take the value or object provided as the input parameter and use it to perform some task.</p>
+<p>In <strong>Python</strong>, the required parameters are provided within parenthesis <code class="docutils literal notranslate"><span class="pre">()</span></code>, as shown below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameter</span><span class="p">):</span>       
+</pre></div>
+</div>
+<p>You can define an input parameter for a function using a placeholder variable, such as <code class="docutils literal notranslate"><span class="pre">data</span></code>, which represents the value or object that will be acted upon in the function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>You can define a function using multiple parameters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">num_1</span><span class="p">,</span> <span class="n">num_2</span><span class="p">):</span>
+</pre></div>
+</div>
+</section>
+<section id="return-statement">
+<h2>Return Statement<a class="headerlink" href="#return-statement" title="Link to this heading">#</a></h2>
+<p>In <strong>Python</strong>, function definitions should have a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement to specify the output that will be returned by the function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">some</span> <span class="n">code</span> <span class="n">here</span>    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+<p>Like with loops and conditional statements, the code lines executed by the function, including the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, are provided on new lines after a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> and are indented once to indicate that they are part of the function.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement can return one or more values or objects and can follow multiple lines of code as needed to
+complete the task (i.e., code to create the output that will be returned by the function).</p>
+</section>
+<section id="python-numpy-style-docstrings">
+<h2>Python Numpy-style docstrings<a class="headerlink" href="#python-numpy-style-docstrings" title="Link to this heading">#</a></h2>
+<p>Python functions should always contain a docstring, or a multi-line documentation comment, that provides details about the function, including the specifics of the input parameters and the returns (e.g. type of objects, additional description) and any other important documentation about how to use the function.</p>
+<p>There are many docstring formats, but we suggest that you use <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">numpy style</a> as a default for the scientific Python ecosystem.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Docstrings should include a description of the function here </span>
+<span class="sd">    as well as identify the parameters (inputs) that the function </span>
+<span class="sd">    can take and the return (output) provided by the function,</span>
+<span class="sd">    as shown below. </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    input : type</span>
+<span class="sd">        Description of input.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    ------</span>
+<span class="sd">    output : type</span>
+<span class="sd">        Description of output.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">some</span> <span class="n">code</span> <span class="n">here</span>
+    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+<p>While a docstring is not required for the function to work in <strong>Python</strong>, good documentation will save you time in the future when you need to use this code again. It also helps others understand how to use your function.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can learn more about different types of docstrings in our <a class="reference external" href="https://www.pyopensci.org/python-package-guide/documentation/write-user-documentation/document-your-code-api-docstrings.html#three-python-docstring-formats-and-why-we-like-numpy-style">Python packaging guide</a>. focused on docstrings.</p>
+</div>
+<!-- #endregion -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert input from mm to inches</span>
+<span class="k">def</span> <span class="nf">mm_to_in</span><span class="p">(</span><span class="n">mm</span><span class="p">):</span>    
+    <span class="n">inches</span> <span class="o">=</span> <span class="n">mm</span> <span class="o">/</span> <span class="mf">25.4</span>    
+    <span class="k">return</span> <span class="n">inches</span>
+</pre></div>
+</div>
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+</section>
+</section>
+<section id="call-custom-python-functions">
+<h1>Call custom Python functions<a class="headerlink" href="#call-custom-python-functions" title="Link to this heading">#</a></h1>
+<p>Now that you have defined the function <code class="docutils literal notranslate"><span class="pre">add_num()</span></code>, you can call it as needed to convert units.</p>
+<p>Below is an example call to this function, specifying a single value variable represented by <code class="docutils literal notranslate"><span class="pre">mm</span></code> in the function.</p>
+<!-- #endregion -->
+<p>Notice that the output is provided but you have not actually changed the original values of <code class="docutils literal notranslate"><span class="pre">precip_jan_mm</span></code>.</p>
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+<section id="local-function-variables">
+<h2>Local function variables<a class="headerlink" href="#local-function-variables" title="Link to this heading">#</a></h2>
+<p>In Python, variables defined inside a function are called <strong>local variables</strong>. These variables exist only while the function runs and are specific to that function. Once the function completes, the local variables are discarded, meaning they can’t be accessed from outside the function. This helps keep the function’s operations isolated and prevents interference with other parts of your workflow.</p>
+<p>For example, if you define a variable <code class="docutils literal notranslate"><span class="pre">result</span></code> inside a function, it won’t conflict with another variable named <code class="docutils literal notranslate"><span class="pre">result</span></code> in your main code. If you need to access a value outside the function, you can use a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement to pass the result back to the main program. This keeps your code clean, modular, and easy to manage!</p>
+<!-- #endregion -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_square</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="n">number</span>  <span class="c1"># &#39;result&#39; is a local variable</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># Call the function</span>
+<span class="n">square_of_5</span> <span class="o">=</span> <span class="n">calculate_square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">square_of_5</span><span class="p">)</span>
+
+
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The following line will raise an error because &#39;result&#39; is local to the function</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># NameError: name &#39;result&#39; is not defined</span>
+</pre></div>
+</div>
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+</section>
+<section id="determining-appropriate-inputs-to-functions">
+<h2>Determining Appropriate Inputs to Functions<a class="headerlink" href="#determining-appropriate-inputs-to-functions" title="Link to this heading">#</a></h2>
+<p>Can the function <code class="docutils literal notranslate"><span class="pre">mm_to_in()</span></code> to take a list as an input? Look again at the code that the function executes.</p>
+<!-- #endregion -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+</section>
+</section>
+<section id="call-help-on-a-custom-function">
+<h1>Call <code class="docutils literal notranslate"><span class="pre">help</span></code> on a custom function<a class="headerlink" href="#call-help-on-a-custom-function" title="Link to this heading">#</a></h1>
+<p>Just like you can call <code class="docutils literal notranslate"><span class="pre">help()</span></code> on a function provided by a <strong>Python</strong> package such as <strong>pandas</strong> (e.g. <code class="docutils literal notranslate"><span class="pre">help(pd.DataFrame)</span></code>, you can also call <code class="docutils literal notranslate"><span class="pre">help()</span></code> on custom functions.</p>
+<!-- #endregion -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call help on mean function from pandas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call help on your custom function</span>
+<span class="n">help</span><span class="p">(</span><span class="n">add_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+<p>Notice that when you call <code class="docutils literal notranslate"><span class="pre">help()</span></code> on custom functions, you will see the docstring that was created in the function definition.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">help()</span></code> results for <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> are simply longer because the docstring contains more information, such as sections for Notes and Examples.</p>
+<p>Combining related function calls into a single line of code allows you to write code that is much more efficient and less repetitive, assisting you in writing DRY code in <strong>Python</strong>.</p>
+<p>Congratulations! You have now written and executed your first custom functions in <strong>Python</strong> to efficiently modularize and execute tasks as needed.</p>
+<!-- #endregion -->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #endregion -->
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="python-functions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Why write functions?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="python-function-checks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Write Flexible Functions for Messy Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">How to write a Python function</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-python-function">An example Python function</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-define-functions-in-python">How to Define Functions in Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#def-keyword-and-function-name">def keyword and function Name</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameter-s">Input Parameter(s)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-statement">Return Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-numpy-style-docstrings">Python Numpy-style docstrings</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#call-custom-python-functions">Call custom Python functions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-function-variables">Local function variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-appropriate-inputs-to-functions">Determining Appropriate Inputs to Functions</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#call-help-on-a-custom-function">Call <code class="docutils literal notranslate"><span class="pre">help</span></code> on a custom function</a></li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/checks-conditionals/write-python-functions.md">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/clean-modular-code/checks-conditionals/write-python-functions.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item"><p>
+    pyOpensci is dedicated to creating a welcoming, supportive and diverse
+    community around the open source Python tools that drive open science. Our
+    <a
+      href="https://www.pyopensci.org/handbook/CODE_OF_CONDUCT.html"
+      target="_blank"
+      >Code of Conduct</a
+    >
+    defines expected behavior and guidelines that help create such a community.
+  </p></div>
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, pyOpenSci.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

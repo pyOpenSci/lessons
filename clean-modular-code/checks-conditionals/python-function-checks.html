@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Write Flexible Functions to Handle Messy Data" />
+<meta property="og:title" content="Write Flexible Functions for Messy Data" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/python-function-checks.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
 <meta property="og:description" content="When dealing with messy or unpredictable data, using functions is an excellent first step in creating a robust and maintainable data processing workflow. Functions provide modular units that can be..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_checks-conditionals_python-function-checks_448dd2d5.png" />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_checks-conditionals_python-function-checks_e6d1b71e.png" />
 <meta property="og:image:alt" content="When dealing with messy or unpredictable data, using functions is an excellent first step in creating a robust and maintainable data processing workflow. Fun..." />
 <meta name="description" content="When dealing with messy or unpredictable data, using functions is an excellent first step in creating a robust and maintainable data processing workflow. Functions provide modular units that can be..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Write Flexible Functions to Handle Messy Data &#8212; pyOpenSci Lessons</title>
+    <title>Write Flexible Functions for Messy Data &#8212; pyOpenSci Lessons</title>
   
   
   
@@ -63,8 +63,8 @@
     <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Clean, Modular Code: Activity 1" href="../activity-1/clean-code-activity-1.html" />
-    <link rel="prev" title="Conditional statements in Python" href="python-conditionals.html" />
+    <link rel="next" title="Conditional statements in Python" href="python-conditionals.html" />
+    <link rel="prev" title="How to write a Python function" href="write-python-functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -390,13 +390,19 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../intro-clean-code.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-pep-8.html">Python Code Style</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-dry-modular-code.html">Don't Repeat Yourself</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python-functions.html">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python-function-checks.html">Function checks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-expressive-code.html">Expressive Code</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Checks &amp; Tests</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions, Checks &amp; Tests</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python-functions-multiple-conditions.html">Multi-variable functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="write-python-functions.html">How to write a Python function</a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Function checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conditional statements</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Conditional statements</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tests &amp; Checks</a></li>
 </ul>
@@ -462,12 +468,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="write-flexible-functions-to-handle-messy-data">
-<h1>Write Flexible Functions to Handle Messy Data<a class="headerlink" href="#write-flexible-functions-to-handle-messy-data" title="Link to this heading">#</a></h1>
-<p>When dealing with messy or unpredictable data, <a class="reference internal" href="#python-functions"><span class="xref myst">using functions</span></a> is an excellent first step in creating a robust and maintainable data processing workflow. Functions provide modular units that can be tested independently, allowing you to handle various edge cases and unexpected scenarios effectively.</p>
+  <section id="write-flexible-functions-for-messy-data">
+<h1>Write Flexible Functions for Messy Data<a class="headerlink" href="#write-flexible-functions-for-messy-data" title="Link to this heading">#</a></h1>
+<p>When dealing with messy or unpredictable data, using functions is an excellent first step in creating a robust and maintainable data processing workflow. Functions provide modular units that can be tested independently, allowing you to handle various edge cases and unexpected scenarios effectively.</p>
+<section id="function-benefits">
+<h2>Function benefits<a class="headerlink" href="#function-benefits" title="Link to this heading">#</a></h2>
+<p>Using functions in your data processing pipeline offers several advantages:</p>
+<ol class="arabic simple">
+<li><p><strong>Modularity</strong>: Functions encapsulate specific tasks, making your code more organized and easier to understand.</p></li>
+<li><p><strong>Testability</strong>: You can test functions individually, outside of the main workflow, to ensure they handle different scenarios correctly.</p></li>
+<li><p><strong>Flexibility</strong>: As you build out your workflow, you can easily add elements to functions to handle new processing requirements or edge cases.</p></li>
+<li><p><strong>Reusability</strong>: Well-designed functions can be reused across different parts of your project or even in other projects.</p></li>
+</ol>
+</section>
 <section id="handling-edge-cases">
 <h2>Handling edge cases<a class="headerlink" href="#handling-edge-cases" title="Link to this heading">#</a></h2>
-<p>When working with messy data, you’ll often encounter edge cases - unusual or unexpected data that can break your processing pipeline. You can add checks to your functions to handle potentail errors you may encounter in your data.</p>
+<p>When working with messy data, you’ll often encounter edge cases - unusual or unexpected data that can break your processing pipeline. Functions allow you to implement robust error handling and data validation. Here are some techniques you can use:</p>
 </section>
 <section id="try-except-blocks">
 <h2>Try/Except blocks<a class="headerlink" href="#try-except-blocks" title="Link to this heading">#</a></h2>
@@ -658,7 +674,7 @@ document.write(`
 </div>
 </section>
 <section id="indexerror">
-<h3>IndexError:<a class="headerlink" href="#indexerror" title="Link to this heading">#</a></h3>
+<h3>IndexError<a class="headerlink" href="#indexerror" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Raised when</strong> an invalid index is used to access a list or tuple.</p></li>
 <li><p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">my_list[10]</span></code> (trying to access the 11th element of a list with fewer elements).</p></li>
@@ -684,7 +700,7 @@ document.write(`
 </div>
 </section>
 <section id="attributeerror">
-<h3>AttributeError:<a class="headerlink" href="#attributeerror" title="Link to this heading">#</a></h3>
+<h3>AttributeError<a class="headerlink" href="#attributeerror" title="Link to this heading">#</a></h3>
 <p>Raised when an object does not have a specific attribute or method.</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -720,20 +736,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="python-conditionals.html"
+       href="write-python-functions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Conditional statements in Python</p>
+        <p class="prev-next-title">How to write a Python function</p>
       </div>
     </a>
     <a class="right-next"
-       href="../activity-1/clean-code-activity-1.html"
+       href="python-conditionals.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Clean, Modular Code: Activity 1</p>
+        <p class="prev-next-title">Conditional statements in Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -755,6 +771,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-benefits">Function benefits</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-edge-cases">Handling edge cases</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except-blocks">Try/Except blocks</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-checks-pythonic">Make checks Pythonic</a><ul class="nav section-nav flex-column">
@@ -766,8 +783,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror">TypeError</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">ValueError</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyerror">KeyError</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">IndexError:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributeerror">AttributeError:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">IndexError</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributeerror">AttributeError</a></li>
 </ul>
 </li>
 </ul>

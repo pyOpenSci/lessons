@@ -2,24 +2,24 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Write Efficient Modular Code Using Functions" />
+<meta property="og:title" content="Why write functions?" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/python-functions.html" />
+<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/python-functions.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="Three strategies for eliminating repetition and improving the efficiency of your code: loops,, conditional statements, and, functions.. Here you will learn how writing functions in Python can help ..." />
+<meta property="og:description" content="There are several strategies for making your code more modular. Here, you will learn about functions as one strategy that eliminates repetition in your code and also can improve the efficiency and ..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_python-functions_b4a29bee.png" />
-<meta property="og:image:alt" content="Three strategies for eliminating repetition and improving the efficiency of your code: loops,, conditional statements, and, functions.. Here you will learn h..." />
-<meta name="description" content="Three strategies for eliminating repetition and improving the efficiency of your code: loops,, conditional statements, and, functions.. Here you will learn how writing functions in Python can help ..." />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_checks-conditionals_python-functions_8c2213c8.png" />
+<meta property="og:image:alt" content="There are several strategies for making your code more modular. Here, you will learn about functions as one strategy that eliminates repetition in your code..." />
+<meta name="description" content="There are several strategies for making your code more modular. Here, you will learn about functions as one strategy that eliminates repetition in your code and also can improve the efficiency and ..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Write Efficient Modular Code Using Functions &#8212; pyOpenSci Lessons</title>
+    <title>Why write functions? &#8212; pyOpenSci Lessons</title>
   
   
   
@@ -29,42 +29,42 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/pyos-sphinx-theme.css?v=fb569b27" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/pyos-sphinx-theme.css?v=fb569b27" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Itim&family=Poppins:wght@400;700&family=Work+Sans:wght@400;700" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=2709fde1"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/python-functions';</script>
-    <script src="../_static/matomo.js?v=918da087"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/python-functions.html" />
+    <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/checks-conditionals/python-functions';</script>
+    <script src="../../_static/matomo.js?v=918da087"></script>
+    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/python-functions.html" />
     <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Handling Messy Data with Python Functions" href="python-function-checks.html" />
-    <link rel="prev" title="Write DRY, modular Python code" href="python-dry-modular-code.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to write a Python function" href="write-python-functions.html" />
+    <link rel="prev" title="Make Your Code Easier to Read Using Expressive Variable Names in Python" href="../python-expressive-code.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -100,7 +100,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../search.html"
+      action="../../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -136,7 +136,7 @@
 
   
 
-<a class="navbar-brand logo" href="../index.html">
+<a class="navbar-brand logo" href="../../index.html">
   
   
   
@@ -147,8 +147,8 @@
       
     
     
-    <img src="../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
-    <script>document.write(`<img src="../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
+    <img src="../../_static/logo-light-mode.png" class="logo__image only-light" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>
+    <script>document.write(`<img src="../../_static/logo-dark-mode.png" class="logo__image only-dark" alt="pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower"/>`);</script>
   
   
 </a></div>
@@ -164,7 +164,7 @@
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="intro-clean-code.html">
+                      <a class="nav-link nav-internal" href="../intro-clean-code.html">
                         Lessons
                       </a>
                     </li>
@@ -301,7 +301,7 @@ document.write(`
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="intro-clean-code.html">
+                      <a class="nav-link nav-internal" href="../intro-clean-code.html">
                         Lessons
                       </a>
                     </li>
@@ -386,25 +386,31 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="intro-clean-code.html">Intro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-pep-8.html">Python Code Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-dry-modular-code.html">Don't Repeat Yourself</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-function-checks.html">Function checks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-expressive-code.html">Expressive Code</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Checks &amp; Tests</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="checks-conditionals/python-functions-multiple-conditions.html">Multi-variable functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="checks-conditionals/python-conditionals.html">Conditional statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="checks-conditionals/python-function-checks.html">Tests &amp; Checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro-clean-code.html">Intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-pep-8.html">Python Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-dry-modular-code.html">Don't Repeat Yourself</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python-expressive-code.html">Expressive Code</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions, Checks &amp; Tests</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="write-python-functions.html">How to write a Python function</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="python-function-checks.html">Function checks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conditional statements</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-function-checks.html">Tests &amp; Checks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="activity-1/clean-code-activity-1.html">Clean Code: Activity 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity-2/clean-code-activity-2.html">Clean Code: Activity 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="activity-3/clean-code-activity-3.html">Clean Code: Activity 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity-1/clean-code-activity-1.html">Clean Code: Activity 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity-2/clean-code-activity-2.html">Clean Code: Activity 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity-3/clean-code-activity-3.html">Clean Code: Activity 3</a></li>
 </ul>
 </div>
 </nav></div>
@@ -438,14 +444,14 @@ document.write(`
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../index.html" class="nav-link" aria-label="Home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="intro-clean-code.html" class="nav-link">Write Clean, Modular, DRY Code</a></li>
+    <li class="breadcrumb-item"><a href="../intro-clean-code.html" class="nav-link">Write Clean, Modular, DRY Code</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Write...</li>
+    <li class="breadcrumb-item active" aria-current="page">Why write functions?</li>
   </ul>
 </nav>
 </div>
@@ -463,17 +469,17 @@ document.write(`
                 <article class="bd-article">
                   
   <!-- #region editable=true slideshow={"slide_type": ""} -->
-<section id="write-efficient-modular-code-using-functions">
-<h1>Write Efficient Modular Code Using Functions<a class="headerlink" href="#write-efficient-modular-code-using-functions" title="Link to this heading">#</a></h1>
-<p>Three strategies for eliminating repetition and improving the efficiency of your code:</p>
-<ol class="arabic simple">
-<li><p>loops,</p></li>
-<li><p>conditional statements, and</p></li>
-<li><p>functions.</p></li>
-</ol>
-<p>Here you will learn how writing functions in <strong>Python</strong> can help you to execute a specific task while also making your code more maintainable.</p>
+<section id="why-write-functions">
+<h1>Why write functions?<a class="headerlink" href="#why-write-functions" title="Link to this heading">#</a></h1>
+<p>There are several strategies for making your code more modular. Here, you will learn about
+functions as one strategy that eliminates repetition in your code and also can improve the
+efficiency and maintainability of your code.</p>
 <p>A function is a reusable block of code that performs a specific task. Functions receive inputs to which code is applied and return outputs (or results) of the code.</p>
 <p><code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">parameter</span> <span class="pre">–&gt;</span> <span class="pre">function</span> <span class="pre">does</span> <span class="pre">something</span> <span class="pre">–&gt;</span> <span class="pre">output</span> <span class="pre">results</span></code></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Functions (and classes) are become the base for creating Python packages.</p>
+</div>
 <p>For example:</p>
 <!-- #endregion -->
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
@@ -482,10 +488,10 @@ document.write(`
 </pre></div>
 </div>
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-<p>Functions can help you to both eliminate repetition and improve efficiency in your code through modularity.</p>
-<p>Modularity means that code is separated into independent units that can be reused and even be combined to complete a longer chain of tasks.</p>
+<p>Functions can help you to both eliminate repetition and improve efficiency by making it more modular.</p>
+<p>Modulare code is code that is separated into independent units that can be reused and even combined to complete a longer chain of tasks.</p>
 <figure class="align-default" id="id1">
-<a class="reference external image-reference" href="/images/clean-code/functions-for-all-things.png"><img alt="You can implement strategies such as loops and functions in your code to replace tasks that you are performing over and over. Source: Francois Michonneau." src="../_images/functions-for-all-things.png" />
+<a class="reference external image-reference" href="../images/clean-code/functions-for-all-things.png"><img alt="You can implement strategies such as loops and functions in your code to replace tasks that you are performing over and over. Source: Francois Michonneau." src="clean-modular-code/images/clean-code/functions-for-all-things.png" />
 </a>
 <figcaption>
 <p><span class="caption-text">You can use loops and functions in your code to replace repeating tasks.<br />
@@ -495,17 +501,17 @@ Source: Francois Michonneau.</span><a class="headerlink" href="#id1" title="Link
 <section id="the-benefits-of-functions">
 <h2>The benefits of functions<a class="headerlink" href="#the-benefits-of-functions" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Modularity: Functions only need to be defined once in a workflow. Functions that you write for specific tasks can be used over and over, without needing to redefine the function again. A function that you write for one <strong>Python</strong> workflow can also be reused in other workflows especially if you make your code installable.</p></li>
-<li><p>Fewer variables: When you run a function, the intermediate variables (i.e. placeholders) that it creates are not stored as explicit variables unless you specify otherwise. This saves memory and keeps your <strong>Python</strong> environment cleaner.</p></li>
-<li><p>Better documentation: Well-documented functions help other users understand the steps of your processing and helps your future self to understand previously written code.</p></li>
-<li><p>Easier to maintain and edit your code: Because a function is only defined once in the workflow, you can simply just update the original function definition. Then, each instance in which you call that function in your code (i.e. when same task is performed) is automatically updated.</p></li>
-<li><p>Tests &amp; checks: Writing functions allows you you to your code to handle issues and edge cases in your code. It also can make it easier to write tests for your code.</p></li>
+<li><p><strong>Modularity:</strong> Functions only need to be defined once in a workflow. Functions that you write for specific tasks can be used over and over without redefining the function again. A function that you write for one <strong>Python</strong> workflow can also be reused in other workflows, especially if you <a class="reference external" href="https://www.pyopensci.org/python-package-guide/tutorials/installable-code.html">make your code installable</a>.</p></li>
+<li><p><strong>Fewer variables:</strong> When you run a function, the intermediate variables that the function creates are not by default stored as explicit variables. These placeholder variables are thrown out once the function has run so it saves memory and keeps your <strong>Python</strong> environment cleaner.</p></li>
+<li><p><strong>Better documentation:</strong> Well-documented functions help other users understand the steps of your processing and helps your future self to understand previously written code.</p></li>
+<li><p><strong>Easier to maintain and edit your code:</strong> Because a function is only defined once in the workflow, you can simply just update the original function definition. Then, each instance in which you call that function in your code (i.e., when the same task is performed) is automatically updated.</p></li>
+<li><p><strong>Tests &amp; checks:</strong> Writing functions allows you to handle issues and edge cases in your code. It also can make it easier to write tests for your code.</p></li>
 </ul>
 <section id="write-modular-functions-and-code">
 <h3>Write modular functions and code<a class="headerlink" href="#write-modular-functions-and-code" title="Link to this heading">#</a></h3>
-<p>A well-defined function only does one thing, but it does it well and often in various contexts. Often, the operations contained in a good function are generally useful for many tasks.</p>
+<p>A well-defined function only does one thing but does it well and often in various contexts. Often, the operations in a good function are useful for many tasks.</p>
 <p>Take, for instance, the <strong>numpy</strong> function called <code class="docutils literal notranslate"><span class="pre">mean()</span></code>, which computes mean values from a <strong>numpy</strong> array.</p>
-<p>This function only does one thing (i.e. computes a mean); however, you may use the <code class="docutils literal notranslate"><span class="pre">np.mean()</span></code> function many times in your code on multiple <strong>numpy</strong> arrays because it has been defined to take any <strong>numpy</strong> array as an input.</p>
+<p>This function only does one thing– it computes a mean. However, you may use the <code class="docutils literal notranslate"><span class="pre">np.mean()</span></code> function many times in your code on multiple <strong>numpy</strong> arrays because it has been defined to take any <strong>numpy</strong> array as an input.</p>
 <p>For example:</p>
 <!-- #endregion -->
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -530,36 +536,34 @@ stored in your computer’s memory.</p>
 <h2>Reasons why functions improve code readability<a class="headerlink" href="#reasons-why-functions-improve-code-readability" title="Link to this heading">#</a></h2>
 <section id="functions-help-you-document-your-code">
 <h3>Functions help you document your code<a class="headerlink" href="#functions-help-you-document-your-code" title="Link to this heading">#</a></h3>
-<p>Ideally, your code is easy to understand and is well-documented with <strong>Python</strong> comments (or <strong>Markdown</strong> in <strong>Jupyter Notebook</strong>). However, what might seem clear to you now might not be clear 6 months from now, or even 3 weeks from now.</p>
+<p>Ideally, your code is easy to understand and is well-documented with <strong>Python</strong> comments (or <strong>Markdown</strong> in <strong>Jupyter Notebook</strong>) and expressive variable and function names. However, what might seem clear to you now might not be clear 6 months from now, or even 3 weeks from now.</p>
 <p>Well-written functions help you document your workflow if:</p>
 <ul class="simple">
 <li><p>They have clear docstrings that outline the function’s inputs and outputs.</p></li>
-<li><p>They use descriptive names that clearly describe the task that the function performs.</p></li>
+<li><p>They use descriptive names that clearly describe the function’s task.</p></li>
 </ul>
 </section>
 <section id="expressive-function-names-make-code-self-describing">
 <h3>Expressive function names make code self-describing<a class="headerlink" href="#expressive-function-names-make-code-self-describing" title="Link to this heading">#</a></h3>
-<p>When writing your own functions, you should name functions using verbs and/or clear labels to indicate what the function does (i.e. <code class="docutils literal notranslate"><span class="pre">in_to_mm</span></code> for converting inches to millimeters).</p>
-<p>This makes your code more expressive (or self-describing), and in turn, makes it easier to read for you, your future self, and your colleagues.</p>
+<p>When writing your own functions, you should name functions using verbs and/or clear labels to indicate what the function does (i.e., <code class="docutils literal notranslate"><span class="pre">in_to_mm</span></code> for converting inches to millimeters).</p>
+<p>This makes your code more expressive (or self-describing) and, in turn, makes it easier to read for you, your future self, and your colleagues.</p>
 </section>
 <section id="modular-code-is-easier-to-maintain-and-edit">
 <h3>Modular code is easier to maintain and edit<a class="headerlink" href="#modular-code-is-easier-to-maintain-and-edit" title="Link to this heading">#</a></h3>
-<p>If all your code is written line by line (with repeated code in multiple parts of your document) it can be challenging to maintain and edit.</p>
-<p>Imagine having to fix one element of a line of code that is repeated many times. You will have to find and replace that code to implement the fix in EVERY INSTANCE it occurs in your code!</p>
-<p>Repeated code cause you to duplicated comment. So how do you keep the duplicated comments in sync?</p>
-<p>A comment that is misleading because the code changed is worse than no comment.</p>
+<p>It can be challenging to maintain and edit if your code is written line by line (with repeated code in multiple parts of your script).</p>
+<p>Imagine having to fix one element of a code line repeated many times. You will have to find and replace that code to implement the fix in EVERY INSTANCE it occurs in your code!</p>
 <p>Organizing your code using functions from the beginning allows you to explicitly document the tasks that your code performs, as all code and documentation for the function is contained in the function definition.</p>
 </section>
 <section id="functions-and-tests">
 <h3>Functions and tests<a class="headerlink" href="#functions-and-tests" title="Link to this heading">#</a></h3>
-<p>While you will not learn about testing in this lessons, note that functions are also very useful for testing.</p>
-<p>As your code gets longer and more complex, it is more prone to mistakes. For example, if your analysis relies on data that gets updated often, you may want to make sure that all the columns in your spreadsheet are present before performing an analysis. Or, that the new data are not formatted in a different way.</p>
-<p>Changes in data structure and format could cause your code to not run. Or, in the worse case scenario, your code may run but return the wrong values!</p>
-<p>If all your code is made up of functions (with built-in tests to ensure that they run as expected), then you can control the input to the function and test that the output returned is correct for that input. It is something that would be difficult to do if all of your code is written line by line with repeated steps.</p>
+<p>While you will not learn about testing in this lesson, functions are also useful for testing.</p>
+<p>As your code gets longer and more complex, it is more prone to mistakes. For example, if your analysis relies on data that gets updated often, you may want to make sure that all data are up-to-date before performing an analysis. Or that the new data are not formatted in a different way.</p>
+<p>Changes in data structure and format could break your code. In the worst-case scenario, your code may run but return the wrong values.</p>
+<p>If all your code is composed of functions (with built-in tests and checks to ensure that they run as expected), then you can control the input to the function and test that the output returned is correct for that input. It is something that would be difficult to do if all of your code is written line by line with repeated steps.</p>
 </section>
 </section>
-<section id="summary-of-writing-modular-code-with-functions">
-<h2>Summary of writing modular code with functions<a class="headerlink" href="#summary-of-writing-modular-code-with-functions" title="Link to this heading">#</a></h2>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>It is a good idea to learn how to:</p>
 <ol class="arabic simple">
 <li><p>Modularize your code into generalizable tasks using functions.</p></li>
@@ -581,20 +585,20 @@ stored in your computer’s memory.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="python-dry-modular-code.html"
+       href="../python-expressive-code.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Write DRY, modular Python code</p>
+        <p class="prev-next-title">Make Your Code Easier to Read Using Expressive Variable Names in Python</p>
       </div>
     </a>
     <a class="right-next"
-       href="python-function-checks.html"
+       href="write-python-functions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Handling Messy Data with Python Functions</p>
+        <p class="prev-next-title">How to write a Python function</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -628,7 +632,7 @@ stored in your computer’s memory.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-and-tests">Functions and tests</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-writing-modular-code-with-functions">Summary of writing modular code with functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>
 
@@ -636,7 +640,7 @@ stored in your computer’s memory.</p>
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/python-functions.md">
+    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/checks-conditionals/python-functions.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -651,7 +655,7 @@ stored in your computer’s memory.</p>
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../_sources/clean-modular-code/python-functions.md.txt">
+    <a href="../../_sources/clean-modular-code/checks-conditionals/python-functions.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>
@@ -670,8 +674,8 @@ stored in your computer’s memory.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
