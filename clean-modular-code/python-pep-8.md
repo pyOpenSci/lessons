@@ -215,7 +215,7 @@ Most text editors allow you to set up guides to see how long your code is. You c
 
 * White Space: Add space between sections of code to improve readability.
 * Avoid using single-character letters that could be confused with numbers  (ie the letter `l` looks similar to the number one  `1` 
-* Add a blank line before a single-line comment (unless it is the first line of a cell in Jupyter Notebook)
+* Add a blank line before a single-line comment (unless it is the first line of a cell in Jupyter Notebook or part of a code block)
 
 ```python
 a = 1 
