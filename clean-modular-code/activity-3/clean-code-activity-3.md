@@ -42,11 +42,11 @@ Once you have these functions and methods, you can add checks using conditional 
 In this activity, you will apply the following strategies to make your code more robust, maintainable & usable:
 
 * **[Fail fast with useful error messages](fail-fast)**: Failing fast is a software engineering term that means allowing your 
-  code to stop early when something goes wrong, ensuring that errors are caught 
-  and communicated clearly. This helps the user quickly understand what went 
-  wrong and where.
+  code to stop when something goes wrong, ensuring that errors are caught 
+  and communicated promptly. This helps the user quickly understand the error, what went 
+  wrong, and where.
 * Use **[conditional statements](../checks-conditionals/python-conditionals)** 
-  to check for specific conditions before executing certain parts. This allows you to create specific workflows that your code followed based on specific conditions.
+  to logically check for specific conditions before executing code. This allows you to create different pathways for code to execute based on specific conditions.
 * **[Try/except blocks](../checks-conditionals/python-function-checks)** allow 
   you to handle potential errors by attempting an operation and catching any 
   exceptions if they occur, providing useful feedback. In some cases you may want the program to end on an error. In other cases, you may want to handle it in a specific way. 
@@ -59,7 +59,7 @@ editable: true
 slideshow:
   slide_type: ''
 ---
-# This works but is less Pythonic as it's a look before you leap approach
+# This works but is less Pythonic as it's a "look before you leap" approach since it does an extra check before returning the title
 def clean_title(title):
     """Notice that this function checks explicitly to see if it's a list and then processes the data.
     """
@@ -81,7 +81,7 @@ tags: [raises-exception]
 def clean_title(title):
     """
     Attempts to return the first character of the title.
-    Raises the same error with a friendly message if the input is invalid.
+    Raises the same error with a friendly, custom error message if the input is invalid.
     """
     try:
         return title[0]
@@ -100,6 +100,7 @@ print(clean_title(title))  # This will raise an IndexError with the friendly mes
 def clean_title(title):
     """
     Attempts to return the first character of the title.
+
     Raises the same error with a friendly message if the input is invalid.
     """
     try:
@@ -114,7 +115,7 @@ print(clean_title(title))  # This will raise an IndexError with the friendly mes
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-If you wish, you can shorten the amount of information returned in the exception by adding `from None` to your exception. This will look nicer to a user but you lose some information in the exception feedback. 
+If you wish, you can shorten the amount of information returned in the error by adding `from None` when you raise the error. This will look nicer to a user, but you lose some detail in the error traceback. 
 
 ```{code-cell} ipython3
 # This is the preferred way to catch an error 
@@ -137,7 +138,7 @@ print(clean_title(title))  # This will raise an IndexError with the friendly mes
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["hide-output", "hide-cell"]}
 
-In this activity, you will be working with Pandas dataframes. You may find the .apply function to be particularly useful. 
+In this activity, you will be working with Pandas dataframes. You may find the `.apply` function to be particularly useful. 
 
 :::{tip}
 ### Applying functions to DataFrame values: `.apply` 
