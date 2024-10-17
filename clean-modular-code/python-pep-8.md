@@ -27,7 +27,7 @@ kernelspec:
 
 ## Why code style and Python PEP 8 matters 
 
-Just like good grammar makes text easier to read, PEP 8 helps make your code easier to understand. It enforces rules on naming variables, capitalization, formatting code, and structuring your script. Well-formatted code also makes it easier for you to share code, given it will be easier for others to understand.  
+Just like good grammar makes text easier to read, [PEP 8](https://peps.python.org/pep-0008/) helps make your code easier to understand. It enforces rules on naming variables, capitalization, formatting code, and structuring your script. Well-formatted code also makes it easier for you to share code, given it will be easier for others to understand.  
 
 ```{code-cell} ipython3
 ---
