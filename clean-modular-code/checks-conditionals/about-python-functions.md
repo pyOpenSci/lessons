@@ -45,7 +45,7 @@ print(x)
 Functions can help you to both eliminate repetition and improve efficiency by making it more modular. 
 
 
-Modulare code is code that is separated into independent units that can be reused and even combined to complete a longer chain of tasks.
+Modular code is separated into independent units that can be reused and even combined to complete a longer chain of tasks.
 
 :::{figure} ../images/clean-code/functions-for-all-things.png
 :alt: You can implement strategies such as loops and functions in your code to replace tasks that you are performing over and over. Source: Francois Michonneau.
@@ -93,7 +93,7 @@ When you write modular functions, you can reuse them for other workflows and pro
 When coding tasks step by step, you are likely creating many intermediate variables that are not needed again but are
 stored in your computer's memory.
 
-By using functions, these intermediate variables are confined to the function’s local scope. Once the function finishes executing, the variables created within the function are discarded making your code cleaner and more efficient  
+These intermediate variables are confined to the function’s local scope by using functions. Once the function finishes executing, the variables created within the function are discarded, making your code cleaner and more efficient  
 
 ## Reasons why functions improve code readability
 
@@ -122,7 +122,7 @@ Organizing your code using functions from the beginning allows you to explicitly
 
 ### Functions and tests  
 
-While you will not learn about testing in this lesson, functions are also useful for testing.
+Functions are also useful for testing.
 
 As your code gets longer and more complex, it is more prone to mistakes. For example, if your analysis relies on data that gets updated often, you may want to make sure that all data are up-to-date before performing an analysis. Or that the new data are not formatted in a different way.
 
