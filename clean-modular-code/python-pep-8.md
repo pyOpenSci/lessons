@@ -294,4 +294,4 @@ from my_module import my_function
 
 ### Why organize imports?
 
-Organizing your imports this way ensures your code is readable and follows widely accepted practices. Importing libraries at the top also makes it easier to debug and see which dependencies are required to run the code.
+Organizing your imports this way ensures your code is readable and follows widely accepted practices. Importing libraries at the top also makes it easier to scan for a specific library, debug dependencies, and see which dependencies are required to run the code.
