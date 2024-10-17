@@ -11,12 +11,12 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/activity-3/clean-code-activity-3.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="In activity 1, you took some code and made it cleaner using expressive variable names and docstrings to document the module., In activity 2, you made your code more DRY (“Don’t Repeat Yourself”) us..." />
+<meta property="og:description" content="In activity 1, you made your code cleaner and more usable using expressive variable names and docstrings to document the module., In activity 2, you made your code more DRY (“Don’t Repeat Yourself”..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_activity-3_clean-code-activity-3_7ad8d4be.png" />
-<meta property="og:image:alt" content="In activity 1, you took some code and made it cleaner using expressive variable names and docstrings to document the module., In activity 2, you made your co..." />
-<meta name="description" content="In activity 1, you took some code and made it cleaner using expressive variable names and docstrings to document the module., In activity 2, you made your code more DRY (“Don’t Repeat Yourself”) us..." />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_activity-3_clean-code-activity-3_d9aa14bf.png" />
+<meta property="og:image:alt" content="In activity 1, you made your code cleaner and more usable using expressive variable names and docstrings to document the module., In activity 2, you made you..." />
+<meta name="description" content="In activity 1, you made your code cleaner and more usable using expressive variable names and docstrings to document the module., In activity 2, you made your code more DRY (“Don’t Repeat Yourself”..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
     <title>Activity 3: Tests &amp; Checks for your code &#8212; pyOpenSci Lessons</title>
@@ -384,26 +384,24 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Clean, Expressive Code</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro-clean-code.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-pep-8.html">Python Code Style</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-dry-modular-code.html">Don't Repeat Yourself</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-expressive-code.html">Expressive Code</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions, Checks &amp; Tests</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions, Conditionals &amp; Checks</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-conditionals.html">Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/about-python-functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/write-python-functions.html">How to write a Python function</a></li>
 
 
 
 <li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-function-checks.html">Function checks</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conditional statements</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-conditionals.html">Conditional statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-function-checks.html">Tests &amp; Checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../checks-conditionals/python-common-exceptions.html">Common Python exceptions</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="current nav bd-sidenav">
@@ -468,37 +466,41 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="activity-3-tests-checks-for-your-code">
-<h1>Activity 3: Tests &amp; Checks for your code<a class="headerlink" href="#activity-3-tests-checks-for-your-code" title="Link to this heading">#</a></h1>
+<span id="clean-code-activity-3"></span><h1>Activity 3: Tests &amp; Checks for your code<a class="headerlink" href="#activity-3-tests-checks-for-your-code" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p>In <a class="reference internal" href="../activity-1/clean-code-activity-1.html"><span class="doc std std-doc">activity 1</span></a>, you took some code and made it cleaner using expressive variable names and docstrings to document the module.</p></li>
-<li><p>In <a class="reference internal" href="../activity-2/clean-code-activity-2.html"><span class="doc std std-doc">activity 2</span></a>, you made your code more DRY (“Don’t Repeat Yourself”) using documented functions and conditionals.</p></li>
+<li><p>In <a class="reference internal" href="../activity-1/clean-code-activity-1.html"><span class="doc std std-doc">activity 1</span></a>, you made your code cleaner and more usable using <a class="reference internal" href="../python-expressive-code.html#python-expressive"><span class="std std-ref">expressive variable names</span></a> and docstrings to document the module.</p></li>
+<li><p>In <a class="reference internal" href="../activity-2/clean-code-activity-2.html"><span class="doc std std-doc">activity 2</span></a>, you made your code more DRY (“Don’t Repeat Yourself”) using documented <a class="reference internal" href="../checks-conditionals/write-python-functions.html#write-functions"><span class="std std-ref">functions</span></a> and <a class="reference internal" href="../checks-conditionals/python-conditionals.html#python-conditionals"><span class="std std-ref">conditionals</span></a>.</p></li>
 </ul>
-<p>In this activity, you will build checks into your workflow to handle data processing “features”.</p>
+<p>In this activity, you will build checks into your workflow using <a class="reference internal" href="../checks-conditionals/python-function-checks.html#try-except"><span class="std std-ref">try/except</span></a> blocks added to functions to handle data processing “features”.</p>
 <section id="real-world-data-processing-workflows-and-edge-cases">
 <h2>Real world data processing &amp; workflows and edge cases<a class="headerlink" href="#real-world-data-processing-workflows-and-edge-cases" title="Link to this heading">#</a></h2>
-<p>Real-world data rarely can be imported without “work arounds”. You will often find unusual data entries and values you don’t expect. Sometimes, these values are documented - for example, a 9999 may represent a missing value in a dataset. Other times, there are typos and other errors in the data that you need to handle. These unusual values or instances in a dataset or workflow are sometimes called “edge cases”.</p>
-<p>Writing robust code that handles unexpected values will make your code run smoothly and fail gracefully. This type of code, which combines functions (or classes) and checks within the functions that handle messy data, will make your code easier to maintain over time.</p>
+<p>Real-world data rarely can be imported without “work-arounds”. You will often find unusual data entries and values you don’t expect. Sometimes, these values are documented - for example, a <code class="docutils literal notranslate"><span class="pre">9999</span></code> may represent a missing value in a dataset. Other times, there are typos and other errors in the data that you need to handle. These unusual values or instances in a dataset or workflow are sometimes called “edge cases”.</p>
+<p>Writing robust code that handles unexpected values will make your code run smoothly and fail gracefully. This type of code, which combines functions (or classes) and checks within the functions that handle messy data, will make your code easier to maintain.</p>
+<p>Things like helpful error messages and fast failing will also improve the experience for someone else using your code–OR your future self.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Using functions, classes, and methods (functions within a class) is a great first step in handling messy data. A function or method provides a modular unit you can test outside of the workflow for the edge cases you may encounter. Also, because a function is a modular unit, you can add elements to handle unexpected processing features as you build your workflow.</p>
+<p>Once you have these functions and methods, you can add checks using conditional statements and <a class="reference internal" href="../checks-conditionals/python-function-checks.html#try-except"><span class="std std-ref">try/except</span></a> blocks that anticipate edge cases and errors that you may encounter when processing your data.</p>
 </div>
-<p>something about debuggers?</p>
-<ul class="simple">
-<li><p>https://jupyterlab.readthedocs.io/en/stable/user/debugger.html</p></li>
-</ul>
 </section>
 <section id="manage-the-unexpected">
 <h2>Manage the unexpected<a class="headerlink" href="#manage-the-unexpected" title="Link to this heading">#</a></h2>
-<p>In this activity, you will apply the following strategies:</p>
+<p>In this activity, you will apply the following strategies to make your code more robust, maintainable &amp; usable:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../checks-conditionals/python-conditionals.html"><span class="doc std std-doc">conditional statements</span></a></p></li>
-<li><p>try/except blocks</p></li>
+<li><p><strong><a class="reference internal" href="../checks-conditionals/python-function-checks.html#fail-fast"><span class="std std-ref">Fail fast with useful error messages</span></a></strong>: Failing fast is a software engineering term that means allowing your
+code to stop when something goes wrong, ensuring that errors are caught
+and communicated promptly. This helps the user quickly understand the error, what went
+wrong, and where.</p></li>
+<li><p>Use <strong><a class="reference internal" href="../checks-conditionals/python-conditionals.html"><span class="doc std std-doc">conditional statements</span></a></strong>
+to logically check for specific conditions before executing code. This allows you to create different pathways for code to execute based on specific conditions.</p></li>
+<li><p><strong><a class="reference internal" href="../checks-conditionals/python-function-checks.html"><span class="doc std std-doc">Try/except blocks</span></a></strong> allow
+you to handle potential errors by attempting an operation and catching any
+exceptions if they occur, providing useful feedback. In some cases you may want the program to end on an error. In other cases, you may want to handle it in a specific way.</p></li>
 </ul>
-<p>to process the JOSS citation data.</p>
-<p>When you can, try to use the Pythonic approach of asking for forgiveness later (ie use try/except blocks) rather than conditional statements.</p>
+<p>Try to use a <a class="reference internal" href="../checks-conditionals/python-function-checks.html#pythonic-checks"><span class="std std-ref">Pythonic approach</span></a> to catch errors early when completing this activity. This means asking for forgiveness later vs. using conditional statements to check an object’s state or type.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This works but is less pythonic</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This works but is less Pythonic as it&#39;s a &quot;look before you leap&quot; approach since it does an extra check before returning the title</span>
 <span class="k">def</span> <span class="nf">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Notice that this function checks explicitly to see if it&#39;s a list and then processes the data.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -509,45 +511,167 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="more-pythonic-ask-for-forgiveness">
-<h2>More “pythonic” - ask for forgiveness<a class="headerlink" href="#more-pythonic-ask-for-forgiveness" title="Link to this heading">#</a></h2>
-<p>easier to ask for forgiveness</p>
+<p>The function below raises an error with a custom error message.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the preferred way to catch an error </span>
+<span class="k">def</span> <span class="nf">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attempts to return the first character of the title.</span>
+<span class="sd">    Raises the same error with a friendly, custom error message if the input is invalid.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Oops! You provided a title in an unexpected format. &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;I expected the title to be provided in a list and you provided &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;a </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">title</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+
+<span class="c1"># Example usage:</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>  <span class="c1"># This will raise an IndexError with the friendly message</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">Cell In[2], line 8,</span> in <span class="ni">clean_title</span><span class="nt">(title)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">8</span>     <span class="k">return</span> <span class="n">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">IndexError</span>: string index out of range
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">16</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="c1"># Example usage:</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">16</span> <span class="nb">print</span><span class="p">(</span><span class="n">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>  <span class="c1"># This will raise an IndexError with the friendly message</span>
+
+<span class="nn">Cell In[2], line 10,</span> in <span class="ni">clean_title</span><span class="nt">(title)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="k">return</span> <span class="n">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">10</span>     <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Oops! You provided a title in an unexpected format. &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>                      <span class="sa">f</span><span class="s2">&quot;I expected the title to be provided in a list and you provided &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>                      <span class="sa">f</span><span class="s2">&quot;a </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">title</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">e</span>
+
+<span class="ne">IndexError</span>: Oops! You provided a title in an unexpected format. I expected the title to be provided in a list and you provided a &lt;class &#39;str&#39;&gt;.
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the preferred way to catch an error </span>
 <span class="k">def</span> <span class="nf">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    It&#39;s more Pythonic to try first and then ask for forgiveness later. </span>
-<span class="sd">    If you are writing tests this also makes your code easier to test. </span>
+<span class="sd">    Attempts to return the first character of the title.</span>
+
+<span class="sd">    Raises the same error with a friendly message if the input is invalid.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">title</span>
+    <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Oops! You provided a title in an unexpected format. I expected the title to be provided in a list and you provided a </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">title</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span> 
+
+<span class="c1"># Example usage:</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>  <span class="c1"># This will raise an IndexError with the friendly message</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">Cell In[3], line 9,</span> in <span class="ni">clean_title</span><span class="nt">(title)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+
+<span class="ne">IndexError</span>: string index out of range
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="c1"># Example usage:</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="nb">print</span><span class="p">(</span><span class="n">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>  <span class="c1"># This will raise an IndexError with the friendly message</span>
+
+<span class="nn">Cell In[3], line 11,</span> in <span class="ni">clean_title</span><span class="nt">(title)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="nn">---&gt; 11     raise IndexError(f&quot;Oops! You provided a title in an unexpected format. I expected the title to be provided</span> in <span class="ni">a list and you provided a {type</span><span class="nt">(title)}.&quot;)</span>
+
+<span class="ne">IndexError</span>: Oops! You provided a title in an unexpected format. I expected the title to be provided in a list and you provided a &lt;class &#39;str&#39;&gt;.
 </pre></div>
 </div>
 </div>
 </div>
+<p>If you wish, you can shorten the amount of information returned in the error by adding <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">None</span></code> when you raise the error. This will look nicer to a user, but you lose some detail in the error traceback.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the preferred way to catch an error </span>
+<span class="k">def</span> <span class="nf">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attempts to return the first character of the title.</span>
+<span class="sd">    Raises the same error with a friendly message if the input is invalid.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">title</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Oops! You provided a title in an unexpected format. &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;I expected the title to be provided in a list and you provided &quot;</span>
+                         <span class="sa">f</span><span class="s2">&quot;a </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">title</span><span class="p">)</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span> 
+
+<span class="c1"># Example usage:</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clean_title</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>  <span class="c1"># This will raise an IndexError with the friendly message</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this activity, you will be working with Pandas dataframes. You may find the <code class="docutils literal notranslate"><span class="pre">.apply</span></code> function to be particularly useful.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p class="rubric" id="applying-functions-to-dataframe-values-apply">Applying functions to DataFrame values–<code class="docutils literal notranslate"><span class="pre">.apply</span></code></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">.apply()</span></code> function in pandas allows you to apply any function to rows or columns in a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. For example, You can use it to perform operations on specific column or row values. When you use <code class="docutils literal notranslate"><span class="pre">.apply()</span></code>, you can specify whether you want to apply the function across columns <code class="docutils literal notranslate"><span class="pre">(axis=0)</span></code> (the default) or across rows <code class="docutils literal notranslate"><span class="pre">(axis=1)</span></code>. For example, if you want to apply a function to each row of a DataFrame, you would use <code class="docutils literal notranslate"><span class="pre">df.apply(your_function,</span> <span class="pre">axis=1)</span></code>. This function is especially useful for applying logic that can’t be easily achieved with built-in pandas functions, allowing for more flexibility in data processing.</p>
+<p class="rubric" id="applying-functions-to-dataframe-values-apply">Applying functions to DataFrame values: <code class="docutils literal notranslate"><span class="pre">.apply</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.apply()</span></code> function in pandas allows you to apply any function to rows or columns in a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. For example, you can use it to perform operations on specific column or row values. When you use <code class="docutils literal notranslate"><span class="pre">.apply()</span></code>, you can specify whether you want to apply the function across columns <code class="docutils literal notranslate"><span class="pre">(axis=0)</span></code> (the default) or across rows <code class="docutils literal notranslate"><span class="pre">(axis=1)</span></code>.</p>
+<p>For example, if you want to apply a function to each row of a DataFrame, you would use <code class="docutils literal notranslate"><span class="pre">df.apply(your_function,</span> <span class="pre">axis=1)</span></code>. This function is especially useful for applying logic that can’t be easily achieved with built-in pandas functions, allowing for more flexibility in data processing.</p>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">.apply</span></code> in pandas to efficiently replace <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loops</span></code> to process row and column values in a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p>
 </div>
 <section id="what-s-changed-in-your-workflow">
 <h3>What’s changed in your workflow?<a class="headerlink" href="#what-s-changed-in-your-workflow" title="Link to this heading">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>You have a new data file to open in your list of <code class="docutils literal notranslate"><span class="pre">.json</span></code> files in this activity. This file has some unexpected “features” that your code needs to handle gracefully so it can process all of the data.</p>
+<p>You have a new data file to open in your list of <code class="docutils literal notranslate"><span class="pre">.json</span></code> files in this activity. This file has some unexpected “features” that your code needs to handle gracefully to process all of the data.</p>
 </div>
+<p>The code below is an example of what your code might look like after completing <a class="reference internal" href="../activity-2/clean-code-activity-2.html"><span class="doc std std-doc">activity 2</span></a>. You can choose to work with this code, or you can use the code that you completed in activity 2.</p>
 <p>Your goal is to make the code below run on the data provided in the activity-3 <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory.</p>
+<p>The code below will fail. You will need to do the following:</p>
+<ol class="arabic simple">
+<li><p>Use a debugger to determine why it’s failing.</p></li>
+<li><p>Add try/except blocks and/or conditional statements to your functions that handle various exceptions.</p></li>
+</ol>
+<p>Your end goal is to make the code below run.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The code below will fail. You will likely want to use a debugger to determine why it’s failing and get the code running.</p>
+<ul class="simple">
+<li><p>If you are using Jupyter, then you might <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/user/debugger.html">find this page helpful when setting up debugging.</a></p></li>
+<li><p>VSCODE has a nice visual debugger that you can use.</p></li>
+</ul>
 </div>
-<p>The code below is an example of what your code might look like after completing activity 2. You can choose to work with this code, or you can use the code that you completed in activity 2.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<p>Important: It is ok if you can’t get the code to run fully by the end of this workshop. If you can:</p>
+<ol class="arabic simple">
+<li><p>identify at least one of the data processing “bugs” (even if you can’t fix it) and/or</p></li>
+<li><p>fix at least one bug</p></li>
+</ol>
+<p>You can consider your effort today as a success! We will work on the first element together as a group.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -589,35 +713,19 @@ document.write(`
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
-<span class="sd">    str</span>
-<span class="sd">        Formatted date string.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">date_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">date_parts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">date_parts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span>
-
-
-<span class="k">def</span> <span class="nf">clean_title</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;A function that removes a value contained in a list.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-
-<span class="k">def</span> <span class="nf">process_published_date</span><span class="p">(</span><span class="n">date_parts</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Parse a date provided as a list of values into a proper date format.</span>
-
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    date_parts : str or int</span>
-<span class="sd">        The elements of a date provided as a list from CrossRef</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
 <span class="sd">    pd.datetime</span>
 <span class="sd">        A date formatted as a pd.datetime object.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-
     <span class="n">date_str</span> <span class="o">=</span> <span class="p">(</span>
         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">date_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">date_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">date_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span>
     <span class="p">)</span>
     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">date_str</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">clean_title</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A function that removes a value contained in a list.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 
 <span class="n">columns_to_keep</span> <span class="o">=</span> <span class="p">[</span>
@@ -638,7 +746,95 @@ document.write(`
 
     <span class="n">papers_df</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">papers_df</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean_title</span><span class="p">)</span>
     <span class="n">papers_df</span><span class="p">[</span><span class="s2">&quot;published_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">papers_df</span><span class="p">[</span><span class="s2">&quot;published.date-parts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
-        <span class="n">process_published_date</span>
+        <span class="n">format_date</span>
+    <span class="p">)</span>
+
+    <span class="n">all_papers_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">papers_df</span><span class="p">)</span>
+
+<span class="n">all_papers_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">all_papers_list</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final shape of combined DataFrame:&quot;</span><span class="p">,</span> <span class="n">all_papers_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note that this code has no checks or tests in the functions provided. You will need to add them to make the code run. </span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="k">def</span> <span class="nf">load_clean_json</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">columns_to_keep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load JSON data from a file. Drop unnecessary columns and normalize</span>
+<span class="sd">    to DataFrame.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    file_path : Path</span>
+<span class="sd">        Path to the JSON file.</span>
+<span class="sd">    columns_to_keep : list</span>
+<span class="sd">        List of columns to keep in the DataFrame.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        Loaded JSON data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">with</span> <span class="n">file_path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+        <span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
+    <span class="n">normalized_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">normalized_data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="n">columns_to_keep</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">format_date</span><span class="p">(</span><span class="n">date_parts</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Format date parts into a string.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    date_parts : list</span>
+<span class="sd">        List containing year, month, and day.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pd.datetime</span>
+<span class="sd">        A date formatted as a pd.datetime object.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">date_str</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">date_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">date_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">date_parts</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">date_str</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">clean_title</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A function that removes a value contained in a list.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="n">columns_to_keep</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;publisher&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DOI&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;author&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;is-referenced-by-count&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;published.date-parts&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span>
+
+<span class="n">all_papers_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">json_file</span> <span class="ow">in</span> <span class="n">data_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.json&quot;</span><span class="p">):</span>
+    <span class="n">papers_df</span> <span class="o">=</span> <span class="n">load_clean_json</span><span class="p">(</span><span class="n">json_file</span><span class="p">,</span> <span class="n">columns_to_keep</span><span class="p">)</span>
+
+    <span class="n">papers_df</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">papers_df</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean_title</span><span class="p">)</span>
+    <span class="n">papers_df</span><span class="p">[</span><span class="s2">&quot;published_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">papers_df</span><span class="p">[</span><span class="s2">&quot;published.date-parts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="n">format_date</span>
     <span class="p">)</span>
 
     <span class="n">all_papers_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">papers_df</span><span class="p">)</span>
@@ -649,14 +845,94 @@ document.write(`
 </pre></div>
 </div>
 <div class="attention admonition">
-<p class="admonition-title">On your own 1</p>
-<p>Ideas for on your own welcome!</p>
+<p class="admonition-title">Part 1 - What happens when your code can’t find the data?</p>
+<p>Let’s break the code below and see how our code performs.</p>
+<ul class="simple">
+<li><p>Note that the code below has a modified <code class="docutils literal notranslate"><span class="pre">/data</span></code> directory path (that doesn’t exist!).</p></li>
+</ul>
+<p>Questions:</p>
+<ul class="simple">
+<li><p>What type of error do you expect Python to throw? Use Google, LLMs or our <a class="reference internal" href="../checks-conditionals/python-common-exceptions.html#common-exceptions"><span class="std std-ref">tests and checks</span></a> lesson to help figure this out.</p></li>
+<li><p>Does your code handle this error gracefully?</p></li>
+<li><p>How can we make the code handle it better?</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">load_clean_json</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">columns_to_keep</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load JSON data from a file. Drop unnecessary columns and normalize</span>
+<span class="sd">    to DataFrame.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    file_path : Path</span>
+<span class="sd">        Path to the JSON file.</span>
+<span class="sd">    columns_to_keep : list</span>
+<span class="sd">        List of columns to keep in the DataFrame.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict</span>
+<span class="sd">        Loaded JSON data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">with</span> <span class="n">file_path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+        <span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span>
+    <span class="n">normalized_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
+
+    <span class="c1"># Return the pandas DataFrame, filtering out some of the columns that we don&#39;t need</span>
+    <span class="k">return</span> <span class="n">normalized_data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="n">columns_to_keep</span><span class="p">)</span>
+
+
+<span class="n">columns_to_keep</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;publisher&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DOI&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;author&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;is-referenced-by-count&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;published.date-parts&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Break this data path by giving it a dir name that doesn&#39;t exist - what happens when your code runs?</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;bad-bad-data&quot;</span><span class="p">)</span>
+
+<span class="n">all_papers_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">json_file</span> <span class="ow">in</span> <span class="n">data_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.json&quot;</span><span class="p">):</span>
+    <span class="n">papers_df</span> <span class="o">=</span> <span class="n">load_clean_json</span><span class="p">(</span><span class="n">json_file</span><span class="p">,</span> <span class="n">columns_to_keep</span><span class="p">)</span>
+    <span class="n">papers_df</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">papers_df</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean_title</span><span class="p">)</span>
+
+    <span class="n">all_papers_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">papers_df</span><span class="p">)</span>
+
+<span class="n">all_papers_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">all_papers_list</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Final shape of combined DataFrame:&quot;</span><span class="p">,</span> <span class="n">all_papers_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Your goal is to troubleshoot any issues associated with cleaning up the title so you can work with it later in a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>.</p>
+</div>
+<p>Note: we can have two groups - one that wants to work on their own and another that wants to work with the instructor together.</p>
+<div class="attention admonition">
+<p class="admonition-title">Activity 3: part 1</p>
+<p>In this activity, we will work together in groups or as a whole class to add a try/except block that handles messiness when parsing titles in the cross-ref data.</p>
 </div>
 <div class="attention admonition">
-<p class="admonition-title">On your own 2</p>
-<p>Ideas welcome?</p>
+<p class="admonition-title">On your own 1</p>
+<p>If you get through the activity above and want a second challenge, try to parse the date values for each JOSS publication. Use the published key to extract the date for each publication. You may run into some data “features” when completing this activity.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;published&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;date-parts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">[</span>
+<span class="w">          </span><span class="mi">2020</span><span class="p">,</span>
+<span class="w">          </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">          </span><span class="mi">4</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">]</span>
+</pre></div>
 </div>
-<p>I want to have them move their code into a module if possible during this workshop but we could also kick that off in the day 2 workshop.</p>
+</div>
 </section>
 </section>
 </section>
@@ -699,8 +975,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-data-processing-workflows-and-edge-cases">Real world data processing &amp; workflows and edge cases</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manage-the-unexpected">Manage the unexpected</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-pythonic-ask-for-forgiveness">More “pythonic” - ask for forgiveness</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manage-the-unexpected">Manage the unexpected</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-changed-in-your-workflow">What’s changed in your workflow?</a></li>
 </ul>
 </li>

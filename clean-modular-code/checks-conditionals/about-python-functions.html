@@ -9,12 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta property="og:title" content="Why write functions?" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/python-functions.html" />
+<meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/about-python-functions.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
 <meta property="og:description" content="There are several strategies for making your code more modular. Here, you will learn about functions as one strategy that eliminates repetition in your code and also can improve the efficiency and ..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_checks-conditionals_python-functions_8c2213c8.png" />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_checks-conditionals_about-python-functions_8c2213c8.png" />
 <meta property="og:image:alt" content="There are several strategies for making your code more modular. Here, you will learn about functions as one strategy that eliminates repetition in your code..." />
 <meta name="description" content="There are several strategies for making your code more modular. Here, you will learn about functions as one strategy that eliminates repetition in your code and also can improve the efficiency and ..." />
 <meta name="twitter:card" content="summary_large_image" />
@@ -57,14 +57,14 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/checks-conditionals/python-functions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'clean-modular-code/checks-conditionals/about-python-functions';</script>
     <script src="../../_static/matomo.js?v=918da087"></script>
-    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/python-functions.html" />
+    <link rel="canonical" href="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/about-python-functions.html" />
     <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="How to write a Python function" href="write-python-functions.html" />
-    <link rel="prev" title="Make Your Code Easier to Read Using Expressive Variable Names in Python" href="../python-expressive-code.html" />
+    <link rel="prev" title="Conditional statements in Python" href="python-conditionals.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -385,26 +385,24 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Clean, Expressive Code</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro-clean-code.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-pep-8.html">Python Code Style</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-dry-modular-code.html">Don't Repeat Yourself</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-expressive-code.html">Expressive Code</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions, Checks &amp; Tests</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions, Conditionals &amp; Checks</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Conditional statements</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="write-python-functions.html">How to write a Python function</a></li>
 
 
 
 <li class="toctree-l1"><a class="reference internal" href="python-function-checks.html">Function checks</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conditional statements</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Conditional statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-function-checks.html">Tests &amp; Checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-common-exceptions.html">Common Python exceptions</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -489,7 +487,7 @@ efficiency and maintainability of your code.</p>
 </div>
 <!-- #region editable=true slideshow={"slide_type": ""} -->
 <p>Functions can help you to both eliminate repetition and improve efficiency by making it more modular.</p>
-<p>Modulare code is code that is separated into independent units that can be reused and even combined to complete a longer chain of tasks.</p>
+<p>Modular code is separated into independent units that can be reused and even combined to complete a longer chain of tasks.</p>
 <figure class="align-default" id="id1">
 <a class="reference external image-reference" href="../images/clean-code/functions-for-all-things.png"><img alt="You can implement strategies such as loops and functions in your code to replace tasks that you are performing over and over. Source: Francois Michonneau." src="clean-modular-code/images/clean-code/functions-for-all-things.png" />
 </a>
@@ -529,7 +527,7 @@ Source: Francois Michonneau.</span><a class="headerlink" href="#id1" title="Link
 <h3>Variables produced in functions are discarded after the function runs<a class="headerlink" href="#variables-produced-in-functions-are-discarded-after-the-function-runs" title="Link to this heading">#</a></h3>
 <p>When coding tasks step by step, you are likely creating many intermediate variables that are not needed again but are
 stored in your computer’s memory.</p>
-<p>By using functions, these intermediate variables are confined to the function’s local scope. Once the function finishes executing, the variables created within the function are discarded making your code cleaner and more efficient</p>
+<p>These intermediate variables are confined to the function’s local scope by using functions. Once the function finishes executing, the variables created within the function are discarded, making your code cleaner and more efficient</p>
 </section>
 </section>
 <section id="reasons-why-functions-improve-code-readability">
@@ -556,7 +554,7 @@ stored in your computer’s memory.</p>
 </section>
 <section id="functions-and-tests">
 <h3>Functions and tests<a class="headerlink" href="#functions-and-tests" title="Link to this heading">#</a></h3>
-<p>While you will not learn about testing in this lesson, functions are also useful for testing.</p>
+<p>Functions are also useful for testing.</p>
 <p>As your code gets longer and more complex, it is more prone to mistakes. For example, if your analysis relies on data that gets updated often, you may want to make sure that all data are up-to-date before performing an analysis. Or that the new data are not formatted in a different way.</p>
 <p>Changes in data structure and format could break your code. In the worst-case scenario, your code may run but return the wrong values.</p>
 <p>If all your code is composed of functions (with built-in tests and checks to ensure that they run as expected), then you can control the input to the function and test that the output returned is correct for that input. It is something that would be difficult to do if all of your code is written line by line with repeated steps.</p>
@@ -585,12 +583,12 @@ stored in your computer’s memory.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../python-expressive-code.html"
+       href="python-conditionals.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Make Your Code Easier to Read Using Expressive Variable Names in Python</p>
+        <p class="prev-next-title">Conditional statements in Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -640,7 +638,7 @@ stored in your computer’s memory.</p>
 
   
   <div class="tocsection editthispage">
-    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/checks-conditionals/python-functions.md">
+    <a href="https://github.com/pyopensci/lessons/edit/main/clean-modular-code/checks-conditionals/about-python-functions.md">
       <i class="fa-solid fa-pencil"></i>
       
       
@@ -655,7 +653,7 @@ stored in your computer’s memory.</p>
   <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../../_sources/clean-modular-code/checks-conditionals/python-functions.md.txt">
+    <a href="../../_sources/clean-modular-code/checks-conditionals/about-python-functions.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

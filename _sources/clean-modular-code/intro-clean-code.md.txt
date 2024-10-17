@@ -24,7 +24,7 @@ jupyter:
 
 :::{toctree}
 :hidden:
-:caption: Lessons
+:caption: Clean, Expressive Code
 :maxdepth: 2
 
 Intro <self>
@@ -35,23 +35,16 @@ Expressive Code <python-expressive-code>
 
 :::{toctree}
 :hidden:
-:caption: Functions, Checks & Tests
-:maxdepth: 2
-
-Functions <checks-conditionals/python-functions>
-Functions <checks-conditionals/write-python-functions>
-Function checks <checks-conditionals/python-function-checks>
-Function Tests & Checks <checks-conditionals/tests-checks>
-:::
-
-:::{toctree}
-:hidden:
-:caption: Conditional statements
+:caption: Functions, Conditionals & Checks
 :maxdepth: 2
 
 Conditional statements <checks-conditionals/python-conditionals>
-Tests & Checks <checks-conditionals/python-function-checks>
+Functions <checks-conditionals/about-python-functions>
+Functions <checks-conditionals/write-python-functions>
+Function checks <checks-conditionals/python-function-checks>
+Function Tests & Checks <checks-conditionals/python-common-exceptions>
 :::
+
 
 :::{toctree}
 :hidden:

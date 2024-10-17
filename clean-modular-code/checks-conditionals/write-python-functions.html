@@ -63,8 +63,8 @@
     <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Write Flexible Functions for Messy Data" href="python-function-checks.html" />
-    <link rel="prev" title="Why write functions?" href="python-functions.html" />
+    <link rel="next" title="Write Flexible Functions to Handle Messy Data" href="python-function-checks.html" />
+    <link rel="prev" title="Why write functions?" href="about-python-functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -385,26 +385,24 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Clean, Expressive Code</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro-clean-code.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-pep-8.html">Python Code Style</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-dry-modular-code.html">Don't Repeat Yourself</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-expressive-code.html">Expressive Code</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions, Checks &amp; Tests</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions, Conditionals &amp; Checks</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about-python-functions.html">Functions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">How to write a Python function</a></li>
 
 
 
 <li class="toctree-l1"><a class="reference internal" href="python-function-checks.html">Function checks</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conditional statements</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Conditional statements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-function-checks.html">Tests &amp; Checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-common-exceptions.html">Common Python exceptions</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -469,7 +467,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="how-to-write-a-python-function">
-<h1>How to write a Python function<a class="headerlink" href="#how-to-write-a-python-function" title="Link to this heading">#</a></h1>
+<span id="write-functions"></span><h1>How to write a Python function<a class="headerlink" href="#how-to-write-a-python-function" title="Link to this heading">#</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p class="rubric" id="what-you-will-learn">What you will learn</p>
@@ -509,15 +507,15 @@ document.write(`
 </section>
 </section>
 <section id="how-to-define-functions-in-python">
-<h1>How to Define Functions in Python<a class="headerlink" href="#how-to-define-functions-in-python" title="Link to this heading">#</a></h1>
-<p>There are several components needed to define a function in <strong>Python</strong>, including the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword, function name, parameters (inputs), and the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, which specifies the output of the function.</p>
+<h1>How to define functions in Python<a class="headerlink" href="#how-to-define-functions-in-python" title="Link to this heading">#</a></h1>
+<p>Several components are needed to define a function in <strong>Python</strong>, including the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword, function name, parameters (inputs), and the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement, which specifies the function’s output.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameter</span><span class="p">):</span>
     <span class="n">some</span> <span class="n">code</span> <span class="n">here</span>    
     <span class="k">return</span> <span class="n">output</span>
 </pre></div>
 </div>
 <section id="def-keyword-and-function-name">
-<h2>def keyword and function Name<a class="headerlink" href="#def-keyword-and-function-name" title="Link to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">def</span></code> keyword and function Name<a class="headerlink" href="#def-keyword-and-function-name" title="Link to this heading">#</a></h2>
 <p>In <strong>Python</strong>, function definitions begin with the keyword <strong><code class="docutils literal notranslate"><span class="pre">def</span></code></strong> to indicate the start of a definition for a new function. The function name follows this keyword.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">():</span>
 </pre></div>
@@ -663,7 +661,7 @@ complete the task (i.e., code to create the output that will be returned by the 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="python-functions.html"
+       href="about-python-functions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -676,7 +674,7 @@ complete the task (i.e., code to create the output that will be returned by the 
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Write Flexible Functions for Messy Data</p>
+        <p class="prev-next-title">Write Flexible Functions to Handle Messy Data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -702,8 +700,8 @@ complete the task (i.e., code to create the output that will be returned by the 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-python-function">An example Python function</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-define-functions-in-python">How to Define Functions in Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#def-keyword-and-function-name">def keyword and function Name</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-define-functions-in-python">How to define functions in Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#def-keyword-and-function-name"><code class="docutils literal notranslate"><span class="pre">def</span></code> keyword and function Name</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-parameter-s">Input Parameter(s)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-statement">Return Statement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-numpy-style-docstrings">Python Numpy-style docstrings</a></li>

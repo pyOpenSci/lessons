@@ -7,19 +7,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:title" content="Write Flexible Functions for Messy Data" />
+<meta property="og:title" content="Write Flexible Functions to Handle Messy Data" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.pyopensci.org/lessons/clean-modular-code/checks-conditionals/python-function-checks.html" />
 <meta property="og:site_name" content="pyOpenSci Python Package Guide" />
-<meta property="og:description" content="When dealing with messy or unpredictable data, using functions is an excellent first step in creating a robust and maintainable data processing workflow. Functions provide modular units that can be..." />
+<meta property="og:description" content="When dealing with messy or unpredictable data, ensuring your code It is important to handle errors early and gracefully. Using functions is a great first step in creating a robust and maintainable ..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_checks-conditionals_python-function-checks_e6d1b71e.png" />
-<meta property="og:image:alt" content="When dealing with messy or unpredictable data, using functions is an excellent first step in creating a robust and maintainable data processing workflow. Fun..." />
-<meta name="description" content="When dealing with messy or unpredictable data, using functions is an excellent first step in creating a robust and maintainable data processing workflow. Functions provide modular units that can be..." />
+<meta property="og:image" content="https://www.pyopensci.org/lessons/_images/social_previews/summary_clean-modular-code_checks-conditionals_python-function-checks_5299bc6a.png" />
+<meta property="og:image:alt" content="When dealing with messy or unpredictable data, ensuring your code It is important to handle errors early and gracefully. Using functions is a great first ste..." />
+<meta name="description" content="When dealing with messy or unpredictable data, ensuring your code It is important to handle errors early and gracefully. Using functions is a great first step in creating a robust and maintainable ..." />
 <meta name="twitter:card" content="summary_large_image" />
     <link href="https://www.pyopensci.org/images/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Write Flexible Functions for Messy Data &#8212; pyOpenSci Lessons</title>
+    <title>Write Flexible Functions to Handle Messy Data &#8212; pyOpenSci Lessons</title>
   
   
   
@@ -63,7 +63,7 @@
     <link rel="icon" href="https://www.pyopensci.org/images/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Conditional statements in Python" href="python-conditionals.html" />
+    <link rel="next" title="Common Python exceptions" href="python-common-exceptions.html" />
     <link rel="prev" title="How to write a Python function" href="write-python-functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -385,26 +385,24 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Clean, Expressive Code</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../intro-clean-code.html">Intro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-pep-8.html">Python Code Style</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-dry-modular-code.html">Don't Repeat Yourself</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-expressive-code.html">Expressive Code</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions, Checks &amp; Tests</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions, Conditionals &amp; Checks</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Conditional statements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about-python-functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="write-python-functions.html">How to write a Python function</a></li>
 
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Function checks</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conditional statements</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python-conditionals.html">Conditional statements</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tests &amp; Checks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-common-exceptions.html">Common Python exceptions</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Activities</span></p>
 <ul class="nav bd-sidenav">
@@ -468,32 +466,40 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="write-flexible-functions-for-messy-data">
-<h1>Write Flexible Functions for Messy Data<a class="headerlink" href="#write-flexible-functions-for-messy-data" title="Link to this heading">#</a></h1>
-<p>When dealing with messy or unpredictable data, using functions is an excellent first step in creating a robust and maintainable data processing workflow. Functions provide modular units that can be tested independently, allowing you to handle various edge cases and unexpected scenarios effectively.</p>
-<section id="function-benefits">
-<h2>Function benefits<a class="headerlink" href="#function-benefits" title="Link to this heading">#</a></h2>
-<p>Using functions in your data processing pipeline offers several advantages:</p>
+  <section id="write-flexible-functions-to-handle-messy-data">
+<h1>Write Flexible Functions to Handle Messy Data<a class="headerlink" href="#write-flexible-functions-to-handle-messy-data" title="Link to this heading">#</a></h1>
+<p>When dealing with messy or unpredictable data, ensuring your code
+It is important to handle errors early and gracefully. <a class="reference internal" href="#python-functions"><span class="xref myst">Using functions</span></a>
+is a great first step in creating a robust
+and maintainable data processing workflow. Functions provide modular units that
+can be tested independently, allowing you to handle various edge cases and
+unexpected scenarios effectively.</p>
+<p>Adding checks to your functions
+is the next step towards making your code more robust and maintainable over time.</p>
+<p>This lesson will cover several strategies for making this happen:</p>
 <ol class="arabic simple">
-<li><p><strong>Modularity</strong>: Functions encapsulate specific tasks, making your code more organized and easier to understand.</p></li>
-<li><p><strong>Testability</strong>: You can test functions individually, outside of the main workflow, to ensure they handle different scenarios correctly.</p></li>
-<li><p><strong>Flexibility</strong>: As you build out your workflow, you can easily add elements to functions to handle new processing requirements or edge cases.</p></li>
-<li><p><strong>Reusability</strong>: Well-designed functions can be reused across different parts of your project or even in other projects.</p></li>
+<li><p>Use <a class="reference internal" href="#try-except"><code class="docutils literal notranslate"><span class="pre">try/except</span> <span class="pre">blocks</span></code></a> rather than simply allowing errors to occur.</p></li>
+<li><p><a class="reference internal" href="#pythonic-checks">Make checks Pythonic</a></p></li>
+<li><p><a class="reference internal" href="#fail-fast"><span class="std std-ref">Fail fast</span></a></p></li>
 </ol>
-</section>
-<section id="handling-edge-cases">
-<h2>Handling edge cases<a class="headerlink" href="#handling-edge-cases" title="Link to this heading">#</a></h2>
-<p>When working with messy data, you’ll often encounter edge cases - unusual or unexpected data that can break your processing pipeline. Functions allow you to implement robust error handling and data validation. Here are some techniques you can use:</p>
-</section>
-<section id="try-except-blocks">
-<h2>Try/Except blocks<a class="headerlink" href="#try-except-blocks" title="Link to this heading">#</a></h2>
-<p>Try/except blocks help you catch and handle errors that might happen while your code is running. This is useful for tasks that might fail, like converting data types or working with data that’s missing or incorrect.</p>
-<p>A try/except block looks like this:</p>
+<section id="use-try-except-blocks">
+<span id="try-except"></span><h2>Use Try/Except blocks<a class="headerlink" href="#use-try-except-blocks" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">try/except</span></code> blocks in Python help you handle errors gracefully instead of letting your program crash. They are used when you think a part of your code might fail, like when working with missing data, or when converting data types.</p>
+<p>Here’s how try/except blocks work:</p>
+<ul class="simple">
+<li><p><strong>try block:</strong> You write the code that might cause an error here. Python will attempt to run this code.</p></li>
+<li><p><strong>except block:</strong> If Python encounters an error in the try block, it jumps to the except block to handle it. You can specify what to do when an error occurs, such as printing a friendly message or providing a fallback option.</p></li>
+</ul>
+<p>A <code class="docutils literal notranslate"><span class="pre">try/except</span></code> block looks like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="c1"># code that might cause an error</span>
 <span class="k">except</span> <span class="n">SomeError</span><span class="p">:</span>
     <span class="c1"># what to do if there&#39;s an error</span>
 </pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We pulled together some of the more <a class="reference internal" href="python-common-exceptions.html#common-exceptions"><span class="std std-ref">common exceptions that Python can throw here</span></a>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -501,7 +507,7 @@ document.write(`
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oops i can&#39;t process this so I will fail gracefully.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oops i can&#39;t process this so I will fail quietly with a print statement.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span>  <span class="c1"># or some default value</span>
 </pre></div>
 </div>
@@ -526,22 +532,202 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Oops i can&#39;t process this so I will fail gracefully.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Oops i can&#39;t process this so I will fail quietly with a print statement.
 </pre></div>
 </div>
 </div>
 </div>
-<p>This function attempts to convert a value to an integer, returning None and a message if the conversion fails.</p>
+<p>This function attempts to convert a value to an integer, returning <code class="docutils literal notranslate"><span class="pre">None</span></code> and a message if the conversion fails. However, is that message helpful to a person using your code?</p>
+</section>
+<section id="fail-fast-strategy">
+<span id="fail-fast"></span><h2>Fail fast strategy<a class="headerlink" href="#fail-fast-strategy" title="Link to this heading">#</a></h2>
+<p>Identify data processing or workflow problems immediately when they occur and throw an error immediately rather than allowing
+them to propagate through your code. This approach saves time and simplifies debugging, providing clearer, more useful error outputs (stack traces).  Below, you can see that the code tries to open a file, but Python can’t find the file. In response, Python throws a <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code>.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a file (but it doesn&#39;t exist</span>
+<span class="k">def</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="n">file_data</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;nonexistent_file.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">data</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">file_data</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;nonexistent_file.txt&quot;</span><span class="p">)</span>
+
+<span class="nn">Cell In[4], line 3,</span> in <span class="ni">read_file</span><span class="nt">(file_path)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">def</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">data</span>
+
+<span class="nn">File ~/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/IPython/core/interactiveshell.py:324,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">317</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">324</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;nonexistent_file.txt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You could anticipate a user providing a bad file path. This might be especailly possible if you plan to share your code with others and run it on different computers and different operating systems.</p>
+<p>In the example below, you use a <a class="reference internal" href="python-conditionals.html#python-conditionals"><span class="std std-ref">conditional statement</span></a> to check if the file exists; if it doesn’t, it returns None. In this case, the code will fail quietly, and the user will not understand that there is an error.</p>
+<p>This is also dangerous territory for a user who may not understand why the code runs but doesn’t work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">def</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">data</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>  <span class="c1"># Doesn&#39;t fail immediately, just returns None</span>
+
+<span class="c1"># No error raised, even though the file doesn&#39;t exist</span>
+<span class="n">file_data</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;nonexistent_file.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This code example below is better than the examples above for three reasons:</p>
+<ol class="arabic simple">
+<li><p>It’s <strong>pythonic</strong>: it asks for forgiveness later by using a try/except</p></li>
+<li><p>It fails quickly - as soon as it tries to open the file. The code won’t continue to run after this step fails.</p></li>
+<li><p>It raises a clean, useful error that the user can understand</p></li>
+</ol>
+<p>The code anticipates what will happen if it can’t find the file. It then raises a <code class="docutils literal notranslate"><span class="pre">FileNotFoundError</span></code> and provides a useful and friendly message to the user.</p>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">data</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Oops! I couldn&#39;t find the file located at: &quot;</span>
+                                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. Please check to see if it exists&quot;</span><span class="p">)</span>
+
+<span class="c1"># Raises an error immediately if the file doesn&#39;t exist</span>
+<span class="n">file_data</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;nonexistent_file.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Cell In[6], line 3,</span> in <span class="ni">read_file</span><span class="nt">(file_path)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nn">File ~/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/IPython/core/interactiveshell.py:324,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">320</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">321</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">324</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;nonexistent_file.txt&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Oops! I couldn&#39;t find the file located at: &quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                                 <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. Please check to see if it exists&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># Raises an error immediately if the file doesn&#39;t exist</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">file_data</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;nonexistent_file.txt&quot;</span><span class="p">)</span>
+
+<span class="nn">Cell In[6], line 7,</span> in <span class="ni">read_file</span><span class="nt">(file_path)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">data</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Oops! I couldn&#39;t find the file located at: &quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. Please check to see if it exists&quot;</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: Oops! I couldn&#39;t find the file located at: nonexistent_file.txt. Please check to see if it exists
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="customizing-error-messages">
+<h2>Customizing error messages<a class="headerlink" href="#customizing-error-messages" title="Link to this heading">#</a></h2>
+<p>The code above is useful because it fails and provides a simple and effective message that tells the user to check that their file path is correct.</p>
+<p>However, the amount of text returned from the error is significant because it finds the error when it can’t open the file. Still, then you raise the error intentionally within the except statement.</p>
+<p>If you wanted to provide less information to the user, you could use <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">None</span></code>. From None ensure that you
+only return the exception information related to the error that you handle within the try/except block.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">data</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Oops! I couldn&#39;t find the file located at: </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. &quot;</span>
+                                <span class="s2">&quot;Please check to see if it exists&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+
+<span class="c1"># Raises an error immediately if the file doesn&#39;t exist</span>
+<span class="n">file_data</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;nonexistent_file.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Oops! I couldn&#39;t find the file located at: </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. &quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                                 <span class="s2">&quot;Please check to see if it exists&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># Raises an error immediately if the file doesn&#39;t exist</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">file_data</span> <span class="o">=</span> <span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;nonexistent_file.txt&quot;</span><span class="p">)</span>
+
+<span class="nn">Cell In[7], line 7,</span> in <span class="ni">read_file</span><span class="nt">(file_path)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">data</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Oops! I couldn&#39;t find the file located at: </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">. &quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                             <span class="s2">&quot;Please check to see if it exists&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+
+<span class="ne">FileNotFoundError</span>: Oops! I couldn&#39;t find the file located at: nonexistent_file.txt. Please check to see if it exists
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="make-checks-pythonic">
-<h2>Make checks Pythonic<a class="headerlink" href="#make-checks-pythonic" title="Link to this heading">#</a></h2>
-<p>Python has a unique philosophy regarding handling potential errors or exceptional cases. This philosophy is often summarized by the acronym EAFP: “Easier to Ask for Forgiveness than Permission.”</p>
+<span id="pythonic-checks"></span><h2>Make Checks Pythonic<a class="headerlink" href="#make-checks-pythonic" title="Link to this heading">#</a></h2>
+<p>Python has a unique philosophy regarding handling potential errors or
+exceptional cases. This philosophy is often summarized by the acronym EAFP:
+“Easier to Ask for Forgiveness than Permission.” When combined with the <strong>fail
+fast</strong> approach, your code can be flexible and resilient to the messy
+realities of data processing.</p>
 <section id="eafp-vs-lbyl">
 <h3>EAFP vs. LBYL<a class="headerlink" href="#eafp-vs-lbyl" title="Link to this heading">#</a></h3>
 <p>There are two main approaches to handling potential errors:</p>
-<p><strong>LBYL (Look Before You Leap)</strong>: Check for conditions before making calls or accessing data.
-<strong>EAFP (Easier to Ask for Forgiveness than Permission)</strong>: Assume the operation will succeed and handle any exceptions if they occur.</p>
-<p>Pythonic code generally favors the EAFP approach.</p>
+<ul class="simple">
+<li><p><strong>LBYL (Look Before You Leap)</strong>: Check for conditions before making calls or
+accessing data.</p></li>
+<li><p><strong>EAFP (Easier to Ask for Forgiveness than Permission)</strong>: Assume the operation
+will succeed and handle any exceptions if they occur.</p></li>
+</ul>
+<p>Pythonic code generally favors the EAFP approach, which allows for <strong>failing
+fast</strong> when an error occurs, providing useful feedback without unnecessary
+checks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># LBYL approach - manually check that the user provides a int</span>
@@ -554,11 +740,6 @@ document.write(`
 
 <span class="n">convert_to_int</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">convert_to_int</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Oops i can&#39;t process this so I will fail gracefully.
 </pre></div>
 </div>
 </div>
@@ -578,11 +759,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Oops i can&#39;t process this so I will fail gracefully.
-</pre></div>
-</div>
-</div>
 </div>
 <p>The EAFP (Easier to Ask for Forgiveness than Permission) approach is more Pythonic because:</p>
 <ul class="simple">
@@ -594,134 +770,6 @@ document.write(`
 <section id="any-check-is-a-good-check">
 <h2>Any Check is a Good Check<a class="headerlink" href="#any-check-is-a-good-check" title="Link to this heading">#</a></h2>
 <p>As long as you consider edge cases, you’re writing great code! You don’t need to worry about being “Pythonic” immediately, but understanding both approaches is useful regardless of which approach you chose.</p>
-</section>
-<section id="common-python-exceptions">
-<h2>Common Python exceptions<a class="headerlink" href="#common-python-exceptions" title="Link to this heading">#</a></h2>
-<p>Python has dozens of specific errors that can be raised when code fails to run. Below are a few common ones that you may encounter in the activity 3.</p>
-<section id="typeerror">
-<h3>TypeError<a class="headerlink" href="#typeerror" title="Link to this heading">#</a></h3>
-<p>Occurs when an operation is applied to an object of an inappropriate type.</p>
-<div class="cell tag_raises-exception docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: Trying to add a number and a string</span>
-<span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;string&#39;</span>  <span class="c1"># This will raise a TypeError</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Example: Trying to add a number and a string</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;string&#39;</span>  <span class="c1"># This will raise a TypeError</span>
-
-<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="valueerror">
-<h3>ValueError<a class="headerlink" href="#valueerror" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Raised when</strong> a function receives an argument of the right type but an invalid value.</p></li>
-<li><p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">int('abc')</span></code> (trying to convert an invalid string to an integer).</p></li>
-</ul>
-<div class="cell tag_raises-exception docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
-
-<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;abc&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="keyerror">
-<h3>KeyError<a class="headerlink" href="#keyerror" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Raised when</strong> a dictionary key is not found.</p></li>
-<li><p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">my_dict['nonexistent_key']</span></code> (trying to access a key that doesn’t exist in the dictionary).</p></li>
-</ul>
-<div class="cell tag_raises-exception docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: Accessing a nonexistent key in a dictionary</span>
-<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;nonexistent_key&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Example: Accessing a nonexistent key in a dictionary</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;nonexistent_key&#39;</span><span class="p">]</span>
-
-<span class="ne">KeyError</span>: &#39;nonexistent_key&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="indexerror">
-<h3>IndexError<a class="headerlink" href="#indexerror" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Raised when</strong> an invalid index is used to access a list or tuple.</p></li>
-<li><p><strong>Example:</strong> <code class="docutils literal notranslate"><span class="pre">my_list[10]</span></code> (trying to access the 11th element of a list with fewer elements).</p></li>
-</ul>
-<div class="cell tag_raises-exception docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">my_list</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> 
-
-<span class="ne">IndexError</span>: list index out of range
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="attributeerror">
-<h3>AttributeError<a class="headerlink" href="#attributeerror" title="Link to this heading">#</a></h3>
-<p>Raised when an object does not have a specific attribute or method.</p>
-<div class="cell tag_raises-exception docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
-<span class="n">my_string</span><span class="o">.</span><span class="n">nonexistent_method</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">my_string</span><span class="o">.</span><span class="n">nonexistent_method</span><span class="p">()</span>
-
-<span class="ne">AttributeError</span>: &#39;str&#39; object has no attribute &#39;nonexistent_method&#39;
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 </section>
 
@@ -745,11 +793,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="python-conditionals.html"
+       href="python-common-exceptions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Conditional statements in Python</p>
+        <p class="prev-next-title">Common Python exceptions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -771,22 +819,14 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-benefits">Function benefits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-edge-cases">Handling edge cases</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-except-blocks">Try/Except blocks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-checks-pythonic">Make checks Pythonic</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-try-except-blocks">Use Try/Except blocks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fail-fast-strategy">Fail fast strategy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-error-messages">Customizing error messages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-checks-pythonic">Make Checks Pythonic</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eafp-vs-lbyl">EAFP vs. LBYL</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#any-check-is-a-good-check">Any Check is a Good Check</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-python-exceptions">Common Python exceptions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typeerror">TypeError</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror">ValueError</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyerror">KeyError</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexerror">IndexError</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributeerror">AttributeError</a></li>
-</ul>
-</li>
 </ul>
   </nav></div>
 

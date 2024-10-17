@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "/home/runner/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/runner/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/runner/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/runner/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/runner/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+def read_file(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            data = file.read()
+        return data
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Oops! I couldn't find the file located at: {file_path}. "
+                                "Please check to see if it exists") from None
+
+# Raises an error immediately if the file doesn't exist
+file_data = read_file("nonexistent_file.txt")
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [0;32mIn[7], line 11[0m
+[1;32m      7[0m         [38;5;28;01mraise[39;00m [38;5;167;01mFileNotFoundError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mOops! I couldn[39m[38;5;124m'[39m[38;5;124mt find the file located at: [39m[38;5;132;01m{[39;00mfile_path[38;5;132;01m}[39;00m[38;5;124m. [39m[38;5;124m"[39m
+[1;32m      8[0m                                 [38;5;124m"[39m[38;5;124mPlease check to see if it exists[39m[38;5;124m"[39m) [38;5;28;01mfrom[39;00m [38;5;28;01mNone[39;00m
+[1;32m     10[0m [38;5;66;03m# Raises an error immediately if the file doesn't exist[39;00m
+[0;32m---> 11[0m file_data [38;5;241m=[39m [43mread_file[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mnonexistent_file.txt[39;49m[38;5;124;43m"[39;49m[43m)[49m
+
+Cell [0;32mIn[7], line 7[0m, in [0;36mread_file[0;34m(file_path)[0m
+[1;32m      5[0m     [38;5;28;01mreturn[39;00m data
+[1;32m      6[0m [38;5;28;01mexcept[39;00m [38;5;167;01mFileNotFoundError[39;00m:
+[0;32m----> 7[0m     [38;5;28;01mraise[39;00m [38;5;167;01mFileNotFoundError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mOops! I couldn[39m[38;5;124m'[39m[38;5;124mt find the file located at: [39m[38;5;132;01m{[39;00mfile_path[38;5;132;01m}[39;00m[38;5;124m. [39m[38;5;124m"[39m
+[1;32m      8[0m                             [38;5;124m"[39m[38;5;124mPlease check to see if it exists[39m[38;5;124m"[39m) [38;5;28;01mfrom[39;00m [38;5;28;01mNone[39;00m
+
+[0;31mFileNotFoundError[0m: Oops! I couldn't find the file located at: nonexistent_file.txt. Please check to see if it exists
+
