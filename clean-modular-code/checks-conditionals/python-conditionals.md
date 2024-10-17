@@ -18,6 +18,7 @@ jupyter:
     name: python3
 ---
 
+(python-conditionals)=
 # Conditional statements in Python
 
 While there are many strategies for improving efficiency and removing repetition in code, three commonly used DRY strategies are conditional statements, loops, and functions.

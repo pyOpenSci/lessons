@@ -93,6 +93,7 @@ Here’s how you can start with pseudocode:
 
 1. Load JSON data of JOSS papers from CrossRef.
 2. Loop through each paper.
+
     * ✅ Check if the DOI is valid.
 
     * ✅ If valid, extract the number of citations and the publication date
@@ -101,6 +102,7 @@ Here’s how you can start with pseudocode:
    
 3.	Store results in a list.
 4.	Return the list of processed data.
+
 
 +++
 
@@ -124,7 +126,7 @@ Using pseudocode helps you think through your logic clearly, while LLMs can assi
 
 ```
 
-By following pep8 style and using expressive names, the code becomes easier to read.  Expressive naming can act like documentation,
+By following pep8 style and using expressive names, the code becomes easier to read. Expressive naming can act like documentation,
 
 ```{code-cell} ipython3
 from datetime import datetime

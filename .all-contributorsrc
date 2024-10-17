@@ -17,6 +17,24 @@
         "tutorial",
         "doc"
       ]
+    },
+    {
+      "login": "ucodery",
+      "name": "Jeremy Paige",
+      "avatar_url": "https://avatars.githubusercontent.com/u/28751151?v=4",
+      "profile": "http://blog.ucodery.com",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "willingc",
+      "name": "Carol Willing",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2680980?v=4",
+      "profile": "https://hachyderm.io/web/@willingc",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
