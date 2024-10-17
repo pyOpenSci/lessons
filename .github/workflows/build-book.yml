@@ -1,4 +1,4 @@
-name: build-test-deploy-book
+name: Build & Publish Lessons
 
 on:
   pull_request:
@@ -48,14 +48,13 @@ jobs:
           path: |
             _build/html/
 
-      # Push the book's HTML to github-pages
-      - name: Push to GitHub Pages
-        # Only push if on main branch
-        if: github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v3.8.0
+      # Deploy to GitHub Pages using actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main' 
+        id: deployment
+        uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_build/html
+          folder: ./_build/html
 
       # Test for bad links and ensure alt tags for usability
       - name: Check HTML using htmlproofer
