@@ -11,30 +11,93 @@ kernelspec:
   name: python3
 ---
 
+# Write Flexible Functions to Handle Messy Data
+
+When dealing with messy or unpredictable data, ensuring your code
+It is important to handle errors early and gracefully. [Using functions](python-functions) 
+is a great first step in creating a robust
+and maintainable data processing workflow. Functions provide modular units that
+can be tested independently, allowing you to handle various edge cases and
+unexpected scenarios effectively. 
+
+Adding checks to your functions 
+is the next step towards making your code more robust and maintainable over time. 
+
+This lesson will cover several strategies for making this happen: 
+
+
+1. Use [`try/except blocks`](#try-except) rather than simply allowing errors to occur.
+1. [Make checks Pythonic](#pythonic-checks)
+1. [Fail fast](fail-fast)
+
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-# Write Flexible Functions for Messy Data
+(try-except)=
+## Use Try/Except blocks
 
-When dealing with messy or unpredictable data, using functions is an excellent first step in creating a robust and maintainable data processing workflow. Functions provide modular units that can be tested independently, allowing you to handle various edge cases and unexpected scenarios effectively.
+`try/except` blocks in Python help you handle errors gracefully instead of letting your program crash. They are used when you think a part of your code might fail, like when working with missing data, or when converting data types.
 
-## Function benefits
+Here’s how try/except blocks work:
 
-Using functions in your data processing pipeline offers several advantages:
+* **try block:** You write the code that might cause an error here. Python will attempt to run this code.
+* **except block:** If Python encounters an error in the try block, it jumps to the except block to handle it. You can specify what to do when an error occurs, such as printing a friendly message or providing a fallback option.
 
-1. **Modularity**: Functions encapsulate specific tasks, making your code more organized and easier to understand.
-2. **Testability**: You can test functions individually, outside of the main workflow, to ensure they handle different scenarios correctly.
-3. **Flexibility**: As you build out your workflow, you can easily add elements to functions to handle new processing requirements or edge cases.
-4. **Reusability**: Well-designed functions can be reused across different parts of your project or even in other projects.
+A `try/except` block looks like this:
 
-Your goal is to identify detect and data processing or workflow problems immediately when they occur, rather than allowing
-them to propagate through your code. This approach saves time and makes
-debugging easier, providing clearer, more useful error outputs (known as stack traces).
+```python
+try:
+    # code that might cause an error
+except SomeError:
+    # what to do if there's an error
+```
 
-When working with messy data, you'll often encounter edge cases - unusual or unexpected data that can break your processing pipeline. Functions allow you to implement robust error handling and data validation.
+:::{tip}
+We pulled together some of the more [common exceptions that Python can throw here](common-exceptions). 
+:::
+
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+---
+def convert_to_int(value):
+    try:
+        return int(value)
+    except ValueError:
+        print("Oops i can't process this so I will fail quietly with a print statement.")
+        return None  # or some default value
+```
+
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+---
+convert_to_int("123")
+```
+
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+---
+convert_to_int("abc") 
+```
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+This function attempts to convert a value to an integer, returning `None` and a message if the conversion fails. However, is that message helpful to a person using your code? 
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 (fail-fast)=
-
 ## Fail fast strategy
+
+Identify data processing or workflow problems immediately when they occur and throw an error immediately rather than allowing
+them to propagate through your code. This approach saves time and simplifies debugging, providing clearer, more useful error outputs (stack traces).  Below, you can see that the code tries to open a file, but Python can't find the file. In response, Python throws a `FileNotFoundError`. 
 
 ```{code-cell} ipython3
 ---
@@ -54,7 +117,11 @@ file_data = read_file("nonexistent_file.txt")
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-In the example below, you use a [conditional statement](python-conditionals) to check to see if the file exists; if it doesn't, then it returns None. In this case the code will fail quietly and the user doesn't understand that there is an error.
+You could anticipate a user providing a bad file path. This might be especailly possible if you plan to share your code with others and run it on different computers and different operating systems.
+
+In the example below, you use a [conditional statement](python-conditionals) to check if the file exists; if it doesn't, it returns None. In this case, the code will fail quietly, and the user will not understand that there is an error.
+
+This is also dangerous territory for a user who may not understand why the code runs but doesn't work.
 
 ```{code-cell} ipython3
 ---
@@ -80,11 +147,11 @@ file_data = read_file("nonexistent_file.txt")
 
 This code example below is better than the examples above for three reasons:
 
-1. It's pythonic: it asks for forgiveness later by using a try/except
-2. it fails quickly - as soon as it tries to open the file. The code won't continue to run after this step fails.
-3. it raises a clean, useful error that the user can undersatnd
+1. It's **pythonic**: it asks for forgiveness later by using a try/except
+2. It fails quickly - as soon as it tries to open the file. The code won't continue to run after this step fails.
+3. It raises a clean, useful error that the user can understand
 
-The code anticipates what will happen if it can't find the file. Here you can raise a `FileNotFoundError` and provide a useful message to the user.
+The code anticipates what will happen if it can't find the file. It then raises a `FileNotFoundError` and provides a useful and friendly message to the user.
 
 ```{code-cell} ipython3
 ---
@@ -99,52 +166,39 @@ def read_file(file_path):
             data = file.read()
         return data
     except FileNotFoundError:
-        raise FileNotFoundError(f"Oops! I couldn't find the file located at: {file_path}. Please check to see if it exists")
+        raise FileNotFoundError(f"Oops! I couldn't find the file located at: "
+                                f"{file_path}. Please check to see if it exists")
 
 # Raises an error immediately if the file doesn't exist
 file_data = read_file("nonexistent_file.txt")
 ```
 
-Notice that the code below doesn't throw an error. This code is allowed to fail quietly.
-This will be problematic for a user as their code will run but they will have no output and will have to carefully debug the code in order to figure out where the problem is.
+## Customizing error messages
+
+The code above is useful because it fails and provides a simple and effective message that tells the user to check that their file path is correct. 
+
+However, the amount of text returned from the error is significant because it finds the error when it can't open the file. Still, then you raise the error intentionally within the except statement. 
+
+If you wanted to provide less information to the user, you could use `from None`. From None ensure that you 
+only return the exception information related to the error that you handle within the try/except block. 
 
 ```{code-cell} ipython3
-from pathlib import Path
-
 def read_file(file_path):
-    """
-    Reads the content of a single file and returns it.
-    Handles errors if the file cannot be read.
-    """
     try:
         with open(file_path, 'r') as file:
             data = file.read()
-            return data
+        return data
     except FileNotFoundError:
-        return f"File not found: {file_path}"
-    except Exception as e:
-        return f"An error occurred while reading {file_path}: {e}"
+        raise FileNotFoundError(f"Oops! I couldn't find the file located at: {file_path}. "
+                                "Please check to see if it exists") from None
 
-# Example usage
-directory_path = Path("data")
-files = list(directory_path.glob("*.json"))
-for file in files:
-    file_data = read_file(file)
-    print(f"Content of {file.name}:")
-    print(file_data)
-print("All done--I didn't fail but I should have failed quickly")
+# Raises an error immediately if the file doesn't exist
+file_data = read_file("nonexistent_file.txt")
 ```
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-[Using functions](python-functions) is a great first step in creating a robust
-and maintainable data processing workflow. Functions provide modular units that
-can be tested independently, allowing you to handle various edge cases and
-unexpected scenarios effectively. However, adding checks to your functions
-is the next step towards making your code more robust and maintainable over time.
-
 (pythonic-checks)=
-
 ## Make Checks Pythonic
 
 Python has a unique philosophy regarding handling potential errors or
@@ -206,279 +260,12 @@ convert_to_int("a")
 
 The EAFP (Easier to Ask for Forgiveness than Permission) approach is more Pythonic because:
 
-- It’s often faster, avoiding redundant checks when operations succeed.
-- It’s more readable, separating the intended operation and error handling.
+* It’s often faster, avoiding redundant checks when operations succeed.
+* It’s more readable, separating the intended operation and error handling.
 
 ## Any Check is a Good Check
 
 As long as you consider edge cases, you're writing great code! You don’t need to worry about being “Pythonic” immediately, but understanding both approaches is useful regardless of which approach you chose.
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-## Try/Except blocks
-
-Try/except blocks help you catch and handle errors that might happen while your code is running. This is useful for tasks that might fail, like converting data types or working with data that’s missing or incorrect.
-
-A try/except block looks like this:
-
-```python
-try:
-    # code that might cause an error
-except SomeError:
-    # what to do if there's an error
-```
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
----
-def convert_to_int(value):
-    try:
-        return int(value)
-    except ValueError:
-        print("Oops i can't process this so I will fail quietly with a print statement.")
-        return None  # or some default value
-```
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
----
-convert_to_int("123")
-```
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
----
-convert_to_int("abc") 
-```
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-This function attempts to convert a value to an integer, returning None and a message if the conversion fails.
-
-## Make checks Pythonic
-
-Python has a unique philosophy regarding handling potential errors or exceptional cases. This philosophy is often summarized by the acronym EAFP: "Easier to Ask for Forgiveness than Permission."
-
-### EAFP vs. LBYL
-
-There are two main approaches to handling potential errors:
-
-**LBYL (Look Before You Leap)**: Check for conditions before making calls or accessing data.
-**EAFP (Easier to Ask for Forgiveness than Permission)**: Assume the operation will succeed and handle any exceptions if they occur.
-
-Pythonic code generally favors the EAFP approach.
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
----
-# LBYL approach - manually check that the user provides a int
-def convert_to_int(value):
-    if isinstance(value, int):
-        return int(value)
-    else:
-        print("Oops i can't process this so I will fail gracefully.")
-        return None 
-
-convert_to_int(1)
-convert_to_int("a")
-```
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
----
-# EAFP approach - Consider what the user might provide and catch the error. 
-def convert_to_int(value):
-    try:
-        return int(value)
-    except ValueError:
-        print("Oops i can't process this so I will fail gracefully.")
-        return None  # or some default value
-
-convert_to_int(1)
-convert_to_int("a")
-```
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-The EAFP (Easier to Ask for Forgiveness than Permission) approach is more Pythonic because:
-
-- It’s often faster, avoiding redundant checks when operations succeed.
-- It’s more readable, separating the intended operation and error handling.
-
-## Any Check is a Good Check
-
-As long as you consider edge cases, you're writing great code! You don’t need to worry about being “Pythonic” immediately, but understanding both approaches is useful regardless of which approach you chose.
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-## Common Python exceptions
-
-Python has dozens of specific errors that can be raised when code fails to run. Below are a few common ones that you may encounter in the activity 3.
-
-### TypeError
-
-Occurs when an operation is applied to an object of an inappropriate type.
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
-tags: [raises-exception]
----
-# Example: Trying to add a number and a string
-1 + 'string'  # This will raise a TypeError
-```
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-### ValueError
-
-- **Raised when** a function receives an argument of the right type but an invalid value.
-- **Example:** `int('abc')` (trying to convert an invalid string to an integer).
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
-tags: [raises-exception]
----
-int("abc")
-```
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-### KeyError
-
-- **Raised when** a dictionary key is not found.
-- **Example:** `my_dict['nonexistent_key']` (trying to access a key that doesn’t exist in the dictionary).
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
-tags: [raises-exception]
----
-# Example: Accessing a nonexistent key in a dictionary
-my_dict = {"a": 1, "b": 2}
-my_dict['nonexistent_key']
-```
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-### IndexError
-
-- **Raised when** an invalid index is used to access a list or tuple.
-- **Example:** `my_list[10]` (trying to access the 11th element of a list with fewer elements).
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
-tags: [raises-exception]
----
-my_list = [1, 2, 3]
-my_list[10] 
-```
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-### AttributeError
-
-Raised when an object does not have a specific attribute or method.
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
-tags: [raises-exception]
----
-my_string = "Hello"
-my_string.nonexistent_method()
-```
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-## FileNotFoundError
-
-A `FileNotFoundError` occurs in Python when the code attempts to open or access a file that does not exist at the specified path.
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
-tags: [raises-exception]
----
-with open("data/nonexistent_file.json", "r") as file:
-    data = file.read()
-```
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-By catching this exception, you can
-
-1. Raise a kinder and more informative message.
-2. Direct the user toward the next steps
-3. FUTURE: write tests for this step of the workflow (if you are creating a package!) that make sure that it handles a bad file path properly.
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
-tags: [raises-exception]
----
-from pathlib import Path
-
-file_path = Path("data") / "nonexistent_file.json"
-try:
-    with open(file_path, "r") as file:
-        data = file.read()
-except FileNotFoundError as fe:
-    raise FileNotFoundError(f"Oops! it looks like you provided a path to a file that doesn't exist. You provided: {file_path}. Make sure the file path exists. ")
-```
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-If you don't raise the error but instead provide a print statement, you can provide a simple, clean output without the full "stack" or set of Python messages that provides the full "tracking" or traceback of where the error originated.
-
-The challenge with not raising a FileNotFound error is that it will be a bit trickier to test the output.
-
-- you could do `sys.exit` too... bbut i've ru into issues with that in the past (i wish i could remember what they were ) .
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
----
-file_path = Path("data") / "nonexistent_file.json"
-try:
-    with open(file_path, "r") as file:
-        data = file.read()
-except FileNotFoundError as fe:
-    print(f"Oops! it looks like you provided a path to a file that doesn't exist. You provided: {file_path}. Make sure the file path exists. ")
-```
 
 ```{code-cell} ipython3
 ---

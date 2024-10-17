@@ -13,27 +13,28 @@ kernelspec:
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
+(clean-code-activity-3)=
 # Activity 3: Tests & Checks for your code
 
-* In [activity 1](../activity-1/clean-code-activity-1), you made your code cleaner and more usable using expressive variable names and docstrings to document the module. 
-* In [activity 2](../activity-2/clean-code-activity-2), you made your code more DRY ("Don't Repeat Yourself") using documented functions and conditionals. 
+* In [activity 1](../activity-1/clean-code-activity-1), you made your code cleaner and more usable using [expressive variable names](python-expressive) and docstrings to document the module. 
+* In [activity 2](../activity-2/clean-code-activity-2), you made your code more DRY ("Don't Repeat Yourself") using documented [functions](write-functions) and [conditionals](python-conditionals). 
 
-In this activity, you will build checks into your workflow to handle data processing "features".
+In this activity, you will build checks into your workflow using [try/except](try-except) blocks added to functions to handle data processing "features".
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 ### Real world data processing & workflows and edge cases 
 
-Real-world data rarely can be imported without "work arounds". You will often find unusual data entries and values you don't expect. Sometimes, these values are documented - for example, a 9999 may represent a missing value in a dataset. Other times, there are typos and other errors in the data that you need to handle. These unusual values or instances in a dataset or workflow are sometimes called "edge cases".  
+Real-world data rarely can be imported without "work-arounds". You will often find unusual data entries and values you don't expect. Sometimes, these values are documented - for example, a `9999` may represent a missing value in a dataset. Other times, there are typos and other errors in the data that you need to handle. These unusual values or instances in a dataset or workflow are sometimes called "edge cases".  
 
 Writing robust code that handles unexpected values will make your code run smoothly and fail gracefully. This type of code, which combines functions (or classes) and checks within the functions that handle messy data, will make your code easier to maintain.
 
-Things like helpful error messages and fast failing will also improve the experience for someone else using your code - OR your future self. 
+Things like helpful error messages and fast failing will also improve the experience for someone else using your code--OR your future self. 
  
 :::{tip}
 Using functions, classes, and methods (functions within a class) is a great first step in handling messy data. A function or method provides a modular unit you can test outside of the workflow for the edge cases you may encounter. Also, because a function is a modular unit, you can add elements to handle unexpected processing features as you build your workflow.
 
-Once you have these functions and methods, you can add checks using conditional statements and try/except blocks that anticipate edge cases and errors that you may encounter when processing your data. 
+Once you have these functions and methods, you can add checks using conditional statements and [try/except](try-except) blocks that anticipate edge cases and errors that you may encounter when processing your data. 
 :::
 
 ## Manage the unexpected 
@@ -50,7 +51,7 @@ In this activity, you will apply the following strategies to make your code more
   you to handle potential errors by attempting an operation and catching any 
   exceptions if they occur, providing useful feedback. In some cases you may want the program to end on an error. In other cases, you may want to handle it in a specific way. 
 
-When you can, try to use a [Pythonic approach](pythonic-checks) to catch errors early; this means asking for forgiveness later (often using try/except blocks) vs. using conditional statements to check an object's state or type.
+Try to use a [Pythonic approach](pythonic-checks) to catch errors early when completing this activity. This means asking for forgiveness later vs. using conditional statements to check an object's state or type.
 
 ```{code-cell} ipython3
 ---
@@ -67,13 +68,14 @@ def clean_title(title):
     return title
 ```
 
-The function below raises an error with a custom error message. but you can still see the 
+The function below raises an error with a custom error message.
 
 ```{code-cell} ipython3
 ---
 editable: true
 slideshow:
   slide_type: ''
+tags: [raises-exception]
 ---
 # This is the preferred way to catch an error 
 def clean_title(title):
@@ -110,6 +112,8 @@ title = ""
 print(clean_title(title))  # This will raise an IndexError with the friendly message
 ```
 
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
 If you wish, you can shorten the amount of information returned in the exception by adding `from None` to your exception. This will look nicer to a user but you lose some information in the exception feedback. 
 
 ```{code-cell} ipython3
@@ -136,7 +140,7 @@ print(clean_title(title))  # This will raise an IndexError with the friendly mes
 In this activity, you will be working with Pandas dataframes. You may find the .apply function to be particularly useful. 
 
 :::{tip}
-### Applying functions to DataFrame values--`.apply` 
+### Applying functions to DataFrame values: `.apply` 
 
 The `.apply()` function in pandas allows you to apply any function to rows or columns in a `pandas.DataFrame`. For example, you can use it to perform operations on specific column or row values. When you use `.apply()`, you can specify whether you want to apply the function across columns `(axis=0)` (the default) or across rows `(axis=1)`. 
 
@@ -355,14 +359,6 @@ print("Final shape of combined DataFrame:", all_papers_df.shape)
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-## What i don't like
-
-What I don't like about this is that the file not found error isn't too bad to figure out. things like keyerrors and value errors are more amorphous. so this could be an OYO 2 
-
-and we could work through a index error or a key error instead?  Becuase in that case they may want to return a default value or something else....
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
 :::{admonition} Part 1 - What happens when your code can't find the data?
 :class: attention
 
@@ -442,14 +438,32 @@ Note: we can have two groups - one that wants to work on their own and another t
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-:::{admonition} On your own 1
+:::{admonition} Activity 3: part 1 
 :class: attention
 
-What happens 
+In this activity, we will work together in groups or as a whole class to add a try/except block that handles messiness when parsing titles in the cross-ref data. 
 
 :::
 
-I want to have them move their code into a module if possible during this workshop but we could also kick that off in the day 2 workshop.
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+:::{admonition} On your own 1
+:class: attention
+
+If you get through the activity above and want a second challenge, try to parse the date values for each JOSS publication. Use the published key to extract the date for each publication. You may run into some data "features" when completing this activity. 
+
+```json
+"published": {
+      "date-parts": [
+        [
+          2020,
+          7,
+          4
+        ]
+      ]
+```
+
+:::
 
 ```{code-cell} ipython3
 ---
