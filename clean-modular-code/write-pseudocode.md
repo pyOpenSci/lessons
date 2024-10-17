@@ -91,16 +91,16 @@ Suppose you want to write a Python function that processes JSON data of JOSS pap
 
 Here’s how you can start with pseudocode:
 
-* Load JSON data of JOSS papers from CrossRef.
-* Loop through each paper.
+1. Load JSON data of JOSS papers from CrossRef.
+2. Loop through each paper.
     * ✅ Check if the DOI is valid.
 
     * ✅ If valid, extract the number of citations and the publication date
 
     * ✅ Calculate the number of citations per month since the publication date.
    
-4.	Store results in a list.
-5.	Return the list of processed data.
+3.	Store results in a list.
+4.	Return the list of processed data.
 
 +++
 
@@ -124,7 +124,7 @@ Using pseudocode helps you think through your logic clearly, while LLMs can assi
 
 ```
 
-Following Pep8 - and expressive names, the code can be at least easier to read.  expressive naming can act like documentation,
+By following pep8 style and using expressive names, the code becomes easier to read.  Expressive naming can act like documentation,
 
 ```{code-cell} ipython3
 from datetime import datetime
@@ -171,7 +171,7 @@ if paper_3["citations"]:
     })
 ```
 
-The above workflow has easier-to-read variable names, but it's also a great example of "copypasta" code, which is code that is repeated. 
+The above workflow has easier-to-read variable names. Unfortunately, it's also a great example of "copy pasta" code, which is repeated code. 
 
 You could write pseudocode to identify the core steps like this:
 
@@ -218,6 +218,6 @@ for paper in papers:
 
 You have now designed a workflow using pseudocode to process several sites worth of landsat data. 
 
-Of course, the pseudocode above is just beginning. For each of the steps above, you need to flesh out how you can accomplish each task. 
+Of course, the pseudocode above is just the beginning. For each of the steps above, you need to flesh out how you can accomplish each task. 
 
 The next lesson in this chapter focuses on data workflow best practices that can help you implement your workflow efficiently and effectively.
