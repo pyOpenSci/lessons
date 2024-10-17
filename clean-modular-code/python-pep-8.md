@@ -178,7 +178,7 @@ Using code standards like PEP 8 helps avoid such confusion, making code clearer 
 
 ### Some PEP 8 rules to remember 
 
-There is a style guide devoted to Python pep 8 standards that you can read [here](https://www.python.org/dev/peps/pep-0008/#naming-conventions). However, below are a handful of PEP 8 Rules that you can consider following when writing code. 
+There is a style guide devoted to Python PEP 8 standards that you can read [here](https://www.python.org/dev/peps/pep-0008/#naming-conventions). However, below are a handful of PEP 8 Rules that you can consider following when writing code. 
 
 * Naming Conventions: Use **snake_case** for variables/functions and **CamelCase** for class names.
 
