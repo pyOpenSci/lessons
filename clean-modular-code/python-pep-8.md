@@ -122,7 +122,7 @@ df
 
 ## How to Apply PEP 8 Code Style Standards
 
-It may seem overwhelming to remember all the PEP 8 rules, but tools called **code formatters** can automatically apply these standards for you.
+It may seem overwhelming to remember all the PEP 8 rules, but tools called **code linters and formatters** can identify and automatically apply these standards for you.
 
 ### For `.py` Files
 
