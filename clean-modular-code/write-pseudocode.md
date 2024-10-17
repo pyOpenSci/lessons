@@ -38,12 +38,12 @@ Pseudocode is an informal way of planning and structuring your code logic withou
 
 ## Benefits of Pseudocode
 1. **Clarifies logic**: Helps you outline your program’s structure without getting bogged down by syntax.
-2. **Easier collaboration**: Allows you to communicate ideas with non-programmers or across different programming languages.
+2. **Easier collaboration**: Allows you to communicate ideas with people in different roles, in different scientific domains, or across different programming languages.
 3. **Quick debugging**: Spot logical errors early before writing actual code.
 
 ## Using Pseudocode with LLMs
 
-LLMs (like ChatGPT) can assist in converting pseudocode into actual Python code. By writing clear pseudocode, you can prompt the LLM to generate clean, efficient Python code that follows your logic, helping you focus on problem-solving rather than syntax.
+LLMs (like ChatGPT) can assist in converting pseudocode into actual Python code. By writing clear pseudocode, you can prompt the LLM to generate Python code that follows your logic, helping you focus on problem-solving and testing the generated code rather than obscure syntax.
 
 ## Example: Processing CrossRef Data from JOSS Papers
 
