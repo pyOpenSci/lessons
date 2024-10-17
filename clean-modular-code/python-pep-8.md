@@ -194,9 +194,10 @@ class MyClass:
         count = len(data_list)
         return total_sum / count
 
-# Example variable names and function call
+# Call to create an object of a class
 data_processor = DataProcessor()
 numbers = [10, 20, 30, 40, 50]
+# Examples of variable names and method call
 average_value = data_processor.calculate_average(numbers)
 
 print(f"The average value is: {average_value}")
