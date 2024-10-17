@@ -52,7 +52,7 @@ precip_list
  return'High'
 data={'location':['Station1','Station2','Station3','Station4'],'year':[2021,2021,2021,2021],'monthly_precipitation':[[50.0,70.0,90.0,80.0],[100.0,110.0,120.0,130.0],[150.0,160.0,170.0,180.0],[200.0,210.0,220.0,230.0]],'start_date':["2021-01-01","2021-01-01","2021-01-01","2021-01-01"]}
 df=pd.DataFrame(data)
-df['start_date']=pd.to_datetime(df['start_date'])
+df["start_date"]=pd.to_datetime(df[str('start_date')])
 df['precipitation_category']=df['monthly_precipitation'].apply(classify_precipitation)
 df
 ```
