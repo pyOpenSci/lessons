@@ -187,7 +187,7 @@ There is a style guide devoted to Python PEP 8 standards that you can read [here
 class MyClass:
     """A class to process data and calculate statistics."""
 
-    # This is a function 
+    # This is a method 
     def calculate_average(self, data_list):
         """Calculate the average of a list of numbers."""
         total_sum = sum(data_list)
@@ -199,7 +199,7 @@ data_processor = DataProcessor()
 numbers = [10, 20, 30, 40, 50]
 # Examples of variable names and method call
 average_value = data_processor.calculate_average(numbers)
-
+## Example of function call
 print(f"The average value is: {average_value}")
 ```
 
