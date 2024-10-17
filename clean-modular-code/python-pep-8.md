@@ -241,7 +241,7 @@ plt.show()
 ## PEP 8 naming conventions
 
 :::{seealso}
-For the entire pep-8 style guide see: <a href="https://peps.python.org/pep-0008/" target="_blank">PEP 8 Style Guide published by the Python Software Foundation</a>.
+For the entire pep-8 style guide see: <a href="https://peps.python.org/pep-0008/" target="_blank">Python's PEP 8 Style Guide</a>.
 
 :::
 
