@@ -17,6 +17,7 @@ jupyter:
     name: python3
 ---
 
+(write-functions)=
 ## How to write a Python function  
 
 :::{tip}
@@ -54,9 +55,9 @@ add_numbers(1,2)
 ```
 
 <!-- #region -->
-## How to Define Functions in Python
+## How to define functions in Python
 
-There are several components needed to define a function in **Python**, including the `def` keyword, function name, parameters (inputs), and the `return` statement, which specifies the output of the function. 
+Several components are needed to define a function in **Python**, including the `def` keyword, function name, parameters (inputs), and the `return` statement, which specifies the function's output. 
 
 ```python
 def function_name(parameter):
@@ -64,7 +65,7 @@ def function_name(parameter):
     return output
 ```
 
-### def keyword and function Name
+### `def` keyword and function Name
 
 In **Python**, function definitions begin with the keyword **`def`** to indicate the start of a definition for a new function. The function name follows this keyword. 
 
