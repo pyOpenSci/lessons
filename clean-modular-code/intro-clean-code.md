@@ -24,27 +24,26 @@ jupyter:
 
 :::{toctree}
 :hidden:
-:caption: Lessons
+:caption: Clean, Expressive Code
 :maxdepth: 2
 
 Intro <self>
 Python Code Style <python-pep-8>
 Don't Repeat Yourself <python-dry-modular-code>
-Functions <python-functions>
-Function checks <python-function-checks>
 Expressive Code <python-expressive-code>
 :::
 
 :::{toctree}
 :hidden:
-:caption: Checks & Tests
+:caption: Functions, Conditionals & Checks
 :maxdepth: 2
 
-Multi-variable functions <checks-conditionals/python-functions-multiple-conditions>
 Conditional statements <checks-conditionals/python-conditionals>
-Tests & Checks <checks-conditionals/tests-checks>
+Functions <checks-conditionals/about-python-functions>
+Functions <checks-conditionals/write-python-functions>
+Function checks <checks-conditionals/python-function-checks>
+Function Tests & Checks <checks-conditionals/python-common-exceptions>
 :::
-
 
 
 :::{toctree}
@@ -52,11 +51,10 @@ Tests & Checks <checks-conditionals/tests-checks>
 :caption: Activities
 :maxdepth: 2
 
-Clean Code: Activity 1 <activity-1/clean-code-part-1>
-Clean Code: Activity 2 <activity-2/clean-code-part-2>
-Clean Code: Activity 3 <activity-3/clean-code-part-3>
+Clean Code: Activity 1 <activity-1/clean-code-activity-1>
+Clean Code: Activity 2 <activity-2/clean-code-activity-2>
+Clean Code: Activity 3 <activity-3/clean-code-activity-3>
 :::
-
 
 :::{note}
 After completing this lesson, you will be able to:
@@ -67,6 +65,7 @@ After completing this lesson, you will be able to:
 
 "Pythonic" code follows the conventions and best practices of the Python programming language. It emphasizes clear, concise, and readable code—the principles of Python's design philosophy. 
 
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 Pythonic code also takes full advantage of Python's features which include:
 
 * list comprehensions,
@@ -75,9 +74,9 @@ Pythonic code also takes full advantage of Python's features which include:
   
 to write more elegant and efficient code.
 
-## Characteristics of Pythonic code:
+## Characteristics of Pythonic code
 
-### **It's Readable**: 
+### **It's Readable**
 
 Pythonic code is easy to read and understand, often adhering to the **Zen of Python** (a set of guiding principles for Python’s design).
 
@@ -106,7 +105,7 @@ todays_date
 <!-- #region editable=true slideshow={"slide_type": ""} -->
 Compare the variable `foovar` to `todays_date`. Which variable name tells you more about the information that it contains?
 
-### **It's Concise** 
+### **It's Concise**
 
 Pythonic code is concise but not at the expense of clarity. An example of concise code is to use features like list comprehensions and built-in functions.
 
@@ -143,11 +142,11 @@ for i, language in enumerate(languages):
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-### Clean code is DRY & avoids repitition 
+### Clean code is DRY & avoids repitition
 
 Pythonic code avoids repetition. DRY (Don't Repeat Yourself) code is written in a way that both avoids repetition and is well organized. This makes it easier to maintain and extend.
 
-### Pythonic code is expressive 
+### Pythonic code is expressive
 
 Pythonic code communicates the programmer's intent clearly, making it easier for others to understand the purpose of the code at a glance.
 
@@ -162,7 +161,7 @@ def fahr_to_kelvin(fahr):
     return ((fahr - 32) * (5 / 9)) + 273.15
 ```
 
-### Pythonic code is well-documented 
+### Pythonic code is well-documented
 
 Docstrings are Pythonic because they prioritize code readability and clarity, providing clear descriptions of a function’s purpose, parameters, and return values. By embedding documentation directly in the code, docstrings make it easy for developers to understand and use functions or classes without needing to read the implementation details.
 
@@ -193,12 +192,13 @@ def fahr_to_kelvin(fahr):
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-## Tools to help you write better, more Pythonic code - code formatters, linters and LLM's 
+## Tools to help you write better, more Pythonic code - code formatters, linters and LLM's
 
 While the above tasks used to require manual code editing, in today's world, you can use a suite of automated tools such as linters and code formatters, combined with LLM's to help you write better, cleaner and more Pythonic code for scientific workflows.  
 
-### LLMS 
-LLMs (Large Language Models) can be useful for... 
+### LLMS
+
+LLMs (Large Language Models) can be useful for...
 
 however, it's important that you are careful about how you use them because
 
@@ -206,14 +206,11 @@ however, it's important that you are careful about how you use them because
 * they are often wrong
 * they make up stuff
 * etc.
-however with correct promots, and if you build your eye for identifying problems, and combined with tools that will help you with your code, as you write it, they can be effective tools in your workfhlow dev process.
-
-
-
+however with correct prompts, and if you build your eye for identifying problems, and combined with tools that will help you with your code, as you write it, they can be effective tools in your workflow dev process.
 
 In the next lessons, you will learn more about making tools and approaches to making your code more Pythonic
 
-You will then learn about tools that you can use to format your code and identify problem points including: 
+You will then learn about tools that you can use to format your code and identify problem points including:
 
 * LLM's like GitHub co-pilot
 * ChatGPT
@@ -223,6 +220,5 @@ Code formatters like:
 
 * black
 * ruff
-
 
 <!-- #endregion -->

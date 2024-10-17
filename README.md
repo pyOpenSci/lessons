@@ -1,15 +1,12 @@
 # <img src="https://www.pyopensci.org/images/logo.png" width=100 /> pyOpenSci Lessons
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![All Contributors](https://img.shields.io/github/all-contributors/pyOpenSci/lessons?color=ee8449)](#contributors-)
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/lessons?color=purple&display_name=tag&style=plastic)
 
-[![DOI](https://zenodo.org/badge/556814582.svg)](https://zenodo.org/badge/latestdoi/556814582)
+[![DOI](https://zenodo.org/badge/855935338.svg)](https://doi.org/10.5281/zenodo.13910245)
 
-[![CircleCI](https://circleci.com/gh/pyOpenSci/python-package-guide.svg?style=svg)](https://circleci.com/gh/pyOpenSci/python-package-guide)
+[![CircleCI](https://circleci.com/gh/pyOpenSci/lessons.svg?style=svg)](https://circleci.com/gh/pyOpenSci/lessons)
 
 ## What is pyOpenSci?
 
@@ -75,10 +72,10 @@ To build live documentation that updates when you update local files, run the fo
 nox -s docs-live
 ```
 
-## Contributing to this guide
+## Contributing to pyOpenSci lessons
 
 We welcome and issues and pull requests to improve the content of this guide.
-If you'd like to see an improvement, please [open an issue](https://github.com/pyOpenSci/python-package-guide/issues/new/choose).
+If you'd like to see an improvement, please [open an issue](https://github.com/pyOpenSci/lessons/issues/new/choose).
 
 ## Contributors ✨
 
@@ -90,6 +87,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="http://www.leahwasser.com"><img src="https://avatars.githubusercontent.com/u/7649194?v=4?s=100" width="100px;" alt="Leah Wasser"/><br /><sub><b>Leah Wasser</b></sub></a><br /><a href="https://github.com/pyOpenSci/lessons/commits?author=lwasser" title="Code">💻</a> <a href="#tutorial-lwasser" title="Tutorials">✅</a> <a href="https://github.com/pyOpenSci/lessons/commits?author=lwasser" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://blog.ucodery.com"><img src="https://avatars.githubusercontent.com/u/28751151?v=4?s=100" width="100px;" alt="Jeremy Paige"/><br /><sub><b>Jeremy Paige</b></sub></a><br /><a href="https://github.com/pyOpenSci/lessons/pulls?q=is%3Apr+reviewed-by%3Aucodery" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://hachyderm.io/web/@willingc"><img src="https://avatars.githubusercontent.com/u/2680980?v=4?s=100" width="100px;" alt="Carol Willing"/><br /><sub><b>Carol Willing</b></sub></a><br /><a href="https://github.com/pyOpenSci/lessons/pulls?q=is%3Apr+reviewed-by%3Awillingc" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
@@ -119,4 +118,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=pyOpenSci/python-package-guide&type=Date)](https://star-history.com/#pyOpenSci/python-package-guide&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=pyOpenSci/lessons&type=Date)](https://star-history.com/#pyOpenSci/lessons&Date)

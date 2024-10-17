@@ -19,9 +19,10 @@ kernelspec:
 :::{admonition} What you will learn
 :class: tip
 
-* How to follow the PEP 8 style guide to write Python code that’s easy to read and understand.
-* Best practices for naming variables, using comments, and formatting code.
-* Tools to help you apply PEP 8 to your code automatically.
+* Describe the benefits of using code standards.
+* Explain the `PEP 8` style guide and how it helps promote code readability.
+* Describe key components of the PEP 8 style guide, including naming conventions and white space.
+* List tools to help you apply the `PEP 8` style guide to your code.  
 
 :::
 
