@@ -39,7 +39,10 @@ slideshow:
 import pandas as pd
 from datetime import datetime
 def classify_precipitation(precip_list):
- avg_precip=pd.Series(precip_list).mean()
+ avg_precip=pd.Series(
+precip_list
+ ).mean(
+ )
  if avg_precip<100:
   return'Low'
  elif avg_precip>=100 and avg_precip<=150:
