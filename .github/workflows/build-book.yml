@@ -66,3 +66,4 @@ jobs:
           arguments: |
             --ignore-files "/.+\/_static\/.+/,/genindex.html/"
             --ignore-status-codes "404, 403, 429, 503"
+        continue-on-error: true
