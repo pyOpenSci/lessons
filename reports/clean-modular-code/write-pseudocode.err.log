@@ -1,0 +1,80 @@
+Traceback (most recent call last):
+  File "/home/runner/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/runner/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/runner/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/runner/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/runner/work/lessons/lessons/.nox/docs/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from datetime import datetime
+
+# Example list of papers with nested title, citations, and unusual date format
+papers = [
+    {"title": ["Paper 1"], "pub_date": "2023/05/10", "citations": [5]},
+    {"title": ["Paper 2"], "pub_date": "2022/04/12", "citations": [3]},
+    {"title": ["Paper 3"], "pub_date": "2021/03/15", "citations": [8]},
+]
+
+# Process each paper manually
+# Paper 1
+paper_1 = papers[0]
+if paper_1["citations"]:
+    pub_date_1 = datetime.strptime(paper_1["pub_date"], "%Y/%m/%d")
+    avg_citations_1 = sum(paper_1["citations"]) / len(paper_1["citations"])
+    print({
+        "title": paper_1["title"][0],
+        "pub_date": pub_date_1, 
+        "citations": citations_1
+    })
+
+# Paper 2
+paper_2 = papers[1]
+if paper_2["citations"]:
+    pub_date_2 = datetime.strptime(paper_2["pub_date"], "%Y/%m/%d")
+    avg_citations_2 = sum(paper_2["citations"]) / len(paper_2["citations"])
+    print({
+        "title": paper_2["title"][0],
+        "pub_date": pub_date_2,       
+        "citations": citations_2
+    })
+
+# Paper 3
+paper_3 = papers[2]
+if paper_3["citations"]:
+    pub_date_3 = datetime.strptime(paper_3["pub_date"], "%Y/%m/%d")
+    avg_citations_3 = sum(paper_3["citations"]) / len(paper_3["citations"])
+    print({
+        "title": paper_3["title"][0],
+        "pub_date": pub_date_3,  
+        "citations": citations_3
+    })
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[2], line 19[0m
+[1;32m     14[0m     pub_date_1 [38;5;241m=[39m datetime[38;5;241m.[39mstrptime(paper_1[[38;5;124m"[39m[38;5;124mpub_date[39m[38;5;124m"[39m], [38;5;124m"[39m[38;5;124m%[39m[38;5;124mY/[39m[38;5;124m%[39m[38;5;124mm/[39m[38;5;132;01m%d[39;00m[38;5;124m"[39m)
+[1;32m     15[0m     avg_citations_1 [38;5;241m=[39m [38;5;28msum[39m(paper_1[[38;5;124m"[39m[38;5;124mcitations[39m[38;5;124m"[39m]) [38;5;241m/[39m [38;5;28mlen[39m(paper_1[[38;5;124m"[39m[38;5;124mcitations[39m[38;5;124m"[39m])
+[1;32m     16[0m     [38;5;28mprint[39m({
+[1;32m     17[0m         [38;5;124m"[39m[38;5;124mtitle[39m[38;5;124m"[39m: paper_1[[38;5;124m"[39m[38;5;124mtitle[39m[38;5;124m"[39m][[38;5;241m0[39m],
+[1;32m     18[0m         [38;5;124m"[39m[38;5;124mpub_date[39m[38;5;124m"[39m: pub_date_1, 
+[0;32m---> 19[0m         [38;5;124m"[39m[38;5;124mcitations[39m[38;5;124m"[39m: [43mcitations_1[49m
+[1;32m     20[0m     })
+[1;32m     22[0m [38;5;66;03m# Paper 2[39;00m
+[1;32m     23[0m paper_2 [38;5;241m=[39m papers[[38;5;241m1[39m]
+
+[0;31mNameError[0m: name 'citations_1' is not defined
+
