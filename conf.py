@@ -77,7 +77,6 @@ favicons = [
 
 # Link to our repo for easy PR/ editing
 html_theme_options = {
-    "announcement": "<p><a href='https://www.pyopensci.org/about-peer-review/index.html'>We run peer review of scientific Python software. Learn more.</a></p>",
     # "navbar_center": ["nav"], this can be a way to override the default navigation structure
     "external_links": [
         {
@@ -106,12 +105,14 @@ html_theme_options = {
         "image_light": "logo-light-mode.png",
         "alt_text": "pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower",
     },
-    "header_links_before_dropdown": 4,
+    # Increase this as lessons are added - 
+    # set low to hide links to other pyos sites and allow nav between lessons
+    "header_links_before_dropdown": 1,
     "use_edit_page_button": True,
     "show_nav_level": 2,
     "navigation_depth": 3,
     "show_toc_level": 1,
-    # "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
+    "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
     "github_url": "https://github.com/pyopensci/lessons",
     "footer_start": ["code_of_conduct", "copyright"],
     "footer_end": [],
