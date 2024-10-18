@@ -156,7 +156,7 @@ sitemap_url_scheme = "{link}"
 #
 html_theme = "pyos_sphinx_theme"
 html_static_path = ["_static"]
-# html_css_files = ["pyos.css"]
+html_css_files = ["css/styles.css"]
 html_title = "pyOpenSci Lessons"
 html_js_files = ["matomo.js"]
 
