@@ -50,7 +50,6 @@ RELEASE_LANGUAGES = []
 @nox.session
 def docs(session):
     """Build the packaging guide."""
-    session.install("-r", "requirements.txt")
     session.install("-e", ".")
     session.run(
         SPHINX_BUILD,
@@ -100,7 +99,6 @@ def docs_live(session):
     so they don't need to remember the specific sphinx-build parameters to build a different language.
     """
     session.install("-e", ".[dev]")
-    session.install("-r", "requirements.txt")
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
     # Make sure jupy text syncs things
