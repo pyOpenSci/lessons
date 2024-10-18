@@ -11,24 +11,116 @@ kernelspec:
   name: python3
 ---
 
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
 # Write Flexible Functions to Handle Messy Data
 
-When dealing with messy or unpredictable data, ensuring your code
-It is important to handle errors early and gracefully. [Using functions](python-functions) 
-is a great first step in creating a robust
-and maintainable data processing workflow. Functions provide modular units that
-can be tested independently, allowing you to handle various edge cases and
-unexpected scenarios effectively. 
+When working with messy or unpredictable data, your goal is to write robust code to handle the unexpected. It's important to catch errors early
+and handle them gracefully. [Using functions](python-functions)  is a great first step in creating
+a maintainable and resilient data processing workflow. Functions provide modular
+units that can be tested independently, making handling edge cases 
+and unexpected scenarios easier.
 
 Adding checks to your functions 
 is the next step towards making your code more robust and maintainable over time. 
 
-This lesson will cover several strategies for making this happen: 
-
+This lesson covers several strategies for making your code more robust and easier-to-use: 
 
 1. Use [`try/except blocks`](#try-except) rather than simply allowing errors to occur.
 1. [Make checks Pythonic](#pythonic-checks)
 1. [Fail fast](fail-fast)
+
++++
+
+The same function below assumes that the user provides a list that contains a title as a string. Notice that the output of this function is different from what you might expect. How could you fix this? 
+
+```{code-cell} ipython3
+# This function runs when provided both a list 
+def clean_title(title):
+    """Notice that this function checks explicitly to see if it is provided with a value that is a list. it then 
+    makes a decision about how to process the function input based on 
+    it's type.  
+    """
+    return title[0]
+
+print(clean_title(["hi, i'm a title"]))
+print(clean_title("hi, i'm a title"))
+```
+
+The function below uses [conditional statements](python-conditionals) to check the input provided by the user. It uses a "look before you leap" approach to check to see if the input is provided in a list format.
+If it isn't, it returns the title in its provided format. 
+
+```{code-cell} ipython3
+def clean_title(title):
+    """Notice that this function checks explicitly to see if it is provided with a value that is a list. it then 
+    makes a decision about how to process the function input based on 
+    it's type.  
+    """
+    if isinstance(title, list):
+        return title[0]
+    return title
+
+
+print(clean_title(["hi, i'm a title"]))
+print(clean_title("hi, i'm a title"))
+print(clean_title(""))
+```
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+The function below uses a try/except block to handle the title. 
+But again notice that in some cases the code will continue to run, but still returns an unexpected value that will surprise a user. 
+
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+tags: [raises-exception]
+---
+def clean_title(title):
+    """
+    Attempts to return the first character of the title.
+    Raises the same error with a friendly, custom error message if the input is invalid.
+    """
+    try:
+        return title[0]
+    except IndexError as e:
+        raise IndexError(f"Oops! You provided a title in an unexpected format. "
+                         f"I expected the title to be provided in a list and you provided "
+                         f"a {type(title)}.") from e
+
+print(f"{clean_title(['hi, i am a title'])} ")
+print(clean_title("hi, i am a title"))
+print(clean_title(""))  
+```
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+If you wish, you can shorten the amount of information returned in the error by adding `from None` when you raise the error. This will look nicer to a user, but you lose some detail in the error traceback.
+
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+tags: [raises-exception]
+---
+def clean_title(title):
+    """
+    Attempts to return the first character of the title.
+    Raises the same error with a friendly message if the input is invalid.
+    """
+    try:
+        return title[0]
+    except IndexError as e:
+        raise IndexError(f"Oops! You provided a title in an unexpected format. "
+                         f"I expected the title to be provided in a list and you provided "
+                         f"a {type(title)}.") from None 
+
+# Run the function
+print(clean_title("")) 
+```
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
@@ -89,7 +181,7 @@ convert_to_int("abc")
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-This function attempts to convert a value to an integer, returning `None` and a message if the conversion fails. However, is that message helpful to a person using your code? 
+This function attempts to convert a value to an integer, returning `None` and a message if the conversion fails. However, is that message helpful to a person using your code?
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
@@ -97,7 +189,7 @@ This function attempts to convert a value to an integer, returning `None` and a 
 ## Fail fast strategy
 
 Identify data processing or workflow problems immediately when they occur and throw an error immediately rather than allowing
-them to propagate through your code. This approach saves time and simplifies debugging, providing clearer, more useful error outputs (stack traces).  Below, you can see that the code tries to open a file, but Python can't find the file. In response, Python throws a `FileNotFoundError`. 
+them to propagate through your code. This approach saves time and simplifies debugging, providing clearer, more useful error outputs (stack traces).  Below, you can see that the code tries to open a file, but Python can't find the file. In response, Python throws a `FileNotFoundError`.
 
 ```{code-cell} ipython3
 ---
@@ -180,7 +272,7 @@ The code above is useful because it fails and provides a simple and effective me
 However, the amount of text returned from the error is significant because it finds the error when it can't open the file. Still, then you raise the error intentionally within the except statement. 
 
 If you wanted to provide less information to the user, you could use `from None`. From None ensure that you 
-only return the exception information related to the error that you handle within the try/except block. 
+only return the exception information related to the error that you handle within the try/except block.
 
 ```{code-cell} ipython3
 def read_file(file_path):
