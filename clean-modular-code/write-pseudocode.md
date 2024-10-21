@@ -34,7 +34,7 @@ last_modified:
 * Be able to write pseudocode.
 :::
 
-Pseudocode is an informal way of planning and structuring your code logic without worrying about the syntax of a specific programming language. It focuses on clearly expressing the steps a program will take to solve a problem. Writing pseudocode before diving into actual code helps clarify your thought process, spot logical gaps, and communicate your ideas to others.
+Pseudocode is an informal way of planning and structuring your code logic without worrying about the syntax of a specific programming language. It focuses on clearly expressing the logical steps a program will take to solve a problem. Writing pseudocode before diving into actual code helps clarify your thought process, spot logical gaps, and communicate your ideas to others.
 
 ## Benefits of Pseudocode
 1. **Clarifies logic**: Helps you outline your program’s structure without getting bogged down by syntax.
@@ -126,7 +126,7 @@ Using pseudocode helps you think through your logic clearly, while LLMs can assi
 
 ```
 
-By following pep8 style and using expressive names, the code becomes easier to read. Expressive naming can act like documentation,
+By following pep8 style and using expressive names, the code becomes easier to read. Expressive naming acts like documentation,
 
 ```{code-cell} ipython3
 from datetime import datetime
@@ -177,7 +177,7 @@ The above workflow has easier-to-read variable names. Unfortunately, it's also a
 
 You could write pseudocode to identify the core steps like this:
 
-1. Open each citation entry in a Python list. It will be in `dict` format. For each citation  
+1. Open each citation entry in a Python list. Each individual entry will be in `dict` format. For each citation  
     1. Get the paper's publication date & turn it into a `datetime` object
     1. Get the total citations the paper has
     2. Add data to a pandas dataframe
@@ -185,7 +185,7 @@ You could write pseudocode to identify the core steps like this:
 
 +++
 
-The above pseudo code could be passed to a llm (with more details about how you want it to create the code). 
+The above pseudocode could be passed to a llm (with more details about how you want it to create the code). 
 
 You could also begin to translate it into Python code like this:
 
