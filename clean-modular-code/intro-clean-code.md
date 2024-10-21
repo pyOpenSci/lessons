@@ -158,12 +158,12 @@ Pythonic code communicates the programmer's intent clearly, making it easier for
 
 Note that the function below has an easy-to-understand name and clear docstring. Some people will even suggest adding a verb that explains what the function does, such as:
 
-`convert_fahr_kelvin()`
+`convert_fahrenheit_to_kelvin()`
 
 <!-- #endregion -->
 
 ```python editable=true slideshow={"slide_type": ""}
-def fahrenheit_to_kelvin(temperature_fahr):
+def convert_fahrenheit_to_kelvin(temperature_fahr):
     return ((temperature_fahr - 32) * (5 / 9)) + 273.15
 ```
 
@@ -176,7 +176,7 @@ Documentation can mean many different things. When you are writing code, a combi
 Pythonic code reflects Python's emphasis on readability and simplicity. A well-known phrase from the **Zen of Python** is: "There should be one—and preferably only one—obvious way to do it," which is a core idea behind writing Pythonic code.
 
 ```python
-def fahrenheit_to_kelvin(temperature_fahr):
+def convert_fahrenheit_to_kelvin(temperature_fahr):
     """
     Convert temperature from Fahrenheit to Kelvin.
 
