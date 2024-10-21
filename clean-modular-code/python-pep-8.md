@@ -354,7 +354,7 @@ from my_module import my_function
 import numpy as np
 
 
-# two blank lines above a function definition
+# Two blank lines above a function definition
 def my_function():
     # Process data
     data = pd.readcsv("pyos-data.csv")
