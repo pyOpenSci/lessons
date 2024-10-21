@@ -14,11 +14,11 @@ kernelspec:
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 (common-exceptions)=
-### Common Python exceptions 
+# Common Python exceptions 
 
 Python has dozens of specific errors that can be raised when code fails to run. Below are a few common ones that you may encounter in [Activity 3](clean-code-activity-3). 
 	
-### TypeError
+## TypeError
 
 Occurs when an operation is applied to an object of an inappropriate type.
 
@@ -35,7 +35,8 @@ tags: [raises-exception]
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-#### ValueError
+(value_error)=
+### ValueError
 
 - **Raised when** a function receives an argument of the right type but an invalid value.
 - **Example:** `int('abc')` (trying to convert an invalid string to an integer).
@@ -52,7 +53,7 @@ int("abc")
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-#### KeyError
+### KeyError
 
 - **Raised when** a dictionary key is not found.
 - **Example:** `my_dict['nonexistent_key']` (trying to access a key that doesn’t exist in the dictionary).
@@ -71,7 +72,7 @@ my_dict['nonexistent_key']
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-#### IndexError:
+### IndexError:
 
 - **Raised when** an invalid index is used to access a list or tuple.
 - **Example:** `my_list[10]` (trying to access the 11th element of a list with fewer elements).
@@ -89,7 +90,7 @@ my_list[10]
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-#### AttributeError:
+### AttributeError:
 
 Raised when an object does not have a specific attribute or method.
 
@@ -106,7 +107,8 @@ my_string.nonexistent_method()
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-#### FileNotFoundError
+(file_error)=
+### FileNotFoundError
 
 A `FileNotFoundError` occurs in Python when the code attempts to open or access a file that does not exist at the specified path.
 
