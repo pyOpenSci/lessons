@@ -291,8 +291,8 @@ First, let's review some terminology associated with naming conventions.
 * Avoid using single-character letters that could be confused with numbers  (ie the letter `l` looks similar to the number one  `1` 
 
 ```python
-# UpperCamelCase for class definitions
-class MyClass:
+# Use UpperCamelCase for class definitions
+class DataProcessor:
     """A class to process data and calculate statistics."""
 
     # lower_snake_case for methods and functions
@@ -306,10 +306,10 @@ class MyClass:
 data_processor = DataProcessor()
 numbers = [10, 20, 30, 40, 50]
 
-# Examples of variable names and method call
+# Use snake case for variable names and method call
 average_value = data_processor.calculate_average(numbers)
 
-# Example of function call
+# Example of a standard library function call
 print(f"The average value is: {average_value}")
 ```
 
@@ -354,7 +354,7 @@ from my_module import my_function
 import numpy as np
 
 
-# two lines above a function definition
+# two blank lines above a function definition
 def my_function():
     # Process data
     data = pd.readcsv("pyos-data.csv")
