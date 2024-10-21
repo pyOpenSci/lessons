@@ -67,9 +67,9 @@ The <a href="https://www.python.org/dev/peps/pep-0008/" target="_blank">the PEP 
 
 PEP 8 style guide has a suite of recommendations that focus on making Python code more readable. Below are some of the PEP 8 guidelines related to expressive object names.  
 
-1. **Keep object names short:** this makes them easier to read when scanning through code.
+1. **Use meaningful names:** A meaningful or expressive variable name will be eaiser for someone to understand. For example: `precipitation` is a more useful name that tells us something about the object compared to `x` or `a`.
 
-2. **Use meaningful names:** A meaningful or expressive variable name will be  eaiser for someone to understand. For example: `precip` is a more useful name that tells us something about the object compared to `x` or `a`.
+2. **Keep object names short:** this makes them easier to read when scanning through code.
 
 3. **Do not start names with numbers** Objects that start with a number are NOT VALID in **Python**.
 
@@ -81,15 +81,17 @@ A few other notes about object names in **Python**:
 * Avoid existing function names (e.g. `mean`), though you can combine these with other words to create a more descriptive name (e.g. `precip_mean`).
 * Use nouns for variable names (e.g. `weight_kg`), and verbs for function names (e.g. `convert_kg_lb`).
 * Avoid using dots in object names - e.g. `precip.boulder` - dots have a special meaning in **Python** (for methods - the dot indicates a function that is connected to a particular **Python** object) and other programming languages.
-  * Instead, use underscores `precip_boulder`.
+  * Instead, use underscores for snake case: `precip_boulder`.
 
 ## Recommendations for naming conventions
 
 ### Best practices for directory and file names
 
-We suggest that you use directory and file names that contain words that describe the contents of the file or directory, separated using dashes - like this:
+We suggest that you use directory and file names that contain words that describe the contents of the file or directory, separated using dashes `-` or underscores `_` like this:
 
 `lower-case-with-dashes`
+
+`snake_case_with_underscores`
 
 Directory and files names should be kept as short and concise as possible, while also clearly indicating what is contained within the directory or file.
 
@@ -99,13 +101,13 @@ For variables, we suggest that you use `lowercase` for short variable names and 
 
 Examples include:
 
-* **precip**: to indicate a simple variable (either single value or data structure without temporal or spatial variation in coverage)
-* **boulder_precip**: to indicate the location of the data collection
-* **max_precip**: to indicate the result of a summary statistic
-* **precip_2002**: to indicate a particular year of data included
-* **precip_2002_2013**: to indicate the particular years of data included
-* **precip_2000_to_2010**: to indicate a range of years of data included
-* **precip_in** or **precip_mm**: to indicate the measurement units
+* **precipitation**: to indicate a simple variable (either single value or data structure without temporal or spatial variation in coverage)
+* **boulder_precipitation**: to indicate the location of the data collection
+* **max_precipitation**: to indicate the result of a summary statistic
+* **precipitation_2002**: to indicate a particular year of data included
+* **precipitation_2002_2013**: to indicate the particular years of data included
+* **precipitation_2000_to_2010**: to indicate a range of years of data included
+* **precipitation_inch** or **precipitation_mm**: to indicate the measurement units
 
 The variable names should be driven by the overall goals and purpose of the code in which they are being used.
 
@@ -131,21 +133,19 @@ in a numeric format in degrees Fahrenheit to Kelvin.
 
 ```python
 
-def fahr_to_kelvin(fahr):
+def convert_fahrenheit_to_kelvin(temperature_fahr):
     """Convert temperature in Fahrenheit to kelvin.
     
     Parameters:
     -----------
-    fahr: int or float
+    temperature_fahr: int or float
         The temperature in Fahrenheit.
     
     Returns:
     -----------
-    kelvin : int or float
-        The temperature in kelvin.
+    The temperature in kelvin.
     """
-    kelvin = ((fahr - 32) * (5 / 9)) + 273.15
-    return kelvin
+    return ((temperature_fahr - 32) * (5 / 9)) + 273.15
 
 ```
 
