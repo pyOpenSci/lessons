@@ -37,3 +37,11 @@ These lessons help scientists understand best practices and tools used in the Py
 
 Clean Code <clean-modular-code/intro-clean-code>
 :::
+
+:::{toctree}
+:hidden:
+:caption: Lessons
+:maxdepth: 2
+
+Publish Code <publish-share-code/intro>
+:::

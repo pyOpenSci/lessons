@@ -107,7 +107,7 @@ html_theme_options = {
     },
     # Increase this as lessons are added - 
     # set low to hide links to other pyos sites and allow nav between lessons
-    "header_links_before_dropdown": 1,
+    "header_links_before_dropdown": 2,
     "use_edit_page_button": True,
     "show_nav_level": 2,
     "navigation_depth": 3,
