@@ -26,9 +26,9 @@
 :::::
 
 
-## Who this guidebook is for
+## Who are these lessons for
 
-This living guide is updated tools and best practices evolve in the Python packaging ecosystem. We will be adding new content over the next year.
+These lessons help scientists understand best practices and tools used in the Python ecosystem. We will be adding new lessons over the next year.
 
 :::{toctree}
 :hidden:
