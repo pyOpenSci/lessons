@@ -68,7 +68,7 @@ df
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-Notice that by adding docstrings, spacing to the the code.... 
+Notice that by adding docstrings, spacing to the the code, and a few comments.... 
 
 ```{code-cell} ipython3
 ---
@@ -76,13 +76,13 @@ editable: true
 slideshow:
   slide_type: ''
 ---
-# Built-in libraries are imported first
+# Import in order: standard library, third party packages, your packages
 from datetime import datetime
+
 import pandas as pd
 
-# Function to classify precipitation levels
 def classify_precipitation(precip_list):
-    """Classify average monthly precipitation into low, medium, or high.
+    """Classify average monthly precipitation into categories: low, medium, or high.
 
     Parameters
     ----------
@@ -105,7 +105,7 @@ def classify_precipitation(precip_list):
         return 'High'
 
 
-# Sample data for precipitation values (in mm) for different locations
+# Sample data for precipitation (in mm), locations, and date
 data = {
     'location': ['Station1', 'Station2', 'Station3', 'Station4'],
     'year': [2021, 2021, 2021, 2021],
@@ -119,9 +119,10 @@ data = {
 }
 
 df = pd.DataFrame(data)
+# format date and replace value
 df['start_date'] = pd.to_datetime(df['start_date'])
 
-# Classify precipitation levels based on ranges
+# Classify precipitation levels into categories: 'Low', 'Medium', 'High'
 df['precipitation_category'] = df['monthly_precipitation'].apply(classify_precipitation)
 
 df
