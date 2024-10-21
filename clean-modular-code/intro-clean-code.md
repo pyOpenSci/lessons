@@ -91,6 +91,7 @@ import this
 ```python editable=true slideshow={"slide_type": ""}
 # Not Pythonic
 import datetime
+
 foovar = datetime.date.today().strftime("%y-%m-%d")
 foovar
 ```
@@ -98,6 +99,7 @@ foovar
 ```python editable=true slideshow={"slide_type": ""}
 # Pythonic
 import datetime
+
 todays_date = datetime.date.today().strftime("%y-%m-%d")
 todays_date
 ```
@@ -124,6 +126,8 @@ result
 result = [i * 2 for i in range(10)]
 result
 ```
+
+Another example:
 
 ```python
 # More Pythonic
@@ -157,8 +161,8 @@ Note that the function below has an easy-to-understand name and clear docstring.
 <!-- #endregion -->
 
 ```python editable=true slideshow={"slide_type": ""}
-def fahr_to_kelvin(fahr):
-    return ((fahr - 32) * (5 / 9)) + 273.15
+def fahrenheit_to_kelvin(temperature_fahr):
+    return ((temperature_fahr - 32) * (5 / 9)) + 273.15
 ```
 
 ### Pythonic code is well-documented
@@ -170,13 +174,13 @@ Documentation can mean many different things. When you are writing code, a combi
 Pythonic code reflects Python's emphasis on readability and simplicity. A well-known phrase from the **Zen of Python** is: "There should be one—and preferably only one—obvious way to do it," which is a core idea behind writing Pythonic code.
 
 ```python
-def fahr_to_kelvin(fahr):
+def fahrenheit_to_kelvin(temperature_fahr):
     """
     Convert temperature from Fahrenheit to Kelvin.
 
     Parameters
     ----------
-    fahr : float
+    temperature_fahr : float
         Temperature in Fahrenheit.
 
     Returns
@@ -184,7 +188,7 @@ def fahr_to_kelvin(fahr):
     float
         Temperature in Kelvin.
     """
-    return ((fahr - 32) * (5 / 9)) + 273.15
+    return ((temperature_fahr - 32) * (5 / 9)) + 273.15
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
