@@ -132,6 +132,7 @@ Another example:
 ```python
 # More Pythonic
 languages = ["python", "julia", "rust"]
+
 i=0
 for language in(languages):
     i+=1
@@ -140,9 +141,10 @@ for language in(languages):
 
 ```python
 # More Pythonic
-a = ["python", "julia", "rust"]
-for i, language in enumerate(languages):
-    print(f"{i}: {language}")
+languages = ["python", "julia", "rust"]
+
+for index, language in enumerate(languages):
+    print(f"{index}: {language}")
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
