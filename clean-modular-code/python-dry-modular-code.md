@@ -65,7 +65,7 @@ DRY (Don’t Repeat Yourself) is a principle of software development. The focus 
 
 Why?
 
-One main reason is that when you write code that performs the same tasks repeatedly, any modification of one task requires the same change to be made to every single instance of that task! Editing every instance of a task is a lot of work.
+One main reason is that when you write code that performs the same tasks repeatedly, any modification of one task requires the same change to be made to every place that you used that task! Editing every instance of a task is a lot of work.
 
 By implementing DRY code approaches, you can make your code:
 
@@ -76,35 +76,35 @@ By implementing DRY code approaches, you can make your code:
 
 Below you will learn about three commonly used strategies associated with writing clean code:
 
-1. Write functions for a task that is performed over and over.
+1. Write a function when a task is repeated over and over.
 2. Create loops that iterate over repetitive tasks.
-3. Use conditional statements to control if and when code is executed.
+3. Use conditional statements to control the flow of if and when code is executed.
 
 The above three approaches are often used together when writing
 code.
 
 ### Write Functions To Document and Simplify Repeated Tasks
 
-A function is a reusable block of code that performs a specific task. Functions have inputs and outputs. Functions can help you to both eliminate repetition and improve efficiency in your code through modularity. If you have been using Python for any period of time, you have already used built in Python functions. For example,`print()` is a function used to write output to the Python console (or a Jupyter Notebook). If you have used pandas, `pd.read_csv()` is a function used to read a text file into Python in a dataframe format. The `print()` and `read_csv()` functions are useful to you as a Python programmer because you do not need to know the specific lines of code that are required to `print()`. All that you need to know is how to call the print command: `print("My texther")`.
+A function is a reusable block of code that performs a specific task. Functions have inputs and outputs. Functions can help you to both eliminate repetition and improve efficiency in your code through modularity. If you have been using Python for any period of time, you have already used built in Python functions.
+
+For example,`print()` is a function used to write output to the Python console (or a Jupyter Notebook). If you have used pandas, `pd.read_csv()` is a function used to read a text file into Python in a dataframe format. The `print()` and `read_csv()` functions are useful to you as a Python programmer because you do not need to know the specific lines of code that are required to `print()`. All that you need to know is how to call the print command: `print("My text here")`.
 
 Below, you will see the function that you looked at in the previous lesson. This is a custom function with a custom name.
 
 ```python
-def fahr_to_kelvin(fahr) 
+def convert_fahrenheit_to_kelvin(temperature_fahr) 
     """Convert temperature in Fahrenheit to kelvin.
 
     Parameters:
     -----------
-    fahr: int or float
+    temperature_fahr: int or float
         The temperature in Fahrenheit.
     
     Returns:
     -----------
-    kelvin : int or float
-        The temperature in kelvin.
+    The temperature in kelvin.
     """
-    kelvin = ((fahr - 32) * (5 / 9)) + 273.15
-    return kelvin
+    return ((fahr - 32) * (5 / 9)) + 273.15
 ```
 
 This function converts temperature in Fahrenheit to kelvin. You can
@@ -132,17 +132,17 @@ to both understand and use. If you need to change the calculation itself, you ca
 
 ```python
 temp = 55
-new_temp = fahr_to_kelvin(fahr = temp)
+new_temp = convert_fahrenheit_to_kelvin(temp)
 
 temp2 = 46 
-new_temp_k = fahr_to_kelvin(fahr = temp2)
+new_temp_k = convert_fahrenheit_to_kelvin(temp2)
 ```
 
-The task above could be further simplied using loops which will be discussed below. Writing modular code allows you to subdivide tasks of a workflows into organized units of code that can be reused by yourself and others, often without them needing to know the specific details of the code.
+The task above could be further simplified using loops which will be discussed below. Writing modular code allows you to subdivide tasks of a workflows into organized units of code that can be reused by yourself and others, often without them needing to know the specific details of the code.
 
 ### Write Loops in Python To Simplify Iterative Repetitive Tasks
 
-A loop executes a sequence of operations that are performed over and over in a specified order.
+A loop executes a sequence of operations over and over in a specified order.
 
 Loops can help you to eliminate repetition in code by replacing
 duplicate lines of code with an iteration. This means that you can
@@ -160,9 +160,9 @@ print(precip_2002_2013)
 This code could be replaced by a loop that iterates over a list of variable names and executes the `print()` function until it reaches the end of the list:
 
 ```python
-all_vars = [avg_monthly_precip, months, precip_2002_2013]
-for avar in vars:
-    print(all_vars)
+variables = [avg_monthly_precip, months, precip_2002_2013]
+for variable in variables:
+    print(variable)
 ```
 
 You can create lists of variables, filenames, or other objects like data structures upon which you want to execute the same code. These lists can then be used as variables in loops.
@@ -180,12 +180,10 @@ avg_monthly_precip=100
 months=20
 precip_2002_2013=30
 
-all_vars = [avg_monthly_precip, months, precip_2002_2013]
+variables = [avg_monthly_precip, months, precip_2002_2013]
 
-# Only print variable if it is greater than 20
-for avar in all_vars:
-    if avar > 20:
-        print(avar)
+# This list comprehension loops over each variable and prints the value if it is greater than 20
+[print(variable) for variable in variables if variable> 20]
 ```
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
