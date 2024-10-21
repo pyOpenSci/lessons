@@ -87,11 +87,12 @@ A few other notes about object names in **Python**:
 
 ### Best practices for directory and file names
 
-We suggest that you use directory and file names that contain words that describe the contents of the file or directory, separated using dashes `-` or underscores `_` like this:
-
-`lower-case-with-dashes`
+We suggest that you use directory and file names that contain words that describe the contents of the file or directory, separated using underscores `_` like this:
 
 `snake_case_with_underscores`
+
+While you may see dashes `-` sometimes in directory names (`lower-case-with-dashes`) when working with JavaScript, dashes are not valid for Python module names, variables, or functions.
+
 
 Directory and files names should be kept as short and concise as possible, while also clearly indicating what is contained within the directory or file.
 
