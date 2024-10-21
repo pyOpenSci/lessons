@@ -26,9 +26,17 @@ kernelspec:
 
 :::
 
-## Why code style and Python PEP 8 matters 
+## Why code style matters 
 
-Just like good grammar makes text easier to read, [PEP 8](https://peps.python.org/pep-0008/) helps make your code easier to understand. It enforces rules on naming variables, capitalization, formatting code, and structuring your script. Well-formatted code also makes it easier for you to share code, given it will be easier for others to understand.  
+Code standards make your code more readable and easier to maintain, just like writing conventions make text easier to read. Think about how we capitalize the first word of a sentence or add spaces between words—without those conventions, text would be hard to follow. 
+  
+For example:
+
+* Readable sentence: This is a sentence.
+* Unformatted sentence: thisisasentence.withoutspacesitgetsconfusing.
+
+
+Just like good grammar makes text easier to read, following code style rules like [PEP 8](https://peps.python.org/pep-0008/) helps make your code easier to understand and debug. It enforces rules on naming variables, capitalization, formatting code, and structuring your script. Well-formatted code also makes it easier for you to share code, given it will be easier for others to understand.  
 
 ```{code-cell} ipython3
 ---
@@ -119,13 +127,106 @@ df['precipitation_category'] = df['monthly_precipitation'].apply(classify_precip
 df
 ```
 
+
+
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-## How to Apply PEP 8 Code Style Standards
+## Tools for Consistent Code Style
 
-It may seem overwhelming to remember all the PEP 8 rules, but tools called **code linters and formatters** can identify and automatically apply these standards for you.
+It may seem overwhelming to remember hundreds of different rules from style guides like [PEP 8](https://peps.python.org/pep-0008/), [pydocstyle](https://pypi.org/project/pydocstyle/), and others --- the good news is that you don't have to! 
 
-### For `.py` Files
+### Linters & Formatters
+
+Two categories of "[static analysis](https://en.wikipedia.org/wiki/Static_analysis)" tools called **code linters and formatters** can identify and automatically apply these standards for you.
+
+[**Linters**](https://en.wikipedia.org/wiki/Lint_(software)) are tools that analyze your code against a set of rules, show violations of those rules, and sometimes make suggestions for how to fix them. Linters will check not only for stylistic problems, but also logical problems like incorrect syntax, unreachable code, and so on. 
+
+For example, a linter can identify the *errors* in this code, and suggest how to fix it.
+
+```python
+n_legs = {"cat": 4, "snake": 0, "centipede": 100}
+for animal, legs in n_legs:
+    print(f"An {animal} has {legs} legs")
+```
+
+```shell
+lint.py:2:21: PLE1141 [*] Unpacking a dictionary in iteration without calling `.items()`
+  |
+1 | n_legs = {"cat": 4, "snake": 0, "centipede": 100}
+2 | for animal, legs in n_legs:
+  |                     ^^^^^^ PLE1141
+3 |     print(f"An {animal} has {legs} legs")
+  |
+  = help: Add a call to `.items()`
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.
+```
+
+A linter can also check for *stylistic* rules you may want to keep consistent, like the PEP8 style names we'll discuss below
+
+```python
+def My_Function(x: int) -> int:
+    return x * 2
+```
+
+```shell
+naming.py:1:5: N802 Function name `My_Function` should be lowercase
+  |
+1 | def My_Function(x: int) -> int:
+  |     ^^^^^^^^^^^ N802
+2 |     return x * 2
+  |
+
+Found 1 error.
+```
+
+**Formatters** are tools that will reformat and *change* your code according to a style. Formatters should[^bugs_exist] only make changes to your code that don't affect its logical structure or behavior. 
+
+For example we could apply a code formatter to the rather unfortunate function above and have it automatically cleaned up for us:
+
+:::::{tab-set}
+::::{tab-item} Unformatted
+
+```python
+def classify_precipitation(precip_list):
+ avg_precip=pd.Series(
+precip_list
+ ).mean(
+ )
+ if avg_precip<100:
+  return'Low'
+ elif avg_precip>=100 and avg_precip<=150: return'Medium';
+
+
+
+ return'High'
+```
+
+::::
+::::{tab-item} Formatted
+
+```python
+def classify_precipitation(precip_list):
+    avg_precip = pd.Series(precip_list).mean()
+    if avg_precip < 100:
+        return "Low"
+    elif avg_precip >= 100 and avg_precip <= 150:
+        return "Medium"
+
+    return "High"
+```
+
+::::
+:::::
+
+
+There is not always a clear distinction between these categories of tools - formatters will correct some errors detected by linters, and linters will sometimes fix rule violations in the same way that formatters will. The distinction is more a distinction in *purpose* rather than a qualitative distinction *between tools.*
+
+
+### Common Code Style Tools
+
+#### For `.py` Files
 
 Use popular tools like **Black** or **Ruff**:
 
@@ -140,111 +241,31 @@ Ruff doesn’t fully support Jupyter/MyST markdown notebooks yet but can be inte
 :::
 
 
-### For Jupyter Notebooks
+#### For Jupyter Notebooks
 
 For Jupyter Notebooks, try:
 - **Notebook extensions**: Add extensions to your interface to format cells automatically.
 - **nbQA**: A command-line tool that applies Black or Ruff to Jupyter Notebooks via the CLI.
 
-### Running These Tools
+### Using Static Analysis Tools
+
 These tools can be used in the following ways:
-- **Manually**: Run on-demand to check and format your code.
-- **Pre-commit hook**: Enforce code style checks before every commit.
-- **IDE integration**: Automatically format code in your editor.
+- **Manually**: Run on-demand to check and format your code - e.g. running `black .` or `ruff check` in your shell.
+- **Pre-commit hook**: Enforce code style checks before every commit - e.g. by adding a script to the `.git/hooks/pre-commit` file in a git repository, or using a tool like [`pre-commit`](https://pre-commit.com/).
+- **IDE integration**: Automatically format code in your editor. e.g., instructions for [ruff](https://docs.astral.sh/ruff/editors/setup/) and [black](https://black.readthedocs.io/en/stable/integrations/editors.html)
+- **Continuous Integration**: Enforce code style as a part of code review, e.g. with [github actions](https://black.readthedocs.io/en/stable/integrations/github_actions.html).
 
 Using these tools ensures your code remains consistent, readable, and compliant with PEP 8, without memorizing all the rules.
 
-:::{admonition} Linter vs. Code Formatter
-:class: note
-
-- **Linter**: Checks your code and highlights issues but doesn’t automatically fix them.
-- **Code Formatter**: Automatically reformats your code according to style rules.
-
-Ruff acts as both a linter and formatter, making it ideal for `.py` file workflows.
-:::
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 
-## Why use code standards when writing Python code
-
-Code standards make your code more readable and easier to maintain, just like writing conventions make text easier to read. Think about how we capitalize the first word of a sentence or add spaces between words—without those conventions, text would be hard to follow. Similarly, code with inconsistent formatting is difficult to understand and debug.
-  
-For example:
-
-* Readable sentence: This is a sentence.
-* Unformatted sentence: thisisasentence.withoutspacesitgetsconfusing.
-
-Using code standards like PEP 8 helps avoid such confusion, making code clearer and more professional.
-
-### Some PEP 8 rules to remember 
+## Common Python Style Rules: PEP 8 and Beyond
 
 There is a style guide devoted to Python PEP 8 standards that you can read [here](https://www.python.org/dev/peps/pep-0008/#naming-conventions). However, below are a handful of PEP 8 Rules that you can consider following when writing code. 
 
-* Naming Conventions: Use **snake_case** for variables/functions and **CamelCase** for class names.
-
-```python
-# This is a class definition
-class MyClass:
-    """A class to process data and calculate statistics."""
-
-    # This is a method 
-    def calculate_average(self, data_list):
-        """Calculate the average of a list of numbers."""
-        total_sum = sum(data_list)
-        count = len(data_list)
-        return total_sum / count
-
-# Call to create an object of a class
-data_processor = DataProcessor()
-numbers = [10, 20, 30, 40, 50]
-# Examples of variable names and method call
-average_value = data_processor.calculate_average(numbers)
-## Example of function call
-print(f"The average value is: {average_value}")
-```
-
-* Line Length: Limit all lines to 79 characters for better readability.
-
-:::{tip}
-Most text editors allow you to set up guides to see how long your code is. You can then use these guides to create line breaks in your code.
-:::
-
-* Comments: Add a space after the `#` sign and capitalize the first letter of a comment:
-
-`# This is a PEP 8 conforming comment`
-
-* White Space: Add space between sections of code to improve readability.
-* Avoid using single-character letters that could be confused with numbers  (ie the letter `l` looks similar to the number one  `1` 
-* Add a blank line before a single-line comment (unless it is the first line of a cell in Jupyter Notebook or part of a code block)
-
-```python
-a = 1 
-
-# Here is a commment
-b = 2 
-
-```
-
-* **Break up sections of code with white space:** Breaking up your
-code becomes even more important when you start working in Jupyter Notebooks which offer individual cells where you can add Markdown and code.
-
-```python
-# Process some data here 
-data=pd.readcsv("pyos-data.csv")
-
-# Plot data - notice how separating code into sections makes it easier to read
-fig, ax = plot.subplots()
-data.plot(ax=ax)
-plt.show()
-```
-
-## PEP 8 naming conventions
-
-:::{seealso}
-For the entire pep-8 style guide see: <a href="https://peps.python.org/pep-0008/" target="_blank">Python's PEP 8 Style Guide</a>.
-
-:::
+### Naming
 
 :::{admonition} Terminology Review
 :class: tip
@@ -264,17 +285,43 @@ First, let's review some terminology associated with naming conventions.
 
 :::
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
+* Use **snake_case** for variables, functions, and methods
+* Use **CamelCase** for class names.
+* Avoid using single-character letters that could be confused with numbers  (ie the letter `l` looks similar to the number one  `1` 
 
-## Best practices for importing libraries
+```python
+# UpperCamelCase for class definitions
+class MyClass:
+    """A class to process data and calculate statistics."""
 
-### Import Python libraries at the top of your code
+    # lower_snake_case for methods and functions
+    def calculate_average(self, data_list):
+        """Calculate the average of a list of numbers."""
+        total_sum = sum(data_list)
+        count = len(data_list)
+        return total_sum / count
 
-It’s good practice to import all required libraries at the top of your **Python** script or in the first cell of a **Jupyter Notebook**. This helps anyone understand what packages are needed to run your code. It also follows PEP 8 conventions.
+# Call to create an object of a class
+data_processor = DataProcessor()
+numbers = [10, 20, 30, 40, 50]
 
-### Organize your imports into groups
+# Examples of variable names and method call
+average_value = data_processor.calculate_average(numbers)
 
-PEP 8 recommends organizing imports in the following order:
+# Example of function call
+print(f"The average value is: {average_value}")
+```
+
+### Layout & Formatting
+
+* Line Length: Limit all lines to 79 characters for better readability.
+
+:::{tip}
+Most text editors allow you to set up guides to see how long your code is. You can then use these guides to create line breaks in your code.
+:::
+
+* It’s good practice to import all required libraries at the top of your **Python** script or in the first cell of a **Jupyter Notebook**. This helps anyone understand what packages are needed to run your code. 
+* PEP 8 recommends organizing imports in the following order:
 
 1. **Standard Library Imports**: These built-in modules come with Python, such as `os` and `glob`. You can find the full list [here](https://docs.python.org/3/library/index.html).
 2. **Third-Party Imports**: Libraries that you install via `pip`, like `numpy` and `pandas`.
@@ -293,6 +340,36 @@ import matplotlib.pyplot as plt
 from my_module import my_function
 ```
 
-### Why organize imports?
+### Whitespace
 
-Organizing your imports this way ensures your code is readable and follows widely accepted practices. Importing libraries at the top also makes it easier to scan for a specific library, debug dependencies, and see which dependencies are required to run the code.
+* Add two blank lines before top-level function and class definitions
+* Add a single blank line before method definitions within a function
+* Add single blank lines to group blocks of related code within functions and methods.
+* Add a single blank line between code and a single-line comment.
+* Comments: Add a space after the `#` sign and capitalize the first letter of a comment
+
+
+```python
+import numpy as np
+
+
+# two lines above a function definition
+def my_function():
+    # Process data
+    data = pd.readcsv("pyos-data.csv")
+    data["values"] = data["values"] * 2
+
+    # One line to break up code into related chunks
+    # e.g. processing is separate from plotting
+    plt.plot(values)
+
+
+# Two lines before a class definition
+class MyClass:
+    
+    # One line before a method definition
+    def my_method(): ...
+```
+
+
+[^bugs_exist]: If they are not buggy
