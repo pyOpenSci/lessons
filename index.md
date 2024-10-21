@@ -37,3 +37,11 @@ This living guide is updated tools and best practices evolve in the Python packa
 
 Clean Code <clean-modular-code/intro-clean-code>
 :::
+
+:::{toctree}
+:hidden:
+:caption: Lessons
+:maxdepth: 2
+
+Publish Code <publish-share-code/intro>
+:::
