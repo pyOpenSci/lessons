@@ -11,14 +11,14 @@ kernelspec:
   name: python3
 ---
 
-# Share You Code Activities
+# Share Your Code Activities
 
 
 ## Activity 1 - install a package from GitHub
 
 :::{note}
 
-If you are comfortable using Git and GitHub and you already have a Python package that you wish to use, make sure that the package structure and source code are in a GitHub or GitLab repository. 
+If you are comfortable using Git and GitHub and have a Python package in mind, check the package's repo on GitHub or GitLab to ensure that the package structure and source code are correct. 
 
 If you are working on this during a pyOpenSci workshop, you can use the package you created in our workshop!
 
@@ -27,7 +27,7 @@ If not, you can start with the [pyospackage repository](https://github.com/pyOpe
 
 
 1. Fork the [pyospackage repository](https://github.com/pyOpenSci/pyosPackage) on GitHub.
-2. This repository has a GitHub Codespace setup with VsCode. Optional: after you fork the repository, you can use a GitHub codespace to modify the source code and package name (if you wish).
+2. This repository has a GitHub Codespace setup with VS Code. Optional: after you fork the repository, you can use a GitHub codespace to modify the source code and package name (if you wish).
 3. Install the package in that repository from your fork.
 
 +++
@@ -47,7 +47,7 @@ If you completed **Activity 1** above, you should already have a GitHub reposito
 
 2. **Create a Release**  
    - In your GitHub repository, navigate to the **Releases** section. Click on **Draft a new release**.
-   - Assign a version number to the release (e.g., `v1.0.0`) and provide a title and description.
+   - Assign an available version number to the release (e.g., `v1.0.0`) and provide a title and description.
    - Click on **Publish release**. This action will trigger Zenodo to generate a DOI for your code.
 
 3. **Get the DOI Badge and Add It to Your README File**  
