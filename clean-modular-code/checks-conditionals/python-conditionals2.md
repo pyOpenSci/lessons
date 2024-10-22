@@ -21,7 +21,7 @@ jupyter:
 # Conditional Statements With Alternative Conditions
 
 
-* Describe the syntax for conditional statements with alternative conditions or combinations of conditions in **Python**.
+* Describe the syntax for conditional statements with multiple conditions or combinations of conditions in **Python**.
 * Write conditional statements with alternative conditions or combinations of conditions in **Python**.
 
 On the previous page, you learned how to write conditional statements that check for one condition before executing some code:
@@ -37,11 +37,11 @@ You can expand on this syntax to check for an alternative condition with an `eli
 
 ```python
 if condition:
-    some code here
+    # some code here
 elif alternative_condition:
-    some other code here
+    # some other code here
 else:
-    some final code here
+    # some final code here
 ```
 
 If the first condition provided with the `if` statement is not satisfied (i.e. results in value of `False`) , then **Python** will check the condition provided with the `elif` statement.
@@ -63,7 +63,7 @@ else:
 
 Recall that the `print` code in the examples above can be replaced by any code that will execute in **Python**.
 
-As the code provided with the `if`, `elif`, and `else` statements gets longer, it is common to add blank lines to make it easier to see which code will be executed with whitch statement. However, the indentation remains an important part of the syntax of the conditional statement.
+As the code provided with the `if`, `elif`, and `else` statements gets longer, it is common to add blank lines to make it easier to see which code will be executed with which statement. However, the indentation remains an important part of the syntax of the conditional statement.
 
 Check out the examples below to see `elif` in action and see how `print` statements can be replaced with other code.
 
@@ -78,17 +78,17 @@ y = 10
 
 # Execute code based on comparison of x to y
 if x < y:
-    print("x started with value of", x)
+    print(f"x started with value of {x}.")
     x += 5
-    print("It now has a value of", x, "which is equal to y.")
+    print(f"x increased and has a value of {x} which is equal to y.")
 
 elif x > y:
-    print("x started with value of", x)
+    print(f"x started with value of {x}.")
     x -= 5
-    print("It now has a value of", x, "which is equal to y.")
+    print(f"x decreased and has a value of {x} which is equal to y.")
 
 else:
-    print("x started with a value of", x, "which is already equal to y.")
+    print(f"x started with a value of {x} which is already equal to y.")
 ```
 
 In this second example below, `x` is equal to a value greater than `y`, so the first condition is no longer satisfied. However, the second condition is satisfied, which results in a value of 5 being subtracted from `x`.
@@ -99,17 +99,17 @@ x = 15
 
 # Execute code based on comparison of x to y
 if x < y:
-    print("x started with value of", x)
+    print(f"x started with value of {x}.")
     x += 5
-    print("It now has a value of", x, "which is equal to y.")
+    print(f"x increased and has a value of {x} which is equal to y.")
 
 elif x > y:
-    print("x started with value of", x)
+    print(f"x started with value of {x}.")
     x -= 5
-    print("It now has a value of", x, "which is equal to y.")
+    print(f"x decreased and has a value of {x} which is equal to y.")
 
 else:
-    print("x started with a value of", x, "which is already equal to y.")
+    print(f"x started with a value of {x} which is already equal to y.")
 ```
 
 However, if `x` is set to same value as `y`, neither the first nor second conditions are met, and the code provided with `else` is executed.
@@ -120,17 +120,17 @@ x = 10
 
 # Execute code based on comparison of x to y
 if x < y:
-    print("x started with value of", x)
+    print(f"x started with value of {x}.")
     x += 5
-    print("It now has a value of", x, "which is equal to y.")
+    print(f"x increased and has a value of {x} which is equal to y.")
 
 elif x > y:
-    print("x started with value of", x)
+    print(f"x started with value of {x}.")
     x -= 5
-    print("It now has a value of", x, "which is equal to y.")
+    print(f"x decreased and has a value of {x} which is equal to y.")
 
 else:
-    print("x started with a value of", x, "which is already equal to y.")
+    print(f"x started with a value of {x} which is already equal to y.")
 ```
 
 You can also apply the `elif` syntax to structure conditional statements that use other operators or check values for text strings or objects.  
@@ -168,10 +168,10 @@ avg_monthly_precip = [0.70,  0.75, 1.85, 2.93, 3.05, 2.02,
 
 # Add value to list depending on existing last value
 if avg_monthly_precip[-1] == 0.84:   
-    print(avg_monthly_precip[-1]) # Print last value in the list
+    print(avg_monthly_precip[-1])  # Print last value in the list
 
 elif avg_monthly_precip[-1] == 1.39:   
-    avg_monthly_precip += [0.84] # Add Dec value
+    avg_monthly_precip += [0.84]  # Add Dec value
     print(avg_monthly_precip)    
 
 else:     
@@ -200,7 +200,7 @@ This means that if one condition is not satisfied, then the conditional statemen
 if condition1 and condition2:
     print("Conditions 1 and 2 are both true.")
 else:
-    print("One condition (either 1 or 2) is not true.")
+    print("At least one condition (either 1 or 2) is not true.")
 ```
 
 For example, you can check whether two variables are both integers, and if so, then add them together.
@@ -213,7 +213,7 @@ y = 10
 
 # Add x and y if they are both integers
 if type(x) is int and type(y) is int:
-    print(x + y)
+    print(f"The sum of x and y is {x + y}.")
 else:
     print("Either x or y is not an integer.")
 ```
@@ -225,7 +225,7 @@ y = "Some text"
 
 # Add x and y if they are both integers
 if type(x) is int and type(y) is int:
-    print(x + y)
+    print(f"The sum of x and y is {x + y}.")
 else:
     print("Either x or y is not an integer, so they cannot be added.")
 ```
@@ -288,7 +288,7 @@ if x == 0 or y == 0:
     print("Either x or y is equal to 0.")
     x += 1
     y += 1
-    print("x is now", x, "and y is now", y)
+    print(f"Incrementing each by 1: x is now {x} and y is now {y}")
 
 else:
     print("Neither x nor y is equal to 0.")
