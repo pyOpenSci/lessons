@@ -16,6 +16,7 @@ jupyter:
 ---
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
+(about-functions)=
 # Why write functions?
 
 There are several strategies for making your code more modular. Here, you will learn about 

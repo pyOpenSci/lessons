@@ -13,6 +13,7 @@ kernelspec:
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
+(functions-checks)=
 # Write Flexible Functions to Handle Messy Data
 
 When working with messy or unpredictable data, your goal is to write robust code to handle the unexpected. It's important to catch errors early

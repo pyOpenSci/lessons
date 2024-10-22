@@ -8,20 +8,49 @@
 ```
 
 
-:::::{grid} 1
+:::::{grid} 2
 
 ::::{grid-item}
-:::{card} [✿ Clean Code ✿](clean-modular-code/intro-clean-code)
+:::{card} ✿ Clean Code ✿
 :class-card: left-aligned
 
-* [Writing "Pythonic" Code](clean-modular-code/intro-clean-code)
-* [Lint, Format, and Style your Code!](clean-modular-code/python-pep-8)
+* [Intro to clean code](intro-clean-code)
+* [Write "Pythonic", Expressive Code](python-expressive-code)
+* [Lint, Format, & Style your Code](clean-modular-code/python-pep-8)
 * [Don't Repeat Yourself (DRY) Principles](clean-modular-code/python-dry-modular-code)
-* [Conditions](clean-modular-code/checks-conditionals/python-conditionals) and [Exception handling](clean-modular-code/checks-conditionals/python-common-exceptions)
+* [Write Pseudocode](write-pseudocode) 
 
 :::
 ::::
 
+::::{grid-item}
+:::{card} ✿ Code Checks ✿
+:class-card: left-aligned
+
+* [About Functions](about-functions)
+* [Write Python Functions](write-functions)
+* [Add checks to functions](functions-checks)
+* [Multi parameter functions](multi-parameter-functions)
+* [Write Conditionals to redirect code](python-conditionals) 
+* [Common Python exceptions ](common-exceptions)
+
+<!-- 
+TODO: let's merge this with the conditional lesson
+* [Conditionals with alternatives](conditionals-alternatives) 
+-->
+:::
+::::
+
+
+::::{grid-item}
+:::{card} [✿ Share Code ✿](publish-share-code/intro)
+:class-card: left-aligned
+
+* [Share code on GitHub](publish-share-code/share-code-github)
+* [Get DOI with Zenodo](publish-share-code/zenodo)
+
+:::
+::::
 
 :::::
 

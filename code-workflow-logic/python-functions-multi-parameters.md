@@ -2,26 +2,6 @@
 layout: single
 title: 'Write Functions with Multiple Parameters in Python'
 excerpt: "A function is a reusable block of code that performs a specific task. Learn how to write functions that can take multiple as well as optional parameters in Python to eliminate repetition and improve efficiency in your code."
-authors: ['Jenny Palomino', 'Leah Wasser']
-category: [courses]
-class-lesson: ['intro-functions-tb']
-permalink: /courses/intro-to-earth-data-science/write-efficient-python-code/functions-modular-code/write-functions-with-multiple-and-optional-parameters-in-python/
-nav-title: "Write Multi-Parameter Functions in Python"
-dateCreated: 2019-11-12
-modified: '{:%Y-%m-%d}'.format(datetime.now())
-module-type: 'class'
-chapter: 19
-course: "intro-to-earth-data-science-textbook"
-week: 7
-sidebar:
-  nav:
-author_profile: false
-comments: true
-order: 3
-topics:
-  reproducible-science-and-programming: ['python']
-redirect_from:
-  - "/courses/intro-to-earth-data-science/write-efficient-python-code/functions/write-functions-with-multiple-and-optional-parameters-in-python/"
 jupyter:
   jupytext:
     formats: ipynb,md
@@ -37,16 +17,13 @@ jupyter:
 ---
 
 <!-- #region -->
-{% include toc title="On This Page" icon="file-text" %}
+[multi-parameter-functions)=
+# Write mmulti parameter functions 
 
-<div class='notice--success' markdown="1">
-
-## <i class="fa fa-graduation-cap" aria-hidden="true"></i> Learning Objectives
+##Learning Objectives
 
 * Write and execute custom functions with multiple input parameters in **Python**.
 * Write and execute custom functions with optional input parameters in **Python**. 
- 
-</div>
 
 
 ## How to Define a Function with Multiple Parameters in Python
