@@ -15,6 +15,20 @@ jupyter:
     name: python3
 ---
 
+:::{toctree}
+:hidden:
+:maxdepth: 2
+
+About Python Functions <self>
+write-python-functions
+python-function-checks
+python-functions-multi-parameters
+python-conditionals
+python-conditionals2
+python-common-exceptions
+:::
+
+
 <!-- #region editable=true slideshow={"slide_type": ""} -->
 (about-functions)=
 # Why write functions?

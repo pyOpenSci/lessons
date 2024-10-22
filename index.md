@@ -31,7 +31,7 @@
 * [Write Python Functions](write-functions)
 * [Add checks to functions](functions-checks)
 * [Multi parameter functions](multi-parameter-functions)
-* [Write Conditionals to redirect code](python-conditionals) 
+* [Write Conditionals to redirect code](conditionals) 
 * [Common Python exceptions ](common-exceptions)
 
 <!-- 
@@ -61,7 +61,7 @@ These lessons help scientists understand best practices and tools used in the Py
 
 :::{toctree}
 :hidden:
-:caption: Lessons
+:caption: Clean Code
 :maxdepth: 2
 
 Clean Code <clean-modular-code/intro-clean-code>
@@ -69,7 +69,15 @@ Clean Code <clean-modular-code/intro-clean-code>
 
 :::{toctree}
 :hidden:
-:caption: Lessons
+:caption: Code Checks
+:maxdepth: 2
+
+Code Checks <code-workflow-logic/about-python-functions>
+:::
+
+:::{toctree}
+:hidden:
+:caption: Publish Code
 :maxdepth: 2
 
 Publish Code <publish-share-code/intro>

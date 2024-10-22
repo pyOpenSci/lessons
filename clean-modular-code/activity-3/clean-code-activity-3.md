@@ -16,8 +16,8 @@ kernelspec:
 (clean-code-activity-3)=
 # Activity 3: Tests & Checks for your code
 
-* In [activity 1](../activity-1/clean-code-activity-1), you made your code cleaner and more usable using [expressive variable names](python-expressive) and docstrings to document the module. 
-* In [activity 2](../activity-2/clean-code-activity-2), you made your code more DRY ("Don't Repeat Yourself") using [functions](write-functions) and [conditionals](python-conditionals). 
+* In [activity 1](../activity-1/clean-code-activity-1), you made your code cleaner and more usable using [expressive variable names](python-expressive-code) and docstrings to document the module. 
+* In [activity 2](../activity-2/clean-code-activity-2), you made your code more DRY ("Don't Repeat Yourself") using [functions](write-functions) and [conditionals](conditionals). 
 
 In this activity, you will build checks into your workflow using [try/except](try-except) blocks added to functions to handle some "features" found in the JOSS, CrossRef citation data.
 
@@ -39,9 +39,9 @@ Writing robust code that handles unexpected values will make your code run smoot
 
 There are several strategies that you can employ to handle unusual data values. In this activity, you will apply the following strategies to make your code more robust, maintainable & usable:
 
-* **[conditional statements](../checks-conditionals/python-conditionals)** 
+* **[conditional statements](../../code-workflow-logic/python-conditionals)** 
   to check for specific conditions before executing code. This allows you to create different pathways for code to execute based on specific conditions.
-* **[Try/except blocks](../checks-conditionals/python-function-checks)** allow 
+* **[Try/except blocks](../../code-workflow-logic/python-function-checks)** allow 
   you to handle potential errors by attempting an operation and catching any 
   exceptions if they occur, providing useful feedback.Sometimses, you may want the program to end on an error. In other cases, you may want to handle it in a specific way.
 * **[Fail fast with useful error messages](fail-fast)**: Failing fast is a software engineering term that means allowing your 
@@ -445,6 +445,7 @@ def clean_title(title):
 editable: true
 slideshow:
   slide_type: ''
+tags: [raises-exception]
 ---
 # Add checks to the clean_title function to make sure this code runs
 all_titles = []
@@ -491,6 +492,7 @@ print(type(joss_pubs_df["title"][0][0]))
 editable: true
 slideshow:
   slide_type: ''
+tags: [raises-exception]
 ---
 print(f"The value is {joss_pubs_df['title'][0]}")
 get_title(joss_pubs_df["title"][0])
@@ -501,6 +503,7 @@ get_title(joss_pubs_df["title"][0])
 editable: true
 slideshow:
   slide_type: ''
+tags: [raises-exception]
 ---
 clean_title(joss_pubs_df["title"][1])
 ```
@@ -529,6 +532,7 @@ workflow below so it runs. To do this you can use the results of the functions t
 editable: true
 slideshow:
   slide_type: ''
+tags: [raises-exception]
 ---
 # Full code snippet
 import json

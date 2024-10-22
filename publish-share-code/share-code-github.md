@@ -26,7 +26,7 @@ Hosting code on GitHub helps you manage your projects, track changes, and keep y
 
 ## Cite your code  
 
-Even if you haven't published your code in an academic Journal, you can create a DOI that allows you to cite it using [Zenodo](zendo). While you can upload code and other types of documents to Zenodo at any time, if you are using GitHub, you can create a direct connection, which will not only provide a DOI for the GitHub repository but also allow you to create new sub-DOIs for every new version of your code that you make. 
+Even if you haven't published your code in an academic Journal, you can create a DOI that allows you to cite it using [Zenodo](zenodo). While you can upload code and other types of documents to Zenodo at any time, if you are using GitHub, you can create a direct connection, which will not only provide a DOI for the GitHub repository but also allow you to create new sub-DOIs for every new version of your code that you make. 
 
 
 <!-- 
