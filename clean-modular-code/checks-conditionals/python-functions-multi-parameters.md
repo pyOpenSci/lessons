@@ -51,7 +51,7 @@ jupyter:
 
 ## How to Define a Function with Multiple Parameters in Python
 
-Previously in this textbook, you learned that an input parameter is the required information that you pass to the function for it to run successfully. The function will take the value or object provided as the input parameter and use it to perform some task.
+Previously in this lesson, you learned that an input parameter is the required information that you pass to the function for it to run successfully. The function will take the value or object provided as the input parameter and use it to perform some task.
 
 You also learned that in **Python**, the required parameter can be defined using a placeholder variable, such as `data`, which represents the value or object that will be acted upon in the function. 
 
@@ -84,13 +84,13 @@ def multiply_values
 Next, provide two placeholder variable names for the input parameters, as shown below. 
 
 ```python
-def multiply_values(x,y):
+def multiply_values(x, y):
 ```
 
 Add the code to multiply the values and the `return` statement to returns the product of the two values: 
 
 ```python
-def multiply_values(x,y):
+def multiply_values(x, y):
     z = x * y
     return z
 ```
@@ -98,7 +98,7 @@ def multiply_values(x,y):
 Last, write a docstring to provide the details about this function, including a brief description of the function (i.e. how it works, purpose) as well as identify the input parameters (i.e. type, description) and the returned output (i.e. type, description).
 <!-- #endregion -->
 ```python
-def multiply_values(x,y):
+def multiply_values(x, y):
     """Calculate product of two inputs. 
     
     Parameters
@@ -108,10 +108,9 @@ def multiply_values(x,y):
 
     Returns
     ------
-    z : int or float
+    int or float
     """
-    z = x * y
-    return z
+    return x * y
 ```
 
 ## Call Custom Functions with Multiple Parameters in Python
@@ -120,7 +119,7 @@ Now that you have defined the function `multiple_values()`, you can call it by p
 
 ```python
 # Call function with numeric values
-multiply_values(x = 0.7, y = 25.4)
+multiply_values(0.7, 25.4)
 ```
 
 Recall that you can also provide pre-defined variables as inputs, for example, a value for precipitation and another value for a unit conversion value.  
@@ -135,9 +134,7 @@ to_mm = 25.4
 
 ```python
 # Call function with pre-defined variables
-precip_jan_mm = multiply_values(
-    x = precip_jan_in, 
-    y = to_mm)
+precip_jan_mm = multiply_values(precip_jan_in, to_mm)
 
 precip_jan_mm
 ```
@@ -162,11 +159,10 @@ def mm_to_in(mm):
 
     Returns
     ------
-    inches : int or float
+   int or float
         Numeric value with units in inches.
     """
-    inches = mm / 25.4    
-    return inches
+    return mm / 25.4
 ```
 
 You can expand this function to include running a mean along a specified axis for columns or rows, and then use this function over and over on many **numpy** arrays as needed.  
@@ -229,13 +225,11 @@ def mean_mm_to_in_arr(arr_mm, axis_value):
 
     Returns
     ------
-    mean_arr_in : numpy array
+    numpy array
         Mean values of input array in inches.
     """    
     mean_arr_mm = np.mean(arr_mm, axis = axis_value)
-    mean_arr_in = mean_arr_mm / 25.4 
-        
-    return mean_arr_in
+    return mean_arr_mm / 25.4
 ```
 
 Now that you have defined `mean_mm_to_in_arr()`, you can call the function with the appropriate input parameters.
@@ -340,10 +334,8 @@ def mean_mm_to_in_arr(arr_mm, axis_value=None):
         mean_arr_mm = np.mean(arr_mm)        
     else:
         mean_arr_mm = np.mean(arr_mm, axis = axis_value)
-    
-    mean_arr_in = mean_arr_mm / 25.4 
         
-    return mean_arr_in
+    return mean_arr_mm / 25.4
 ```
 
 Last, include a docstring to provide the details about this revised function. Notice that the axis value has been labeled optional in the docstring. 
@@ -366,7 +358,7 @@ def mean_mm_to_in_arr(arr_mm, axis_value=None):
 
     Returns
     ------
-    mean_arr_in : numpy array
+    numpy array
         Mean values of input array in inches.
     """   
     if axis_value is None:
@@ -374,9 +366,7 @@ def mean_mm_to_in_arr(arr_mm, axis_value=None):
     else:
         mean_arr_mm = np.mean(arr_mm, axis = axis_value)
     
-    mean_arr_in = mean_arr_mm / 25.4 
-        
-    return mean_arr_in
+    return mean_arr_mm / 25.4 
 ```
 
 Notice that the function will return the same output as before for the two-dimensional array `precip_2002_2013_mm`.
@@ -399,13 +389,13 @@ monthly_mean_in
 ```
 
 <!-- #region -->
-## Combine Download and Import of Data Files into One Function
+## Combine Download and Read Input of Data Files into One Function
 
-You can also write multi-parameter functions to combine other tasks into one function, such as downloading and importing data files into a **pandas** dataframe.
+You can also write multi-parameter functions to combine other tasks into one function, such as downloading and reading data files into a **pandas** dataframe.
 
 Think about the code that you need to include in the function:
 1. download data file from URL: `et.data.get_data(url=file_url)`
-2. import data file into **pandas** dataframe: `pd.read_csv(path)`
+2. read data file into **pandas** dataframe: `pd.read_csv(path)`
 
 From this code, you can see that you will need two input parameters for the combined function:
 1. the URL to the data file
@@ -414,13 +404,13 @@ From this code, you can see that you will need two input parameters for the comb
 Begin by specifying a function name and the placeholder variable names for the necessary input parameters. 
 
 ```python
-def download_import_df(file_url, path):  
+def download_input_df(file_url, path):  
 ```
 
 Next, add the code for download and the import. 
 
 ```python
-def download_import_df(file_url, path):  
+def download_input_df(file_url, path):  
     et.data.get_data(url=file_url)  
     df = pd.read_csv(path)
 ```
@@ -432,7 +422,7 @@ Since you know that the `get_data()` function creates the `earth-analytics` dire
 As such, you can include setting the working directory in the function, so that you do not have to worry about providing absolute paths to the function:
 
 ```python
-def download_import_df(file_url, path):    
+def download_input_df(file_url, path):    
     
     et.data.get_data(url=file_url)      
     os.chdir(os.path.join(et.io.HOME, "earth-analytics"))    
@@ -445,7 +435,7 @@ Last, include a docstring to provide the details about this function, including 
 <!-- #endregion -->
 
 ```python
-def download_import_df(file_url, path):   
+def download_imnput_df(file_url, path):   
     """Download file from specified URL and import file
     into a pandas dataframe from a specified path. 
     
@@ -497,7 +487,7 @@ Using these variables, you can now call the function to download and import the 
 
 ```python
 # Create dataframe using download/import function
-precip_2002_2013_df = download_import_df(
+precip_2002_2013_df = download_input_df(
     file_url = precip_2002_2013_df_url, 
     path = precip_2002_2013_df_path)
 
@@ -507,7 +497,7 @@ precip_2002_2013_df
 <!-- #region -->
 ###  Making Functions More Efficient Does Not Always Mean More Parameters
 
-Note that you previously defined `download_import_df()` to take in two parameters, one for the URL and for the path, and the function works well to accomplish the task.
+Note that you previously defined `download_input_df()` to take in two parameters, one for the URL and for the path, and the function works well to accomplish the task.
 
 However, with a little investigation into the `et.data.get_data()` function, you can see that the output of that function is actually a path to the downloaded file!
 
@@ -523,14 +513,14 @@ path_data : str
     The path to the downloaded data.
 ```
 
-This means that you can redefine `download_import_df()` to be more efficient by simply using the output of the `et.data.get_data()` function as the input to the `pd.read_csv()` function. 
+This means that you can redefine `download_input_df()` to be more efficient by simply using the output of the `et.data.get_data()` function as the input to the `pd.read_csv()` function. 
 
 Now, you actually only need one parameter for the URL and you do not have to define the working directory in the function, in order to find the appropriate file.
 <!-- #endregion -->
 
 ```python
-def download_import_df(file_url):   
-    """Download file from specified URL and import file
+def download_input_df(file_url):   
+    """Download file from specified URL and input file
     into a pandas dataframe. 
     
     The path to the downloaded file is automatically 
@@ -559,8 +549,7 @@ Now you can call the function with just a single parameter for the URL.
 
 ```python
 # Create dataframe using download/import function
-precip_2002_2013_df = download_import_df(
-    file_url = precip_2002_2013_df_url)
+precip_2002_2013_df = download_input_df(file_url = precip_2002_2013_df_url)
 
 precip_2002_2013_df
 ```
@@ -599,7 +588,7 @@ You also have a function that combines the data download and import for a **pand
 
 How might you need to change this function to create an equivalent for **numpy** arrays?
 
-Think about which code lines in the existing function `download_import_df()` can be modified to write a new function that downloads and imports data into a **numpy** array.
+Think about which code lines in the existing function `download_input_df()` can be modified to write a new function that downloads and imports data into a **numpy** array.
 
 To begin, you may want to write one function for a 1-dimensional array and another function for a 2-dimensional array.
 
