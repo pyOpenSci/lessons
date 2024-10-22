@@ -23,9 +23,9 @@ When your code is hosted on a shared platform, others can easily download, insta
 There are several ways to share code. 
 1. You can post your code to an online repository like GitHub or GitLab.
 2. You can publish your code in a journal such as the Journal of Open Source Software
-3. You can publish your code to a repository such as [PyPI](pypi) and/or [conda-forge](conda-forge).
+3. You can publish your code to a repository of open source packages such as [PyPI](pypi) and/or [conda-forge](conda-forge).
 
-In this lesson, you will learn about using the version control platforms GitHub to share your code. GitHub supports version control and provides collaborative features that help you manage contributions, track changes, and engage with the community.
+In this lesson, you will learn about using the version control platform, GitHub, to share your code. GitHub supports version control and provides collaborative features that help you manage contributions, track changes, and engage with the community.
 
 ## Share your code using GitHub and GitLab
 
@@ -33,7 +33,7 @@ In this lesson, you will learn about using the version control platforms GitHub 
 
 - **Make your code open:** By hosting your project on these platforms, you can make it publicly accessible for others to view and contribute.
 - **Enable collaboration:** GitHub and GitLab have tools that enable others to review your code, suggest changes, and open issues related to bugs or new features.
-- **Track and manage changes:** Version control systems like Git allow you to track every change made to your code, making it easy to revert mistakes, compare different versions, and keep your work organized.
+- **Track and manage changes:** Version control tools, like Git, allow you to track every change made to your code, making it easy to revert mistakes, compare different versions, and keep your work organized.
 
 ### Benefits of version control
 
@@ -43,18 +43,18 @@ Version control systems (like Git) are fundamental to collaborative coding. Thes
 - **Collaborate effectively:** Multiple contributors can work on the same project without conflicts, thanks to the ability to merge changes from different branches.
 - **Identify and fix bugs quickly:** If something goes wrong, you can use the history to identify the change that introduced a bug and revert it if necessary.
 
-Using platforms like GitHub and GitLab helps you manage your code and provides a welcoming environment for contributors to get involved and contribute back to your project.
+Using hosting platforms like GitHub and GitLab helps you manage your code and provides a welcoming environment for contributors to get involved and contribute back to your project.
 
 ## Install software directly from GitHub
 
 Once you have turned your code into a Python package and shared it on GitHub, multiple ways exist to make it directly installable. One simple approach is to install your package directly from GitHub using `pip`.
 
-:::{admonition} pip install doesn't have to mean PyPI! 
+:::{admonition} `pip install` doesn't have to mean PyPI! 
 :class: tip
 
-Many people associated `pip` with PyPI. Pip is a package manager that operates independently from PyPI. However, if you run `pip install package name,` `pip` defaults to looking for a package on PyPI. 
+Many people associated `pip` with PyPI. `pip` is a package management tool that operates independently from PyPI. However, if you run `pip install package name,` `pip` defaults to looking for a package on PyPI. 
 
-It's important to remember that a pip installable package does not necessarily live on PyPI. You can install packages using pip locally, from GitHub, and from PyPI. 
+It's important to remember that a `pip`-installable package does not necessarily need to live on PyPI. You can install packages using pip from many sources, including locally, from GitHub, and from PyPI. 
 :::
 
 ### Steps to Install Code from GitHub
@@ -97,20 +97,20 @@ Above, you learned how to share your code on GitHub and then install it directly
 
 Another option is to publish your package to PyPI--the Python packaging index. 
 
-add a few sentences here on what PyPI is. 
+TODO add a few sentences here on what PyPI is. 
 IT's free to publish, but you'l need to first check that the name that you want to use is available. 
 
-Add link to pyopensci publish pypi tutorial
+TODO Add link to pyopensci publish pypi tutorial
 
 ## Install software from conda-forge
 
-What is conda forge - link to packaging guide?
-How to publish to conda forge - link to pyos tutorial on this
+TODO What is conda forge - link to packaging guide?
+TODO How to publish to conda forge - link to pyos tutorial on this
 
 
 ## Cite your code  
 
-Even if you haven't published your code in an academic Journal, you can create a DOI that allows you to cite it using [Zenodo](zendo). While you can upload code and other types of documents to Zenodo at any time, if you are using GitHub, you can create a direct connection to Zenodo, which will not only provide a DOI for the GitHub repository but also allow you to create new sub-DOIs for every new version of your code that you make.
+Even if you haven't published your code in an academic Journal, you can create a DOI that allows you to cite it using [Zenodo](zenodo). While you can upload code and other types of documents to Zenodo at any time, if you are using GitHub, you can create a direct connection to Zenodo, which will not only provide a DOI for the GitHub repository but also allow you to create new sub-DOIs for every new version of your code that you make.
 
 
 :::{figure} ../images/zenodo-github-connect.svg

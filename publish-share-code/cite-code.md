@@ -16,13 +16,13 @@ kernelspec:
 (cite-code)=
 # Cite your code
 
-[Share your code on an online platform like GitHub or GitLab](share-code) using an [open license](open-license) is a great way to share your code. However, it's also important to consider making your code citable. To understand citations, it's important to understand what a DOI is.
+[Share your code on an online platform like GitHub or GitLab](share-code) using an [open license](open-license) is a great way to share your code. It's also important to consider making your code citable. To understand citations, it's important to understand what a DOI is.
 
 ## What is a DOI?
 
-A DOI, or Digital Object Identifier, is a unique, permanent identifier assigned to digital content such as academic papers, datasets, software, and other research outputs. It acts like a stable web link that always directs users to the specific content it refers to, even if the location of the content changes over time. DOIs are commonly used in academic publishing to ensure that citations remain valid and that the referenced materials are easily accessible. By using a DOI, creators can make their work more discoverable and citable, enabling others to locate and reference the material reliably in future research.
+A **DOI**, or **Digital Object Identifier**, is a unique, permanent identifier assigned to digital content such as academic papers, datasets, software, and other research outputs. It acts like a stable web link that always directs users to the reference content, even if the location of the content changes. DOIs are commonly used in academic publishing to ensure that citations remain valid and materials are easily accessible. By using a DOI, creators can make their work more discoverable and citable, enabling others to locate and reference the material reliably now or in future research.
 
-## ADD section on citation.cff files
+## TODO Add a section on citation.cff files
 
 
 ## CrossRef vs. Zenodo DOIs - What's the difference?
@@ -31,11 +31,11 @@ In research, making your work citable and easy to find is essential. That’s wh
 
 * **CrossRef DOI**: A CrossRef DOI is typically used for formal, peer-reviewed publications like journal articles, books, or conference papers. CrossRef DOIs help ensure that these published works are easy to cite and locate in academic literature. CrossRef DOI's can also be easily connected to your ORCID.
 
-The Journal of Open Source Software (JOSS), [a pyOpenSci partner](https://www.pyopensci.org/partners.html), offers CrossRef DOI's for scientific software with research applications.
+The Journal of Open Source Software (JOSS), [a pyOpenSci partner](https://www.pyopensci.org/partners.html), offers CrossRef DOIs for scientific software with research applications.
 
 * **Zenodo DOI**: Zenodo allows you to create DOIs for a wider range of digital content, including datasets, software (like your GitHub repositories), preprints, and event presentations. Zenodo is perfect for making your code or data citable, even if it’s not part of a formal publication.
 
-Both types of DOIs ensure your work is easily found and cited, but CrossRef is more focused on formal publications. At the same time, Zenodo is more flexible, covering a broader range of research outputs.
+Both types of DOIs ensure your work is easily found and cited. CrossRef is more focused on formal publications. While Zenodo offers more flexibility by covering a broader range of research outputs.
 
 By using the right DOI for your work, you help others find and cite it easily, no matter where or how it’s shared!
 
