@@ -7,7 +7,6 @@
 [![View Contributors](images/contributing/contributors-badge.svg)](https://github.com/pyOpenSci/lessons#contributors-)
 ```
 
-
 :::::{grid} 2
 
 ::::{grid-item}
@@ -18,7 +17,7 @@
 * [Write "Pythonic", Expressive Code](python-expressive-code)
 * [Lint, Format, & Style your Code](clean-modular-code/python-pep-8)
 * [Don't Repeat Yourself (DRY) Principles](clean-modular-code/python-dry-modular-code)
-* [Write Pseudocode](write-pseudocode) 
+* [Write Pseudocode](write-pseudocode)
 
 :::
 ::::
@@ -31,8 +30,8 @@
 * [Write Python Functions](write-functions)
 * [Add checks to functions](functions-checks)
 * [Multi parameter functions](multi-parameter-functions)
-* [Write Conditionals to redirect code](conditionals) 
-* [Common Python exceptions ](common-exceptions)
+* [Write Conditionals to redirect code](conditionals)
+* [Common Python exceptions](common-exceptions)
 
 <!-- 
 TODO: let's merge this with the conditional lesson
@@ -41,19 +40,17 @@ TODO: let's merge this with the conditional lesson
 :::
 ::::
 
-
 ::::{grid-item}
 :::{card} [✿ Share Code ✿](publish-share-code/intro)
 :class-card: left-aligned
 
-* [Share code on GitHub](publish-share-code/share-code-github)
-* [Get DOI with Zenodo](publish-share-code/zenodo)
+* [Share code on GitHub](share-code)
+* [Get DOI with Zenodo](cite-code)
 
 :::
 ::::
 
 :::::
-
 
 ## Who are these lessons for
 
@@ -69,16 +66,16 @@ Clean Code <clean-modular-code/intro-clean-code>
 
 :::{toctree}
 :hidden:
-:caption: Code Checks
+:caption: Optimize Code
 :maxdepth: 2
 
-Code Checks <code-workflow-logic/about-python-functions>
+Optimize Code <code-workflow-logic/about-functions>
 :::
 
 :::{toctree}
 :hidden:
-:caption: Publish Code
+:caption: Share Code
 :maxdepth: 2
 
-Publish Code <publish-share-code/intro>
+Code Checks <publish-share-code/intro>
 :::
