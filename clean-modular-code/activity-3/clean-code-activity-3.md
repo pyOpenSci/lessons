@@ -17,7 +17,7 @@ kernelspec:
 # Activity 3: Tests & Checks for your code
 
 * In [activity 1](../activity-1/clean-code-activity-1), you made your code cleaner and more usable using [expressive variable names](python-expressive) and docstrings to document the module. 
-* In [activity 2](../activity-2/clean-code-activity-2), you made your code more DRY ("Don't Repeat Yourself") using documented [functions](write-functions) and [conditionals](python-conditionals). 
+* In [activity 2](../activity-2/clean-code-activity-2), you made your code more DRY ("Don't Repeat Yourself") using [functions](write-functions) and [conditionals](python-conditionals). 
 
 In this activity, you will build checks into your workflow using [try/except](try-except) blocks added to functions to handle some "features" found in the JOSS, CrossRef citation data.
 
@@ -162,7 +162,7 @@ all_papers_df = pd.concat(all_papers_list, axis=0, ignore_index=True)
 
 The code below creates a `pd.DataFrame` with the first 15 publications in the JOSS sample `data.json` file. This is the first of 3 files you must process in your workflow.
 
-Your first task is to process and format the `published_date `column in the data to make it a `pandas.datetime` object. Having a date in a `datetime` format will allow you to do time-related analysis on your data, such as counting publications by month and year! The expected CrossRef published date should is below:
+Your first task is to process and format the `published_date` column in the data to make it a `pandas.datetime` object. Having a date in a `datetime` format will allow you to do time-related analysis on your data, such as counting publications by month and year! The expected CrossRef published date should be:
 
 ```json
 "published": {
@@ -197,14 +197,17 @@ In small groups, do the following:
 
 ###  Format dates with `pandas.datetime`
 
+Let's work on formatting dates so there is a consistent format in our dataframe. Python has a [string formatting language](https://docs.python.org/3/library/string.html#formatspec) that defines useful characters for formatting.
+
+
 What Does `02d` Mean?
 
-* d: This part of the format code means you’re expecting an integer. It tells Python to format the value as a decimal (whole number).
-* 02: The 02 means the number should be padded with leading zeros if necessary, so the total width is 2 digits. For example:
+* `d`: This part of the format code means you’re expecting an integer. It tells Python to format the value as a decimal (whole number).
+* `02`: The `02` means the number should be padded with leading zeros if necessary, so the total width is 2 digits. For example:
 
-* 1 becomes 01
-* 5 becomes 05
-* 12 stays as 12 (no padding needed)
+* `1` becomes `01`
+* `5` becomes `05`
+* `12` stays as `12` (no padding needed)
 
 This is especially useful for formatting months or days, which often require a `MM-DD` format (e.g., 01-05 for January 5th).
 
@@ -399,7 +402,7 @@ found in the example CrossRef data. Below is a `clean_title` function
 and a small workflow that parses through all titles in the sample data. 
 
 However, the function isn't working as expected. Add checks to 
-the clean_title function to ensure it correctly extracts the title of each 
+the `clean_title` function to ensure it correctly extracts the title of each 
 package in each publication. 
 
 :::
