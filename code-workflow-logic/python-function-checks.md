@@ -17,7 +17,7 @@ kernelspec:
 # Write Flexible Functions to Handle Messy Data
 
 When working with messy or unpredictable data, your goal is to write robust code to handle the unexpected. It's important to catch errors early
-and handle them gracefully. [Using functions](python-functions)  is a great first step in creating
+and handle them gracefully. [Using functions](about-functions)  is a great first step in creating
 a maintainable and resilient data processing workflow. Functions provide modular
 units that can be tested independently, making handling edge cases 
 and unexpected scenarios easier.
@@ -48,10 +48,13 @@ print(clean_title(["hi, i'm a title"]))
 print(clean_title("hi, i'm a title"))
 ```
 
-The function below uses [conditional statements](python-conditionals) to check the input provided by the user. It uses a "look before you leap" approach to check to see if the input is provided in a list format.
+The function below uses [conditional statements](conditionals) to check the input provided by the user. It uses a "look before you leap" approach to check to see if the input is provided in a list format.
 If it isn't, it returns the title in its provided format. 
 
 ```{code-cell} ipython3
+---
+tags: [raises-exception]
+---
 def clean_title(title):
     """This function checks explicitly to see if it is provided with a value that is a list. It then 
     makes a decision about how to process the function input based on 
@@ -212,7 +215,7 @@ file_data = read_file("nonexistent_file.txt")
 
 You could anticipate a user providing a bad file path. This might be especailly possible if you plan to share your code with others and run it on different computers and different operating systems.
 
-In the example below, you use a [conditional statement](python-conditionals) to check if the file exists; if it doesn't, it returns None. In this case, the code will fail quietly, and the user will not understand that there is an error.
+In the example below, you use a [conditional statement](conditionals) to check if the file exists; if it doesn't, it returns None. In this case, the code will fail quietly, and the user will not understand that there is an error.
 
 This is also dangerous territory for a user who may not understand why the code runs but doesn't work.
 
@@ -275,6 +278,9 @@ If you wanted to provide less information to the user, you could use `from None`
 only return the exception information related to the error that you handle within the try/except block.
 
 ```{code-cell} ipython3
+---
+tags: [raises-exception]
+---
 def read_file(file_path):
     try:
         with open(file_path, 'r') as file:

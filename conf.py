@@ -107,7 +107,7 @@ html_theme_options = {
     },
     # Increase this as lessons are added - 
     # set low to hide links to other pyos sites and allow nav between lessons
-    "header_links_before_dropdown": 2,
+    "header_links_before_dropdown": 3,
     "use_edit_page_button": True,
     "show_nav_level": 2,
     "navigation_depth": 3,
@@ -144,6 +144,7 @@ exclude_patterns = [
     "**/data/**",
     "_law_tests",
     "**/*.ipynb",  # we use myst notebooks for publishing
+    "venv",
 ]
 
 # For sitemap generation

@@ -33,19 +33,9 @@ Intro <self>
 Python Code Style <python-pep-8>
 Don't Repeat Yourself <python-dry-modular-code>
 Expressive Code <python-expressive-code>
+Write Pseudocode <write-pseudocode>
 :::
 
-:::{toctree}
-:hidden:
-:caption: Functions, Conditionals & Checks
-:maxdepth: 2
-
-Conditional statements <checks-conditionals/python-conditionals>
-Functions <checks-conditionals/about-python-functions>
-Functions <checks-conditionals/write-python-functions>
-Function checks <checks-conditionals/python-function-checks>
-Function Tests & Checks <checks-conditionals/python-common-exceptions>
-:::
 
 
 :::{toctree}

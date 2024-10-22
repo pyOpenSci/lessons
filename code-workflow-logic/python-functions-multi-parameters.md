@@ -17,8 +17,8 @@ jupyter:
 ---
 
 <!-- #region -->
-[multi-parameter-functions)=
-# Write mmulti parameter functions 
+(multi-parameter-functions)=
+# Write Multi-Parameter Functions 
 
 ##Learning Objectives
 

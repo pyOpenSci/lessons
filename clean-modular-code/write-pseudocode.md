@@ -147,7 +147,7 @@ if paper_1["citations"]:
     print({
         "title": paper_1["title"][0],
         "pub_date": pub_date_1, 
-        "citations": citations_1
+        "citations": avg_citations_1
     })
 
 # Paper 2
@@ -158,7 +158,7 @@ if paper_2["citations"]:
     print({
         "title": paper_2["title"][0],
         "pub_date": pub_date_2,       
-        "citations": citations_2
+        "citations": avg_citations_2
     })
 
 # Paper 3
@@ -169,7 +169,7 @@ if paper_3["citations"]:
     print({
         "title": paper_3["title"][0],
         "pub_date": pub_date_3,  
-        "citations": citations_3
+        "citations": avg_citations_3
     })
 ```
 

@@ -1,8 +1,9 @@
 ---
 layout: single
 title: 'Write Python Functions: Modular Code'
-excerpt: "A function is a reusable block of code that performs a specific task. Learn how to write functions in Python to eliminate repetition and improve efficiency in your code."
-last_modified: '{:%Y-%m-%d}'.format(datetime.now())
+excerpt: |
+    A function is a reusable block of code that performs a specific task. Learn how to write functions in Python to eliminate repetition and improve efficiency in your code.
+last_modified: '{:%Y-%m-%d}'
 jupyter:
   jupytext:
     formats: ipynb,md
@@ -18,7 +19,7 @@ jupyter:
 ---
 
 (write-functions)=
-## How to write a Python function  
+# How to write a Python function  
 
 :::{tip}
 ## What you will learn 
@@ -28,13 +29,13 @@ jupyter:
 
 To define a function in Python, you need:
 - The `def` keyword to start the function definition.
-- A function name that follows [PEP 8 guidelines](../python-expressive-code.md) for naming.
+- A function name that follows [PEP 8 guidelines](../clean-modular-code/python-expressive-code.md) for naming.
 - Input parameters (optional), defined inside parentheses `()`.
 - A `return` statement that specifies the output of the function.
 - A docstring that explains what the function does and defines the function's inputs and outputs. We suggest that you use numpy style docstrings for scientific Python code.
 - 
 
-### An example Python function
+## An example Python function
 
 An example Python function with two input variables is below:
 
