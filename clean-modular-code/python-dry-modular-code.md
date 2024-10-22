@@ -104,7 +104,7 @@ def convert_fahrenheit_to_kelvin(temperature_fahr)
     -----------
     The temperature in kelvin.
     """
-    return ((fahr - 32) * (5 / 9)) + 273.15
+    return ((temperature_fahr - 32) * (5 / 9)) + 273.15
 ```
 
 This function converts temperature in Fahrenheit to kelvin. You can
