@@ -51,6 +51,7 @@ def add_numbers(a, b):
 
     return a + b
 
+# Try out the function
 add_numbers(1,2)
 ```
 
@@ -130,8 +131,9 @@ There are many docstring formats, but we suggest that you use [numpy style](http
 
 ```python
 def function_name(data):
-    """Docstrings should include a description of the function here 
-    as well as identify the parameters (inputs) that the function 
+    """Docstrings describe the function's behavior.
+   
+    Docstrings identify the parameters (inputs) that the function 
     can take and the return (output) provided by the function,
     as shown below. 
     
@@ -145,7 +147,7 @@ def function_name(data):
     output : type
         Description of output.
     """
-    some code here
+    # Add some code here
     
     return output
 ```
@@ -160,8 +162,8 @@ You can learn more about different types of docstrings in our [Python packaging 
 <!-- #endregion -->
 
 ```python
-# Convert input from mm to inches
-def mm_to_in(mm):    
+def mm_to_in(mm):
+    """Convert input from mm to inches"""   
     inches = mm / 25.4    
     return inches
 ```
@@ -198,7 +200,7 @@ print(square_of_5)
 ```
 
 ```python editable=true slideshow={"slide_type": ""} tags=["Raise Exception"]
-# The following line will raise an error because 'result' is local to the function
+# The following line will raise an error because 'result' is in the local scope of the function
 print(result)  # NameError: name 'result' is not defined
 ```
 
@@ -226,7 +228,7 @@ help(add_numbers)
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-Notice that when you call `help()` on custom functions, you will see the docstring that was created in the function definition.  
+Notice that when you call `help()` on custom functions, you will see the docstring that was provided in the function definition.  
 
 The `help()` results for `np.mean` are simply longer because the docstring contains more information, such as sections for Notes and Examples. 
 
