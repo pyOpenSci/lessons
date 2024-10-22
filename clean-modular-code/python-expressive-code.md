@@ -134,7 +134,7 @@ in a numeric format in degrees Fahrenheit to Kelvin.
 
 ```python
 
-def convert_fahrenheit_to_kelvin(temperature_fahr):
+def convert_to_kelvin(temperature_fahr):
     """Convert temperature in Fahrenheit to kelvin.
     
     Parameters:

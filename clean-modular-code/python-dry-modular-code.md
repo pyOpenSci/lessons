@@ -92,7 +92,7 @@ For example,`print()` is a function used to write output to the Python console (
 Below, you will see the function that you looked at in the previous lesson. This is a custom function with a custom name.
 
 ```python
-def convert_fahrenheit_to_kelvin(temperature_fahr) 
+def convert_to_kelvin(temperature_fahr) 
     """Convert temperature in Fahrenheit to kelvin.
 
     Parameters:
@@ -132,10 +132,10 @@ to both understand and use. If you need to change the calculation itself, you ca
 
 ```python
 temp = 55
-new_temp = convert_fahrenheit_to_kelvin(temp)
+new_temp = convert_to_kelvin(temp)
 
 temp2 = 46 
-new_temp_k = convert_fahrenheit_to_kelvin(temp2)
+new_temp_k = convert_to_kelvin(temp2)
 ```
 
 The task above could be further simplified using loops which will be discussed below. Writing modular code allows you to subdivide tasks of a workflows into organized units of code that can be reused by yourself and others, often without them needing to know the specific details of the code.
