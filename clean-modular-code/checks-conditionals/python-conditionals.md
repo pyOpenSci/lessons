@@ -43,9 +43,9 @@ A conditional statement uses a syntax structure based on `if` and `else` stateme
 
 ```python
 if condition:
-    some code here
+    # some code here
 else:
-    some other code here
+    # some other code here
 ```
 
 If the condition provided with the `if` statement is satisfied (i.e. results in a value of `True`), then a certain code will execute. If that condition is not met (i.e. results in a value of `False`), then the code provided with the `else` statement will execute. 
@@ -84,14 +84,14 @@ x = 10
 if x == 10:
     print("x is equal to 10.")    
 else:
-    print("x has a value of", x, "which is not equal to 10.")   
+    print(f"x has a value of {x} which is not equal to 10.")   
 ```
 
 ```python
 # Set x to 0
 x = 0
 
-# Compare x to 10
+# Compare x to 10; notice comparison is two equal signs and assignment is one eaual sign.
 if x == 10:
     print("x is equal to 10.")    
 else:
@@ -106,9 +106,9 @@ x = 0
 
 # Check whether x is less than 10
 if x < 10:
-    print("x has a value of", x, "which is less than 10.")    
+    print(f"x has a value of {x} which is less than 10.")    
 else:
-    print("x has a value of", x, "which is greater than 10.")    
+    print(f"x has a value of {x} which is 10 or greater.")    
 ```
 
 ```python
@@ -117,9 +117,9 @@ y = -10
 
 # Check whether x is greater than y
 if x > y:
-    print("x has a value of", x, "which is greater than", y)
+    print(f"x has a value of {x} which is greater than {y}.")
 else:
-    print("x has a value of", x, "which is less than", y) 
+    print(f"x has a value of {x} which is less than or equal to {y}.") 
 ```
 
 ```python
@@ -128,9 +128,9 @@ y = 100
 
 # Check whether x is greater than y
 if x > y:
-    print("x has a value of", x, "which is greater than", y)
+    print(f"x has a value of {x} which is greater than {y}.")
 else:
-    print("x has a value of", x, "which is less than", y) 
+    print(f"x has a value of {x} which is less than or equal to {y}.") 
 ```
 
 ## Check For Values Using Conditional Statements
@@ -172,10 +172,10 @@ You can also use membership operators to check for specific words within a text 
 ```python
 # Check for string "precip" within text string "avg_monthly_temp"
 if "precip" in "avg_monthly_temp":
-    print("This textstring contains the word precip.")
+    print("This textstring contains the word `precip`.")
     
 else:
-    print("This textstring does not contain the word precip.")
+    print("This textstring does not contain the word `precip`.")
 ```
 
 Note that with this syntax, you are simply checking whether one text string is contained within another text string.
@@ -187,10 +187,10 @@ Instead, specifying the object name using quotations `""` (e.g. `"list_name"`) i
 ```python
 # Check for string "precip" within text string "avg_monthly_precip"
 if "precip" in "avg_monthly_precip":
-    print("This textstring contains the word precip.")
+    print("This textstring contains the word `precip`.")
     
 else:
-    print("This textstring does not contain the word precip.")
+    print("This textstring does not contain the word `precip`.")
 ```
 
 Checking for specific text strings within the names of objects, such as lists or data structures, can be helpful when you have a long, automated workflow for which you want to execute code on only those objects that have a particular word in the name.
@@ -205,25 +205,25 @@ x = 0
 
 # Check if x is type integer
 if type(x) is int:
-    print(x, "is an integer.")
+    print(f"{x} is an integer.")
 else:
-    print(x, "is not an integer.")
+    print(f"{x} is not an integer.")
 ```
 
 ```python
 # Check if x is type float
 if type(x) is float:
-    print(x, "is a float.")
+    print(f"{x} is a float.")
 else:
-    print(x, "is not a float.")
+    print(f"{x} is not a float.")
 ```
 
 ```python
 # Check if x is not type string
 if type(x) is not str:
-    print(x, "is not a string.")
+    print(f"{x} is not a string.")
 else:
-    print(x, "is a string.")
+    print(f"{x} is a string.")
 ```
 
 With identity operators, you can also check that an object is a certain data structure, such as a list, and even compare its type to the type of another object. 
@@ -253,7 +253,7 @@ Note in the example above that you are not checking whether the objects are list
 
 You can also use conditional statements to check paths using a familiar function: `os.path.exists()`.
 
-In the example below, you will download a .txt file that contains the average monthly precipitation values for <a href="https://www.esrl.noaa.gov/psd/boulder/Boulder.mm.precip.html" target="_blank">Boulder, Colorado, provided by the U.S. National Oceanic and Atmospheric Administration (NOAA)</a>. 
+In the example below, you will download a `.txt` file that contains the average monthly precipitation values for <a href="https://www.esrl.noaa.gov/psd/boulder/Boulder.mm.precip.html" target="_blank">Boulder, Colorado, provided by the U.S. National Oceanic and Atmospheric Administration (NOAA)</a>. 
 
 Begin by importing the necessary packages and writing the code needed to download the data (**earthpy**) and set the working directory (**os**). You will also use **numpy** package to import the data into a **numpy** array. 
 
