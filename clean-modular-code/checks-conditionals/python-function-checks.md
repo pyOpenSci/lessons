@@ -28,7 +28,7 @@ This lesson covers several strategies for making your code more robust and easie
 
 1. Use [`try/except blocks`](#try-except) rather than simply allowing errors to occur.
 1. [Make checks Pythonic](#pythonic-checks)
-1. [Fail fast](#fail-fast-strategy)
+1. [Fail fast](fail-fast)
 
 +++
 
