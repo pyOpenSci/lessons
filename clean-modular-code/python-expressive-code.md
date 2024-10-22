@@ -28,7 +28,7 @@ authors: ['Leah Wasser', 'Jenny Palomino']
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-(python-expressive)=
+(python-expressive-code)=
 # Make Your Code Easier to Read Using Expressive Variable Names in Python
 
 :::{admonition} Learning Objectives

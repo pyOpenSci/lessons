@@ -20,6 +20,8 @@ jupyter:
 ---
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
+
+(intro-clean-code)=
 # Write Clean, Modular, DRY Code
 
 :::{toctree}

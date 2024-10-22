@@ -18,6 +18,7 @@ jupyter:
 ---
 
 <!-- #region -->
+(conditionals-alternatives)=
 # Conditional Statements With Alternative Conditions
 
 

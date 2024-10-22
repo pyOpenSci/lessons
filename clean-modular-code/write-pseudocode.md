@@ -22,7 +22,7 @@ excerpt: "Pseudcode can help you design data workflows by listing the individual
 last_modified: 
 ---
 ```
-
+(write-pseudocode)=
 # Introduction to Pseudocode
 
 ## Design an Efficient Data Workflow Using Pseudocode
