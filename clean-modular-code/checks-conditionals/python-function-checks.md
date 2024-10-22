@@ -28,7 +28,7 @@ This lesson covers several strategies for making your code more robust and easie
 
 1. Use [`try/except blocks`](#try-except) rather than simply allowing errors to occur.
 1. [Make checks Pythonic](#pythonic-checks)
-1. [Fail fast](fail-fast)
+1. [Fail fast](#fail-fast-strategy)
 
 +++
 
@@ -37,9 +37,9 @@ The same function below assumes that the user provides a list that contains a ti
 ```{code-cell} ipython3
 # This function runs when provided both a list 
 def clean_title(title):
-    """Notice that this function checks explicitly to see if it is provided with a value that is a list. it then 
+    """This function checks explicitly to see if it is provided with a value that is a list. It then 
     makes a decision about how to process the function input based on 
-    it's type.  
+    its type.  
     """
     return title[0]
 
@@ -52,7 +52,7 @@ If it isn't, it returns the title in its provided format.
 
 ```{code-cell} ipython3
 def clean_title(title):
-    """Notice that this function checks explicitly to see if it is provided with a value that is a list. it then 
+    """This function checks explicitly to see if it is provided with a value that is a list. It then 
     makes a decision about how to process the function input based on 
     it's type.  
     """
@@ -80,7 +80,7 @@ tags: [raises-exception]
 ---
 def clean_title(title):
     """
-    Attempts to return the first character of the title.
+    This function attempts to return the first character of the title.
     Raises the same error with a friendly, custom error message if the input is invalid.
     """
     try:
@@ -258,8 +258,7 @@ def read_file(file_path):
             data = file.read()
         return data
     except FileNotFoundError:
-        raise FileNotFoundError(f"Oops! I couldn't find the file located at: "
-                                f"{file_path}. Please check to see if it exists")
+        raise FileNotFoundError(f"Oops! I couldn't find the file located at: {file_path}. Please check to see if it exists.")
 
 # Raises an error immediately if the file doesn't exist
 file_data = read_file("nonexistent_file.txt")
@@ -281,8 +280,7 @@ def read_file(file_path):
             data = file.read()
         return data
     except FileNotFoundError:
-        raise FileNotFoundError(f"Oops! I couldn't find the file located at: {file_path}. "
-                                "Please check to see if it exists") from None
+        raise FileNotFoundError(f"Oops! I couldn't find the file located at: {file_path}. Please check to see if it exists.") from None
 
 # Raises an error immediately if the file doesn't exist
 file_data = read_file("nonexistent_file.txt")
@@ -303,10 +301,10 @@ realities of data processing.
 
 There are two main approaches to handling potential errors:
 
-- **LBYL (Look Before You Leap)**: Check for conditions before making calls or
-  accessing data.
 - **EAFP (Easier to Ask for Forgiveness than Permission)**: Assume the operation
   will succeed and handle any exceptions if they occur.
+- **LBYL (Look Before You Leap)**: Check for conditions before making calls or
+  accessing data.
 
 Pythonic code generally favors the EAFP approach, which allows for **failing
 fast** when an error occurs, providing useful feedback without unnecessary
@@ -318,7 +316,8 @@ editable: true
 slideshow:
   slide_type: ''
 ---
-# LBYL approach - manually check that the user provides a int
+# LBYL approach - manually check that the user provides an int
+
 def convert_to_int(value):
     if isinstance(value, int):
         return int(value)
@@ -336,7 +335,8 @@ editable: true
 slideshow:
   slide_type: ''
 ---
-# EAFP approach - Consider what the user might provide and catch the error. 
+# EAFP approach - Consider what the user might provide and catch the error.
+
 def convert_to_int(value):
     try:
         return int(value)
