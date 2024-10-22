@@ -5,6 +5,7 @@
 [![](https://img.shields.io/github/stars/pyopensci/python-package-guide?style=social)](https://github.com/pyopensci/contributing-guide)
 [![DOI](https://zenodo.org/badge/556814582.svg)](https://zenodo.org/badge/latestdoi/556814582)
 [![View Contributors](images/contributing/contributors-badge.svg)](https://github.com/pyOpenSci/lessons#contributors-)
+[![Binder](https://binder.opensci.2i2c.cloud/badge_logo.svg)](https://binder.opensci.2i2c.cloud/v2/gh/pyopensci/lessons/HEAD)
 ```
 
 :::::{grid} 2
