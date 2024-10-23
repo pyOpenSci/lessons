@@ -184,6 +184,15 @@ df_combined = pd.concat([df, df2], axis=0)
 df_combined.shape
 ```
 
+```{dropdown} Hint 1 - built-in help
+If you want to look up a pandas function to get help, Jupyter Lab has built-in help.
+Enter `help(pd.DataFrame.iterrows)`.
+```
+
+```{dropdown} Hint 2 - itterows and at
+What do we expect to happen in the code block with `iterrows`? Iterate through each row of the dataframe and extract the date and title. Try looking up the `at` method in pandas docs. `at` accesses a single value for a row/column label pair.
+```
+
 :::{admonition} Part 3
 :class: attention
 
