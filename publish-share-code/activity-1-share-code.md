@@ -12,7 +12,7 @@ kernelspec:
 ---
 
 # Share Your Code Activities
-s
+
 
 :::{note}
 
@@ -77,7 +77,7 @@ In this activity, you will connect the GitHub repository that you just forked co
 
 If you completed **Activity 2** above, you should already have a GitHub repository set up. Now, we’ll take it a step further by setting up a citation for your project using Zenodo.
 
-### Steps to Connect Your Repository to Zenodo
+### Steps to connect your repository to Zenodo
 
 1. **Connect Your Repository to Zenodo**  
    - Go to [Zenodo](https://zenodo.org/) and log in using your GitHub account.
@@ -111,12 +111,20 @@ In this activity, you will further develop the Python package you have worked on
 4. Check out the Zenodo landing page for your package. Do you see the new release there?
 
 :::{note}
-Note: it may take 5-10 minutes for the new release to process. 
+Note: the new release may take 5-10 minutes to process. 
 :::
+
+
++++
+## Activity 5: Add a CITATION.cff file to your repo
+
+1. Visit [this website](https://citation-file-format.github.io/cff-initializer-javascript/#/start) which has a tool that allows you to create and validate a new CITATION.cff file.
+2. Using the tool above, add appropriate citation information using the citation you created for your package using Zenodo.
+3. Add the CITATION.cff file to your new GitHub repository! If you aren't comfortable using GitHub and git you can do this on GitHub using the GitHub add file button!
 
 +++
 
-## Activity 5: Publish your package on test PyPI 
+## Activity 6: Publish your package on test PyPI 
 
 For this activity, you will practice publishing your package to test-pypi. We will follow the [guidance provided in this lesson](https://www.pyopensci.org/python-package-guide/tutorials/publish-pypi.html).
 
