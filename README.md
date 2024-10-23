@@ -115,7 +115,7 @@ To build, follow these steps:
 2. Build the documentation:
 
    ```console
-   nox -s docs
+   nox -s docs-test
    ```
 
 This should create a local environment in a `.nox` folder, build the documentation (as specified in the `noxfile.py` configuration), and the output will be in `_build/html`.
