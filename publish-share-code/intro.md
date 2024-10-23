@@ -33,7 +33,8 @@ Publish your Code <publish-code>
 :maxdepth: 2
 
 
-Share your Code <activity-1-share-code>
+Activity 1:  <activity-1-share-code>
+Activity 2: Connect your Python package repo to Zenodo <activity-1-share-code#activity-2-connect-your-python-package-repo-to-zenodo>
 
 :::
 
