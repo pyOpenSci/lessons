@@ -171,7 +171,7 @@ First, add the code line to calculate a mean along a specified axis.
 
 ```python
 def mean_mm_to_in(data_mm, axis_value):
-    mean_data_mm = np.mean(data_mm, axis = axis_value)    
+    mean_data_mm = np.mean(data_mm, axis=axis_value)    
 ```
 
 
@@ -180,7 +180,7 @@ Next, add the code line to convert the mean array from millimeters to inches. In
 
 ```python
 def mean_mm_to_in(data_mm, axis_value):
-    mean_data_mm = np.mean(data_mm, axis = axis_value)
+    mean_data_mm = np.mean(data_mm, axis=axis_value)
     mean_data_in = mean_data_mm / 25.4 
         
     return mean_data_in
@@ -211,7 +211,7 @@ def mean_mm_to_in(data_mm, axis_value):
     numpy array
         Mean values of input array in inches.
     """    
-    mean_data_mm = np.mean(data_mm, axis = axis_value)
+    mean_data_mm = np.mean(data_mm, axis=axis_value)
     return mean_data_mm / 25.4
 ```
 
@@ -235,16 +235,16 @@ precip_2002_2013_mm = np.array([[27.178, 11.176, 38.1, 5.08, 81.28, 29.972,
 
 ```python
 # Calculate monthly mean (inches) for precip_2002_2013
-monthly_mean_in = mean_mm_to_in(data_mm = precip_2002_2013_mm, 
-                                    axis_value = 0)
+monthly_mean_in = mean_mm_to_in(data_mm=precip_2002_2013_mm, 
+                                    axis_value=0)
 
 monthly_mean_in
 ```
 
 ```python
 # Calculate yearly mean (inches) for precip_2002_2013
-yearly_mean_in = mean_mm_to_in(data_mm = precip_2002_2013_mm, 
-                                   axis_value = 1)
+yearly_mean_in = mean_mm_to_in(data_mm=precip_2002_2013_mm, 
+                                   axis_value=1)
 
 yearly_mean_in
 ```
