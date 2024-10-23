@@ -15,6 +15,7 @@ dependencies = [
     "sphinx-copybutton",
     "sphinx-design",
     "sphinx-favicon",
+    "sphinx-togglebutton",
     # XML feed for analytics
     "sphinx-sitemap",
     # Support for social / adds meta tags
@@ -33,7 +34,7 @@ dev = [
     "vale",
     # for managing translation files
     "sphinx-intl",
-    "jupytext"
+    "jupytext",
 ]
 
 [tool.hatch.build.targets.wheel]
