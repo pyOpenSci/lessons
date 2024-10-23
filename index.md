@@ -44,8 +44,8 @@ TODO: let's merge this with the conditional lesson
 :::{card} [✿ Share Code ✿](publish-share-code/intro)
 :class-card: left-aligned
 
-* [Share code on GitHub](share-code)
-* [Get DOI with Zenodo](cite-code)
+* [Share code on GitHub](share-your-code)
+* [Get DOI with Zenodo](cite-your-code)
 
 :::
 ::::
@@ -57,7 +57,6 @@ TODO: let's merge this with the conditional lesson
 These lessons help scientists understand best practices and tools used in the Python ecosystem. We will be adding new lessons over the next year.
 
 :::{toctree}
-:hidden:
 :caption: Clean Code
 :maxdepth: 2
 
@@ -69,7 +68,7 @@ Clean Code <clean-modular-code/intro-clean-code>
 :caption: Optimize Code
 :maxdepth: 2
 
-Optimize Code <code-workflow-logic/about-functions>
+Optimize Code <code-workflow-logic/intro>
 :::
 
 :::{toctree}
