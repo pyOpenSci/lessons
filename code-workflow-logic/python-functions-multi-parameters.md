@@ -20,32 +20,37 @@ jupyter:
 (multi-parameter-functions)=
 # Write Multi-Parameter Functions 
 
-##Learning Objectives
+:::{admonition} What you will learn
+:class: tip
 
 * Write and execute custom functions with multiple input parameters in **Python**.
-* Write and execute custom functions with optional input parameters in **Python**. 
+* Write and execute custom functions with optional input parameters in **Python**.
+:::
 
 
 ## How to Define a Function with Multiple Parameters in Python
 
-Previously in this lesson, you learned that an input parameter is the required information that you pass to the function for it to run successfully. The function will take the value or object provided as the input parameter and use it to perform some task.
-
-You also learned that in **Python**, the required parameter can be defined using a placeholder variable, such as `data`, which represents the value or object that will be acted upon in the function. 
-
+In the [write functions lesson](write-python-functions), you learned about writing **Python** functions. You also learned that a parameter, such as `var_a`, is used to represent the value or object that the function will process.
+<!-- #endregion -->
 
 ```python
-def function_name(data):
-```   
+def process_value(value):
+    """A function that returns an integer value multiplied by 2 """
+    return int(value) * 2
 
-However, sometimes you may need additional information for the function to run successfully.
+process_value(2.254)
+```
 
-Luckily, you can write functions that take in more than one parameter by defining as many parameters as needed, for example: 
+However, sometimes, you need additional parameters for the function to run successfully. Like this:
 
 ```python
 def function_name(data_1, data_2):
-``` 
+    # Function code here
+    return some_output
+```
 
-When the function is called, a user can provide any value for `data_1` or `data_2` that the function can take as an input for that parameter (e.g. single value variable, list, **numpy** array, **pandas** dataframe column). 
+<!-- #region -->
+When the function is called, a user can provide any value for `data_1` or `data_2` that the function can take as input for that parameter (e.g., single-value variable, list, **numpy** array, **pandas** data frame column). 
 
 
 ## Write a Function with Multiple Parameters in Python
@@ -54,14 +59,13 @@ Imagine that you want to define a function that will take in two numeric values 
 
 Begin with the `def` keyword and the function name, just as you have before to define a function:
 
-```python
-def multiply_values
+def multiply_values(x, y):
 ```
 
 Next, provide two placeholder variable names for the input parameters, as shown below. 
 
 ```python
-def multiply_values(x, y):
+
 ```
 
 Add the code to multiply the values and the `return` statement to returns the product of the two values: 
@@ -532,9 +536,8 @@ precip_2002_2013_df
 ```
 
 <!-- #region -->
-<div class="notice--warning" markdown="1">
 
-## <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Practice Writing Multi-Parameter Functions for Pandas Dataframes
+## Practice Writing Multi-Parameter Functions for Pandas Dataframes
 
 You have a function that combines the mean calculation along a specified axis and the conversion from millimeters to inches for a **numpy** array. 
 
@@ -554,12 +557,11 @@ Think about which code lines in the existing function `mean_mm_to_in_arr()` can 
 
 Note that the `df.mean(axis = axis_value)` returns the mean values of a dataframe (along the specified axis) as a **pandas** series.
 
-</div>
+
 <!-- #endregion -->
 
-<div class="notice--warning" markdown="1">
 
-## <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Practice Writing Multi-Parameter Functions for Numpy Arrays
+## Practice Writing Multi-Parameter Functions for Numpy Arrays
 
 You also have a function that combines the data download and import for a **pandas** dataframe, you can modify the function for other data structures such as a **numpy** array. 
 
@@ -571,4 +573,3 @@ To begin, you may want to write one function for a 1-dimensional array and anoth
 
 To advance in your practice, you can think about adding a conditional statement that would check for the file type (.txt for a 1-dimensional array .csv for a 2-dimensional array) before executing the appropriate import code. 
 
-</div>
