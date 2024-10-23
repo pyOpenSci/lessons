@@ -45,9 +45,10 @@ TODO: let's merge this with the conditional lesson
 :::{card} [✿ Share Code ✿](publish-share-code/intro)
 :class-card: left-aligned
 
+* [Share code](publish-share-code/share-code)
 * [Share code on GitHub](share-your-code)
 * [Get DOI with Zenodo](cite-your-code)
-
+* [Publish code](publish-share-code/publish-code)
 :::
 ::::
 

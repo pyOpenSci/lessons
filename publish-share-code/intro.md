@@ -22,6 +22,7 @@ kernelspec:
 
 Intro <self>
 Share your Code <share-code>
+Share your Code on GitHub <share-code-github>
 Cite your Code <cite-code>
 Publish your Code <publish-code>
 :::
