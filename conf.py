@@ -116,6 +116,7 @@ html_theme_options = {
     "github_url": "https://github.com/pyopensci/lessons",
     "footer_start": ["code_of_conduct", "copyright"],
     "footer_end": [],
+    "navigation_with_keys": False,
 }
 
 html_context = {

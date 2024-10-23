@@ -20,7 +20,7 @@ Sharing your code online using [open licenses](https://www.pyopensci.org/python-
 
 When your code is hosted on a shared platform, others can easily download, install, and use it, making it more accessible and useful to the broader community. Additionally, you can set up proper citations for your code, giving contributors and yourself credit for the work and promoting transparency. [Learn more about setting up citation in our lesson on citing code.](cite-your-code)
 
-### Different ways to share code 
+## Different ways to share code 
 
 There are several ways to share code. 
 1. You can post your code to an online repository like GitHub or GitLab.
@@ -47,6 +47,7 @@ Version control systems (like Git) are fundamental to collaborative coding. Thes
 
 Using hosting platforms like GitHub and GitLab helps you manage your code and provides a welcoming environment for contributors to get involved and contribute back to your project.
 
+(install-github)=
 ## Install software directly from GitHub
 
 Once you have turned your code into a Python package and shared it on GitHub, multiple ways exist to make it directly installable. One simple approach is to install your package directly from GitHub using `pip`.

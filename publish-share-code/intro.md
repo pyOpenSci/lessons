@@ -32,7 +32,7 @@ Publish your Code <publish-code>
 :maxdepth: 2
 
 
-Share your Code <activity-1-share-code>
+Activities: Share your Code <activity-1-share-code>
 
 :::
 
