@@ -126,12 +126,63 @@ df_combined.shape
 :::{admonition} Part 2
 :class: attention
 
-Take the code above and clean it up. Make the code:
+We've taken the original code above and copied it to a new notebook cell for your convenience. Make the code:
 
 * PEP8 compliant
 * Add expressive names to make it more readable
 * Add a docstring to the top of the script to help a user understand what the code does.
 :::
+
+```{code-cell} ipython3
+"""Modify this code and make improvements. Good luck!"""
+import os
+import numpy as np
+import json
+from glob import glob 
+from pathlib import Path
+import numpy as np
+
+path = "data/part-1-data.json"
+
+with open(path, "r") as z:
+    x = json.load(z)
+    
+import pandas as pd
+a=pd.json_normalize(x)
+
+b=['publisher', 'DOI', 'type', 'author','is-referenced-by-count', 'title', 'published.date-parts']
+df=a.filter(items=b)
+
+for i,r in df.iterrows():
+    l = r["published.date-parts"][0]
+    df.at[i, 'title'] = df.at[i, 'title'][0]
+    s = f"{l[0]}-{l[1]:02d}-{l[2]:02d}"
+    d = pd.to_datetime(s, format='%Y-%m-%d')
+    df.at[i, 'published_date'] = d
+
+df.drop("published.date-parts", axis=1, inplace=True) 
+print(df.shape)
+
+path="data/part-1-datab.json"
+
+with open(path, "r") as z:
+    x=json.load(z)
+
+a=pd.json_normalize(x)
+b=['publisher', 'DOI', 'type', 'author','is-referenced-by-count', 'title', 'published.date-parts']
+df2=a.filter(items=b)
+
+for i, r in df2.iterrows():
+    l=r["published.date-parts"][0]
+    df2.at[i, 'title'] = df.at[i, 'title'][0]
+    s=f"{l[0]}-{l[1]:02d}-{l[2]:02d}"
+    d=pd.to_datetime(s, format='%Y-%m-%d')
+    df2.at[i, 'published_date']=d
+
+df2.drop("published.date-parts", axis=1, inplace=True) 
+df_combined = pd.concat([df, df2], axis=0)
+df_combined.shape
+```
 
 :::{admonition} Part 3
 :class: attention
