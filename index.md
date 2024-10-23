@@ -77,5 +77,5 @@ Optimize Code <code-workflow-logic/intro>
 :caption: Share Code
 :maxdepth: 2
 
-Code Checks <publish-share-code/intro>
+Share Code <publish-share-code/intro>
 :::
