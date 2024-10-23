@@ -34,7 +34,7 @@ If not, you can start with the [pyospackage repository](https://github.com/pyOpe
 
 ## Activity 2: Connect your Python package repo to Zenodo
 
-In this activity, you will connect the GitHub repository containing a Python package to [Zenodo to create a DOI (Digital Object Identifier)](zenodo) for your code. This will allow others to cite your work and give credit to contributors. 
+In this activity, you will connect the GitHub repository containing a Python package to [Zenodo to create a DOI (Digital Object Identifier)](cite-code) for your code. This will allow others to cite your work and give credit to contributors. 
 
 If you completed **Activity 1** above, you should already have a GitHub repository set up. Now, we’ll take it a step further by setting up a citation for your project using Zenodo.
 
