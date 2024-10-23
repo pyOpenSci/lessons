@@ -47,6 +47,7 @@ Version control systems (like Git) are fundamental to collaborative coding. Thes
 
 Using hosting platforms like GitHub and GitLab helps you manage your code and provides a welcoming environment for contributors to get involved and contribute back to your project.
 
+(install-github)=
 ## Install software directly from GitHub
 
 Once you have turned your code into a Python package and shared it on GitHub, multiple ways exist to make it directly installable. One simple approach is to install your package directly from GitHub using `pip`.
