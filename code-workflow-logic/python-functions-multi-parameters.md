@@ -59,13 +59,13 @@ Imagine that you want to define a function that will take in two numeric values 
 
 Begin with the `def` keyword and the function name, just as you have before to define a function:
 
-def multiply_values(x, y):
+
 ```
 
 Next, provide two placeholder variable names for the input parameters, as shown below. 
 
 ```python
-
+def multiply_values(x, y):
 ```
 
 Add the code to multiply the values and the `return` statement to returns the product of the two values: 
