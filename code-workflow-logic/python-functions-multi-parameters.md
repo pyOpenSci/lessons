@@ -50,16 +50,18 @@ def function_name(data_1, data_2):
 ```
 
 <!-- #region -->
-When the function is called, a user can provide any value for `data_1` or `data_2` that the function can take as input for that parameter (e.g., single-value variable, list, **numpy** array, **pandas** data frame column). 
+When the function is called, a user can provide any value for `data_1` or `data_2` as input for that parameter (e.g., single-value variable, list, **numpy** array, **pandas** data frame column). 
 
 
 ## Write a Function with Multiple Parameters in Python
 
-Imagine that you want to define a function that will take in two numeric values as inputs and return the product of these input values (i.e. multiply the values).  
+Imagine that you want to define a function that will take in two numeric values as inputs, multiply them, and return the product of these input values.  
 
 Begin with the `def` keyword and the function name, just as you have before to define a function:
 
 
+```python
+def multiply_values():
 ```
 
 Next, provide two placeholder variable names for the input parameters, as shown below. 
@@ -120,7 +122,7 @@ precip_jan_mm = multiply_values(precip_jan_in, to_mm)
 precip_jan_mm
 ```
 
-Note that the function is not defined specifically for unit conversions, but as it completes a generalizable task, it can be used for simple unit conversions. 
+While the function is not defined specifically for unit conversions, it completes a generalizable task and can be used for simple unit conversions. 
 
 <!-- #region -->
 ## Combine Unit Conversion and Calculation of Statistics into One Function
@@ -158,7 +160,7 @@ Use placeholder variable names that highlight the purpose of each parameter:
 
 
 ```python
-def mean_mm_to_in_arr(arr_mm, axis_value):
+def mean_mm_to_in(data_mm, axis_value):
 ```
 
 
@@ -168,8 +170,8 @@ First, add the code line to calculate a mean along a specified axis.
 
 
 ```python
-def mean_mm_to_in_arr(arr_mm, axis_value):
-    mean_arr_mm = np.mean(arr_mm, axis = axis_value)    
+def mean_mm_to_in(data_mm, axis_value):
+    mean_data_mm = np.mean(data_mm, axis = axis_value)    
 ```
 
 
@@ -177,11 +179,11 @@ Next, add the code line to convert the mean array from millimeters to inches. In
 
 
 ```python
-def mean_mm_to_in_arr(arr_mm, axis_value):
-    mean_arr_mm = np.mean(arr_mm, axis = axis_value)
-    mean_arr_in = mean_arr_mm / 25.4 
+def mean_mm_to_in(data_mm, axis_value):
+    mean_data_mm = np.mean(data_mm, axis = axis_value)
+    mean_data_in = mean_data_mm / 25.4 
         
-    return mean_arr_in
+    return mean_data_in
     
 ```
 
@@ -192,13 +194,13 @@ Last, include a docstring to provide the details about this function, including 
 <!-- #endregion -->
 
 ```python
-def mean_mm_to_in_arr(arr_mm, axis_value):
+def mean_mm_to_in(data_mm, axis_value):
     """Calculate mean values of input array along a specified
     axis and convert values from millimeters to inches.
     
     Parameters
     ----------
-    arr_mm : numpy array
+    data_mm : numpy array
         Numeric values in millimeters.
     axis_value : int
         0 to calculate mean for each column.
@@ -209,11 +211,11 @@ def mean_mm_to_in_arr(arr_mm, axis_value):
     numpy array
         Mean values of input array in inches.
     """    
-    mean_arr_mm = np.mean(arr_mm, axis = axis_value)
-    return mean_arr_mm / 25.4
+    mean_data_mm = np.mean(data_mm, axis = axis_value)
+    return mean_data_mm / 25.4
 ```
 
-Now that you have defined `mean_mm_to_in_arr()`, you can call the function with the appropriate input parameters.
+Now that you have defined `mean_mm_to_in()`, you can call the function with the appropriate input parameters.
 
 Create some data and test your new function with different input values for the `axis_value` parameter.
 
@@ -233,7 +235,7 @@ precip_2002_2013_mm = np.array([[27.178, 11.176, 38.1, 5.08, 81.28, 29.972,
 
 ```python
 # Calculate monthly mean (inches) for precip_2002_2013
-monthly_mean_in = mean_mm_to_in_arr(arr_mm = precip_2002_2013_mm, 
+monthly_mean_in = mean_mm_to_in(data_mm = precip_2002_2013_mm, 
                                     axis_value = 0)
 
 monthly_mean_in
@@ -241,7 +243,7 @@ monthly_mean_in
 
 ```python
 # Calculate yearly mean (inches) for precip_2002_2013
-yearly_mean_in = mean_mm_to_in_arr(arr_mm = precip_2002_2013_mm, 
+yearly_mean_in = mean_mm_to_in(data_mm = precip_2002_2013_mm, 
                                    axis_value = 1)
 
 yearly_mean_in
@@ -262,13 +264,13 @@ precip_2002_mm = np.array([27.178, 11.176, 38.1,  5.08, 81.28, 29.972,
 <!-- #region -->
 ```python
 # Calculate mean (inches) for precip_2002
-monthly_mean_in = mean_mm_to_in_arr(arr_mm = precip_2002_mm)
+monthly_mean_in = mean_mm_to_in(data_mm=precip_2002_mm)
 ```
 
 You get an error that the `axis_value` is missing:
 
 ```python
-TypeError: mean_mm_to_in_arr() missing 1 required positional argument: 'axis_value'
+TypeError: mean_mm_to_in() missing 1 required positional argument: 'axis_value'
 ```
 <!-- #endregion -->
 
@@ -278,7 +280,7 @@ What if you want to make the function more generalizable, so that the axis value
 You can do that by specifying a default value for `axis_value` as `None` as shown below:
 
 ```python
-def mean_mm_to_in_arr(arr_mm, axis_value=None):
+def mean_mm_to_in(data_mm, axis_value=None):
 ```
 
 The function will assume that the axis value is `None` (i.e. that an input value has not been provided by the user), unless specified otherwise in the function call.
@@ -290,40 +292,40 @@ Luckily, you have already learned about conditional statements, which you can no
 Using a conditional statement, you can check if `axis_value` is equal to `None`, in which case the mean code will run without an axis value. 
 
 ```python
-def mean_mm_to_in_arr(arr_mm, axis_value=None):
+def mean_mm_to_in(data_mm, axis_value=None):
     
     if axis_value is None:
-        mean_arr_mm = np.mean(arr_mm) 
+        mean_data_mm = np.mean(data_mm) 
 ```
 
 The `else` statement would mean that `axis_value` is not equal to `None` (i.e. a user has provided an input value) and thus would run the mean code with the specified axis value.
 
 ```python
-def mean_mm_to_in_arr(arr_mm, axis_value=None):
+def mean_mm_to_in(data_mm, axis_value=None):
     
     if axis_value is None:
-        mean_arr_mm = np.mean(arr_mm)        
+        mean_data_mm = np.mean(data_mm)        
     else:
-        mean_arr_mm = np.mean(arr_mm, axis = axis_value)
+        mean_data_mm = np.mean(data_mm, axis=axis_value)
 ```
 
 The code for the unit conversion and the `return` remain the same, just with updated names:
 
 ```python
-def mean_mm_to_in_arr(arr_mm, axis_value=None):
+def mean_mm_to_in(data_mm, axis_value=None):
     if axis_value is None:
-        mean_arr_mm = np.mean(arr_mm)        
+        mean_data_mm = np.mean(data_mm)        
     else:
-        mean_arr_mm = np.mean(arr_mm, axis = axis_value)
+        mean_data_mm = np.mean(data_mm, axis=axis_value)
         
-    return mean_arr_mm / 25.4
+    return mean_data_mm / 25.4
 ```
 
 Last, include a docstring to provide the details about this revised function. Notice that the axis value has been labeled optional in the docstring. 
 <!-- #endregion -->
 
 ```python
-def mean_mm_to_in_arr(arr_mm, axis_value=None):
+def mean_mm_to_in(data_mm, axis_value=None):
     """Calculate mean values of input array and convert values 
     from millimeters to inches. If an axis is specified,
     the mean will be calculated along that axis. 
@@ -331,7 +333,7 @@ def mean_mm_to_in_arr(arr_mm, axis_value=None):
     
     Parameters
     ----------
-    arr_mm : numpy array
+    data_mm : numpy array
         Numeric values in millimeters.
     axis_value : int (optional)
         0 to calculate mean for each column.
@@ -343,19 +345,19 @@ def mean_mm_to_in_arr(arr_mm, axis_value=None):
         Mean values of input array in inches.
     """   
     if axis_value is None:
-        mean_arr_mm = np.mean(arr_mm)        
+        mean_data_mm = np.mean(data_mm)        
     else:
-        mean_arr_mm = np.mean(arr_mm, axis = axis_value)
+        mean_data_mm = np.mean(data_mm, axis=axis_value)
     
-    return mean_arr_mm / 25.4 
+    return mean_data_mm / 25.4 
 ```
 
 Notice that the function will return the same output as before for the two-dimensional array `precip_2002_2013_mm`.
 
 ```python
 # Calculate monthly mean (inches) for precip_2002_2013
-monthly_mean_in = mean_mm_to_in_arr(arr_mm = precip_2002_2013_mm, 
-                                    axis_value = 0)
+monthly_mean_in = mean_mm_to_in(data_mm=precip_2002_2013_mm, 
+                                    axis_value=0)
 
 monthly_mean_in
 ```
@@ -364,7 +366,7 @@ However, now you can also provide a one-dimensional array as an input without a 
 
 ```python
 # Calculate mean (inches) for precip_2002
-monthly_mean_in = mean_mm_to_in_arr(arr_mm = precip_2002_mm)
+monthly_mean_in = mean_mm_to_in(data_mm=precip_2002_mm)
 
 monthly_mean_in
 ```
@@ -546,16 +548,16 @@ How might you need to change this function to create a similar function for **pa
 For the mean, you can run summary statistics on pandas using a specified axis (just like a **numpy** array) with the following code:
 
 ```python
-df.mean(axis = axis_value) 
+df.mean(axis=axis_value) 
 ```
 
 With the axis value `0`, the code will calculate a mean for each numeric column in the dataframe.
 
 With the axis value `1`, the code will calculate a mean for each row with numeric values in the dataframe.
 
-Think about which code lines in the existing function `mean_mm_to_in_arr()` can be modified to run the equivalent code on a **pandas** dataframe.
+Think about which code lines in the existing function `mean_mm_to_in()` can be modified to run the equivalent code on a **pandas** dataframe.
 
-Note that the `df.mean(axis = axis_value)` returns the mean values of a dataframe (along the specified axis) as a **pandas** series.
+Note that the `df.mean(axis=axis_value)` returns the mean values of a dataframe (along the specified axis) as a **pandas** series.
 
 
 <!-- #endregion -->
