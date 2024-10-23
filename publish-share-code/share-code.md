@@ -20,6 +20,8 @@ Sharing your code online using [open licenses](https://www.pyopensci.org/python-
 
 When your code is hosted on a shared platform, others can easily download, install, and use it, making it more accessible and useful to the broader community. Additionally, you can set up proper citations for your code, giving contributors and yourself credit for the work and promoting transparency. [Learn more about setting up citation in our lesson on citing code.](cite-your-code)
 
+### Different ways to share code 
+
 There are several ways to share code. 
 1. You can post your code to an online repository like GitHub or GitLab.
 2. You can publish your code in a journal such as the Journal of Open Source Software
@@ -27,7 +29,7 @@ There are several ways to share code.
 
 In this lesson, you will learn about using the version control platform, GitHub, to share your code. GitHub supports version control and provides collaborative features that help you manage contributions, track changes, and engage with the community.
 
-## Share your code using GitHub and GitLab
+## Share your code using GitHub or GitLab
 
 [GitHub](https://github.com/) and [GitLab](https://gitlab.com/) are both online verion control and collaboration platforms. These platforms allow you to:
 
@@ -89,23 +91,46 @@ Directly installing from GitHub is beneficial because it allows others to quickl
 
 Remember that the `git+` prefix in the URL tells pip to use Git to fetch the repository. This works for any public repository, making it a flexible and easy way to distribute your code.
 
-## Install software from PyPI
+## Publish and install software from PyPI
 
-🚧This section is under construction. Contributions welcome!! 🚧
+Above, you learned how to share your code on GitHub and install it directly using `pip`.
 
-Above, you learned how to share your code on GitHub and then install it directly using `pip.` 
+Another option is to [publish your package to PyPI](https://www.pyopensci.org/python-package-guide/tutorials/publish-pypi.html)—the Python Packaging Index.
 
-Another option is to publish your package to PyPI--the Python packaging index. 
 
-TODO add a few sentences here on what PyPI is. 
-IT's free to publish, but you'l need to first check that the name that you want to use is available. 
+:::{figure-md} pypi-conda-publication
 
-TODO Add link to pyopensci publish pypi tutorial
+<img src="../images/python-packaging/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You turn your code into distribution files (sdist and wheel) that PyPI accepts. Then, there is an arrow toward the PyPI repository where you publish both distributions. From PyPI, if you create a conda-forge recipe, you can then publish to conda-forge. " width="700px">
 
-## Install software from conda-forge
+The Python package software publishing workflow from GitHub to PyPI and conda-forge. [Learn how to creat a Python package, here.](https://www.pyopensci.org/python-package-guide/tutorials)
+:::
 
-TODO What is conda forge - link to packaging guide?
-TODO How to publish to conda forge - link to pyos tutorial on this
+### What is PyPI?
+
+The **Python Package Index (PyPI)** is the official repository for Python packages. It’s a community-supported platform where you can upload, share, and distribute Python packages with the broader Python community. Publishing your package to PyPI makes it easier for other users to find, install, and use your code. However, in order to publish to PyPI, you first need to [create a Python package.](https://www.pyopensci.org/python-package-guide/tutorials/intro.html)
+
+### Why publish to PyPI?
+
+- **Easily share your package**: PyPI allows anyone to install your package using a simple command like `pip install your-package-name`. This makes it easy to distribute your code to users around the world.
+- **Centralized and trusted**: As the official repository, PyPI is a trusted source for Python packages. Publishing your package there signals to others that your code is available and maintained in a standardized way.
+- **Community support**: PyPI is supported by the Python community, which means there are established guidelines, standards, and tools for creating and managing packages. Publishing to PyPI allows you to contribute back to the community and help others benefit from your work.
+
+:::{tip} Check Package Name Availability
+
+Before publishing, you must check that the name you want for your package is available. PyPI requires that each package name be unique. You can search for your desired package name on [PyPI’s website](https://pypi.org/) to ensure it’s not already in use.
+:::
+
+
+## Publish and install software from conda-forge
+
+Another popular option for distributing your package is to publish it on the **conda-forge** 
+channel of conda. 
+
+### What is conda-forge?
+
+**conda-forge** is a community-led collection of conda packages. It provides a reliable and easy way to distribute Python packages and their dependencies. Unlike PyPI, which uses `pip`, conda-forge uses the `conda` package manager, which is popular in scientific computing due to its ability to manage complex dependencies and non-Python packages.
+
+You can learn more about [how to publish to conda-forge in our Python Packaging Guide](https://www.pyopensci.org/python-package-guide/tutorials/publish-conda-forge.html).
 
 
 ## Cite your code  
