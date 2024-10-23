@@ -57,7 +57,12 @@ TODO: let's merge this with the conditional lesson
 
 These lessons help scientists understand best practices and tools used in the Python ecosystem. We will be adding new lessons over the next year.
 
+In these lessons, we'll be covering topics that encourage efficient, maintainable, and reproducible code. We start out
+by introducing the concepts of "clean code" and "Pythonic code". Then, we move into how you can achieve clean, Pythonic
+code using best practices and tools.
+
 :::{toctree}
+:hidden:
 :caption: Clean Code
 :maxdepth: 2
 
