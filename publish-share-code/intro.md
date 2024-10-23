@@ -23,6 +23,7 @@ kernelspec:
 Intro <self>
 Share your Code <share-code>
 Cite your Code <cite-code>
+Publish your Code <publish-code>
 :::
 
 :::{toctree}

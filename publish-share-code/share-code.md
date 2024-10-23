@@ -13,12 +13,12 @@ kernelspec:
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-(share-code)=
+(share-your-code)=
 # Share Your Code
 
 Sharing your code online using [open licenses](https://www.pyopensci.org/python-package-guide/documentation/repository-files/license-files.html) is a powerful way to make your work more open and collaborative, supporting the principles of open science. By openly sharing your code, you can set clear guidelines on how others can use, modify, and distribute it through licensing, ensuring that your contributions are respected.
 
-When your code is hosted on a shared platform, others can easily download, install, and use it, making it more accessible and useful to the broader community. Additionally, you can set up proper citations for your code, giving contributors and yourself credit for the work and promoting transparency. [Learn more about setting up citation in our lesson on citing code.](cite-code)
+When your code is hosted on a shared platform, others can easily download, install, and use it, making it more accessible and useful to the broader community. Additionally, you can set up proper citations for your code, giving contributors and yourself credit for the work and promoting transparency. [Learn more about setting up citation in our lesson on citing code.](cite-your-code)
 
 There are several ways to share code. 
 1. You can post your code to an online repository like GitHub or GitLab.
