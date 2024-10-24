@@ -325,7 +325,7 @@ Most text editors allow you to set up guides to see how long your code is. You c
 * PEP 8 recommends organizing imports in the following order:
 
 1. **Standard Library Imports**: These built-in modules come with Python, such as `os` and `glob`. You can find the full list [here](https://docs.python.org/3/library/index.html).
-2. **Third-Party Imports**: Libraries that you install via `pip`, like `numpy` and `pandas`.
+2. **Third-Party Imports**: Libraries that you install via `pip`, like {mod}`numpy` and {mod}`pandas`.
 3. **Local Imports**: Code or modules specific to your project.
 
 Here’s an example following PEP 8 conventions:

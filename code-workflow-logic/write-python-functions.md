@@ -88,22 +88,19 @@ In **Python**, the required parameters are provided within parenthesis `()`, as 
 
 ```python
 def function_name(parameter):       
-```    
+```
 
 You can define an input parameter for a function using a placeholder variable, such as `data`, which represents the value or object that will be acted upon in the function. 
 
-
 ```python
 def function_name(data):
-```   
+```
 
 You can define a function using multiple parameters. 
 
-
 ```python
 def add_numbers(num_1, num_2):
-```  
-
+```
 
 ### Return Statement
 
@@ -214,7 +211,7 @@ Can the function `mm_to_in()` to take a list as an input? Look again at the code
 <!-- #region editable=true slideshow={"slide_type": ""} -->
 ## Call `help` on a custom function
 
-Just like you can call `help()` on a function provided by a **Python** package such as **pandas** (e.g. `help(pd.DataFrame)`, you can also call `help()` on custom functions.  
+Just like you can call `help()` on a function provided by a **Python** package such as **{mod}`pandas`** (e.g. {class}`help(pd.DataFrame) <pandas.DataFrame>`), you can also call `help()` on your own custom functions.  
 <!-- #endregion -->
 
 ```python editable=true slideshow={"slide_type": ""}
@@ -231,7 +228,7 @@ help(add_numbers)
 <!-- #region editable=true slideshow={"slide_type": ""} -->
 Notice that when you call `help()` on custom functions, you will see the docstring that was provided in the function definition.  
 
-The `help()` results for `np.mean` are simply longer because the docstring contains more information, such as sections for Notes and Examples. 
+The `help()` results for {func}`np.mean <numpy.mean>` are simply longer because the docstring contains more information, such as sections for Notes and Examples. 
 
 Combining related function calls into a single line of code allows you to write code that is much more efficient and less repetitive, assisting you in writing DRY code in **Python**. 
 

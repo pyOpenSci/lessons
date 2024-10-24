@@ -50,7 +50,7 @@ def function_name(data_1, data_2):
 ```
 
 <!-- #region -->
-When the function is called, a user can provide any value for `data_1` or `data_2` as input for that parameter (e.g., single-value variable, list, **numpy** array, **pandas** data frame column). 
+When the function is called, a user can provide any value for `data_1` or `data_2` as input for that parameter (e.g., single-value variable, list, {class}`numpy.ndarray`, {class}`pandas.DataFrame` column). 
 
 
 ## Write a Function with Multiple Parameters in Python
@@ -65,6 +65,7 @@ def multiply_values():
 ```
 
 Next, provide two placeholder variable names for the input parameters, as shown below. 
+
 
 ```python
 def multiply_values(x, y):
@@ -162,7 +163,6 @@ Use placeholder variable names that highlight the purpose of each parameter:
 ```python
 def mean_mm_to_in(data_mm, axis_value):
 ```
-
 
 Next, add the code to first calculate the mean of the input array along a specified axis, and then to convert the mean values from millimeters to inches. 
 
@@ -377,8 +377,8 @@ monthly_mean_in
 You can also write multi-parameter functions to combine other tasks into one function, such as downloading and reading data files into a **pandas** dataframe.
 
 Think about the code that you need to include in the function:
-1. download data file from URL: `et.data.get_data(url=file_url)`
-2. read data file into **pandas** dataframe: `pd.read_csv(path)`
+1. download data file from URL: {func}`et.data.get_data(url=file_url) <earthpy.data.get_data>`
+2. read data file into **pandas** dataframe: {func}`pd.read_csv(path) <pandas.read_csv>`
 
 From this code, you can see that you will need two input parameters for the combined function:
 1. the URL to the data file

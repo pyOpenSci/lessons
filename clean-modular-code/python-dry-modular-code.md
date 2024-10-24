@@ -92,7 +92,7 @@ For example,`print()` is a function used to write output to the Python console (
 Below, you will see the function that you looked at in the previous lesson. This is a custom function with a custom name.
 
 ```python
-def convert_to_kelvin(temperature_fahr) 
+def convert_to_kelvin(temperature_fahr):
     """Convert temperature in Fahrenheit to kelvin.
 
     Parameters:

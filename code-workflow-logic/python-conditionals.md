@@ -91,7 +91,7 @@ else:
 # Set x to 0
 x = 0
 
-# Compare x to 10; notice comparison is two equal signs and assignment is one eaual sign.
+# Compare x to 10; notice comparison is two equal signs and assignment is one equal sign.
 if x == 10:
     print("x is equal to 10.")    
 else:

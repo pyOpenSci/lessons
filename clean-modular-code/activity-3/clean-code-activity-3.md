@@ -160,9 +160,9 @@ all_papers_df = pd.concat(all_papers_list, axis=0, ignore_index=True)
 
 ## Activity 3, part 2: Add checks to the `format_date` function
 
-The code below creates a `pd.DataFrame` with the first 15 publications in the JOSS sample `data.json` file. This is the first of 3 files you must process in your workflow.
+The code below creates a {class}`pandas.DataFrame` with the first 15 publications in the JOSS sample `data.json` file. This is the first of 3 files you must process in your workflow.
 
-Your first task is to process and format the `published_date` column in the data to make it a `pandas.datetime` object. Having a date in a `datetime` format will allow you to do time-related analysis on your data, such as counting publications by month and year! The expected CrossRef published date should be:
+Your first task is to process and format the `published_date` column in the data to make it a {class}`pandas.Timestamp` object. Having a date in a `datetime` format like {class}`pandas.Timestamp` or {class}`datetime.datetime` will allow you to do time-related analysis on your data, such as counting publications by month and year! The expected CrossRef published date should be:
 
 ```json
 "published": {
@@ -195,7 +195,7 @@ In small groups, do the following:
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["hide-output", "hide-cell"]}
 
-###  Format dates with `pandas.datetime`
+###  Format dates with {func}`pandas.to_datetime`
 
 Let's work on formatting dates so there is a consistent format in our dataframe. Python has a [string formatting language](https://docs.python.org/3/library/string.html#formatspec) that defines useful characters for formatting.
 
@@ -362,13 +362,13 @@ format_date(joss_pubs_df["published_date"][13])
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-### How to apply functions to DataFrame values: `pandas.apply()` 
+### How to apply functions to DataFrame values: `.apply()` 
 
-The `pandas.apply()` method allows you to apply any function to rows or columns in a `pandas.DataFrame`. For example, you can use it to perform operations on specific column or row values. When you use `.apply()`, you can specify whether you want to apply the function across columns `(axis=0)` (the default) or across rows `(axis=1)`. 
+The {meth}`.apply() <pandas.DataFrame.apply>` method allows you to apply any function to rows or columns in a {class}`pandas.DataFrame`. For example, you can use it to perform operations on specific column or row values. When you use `.apply()`, you can specify whether you want to apply the function across columns `(axis=0)` (the default) or across rows `(axis=1)`. 
 
 For example, if you want to apply a function to each row of a DataFrame, you would use `df.apply(your_function, axis=1)`. This function is especially useful for applying logic that can’t be easily achieved with built-in pandas functions, allowing for more flexibility in data processing.
 
-You can use `.apply` in pandas to efficiently replace `for loops` to process row and column values in a `pandas.DataFrame`.
+You can use `.apply` in pandas to efficiently replace `for loops` to process row and column values in a {class}`pandas.DataFrame`.
 
 ```python
 # Apply the format_date function to every row in the published_date column
