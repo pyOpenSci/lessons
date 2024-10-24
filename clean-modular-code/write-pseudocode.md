@@ -12,9 +12,14 @@ kernelspec:
 ---
 
 ```{raw-cell}
-:hideCode: false
-:hidePrompt: false
-
+---
+editable: true
+hideCode: false
+hidePrompt: false
+raw_mimetype: ''
+slideshow:
+  slide_type: ''
+---
 ---
 layout: single
 title: "Learn to Write Pseudocode for Python Programming"
@@ -22,10 +27,11 @@ excerpt: "Pseudcode can help you design data workflows by listing the individual
 last_modified: 
 ---
 ```
-(write-pseudocode)=
-# Introduction to Pseudocode
 
-## Design an Efficient Data Workflow Using Pseudocode
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+(intro-write-pseudocode)=
+# Introduction to Pseudocode
 
 :::{admonition} What you'll learn
 :class: note
@@ -34,87 +40,287 @@ last_modified:
 * Be able to write pseudocode.
 :::
 
-Pseudocode is an informal way of planning and structuring your code logic without worrying about the syntax of a specific programming language. It focuses on clearly expressing the logical steps a program will take to solve a problem. Writing pseudocode before diving into actual code helps clarify your thought process, spot logical gaps, and communicate your ideas to others.
+Writing pseudocode is a powerful tool that you can use to plan, organize, and structure your code without worrying about the syntax of a specific programming language or the specific steps. Writing pseudocode helps you focus on clearly expressing the logical steps that your code needs to perform to process your data. 
+
+Writing pseudocode before diving into actual coding will help you write better code from the start and hopefully reduce the number of times your code gets refactored or rewritten. 
 
 ## Benefits of Pseudocode
-1. **Clarifies logic**: Helps you outline your program’s structure without getting bogged down by syntax.
-2. **Easier collaboration**: Allows you to communicate ideas with people in different roles, in different scientific domains, or across different programming languages.
-3. **Quick debugging**: Spot logical errors early before writing actual code.
 
-## Using Pseudocode with LLMs
+1. **Clarifies logic**: Helps you outline your code’s structure without getting bogged down by specific syntax.
+2. **Easier collaboration**: Allows you to communicate your plan for designing a workflow with people in different roles (if you are working collaboratively), in different scientific domains, or across different programming languages.
+3. **Quick debugging**: You can often quickly identify problem areas or logical errors when writing pseudocode and consider how to address them before writing actual code. This will save you time!
+
+## Using pseudocode with LLMs
 
 LLMs (like ChatGPT) can assist in converting pseudocode into actual Python code. By writing clear pseudocode, you can prompt the LLM to generate Python code that follows your logic, helping you focus on problem-solving and testing the generated code rather than obscure syntax.
 
-## Example: Processing CrossRef Data from JOSS Papers
+## Example: processing Crossref data from JOSS papers
 
-You have inherited the code below, it's quite messy and hard to read 
-
-
+You have inherited the code below; it's quite messy and hard to read
 
 ```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+---
 from datetime import datetime
 
-# example list of papers with nested title, citations, and weird date format
+# Example list of papers with nested title, citations, and weird date format
 ps = [
     {"title": ["P1"], "pub_date": "2023/05/10", "citations": [5]},
     {"title": ["P2"], "pub_date": "2022/04/12", "citations": [3]},
     {"title": ["P3"], "pub_date": "2021/03/15", "citations": [8]},
 ]
 
-# process each paper manually 
+# Process each paper manually
+
 # P1
 p = ps[0]
 if p["citations"]:
     pd1 = datetime.strptime(p["pub_date"], "%Y/%m/%d")
-    a = sum(p["citations"]) / len(p["citations"])
-    print({"tit": p["title"][0],"pd":pd1,"a":a})
+    cit1 = p["citations"][0]  # Access first element directly
+    print({"tit": p["title"][0], "pd": pd1})
 
 # P2
 x = ps[1]
 if x["citations"]:
     pd2 = datetime.strptime(x["pub_date"], "%Y/%m/%d")
-    y = sum(x["citations"]) / len(x["citations"])
-    print({"t":x["title"][0],"pd":pd2,"y":y})
+    cit2 = x["citations"][0]  # Access first element directly
+    print({"t": x["title"][0], "pd": pd2})
 
 # P3
 z = ps[2]
 if z["citations"]:
-    p3 = datetime.strptime(z["pub_date"],"%Y/%m/%d")
-    z_avg = sum(z["citations"]) / len(z["citations"])
-    print({"ttl":z["title"][0],"pdate":p3,"z_avg":z_avg})
+    p3 = datetime.strptime(z["pub_date"], "%Y/%m/%d")
+    cit3 = z["citations"][0]  # Access first element directly
+    print({"ttl": z["title"][0], "pdate": p3})
+
+# Manually calculate the mean number of citations
+total_citations = cit1 + cit2 + cit3
+mean_citations = total_citations / 3
+
+print(f"Mean number of citations: {mean_citations}")
 ```
 
+Before tackling the code above, break things down a bit using English rather than Python! The goal of the code above is to process citation data. In this case, you have a list of dictionaries to process. 
+
+### Step 1: Write pseudocode
+
+In the code above, each dictionary is processed individually. 
+
+Ask yourself:
+1. What steps are repeated in the code above?
+1. Is there a better way to process the data more efficiently?
+
+Your pseudocode might look something like this:
+
+```md
+Open a list of Python dictionary objects.
+Process the data in each list:
+    * Extract the date
+    * Extract the number of citations
+    * Store the data in some format that makes it easier to process(don't print it)
+```
+
+### Step 2: generate pseudocode that begins to consider Python syntax 
+
+Next, you can choose whether you want to write cleaner Python code yourself or generate your code using an LLM. Below, you begin to flesh out the pseudocode, considering the types of Python data structures that might be most useful for storing the data.  
+
+In this case, Pandas is a great option because it has a built-in mean method and handles tabular data well. 
 
 
-### Step 1: Write Pseudocode
-Suppose you want to write a Python function that processes JSON data of JOSS papers from CrossRef, filtering out papers without valid DOIs and calculating citations per month.
+```md
+Open a list of Python dictionary objects.
+Create a Python loop to process the data in each list:
+* Extract the date
+* Extract the number of citations
+* Add the cleaned data to a list
+Turn the list into a Pandas DataFrame
+Calculate mean citations
+```
 
-Here’s how you can start with pseudocode:
+### Step 3: refine your pseudocode further 
 
-1. Load JSON data of JOSS papers from CrossRef.
-2. Loop through each paper.
+Now that you have pseudocode, you can begin to fill in the code gaps! 
+Keep your pseudocode steps. Add the code required to perform each step.
 
-    * ✅ Check if the DOI is valid.
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+---
+from datetime import datetime
 
-    * ✅ If valid, extract the number of citations and the publication date
+# Example list of papers with nested title, citations, and weird date format
+pubs = [
+    {"title": ["P1"], "pub_date": "2023/05/10", "citations": [5]},
+    {"title": ["P2"], "pub_date": "2022/04/12", "citations": [3]},
+    {"title": ["P3"], "pub_date": "2021/03/15", "citations": [8]},
+]
 
-    * ✅ Calculate the number of citations per month since the publication date.
-   
-3.	Store results in a list.
-4.	Return the list of processed data.
+# It's straightforward to convert a list to a DataFrame.
+# Create / initialize an empty list
 
+all_pubs = []
+# Create a Python loop to process each publication the list
+for pub in pubs:
+    # * Extract the date and add print statements for checks
+    pub_date = datetime.strptime(pub["pub_date"], "%Y/%m/%d")
+    print(pub_date)
+    # * Extract the number of citations
+    citation_count = pub["citations"][0]
+    print(citation_count)
+    # * Add the cleaned data to a list
+    all_pubs.append({"pub_date": pub_date, "citation_count": citation_count})
+    print(all_pubs)
+# Turn the list into a Pandas DataFrame
+# Calculate mean publications using pandas.mean
+```
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+Based on the above, you can begin to clean up your workflow even further. You no longer need print statements.
+
+:::{tip}
+It can also be helpful to use a code formatter as you go to keep your code consistent. 
+If you are working in Jupyter Lab, [Jupyter Lab code formatter is a great option.](https://jupyterlab-code-formatter.readthedocs.io/).
+:::
+
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+---
+from datetime import datetime
+
+# Example list of papers with nested title, citations, and weird date format
+pubs = [
+    {"title": ["P1"], "pub_date": "2023/05/10", "citations": [5]},
+    {"title": ["P2"], "pub_date": "2022/04/12", "citations": [3]},
+    {"title": ["P3"], "pub_date": "2021/03/15", "citations": [8]},
+]
+
+all_pubs = []
+for pub in pubs:
+    pub_date = datetime.strptime(pub["pub_date"], "%Y/%m/%d")
+    citation_count = pub["citations"][0]
+
+    all_pubs.append({"pub_date": pub_date, "citation_count": citation_count})
+
+# Turn the list into a Pandas DataFrame
+all_pubs_df = pd.DataFrame(all_pubs)
+all_pubs_df.head()
+```
+
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+---
+# Calculate mean publications using pandas.mean
+mean_citations = all_pubs_df["citation_count"].mean()
+mean_citations
+```
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+:::{dropdown}
+Using the above pseudocode, ChatGPT provided the following code.
+```python
+from datetime import datetime
+import pandas as pd
+
+def extract_data(papers):
+    """
+    Extract publication date and number of citations from a list of papers.
+
+    Parameters
+    ----------
+    papers : list of dict
+        List of paper dictionaries containing 'title', 'pub_date', and 'citations'.
+
+    Returns
+    -------
+    pd.DataFrame
+        A DataFrame containing the extracted information.
+    """
+    processed_data = []
+
+    for paper in papers:
+        if paper["citations"]:
+            pub_date = datetime.strptime(paper["pub_date"], "%Y/%m/%d")
+            citations = paper["citations"][0] 
+            processed_data.append({
+                "title": paper["title"][0],
+                "publication_date": pub_date,
+                "citations": citations
+            })
+
+    return pd.DataFrame(processed_data)
+
+# Example list of papers with nested title, citations, and date format
+papers = [
+    {"title": ["P1"], "pub_date": "2023/05/10", "citations": [5]},
+    {"title": ["P2"], "pub_date": "2022/04/12", "citations": [3]},
+    {"title": ["P3"], "pub_date": "2021/03/15", "citations": [8]},
+]
+
+# Extract the data into a DataFrame
+processed_papers = extract_data(papers)
+
+# Example of further processing or analysis (without printing)
+# e.g., Calculate the mean number of citations
+mean_citations = processed_papers["citations"].mean()
+
+# Store processed data and mean citations for further analysis
+processed_data_store = {
+    "processed_papers": processed_papers,
+    "mean_citations": mean_citations
+}
+```
+:::
 
 +++
 
-### Step 2: Generate Python Code Using LLMs
+### You now have a cleaner, working script!
 
-Now, you can prompt an LLM to convert this pseudocode into Python. Or you could begin to code up the workflow yourself. 
+By following the above steps, you now have a clean working workflow that you can 
+adapt and refactor even further. Let's pretend that you know you will need to 
+add two things to your workflow:
 
-For the LLM, you could input:
+* You know that your data is doing to be in a JSON file, rather 
+than provided to you as a Python dictionary. 
+* You also know that you will need to process multiple files. 
 
-> "Write a Python workflow that processes a list of Python dictionaries containing cross-ref citation data. for each list that loads JSON data of JOSS papers, checks for valid DOIs, calculates citations per month since the publication date, and returns the results in a list."
+Have a look at the code below, consider using pseudocode to identify areas that you could 
+clean up even further to support a multi-file workflow.
 
-Based on this, the LLM might generate Python code like this:
+```{code-cell} ipython3
+from datetime import datetime
+
+# Open the data in .JSON format rather than via an example 
+pubs = [
+    {"title": ["P1"], "pub_date": "2023/05/10", "citations": [5]},
+    {"title": ["P2"], "pub_date": "2022/04/12", "citations": [3]},
+    {"title": ["P3"], "pub_date": "2021/03/15", "citations": [8]},
+]
+# if there are multiple files, I will need a processing step for each file
+all_pubs = []
+for pub in pubs:
+    # Could this step be a function or multiple functions that cleans the data?
+    pub_date = datetime.strptime(pub["pub_date"], "%Y/%m/%d")
+    citation_count = pub["citations"][0]
+    all_pubs.append({"pub_date": pub_date, "citation_count": citation_count})
+
+all_pubs_df = pd.DataFrame(all_pubs)
+mean_citations = all_pubs_df["citation_count"].mean()
+```
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 ## Add Multiple data files to your workflow
 
@@ -125,101 +331,3 @@ Using pseudocode helps you think through your logic clearly, while LLMs can assi
 ```{code-cell} ipython3
 
 ```
-
-By following pep8 style and using expressive names, the code becomes easier to read. Expressive naming acts like documentation,
-
-```{code-cell} ipython3
-from datetime import datetime
-
-# Example list of papers with nested title, citations, and unusual date format
-papers = [
-    {"title": ["Paper 1"], "pub_date": "2023/05/10", "citations": [5]},
-    {"title": ["Paper 2"], "pub_date": "2022/04/12", "citations": [3]},
-    {"title": ["Paper 3"], "pub_date": "2021/03/15", "citations": [8]},
-]
-
-# Process each paper manually
-# Paper 1
-paper_1 = papers[0]
-if paper_1["citations"]:
-    pub_date_1 = datetime.strptime(paper_1["pub_date"], "%Y/%m/%d")
-    avg_citations_1 = sum(paper_1["citations"]) / len(paper_1["citations"])
-    print({
-        "title": paper_1["title"][0],
-        "pub_date": pub_date_1, 
-        "citations": avg_citations_1
-    })
-
-# Paper 2
-paper_2 = papers[1]
-if paper_2["citations"]:
-    pub_date_2 = datetime.strptime(paper_2["pub_date"], "%Y/%m/%d")
-    avg_citations_2 = sum(paper_2["citations"]) / len(paper_2["citations"])
-    print({
-        "title": paper_2["title"][0],
-        "pub_date": pub_date_2,       
-        "citations": avg_citations_2
-    })
-
-# Paper 3
-paper_3 = papers[2]
-if paper_3["citations"]:
-    pub_date_3 = datetime.strptime(paper_3["pub_date"], "%Y/%m/%d")
-    avg_citations_3 = sum(paper_3["citations"]) / len(paper_3["citations"])
-    print({
-        "title": paper_3["title"][0],
-        "pub_date": pub_date_3,  
-        "citations": avg_citations_3
-    })
-```
-
-The above workflow has easier-to-read variable names. Unfortunately, it's also a great example of "copy pasta" code, which is repeated code. 
-
-You could write pseudocode to identify the core steps like this:
-
-1. Open each citation entry in a Python list. Each individual entry will be in `dict` format. For each citation  
-    1. Get the paper's publication date & turn it into a `datetime` object
-    1. Get the total citations the paper has
-    2. Add data to a pandas dataframe
-2. Calculate the mean citation number for all papers
-
-+++
-
-The above pseudocode could be passed to a llm (with more details about how you want it to create the code). 
-
-You could also begin to translate it into Python code like this:
-
-
-1. Loop through and access each citation dictionary in the Python list. For each citation:  
-    1. Get the paper's publication date & turn it into a `datetime` object
-    1. Get the total citations the paper has
-    2. Add data to a pandas dataframe
-2. Calculate the mean citation number for all papers
-
-```{code-cell} ipython3
-from datetime import datetime
-
-# Example list of papers with nested fields
-papers = [
-    {"title": ["Paper 1"], "pub_date": "2023/05/10", "citations": [5]},
-    {"title": ["Paper 2"], "pub_date": "2022/04/12", "citations": [3]},
-    {"title": ["Paper 3"], "pub_date": "2021/03/15", "citations": [8]},
-]
-
-# Process papers in a loop
-for paper in papers:
-    if paper["citations"]:
-        pub_date = datetime.strptime(paper["pub_date"], "%Y/%m/%d")
-        avg_citations = sum(paper["citations"]) / len(paper["citations"])
-        print({
-            "title": paper["title"][0],  # Cleaning step
-            "pub_date": pub_date,        # Parsed datetime
-            "avg_citations": avg_citations
-        })
-```
-
-You have now designed a workflow using pseudocode to process several sites worth of landsat data. 
-
-Of course, the pseudocode above is just the beginning. For each of the steps above, you need to flesh out how you can accomplish each task. 
-
-The next lesson in this chapter focuses on data workflow best practices that can help you implement your workflow efficiently and effectively.
