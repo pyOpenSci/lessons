@@ -99,31 +99,12 @@ print(clean_title("hi, i am a title"))
 print(clean_title(""))  
 ```
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
+```{tip} Informative Errors
+Notice we included the value that caused the error in the `IndexError` message,
+and a suggestion about what we expected!
 
-If you wish, you can shorten the amount of information returned in the error by adding `from None` when you raise the error. This will look nicer to a user, but you lose some detail in the error traceback.
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
-tags: [raises-exception]
----
-def clean_title(title):
-    """
-    Attempts to return the first character of the title.
-    Raises the same error with a friendly message if the input is invalid.
-    """
-    try:
-        return title[0]
-    except IndexError as e:
-        raise IndexError(f"Oops! You provided a title in an unexpected format. "
-                         f"I expected the title to be provided in a list and you provided "
-                         f"a {type(title)}.") from None 
-
-# Run the function
-print(clean_title("")) 
+Include enough detail in your exceptions so that the person reading them knows
+why the error occurred, and ideally what they should do about it.
 ```
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
@@ -138,7 +119,7 @@ Here’s how try/except blocks work:
 * **try block:** You write the code that might cause an error here. Python will attempt to run this code.
 * **except block:** If Python encounters an error in the try block, it jumps to the except block to handle it. You can specify what to do when an error occurs, such as printing a friendly message or providing a fallback option.
 
-A `try/except` block looks like this:
+A `try/except` block looks like this[^more_forms]:
 
 ```python
 try:
@@ -213,7 +194,7 @@ file_data = read_file("nonexistent_file.txt")
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-You could anticipate a user providing a bad file path. This might be especailly possible if you plan to share your code with others and run it on different computers and different operating systems.
+You could anticipate a user providing a bad file path. This might be especially possible if you plan to share your code with others and run it on different computers and different operating systems.
 
 In the example below, you use a [conditional statement](conditionals) to check if the file exists; if it doesn't, it returns None. In this case, the code will fail quietly, and the user will not understand that there is an error.
 
@@ -227,7 +208,7 @@ slideshow:
 ---
 import os
 
-def read_file(file_path):
+def read_file_silent(file_path):
     if os.path.exists(file_path):
         with open(file_path, 'r') as file:
             data = file.read()
@@ -236,10 +217,145 @@ def read_file(file_path):
         return None  # Doesn't fail immediately, just returns None
 
 # No error raised, even though the file doesn't exist
-file_data = read_file("nonexistent_file.txt")
+file_data = read_file_silent("nonexistent_file.txt")
 ```
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+Even if you know that it is possible for a `FileNotFoundFoundError` to be raised here, it's better to raise the exception rather than catch it and proceed silently so the person calling the function knows there is a problem they need to address.
+
+Say for example reading the data was one step in a longer chain of analyses with other steps that take a long time in between when the data was loaded and when it was used:
+
+```python
+# The problem occurs here...
+data = read_file_silent("nonexistent_file.txt")
+
+# This file takes an hour to download...
+big_file = download_file('http://example.com/big_file.exe')
+
+# And this simulation runs overnight...
+generated_data = expensive_simulation()
+
+# We'll only realize there is a problem here, 
+# and by then the problem might not be obvious!
+analyze_data(data, big_file, generated_data)
+```
+
+By silencing the error, we wasted our whole day!
+
+## Catching and Using Exceptions
+
+If we want to raise exceptions as soon as they happen,
+why would we ever want to catch them with `try`/`catch`?
+Catching exceptions allows us to choose how we react to them -
+and vice versa when someone else is running our code, 
+raising exceptions lets them know there is a problem and gives them the opportunity to decide how to proceed.
+
+For example, you might have many datasets to process,
+and you don't want to waste time processing one that has missing data,
+but you also don't want to stop the whole run because an exception happens
+somewhere deep within the nest of code.
+The *combination* of failing fast with error handling allows us to do that!
+
+Here we use the `except {exception type} as {variable}` syntax to *use* the error after catching it,
+and we store error messages for each dataset to analyze and display them at the end:
+
+```{code-cell} ipython3
+from rich.pretty import pprint
+
+data = [2, 4, 6, 8, 'uh oh']
+
+def divide_by_two(value):
+    return value/2
+
+def my_analysis(data):
+    results = {}
+    errors = {}
+    for value in data:
+        try:
+            results[value] = divide_by_two(value)
+        except TypeError as e:
+            errors[value] = str(e)
+    return {'results': results, 'errors': errors}
+
+results = my_analysis(data)
+pprint(results, expand_all=False)
+```
+
+These techniques stack! So add one more level where we imagine someone else is using our analysis code. They might want to raise an exception to stop processing the rest of their data.
+
+```{code-cell} ipython3
+---
+tags: [raises-exception]
+---
+
+def someone_elses_analysis(data):
+    processed = my_analysis(data)
+    if processed['errors']:
+        raise RuntimeError(f"Caught exception from my_analysis: {processed['errors']}")
+
+someone_elses_analysis(data)
+```
+
+
+## Customizing error messages
+
+Recall the exception from our missing file:
+
+```{code-cell} ipython3
+---
+tags: [raises-exception]
+---
+
+file_data = read_file("nonexistent_file.txt")
+```
+
+### Focusing Information - Raising New Exceptions
+
+The error is useful because it fails and provides a simple and effective message that tells the user to check that their file path is correct. But there's a lot of information there! The traceback shows us each line of code in between the place where you called the function and where the exception was raised: the `read_file()` call, the `open()` call, the bottom-level `IPython` exception. If you wanted to provide less information to the user, you could catch it and raise a *new* exception. 
+
+If you simply raise a new exception, it is [chained](https://docs.python.org/3/tutorial/errors.html#exception-chaining) to the previous error, which is noisier, not tidier!
+
+```{code-cell} ipython3
+---
+tags: [raises-exception]
+---
+def read_file(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            data = file.read()
+        return data
+    except FileNotFoundError:
+        raise FileNotFoundError(
+            f"Oops! I couldn't find the file located at: {file_path}. "
+            "Please check to see if it exists."
+        )  # no "from" statement implicitly chains the prior error
+
+
+file_data = read_file("nonexistent_file.txt")
+```
+
+Instead we can use the exception chaining syntax, `raise {exception} from {other exception}`, to explicitly exclude the original error from the traceback.
+
+
+```{code-cell} ipython3
+---
+tags: [raises-exception]
+---
+def read_file(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            data = file.read()
+        return data
+    except FileNotFoundError:
+        raise FileNotFoundError(
+            f"Oops! I couldn't find the file located at: {file_path}. "
+            "Please check to see if it exists."
+        ) from None  # explicitly break the exception chain
+
+
+file_data = read_file("nonexistent_file.txt")
+```
 
 This code example below is better than the examples above for three reasons:
 
@@ -247,53 +363,36 @@ This code example below is better than the examples above for three reasons:
 2. It fails quickly - as soon as it tries to open the file. The code won't continue to run after this step fails.
 3. It raises a clean, useful error that the user can understand
 
-The code anticipates what will happen if it can't find the file. It then raises a `FileNotFoundError` and provides a useful and friendly message to the user.
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
-tags: [raises-exception]
----
-def read_file(file_path):
-    try:
-        with open(file_path, 'r') as file:
-            data = file.read()
-        return data
-    except FileNotFoundError:
-        raise FileNotFoundError(f"Oops! I couldn't find the file located at: {file_path}. Please check to see if it exists.")
-
-# Raises an error immediately if the file doesn't exist
-file_data = read_file("nonexistent_file.txt")
-```
-
-## Customizing error messages
-
-The code above is useful because it fails and provides a simple and effective message that tells the user to check that their file path is correct. 
-
-However, the amount of text returned from the error is significant because it finds the error when it can't open the file. Still, then you raise the error intentionally within the except statement. 
-
-If you wanted to provide less information to the user, you could use `from None`. From None ensure that you 
-only return the exception information related to the error that you handle within the try/except block.
-
-```{code-cell} ipython3
----
-tags: [raises-exception]
----
-def read_file(file_path):
-    try:
-        with open(file_path, 'r') as file:
-            data = file.read()
-        return data
-    except FileNotFoundError:
-        raise FileNotFoundError(f"Oops! I couldn't find the file located at: {file_path}. Please check to see if it exists.") from None
-
-# Raises an error immediately if the file doesn't exist
-file_data = read_file("nonexistent_file.txt")
-```
-
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+### Adding Information - Using Notes
+
+The above exception is tidy, and it's reasonable to do because we know
+exactly where the code is expected to fail.
+
+The disadvantage to breaking exception chains is that you might *not*
+know what is going to cause the exception, and by removing the traceback,
+you hide potentially valuable information.
+
+To add information without raising a new exception, you can use the 
+{meth}`Exception.add_note` method and then re-raise the same error:
+
+```{code-cell} ipython3
+---
+tags: [raises-exception]
+---
+def read_file(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            data = file.read()
+        return data
+    except FileNotFoundError as e:
+        e.add_note("Here's the deal, we both know that file should have been there, but now its not ok?")
+        raise e
+
+# Raises an error immediately if the file doesn't exist
+file_data = read_file("nonexistent_file.txt")
+```
 
 (pythonic-checks)=
 ## Make Checks Pythonic
@@ -374,3 +473,19 @@ slideshow:
 ---
 
 ```
+
+---
+
+[^more_forms]: See the [python tutorial on exceptions](https://docs.python.org/3/tutorial/errors.html#enriching-exceptions-with-notes) for the other forms that an exception might take, like:
+
+    ```python
+    try:
+        # do something
+    except ExceptionType:
+        # catch an exception
+    else:
+        # do something if there wasn't an exception
+    finally:
+        # do something whether there was an exception or not
+    ```
+

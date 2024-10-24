@@ -25,6 +25,7 @@ dependencies = [
     "matplotlib",
     "pandas",
     "sphinx-codeautolink",
+    "rich",
 ]
 
 [project.optional-dependencies]

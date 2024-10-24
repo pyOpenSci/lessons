@@ -11,5 +11,4 @@ dependencies:
   - isort 
   - jupyterlab_code_formatter
   - jupytext
-  - sphinx_togglebutton
   
