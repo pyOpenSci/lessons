@@ -18,7 +18,7 @@
 * [Write "Pythonic", Expressive Code](python-expressive-code)
 * [Lint, Format, & Style your Code](clean-modular-code/python-pep-8)
 * [Don't Repeat Yourself (DRY) Principles](clean-modular-code/python-dry-modular-code)
-* [Write Pseudocode](write-pseudocode)
+* [Write Pseudocode](intro-write-pseudocode)
 
 :::
 ::::

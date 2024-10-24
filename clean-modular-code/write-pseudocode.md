@@ -195,6 +195,8 @@ slideshow:
 ---
 from datetime import datetime
 
+import pandas as pd
+
 # Example list of papers with nested title, citations, and weird date format
 pubs = [
     {"title": ["P1"], "pub_date": "2023/05/10", "citations": [5]},
