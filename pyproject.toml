@@ -24,6 +24,7 @@ dependencies = [
     # for project cards
     "matplotlib",
     "pandas",
+    "sphinx-codeautolink",
     "rich",
 ]
 

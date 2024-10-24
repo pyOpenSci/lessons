@@ -71,9 +71,9 @@ Source: Francois Michonneau.
 
 A well-defined function only does one thing but does it well and often in various contexts. Often, the operations in a good function are useful for many tasks.
 
-Take, for instance, the **numpy** function called `mean()`, which computes mean values from a **numpy** array.
+Take, for instance, the **{mod}`numpy`** function called {func}`~numpy.mean`, which computes mean values from a **numpy** array.
 
-This function only does one thing-- it computes a mean. However, you may use the `np.mean()` function many times in your code on multiple **numpy** arrays because it has been defined to take any **numpy** array as an input.
+This function only does one thing-- it computes a mean. However, you may use the {func}`np.mean() <numpy.mean>` function many times in your code on multiple **numpy** arrays because it has been defined to take any **numpy** array as an input.
 
 For example:
 <!-- #endregion -->
@@ -88,7 +88,7 @@ np.mean(arr)
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-The `np.mean()` function is modular, and it can be easily combined with other functions to accomplish various tasks.
+The {func}`numpy.mean()` function is modular, and it can be easily combined with other functions to accomplish various tasks.
 
 When you write modular functions, you can reuse them for other workflows and projects. Some people even write their own **Python** packages for personal and professional use that contain custom functions for tasks that they have to complete regularly.
 

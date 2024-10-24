@@ -2,3 +2,8 @@
 .navbar-header-items .navbar-header-items__center {
 	margin-left: 2em !important;
 }
+
+.sphinx-codeautolink-a:link {
+	text-decoration: underline;
+	text-decoration-style: dotted;
+}

@@ -186,7 +186,7 @@ df_combined.shape
 
 ```{dropdown} Hint 1 - built-in help
 If you want to look up a pandas function to get help, Jupyter Lab has built-in help.
-Enter `help(pd.DataFrame.iterrows)`.
+Enter `help(pd.DataFrame.iterrows)` to see the {meth}`documentation <pandas.DataFrame.iterrows>`.
 ```
 
 ```{dropdown} Hint 2 - itterows and at
