@@ -323,11 +323,13 @@ mean_citations = all_pubs_df["citation_count"].mean()
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
+:::{todo}
 ## Add Multiple data files to your workflow
 
 Above you begin to think about the steps associated with creating a workflow for a single list of dictionaries.  
 
 Using pseudocode helps you think through your logic clearly, while LLMs can assist by generating Python code based on your structure. This process is especially helpful when working on tasks like processing JOSS CrossRef data, where filtering, extracting, and calculating values are essential steps.
+:::
 
 ```{code-cell} ipython3
 
