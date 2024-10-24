@@ -2,7 +2,7 @@
 
 [![All Contributors](https://img.shields.io/github/all-contributors/pyOpenSci/lessons?color=ee8449)](#contributors-)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/pyopensci/lessons?color=purple&display_name=tag&style=plastic)
-[![DOI](https://zenodo.org/badge/855935338.svg)](https://doi.org/10.5281/zenodo.13910245)
+[![DOI](https://zenodo.org/badge/855935338.svg)](10.5281/zenodo.13910244)
 [![CircleCI](https://circleci.com/gh/pyOpenSci/lessons.svg?style=svg)](https://circleci.com/gh/pyOpenSci/lessons)
 [![Binder](https://binder.opensci.2i2c.cloud/badge_logo.svg)](https://binder.opensci.2i2c.cloud/v2/gh/pyopensci/lessons/HEAD)
 
