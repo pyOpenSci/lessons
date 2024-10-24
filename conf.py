@@ -184,7 +184,7 @@ intersphinx_mapping = {
     "numpy": ("https://numpy.org/doc/stable/", None),
     "pandas": ('https://pandas.pydata.org/docs/', None),
     "earthpy": ("https://earthpy.readthedocs.io/en/latest/", None),
-    #"matplotlib": ('https://matplotlib.org/stable/', None),
+    "matplotlib": ('https://matplotlib.org/stable/', None),
 }
 
 codeautolink_global_preface = """
@@ -193,6 +193,7 @@ import pandas as pd
 import os
 """
 codeautolink_concat_default=True
+
 # suppress all codeautolink warnings, we don't really care if it's busted
 suppress_warnings = [
     "codeautolink.clean_block",
