@@ -326,7 +326,10 @@ def read_file(file_path):
             data = file.read()
         return data
     except FileNotFoundError:
-        raise FileNotFoundError(f"Oops! I couldn't find the file located at: {file_path}. Please check to see if it exists.")
+        raise FileNotFoundError(
+            f"Oops! I couldn't find the file located at: {file_path}. "
+            "Please check to see if it exists."
+        )  # no "from" statement implicitly chains the prior error
 
 
 file_data = read_file("nonexistent_file.txt")
@@ -345,7 +348,10 @@ def read_file(file_path):
             data = file.read()
         return data
     except FileNotFoundError:
-        raise FileNotFoundError(f"Oops! I couldn't find the file located at: {file_path}. Please check to see if it exists.") from None
+        raise FileNotFoundError(
+            f"Oops! I couldn't find the file located at: {file_path}. "
+            "Please check to see if it exists."
+        ) from None  # explicitly break the exception chain
 
 
 file_data = read_file("nonexistent_file.txt")
