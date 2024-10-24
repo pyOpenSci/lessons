@@ -21,9 +21,8 @@ slideshow:
   slide_type: ''
 ---
 ---
-layout: single
 title: "Learn to Write Pseudocode for Python Programming"
-excerpt: "Pseudcode can help you design data workflows by listing the individual workflow steps in plain language, so the focus is on the overall data process rather than on the specific code needed. Learn best practices for writing pseudocode for data workflows."
+excerpt: "Pseudcode can help you design data workflows by listing the individual workflow steps in plain language, so the focus is on the overall data process rather than on the specific code needed. Learn best practices for writing pseudocode when building data-processing workflows."
 last_modified: 
 ---
 ```
