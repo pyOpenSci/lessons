@@ -59,6 +59,7 @@ extensions = [
     "sphinx_favicon",
     "sphinx.ext.todo",
     "sphinx_codeautolink",
+    "sphinx.ext.todo",
 ]
 
 # colon fence for card support in md
