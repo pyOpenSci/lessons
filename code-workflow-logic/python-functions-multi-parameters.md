@@ -189,6 +189,16 @@ def mean_mm_to_in(data_mm, axis_value):
 
 Note that the function could be written to convert the values first and then calculate the mean. However, given that the function will complete both tasks and return the mean values in the desired units, it is more efficient to calculate the mean values first and then convert just those values, rather than converting all of the values in the input array. 
 
+````{tip}
+Typically functions should have a [single purpose](https://en.wikipedia.org/wiki/Separation_of_concerns), and be [composed](https://en.wikipedia.org/wiki/Function_composition_(computer_science)) to implement higher-order operations. The above function would normally be written without wrapping {func}`numpy.mean` like this:
+
+```python
+mm_to_in(np.mean(data, axis=axis_value))
+```
+
+The purpose of this lesson is to introduce function parameters, so let's focus on that for now and save design principles for another lesson :).
+````
+
 
 Last, include a docstring to provide the details about this function, including a brief description of the function (i.e. how it works, purpose) as well as identify the input parameters (i.e. type, description) and the returned output (i.e. type, description).
 <!-- #endregion -->
