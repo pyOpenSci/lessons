@@ -26,7 +26,7 @@ By practicing these strategies, you are well on your way to writing clean, effic
 
 ## Activity data 
 
-This activity begins with some code that you "inherited from a former lab mate". This code processes [cross-ref](https://www.crossref.org/) citation data for [The Journal of Open Source Software (JOSS)](https://joss.theoj.org/) publications. The data are pulled directly from the crossref API but then modified with specific "features" to help you learn better coding practices when completing the activities.
+This activity begins with some code that you "inherited from a former lab mate". This code processes [cross-ref](https://www.crossref.org/) citation data for [The Journal of Open Source Software (JOSS)](https://joss.theoj.org/) publications. The data are pulled directly from the Crossref API but then modified with specific "features" to help you learn better coding practices when completing the activities.
 
 ## Your goal 
 
@@ -42,9 +42,9 @@ In this part of the activity, you will create pseudocode to identify:
 
 In the next activity, you will modify the code.
 
-### If you want to use an LLM to support your learning 
+:::{admonition} If you want to use an LLM to support your learning 
 
-The cleanup steps discussed above are things a LLM (Large Language Model) like ChatGPT and Anthropic's Claude can help you with. However, remember that LLMs often return wrong or partially wrong answers. This means that if you use LLM's, you must have a keen eye to catch issues in LLM-generated code.
+The cleanup steps discussed above are things a LLM (Large Language Model) like ChatGPT and Anthropic's Claude can help you with. However, remember that LLMs often return wrong or partially wrong answers. This means that if you use LLMs, you must have a keen eye for catching issues in LLM-generated code.
 
 If you are using a LLM: 
 
@@ -54,9 +54,9 @@ If you are using a LLM:
 
 or
 
-> Identify areas of the code below that could be more DRY. Write pseudocode that identifies the processing steps that are repeated in the code.
+> Identify areas of the code below that could be more DRY. Write [pseudocode](intro-write-pseudocode) that identifies the processing steps that are repeated in the code.
 
-:::{important}  
+
 If you use an LLM for this activity, consider adding any odd or incorrect code it returns to our shared workshop document.  
 :::
 
@@ -64,16 +64,23 @@ If you use an LLM for this activity, consider adding any odd or incorrect code i
 
 The workflow below should open the data stored in the `/data` directory for this activity. The code should run if you have a proper Python environment setup. 
 
-## Part 1 - evaluate with a partner 
+:::{admonition} Part 1: evaluate with a partner 
+:class: attention
 
-To begin, look at the code. 
+Examine the code below and address the following questions and statements. 
 
-* Create a list of any issues that you see with it.
-* What is the code supposed to do?
-* Does the code run?
-* What ideas do you have to make it more efficient?
+1. Create a list of any issues that you see with the code.
+2. Write down: what is the code supposed to do?
+3. Does the code run?
+4. Work with your partner to create a list of improvements that will make your code more efficient and easier to understand.
+:::
 
 ```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+---
 import os
 import numpy as np
 import json
@@ -123,17 +130,24 @@ df_combined = pd.concat([df, df2], axis=0)
 df_combined.shape
 ```
 
-:::{admonition} Part 2
+:::{admonition} Part 2: refactor your code
 :class: attention
 
-We've taken the original code above and copied it to a new notebook cell for your convenience. Make the code:
+We've taken the code above and copied it to a new notebook cell below for your convenience. Edit the code in that cell to make it:
 
 * PEP8 compliant
 * Add expressive names to make it more readable
 * Add a docstring to the top of the script to help a user understand what the code does.
+
+You are welcome to work in groups to complete this task!
 :::
 
 ```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+---
 """Modify this code and make improvements. Good luck!"""
 import os
 import numpy as np
@@ -184,25 +198,29 @@ df_combined = pd.concat([df, df2], axis=0)
 df_combined.shape
 ```
 
-```{dropdown} Hint 1 - built-in help
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+:::{dropdown} Hint 1: built-in help
 If you want to look up a pandas function to get help, Jupyter Lab has built-in help.
 Enter `help(pd.DataFrame.iterrows)` to see the {meth}`documentation <pandas.DataFrame.iterrows>`.
-```
+:::
 
-```{dropdown} Hint 2 - itterows and at
-What do we expect to happen in the code block with `iterrows`? Iterate through each row of the dataframe and extract the date and title. Try looking up the `at` method in pandas docs. `at` accesses a single value for a row/column label pair.
-```
+:::{dropdown} Hint 2: Pandas `itterows` and `at`
+What do we expect to happen in the code block with `iterrows`? Iterate through each row of the dataframe and extract the date and title. Try looking up the `at` method in pandas docs. [`at`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.at.html) accesses a single value for a row/column label pair.
+:::
 
 :::{admonition} Part 3
 :class: attention
 
 Evaluate the code to determine whether it could be more DRY. 
+
 * Create a list of items that you notice are repeated and could be cleaned up in the code
-* Write pseudocode that describes what the code intends to do step by step 
+* Write [pseudocode](intro-write-pseudocode) that describes what the code intends to do step by step
+
 :::
 
 :::{admonition} One your own 1
 :class: tip
 
-Begin cleaning up the code. In the next activity, we will discuss loops and functions in more detail.
+Begin to clean up/refactor the code above. In the next activity, we will discuss loops and functions in more detail.
 :::
