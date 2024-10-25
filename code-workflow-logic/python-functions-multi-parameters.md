@@ -35,7 +35,7 @@ In the [write functions lesson](write-python-functions), you learned about writi
 
 ```python
 def process_value(value):
-    """A function that returns an integer value multiplied by 2 """
+    """A function that returns an integer value multiplied by 2"""
     return int(value) * 2
 
 process_value(2.254)

@@ -41,10 +41,10 @@ There are several strategies that you can employ to handle unusual data values. 
 
 * **[conditional statements](../../code-workflow-logic/python-conditionals)** 
   to check for specific conditions before executing code. This allows you to create different pathways for code to execute based on specific conditions.
-* **[Try/except blocks](../../code-workflow-logic/python-function-checks)** allow 
+* **[try/except blocks](../../code-workflow-logic/python-function-checks)** allow
   you to handle potential errors by attempting an operation and catching any 
-  exceptions if they occur, providing useful feedback.Sometimses, you may want the program to end on an error. In other cases, you may want to handle it in a specific way.
-* **[Fail fast with useful error messages](fail-fast)**: Failing fast is a software engineering term that means allowing your 
+  exceptions if they occur, providing useful feedback. Sometimes, you may want the program to end on an error. In other cases, you may want to handle it in a specific way.
+* **[fail fast with useful error messages](fail-fast)**: Failing fast is a software engineering term that means allowing your
   code to stop when something goes wrong, ensuring that errors are caught 
   and communicated promptly. This helps the user quickly understand the error, what went 
   wrong, and where.
@@ -89,7 +89,7 @@ If your code doesn't [fail fast](fail-fast) with a useful error message, and it 
 
 This will then mislead someone when trying to troubleshoot your code. 
 
-### Activity 3 part 1 code example 
+### Activity 3, part 1 code example
 
 Consider the code below. Note that the code below has an incorrect `/data` directory path that doesn't exist. Notice that the error that is thrown after running the code is not a [`FileNotFounderror`](file_error). 
 

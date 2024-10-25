@@ -33,7 +33,6 @@ To define a function in Python, you need:
 - Input parameters (optional), defined inside parentheses `()`.
 - A `return` statement that specifies the output of the function.
 - A docstring that explains what the function does and defines the function's inputs and outputs. We suggest that you use numpy style docstrings for scientific Python code.
-- 
 
 ## An example Python function
 
@@ -53,7 +52,7 @@ def add_numbers(a, b):
     return a + b
 
 # Try out the function
-add_numbers(1,2)
+add_numbers(1, 2)
 ```
 
 <!-- #region -->
@@ -175,6 +174,14 @@ Below is an example call to this function, specifying a single value variable re
 <!-- #endregion -->
 
 Notice that the output is provided but you have not actually changed the original values of `precip_jan_mm`.  
+
+```python
+precip_jan_mm = 150
+
+precip_jan_in = mm_to_in(precip_jan_mm)
+
+precip_jan_mm, precip_jan_in
+```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
 ### Local function variables

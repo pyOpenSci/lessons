@@ -36,12 +36,9 @@ This lesson covers several strategies for making your code more robust and easie
 The same function below assumes that the user provides a list that contains a title as a string. Notice that the output of this function is different from what you might expect. How could you fix this? 
 
 ```{code-cell} ipython3
-# This function runs when provided both a list 
+# This function runs when provided both a list or a string
 def clean_title(title):
-    """This function checks explicitly to see if it is provided with a value that is a list. It then 
-    makes a decision about how to process the function input based on 
-    its type.  
-    """
+    """This function always returns the first element"""
     return title[0]
 
 print(clean_title(["hi, i'm a title"]))
@@ -94,12 +91,13 @@ def clean_title(title):
                          f"I expected the title to be provided in a list and you provided "
                          f"a {type(title)}.") from e
 
-print(f"{clean_title(['hi, i am a title'])} ")
+print(clean_title(["hi, i am a title"]))
 print(clean_title("hi, i am a title"))
 print(clean_title(""))  
 ```
 
 ```{tip} Informative Errors
+
 Notice we included the value that caused the error in the `IndexError` message,
 and a suggestion about what we expected!
 
@@ -173,7 +171,7 @@ This function attempts to convert a value to an integer, returning `None` and a 
 (fail-fast)=
 ## Fail fast strategy
 
-Identify data processing or workflow problems immediately when they occur and throw an error immediately rather than allowing
+Identify data processing or workflow problems immediately when they occur and throw an error rather than allowing
 them to propagate through your code. This approach saves time and simplifies debugging, providing clearer, more useful error outputs (stack traces).  Below, you can see that the code tries to open a file, but Python can't find the file. In response, Python throws a `FileNotFoundError`.
 
 ```{code-cell} ipython3

@@ -27,11 +27,11 @@ efficiency and maintainability of your code.
 
 A function is a reusable block of code that performs a specific task. Functions receive inputs to which code is applied and return outputs (or results) of the code.
 
-`input parameter –> function does something –> output results`
+`input parameters –> function does something –> output results`
 
 :::{tip}
 
-Functions (and classes) are become the base for creating Python packages.
+Functions (and classes) are the base for creating Python packages.
 
 :::
 
@@ -40,8 +40,8 @@ For example:
 
 ```python editable=true slideshow={"slide_type": ""}
 x = 5
-# The print statement is a function that provides output.
-print(x)
+# abs is a function that provides output.
+abs(x)
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
@@ -64,7 +64,7 @@ Source: Francois Michonneau.
 
 * **Fewer variables:** When you run a function, the intermediate variables that the function creates are not by default stored as explicit variables. These placeholder variables are thrown out once the function has run so it saves memory and keeps your **Python** environment cleaner.
 * **Better documentation:** Well-documented functions help other users understand the steps of your processing and helps your future self to understand previously written code.
-* **Easier to maintain and edit your code:** Because a function is only defined once in the workflow, you can simply just update the original function definition. Then, each instance in which you call that function in your code (i.e., when the same task is performed) is automatically updated.
+* **Easier to maintain and edit your code:** Because a function is only defined once in the workflow, you can update the original function definition. Then, each instance in which you call that function in your code (i.e., when the same task is performed) is automatically updated.
 * **Tests & checks:** Writing functions allows you to handle issues and edge cases in your code. It also can make it easier to write tests for your code.
 
 ### Write modular functions and code
