@@ -12,5 +12,15 @@
 			"variant": "Miniforge3",
 			"environmentFile": "environment.yml"
 		}
-	}
+	},
+	"customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-python.black-formatter",
+                "ms-python.isort",
+            ]
+        }
+    }
 }
