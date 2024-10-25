@@ -219,7 +219,7 @@ Evaluate the code to determine whether it could be more DRY.
 
 :::
 
-:::{admonition} One your own 1
+:::{admonition} On your own 1
 :class: tip
 
 Begin to clean up/refactor the code above. In the next activity, we will discuss loops and functions in more detail.
