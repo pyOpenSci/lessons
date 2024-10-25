@@ -293,7 +293,7 @@ By following the above steps, you now have a clean working workflow that you can
 adapt and refactor even further. Let's pretend that you know you will need to 
 add two things to your workflow:
 
-* You know that your data is doing to be in a JSON file, rather 
+* You know that your data is going to be in a JSON file, rather 
 than provided to you as a Python dictionary. 
 * You also know that you will need to process multiple files. 
 

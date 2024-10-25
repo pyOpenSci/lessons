@@ -19,7 +19,7 @@ kernelspec:
 [Sharing your code](share-your-code) is a great way to contribute to make your science more open. Making your code citable allows others to acknowledge your effort and build upon your work. Citations aren’t just for papers—they’re crucial for software and datasets too! Citing your code means others can easily give you credit and trace the source of key research outputs.
 
 :::{tip}
-[Placing your on an online platform like GitHub or GitLab](share-your-code) using an [open license](open-license) is an effective way to share your code. Once it's online, it's important to think about making it citable. 
+[Placing your code on an online platform like GitHub or GitLab](share-your-code) using an [open license](open-license) is an effective way to share your code. Once it's online, it's important to think about making it citable. 
 :::
 
 

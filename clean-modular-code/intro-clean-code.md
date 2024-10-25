@@ -148,14 +148,14 @@ Pythonic code avoids repetition. DRY (Don't Repeat Yourself) code is written in 
 
 Pythonic code communicates the programmer's intent clearly, making it easier for others to understand the purpose of the code at a glance.
 
-Note that the function below has an easy-to-understand name and clear docstring. Some people will even suggest adding a verb that explains what the function does, such as:
+Note that the function below has an easy-to-understand name. Some people will even suggest adding a verb that explains what the function does, such as:
 
 `convert_to_kelvin()`
 
 <!-- #endregion -->
 
 ```python editable=true slideshow={"slide_type": ""}
-def convert_to_kelvin(temperature_fahr):
+def to_kelvin(temperature_fahr):
     return ((temperature_fahr - 32) * (5 / 9)) + 273.15
 ```
 
@@ -168,7 +168,7 @@ Documentation can mean many different things. When you are writing code, a combi
 Pythonic code reflects Python's emphasis on readability and simplicity. A well-known phrase from the **Zen of Python** is: "There should be one—and preferably only one—obvious way to do it," which is a core idea behind writing Pythonic code.
 
 ```python
-def convert_to_kelvin(temperature_fahr):
+def to_kelvin(temperature_fahr):
     """
     Convert temperature from Fahrenheit to Kelvin.
 
@@ -194,27 +194,25 @@ def convert_to_kelvin(temperature_fahr):
 
 While the above tasks used to require manual code editing, in today's world, you can use a suite of automated tools such as linters and code formatters, combined with LLM's to help you write better, cleaner and more Pythonic code for scientific workflows.  
 
-### LLMS
-
-LLMs (Large Language Models) can be useful for...
-
-however, it's important that you are careful about how you use them because
+LLMs (Large Language Models) can be useful for writing code, however, it's important that you are careful about how you use them because
 
 * ethical issues
 * they are often wrong
 * they make up stuff
 * etc.
-however with correct prompts, and if you build your eye for identifying problems, and combined with tools that will help you with your code, as you write it, they can be effective tools in your workflow dev process.
 
-In the next lessons, you will learn more about making tools and approaches to making your code more Pythonic
+However with correct prompts, keeping an eye out for problems, and combined with tools that will help you with your code as you write it, they can be effective tools in your dev process.
+
+In the next lessons, you will learn more about tools and approaches to making your code more Pythonic.
 
 You will then learn about tools that you can use to format your code and identify problem points including:
 
-* LLM's like GitHub co-pilot
-* ChatGPT
-* Google Gemini
+* LLMs like:
+  * GitHub co-pilot
+  * ChatGPT
+  * Google Gemini
 
-Code formatters like:
+* Code formatters like:
 
 * black
 * ruff

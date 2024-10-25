@@ -34,7 +34,7 @@ authors: ['Leah Wasser', 'Jenny Palomino']
 
 After completing this lesson, you will be able to:
 
-* Be able to define the DRY principle.
+* Define the DRY principle.
 * List key strategies for writing DRY code in Python.
 * Explain how these strategies help you write DRY code.
 :::

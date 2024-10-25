@@ -42,7 +42,7 @@ Sharing your code using open, collaborative platforms is essential to open scien
 
 ### Version control and online collaboration
 
-There are many ways to [**share** your code](share-your-code). Platforms like [GitHub](https://github.com) and [GitLab](https://gitlab.com) are often used because they support both version control of your project and simplify online collaboration. By placing your code on these platforms, you can receive feedback and improve your projects through collective input, which also tracking changes that happen to the code over time.  
+There are many ways to [**share** your code](share-your-code). Platforms like [GitHub](https://github.com) and [GitLab](https://gitlab.com) are often used because they support both version control of your project and simplify online collaboration. By placing your code on these platforms, you can receive feedback and improve your projects through collective input, while also tracking changes that happen to the code over time.  
 
 ### Make your code citable 
 

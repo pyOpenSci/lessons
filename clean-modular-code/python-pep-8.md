@@ -232,7 +232,7 @@ There is not always a clear distinction between these categories of tools - form
 Use popular tools like **Black** or **Ruff**:
 
 - **[Black](https://black.readthedocs.io/en/stable/)**: Automatically reformats code according to PEP 8.
-- **[Ruff](https://docs.astral.sh/ruff/configuration/#jupyter-notebook-discovery)**: A linter and formatter that also supports import sorting with **isort**.
+- **[Ruff](https://docs.astral.sh/ruff/configuration/#jupyter-notebook-discovery)**: A linter and formatter that also supports import sorting.
 
 Both tools can be run manually or integrated into **pre-commit hooks** with Git to check your code before each commit. You can also configure them in your IDE (like VSCode, PyCharm, or Spyder) to format your code every time you save.
 
@@ -344,7 +344,7 @@ from my_module import my_function
 ### Whitespace
 
 * Add two blank lines before top-level function and class definitions
-* Add a single blank line before method definitions within a function
+* Add a single blank line before method definitions within a class
 * Add single blank lines to group blocks of related code within functions and methods.
 * Add a single blank line between code and a single-line comment.
 * Comments: Add a space after the `#` sign and capitalize the first letter of a comment
