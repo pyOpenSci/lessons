@@ -2,10 +2,10 @@ name: lessons
 channels:
   - conda-forge
 dependencies:
+  - python=3.11*
   - jupyterlab-myst
   - jupyterlab
   - pandas
-  - habanero
   - black 
   - ruff 
   - isort 
