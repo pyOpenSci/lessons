@@ -154,7 +154,9 @@ If you don't raise the error but instead provide a print statement, you can prov
 
 The challenge with not raising a FileNotFound error is that it will be a bit trickier to test the output. 
 
+:::{todo}
 * you could do `sys.exit` too... but I've run into issues with that in the past (I wish I could remember what they were).
+:::
 
 ```{code-cell} ipython3
 ---
