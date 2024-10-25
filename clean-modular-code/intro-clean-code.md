@@ -140,9 +140,9 @@ for index, language in enumerate(languages):
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-### Clean code is DRY & avoids repitition
+### Clean code is DRY & avoids repetition
 
-Pythonic code avoids repetition. DRY (Don't Repeat Yourself) code is written in a way that both avoids repetition and is well organized. This makes it easier to maintain and extend.
+Pythonic code avoids repetition. DRY (Don't Repeat Yourself) code is written in a way that avoids repetition and is well organized. This makes it easier to maintain and extend.
 
 ### Pythonic code is expressive
 
@@ -161,16 +161,16 @@ def to_kelvin(temperature_fahr):
 
 ### Pythonic code is well-documented
 
-Docstrings are Pythonic because they prioritize code readability and clarity, providing clear descriptions of a function’s purpose, parameters, and return values. By embedding documentation directly in the code, docstrings make it easy for developers to understand and use functions or classes without needing to read the implementation details.
+Docstrings are Pythonic because they prioritize code readability and clarity. They provide clear descriptions of a function’s purpose, parameters, and return values. By embedding documentation directly in the code, docstrings make it easy for developers to understand and use functions or classes without reading the implementation details.
 
-Documentation can mean many different things. When you are writing code, a combination of expressive names combined with sparsely added comments can go a long way towards making your code easier to read.
+Documentation can mean many different things. When writing code, expressive names combined with sparsely added comments can make it easier to read.
 
 Pythonic code reflects Python's emphasis on readability and simplicity. A well-known phrase from the **Zen of Python** is: "There should be one—and preferably only one—obvious way to do it," which is a core idea behind writing Pythonic code.
 
 ```python
 def to_kelvin(temperature_fahr):
     """
-    Convert temperature from Fahrenheit to Kelvin.
+    Convert the temperature from Fahrenheit to Kelvin.
 
     Parameters
     ----------
@@ -190,31 +190,32 @@ def to_kelvin(temperature_fahr):
 <!-- #endregion -->
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
-## Tools to help you write better, more Pythonic code - code formatters, linters and LLM's
+## Tools to help you write better, more Pythonic code - code formatters, linters and LLMs
 
-While the above tasks used to require manual code editing, in today's world, you can use a suite of automated tools such as linters and code formatters, combined with LLM's to help you write better, cleaner and more Pythonic code for scientific workflows.  
+While the above tasks used to require manual code editing, in today's world, you can use a suite of automated tools such as linters and code formatters, combined with LLMs to help you write better, cleaner and more Pythonic code for scientific workflows.  
 
-LLMs (Large Language Models) can be useful for writing code, however, it's important that you are careful about how you use them because
+LLMs (Large Language Models) can be useful for writing code, however, you must be careful about how you use them because:
 
 * ethical issues
 * they are often wrong
 * they make up stuff
 * etc.
 
-However with correct prompts, keeping an eye out for problems, and combined with tools that will help you with your code as you write it, they can be effective tools in your dev process.
+However, with correct prompts, an eye out for problems, and tools that will help you with your code as you write it, they can be effective tools in your dev process.
 
 In the next lessons, you will learn more about tools and approaches to making your code more Pythonic.
 
-You will then learn about tools that you can use to format your code and identify problem points including:
+You will then learn about tools that you can use to format your code and identify problem points, including:
 
 * LLMs like:
-  * GitHub co-pilot
-  * ChatGPT
+  * GitHub Co-pilot
+  * OpenAI ChatGPT
   * Google Gemini
+  * Anthropic Claude
 
 * Code formatters like:
 
-* black
-* ruff
+  * black
+  * ruff
 
 <!-- #endregion -->
