@@ -14,7 +14,7 @@ kernelspec:
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 (clean-code-activity-3)=
-# Activity 3: Tests & Checks for your code
+# Tests & Checks for your code: Activity 3
 
 * In [activity 1](../activity-1/clean-code-activity-1), you made your code cleaner and more usable using [expressive variable names](python-expressive-code) and docstrings to document the module. 
 * In [activity 2](../activity-2/clean-code-activity-2), you made your code more DRY ("Don't Repeat Yourself") using [functions](write-functions) and [conditionals](conditionals). 
