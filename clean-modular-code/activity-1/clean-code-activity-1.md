@@ -11,6 +11,8 @@ kernelspec:
   name: python3
 ---
 
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
 (clean-code-activity-1)=
 # Clean, Modular Code: Activity 1
 
@@ -18,9 +20,9 @@ Writing clean, modular code takes practice but is a habit worth building. Over t
 
 In this exercise, you'll focus on using three key clean code strategies:
 
-1. **Use expressive names**: Assign meaningful names to all variables and functions to make your code more readable. [Learn more about expressive names.](../python-expressive-code.md)
-2. **Use a Python style guide (PEP8) for consistent syntax**: Adhere to [PEP8 Python code style rules](../python-pep-8.md), including proper spacing and naming conventions, to maintain a consistent and readable codebase.
-3. **Identify opportunities to make your code DRY (Don't Repeat Yourself)**: In this activity, you will use pseudocode to identify areas where the code can be simplified and made DRY. In the next activity, you will implement DRY best practices using loops and functions. 
+1. [**Use expressive names**](../python-expressive-code): Assign meaningful names to all variables and functions to make your code more readable.
+2. [**Use a Python style guide (PEP8) for consistent syntax**](../python-pep-8): Adhere to PEP8 Python code style rules, including proper spacing and naming conventions, to maintain a consistent and readable codebase.
+3. **Identify opportunities to [make your code DRY (Don't Repeat Yourself)](../python-dry-modular-code)**: In this activity, you will use pseudocode to identify areas where the code can be simplified and made DRY. In the next activity, you will implement DRY best practices using loops and functions. 
 
 By practicing these strategies, you are well on your way to writing clean, efficient, and maintainable code.
 
@@ -72,7 +74,7 @@ Examine the code below and address the following questions and statements.
 1. Create a list of any issues that you see with the code.
 2. Write down: what is the code supposed to do?
 3. Does the code run?
-4. Work with your partner to create a list of improvements that will make your code more efficient and easier to understand.
+4. Work with your partner to create a list of improvements to make your code more efficient and easier to understand.
 :::
 
 ```{code-cell} ipython3
@@ -88,25 +90,25 @@ from glob import glob
 from pathlib import Path
 import numpy as np
 
-path = "data/part-1-data.json"
+path="data/part-1-data.json"
 
-with open(path, "r") as z:
-    x = json.load(z)
+with open(path,"r") as z:
+    x=json.load(z)
     
 import pandas as pd
 a=pd.json_normalize(x)
 
-b=['publisher', 'DOI', 'type', 'author','is-referenced-by-count', 'title', 'published.date-parts']
+b=['publisher','DOI','type','author','is-referenced-by-count','title', 'published.date-parts']
 df=a.filter(items=b)
 
 for i,r in df.iterrows():
-    l = r["published.date-parts"][0]
-    df.at[i, 'title'] = df.at[i, 'title'][0]
-    s = f"{l[0]}-{l[1]:02d}-{l[2]:02d}"
-    d = pd.to_datetime(s, format='%Y-%m-%d')
-    df.at[i, 'published_date'] = d
+    l=r["published.date-parts"][0]
+    df.at[i, 'title']=df.at[i, 'title'][0]
+    s=f"{l[0]}-{l[1]:02d}-{l[2]:02d}"
+    d=pd.to_datetime(s, format='%Y-%m-%d')
+    df.at[i, 'published_date']=d
 
-df.drop("published.date-parts", axis=1, inplace=True) 
+df.drop("published.date-parts",axis=1,inplace=True) 
 print(df.shape)
 
 path="data/part-1-datab.json"
@@ -115,18 +117,18 @@ with open(path, "r") as z:
     x=json.load(z)
 
 a=pd.json_normalize(x)
-b=['publisher', 'DOI', 'type', 'author','is-referenced-by-count', 'title', 'published.date-parts']
+b=['publisher','DOI','type','author','is-referenced-by-count','title','published.date-parts']
 df2=a.filter(items=b)
 
-for i, r in df2.iterrows():
+for i,r in df2.iterrows():
     l=r["published.date-parts"][0]
     df2.at[i, 'title'] = df.at[i, 'title'][0]
     s=f"{l[0]}-{l[1]:02d}-{l[2]:02d}"
     d=pd.to_datetime(s, format='%Y-%m-%d')
     df2.at[i, 'published_date']=d
 
-df2.drop("published.date-parts", axis=1, inplace=True) 
-df_combined = pd.concat([df, df2], axis=0)
+df2.drop("published.date-parts",axis=1,inplace=True) 
+df_combined = pd.concat([df,df2],axis=0)
 df_combined.shape
 ```
 

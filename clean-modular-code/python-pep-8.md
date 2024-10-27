@@ -132,6 +132,7 @@ df
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
+(tools-code-style)=
 ## Tools for Consistent Code Style
 
 It may seem overwhelming to remember hundreds of different rules from style guides like [PEP 8](https://peps.python.org/pep-0008/), [pydocstyle](https://pypi.org/project/pydocstyle/), and others --- the good news is that you don't have to! 
