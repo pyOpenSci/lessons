@@ -32,8 +32,8 @@ last_modified:
 (intro-write-pseudocode)=
 # Introduction to Pseudocode
 
-:::{admonition} What you'll learn
-:class: note
+:::{admonition} What you will learn
+:class: tip
 
 * Be able to approach a coding task with a modular, systematic approach. 
 * Be able to write pseudocode.

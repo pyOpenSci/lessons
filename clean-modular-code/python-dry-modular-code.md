@@ -30,9 +30,8 @@ authors: ['Leah Wasser', 'Jenny Palomino']
 
 # Write DRY, modular Python code
 
-:::{admonition} Learning Objectives
-
-After completing this lesson, you will be able to:
+:::{admonition} What you will learn
+:class: tip
 
 * Define the DRY principle.
 * List key strategies for writing DRY code in Python.

@@ -31,7 +31,8 @@ authors: ['Leah Wasser', 'Jenny Palomino']
 (python-expressive-code)=
 # Make Your Code Easier to Read Using Expressive Variable Names in Python
 
-:::{admonition} Learning Objectives
+:::{admonition} What you will learn
+:class: tip
 
 * Learn how using expressive names can help you write clean and readable code.
 * Create expressive names for objects in your **Python** code.
