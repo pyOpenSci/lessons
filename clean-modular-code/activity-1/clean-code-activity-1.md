@@ -20,7 +20,7 @@ Writing clean, modular code takes practice but is a habit worth building. Over t
 
 In this exercise, you'll focus on using three key clean code strategies:
 
-1. [**Use expressive names**](../python-expressive-code): Assign meaningful names to all variables and functions to make your code more readable.
+1. [**Use expressive names**](python-expressive-code): Assign meaningful names to all variables and functions to make your code more readable.
 2. [**Use a Python style guide (PEP8) for consistent syntax**](../python-pep-8): Adhere to PEP8 Python code style rules, including proper spacing and naming conventions, to maintain a consistent and readable codebase.
 3. **Identify opportunities to [make your code DRY (Don't Repeat Yourself)](../python-dry-modular-code)**: In this activity, you will use pseudocode to identify areas where the code can be simplified and made DRY. In the next activity, you will implement DRY best practices using loops and functions. 
 
