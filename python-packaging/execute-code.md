@@ -52,10 +52,10 @@ my_program.py
 ```
 
 :::{tip}
-Shebangs are a feature of POSIX. POSIX represents some level of compatibility between systems.
+Shebangs are a feature of [POSIX](https://en.wikipedia.org/wiki/POSIX). POSIX represents some level of compatibility between systems.
 Linux, macOS, all BSDs, and many other operating systems are fully- or mostly-POSIX compliant.
 
-Windows is not natively POSIX compliant. However, some "modes" inside of Windows are, such as WSL
+Windows is not natively POSIX compliant. However, some "modes" inside of Windows are, such as [WSL](https://learn.microsoft.com/en-us/windows/wsl/about)
 (Windows Subsystem for Linux), gitbash, or some VSCode terminals.
 :::
 
@@ -122,7 +122,7 @@ COMMAND = "my_package.my_module:my_function"
 
 where `COMMAND` is the name of the command that will be made available after installation, `my_package` is the name of
 your top-level package import, `my_module` is the name of any sub-modules in your package (optional, or may be
-repeated as necessary to access the correct sub-module), and `my_funciton` is the function that will be called
+repeated as necessary to access the correct sub-module), and `my_function` is the function that will be called
 (without parameters) when the command is invoked.
 
 Scripts defined in project configuration, such as `pyproject.toml`, do not need to exist as independent files in
