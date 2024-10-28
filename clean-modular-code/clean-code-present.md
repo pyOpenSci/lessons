@@ -72,22 +72,22 @@ if x:
 #### [Other tools to consider](tools-code-style)
 
 * pre-commit hooks: if you use version control, they run when you commit changes
-* setup VSCode (and other IDE's) to format on save
+* setup VSCode (and other IDE's) to format on save®
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
 ## Expressive code
 
 * Code can become documentation when written well.
-* Use variable, function & class names that tell a user what each thing does 
+* Use variable, function & class names that tell a user what each thing does
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
 :::{figure} /images/clean-code/clean-code-expressive-variable-names-basmati-rice.png
-:alt: "alt here."
+:alt: "Image showing a large see-through Tupperware container with cookies in it but a label that says Basmati Rice."
 
-This container clearly contains cookies, yet it's labeled "rice." This might be confusing to someone who is looking for rice in your kitchen! Consider this when writing code. It's easier for someone to understand your code without running it when your code variables describe the objects that they contain. Source: Jenny Bryan, Reproducible Science Curriculum.
-::
+This container clearly contains cookies, yet it's labeled "rice." This might be confusing to someone who is looking for rice in your kitchen! Consider this when writing code. It's easier for someone to understand your code without running it when your code variables describe the objects they contain. Source: Jenny Bryan, Reproducible Science Curriculum.
+:::
 
 ```{code-cell} ipython3
 ---
