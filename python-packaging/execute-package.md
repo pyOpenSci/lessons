@@ -13,66 +13,99 @@ kernelspec:
 
 # Execute a python package
 
-In [Code Workflow Logic][Code Workflow Logic] you learned of the two primary ways to execute a stand-alone Python script.
+In [Execute a Python script][#Execute_a_Python_script] you learned of the two primary ways to execute a stand-alone Python script.
 There are two other ways to execute Python as commands, both of which work for code that has been formatted as a package.
 
-### Entrypoints
+## Executable modules
 
-There is a special `entrypoint` a package can specify in its configuration which will direct installers to create an
-executable command. Entrypoints are a general purpose plug-in system for Python packages, but the
-[`console_scripts`](https://packaging.python.org/en/latest/specifications/entry-points/#use-for-scripts)
-entry is specifically targeted at creating executable commands on systems that install the package.
+We have seen how The `python` command can be passed a file for execution, but it can alternatively be passed
+the name of a module, exactly as would be used after an `import`. In this case, Python will look up the module
+referenced in its installed packages, and when it finds the module, will execute it as a script.
 
-The target of a `scripts` definition should be one function within your package, which will be directly executed
-when the command is invoked in the shell. A `scripts` definition in your `pyproject.toml` looks like:
+This execution mode is performed with the `-m` flag, as in `python -m site`. It can be used in place of a file
+path, but cannot be used in combination with a path, as there can only be one executing module.
 
-```toml
-[project.scripts]
-COMMAND = "my_package.my_module:my_function"
+:::{tip}
+These commands both do the same thing, but one is much more portable, and easier to remember
+
+```bash
+python ./.venv/lib/python3.12/site-packages/pip/__main__.py
 ```
 
-where `COMMAND` is the name of the command that will be made available after installation, `my_package` is the name of
-your top-level package import, `my_module` is the name of any sub-modules in your package (optional, or may be
-repeated as necessary to access the correct sub-module), and `my_function` is the function that will be called
-(without parameters) when the command is invoked.
-
-Scripts defined in project configuration, such as `pyproject.toml`, do not need to exist as independent files in
-the package repository, but will be created by installation tools, such as `pip`, at the time the package is
-installed, in a manner customized to the current operating system.
-
-### Executable modules
-
-The final way to make Python code executable directly from the command line is to include a
-[`__main__` module](https://docs.python.org/3/library/__main__.html#module-__main__) in your package. Any package that
-contains a `__main__` module and is installed in the current Python environment can be execute as a module
-directly from the `python` command, without reference to any specific files.
+```bash
+python -m pip
 ```
-python -m my_package
-```
-
-Try to create a `__main__.py` module in your package that will execute with the above command. (don't forget to
-(re)install your package after creating this file!)
-
-#### Further exploration
+:::
 
 On your own or in small groups:
 
-- What might be the advantages of making a packaged executable over providing script entrypoints?
+Install the `my_program.py` module from the last lesson, and then try to get the same greeting as before using `-m`.
+
+
+### Executable packages
+
+The `-m` flag as described above only works for Python modules (files), but does not work for Python (sub-)packages (directories). This means that we cannot execute a command using only the name of our package when it is structured to use directories
+
+Once our package grows, the top-level name `my_program` turns into a directory
+```
+project/
+└── src/
+    └── my_program/
+        ├── __init__.py
+        └── greeting.py
+```
+
+Which can't be executed
+```bash
+python -m my_program
+python: No module named my_program.__main__; 'my_program' is a package and cannot be directly executed
+```
+
+Initially Python seems to be telling us that names of directories, including out top-level package name,
+cannot be directly executes. But actually there is another lead in the error message that gives us the hint to make it work.
+
+Earlier you learned that the `if __name__ == "__main__":` can protect parts of your script from executing
+when it is imported, making that conditional only change the file's behavior as a script. There is a very
+similar concept that can be used on whole packages.
+
+Any package that contains a [`__main__.py` module](https://docs.python.org/3/library/__main__.html#module-__main__)
+can be executed directly from the `python` command, without reference to any specific module files.
+
+:::{note}
+The `__main__.py` file typically doesn't have an `if __name__ == "__main__":` conditional in it, as its execution
+is already separated out from the rest of the package.
+:::
+
+Try to create a `__main__.py` module in your package that will execute with the `python -m my_program`. (don't forget to
+(re)install your package after creating this file!)
+
+## Entrypoints
+
+The final way to make Python code executable directly from the command line is to include a special entrypoint
+into the package metadata. Entrypoints are a general purpose plug-in system for Python packages, but the
+[`console_scripts`](https://packaging.python.org/en/latest/specifications/entry-points/#use-for-scripts)
+entry is specifically targeted at creating executable commands on systems that install the package.
+
+In `pyproject.toml` this specific entrypoint is configured as such
+
+```toml
+[project.scripts]
+shiny = "my_program.greetings:shiny_hello"
+```
+
+In the above example `shiny` is the name of the command that will be made available after installation, `my_program` is the name of
+your top-level package import, `greetings` is the name of the sub-package (optional, or may be
+repeated as necessary to access the correct sub-package), and `shiny_hello` is the function that will be called.
+
+The target of each `scripts` definition should always be one function within your package, which will be directly executed (without parameters)
+when the command is invoked in the shell. The target function can live anywhere; it does not have to be in a `__main__.py` or under a `if __name__ == "__main__":`.
+
+## Further exploration
+
+On your own or in small groups:
+
+- What might be the advantages of making a package executable over providing a script entrypoint?
 - What are some disadvantages?
-- Review the Pros section from [Executing Scripts][Executing Scrips]
+- Review the Pros section from [Executable _comparisons][Executable_comparisons]
   - Any similarities between executable packages and executable scripts?
-
-#### More about main
-
-You just learned that the `__main__` module allows a package to be executed directly from the command line with
-`python -m`, but there is another purpose to the `__main__` name in Python. Any Python script that is executed
-directly, by any of the methods you have learned to run Python code from the shell, will be given the name `__main__`
-which identifies it as the first Python module loaded. This leads to the convention `if __name__ == "__main__":`, which 
-you may have seen used previously.
-
-This conditional is often used at the bottom of modules, especially modules that
-are expected to be executed directly, to separate code that is intended to execute as part of a command from code that
-is intended to execute as part of an import.
-
-Try to create a single Python script that contains a `if __name__ == "__main__":` which makes the file print different
-messages when it is executed from when it is imported from other Python code.
+  - Any similarities between scripts and executable scripts?
