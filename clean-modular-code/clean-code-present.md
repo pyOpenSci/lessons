@@ -31,7 +31,7 @@ kernelspec:
 * Set of rules around white space, naming conventions, import orders and more.
 * Code Formatters: Tools to apply PEP 8 as you work!
 
-+++ {"editable": true, "slideshow": {"slide_type": "slide"}}
++++ {"editable": true, "slideshow": {"slide_type": "skip"}}
 
 # notes
 
@@ -64,9 +64,9 @@ if x:
     print("Yay!")
 ```
 
-+++ {"editable": true, "slideshow": {"slide_type": "slide"}, "jp-MarkdownHeadingCollapsed": true}
++++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-#### Code format tools
+### (A few) Code format tools
 
 * Jupyter code formatter (installed in this binder).
 * Black
@@ -76,8 +76,8 @@ if x:
 
 #### [Other tools to consider](tools-code-style)
 
-* pre-commit hooks: if you use version control, they run when you commit changes
-* setup VSCode (and other IDE's) to format on save
+* `pre-commit` hooks: use with .git; apply every time you commit changes
+* Setup VSCode (and other IDE's) to format on save
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
@@ -96,7 +96,7 @@ editable: true
 slideshow:
   slide_type: slide
 ---
-# This code is PEP8 compliant -- why?
+# Could this code be more clear?
 def do_stuff(a, b):
     print("Result:", a + b)
     return a + b
@@ -126,14 +126,14 @@ if is_valid:
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-<center><img src="../images/clean-code/copy-pasta-code-dry.png" alt="Image of copy pasta - ctrl v."></center>
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
 ## DRY code
 
 * Don't Repeat Yourself
 * Use functions, loops and conditionals instead
+
++++ {"editable": true, "slideshow": {"slide_type": "slide"}}
+
+<center><img src="../images/clean-code/copy-pasta-code-dry.png" alt="Image of copy pasta - ctrl v."></center>
 
 ```{code-cell} ipython3
 ---
@@ -173,12 +173,13 @@ for num in numbers:
 
 You are now familiar with 3 strategies for writing better, cleaner code. You will apply these principles to example code in the [first activity](clean-code-activity-1).
 
-Remember that this is not a test! Rather, it's a chance to think about how you write code and how others may receive it!
+Remember that this is not a test! 
+It's a chance to think about how you write code and how others may receive it!
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
++++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
 ## Part 2: Refactor your code
-The 3 things to focus on:
+Three strategies:
 
 * **Document** 
 * **Modularize**
@@ -307,9 +308,7 @@ help(add_num)
 
 ## Modularize your code
 
-Functions:
-* make code more robust and testable
-* make code easier to test and maintain
+Functions make code easier to read, test, and maintain.
 
 ```{code-cell} ipython3
 ---
@@ -356,6 +355,17 @@ editable: true
 slideshow:
   slide_type: slide
 ---
+# Less good
+path = "data/data.json"
+path
+```
+
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+---
 import pathlib
 
 # Dynamically generate paths so they will run on diff operating systems
@@ -371,6 +381,7 @@ print(path)
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
+### Strategies 
 * Fail fast (with useful error messages)
 * try/except blocks: handle errors (exceptions)
 * Conditionals to optimize and redirect workflows
@@ -378,7 +389,6 @@ print(path)
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
 ## Fail fast 
-
 
 ```{code-cell} ipython3
 ---
@@ -426,12 +436,23 @@ with file_path[0].open("r") as json_file:
 df = pd.json_normalize(json_data)
 ```
 
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+---
+# The problem:
+file_paths
+```
+
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
 ## Handle errors
 
 * Anticipate errors a user may encounter when using your code.
-* Redirect workflows as it makes sense by catching errors.
+* Redirect workflows by catching errors.
+* Provide helpful error messages
 
 ```{code-cell} ipython3
 ---
@@ -509,7 +530,7 @@ except AttributeError:
 package_name
 ```
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
++++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
 ## Start activity three 
 
