@@ -28,6 +28,7 @@ authors: ['Leah Wasser', 'Jenny Palomino']
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
+(dry-code)=
 # Write DRY, modular Python code
 
 :::{admonition} What you will learn
