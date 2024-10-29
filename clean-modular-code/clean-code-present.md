@@ -23,7 +23,9 @@ kernelspec:
 * Use [expressive object names](python-expressive-code)
 * [Make your code DRY](dry-code)
 
+
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}, "jp-MarkdownHeadingCollapsed": true}
+
 
 ### PEP 8 & consistent code format
 
@@ -33,7 +35,9 @@ kernelspec:
 
 +++ {"editable": true, "slideshow": {"slide_type": "skip"}}
 
+
 ## Notes
+
 
 ```{code-cell} ipython3
 ---
@@ -73,7 +77,9 @@ if x:
 * Black
 * Ruff
 
+
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}, "jp-MarkdownHeadingCollapsed": true}
+
 
 #### [Other tools to consider](tools-code-style)
 
@@ -380,6 +386,7 @@ print(path)
 
 * Usability sometimes means failing (gracefully and with intention). 
 
+
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
 ### Strategies 
@@ -390,6 +397,7 @@ print(path)
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
 ## Fail fast 
+
 
 ```{code-cell} ipython3
 ---
