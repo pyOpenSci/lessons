@@ -11,11 +11,11 @@ kernelspec:
   name: python3
 ---
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
++++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
 # Clean, Modular Code
 
-+++ {"editable": true, "slideshow": {"slide_type": "slide"}}
++++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 ## Part 1: 3 strategies
 
@@ -23,29 +23,27 @@ kernelspec:
 * Use [expressive object names](python-expressive-code)
 * [Make your code DRY](dry-code)
 
-+++ {"editable": true, "slideshow": {"slide_type": "slide"}}
++++ {"editable": true, "slideshow": {"slide_type": "slide"}, "jp-MarkdownHeadingCollapsed": true}
 
 ### PEP 8 & consistent code format
 
 * Generally accepted rules for code format: PEP 8
+* Set of rules around white space, naming conventions, import orders and more.
 * Code Formatters: Tools to apply PEP 8 as you work!
+
++++ {"editable": true, "slideshow": {"slide_type": "slide"}}
+
+# notes
 
 ```{code-cell} ipython3
 ---
 editable: true
 slideshow:
-  slide_type: slide
+  slide_type: ''
 ---
 # this code is not PEP8 compliant -- why?
-def doStuff(a, b):
-    print("Result:", a + b)
-    return a + b
-
-
-x = True
-if x:
-    print("Messy code.")
-    print("Oops!")
+def doStuff(a ,b):print ("Result:",a+b) ;return a+b
+x=True;  if x: print ( "Messy code.") ;  print("Oops!")
 ```
 
 ```{code-cell} ipython3
@@ -66,7 +64,7 @@ if x:
     print("Yay!")
 ```
 
-+++ {"editable": true, "slideshow": {"slide_type": "slide"}}
++++ {"editable": true, "slideshow": {"slide_type": "slide"}, "jp-MarkdownHeadingCollapsed": true}
 
 #### Code format tools
 
@@ -74,7 +72,7 @@ if x:
 * Black
 * Ruff
 
-+++ {"editable": true, "slideshow": {"slide_type": "slide"}}
++++ {"editable": true, "slideshow": {"slide_type": "slide"}, "jp-MarkdownHeadingCollapsed": true}
 
 #### [Other tools to consider](tools-code-style)
 
@@ -99,15 +97,14 @@ slideshow:
   slide_type: slide
 ---
 # This code is PEP8 compliant -- why?
-def do_stuff(number1, number2):
-    print("Result:", number1 + number2)
-    return number1 + number2
+def do_stuff(a, b):
+    print("Result:", a + b)
+    return a + b
 
 
 x = True
 if x:
-    print("This is nicer code.")
-    print("Yay!")
+    print("This is less nice code.")
 ```
 
 ```{code-cell} ipython3
@@ -129,6 +126,10 @@ if is_valid:
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
+<center><img src="../images/clean-code/copy-pasta-code-dry.png" alt="Image of copy pasta - ctrl v."></center>
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
 ## DRY code
 
 * Don't Repeat Yourself
@@ -140,6 +141,7 @@ editable: true
 slideshow:
   slide_type: slide
 ---
+# Not DRY
 a = 5
 b = 10
 print(a + 2)
@@ -154,6 +156,7 @@ editable: true
 slideshow:
   slide_type: ''
 ---
+# DRY
 def process_number(x):
     print(x + 2)
     print(x * 2)
@@ -166,18 +169,18 @@ for num in numbers:
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-:::{admonition} Begin Activity One!
-:class: tip
-You are now familiar with 3 strategies for writing better, cleaner code. In the [first activity](clean-code-activity-1), you will apply these principles to example code.
+## Begin Activity One!
 
-Remember that this is not a test! Rather, it's a chance to think about how you write code and how others may receive it! 
-:::
+You are now familiar with 3 strategies for writing better, cleaner code. You will apply these principles to example code in the [first activity](clean-code-activity-1).
 
-+++ {"editable": true, "slideshow": {"slide_type": "slide"}}
+Remember that this is not a test! Rather, it's a chance to think about how you write code and how others may receive it!
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 ## Part 2: Refactor your code
-The 3 things to focus on: 
-* **Document:** 
+The 3 things to focus on:
+
+* **Document** 
 * **Modularize**
 * **Ensure reproducibility: (dynamic paths)**
 
@@ -194,15 +197,13 @@ The 3 things to focus on:
 
 Add a docstring to the top of any script or module that explains the intent of the code.
 
-:::{tip}
-This docstring will appear in API documentation if you create it for a package!
-:::
+A module or function docstring will appear in API documentation if you use tools like autodoc.
 
 ```{code-cell} ipython3
 ---
 editable: true
 slideshow:
-  slide_type: slide
+  slide_type: ''
 ---
 """What this module does"""
 
@@ -293,7 +294,16 @@ def add_num(x, y):
     return x + y
 ```
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: slide
+---
+help(add_num)
+```
+
++++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
 ## Modularize your code
 
@@ -307,52 +317,35 @@ editable: true
 slideshow:
   slide_type: slide
 ---
-# Calculate and print the areas of three circles
-radius1 = 3
-area1 = 3.14159 * (radius1**2)
-print(f"Area of circle with radius {radius1}: {area1}")
-
-radius2 = 5
-area2 = 3.14159 * (radius2**2)
-print(f"Area of circle with radius {radius2}: {area2}")
-
-radius3 = 7
-area3 = 3.14159 * (radius3**2)
-print(f"Area of circle with radius {radius3}: {area3}")
+# Not DRY, not modular
+a = 5
+b = 10
+print(a + 2)
+print(b + 2)
+print(a * 2)
+print(b * 2)
 ```
 
 ```{code-cell} ipython3
 ---
 editable: true
 slideshow:
-  slide_type: slide
+  slide_type: ''
 ---
-def calculate_circle_area(radius):
-    """
-    Calculate the area of a circle given its radius.
-
-    Parameters
-    ----------
-    radius : float
-        The radius of the circle.
-
-    Returns
-    -------
-    float
-        The calculated area of the circle.
-    """
-    return 3.14159 * (radius**2)
+# DRY & modular
+def process_number(x):
+    print(x + 2)
+    print(x * 2)
 
 
-# Calculate and print the areas of three circles using the function
-for radius in [3, 5, 7]:
-    area = calculate_circle_area(radius)
-    print(f"Area of circle with radius {radius}: {area}")
+numbers = [5, 10]
+for num in numbers:
+    process_number(num)
 ```
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-## Create dynamic paths
+## Reproducibility: Create dynamic paths
 
 * Paths on Windows are different than MAC/Linux
 * Using `Path` (or `os`)
@@ -365,7 +358,7 @@ slideshow:
 ---
 import pathlib
 
-# Dynamically generate a path so it will be correct across machine
+# Dynamically generate paths so they will run on diff operating systems
 path = pathlib.Path("") / "data" / "data.json"
 print(path)
 ```
@@ -437,13 +430,14 @@ df = pd.json_normalize(json_data)
 
 ## Handle errors
 
-You can often anticipate the errors a user may encounter when using your code. This is especially true when processing data. You can often identify common errors and outlier values.
+* Anticipate errors a user may encounter when using your code.
+* Redirect workflows as it makes sense by catching errors.
 
 ```{code-cell} ipython3
 ---
 editable: true
 slideshow:
-  slide_type: ''
+  slide_type: slide
 ---
 # What happens when the data are in a list rather than provided as a string?
 # Here, the code runs and doesn't fail at all producing a potential bug
@@ -455,7 +449,7 @@ title.split(":")
 ---
 editable: true
 slideshow:
-  slide_type: ''
+  slide_type: slide
 tags: [raises-exception]
 ---
 # In this case the code is provided with an int - resulting in an attribute error
@@ -467,19 +461,19 @@ package_name = title.split(":")[0]
 ---
 editable: true
 slideshow:
-  slide_type: ''
+  slide_type: slide
 ---
 # This works as expected
 title = "package name: i'm a title"
 package_name = title.split(":")[0]
-package_name
+package_name 
 ```
 
 ```{code-cell} ipython3
 ---
 editable: true
 slideshow:
-  slide_type: ''
+  slide_type: slide
 ---
 # In some cases, you may want to capture the error and return a default value
 # (or do something else)
@@ -491,7 +485,7 @@ except AttributeError:
     # Ask yourself, how do you want to handle this exception?
     package_name = None
     # Should the code keep running? Should it exit? Should it assign a default value?
-    #raise AttributeError(f"Oops - I expected a string and you provided a {type(title)}")
+    # raise AttributeError(f"Oops - I expected a string and you provided a {type(title)}")
 
 package_name
 ```
@@ -500,7 +494,7 @@ package_name
 ---
 editable: true
 slideshow:
-  slide_type: ''
+  slide_type: slide
 ---
 # In others you may want to intentionally raise an error with a custom message.
 title = 999
@@ -508,9 +502,17 @@ title = 999
 try:
     package_name = title.split(":")[0]
 except AttributeError:
-    # Ask yourself, how do you want to handle this exception? 
+    # Ask yourself, how do you want to handle this exception?
     # Should the code keep running? Should it exit? Should it assign a default value?
     raise AttributeError(f"Oops - I expected a string and you provided a {type(title)}")
 
 package_name
 ```
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+## Start activity three 
+
+Activity 3 is an interactive notebook you can work on in small groups. 
+
+Work through the activities and ask questions!
