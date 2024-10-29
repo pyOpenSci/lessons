@@ -387,7 +387,7 @@ Important: It is ok if you can't get the code to run fully by the end of this wo
 1. identify at least one of the data processing "bugs" (even if you can't fix it) and/or
 2. fix at least one bug
 
-You can consider your effort today as a success! 
+You can consider your effort today as a success!
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
@@ -445,7 +445,6 @@ def clean_title(title):
 editable: true
 slideshow:
   slide_type: ''
-tags: [raises-exception]
 ---
 # Add checks to the clean_title function to make sure this code runs
 all_titles = []
@@ -492,7 +491,6 @@ print(type(joss_pubs_df["title"][0][0]))
 editable: true
 slideshow:
   slide_type: ''
-tags: [raises-exception]
 ---
 print(f"The value is {joss_pubs_df['title'][0]}")
 get_title(joss_pubs_df["title"][0])
@@ -503,18 +501,8 @@ get_title(joss_pubs_df["title"][0])
 editable: true
 slideshow:
   slide_type: ''
-tags: [raises-exception]
 ---
 clean_title(joss_pubs_df["title"][1])
-```
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
----
-
 ```
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
@@ -523,8 +511,8 @@ slideshow:
 
 :::{admonition} On Your Own 1 
 
-If you complete all the activities above, your challenge is fixing the 
-workflow below so it runs. To do this you can use the results of the functions that you worked on above. 
+If you complete all the activities above, consider this challenge. 
+Fix the workflow below so it runs. To do this, you can use the results of the functions you worked on above. 
 :::
 
 ```{code-cell} ipython3
@@ -532,7 +520,6 @@ workflow below so it runs. To do this you can use the results of the functions t
 editable: true
 slideshow:
   slide_type: ''
-tags: [raises-exception]
 ---
 # Full code snippet
 import json
@@ -630,13 +617,4 @@ for json_file in sorted(data_dir.glob("*.json")):
 all_papers_df = pd.concat(all_papers_list, axis=0, ignore_index=True)
 
 print("Final shape of combined DataFrame:", all_papers_df.shape)
-```
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
----
-
 ```
