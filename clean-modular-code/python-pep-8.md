@@ -13,7 +13,7 @@ kernelspec:
 ---
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
-
+(pep8-code-format)=
 # Python code style for readability and usability 
 
 :::{admonition} What you will learn
