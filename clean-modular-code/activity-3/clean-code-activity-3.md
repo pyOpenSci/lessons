@@ -25,7 +25,7 @@ In this activity, you will build checks into your workflow using [try/except](tr
 A data feature, as defined here, represents unexpected values that may be found in real-world data. You will rarely find that your data can be processed without some cleaning steps! 
 :::
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
++++
 
 ## Real world data processing & workflows and edge cases 
 
@@ -34,6 +34,8 @@ Real-world data can rarely be imported without cleanup steps. You will often fin
 Other times, the data contains undocumented typos and other errors that you need to handle in your code. In this activity, you will see these unusual values referred to as data "edge cases."  
 
 Writing robust code that handles unexpected values will make your code run smoothly and fail gracefully. This type of code, which combines functions (or classes) and checks within the functions that handle messy data, will make your code easier to maintain.
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 ### Strategies for handling messy data
 
@@ -55,31 +57,25 @@ As you make decisions about adding checks to your code, weigh the value of using
 
 <!-- Based on some of Carol's comments, maybe we focus less on what is Pythonic and more on the critical thinking element surrounding when to use conditionals vs. a try/except approach. I don't think that is clear yet in these lessons.
  -->
- 
-### Functions, classes, and methods are a tool
 
-Using functions and class methods is a great first step in handling messy data. A function or method provides a modular unit you can test outside the workflow for the edge cases you may encounter. Also, because a function is a modular unit, you can add elements to handle unexpected processing features as you build your workflow.
+```{code-cell} ipython3
+# This fails with a FileNotFound Error
+from pathlib import Path
 
-Once you have these functions and methods, you can add checks using conditional statements and [try/except](try-except) blocks that anticipate edge cases and errors you may encounter when processing your data. 
+file_path = Path("aadata-bad-path") / "2022-03-joss-publications.json"
 
-<!-- Consider if this last paragraph might belong in the function checks lesson vs. here. 
+try:
+    print(file_path)
+    with file_path.open("r") as json_file:
+        json_data = json.load(json_file)
+    json_clean = pd.json_normalize(json_data)
+except:
+    print("This doesn't fail fast, it only prints a message")
+```
 
-## Clean up your workflow
++++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-The code below is an example of what your code might look like after completing [Activity 2](activity-2). Notice that the code below fails when run.
- 
-:::{admonition} What's changed in the data?
-:class: tip
-
-In this workflow, you have a new set of data files to open in your list of `.json` files. The first file, has some unexpected "features" that your code needs to handle gracefully to process all of the data successfully.
-
-:::
-
--->
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["raises-exception"]}
-
-## Activity 3, part 1: Find the data & fail fast when it's missing
+## Failing fast 
 
 If you are processing specific data in your workflow, then ensuring your code can successfully find the data is your first (and possibly most important) goal. 
 
@@ -88,6 +84,70 @@ If you are processing specific data in your workflow, then ensuring your code ca
 If your code doesn't [fail fast](fail-fast) with a useful error message, and it continues to run and fails later, it will potentially confuse a user. The error that will likely be raised later will likely not alert the user that the issue is actually missing data vs something else. 
 
 This will then mislead someone when trying to troubleshoot your code. 
+
++++
+
+### Functions, classes, and methods are a tool
+
+Using functions and class methods is a great first step in handling messy data. A function or method provides a modular unit you can test outside the workflow for the edge cases you may encounter. Also, because a function is a modular unit, you can add elements to handle unexpected processing features as you build your workflow.
+
+Once you have these functions and methods, you can add checks using conditional statements and [try/except](try-except) blocks that anticipate edge cases and errors you may encounter when processing your data. 
+
+## Activity 3, part 1
+
+Turn the code below into a function.
+Add a try/except statement that raises a `FileNotFoundError` with a custom message that will stop the code from 
+continuing to run.
+
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+tags: [raises-exception]
+---
+from pathlib import Path 
+
+file_path = Path("data-bad-path") / "2022-03-joss-publications.json"
+print(file_path)
+with file_path.open("r") as json_file:
+    json_data = json.load(json_file)
+json_clean = pd.json_normalize(json_data)
+
+json_clean.head(2)
+```
+
+## Activity 3, part 2
+
+Turn the code below into a function. 
+Modify the function below so it raises catches the errror and prints a custom error but does not 
+stop your code from continuing to run.
+
+Consider the difference between the funciton the funciton that you created above that stops your code from running by raising an exception compared to this code that prints a statement for the user. 
+
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+tags: [raises-exception]
+---
+from pathlib import Path 
+
+file_path = Path("data-bad-path") / "2022-03-joss-publications.json"
+print(file_path)
+with file_path.open("r") as json_file:
+    json_data = json.load(json_file)
+json_clean = pd.json_normalize(json_data)
+
+json_clean.head(2)
+```
+
++++ {"editable": true, "slideshow": {"slide_type": ""}, "tags": ["raises-exception"]}
+
+## Activity 3, part 2: Find the data & fail fast when it's missing
+
+
 
 ### Activity 3, part 1 code example
 
@@ -117,10 +177,45 @@ slideshow:
   slide_type: ''
 tags: [raises-exception]
 ---
+def load_clean_json(file_path, columns_to_keep):
+    """
+    Load JSON data from a file. Drop unnecessary columns and normalize
+    to DataFrame.
+
+    Parameters
+    ----------
+    file_path : Path
+        Path to the JSON file.
+    columns_to_keep : list
+        List of columns to keep in the DataFrame.
+
+    Returns
+    -------
+    dict
+        Loaded JSON data.
+    """
+
+    with file_path.open("r") as json_file:
+        json_data = json.load(json_file)
+    return pd.json_normalize(json_data)
+
+
+load_clean_json("path-here")
+```
+
+```{code-cell} ipython3
+---
+editable: true
+slideshow:
+  slide_type: ''
+tags: [raises-exception]
+---
 import json
+import os
 from pathlib import Path
 
 import pandas as pd
+
 
 def load_clean_json(file_path, columns_to_keep):
     """
@@ -144,21 +239,49 @@ def load_clean_json(file_path, columns_to_keep):
         json_data = json.load(json_file)
     return pd.json_normalize(json_data)
 
+
+columns_to_keep = [
+    "publisher",
+    "DOI",
+    "type",
+    "author",
+    "is-referenced-by-count",
+    "title",
+    "published.date-parts",
+]
 # Notice that this is bad data dir
 # What happens when your code runs?
-data_dir = Path("bad-bad-data")
+data_dir = Path("data-bad")
+
+files = [
+    "2022-01-joss-publications.json",
+    "2022-02-joss-publications.json",
+    "2022-03-joss-publications.json",
+]
+
+# Create a list of Path objects
+all_files = [data_dir / file for file in files]
 
 all_papers_list = []
-for json_file in data_dir.glob("*.json"):
+# An empty iterator will  never run
+for json_file in all_files:
     papers_df = load_clean_json(json_file, columns_to_keep)
     all_papers_list.append(papers_df)
 
 all_papers_df = pd.concat(all_papers_list, axis=0, ignore_index=True)
+all_papers_df
 ```
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-## Activity 3, part 2: Add checks to the `format_date` function
+## Activity 3: part 1 try/excepts & files
+
+Modify the file load function below with a try/except block that it returns a custom error message when it can't find a file
+but returns the  normalized data when it can
+
++++ {"editable": true, "slideshow": {"slide_type": ""}}
+
+## Activity 3, part 3: Add checks to the `format_date` function
 
 The code below creates a {class}`pandas.DataFrame` with the first 15 publications in the JOSS sample `data.json` file. This is the first of 3 files you must process in your workflow.
 
@@ -224,78 +347,102 @@ joss_pubs = [
     {
         "title": ["bmiptools: BioMaterials Image Processing Tools"],
         "published_date": [["2022", "11", "27"]],
-        "citations": 2
+        "citations": 2,
     },
     {
-        "title": [["QuasinormalModes.jl: A Julia package for computing discrete eigenvalues of second order ODEs"]],
+        "title": [
+            [
+                "QuasinormalModes.jl: A Julia package for computing discrete eigenvalues of second order ODEs"
+            ]
+        ],
         "published_date": [2022, "5", 25],
-        "citations": 2
+        "citations": 2,
     },
     {
-        "title": ["CWInPy: A Python package for inference with continuous gravitational-wave signals from pulsars"],
+        "title": [
+            "CWInPy: A Python package for inference with continuous gravitational-wave signals from pulsars"
+        ],
         "published_date": [[2022, 9, "29"]],
-        "citations": 3
+        "citations": 3,
     },
     {
-        "title": ["Nempy: A Python package for modelling the Australian National Electricity Market dispatch procedure"],
+        "title": [
+            "Nempy: A Python package for modelling the Australian National Electricity Market dispatch procedure"
+        ],
         "published_date": [[""]],
-        "citations": 2
+        "citations": 2,
     },
     {
-        "title": ["Spectral Connectivity: a python package for computing spectral coherence and related measures"],
+        "title": [
+            "Spectral Connectivity: a python package for computing spectral coherence and related measures"
+        ],
         "published_date": [[]],  # No date available
-        "citations": 3
+        "citations": 3,
     },
     {
-        "title": ["SEEDPOD Ground Risk: A Python application and framework for assessing the risk to people on the ground from uncrewed aerial vehicles (UAVs)"],
+        "title": [
+            "SEEDPOD Ground Risk: A Python application and framework for assessing the risk to people on the ground from uncrewed aerial vehicles (UAVs)"
+        ],
         "published_date": [["2022", "3", ""]],
-        "citations": 1
+        "citations": 1,
     },
     {
-        "title": ["DIANNA: Deep Insight And Neural Network Analysis, explainability in time series"],
+        "title": [
+            "DIANNA: Deep Insight And Neural Network Analysis, explainability in time series"
+        ],
         "published_date": [[2022, 12, 15]],
-        "citations": 1
+        "citations": 1,
     },
     {
-        "title": [["diman: A Clojure Package for Dimensional Analysis and Unit Checking"]],
+        "title": [
+            ["diman: A Clojure Package for Dimensional Analysis and Unit Checking"]
+        ],
         "published_date": [[2022, 1]],
-        "citations": 0
+        "citations": 0,
     },
     {
-        "title": ["PERFORM: A Python package for developing reduced-order models for flow simulation"],
+        "title": [
+            "PERFORM: A Python package for developing reduced-order models for flow simulation"
+        ],
         "published_date": [[9999]],
-        "citations": 3
+        "citations": 3,
     },
     {
         "title": ["TLViz: Visualising and analysing tensor decompositions"],
         "published_date": [[2022, 11, 25]],
-        "citations": 2
+        "citations": 2,
     },
     {
         "title": ["ALUES: R package for Agricultural Land Use Evaluation System"],
         "published_date": [[2022, 5, 12]],
-        "citations": 1
+        "citations": 1,
     },
     {
-        "title": [["Spiner: Performance Portable Routines for Generalized SpMV and Triangular Solvers"]],
+        "title": [
+            [
+                "Spiner: Performance Portable Routines for Generalized SpMV and Triangular Solvers"
+            ]
+        ],
         "published_date": [[2022, 7, 5]],
-        "citations": 0
+        "citations": 0,
     },
     {
         "title": ["pyndl: Naïve Discriminative Learning in Python"],
         "published_date": [[2022, 12, 15]],
-        "citations": 0
+        "citations": 0,
     },
     {
         "title": ["HostPhot: global and local photometry of galaxies"],
         "published_date": [[2022, 8, 15]],
-        "citations": 1
+        "citations": 1,
     },
     {
-        "title": ["QMKPy: A Python Testbed for the Quadratic Multichannel Kalman Filter"],
+        "title": [
+            "QMKPy: A Python Testbed for the Quadratic Multichannel Kalman Filter"
+        ],
         "published_date": [[2022, 11, 2]],
-        "citations": 0
-    }
+        "citations": 0,
+    },
 ]
 
 joss_pubs_df = pd.DataFrame(joss_pubs)
@@ -324,9 +471,7 @@ def format_date(date_parts: list) -> str:
     """
     # A print statement might help you identify the issue
     print(f"The input value is: {date_parts}")
-    date_str = (
-        f"{date_parts[0][0]}-{date_parts[0][1]:02d}-{date_parts[0][2]:02d}"
-    )
+    date_str = f"{date_parts[0][0]}-{date_parts[0][1]:02d}-{date_parts[0][2]:02d}"
     return pd.to_datetime(date_str, format="%Y-%m-%d")
 ```
 
@@ -387,7 +532,7 @@ Important: It is ok if you can't get the code to run fully by the end of this wo
 1. identify at least one of the data processing "bugs" (even if you can't fix it) and/or
 2. fix at least one bug
 
-You can consider your effort today as a success! 
+You can consider your effort today as a success!
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
@@ -436,8 +581,8 @@ def clean_title(title):
         The package name before the colon.
 
     """
-    
-    return title[0].split(':')
+
+    return title[0].split(":")
 ```
 
 ```{code-cell} ipython3
@@ -461,8 +606,8 @@ slideshow:
   slide_type: ''
 ---
 a = joss_pubs_df["title"][0]
-a[0].split(':')
-#joss_pubs_df["title"][0]
+a[0].split(":")
+# joss_pubs_df["title"][0]
 ```
 
 ```{code-cell} ipython3
@@ -492,10 +637,9 @@ print(type(joss_pubs_df["title"][0][0]))
 editable: true
 slideshow:
   slide_type: ''
-tags: [raises-exception]
 ---
 print(f"The value is {joss_pubs_df['title'][0]}")
-get_title(joss_pubs_df["title"][0])
+clean_title(joss_pubs_df["title"][0])
 ```
 
 ```{code-cell} ipython3
@@ -508,23 +652,14 @@ tags: [raises-exception]
 clean_title(joss_pubs_df["title"][1])
 ```
 
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
----
-
-```
-
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 ## On your own
 
 :::{admonition} On Your Own 1 
 
-If you complete all the activities above, your challenge is fixing the 
-workflow below so it runs. To do this you can use the results of the functions that you worked on above. 
+If you complete all the activities above, consider this challenge. 
+Fix the workflow below so it runs. To do this, you can use the results of the functions you worked on above. 
 :::
 
 ```{code-cell} ipython3
@@ -580,9 +715,7 @@ def format_date(date_parts: list) -> str:
     pd.datetime
         A date formatted as a `pd.datetime` object.
     """
-    date_str = (
-        f"{date_parts[0][0]}-{date_parts[0][1]:02d}-{date_parts[0][2]:02d}"
-    )
+    date_str = f"{date_parts[0][0]}-{date_parts[0][1]:02d}-{date_parts[0][2]:02d}"
     return pd.to_datetime(date_str, format="%Y-%m-%d")
 
 
@@ -619,24 +752,12 @@ all_papers_list = []
 for json_file in sorted(data_dir.glob("*.json")):
     print(json_file)
     papers_df = load_clean_json(json_file, columns_to_keep)
-    papers_df["published_date"] = papers_df["published.date-parts"].apply(
-        format_date
-    )
+    papers_df["published_date"] = papers_df["published.date-parts"].apply(format_date)
     papers_df["title"] = papers_df["title"].apply(clean_title)
-
 
     all_papers_list.append(papers_df)
 
 all_papers_df = pd.concat(all_papers_list, axis=0, ignore_index=True)
 
 print("Final shape of combined DataFrame:", all_papers_df.shape)
-```
-
-```{code-cell} ipython3
----
-editable: true
-slideshow:
-  slide_type: ''
----
-
 ```
