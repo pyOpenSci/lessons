@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Code Workflow Logic
+# Code workflow logic
 
 ## Execute a Python script
 
@@ -63,12 +63,10 @@ Windows is not natively POSIX compliant. However, some "modes" inside of Windows
 
 If your Windows machine has Python registered as the default application associated with `.py` files, then any Python
 scripts can be run as commands. However, only one Python can be registered at a time, so all Python scripts run this
-way will use the same Python environment. While all Python files should end in a `.py`, this naming is necessary for
-Windows to associate the file with Python, as opposed to on Linux where `.py` is a convention and the shebang associates
-the file with Python.
+way will use the same Python environment.
 
 Additionally, most Windows Python installs come with the [Python Launcher](https://docs.python.org/3/using/windows.html#python-launcher-for-windows)
-which, in addition to allowing specifying the version of Python, can also read shebang lines and emulate some of that behavior.
+which, in addition to allowing specifying the version of Python to run, can also read shebang lines and emulate some of that behavior.
 This allows for shebang lines to be re-used between Linux, macOS, and Windows systems. However, on Windows the command must still
 be prefaced with another command (`py`).
 
@@ -78,17 +76,21 @@ py my_program.py
 ```
 
 :::{tip}
+While all Python files should end in a `.py`, this naming is necessary for Windows to associate a script with Python, as opposed
+to Linux where `.py` is a convention and the shebang associates the file with Python.
+
 While there is no in-source format that can tell Windows what to do with a Python code file, executing a
 Python file with a shebang on Windows also does not cause any issues. Python just sees the whole line as
-a comment and ignores it! So even if you develop on Windows, it may be a good idea to add the shebang as
-the first line of your scripts, so that colleagues on different systems can also run it.
+a comment and ignores it!
+
+Because of these differences it is best practice to use both a shebang and `.py` for all Python scripts.
 :::
 
 ## Executable comparisons
 
 ### Pros of passing a file to `python`:
 - don't need execute permissions
-- works for every system
+- works on every system
 - explicit about what you expect to happen
 
 ### Pros of inserting a shebang to the file:
@@ -98,7 +100,7 @@ the first line of your scripts, so that colleagues on different systems can also
   - don't have to even remember it is a Python script
 
 
-# Share Code
+# Share code
 
 ## Execute a python package
 
@@ -146,18 +148,18 @@ Try to create a `__main__.py` module in your package that will execute with the 
 
 On your own or in small groups:
 
-- What might be the advantages of making a packaged executable over providing script entry points?
+- What might be the advantages of making a packaged executable over providing script entrypoints?
 - What are some disadvantages?
 - Review the Pros section from [Executing Scripts][Executing Scrips]
   - Any similarities between executable packages and executable scripts?
 
-#### More About Main
+#### More about main
 
 You just learned that the `__main__` module allows a package to be executed directly from the command line with
 `python -m`, but there is another purpose to the `__main__` name in Python. Any Python script that is executed
 directly, by any of the methods you have learned to run Python code from the shell, will be given the name `__main__`
 which identifies it as the first Python module loaded. This leads to the convention `if __name__ == "__main__":`, which 
-you may have seen used previously. 
+you may have seen used previously.
 
 This conditional is often used at the bottom of modules, especially modules that
 are expected to be executed directly, to separate code that is intended to execute as part of a command from code that
