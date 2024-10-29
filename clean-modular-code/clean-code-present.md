@@ -33,7 +33,7 @@ kernelspec:
 
 +++ {"editable": true, "slideshow": {"slide_type": "skip"}}
 
-# notes
+## Notes
 
 ```{code-cell} ipython3
 ---
@@ -42,8 +42,9 @@ slideshow:
   slide_type: ''
 ---
 # this code is not PEP8 compliant -- why?
-def doStuff(a ,b):print ("Result:",a+b) ;return a+b
-x=True;  if x: print ( "Messy code.") ;  print("Oops!")
+def doStuff(a ,b):print ("Result:",a+b) ; return a+b
+x=True
+if x: print ( "Messy code.") ; print("Oops!")
 ```
 
 ```{code-cell} ipython3
@@ -419,6 +420,7 @@ df = pd.json_normalize(json_data)
 editable: true
 slideshow:
   slide_type: slide
+tags: [raises-exception]
 ---
 # The same problem occurs in this code but it fails with a less useful message
 import json
@@ -516,6 +518,7 @@ package_name
 editable: true
 slideshow:
   slide_type: slide
+tags: [raises-exception]
 ---
 # In others you may want to intentionally raise an error with a custom message.
 title = 999

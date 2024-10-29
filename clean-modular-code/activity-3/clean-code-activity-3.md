@@ -445,6 +445,7 @@ def clean_title(title):
 editable: true
 slideshow:
   slide_type: ''
+tags: [raises-exception]
 ---
 # Add checks to the clean_title function to make sure this code runs
 all_titles = []
@@ -493,7 +494,7 @@ slideshow:
   slide_type: ''
 ---
 print(f"The value is {joss_pubs_df['title'][0]}")
-get_title(joss_pubs_df["title"][0])
+clean_title(joss_pubs_df["title"][0])
 ```
 
 ```{code-cell} ipython3
@@ -501,6 +502,7 @@ get_title(joss_pubs_df["title"][0])
 editable: true
 slideshow:
   slide_type: ''
+tags: [raises-exception]
 ---
 clean_title(joss_pubs_df["title"][1])
 ```
@@ -520,6 +522,7 @@ Fix the workflow below so it runs. To do this, you can use the results of the fu
 editable: true
 slideshow:
   slide_type: ''
+tags: [raises-exception]
 ---
 # Full code snippet
 import json
