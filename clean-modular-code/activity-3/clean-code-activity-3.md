@@ -62,7 +62,7 @@ As you make decisions about adding checks to your code, weigh the value of using
 # This fails with a FileNotFound Error
 from pathlib import Path
 
-file_path = Path("aadata-bad-path") / "2022-03-joss-publications.json"
+file_path = Path("data-bad-path") / "2022-03-joss-publications.json"
 
 try:
     print(file_path)
@@ -71,6 +71,8 @@ try:
     json_clean = pd.json_normalize(json_data)
 except:
     print("This doesn't fail fast, it only prints a message")
+
+print("Look, i keep running after the try/except block which means I didn't fail")
 ```
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
@@ -83,7 +85,7 @@ If you are processing specific data in your workflow, then ensuring your code ca
 
 If your code doesn't [fail fast](fail-fast) with a useful error message, and it continues to run and fails later, it will potentially confuse a user. The error that will likely be raised later will likely not alert the user that the issue is actually missing data vs something else. 
 
-This will then mislead someone when trying to troubleshoot your code. 
+This will then mislead someone when trying to troubleshoot your code.
 
 +++
 
@@ -123,7 +125,7 @@ Turn the code below into a function.
 Modify the function below so it raises catches the errror and prints a custom error but does not 
 stop your code from continuing to run.
 
-Consider the difference between the funciton the funciton that you created above that stops your code from running by raising an exception compared to this code that prints a statement for the user. 
+Consider the difference between the funciton the funciton that you created above that stops your code from running by raising an exception compared to this code that prints a statement for the user.
 
 ```{code-cell} ipython3
 ---
