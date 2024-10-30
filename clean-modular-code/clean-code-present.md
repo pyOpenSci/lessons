@@ -13,7 +13,7 @@ kernelspec:
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-# Clean, Modular Code
+# Clean, Modular Code: overview
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
@@ -23,9 +23,7 @@ kernelspec:
 * Use [expressive object names](python-expressive-code)
 * [Make your code DRY](dry-code)
 
-
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}, "jp-MarkdownHeadingCollapsed": true}
-
 
 ### PEP 8 & consistent code format
 
@@ -35,13 +33,13 @@ kernelspec:
 
 +++ {"editable": true, "slideshow": {"slide_type": "skip"}}
 
-
 ## Notes
-
 
 ```{code-cell} ipython3
 ---
 editable: true
+jupyter:
+  source_hidden: true
 slideshow:
   slide_type: ''
 ---
@@ -77,9 +75,7 @@ if x:
 * Black
 * Ruff
 
-
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}, "jp-MarkdownHeadingCollapsed": true}
-
 
 #### [Other tools to consider](tools-code-style)
 
@@ -95,7 +91,11 @@ if x:
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-<center><img src="../images/clean-code/clean-code-expressive-variable-names-basmati-rice.png" alt="Image showing a large see-through Tupperware container with cookies in it but a label that says Basmati Rice."></center>
+:::{figure} /images/clean-code/clean-code-expressive-variable-names-basmati-rice.png
+:alt: "Image showing a large see-through Tupperware container with cookies in it but a label that says Basmati Rice."
+
+A large see-through Tupperware container labeled "Basmati Rice" containing cookies.
+:::
 
 ```{code-cell} ipython3
 ---
@@ -194,14 +194,14 @@ Three strategies:
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-## Document as you go
+### Document as you go
 
 * Make it a habit
 * It's easier to do it as you work!
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-## Document your code
+#### Document your code
 
 Add a docstring to the top of any script or module that explains the intent of the code.
 
@@ -313,7 +313,7 @@ help(add_num)
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-## Modularize your code
+### Modularize your code
 
 Functions make code easier to read, test, and maintain.
 
@@ -351,7 +351,7 @@ for num in numbers:
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-## Reproducibility: Create dynamic paths
+## Make your code reproducibe across machines with dynamic paths
 
 * Paths on Windows are different than MAC/Linux
 * Using `Path` (or `os`)
@@ -384,20 +384,19 @@ print(path)
 
 ## Tests & checks
 
-* Usability sometimes means failing (gracefully and with intention). 
-
-
-+++ {"editable": true, "slideshow": {"slide_type": "slide"}}
-
-### Strategies 
-* Fail fast (with useful error messages)
-* try/except blocks: handle errors (exceptions)
-* Conditionals to optimize and redirect workflows
+* Usability sometimes means failing (gracefully and with intention).
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-## Fail fast 
+### 3 Strategies 
 
+* **Fail fast** (with useful error messages)
+* **try/except blocks:** handle errors (exceptions)
+* **Conditionals** to optimize and redirect workflows
+
++++ {"editable": true, "slideshow": {"slide_type": "slide"}}
+
+### Fail fast
 
 ```{code-cell} ipython3
 ---
@@ -423,6 +422,13 @@ with file_path.open("r") as json_file:
 df = pd.json_normalize(json_data)
 ```
 
+When your code doesn't fail fast, it might fail somewhere different. 
+In this case, `.glob` can't find any files so the list of paths is empty.
+
+In this case, the file can't be opened but it failes because file_path is an
+empty list when the real problem is it's missing fail paths. This type of 
+error is confusing to a user and will take longer to debug.
+
 ```{code-cell} ipython3
 ---
 editable: true
@@ -439,7 +445,7 @@ import pandas as pd
 # Create a list of json files
 file_paths = list(Path(".").glob("*.json"))
 # Open the first file
-with file_path[0].open("r") as json_file:
+with file_paths[0].open("r") as json_file:
     json_data = json.load(json_file)
 
 # Normalize the JSON data into a Pandas DataFrame
@@ -458,7 +464,7 @@ file_paths
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-## Handle errors
+### Handle errors with try/excepts
 
 * Anticipate errors a user may encounter when using your code.
 * Redirect workflows by catching errors.
@@ -500,14 +506,19 @@ package_name = title.split(":")[0]
 package_name 
 ```
 
+In some cases, you may want to capture the error and return a default value
+(or do something else).
+
+:::{figure} /images/clean-code/try-except-blocks.png
+:alt: "An illustration showing a basic Python try and except block. Under “try:”, there is a green box with the text “Code runs as planned! Yay!”. Below that, under “except:”, there is a light yellow box with the text “Code fails, Do something else”. The image has a minimalist style with a small flower icon and a wavy line header at the top, and includes the pyOpenSci logo in the bottom right corner."
+:::
+
 ```{code-cell} ipython3
 ---
 editable: true
 slideshow:
   slide_type: slide
 ---
-# In some cases, you may want to capture the error and return a default value
-# (or do something else)
 title = 9999
 
 try:
@@ -521,6 +532,8 @@ except AttributeError:
 package_name
 ```
 
+In other cases you may want to intentionally raise an error with a custom message.
+
 ```{code-cell} ipython3
 ---
 editable: true
@@ -528,7 +541,6 @@ slideshow:
   slide_type: slide
 tags: [raises-exception]
 ---
-# In others you may want to intentionally raise an error with a custom message.
 title = 999
 
 try:
@@ -543,8 +555,8 @@ package_name
 
 +++ {"editable": true, "slideshow": {"slide_type": "slide"}}
 
-## Start activity three 
+## You're ready for activity three 
 
-Activity 3 is an interactive notebook you can work on in small groups. 
+[Activity 3 is an interactive notebook](clean-code-activity-3) you can work on in small groups. 
 
 Work through the activities and ask questions!
