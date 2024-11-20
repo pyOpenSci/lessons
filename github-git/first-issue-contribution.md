@@ -16,6 +16,8 @@ kernelspec:
 
 # Make Your First Open Source Contribution 
 
+🚧 These lessons are under heavy construction and will continue to change through March 2024 🚧 
+
 :::{todo}
 
 what's missing

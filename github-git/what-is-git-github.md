@@ -10,6 +10,8 @@ jupytext:
 
 # An overview of Git & GitHub
 
+🚧 These lessons are under heavy construction and will continue to change through March 2024 🚧 
+
 ## What is git?
 
 Git is a powerful **version control system** that enables teams to track, manage, and collaborate on code and documentation changes over time. While it is best known for its use in software development, Git is equally valuable in **open science** and **open source workflows**. 

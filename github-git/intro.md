@@ -9,6 +9,8 @@ jupytext:
 
 # Introduction to Collaborative GitHub and Git
 
+🚧 These lessons are under heavy construction and will continue to change through March 2024 🚧 
+
 Version control is essential in open source software development and increasingly important in sharing and working on open science workflows. GitHub is the most commonly used cloud-based version control platform. GitHub integrates the power of Git with online collaboration and project management tools.
 
 Many think about GitHub as a social coding platform.

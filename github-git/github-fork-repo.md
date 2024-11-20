@@ -13,6 +13,8 @@ kernelspec:
 
 # How to Fork & Clone a GitHub Repository 
 
+🚧 These lessons are under heavy construction and will continue to change through March 2024 🚧 
+
 :::{admonition} What you will learn:
 
 * Explain how a **GitHub** repository stores and tracks changes to files.

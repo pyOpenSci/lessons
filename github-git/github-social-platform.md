@@ -10,8 +10,10 @@ kernelspec:
   language: python
   name: python3
 ---
+
 # Community Interaction Best Practices on GitHub
 
+🚧 These lessons are under heavy construction and will continue to change through March 2024 🚧 
 ## Introduction
 
 GitHub is more than just a platform for hosting code—it’s a **social platform** where developers, researchers, and contributors work together to create, improve, and share projects. Behind every username is a person who deserves respect and appreciation. 
