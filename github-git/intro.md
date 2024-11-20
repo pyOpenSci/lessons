@@ -75,7 +75,7 @@ Caption here
 
 ## What's next
 
-In this lesson series, you will learn how to work collaboratively using GitHub. The lessons will combine the technical elements that you need to use git and GitHub with the social dynamics that are not often taught. 
+In this lesson series, you will learn how to work collaboratively using GitHub. The lessons will combine the technical elements you need to use git and GitHub with the social dynamics that are not often taught. 
 
 :::{todo}
 resources
@@ -91,8 +91,16 @@ https://www.youtube.com/watch?v=eWxxfttcMts
 Intro <self>
 What is Git/GitHub <what-is-git-github>
 Your First Contribution <first-issue-contribution>
-Fork a GitHub Repo <github-fork-repo>
-Social <github-social-platform>
+
+:::
+
+:::{toctree}
+:caption: How To
+:maxdepth: 2
+:hidden:
+
+How to Fork a GitHub Repo <github-fork-repo>
+Navigate the Social Dynamics of GitHub <github-social-platform>
 
 :::
 
