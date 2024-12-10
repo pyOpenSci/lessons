@@ -29,7 +29,7 @@ jupyter:
 
 To define a function in Python, you need:
 - The `def` keyword to start the function definition.
-- A function name that follows [PEP 8 guidelines](../clean-modular-code/python-expressive-code.md) for naming.
+- A function name that follows [PEP 8 guidelines](python-expressive-code) for naming.
 - Input parameters (optional), defined inside parentheses `()`.
 - A `return` statement that specifies the output of the function.
 - A docstring that explains what the function does and defines the function's inputs and outputs. We suggest that you use numpy style docstrings for scientific Python code.

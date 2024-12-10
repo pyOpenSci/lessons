@@ -164,13 +164,13 @@ After making your changes, you need to commit them to your local repository. To 
     git status
     ```
 
-- To add the changes to the staging area:
+* To add the changes to the staging area:
 
     ```bash
     git add .
     ```
 
-- To commit the changes:
+* To commit the changes:
 
     ```bash
     git commit -m "Your commit message here"

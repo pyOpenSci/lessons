@@ -28,25 +28,31 @@ authors: ['Leah Wasser', 'Jenny Palomino']
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
+(dry-code)=
 # Write DRY, modular Python code
 
-:::{admonition} Learning Objectives
-
-After completing this lesson, you will be able to:
+:::{admonition} What you will learn
+:class: tip
 
 * Define the DRY principle.
 * List key strategies for writing DRY code in Python.
 * Explain how these strategies help you write DRY code.
 :::
 
-## Don't Repeat Yourself  (DRY)
+## Don't Repeat Yourself (DRY)
 
 The DRY approach to programming refers to writing functions and automating repeated sections of code. If you perform the same task multiple times in your code, consider a function or a loop to make your workflow more
 efficient.
 
-## Don't Repeat Yourself: Remove Repetition in Your Code
 
-### Why Write Efficient Code
+:::{figure} /images/clean-code/copy-pasta-code-dry.png
+:alt: "Image showing four stacked elbow macaroni shapes labeled ‘Ctrl + V’ with each stack having a slight variation in the middle noodle. The variations include a smiling face, a frowning face, and a green and pink noodle."
+:::
+
+
+## Don't repeat yourself: remove repetition in your code
+
+### Why write efficient code
 
 DRY code relates to reproducible science because one component of reproducibility is writing code that is easy to read. If your code is easy to read, it will be easier for your future self to understand that code. It will also be easier for your colleagues to work with and contribute to your code. This is important, but there is an even more selfish reason to consider writing efficient code.
 
@@ -59,20 +65,20 @@ Efficient coding will make your life easier, too.
 Reproducibility can mean being as lazy as possible. When you can avoid repeating steps and code, you should do just that. Source: [Twitter/X](https://twitter.com/hadleywickham/status/598532170160873472).
 :::
 
-### Don’t Repeat Yourself - DRY
+### Don’t Repeat Yourself: DRY
 
 DRY (Don’t Repeat Yourself) is a principle of software development. The focus of DRY is to avoid the repetition of information.
 
 Why?
 
-One main reason is that when you write code that performs the same tasks repeatedly, any modification of one task requires the same change to be made to every place that you used that task! Editing every instance of a task is a lot of work.
+One main reason is that when you write code that performs the same tasks repeatedly, any modification of one task requires the same change to be made to every place that you use that task! Editing every instance of a task is a lot of work.
 
 By implementing DRY code approaches, you can make your code:
 
 1. easier to follow and read (for yourself as well as others), thereby supporting reproducibility
 2. easier to update because you only have to update your code once, rather than everywhere that code block is used
 
-## Strategies For Writing DRY Code
+## Strategies for writing DRY code
 
 Below you will learn about three commonly used strategies associated with writing clean code:
 
@@ -83,13 +89,13 @@ Below you will learn about three commonly used strategies associated with writin
 The above three approaches are often used together when writing
 code.
 
-### Write Functions To Document and Simplify Repeated Tasks
+### Write functions to document and simplify repeated tasks
 
-A function is a reusable block of code that performs a specific task. Functions have inputs and outputs. Functions can help you to both eliminate repetition and improve efficiency in your code through modularity. If you have been using Python for any period of time, you have already used built in Python functions.
+A [function](write-functions) is a reusable block of code that performs a specific task. Functions have inputs and outputs. Functions can help you to both eliminate repetition and improve efficiency in your code through modularity. If you have been using Python for any period of time, you have already used built-in Python functions.
 
-For example,`print()` is a function used to write output to the Python console (or a Jupyter Notebook). If you have used pandas, `pd.read_csv()` is a function used to read a text file into Python in a dataframe format. The `print()` and `read_csv()` functions are useful to you as a Python programmer because you do not need to know the specific lines of code that are required to `print()`. All that you need to know is how to call the print command: `print("My text here")`.
+For example, `print()` is a function used to write output to the Python console (or a Jupyter Notebook). If you have used Pandas, `pd.read_csv()` is a function that reads a text file into Python in a dataframe format. The `print()` and `read_csv()` functions are useful to you as a Python programmer because you do not need to know the specific lines of code that are required to `print()`. All that you need to know is how to call the print command: `print("My text here")`.
 
-Below, you will see the function that you looked at in the previous lesson. This is a custom function with a custom name.
+Below, you have a custom function with a custom name.
 
 ```python
 def convert_to_kelvin(temperature_fahr):
@@ -110,7 +116,7 @@ def convert_to_kelvin(temperature_fahr):
 This function converts temperature in Fahrenheit to kelvin. You can
 learn more about it by reading its documentation (docstring).
 
-Now imagine that you need to perform this calculation over and over.
+Now, imagine that you need to perform this calculation over and over.
 
 ```python
 temp = 55
@@ -125,10 +131,10 @@ In the example above, you are repeating the same calculation twice.
 In this example:
 
 1. if the calculation needs to change, you need to change it twice
-2. it's not neccesarily clear what the calculation is doing unless you know the calculation itself.
+2. it's not necessarily clear what the calculation is doing unless you know the calculation itself.
 
-The example below is cleaner because now you are replacing a repeated calculation with a function. If this function is well defined with a docstring that describes what it does, it is easier
-to both understand and use. If you need to change the calculation itself, you can do so once in the function. Then you rerun your code.
+The example below is cleaner because now you are replacing a repeated calculation with a function. If this function is well-defined with a docstring that describes what it does, it is easier
+to both understand and use. If you need to change the calculation itself, you can do so once in the function. Then, you rerun your code.
 
 ```python
 temp = 55
@@ -140,14 +146,13 @@ new_temp_k = convert_to_kelvin(temp2)
 
 The task above could be further simplified using loops which will be discussed below. Writing modular code allows you to subdivide tasks of a workflows into organized units of code that can be reused by yourself and others, often without them needing to know the specific details of the code.
 
-### Write Loops in Python To Simplify Iterative Repetitive Tasks
+### Write loops in Python To simplify iterative repetitive tasks
 
-A loop executes a sequence of operations over and over in a specified order.
+A loop executes a sequence of operations repeatedly in a specified order.
 
-Loops can help you to eliminate repetition in code by replacing
+Loops can help you eliminate repetition in code by replacing
 duplicate lines of code with an iteration. This means that you can
-iteratively execute the same code line or block until it reaches an
-end point that you specify.
+iteratively execute the same code line or block until it reaches a specified endpoint.
 
 For example, consider the following lines of code:
 

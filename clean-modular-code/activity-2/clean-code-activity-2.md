@@ -16,7 +16,7 @@ kernelspec:
 (activity-2)=
 # DRY Code & Functions: Activity 2 
 
-In [activity 1](../activity-1/clean-code-activity-1), you took some code and made  it cleaner and easier to understand by:
+In [activity 1](../activity-1/clean-code-activity-1), you took some code and made it cleaner and easier to understand by:
 
 * using expressive variable names, 
 * following PEP8 code style guidelines, and
@@ -247,13 +247,4 @@ If you still have time, below is another challenge for you to try!
 
 Create a new workflow that calculates how many packages were submitted to JOSS each month. Add documented functions that process the data. 
 
-:::
-
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
-
-:::{dropdown} <i class="fa-solid fa-eye"></i> TODOs-- Click to expand dropdown
-
-Hidden content
-
-* TODO: add drop-downs with answers to each of the OYOs.
 :::

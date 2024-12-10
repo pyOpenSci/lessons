@@ -51,6 +51,15 @@ TODO: let's merge this with the conditional lesson
 :::
 ::::
 
+::::{grid-item}
+:::{card} [✿ Collaborative GitHub ✿](github-git/intro)
+:class-card: left-aligned
+
+More here.
+
+:::
+::::
+
 :::::
 
 ## Who are these lessons for
@@ -85,6 +94,13 @@ Optimize Code <code-workflow-logic/intro>
 Share Code <publish-share-code/intro>
 :::
 
+:::{toctree}
+:hidden:
+:caption: GitHub
+:maxdepth: 2
+
+Collaborative GitHub <github-git/intro>
+:::
 
 :::{todolist}
 

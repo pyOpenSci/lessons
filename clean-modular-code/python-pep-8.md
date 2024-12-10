@@ -13,7 +13,7 @@ kernelspec:
 ---
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
-
+(pep8-code-format)=
 # Python code style for readability and usability 
 
 :::{admonition} What you will learn
@@ -32,8 +32,10 @@ Code standards make your code more readable and easier to maintain, just like wr
   
 For example:
 
-* Readable sentence: This is a sentence.
-* Unformatted sentence: thisisasentence.withoutspacesitgetsconfusing.
+* Readable sentence:
+    * This is a sentence.
+* Unformatted sentence:
+    * thisisasentence.withoutspacesitgetsconfusing.
 
 
 Just like good grammar makes text easier to read, following code style rules like [PEP 8](https://peps.python.org/pep-0008/) helps make your code easier to understand and debug. It enforces rules on naming variables, capitalization, formatting code, and structuring your script. Well-formatted code also makes it easier for you to share code, given it will be easier for others to understand.  
@@ -68,7 +70,10 @@ df
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
-Notice that by adding docstrings, spacing to the the code, and a few comments.... 
+Notice that adding docstrings, spacing to the code, and a few comments makes it easier to read. When code is easier to read, it 
+then becomes easier to understand and, in the long term, maintain and contribute to.
+
+[Expressive variable names](python-expressive-code) will make this code even more clear.
 
 ```{code-cell} ipython3
 ---
@@ -135,15 +140,24 @@ df
 (tools-code-style)=
 ## Tools for Consistent Code Style
 
-It may seem overwhelming to remember hundreds of different rules from style guides like [PEP 8](https://peps.python.org/pep-0008/), [pydocstyle](https://pypi.org/project/pydocstyle/), and others --- the good news is that you don't have to! 
+It may seem overwhelming to remember hundreds of different rules from style guides like [PEP 8](https://peps.python.org/pep-0008/), [pydocstyle](https://pypi.org/project/pydocstyle/), and others --- the good news is that you don't have to! There are tools called code linters and formatters that can apply consistent code formatting. 
 
-### Linters & Formatters
+You'll learn about those next.
 
-Two categories of "[static analysis](https://en.wikipedia.org/wiki/Static_analysis)" tools called **code linters and formatters** can identify and automatically apply these standards for you.
+:::{tip}
+Code format tools are "[static analysis](https://en.wikipedia.org/wiki/Static_analysis)" tools. Static analysis tools are called “static” because they analyze your code without executing it. They review the source code to find errors, enforce coding standards, and improve readability, helping you catch potential issues before running your code.
+:::
 
-[**Linters**](https://en.wikipedia.org/wiki/Lint_(software)) are tools that analyze your code against a set of rules, show violations of those rules, and sometimes make suggestions for how to fix them. Linters will check not only for stylistic problems, but also logical problems like incorrect syntax, unreachable code, and so on. 
 
-For example, a linter can identify the *errors* in this code, and suggest how to fix it.
+### Linters & formatters
+
+**Code linters and formatters** are static analysis tools that identify and automatically apply code format standards for you.
+
+#### About code linters 
+
+[**Linters**](https://en.wikipedia.org/wiki/Lint_(software)) analyze your code against a set of rules (such as PEP 8 rules). They will identify those rule violations and suggest how to fix them. Linters will check for stylistic problems and logical problems like incorrect syntax and unreachable code (code that will never actually execute in your workflow). 
+
+For example, have a look at the code below. You can runa linter on the code to identify the *errors*. The linter will suggest how to fix those errors but it will not actually apply the suggestions.
 
 ```python
 n_legs = {"cat": 4, "snake": 0, "centipede": 100}
@@ -151,6 +165,7 @@ for animal, legs in n_legs:
     print(f"An {animal} has {legs} legs")
 ```
 
+An example of a linter run on a `.py` file in the terminal. 
 ```shell
 lint.py:2:21: PLE1141 [*] Unpacking a dictionary in iteration without calling `.items()`
   |
@@ -165,7 +180,8 @@ Found 1 error.
 [*] 1 fixable with the `--fix` option.
 ```
 
-A linter can also check for *stylistic* rules you may want to keep consistent, like the PEP8 style names we'll discuss below
+A linter can also check for *stylistic* rules. For instance, you may 
+want to keep naming conventions consistent, following PEP8 guidelines, in your code. 
 
 ```python
 def My_Function(x: int) -> int:
@@ -183,14 +199,20 @@ naming.py:1:5: N802 Function name `My_Function` should be lowercase
 Found 1 error.
 ```
 
-**Formatters** are tools that will reformat and *change* your code according to a style. Formatters should[^bugs_exist] only make changes to your code that don't affect its logical structure or behavior. 
+You'll learn more about naming conventions next.
 
-For example we could apply a code formatter to the rather unfortunate function above and have it automatically cleaned up for us:
+#### About code formatters 
+
+Code **formatters** are tools that identify issues, reformat and *change* your code according to a specific style. Formatters should[^bugs_exist] only make changes to your code that don't affect its logical structure or how it runs (its behavior). 
+
+For example, you can apply a code formatter to the rather unfortunate function above and 
+it will automatically clean it up. See below:
 
 :::::{tab-set}
 ::::{tab-item} Unformatted
 
 ```python
+# Unformatted code
 def classify_precipitation(precip_list):
  avg_precip=pd.Series(
 precip_list
@@ -209,6 +231,7 @@ precip_list
 ::::{tab-item} Formatted
 
 ```python
+# Code after the Black formatter has been run on it
 def classify_precipitation(precip_list):
     avg_precip = pd.Series(precip_list).mean()
     if avg_precip < 100:
@@ -223,41 +246,66 @@ def classify_precipitation(precip_list):
 :::::
 
 
-There is not always a clear distinction between these categories of tools - formatters will correct some errors detected by linters, and linters will sometimes fix rule violations in the same way that formatters will. The distinction is more a distinction in *purpose* rather than a qualitative distinction *between tools.*
+Linters are primarily designed to analyze and point out issues in your code, such as style violations, logical errors, or bad practices. While some linters can suggest code fixes, their main purpose is to highlight problems rather than automatically fix them.
+
+Formatters, on the other hand, are designed to modify your code automatically to adhere to a set style guide. They focus on layout and formatting (like indentation and line spacing).
+
+However, some tools blur these lines: certain linters can auto-correct minor issues, and some formatters will identify and fix common coding errors as they reformat your code. So, the distinction is really more about their intended purpose—linting focuses on analysis and error detection while formatting focuses on consistent styling.
 
 
-### Common Code Style Tools
+### Common code style tools
 
-#### For `.py` Files
+#### For `.py` files
 
-Use popular tools like **Black** or **Ruff**:
+If you are writing .py files, popular tools like **Black** or **Ruff** are useful for cleaning up your code:
 
-- **[Black](https://black.readthedocs.io/en/stable/)**: Automatically reformats code according to PEP 8.
+- **[Black](https://black.readthedocs.io/en/stable/)**: An opinionated code formatter that automatically reformats code and generally adheres to PEP 8 guidelines.
 - **[Ruff](https://docs.astral.sh/ruff/configuration/#jupyter-notebook-discovery)**: A linter and formatter that also supports import sorting.
 
-Both tools can be run manually or integrated into **pre-commit hooks** with Git to check your code before each commit. You can also configure them in your IDE (like VSCode, PyCharm, or Spyder) to format your code every time you save.
+Both Black and Ruff tools can be run manually or integrated into a workflow. 
 
+Some people configure formatters like Ruff and/or Black in an IDE (like VSCode, PyCharm, or Spyder) to format your code every time you save a `.py` file.
+
+If you use version control platforms like Git and GitHub, you can use Ruff and Black with **pre-commit hooks** to check your code passes style checks before you make a commit. 
+
+:::{admonition} What is a pre-commit hook?
+:class: tip
+Pre-commit hooks are automated checks that run every time you try to make a commit in Git. They help catch issues by running tools like Black or Ruff before your code is officially saved in your project, ensuring consistent and clean code from the start.
+:::
+
+#### Code format in Jupyter Notebooks
+
+Code formatters can also be used in Jupyter Notebooks. One popular way to format Jupyter notebooks using Jupyter Lab is the [Jupyter Lab codeformatter extension](https://jupyterlab-code-formatter.readthedocs.io/). This code formatter tool is an extension that adds a convenient button to your Jupyter Lab interface. You can use that button to format code cells in your Notebook. 
+
+This tool is set up in the Binder connected to these lessons if you want to check it out. 
 
 :::{note}
 Ruff doesn’t fully support Jupyter/MyST markdown notebooks yet but can be integrated into a pre-commit workflow for GitHub repositories.
 :::
 
+There are also command-line tools that you can use to run Black and Ruff on Jupyter Notebooks, such as [**nbQA**](https://nbqa.readthedocs.io/en/latest/index.html). 
 
-#### For Jupyter Notebooks
+### How to integrate code formatters and linters into your workflow 
 
-For Jupyter Notebooks, try:
-- **Notebook extensions**: Add extensions to your interface to format cells automatically.
-- **nbQA**: A command-line tool that applies Black or Ruff to Jupyter Notebooks via the CLI.
+As you may have noticed above, there are different ways to integrate code formatters and linters into your workflows. The approach that you take will depend on the tools that you regularly use. A few approaches are discussed below:  
 
-### Using Static Analysis Tools
+- **Manually**: You can choose to run these tools on-demand in your favorite terminal (shell) to check and format your code. This approach gives you control over when the tools are run, but it also requires you to run the formatters and periodically update your code.
+- **Pre-commit hook**: Pre-commit hooks are great tools to use if you typically commit code to Git. Pre-commit hooks enforce code-style checks before every commit that you make to a repository.
 
-These tools can be used in the following ways:
-- **Manually**: Run on-demand to check and format your code - e.g. running `black .` or `ruff check` in your shell.
-- **Pre-commit hook**: Enforce code style checks before every commit - e.g. by adding a script to the `.git/hooks/pre-commit` file in a git repository, or using a tool like [`pre-commit`](https://pre-commit.com/).
-- **IDE integration**: Automatically format code in your editor. e.g., instructions for [ruff](https://docs.astral.sh/ruff/editors/setup/) and [black](https://black.readthedocs.io/en/stable/integrations/editors.html)
-- **Continuous Integration**: Enforce code style as a part of code review, e.g. with [github actions](https://black.readthedocs.io/en/stable/integrations/github_actions.html).
+:::{tip}
+Pre-commit hooks can be  added to your .git directory in your repo or you can use a a tool such as [`pre-commit`](https://pre-commit.com/) to run them.
+:::
 
-Using these tools ensures your code remains consistent, readable, and compliant with PEP 8, without memorizing all the rules.
+- **IDE integration**: You can also set up your favorite IDE (VSCode, Spyder, PyCharm) to automatically format your code in your editor every time you save a file.
+
+:::{tip}
+If you're curious about setting up formatters in your IDE, check out instructions for setting up [ruff](https://docs.astral.sh/ruff/editors/setup/) and [black](https://black.readthedocs.io/en/stable/integrations/editors.html).
+:::
+
+- **Continuous Integration**: If you use a platform like GitHub or GitLab, then you can also set up and enforce code style on each commit and on pull requests (or merge requests) submitted to a repository. If you use GitHub, then you'd set these up using [GitHub actions](https://black.readthedocs.io/en/stable/integrations/github_actions.html).
+
+
+Using these tools ensures that your code remains consistent, readable, and compliant with PEP 8 without you having to memorize all the rules.
 
 
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
