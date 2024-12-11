@@ -42,6 +42,16 @@ TODO: let's merge this with the conditional lesson
 ::::
 
 ::::{grid-item}
+:::{card} [✿ Package Code ✿](python-packaging/intro)
+:class-card: left-aligned
+
+* [Execute a Python Package](execute-package)
+* [Execute a Python Script](execute-script)
+
+:::
+::::
+
+::::{grid-item}
 :::{card} [✿ Share Code ✿](publish-share-code/intro)
 :class-card: left-aligned
 
@@ -85,6 +95,15 @@ Clean Code <clean-modular-code/intro-clean-code>
 
 Optimize Code <code-workflow-logic/intro>
 :::
+
+:::{toctree}
+:hidden:
+:caption: Package Code
+:maxdepth: 2
+
+Package Code <python-packaging/intro>
+:::
+
 
 :::{toctree}
 :hidden:
