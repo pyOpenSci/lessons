@@ -42,7 +42,7 @@ TODO: let's merge this with the conditional lesson
 ::::
 
 ::::{grid-item}
-:::{card} [✿ Package Code ✿](python-packaging/intro)
+:::{card} [✿ Running Code ✿](running-code/intro)
 :class-card: left-aligned
 
 * [Execute a Python Package](execute-package)
@@ -89,10 +89,10 @@ Optimize Code <code-workflow-logic/intro>
 
 :::{toctree}
 :hidden:
-:caption: Package Code
+:caption: Running Code
 :maxdepth: 2
 
-Package Code <python-packaging/intro>
+Package Code <running-code/intro>
 :::
 
 

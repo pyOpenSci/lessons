@@ -11,6 +11,7 @@ kernelspec:
   name: python3
 ---
 
+(execute-script)=
 # Execute a Python script
 
 There are two primary ways to execute a Python script.

@@ -11,6 +11,7 @@ kernelspec:
   name: python3
 ---
 
+(execute-package)=
 # Execute a python package
 
 In [Execute a Python script][#Execute_a_Python_script] you learned of the two primary ways to execute a stand-alone Python script.
