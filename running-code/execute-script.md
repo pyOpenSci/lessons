@@ -12,11 +12,11 @@ kernelspec:
 ---
 
 (execute-script)=
-# Execute a Python script
+# How to Execute a Python Script
 
 There are two primary ways to execute a Python script.
 
-You may already be familiar with the `python` command, and that it can take the name of a Python file and execute it
+The first way to execute a Python script is to use the  `python` command. The `python` command takes the name of a Python file and executes the file from a command in your shell, like this:
 
 ```bash
 python my_program.py
@@ -24,7 +24,7 @@ python my_program.py
 
 When Python reads a file in this way, it executes all of the "top-level" commands that are not indented.
 This is similar, but not identical, to the behavior of copying this file and pasting it line-by-line into an interactive
-Python shell (or notebook cell).
+Python shell (or a Jupyter notebook cell).
 
 ```python
 def report_error():
@@ -33,17 +33,19 @@ def report_error():
 print("\N{Sparkles} Hello from Python \N{Sparkles}")
 ```
 
-Note that only one line is printed when this script is run
+Note that only one line is printed when this script is run. The `report_error` function only runs if you call it directly in the file. 
 
 ```bash
 my_program.py
 # ✨ Hello from Python ✨
 ```
 
+### 2. Associate the file with a launch command
+
 The other way a Python script may be executed is to associate the file with a launch command. The way in which
 this association is done depends on what operating system you are running.
 
-## Non-Windows executables
+###  MAC / Linux / Non-Windows executables
 
 On Linux or Mac systems, the Python file can itself be turned into a command. By adding a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))
 as the first line in any Python file, and by giving the file [executable permissions](https://docs.python.org/3/using/unix.html#miscellaneous) the
@@ -79,9 +81,8 @@ If your Windows machine has Python registered as the default application associa
 scripts can be run as commands. However, only one Python can be registered at a time, so all Python scripts run this
 way will use the same Python environment.
 
-Additionally, most Windows Python installs come with the [Python Launcher](https://docs.python.org/3/using/windows.html#python-launcher-for-windows)
-which, in addition to allowing specifying the version of Python to run, can also read shebang lines and emulate some of that behavior.
-This allows for shebang lines to be re-used between Linux, macOS, and Windows systems. However, on Windows the command must still
+Additionally, most Windows Python installs come with the [Python Launcher](https://docs.python.org/3/using/windows.html#python-launcher-for-windows). This launcher allows you to specify the version of Python to run and also can read shebang lines and emulate some of that behavior.
+This allows you to reuse shebang lines between Linux, macOS, and Windows systems. However, on Windows, the command must still
 be prefaced with another command (`py`).
 
 ```bash
@@ -90,17 +91,19 @@ py my_program.py
 ```
 
 :::{tip}
-While all Python files should end in a `.py`, this naming is necessary for Windows to associate a script with Python, as opposed
-to Linux where `.py` is a convention and the shebang associates the file with Python.
+All Python files should end in a `.py`. The `.py` is required for Windows to associate a script with Python. In comparison, on Linux and Mac machines, `.py` is a recommended best practice; the shebang (`!`) associates the file with Python.
 
-Also, although there is no in-source format that can tell Windows what to do with a Python file, executing a
-Python file with a shebang on Windows also does not cause any issues. Python just sees the whole line as
+ For simplicity and reproducibility, which ensures that your code runs consistently across machines, you should always just include the `.py` extension in your Python files~
+
+Windows doesn’t rely on a shebang (`#!`) to determine how to execute a Python file; instead, it treats the shebang line in a Python file as a comment and ignores it. However, including a shebang in your script doesn’t cause any issues on Windows because Python just reads the line as
 a comment and ignores it!
 
-Because of these differences it is best practice to use both a shebang and `.py` for all Python scripts.
+Because of these differences between Mac/Linux and Windows, it is best practice to use both a shebang in your .py files and to add the `.py` extension for all Python scripts.
 :::
 
-## Executable comparisons
+## Comparing passing files to Python vs the "shebang" (`#!`) execution approach  
+
+There are pros and cons of using the two approaches above to executive Python files. 
 
 ### Pros of passing a file to `python`:
 - don't need execute permissions
@@ -138,19 +141,20 @@ _always_ call `shiny_hello`, and now `guess_my_number` also calls it. That's two
 
 You may have already seen the answer, without realizing what it was doing. `my_program` needs a conditional that checks if is is in "script mode" or "import mode" and that conditional is `if __name__ == "__main__":`.
 
-This conditional is often used at the bottom of modules, especially modules that are expected to be executed
-directly, to separate code that is intended to execute as part of a command from code that is intended to
-execute as part of an import.
+This conditional is  most often included at the bottom of modules  that are expected to be executed
+directly. This conditional separates code that is intended to execute as part of a command or script from code that is intended to
+execute as part of an import within another script.
 
 ```python
 #!/usr/bin/env python
-# The above line is a shebang, and can take the place of typing python on the command line
+# The above line is a shebang and can take the place of typing python on the command line
 # This comment is below, because shebangs must be the first line!
 
 def shiny_hello():
     print("\N{Sparkles} Hello from Python \N{Sparkles}")
 
-
+# By calling shiny_hello within this conditional, it will only run when this file is run as a script. It will 
+# not run if you import it into another script. 
 if __name__ == "__main__":
     shiny_hello()
 ```
@@ -172,7 +176,7 @@ guess_my_number()
 # Was your number 42?
 ```
 
-:::{note}Why did that work?
+:::{note} Why did that work?
 
 All Python modules (individual files) have a `__name__` attribute, which is usually the same as the name used to import the module.
 
