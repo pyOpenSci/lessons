@@ -11,14 +11,13 @@ kernelspec:
   name: python3
 ---
 
-(execute-package)=
 # How to Execute a Python Package
 
-In [How to Execute a Python Script](execute-script) you learned about two primary ways to execute a stand-alone Python script.
+In [How to Execute a Python Script](./execute-script) you learned about two primary ways to execute a stand-alone Python script.
 There are two other ways to execute Python code from the command line, both of which work for code that has been formatted as a package.
 
 1. You can [**execute modules**](#executable-modules) using their import name
-2. You can [**execute packages**](#executable-packages) using a `__main__.py` file 
+2. You can [**execute packages**](#executable-packages) using a `__main__.py` file
 3. A package can provide arbitraty command names that execute parts of themselves
 
 ## 1. Executable modules
