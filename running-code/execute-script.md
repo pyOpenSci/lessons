@@ -15,8 +15,8 @@ kernelspec:
 
 There are two primary ways to execute a Python script.
 
-1. You can call Python from your shell and pass in the script path
-2. You can call your script directly as a command from your shell
+1. You can [pass your script](execute-script-pass-to-python) to Python in your shell
+2. You can [call your script](execute-script-launch-command) directly as a command in your shell
 
 (execute-script-pass-to-python)=
 ## 1. Pass your script to the Python command
@@ -39,7 +39,7 @@ def report_error():
 print("\N{Sparkles} Hello from Python \N{Sparkles}")
 ```
 
-Note that only one line is printed when this script is run. 
+Note that only one line is printed when this script is run.
 
 ```bash
 python my_program.py
