@@ -193,7 +193,7 @@ There are different sessions in nox related to building the docs: `docs`, `docs-
 * `docs`: this session builds the guide and opens it in your browser.
 
     ```bash
-    nox -e docs
+    nox -s docs
     ```
 
     To see the guide built locally, open the file `_build/html/index.html` in your browser.
@@ -201,7 +201,7 @@ There are different sessions in nox related to building the docs: `docs`, `docs-
 * `docs-test`: this session runs the tests for the guide.
 
     ```bash
-    nox -e docs-test
+    nox -s docs-test
     ```
 
     If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request.
@@ -209,7 +209,7 @@ There are different sessions in nox related to building the docs: `docs`, `docs-
 * `docs-live`: this session builds the guide and opens it in your browser with live reloading.
 
     ```bash
-    nox -e docs-live
+    nox -s docs-live
     ```
 
     open the local version of the guide in your browser at ``localhost`` shown in the terminal.
@@ -219,7 +219,7 @@ There are different sessions in nox related to building the docs: `docs`, `docs-
 Before submitting your pull request, make sure to run the tests and check the formatting of your code.
 
 ```bash
-nox -e docs-test
+nox -s docs-test
 ```
 
 If the tests fail, you will see an error message in your terminal. You need to fix the errors before submitting your pull request.
