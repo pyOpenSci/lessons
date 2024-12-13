@@ -40,11 +40,27 @@ def report_error():
 print("\N{Sparkles} Hello from Python \N{Sparkles}")
 ```
 
-Note that only one line is printed when this script is run. The `report_error` function only runs if you call it directly in the file.
+Note that only one line is printed when this script is run. 
 
 ```bash
 python my_program.py
 # ✨ Hello from Python ✨
+```
+
+The `report_error` function only runs if you call it directly in the file:
+
+```python
+def report_error():
+  print("An error has occured")
+
+print("\N{Sparkles} Hello from Python \N{Sparkles}")
+report_error()
+```
+
+```bash
+python my_program.py
+# ✨ Hello from Python ✨
+# An error has occured
 ```
 
 (execute-script-launch-command)=
@@ -119,9 +135,9 @@ There are pros and cons of using the two approaches above to execute Python file
 - It's reproducible: This approach works on every system
 - You are being explicit about what you expect to happen
 
-### Pros of associateing your script with a launcher:
-- The Python version used is assicated with a specific Python installation
-- That Python can be different that the Python installation currenlty active in a [`virtual-environment`](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#create-and-use-virtual-environments)
+### Pros of associating your script with a launcher:
+- The Python version used is associated with a specific Python installation
+- That Python can be different that the Python installation currently active in a [`virtual-environment`](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#create-and-use-virtual-environments)
 - You don't have to remember when using the command which Python installation the script should be associated with, or even that the script is written in Python
 
 (execute-script-name-eq-main)=

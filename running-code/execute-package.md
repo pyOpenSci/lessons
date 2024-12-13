@@ -15,10 +15,11 @@ kernelspec:
 # How to Execute a Python Package
 
 In [How to Execute a Python Script](execute-script) you learned about two primary ways to execute a stand-alone Python script.
-There are two other ways to execute Python code as commands, both of which work for code that has been formatted as a package.
+There are two other ways to execute Python code from the command line, both of which work for code that has been formatted as a package.
 
-1. You can execute modules using their import name
-2. A package can provide arbitraty command names that execute parts of themselves
+1. You can [**execute modules**](#executable-modules) using their import name
+2. You can [**execute packages**](#executable-packages) using a `__main__.py` file 
+3. A package can provide arbitraty command names that execute parts of themselves
 
 ## 1. Executable modules
 
@@ -65,7 +66,7 @@ if __name__ == "__main__":
     shiny_hello()
 ```
 
-### Executable packages
+## 2. Executable packages
 
 The `-m` flag as described above only works for Python modules (files), but does not work for Python (sub-)packages (directories).
 This means that you cannot execute a command using only the name of your package when it is structured to use directories
@@ -124,14 +125,14 @@ guess_my_number()
 Don't forget to (re)install your package after creating this file!
 :::
 
-## 2. Named Commands
+## 3. Named Commands
 
-The final way to make Python code executable directly from the command line is to include a special entrypoint
+The final way to make Python code executable directly from the command line is to include a special [entrypoint](https://packaging.python.org/en/latest/specifications/entry-points/)
 into the package metadata. Entrypoints are a general purpose plug-in system for Python packages, but the
 [`console_scripts`](https://packaging.python.org/en/latest/specifications/entry-points/#use-for-scripts)
 entry is specifically targeted at creating executable commands on systems that install the package.
 
-These commands are configured in your project's [`pyproject.toml`](https://www.pyopensci.org/python-package-guide/tutorials/pyproject-toml.html#what-is-a-pyproject-toml-file).
+These commands are configured in your project's [`pyproject.toml`](https://www.pyopensci.org/python-package-guide/tutorials/pyproject-toml.html#what-is-a-pyproject-toml-file) file in the [`[project.scripts]`](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#creating-executable-scripts) table.
 
 ```toml
 [project.scripts]
@@ -157,7 +158,7 @@ when the command is invoked in the shell. The target function can live anywhere;
 On your own or in small groups:
 
 - List some advantages of making a Python package executable over providing a script entry point.
-- List some disadvantages of making a Python package executable over providing a script entry point
+- List some disadvantages of making a Python package executable over providing a script entry point.
 - Review the Pros section from [How to Execute a Python Script](execute-script-comparison)
   - Do you see any similarities between executable packages and executable script files?
   - Do you notice any similarities between entrypoint scripts and executable script files?
