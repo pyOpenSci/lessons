@@ -125,7 +125,6 @@ project/
 # project/src/my_program/__main__.py
 from .greeting.hello import shiny_hello
 
-# notice top-level evaluations are not guarded by any conditional
 shiny_hello()
 ```
 
@@ -172,7 +171,7 @@ into the package metadata. Entrypoints are a general purpose plug-in system for 
 [`console_scripts`](https://packaging.python.org/en/latest/specifications/entry-points/#use-for-scripts)
 entry is specifically targeted at creating executable commands on systems that install the package.
 
-These commands are configured in your project's [`pyproject.toml`](https://www.pyopensci.org/python-package-guide/tutorials/pyproject-toml.html#what-is-a-pyproject-toml-file) file in the [`[project.scripts]`](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#creating-executable-scripts) table.
+These entrypoints and their commands are configured in your project's [`pyproject.toml`](https://www.pyopensci.org/python-package-guide/tutorials/pyproject-toml.html#what-is-a-pyproject-toml-file) file in the [`[project.scripts]`](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#creating-executable-scripts) table.
 
 ```toml
 [project.scripts]
