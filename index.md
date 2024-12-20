@@ -34,10 +34,20 @@
 * [Write Conditionals to redirect code](conditionals)
 * [Common Python exceptions](common-exceptions)
 
-<!-- 
+<!--
 TODO: let's merge this with the conditional lesson
-* [Conditionals with alternatives](conditionals-alternatives) 
+* [Conditionals with alternatives](conditionals-alternatives)
 -->
+:::
+::::
+
+::::{grid-item}
+:::{card} [✿ Running Code ✿](running-code/intro)
+:class-card: left-aligned
+
+* [Execute a Python Package](running-code/execute-package)
+* [Execute a Python Script](running-code/execute-script)
+
 :::
 ::::
 
@@ -85,6 +95,15 @@ Clean Code <clean-modular-code/intro-clean-code>
 
 Optimize Code <code-workflow-logic/intro>
 :::
+
+:::{toctree}
+:hidden:
+:caption: Running Code
+:maxdepth: 2
+
+Package Code <running-code/intro>
+:::
+
 
 :::{toctree}
 :hidden:
