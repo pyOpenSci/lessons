@@ -11,6 +11,7 @@ kernelspec:
   name: python3
 ---
 
+(fork-repository)=
 # How to Fork a GitHub Repository 
 
 🚧 These lessons are under heavy construction and will continue to change through March 2025 🚧 
@@ -65,3 +66,51 @@ To fork a repo:
 
 To fork a repo, first, navigate to the repo you want to fork. Then click the **fork** button in the upper right-hand corner of your screen. You can then create a copy of this repo in your account.
 :::
+
+
+
+## Activity: Fork a repository and modify a file
+
+### 1. Fork the pyOpenSci practice GitHub repository
+
+Fork the <a href="http://www.github.com/pyopensci/repo-here" target="_blank">pyOpenSci demo repository on GitHub</a>. Remember that a fork is a copy of a repository that is owned by someone else or an organization that lives in your GitHub account.
+
+:::{todo}
+Create an animated gif showing how to fork a repo
+:::
+
+
+:::{tip}
+A repository fork is a copy of the GitHub repository that you own in your GitHub account. The repository, however, is still connected to the main repository on GitHub that you forked. This connection means that you can submit pull requests and changes to the repository using your fork. 
+:::
+
+Once you have submitted your issue with the proposed changes, one of the package developers will review the issue and either:
+
+* Suggest changes to your proposed edits or
+* Encourage you to submit a pull request with the two identified changes.
+
+When you have the go-ahead from someone who owns the repository, you are ready to create and submit a pull request with your changes.
+
+
+
+## Activity: Fork a repository and modify a file
+
+### 1. Fork the pyOpenSci practice GitHub repository
+
+Fork the <a href="http://www.github.com/pyopensci/repo-here" target="_blank">pyOpenSci demo repository on GitHub</a>. Remember that a fork is a copy of a repository that is owned by someone else or an organization that lives in your GitHub account.
+
+:::{todo}
+Create an animated gif showing how to fork a repo
+:::
+
+
+:::{tip}
+A repository fork is a copy of the GitHub repository that you own in your GitHub account. The repository, however, is still connected to the main repository on GitHub that you forked. This connection means that you can submit pull requests and changes to the repository using your fork. 
+:::
+
+Once you have submitted your issue with the proposed changes, one of the package developers will review the issue and either:
+
+* Suggest changes to your proposed edits or
+* Encourage you to submit a pull request with the two identified changes.
+
+When you have the go-ahead from someone who owns the repository, you are ready to create and submit a pull request with your changes.

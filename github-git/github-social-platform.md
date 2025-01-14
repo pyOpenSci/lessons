@@ -51,26 +51,10 @@ Effective communication on GitHub ensures a productive and respectful collaborat
   _"What if we try this approach?"_ instead of _"This is wrong."_
 - Acknowledge positive aspects alongside suggestions for improvement.
 
-
-
-
-
-
-
-*********
+:::{todo}
+Move this to the pr page once I create it. 
 
 ## 3. When Contributing to a Repository
-
-### Submitting Issues
-- **Search First**: Before creating a new issue, check if someone else has already reported it.
-- **Be Clear**: Provide a detailed, reproducible example when reporting bugs.
-- **Be Constructive**: Avoid blaming or harsh criticism. Instead, frame your concerns as suggestions.
-
-Example:  
-_Not Constructive_: "This feature is broken and useless."  
-_Constructive_: "I encountered an issue when using this feature. Here's the error and steps to reproduce it."
-
-
 
 
 
@@ -80,3 +64,5 @@ _Constructive_: "I encountered an issue when using this feature. Here's the erro
 - **Be Open to Feedback**: Expect to receive suggestions for improvement and revise your pull request accordingly.
 
 Example Pull Request Description:
+
+:::
