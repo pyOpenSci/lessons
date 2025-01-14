@@ -3,7 +3,7 @@ import pathlib
 import shutil
 import nox
 
-# nox.options.reuse_existing_virtualenvs = True
+nox.options.reuse_existing_virtualenvs = False
 
 ## Sphinx related options
 

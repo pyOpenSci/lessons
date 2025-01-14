@@ -65,7 +65,12 @@ TODO: let's merge this with the conditional lesson
 :::{card} [✿ Collaborative GitHub ✿](github-git/intro)
 :class-card: left-aligned
 
-More here.
+Learn how to make your first contribution to an open source code hosted on GitHub.
+Here you'll learn how to 
+
+* [Understand contributing guidelines](first-contribution)
+* How to identify and request to tackle a specific issue
+* How to [fork a repo](fork-repository) and edit a file in the GitHub interface.
 
 :::
 ::::
