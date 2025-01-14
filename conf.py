@@ -58,7 +58,7 @@ extensions = [
     "sphinxext.opengraph",
     "sphinx_favicon",
     "sphinx.ext.todo",
-    "sphinx_codeautolink",
+    #"sphinx_codeautolink",
     "sphinx.ext.todo",
 ]
 
@@ -182,27 +182,28 @@ nb_execution_mode = "auto"
 # ------------------
 # Intersphinx & code linking
 
-intersphinx_mapping = {
-    "python": ("https://docs.python.org/3", None),
-    "numpy": ("https://numpy.org/doc/stable/", None),
-    "pandas": ('https://pandas.pydata.org/docs/', None),
-    "earthpy": ("https://earthpy.readthedocs.io/en/latest/", None),
-    "matplotlib": ('https://matplotlib.org/stable/', None),
-}
+# intersphinx_mapping = {
+#     "python": ("https://docs.python.org/3", None),
+#     "numpy": ("https://numpy.org/doc/stable/", None),
+#     "pandas": ('https://pandas.pydata.org/docs/', None),
+#     "earthpy": ("https://earthpy.readthedocs.io/en/latest/", None),
+#     "matplotlib": ('https://matplotlib.org/stable/', None),
+# }
 
-codeautolink_global_preface = """
-import numpy as np
-import pandas as pd
-import os
-"""
-codeautolink_concat_default=True
+# codeautolink_global_preface = """
+# import numpy as np
+# import pandas as pd
+# import os
+# """
+# codeautolink_concat_default=True
 
-# suppress all codeautolink warnings, we don't really care if it's busted
-suppress_warnings = [
-    "codeautolink.clean_block",
-    "codeautolink.parse_block",
-    "codeautolink.import_star",
-    "codeautolink.match_block",
-    "codeautolink.match_name",
-    "codeautolink.failed_resolve",
-]
+
+# # suppress all codeautolink warnings, we don't really care if it's busted
+# suppress_warnings = [
+#     "codeautolink.clean_block",
+#     "codeautolink.parse_block",
+#     "codeautolink.import_star",
+#     "codeautolink.match_block",
+#     "codeautolink.match_name",
+#     "codeautolink.failed_resolve",
+# ]

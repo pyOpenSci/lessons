@@ -5,12 +5,35 @@ jupytext:
     format_name: myst
     format_version: 0.13
     jupytext_version: 1.16.4
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
 ---
-
 
 # An overview of Git & GitHub
 
-🚧 These lessons are under heavy construction and will continue to change through March 2024 🚧 
+🚧 These lessons are under heavy construction and will continue to change through March 2025 🚧 
+
+Version control is essential in open source software development and increasingly important in sharing and working on open science workflows. GitHub is the most commonly used cloud-based version control platform. GitHub integrates the power of Git with online collaboration and project management tools.
+
+Many think about GitHub as a social coding platform.
+
+GitHub enables:
+- **Version control with Git**: Track changes, save work at various stages and revert to earlier versions if needed.
+- **Cloud-based backup**: Keep your local work securely backed up online.
+- **Collaboration tools**: Share code, streamline contributions, and improve projects collectively.
+- **Project management**: Organize updates, assign tasks, and manage milestones.
+- **Review processes**: Facilitate clear and collaborative reviews of changes.
+
+## GitHub in open science  
+
+Related to open science, GitHub:
+- **Promote transparency**: Share results and methods through accessible code and history.
+- **Enables collaboration**: Supports people worldwide working together on the same code and documentation in a structured way.  
+- **Ensures reproducibility**: Help others contribute to and build upon your work. 
+
+By combining Git’s version control with GitHub’s collaborative features, you can manage code efficiently while supporting openness,  transparency, and truly open collaboration. 
 
 ## What is git?
 
@@ -78,4 +101,3 @@ GitHub is a cloud-based platform built on Git, specifically designed to make Git
 ### Why Use GitHub?
 
 GitHub is a powerful platform for sharing projects with a global audience, making collaboration and reuse simple and accessible. It provides tools to manage contributions, engage with users, and build a thriving community around your work. For open science, GitHub ensures reproducibility by preserving transparent records of code, data, and analysis steps. Its pull request workflow streamlines the process of proposing and reviewing changes, enabling teams from diverse backgrounds to collaborate efficiently and effectively.
-

@@ -5,37 +5,25 @@ jupytext:
     format_name: myst
     format_version: 0.13
     jupytext_version: 1.16.4
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
 ---
 
-# Introduction to Collaborative GitHub and Git
+# Use GitHub With Friends  
 
-🚧 These lessons are under heavy construction and will continue to change through March 2024 🚧 
+:::{todo}
+This might belong in the background section.
+:::
 
-Version control is essential in open source software development and increasingly important in sharing and working on open science workflows. GitHub is the most commonly used cloud-based version control platform. GitHub integrates the power of Git with online collaboration and project management tools.
+🚧 These lessons are under heavy construction and will continue to change through March 2025 🚧 
 
-Many think about GitHub as a social coding platform.
+GitHub is a social coding platform.
+GitHub can be used in two primary ways: **independently** or **collaboratively**. 
 
-GitHub enables:
-- **Version control with Git**: Track changes, save work at various stages and revert to earlier versions if needed.
-- **Cloud-based backup**: Keep your local work securely backed up online.
-- **Collaboration tools**: Share code, streamline contributions, and improve projects collectively.
-- **Project management**: Organize updates, assign tasks, and manage milestones.
-- **Review processes**: Facilitate clear and collaborative reviews of changes.
+## Use GitHub by yourself
 
-## GitHub in open science  
-
-Related to open science, GitHub:
-- **Promote transparency**: Share results and methods through accessible code and history.
-- **Enables collaboration**: Supports people worldwide working together on the same code and documentation in a structured way.  
-- **Ensures reproducibility**: Help others contribute to and build upon your work. 
-
-By combining Git’s version control with GitHub’s collaborative features, you can manage code efficiently while supporting openness,  transparency, and truly open collaboration. 
-
-## Use GitHub by yourself vs. collaboratively  
-
-Git and GitHub are used in two primary ways: **independently** or **collaboratively**. 
-
-### Use GitHub by yourself
 Most scientists start using GitHub (and git) on their own. In this scenario, Git is a personal version control system, enabling you to track changes and maintain a complete work history. Working on your own is ideal for personal projects, preliminary research, or prototyping, as it allows you to revert to earlier versions if needed. 
 
 If you are using GitHub on your own, your workflow probably looks something like this:
@@ -48,7 +36,6 @@ If you are using GitHub on your own, your workflow probably looks something like
 :::{figure} /images/github/use-github-yourself.png
 :alt: Alt here
 
-Caption here
 :::
 
 ### Use Git and GitHub collaboratively
@@ -69,7 +56,6 @@ Note that the big change in workflow is that you are forking a main repository r
 :::{figure} /images/github/use-github-collaboratively.png
 :alt: Alt here
 
-Caption here
 :::
 
 
@@ -84,14 +70,33 @@ https://www.youtube.com/watch?v=eWxxfttcMts
 
 
 :::{toctree}
-:caption: Collaborative GitHub
+:caption: Background  
 :maxdepth: 2
 :hidden:
 
-Intro <self>
+Use GitHub With Friends (vs. by yourself)  <self>
 What is Git/GitHub <what-is-git-github>
-Your First Contribution <first-issue-contribution>
+GitHub Social platform <github-social-platform>
+:::
 
+
+:::{toctree}
+:caption: Contribute to Another Repo
+:maxdepth: 2
+:hidden:
+
+0. The path to your first contribution <0-first-contribution>
+1. Get to know the repo <1-get-to-know-repo>
+2. Identify what you want to work on <2-identify-issue>
+3. Fork GitHub Repo <3-fork-repo>
+
+::: 
+
+:::{toctree}
+:caption: Working locally
+:hidden:
+
+Clone a GitHub Repo <5-clone-repo>
 :::
 
 :::{toctree}
@@ -99,8 +104,7 @@ Your First Contribution <first-issue-contribution>
 :maxdepth: 2
 :hidden:
 
-How to Fork a GitHub Repo <github-fork-repo>
+
 Navigate the Social Dynamics of GitHub <github-social-platform>
 
 :::
-
