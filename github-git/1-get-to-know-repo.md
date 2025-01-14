@@ -14,23 +14,17 @@ kernelspec:
 (get-to-know-repo)=
 # Get to Know a (new to you) GitHub Repository
 
+:::{admonition} What you will learn:
+
+In this tutorial, you will find the CONTRIBUTING.md file in our [example GitHub repo](https://github.com/pyOpenSci/pyos-demo-package-contribute) and identify the process for submitting a contribution to the repo. 
+
+:::
+
 The first step in contributing to open source is finding and getting to know the GitHub repository where the code is stored. 
 
 In this case, you will practice contributing to a sample pyOpenSci repository where you are set up to be successful and can practice without worrying about making mistakes. Making mistakes is often the best way to learn. 
 
-You will [use this repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) as a place where you can practice for all of these lessons. 
-
-:::{todo}
-
-There are two options here. 
-
-1. create a sample pyospackage repo with docs with many typos everywhere for people to fix. The downside is that it doesn't scale unless we have a reset repo action (which we could do) that essentially replaces the typos every few months. But this is likely the best option for actual practice on a (semi-real) code base
-
-This approach could be fun as the pyos community here could submit lots of pt's that break things for people to fix :) 
-
-2. Create a repo that people add a file to (like hometowns) with info about a town they like. This approach scales forever and ever and has worked well in the past. It's more focused on the fork, create something, pull request workflow without the open source flavor. It might be less interesting than a package where we could have bugs, typos, and other things for people to fix.
-:::
-
+(contributing)=
 ## Get started
 
 To begin, you should get to know the repository that you want to contribute to. To do this:
@@ -38,10 +32,9 @@ To begin, you should get to know the repository that you want to contribute to. 
 1. **Read the contributing guide**: In the repository, you should see a [**CONTRIBUTING.md** file](https://github.com/pyOpenSci/pyos-demo-package-contribute/blob/main/CONTRIBUTING.md) that tells you more about the types of contributions the project accepts and the workflows it embraces.
 
 
-:::{figure} /images/github/use-github-yourself.png
+:::{figure} /images/github/github-contributing-file.png
 :alt: Alt here
 
-Add screenshot of the GitHub repo with the contributing file highlighted
 :::
 
 1. **Read through the documentation**: Most people's first contribution is to documentation. This is a great place to start because typos and other issues often make for great first pull requests. You can often make the changes fully in the GitHub interface online versus needing to clone the repository and work locally.

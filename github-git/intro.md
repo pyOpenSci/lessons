@@ -70,25 +70,15 @@ https://www.youtube.com/watch?v=eWxxfttcMts
 
 
 :::{toctree}
-:caption: Background  
-:maxdepth: 2
-:hidden:
-
-Use GitHub With Friends (vs. by yourself)  <self>
-What is Git/GitHub <what-is-git-github>
-GitHub Social platform <github-social-platform>
-:::
-
-
-:::{toctree}
 :caption: Contribute to Another Repo
 :maxdepth: 2
 :hidden:
 
-0. The path to your first contribution <0-first-contribution>
+0. Your contributing path <0-first-contribution>
 1. Get to know the repo <1-get-to-know-repo>
 2. Identify what you want to work on <2-identify-issue>
 3. Fork GitHub Repo <3-fork-repo>
+4. Edit & commit files <4-edit-commit-files>
 
 ::: 
 
@@ -107,4 +97,14 @@ Clone a GitHub Repo <5-clone-repo>
 
 Navigate the Social Dynamics of GitHub <github-social-platform>
 
+:::
+
+:::{toctree}
+:caption: Background  
+:maxdepth: 2
+:hidden:
+
+Use GitHub With Friends (vs. by yourself)  <self>
+What is Git/GitHub <what-is-git-github>
+GitHub Social platform <github-social-platform>
 :::

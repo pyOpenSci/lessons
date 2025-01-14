@@ -26,18 +26,31 @@ Once you've decided what you'd like to work on, you can do one of two things
 
 Leaving a comment in a new-to-you repository might feel scary, but don't worry. If you communicate in a respectful way, then it's likely that you will also get a nice response in return. Also, if you don't get a supportive response, there are other projects you could work on that may be a better fit. Not all projects are open to new contributions. And that is OK, too. 
 
+(create-issue)=
 ### How to create a new issue
 
 If the issue isn't already open, you can create a new issue describing what you'd like to work on. What is most important when creating a new issue is:
 
 1. Ensure the issue has a **carefully crafted title** that describes what you want to fix. Some packages have issue templates that you can fill out. Other projects may not have templates set up.
-2. Be **specific about what you'd like to fix** in the issue. If it's a bug that you are fixing in the code, provide a **fully reproducible code example** of how to trigger the bug so the maintainers can easily understand the problem. If it is a documentation fix, link to the documentation page with the error and be specific about what you'd like to fix, add, or enhance. 
+2. Be **specific about what you'd like to fix** in the issue. If it's a bug that you are fixing in the code, provide a **fully reproducible code example** of how to trigger the bug so the maintainers can easily understand the problem. If it is a documentation fix, link to the documentation page with the error and specify what you'd like to fix, add, or enhance. 
 
 :::{todo}
 Link to the stravalib issue I recently worked on where the reproducible example was missing.
 :::
 
 The content of your issue is more important than you might think. Maintainers are often volunteers, working on projects in their free time. The more information you can provide them, the easier it is for them to understand your goal and how to support you. Be as specific as you can be in your issue! This might mean that it takes you some time to create the issue. The time invested upfront will pay off the issue moving forward.
+
+
+:::{admonition} Tips for Submitting Issues
+
+- **Search First**: Before creating a new issue, check if someone else has already reported it.
+- **Be Clear**: Provide a detailed, reproducible example when reporting bugs.
+- **Be Constructive**: Avoid blaming or harsh criticism. Instead, frame your concerns as suggestions.
+
+Example:  
+_Not Constructive_: "This feature is broken and useless."  
+_Constructive_: "I encountered an issue when using this feature. Here's the error and steps to reproduce it."
+:::
 
 3. **Be patient**: Once you have opened your issue, be patient, as maintainers could take some time to respond. The timeline will vary based on how active the repository issue is, how many open issues there are, the size of the maintainer team, and even what's going on in the maintainer's life at that particular time.
 

@@ -35,6 +35,7 @@ Related to open science, GitHub:
 
 By combining Git’s version control with GitHub’s collaborative features, you can manage code efficiently while supporting openness,  transparency, and truly open collaboration. 
 
+(what-is-git)=
 ## What is git?
 
 Git is a powerful **version control system** that enables teams to track, manage, and collaborate on code and documentation changes over time. While it is best known for its use in software development, Git is equally valuable in **open science** and **open source workflows**. 
