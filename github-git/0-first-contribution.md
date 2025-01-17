@@ -16,14 +16,6 @@ kernelspec:
 
 🚧 These lessons are under heavy construction and will continue to change through March 2025 🚧 
 
-:::{todo}
-
-what's missing
-* Create a new branch to work on in your fork -- don't make a pr from your main or master branch
-* Closes or addresses #issue number
-:::
-
-
 :::{admonition} What you will learn
 
 After completing this tutorial, you will be able to:
@@ -33,38 +25,30 @@ After completing this tutorial, you will be able to:
 You can use the [pyOpenSci example GitHub repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) to practice making contributions for all of these lessons. 
 :::
 
-Contributing to open source software can feel intimidating.  
+Contributing to open source in a public space like GitHub can feel intimidating. You may not know the project maintainers, feel unsure about your GitHub skills, or wonder where to begin.
 
-* You may not know the project maintainers.  
-* You might feel unsure about your Git and GitHub skills (imposter syndrome is real!).  
-* You may not know where to begin.  
-
-This lesson series will teach you how to collaborate using GitHub, helping you confidently contribute to open source repositories and collaborate with colleagues. 
+This lesson series will teach you how to collaborate on code and documentation using GitHub. It will help you confidently contribute to a GitHub repository and build skills to collaborate with colleagues (some of whome you may not have met in real life!). 
 
 ## GitHub workflow summary
 
-The GitHub contribution workflow looks something like this:
 
-* First, you need to identify a repository that you want to contribute to. Here, you can use the [pyOpenSci learning repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) to test your skills! 
-* Once you have found a repo that you want to contribute to, you need to [get to know it](get-to-know-repo). Getting to know a repo starts with reading the [contributing guide](contributing).
-* Next, you will [identify an issue or bug that you want to work on](identify-issue). This will involve either reading through open issues and finding good first ones to work on. Or maybe you know the repository and already have a fix in mind that you want to implement. In this case, you will [create a new issue](create-issue) in the repo. 
-* Once you have created an issue or identified what you wish to work on, you need to [`Fork` or create a copy of the repo](fork-repository) in your GitHub account.
+:::{figure} /images/github/steps-to-contribute.png
+:alt: alt text here
 
-
-:::{tip}
-If you have already forked the repository but some time has passed. You should consider updating or syncing your fork. GitHub has a sync button that you can use to do this (`pyopensci/repo-name`). This will ensure that all of the files in your repository are current and will prevent merge conflicts.
+To fork a repo, first, navigate to the repo you want to fork. Then click the **fork** button in the upper right-hand corner of your screen. You can then create a copy of this repo in your account.
 :::
 
-:::{todo}
-The section below needs work and to be fleshed out. PR page doesn't exist yet. 
-:::
+Your GitHub contribution workflow will be something like this:
 
-* Create a new branch to work on
-* Make the changes to the file you proposed to change in your issue to the file in the new branch you created. If the changes are to documentation, be sure to spell check!
-* Commit the changes to your fork.   
-* Open a <kbd>Pull Request</kbd> to the parent repository`. In the text of the pull request, you should include a link to the URL of the issue you opened (essentially linking the changes you are submitting to the problem you are solving). This closes the documentation loop! 
-* Finally, wait for the developers to review/comment on your PR. Be patient; this step can take time as people are busy and often donate their time to this effort!
+1. First, you will identify a repository you want to contribute to. Here, you can use the [pyOpenSci learning repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) to test your skills. 
+    * You will [get to know that repository](get-to-know-repo) which starts with reading the [contributing guide](contributing). This guide should provide some instructions on how to make your first contribution.
+1. You will [identify an issue or bug that you want to work on](identify-issue). This will involve either reading through open issues and finding good first ones to work on. If you already have a fix in mind that doesn't exist in the existing issue list, you will [create a new issue](create-issue) in the repo. 
+1. Once you have created an issue or identified what you wish to work on, you will [`Fork` or create a copy of the repo](fork-repository) in your GitHub account.
+1. In your fork, you will edit the file(s) addressed in your issue. In this lesson series, you will do [all of the work in the GitHub interface](4-edit-commit-files), which means that you don't have to [clone (or copy)](6-clone-repo) the repo locally to your computer. 
+1. Once your edits are complete, you will commit the changes and open a <kbd>Pull Request</kbd> to the parent repository.  
+     * Finally, wait for the developers to review/comment on your PR. Be patient; this step can take time as people are busy and often donate their time to this effort!
 
-## Your first step: Get to know the repo 
 
-Your first step in making a contribution to a repository that you don't own is [getting to know the repo. You will do that next.](get-to-know-repo)
+## Time to get started!
+
+Your first step in contributing to a repository you don't own is [getting to know the repo. You will do that next.](get-to-know-repo)

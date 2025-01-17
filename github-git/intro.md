@@ -76,17 +76,18 @@ https://www.youtube.com/watch?v=eWxxfttcMts
 
 0. Your contributing path <0-first-contribution>
 1. Get to know the repo <1-get-to-know-repo>
-2. Identify what you want to work on <2-identify-issue>
+2. Find an issue <2-identify-issue>
 3. Fork GitHub Repo <3-fork-repo>
 4. Edit & commit files <4-edit-commit-files>
+5. Submit Pull Request <5-pull-request>
 
 ::: 
 
 :::{toctree}
-:caption: Working locally
+:caption: Work locally
 :hidden:
 
-Clone a GitHub Repo <5-clone-repo>
+Clone a GitHub Repo <6-clone-repo>
 :::
 
 :::{toctree}
