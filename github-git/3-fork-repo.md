@@ -18,10 +18,16 @@ kernelspec:
 
 :::{admonition} What you will learn:
 
-* Explain how a **GitHub** repository stores and tracks changes to files.
-* Create a copy of (<kbd>fork</kbd>) other users' files on **GitHub.com**.
-* Use the `git clone` command to download a copy of a **GitHub** repository to your computer. 
+In this lesson, you will learn how to <kbd>fork</kbd> (or create a copy of) a GitHub repo into your own **GitHub.com** account. You can practice forking the pyOpenSci example repository. 
 ::: 
+
+
+
+:::{figure} /images/github/fork-repo.png
+:alt: ""
+
+When you fork a GitHub repository, you make a copy of the files and the commit history into your personal account. This allows you to work on the files on your own before suggesting changes through a pull request to make to the parent repository that you forked from.
+:::
 
 
 ## Who owns a GitHub repository?
@@ -114,3 +120,9 @@ Once you have submitted your issue with the proposed changes, one of the package
 * Encourage you to submit a pull request with the two identified changes.
 
 When you have the go-ahead from someone who owns the repository, you are ready to create and submit a pull request with your changes.
+
+
+
+:::{tip}
+If you have already forked the repository but some time has passed. You should consider updating or syncing your fork. GitHub has a sync button that you can use to do this (`pyopensci/repo-name`). This will ensure that all of the files in your repository are current and will prevent merge conflicts.
+:::

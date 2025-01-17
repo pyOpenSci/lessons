@@ -14,88 +14,98 @@ kernelspec:
 (identify-issue)=
 # Identify an issue to work on 
 
-Your first step is to identify an issue that you wish to work on
+Open issues are where developers track bugs, new features, or other improvements needed in the repo. Whether you have a specific fix in mind or are looking for ideas, you should start by exploring existing open issues.
 
-## 2. Open or comment on a GitHub issue
+As you scan the issues, look for beginner-friendly labels. Beginner-friendly labels are a clear message that the project welcomes new contributors. Many projects label issues as **good first issue** or **beginner-friendly** to highlight approachable tasks that are approachable for new contributors.
 
-Once you've decided what you'd like to work on, you can do one of two things
 
-1. If an issue is already open for the item you want to work on, you can leave a comment indicating your interest in working on it. That comment might look something like this:
+## Open or comment on an issue
+  
+If you **have an idea already of what you'd like to work on**, check if an issue exists for it. If it does, comment on the issue to indicate your interest. If not, create a new issue and wait for feedback.
+
+Your comment might look like this:
 
 > Hey maintainer team 👋. I'm interested in working on this issue. Is there anything specific that I should consider before getting started?
 
-Leaving a comment in a new-to-you repository might feel scary, but don't worry. If you communicate in a respectful way, then it's likely that you will also get a nice response in return. Also, if you don't get a supportive response, there are other projects you could work on that may be a better fit. Not all projects are open to new contributions. And that is OK, too. 
+If you’re **looking for something to work on,** browse the issues to find one that interests you and comment on it to let maintainers know that you'd like to help. 
+
+:::{tip}
+Leaving comments in a new repository can feel intimidating, but most maintainers appreciate respectful communication and enthusiasm. If a project isn’t open to contributions, that’s okay—there are plenty of welcoming projects to explore!
+:::
 
 (create-issue)=
 ### How to create a new issue
 
-If the issue isn't already open, you can create a new issue describing what you'd like to work on. What is most important when creating a new issue is:
-
-1. Ensure the issue has a **carefully crafted title** that describes what you want to fix. Some packages have issue templates that you can fill out. Other projects may not have templates set up.
-2. Be **specific about what you'd like to fix** in the issue. If it's a bug that you are fixing in the code, provide a **fully reproducible code example** of how to trigger the bug so the maintainers can easily understand the problem. If it is a documentation fix, link to the documentation page with the error and specify what you'd like to fix, add, or enhance. 
-
-:::{todo}
-Link to the stravalib issue I recently worked on where the reproducible example was missing.
+:::{tip}
+Some projects use individual templates for bugs, documentation fixes, and new feature requests. Other projects might have no templates.
 :::
 
-The content of your issue is more important than you might think. Maintainers are often volunteers, working on projects in their free time. The more information you can provide them, the easier it is for them to understand your goal and how to support you. Be as specific as you can be in your issue! This might mean that it takes you some time to create the issue. The time invested upfront will pay off the issue moving forward.
+If an issue doesn’t already exist for the thing you'd like to work on, here’s how to create a new one: 
+
+1. Click on the new issues button. If there is a template that you can select for the issue, use one.
+
+1. Write a **clear title** summarizing what you’d like to fix. Some repositories use templates—fill them out if available.
+1. Be **specific about what you'd like to fix**:
+   * Explain the problem or fix you’re proposing.
+   * For bugs, include steps to reproduce the issue.
+   * For documentation, link to the page and describe what you’d like to update or enhance.
 
 
-:::{admonition} Tips for Submitting Issues
+:::{admonition} Why Detail Matters
+:class: tip
 
-- **Search First**: Before creating a new issue, check if someone else has already reported it.
-- **Be Clear**: Provide a detailed, reproducible example when reporting bugs.
-- **Be Constructive**: Avoid blaming or harsh criticism. Instead, frame your concerns as suggestions.
-
-Example:  
-_Not Constructive_: "This feature is broken and useless."  
-_Constructive_: "I encountered an issue when using this feature. Here's the error and steps to reproduce it."
+Maintainers are often volunteers, so the more information you provide, the easier it is for them to support you. Investing time in crafting a clear issue upfront pays off later.
 :::
 
-3. **Be patient**: Once you have opened your issue, be patient, as maintainers could take some time to respond. The timeline will vary based on how active the repository issue is, how many open issues there are, the size of the maintainer team, and even what's going on in the maintainer's life at that particular time.
+**Be patient**: Once you have opened your issue, be patient. Maintainers might take time to respond. Their timeline depends on factors like how active the repo is, the size of the maintainer team, and their personal schedules. Responses can take days or weeks.
 
-**It could take a few weeks for someone to get back to you.**
+If you don’t hear back after a few weeks, a polite nudge is fine:
 
-4. If the maintainers invite you to submit a pull request addressing the issue you left or commented on, you're good to go. At that point, it's time to:
+> Hi team 👋, just following up on my issue. Let me know if you’d like me to move forward with a pull request or if there’s anything I should address first.
 
-* Fork the repository if you haven't already
-* Make the changes that need to be made in your fork.
-* Open up a pull request to address those changes. 
 
-:::{tip} 
-Make your GitHub issue title specific enough that people can tell what the issue is about without reading all the details. This makes it easier to identify potentially overlapping issues quickly. 
-A few good issue titles are below:
+## Tips for submitting good issues
 
-* Add: update docstring in the `function_name_here()` function.
-* Update the module_name.py module with a more clear module docstring
-* Fix: Typo in the documentation page for doc-page-here
-* Fix: Bug in xxx module that causes x, y, z to happen
+* Search First: Before creating a new issue, check if someone else has already reported it.
+* Be Clear: Provide a detailed, reproducible example when reporting bugs or proposing fixes. Make your GitHub issue title specific enough that people can tell what the issue is about without reading all the details. This helps maintainers and contributors quickly identify overlapping issues.
 
-Bad / less descriptive issue title examples are below:
+Examples of Good Issue Titles
+
+* Add: update docstring in the function_name_here() function.
+* Update the module_name.py module with a clearer module docstring.
+* Fix: Typo in the documentation page for doc-page-here.
+* Fix: Bug in xxx module that causes x, y, z to happen.
+
+Examples of less useful issue titles:
 * Update documentation.
-* Fix formatting
-:::
+* Fix formatting.
+* Be Constructive: Avoid blaming or harsh criticism. Instead, frame concerns as suggestions.
+    
+Less Constructive: “This feature is broken and useless.”
 
-If maintainers don't respond after a few weeks, a gentle nudge is ok. That might look something like this:
+Constructive: “I encountered an issue when using this feature. Here’s the error and steps to reproduce it.”
 
-> Hey, maintainer team 👋. I'm just following up to see if you have any feedback on my issue here to fix ___add brief description here__. Please let me know if you would like me to move forward with a pull request or if you have any feedback or concerns about the issue!
->
+## What happens next
 
-:::{todo}
-It may make sense to have the activities in a separate file. And to refer to the pages they should review before starting each activity.
+If the maintainers invite you to submit a pull request, it's time to:
 
-The alternative is to put the activities at the top given people often skim
-:::
+* [Fork the repository](fork-repo) if you haven't already.
+* [Make your changes on a new branch in your fork.](4-edit-commit-files)
+* [Submit a pull request](5-pull-request) with your updates. 
+
+A gentle nudge is ok if maintainers don't respond after a few weeks. That might look something like this:
+
+> Hey, maintainer team 👋. I'm just following up to see if you have any feedback on my issue here to fix ___add brief description here__. Please let me know if you want me to move forward with a pull request or if you have any feedback or concerns about the issue!
 
 ## Activity 1: Create an issue for a bug that you'd like to fix 
 
-1. go to the https://www.github.com/pyopensci/repo-name repository on GitHub
-2. Explore the documentation and code. You will find many items that could be fixed, including spelling errors, typos, and more.
-3. Pick something you would like to fix and open an issue specifying what you'd like to implement.
-4. Wait for someone on the pyOpenSci team to respond to you with next steps! 
+1. Navigate to the [pyOpenSci example repo](https://github.com/pyOpenSci/pyos-demo-package-contribute). 
+2. Explore the documentation and code. You will find many items that need to be fixed, including spelling errors, typos, and more.
+3. Pick a file that you'd like to work on. Open a new issue specifying what you'd like to fix.
+4. Wait for someone on the pyOpenSci team to respond to you with next steps. 
 
-Once you have submitted an issue and a developer from the package you are submitting to (in this case, the pyOpenSci team) agrees to your proposed changes, you are ready to implement these changes locally on your computer and submit a pull request. 
+Once you have submitted an issue and someone has responded positively, you can begin working on the changes in your fork. [You will learn how to fork a repo, next.](fork-repo)
 
-:::{note}
-For this activity, focus on the process of contributing and making a small change to a single file; you don't need to make a huge change or fix everything in a file. Most first contributions are small updates to documentation. Start there and build confidence. You can always submit more issues and pull requests later!  
+:::{tip}
+Focus on making small, meaningful contributions. Most first contributions are small updates to documentation—these are great for building confidence as they often can be merged more quickly.
 :::
