@@ -14,8 +14,6 @@ kernelspec:
 (first-contribution)=
 # Make Your First Open Source Contribution 
 
-🚧 These lessons are under heavy construction and will continue to change through March 2025 🚧 
-
 :::{admonition} What you will learn
 
 After completing this tutorial, you will have the skills needed to contribute to an open source GitHub 
