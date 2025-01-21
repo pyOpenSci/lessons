@@ -14,20 +14,55 @@ kernelspec:
 (fork-repository)=
 # How to Fork a GitHub Repository 
 
-🚧 These lessons are under heavy construction and will continue to change through March 2025 🚧 
 
 :::{admonition} What you will learn:
+:class: tip
 
 In this lesson, you will learn how to <kbd>fork</kbd> (or create a copy of) a GitHub repo into your own **GitHub.com** account. You can practice forking the pyOpenSci example repository. 
 ::: 
 
+:::{admonition} Activity: Fork a repository and modify a file
 
+**1. Fork the pyOpenSci practice GitHub repository**
+*******
 
-:::{figure} /images/github/fork-repo.png
-:alt: ""
+Fork the <a href="http://www.github.com/pyopensci/repo-here" target="_blank">pyOpenSci demo repository on GitHub</a>. Remember that a fork is a copy of a repository that is owned by someone else or an organization that lives in your GitHub account.
 
-When you fork a GitHub repository, you make a copy of the files and the commit history into your personal account. This allows you to work on the files on your own before suggesting changes through a pull request to make to the parent repository that you forked from.
+**2. Open the file that you proposed changes to in the issue you selected in the [how to identify an issue lesson](2-identify-issue).**
+*******
+
+In the previous issue, you selected or identified something that you wanted to fix in a GitHub repo. Ideally, if this is your first contribution, that fix is small and could potentially be completed in the GitHub online interface. 
+
+* Select the file that you decided to work on in GitHub
+* Click on the edit <kbd><i class="fa-solid fa-pencil"></i></kbd> button in the GitHub interface.
+* Make the edits that you proposed to make.
+* Hit the <kbd>commit</kbd> button to save your edits
+
+If you need more guidance, an overview of all of these steps is below.
 :::
+
+
+## How to fork a GitHub repository
+
+To fork a GitHub repository:
+
+1. Navigate to the repo page that you wish to <kbd><i class="fa-solid fa-code-fork"></i> Fork</kbd> - for example:
+
+`https://github.com/pyopensci/repo-name`
+
+2. On that page, you will see a button in the upper right-hand corner that says <kbd><i class="fa-solid fa-code-fork"></i> Fork</kbd>. The number next to that button tells you how many times the repository has already been forked by other users (or how many other repository copies exist on GitHub.com. 
+3. Click on the <kbd><i class="fa-solid fa-code-fork"></i> Fork</kbd> button and select your user account when it asks you where you want to fork the repo. 
+4. Once you have forked the repo, you will have a copy in your account. Navigate to your repo page. The URL should look something like this:
+
+`https://github.com/your-user-name/repo-name`
+
+
+:::{figure} /images/github/fork-repo-animated.gif
+:alt: alt 
+
+To fork a repo, first, navigate to the repo you want to fork. Then click the **fork** button in the upper right-hand corner of your screen. You can then create a copy of this repo in your account.
+:::
+
 
 
 ## Who owns a GitHub repository?
@@ -45,9 +80,15 @@ For example, the repository that you will work within this lesson is owned by `p
 `https://github.com/pyopensci/repo-name`
 
 (fork-repo)=
-## Fork a GitHub repository
+## What is forking a GitHub repository?
 
-Using **GitHub.com**, you can create a copy of another user's or organization’s repository—a process called `forking`. When you fork a repository, you get your own version to work on. And you can do that wrok without affecting the original files in the parent repository. Others can also fork your repositories, creating their own copies.
+:::{figure} /images/github/fork-repo.png
+:alt: ""
+
+When you fork a GitHub repository, you make a copy of the files and the commit history into your personal account. This allows you to work on the files independently before suggesting changes through a pull request to make to the parent repository you forked from.
+:::
+
+Using **GitHub.com**, you can create a copy of another user's or organization’s repository—a process called `forking`. When you fork a repository, you get your own version to work on. You can do that without affecting the original files in the parent repository. Others can also fork your repositories, creating their own copies.
 
 Forking is useful because the fork remains linked to the original repository. This allows you to:
 - Update your fork with changes from the original repository.
@@ -55,74 +96,11 @@ Forking is useful because the fork remains linked to the original repository. Th
 
 By forking, everyone collaborates on their own copies of the project, ensuring the original files stay intact. All changes are tracked in the file history and can be undone if needed. You can fork a repository directly from its main page on **GitHub.com**.
 
-To fork a repo:
-
-1. Navigate to the repo page that you wish to fork - example:
-
-`https://github.com/pyopensci/repo-name`
-
-2. On that page, you will see a button in the UPPER RIGHT hand corner that says `Fork`. The number next to that button tells you how many times the repo has already been forked. 
-3. Click on the `Fork` button and select your user account when it asks you where you want to fork the repo. 
-4. Once you have forked the repo, you will have a copy in your account. Navigate to your repo page. The URL should look something like this:
-
-`https://github.com/your-user-name/repo-name`
-
-:::{figure} /images/github/image-coming-soon.png
-:alt: alt text here
-
-To fork a repo, first, navigate to the repo you want to fork. Then click the **fork** button in the upper right-hand corner of your screen. You can then create a copy of this repo in your account.
-:::
+## A few tips about forking a repo
 
 
+1. A GitHub (or GitLab) repository fork is a copy of the GitHub repository that you own in your account. The repository, however, is still connected to the parent repository on GitHub that you forked. This connection means that you can submit pull requests and changes to the repository using your fork.
 
-## Activity: Fork a repository and modify a file
+It also means you can update your fork anytime, as the parent repository is updated to ensure it stays in sync.
 
-### 1. Fork the pyOpenSci practice GitHub repository
-
-Fork the <a href="http://www.github.com/pyopensci/repo-here" target="_blank">pyOpenSci demo repository on GitHub</a>. Remember that a fork is a copy of a repository that is owned by someone else or an organization that lives in your GitHub account.
-
-:::{todo}
-Create an animated gif showing how to fork a repo
-:::
-
-
-:::{tip}
-A repository fork is a copy of the GitHub repository that you own in your GitHub account. The repository, however, is still connected to the main repository on GitHub that you forked. This connection means that you can submit pull requests and changes to the repository using your fork. 
-:::
-
-Once you have submitted your issue with the proposed changes, one of the package developers will review the issue and either:
-
-* Suggest changes to your proposed edits or
-* Encourage you to submit a pull request with the two identified changes.
-
-When you have the go-ahead from someone who owns the repository, you are ready to create and submit a pull request with your changes.
-
-
-
-## Activity: Fork a repository and modify a file
-
-### 1. Fork the pyOpenSci practice GitHub repository
-
-Fork the <a href="http://www.github.com/pyopensci/repo-here" target="_blank">pyOpenSci demo repository on GitHub</a>. Remember that a fork is a copy of a repository that is owned by someone else or an organization that lives in your GitHub account.
-
-:::{todo}
-Create an animated gif showing how to fork a repo
-:::
-
-
-:::{tip}
-A repository fork is a copy of the GitHub repository that you own in your GitHub account. The repository, however, is still connected to the main repository on GitHub that you forked. This connection means that you can submit pull requests and changes to the repository using your fork. 
-:::
-
-Once you have submitted your issue with the proposed changes, one of the package developers will review the issue and either:
-
-* Suggest changes to your proposed edits or
-* Encourage you to submit a pull request with the two identified changes.
-
-When you have the go-ahead from someone who owns the repository, you are ready to create and submit a pull request with your changes.
-
-
-
-:::{tip}
-If you have already forked the repository but some time has passed. You should consider updating or syncing your fork. GitHub has a sync button that you can use to do this (`pyopensci/repo-name`). This will ensure that all of the files in your repository are current and will prevent merge conflicts.
-:::
+2. If you have already forked the repository but some time has passed. You should consider updating or syncing your fork. GitHub has a sync button that you can use to do this (`pyopensci/repo-name`). This will ensure that all of the files in your repository are current.

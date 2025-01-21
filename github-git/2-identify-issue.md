@@ -16,8 +16,19 @@ kernelspec:
 
 Open issues are where developers track bugs, new features, or other improvements needed in the repo. Whether you have a specific fix in mind or are looking for ideas, you should start by exploring existing open issues.
 
-As you scan the issues, look for beginner-friendly labels. Beginner-friendly labels are a clear message that the project welcomes new contributors. Many projects label issues as **good first issue** or **beginner-friendly** to highlight approachable tasks that are approachable for new contributors.
+In this lesson you will create or comment on an issue that you'd like to fix in GitHub repository that you don't own. 
 
+:::{admonition} Activity: Create (or find) an issue for a bug that you'd like to fix 
+
+1. Navigate to the [pyOpenSci example repo](https://github.com/pyOpenSci/pyos-demo-package-contribute). 
+2. Explore the documentation and code. You will find many items that need to be fixed, including spelling errors, typos, and more.
+3. Pick a file that you'd like to work on. Open a new issue specifying what you'd like to fix.
+4. Wait for someone on the pyOpenSci team to respond to you with next steps. 
+
+Once you have submitted an issue and someone has responded positively, you can begin working on the changes in your fork. [You will learn how to fork a repo, next.](fork-repo)
+:::
+
+As you scan the issues, look for beginner-friendly labels. Beginner-friendly labels are a clear message that the project welcomes new contributors. Many projects label issues as **good first issue** or **beginner-friendly** to highlight approachable tasks that are approachable for new contributors.
 
 ## Open or comment on an issue
   
@@ -50,6 +61,12 @@ If an issue doesn’t already exist for the thing you'd like to work on, here’
    * For bugs, include steps to reproduce the issue.
    * For documentation, link to the page and describe what you’d like to update or enhance.
 
+
+
+:::{figure} /images/github/open-issue.gif
+:alt: alt text here
+
+:::
 
 :::{admonition} Why Detail Matters
 :class: tip
@@ -97,14 +114,7 @@ A gentle nudge is ok if maintainers don't respond after a few weeks. That might 
 
 > Hey, maintainer team 👋. I'm just following up to see if you have any feedback on my issue here to fix ___add brief description here__. Please let me know if you want me to move forward with a pull request or if you have any feedback or concerns about the issue!
 
-## Activity 1: Create an issue for a bug that you'd like to fix 
 
-1. Navigate to the [pyOpenSci example repo](https://github.com/pyOpenSci/pyos-demo-package-contribute). 
-2. Explore the documentation and code. You will find many items that need to be fixed, including spelling errors, typos, and more.
-3. Pick a file that you'd like to work on. Open a new issue specifying what you'd like to fix.
-4. Wait for someone on the pyOpenSci team to respond to you with next steps. 
-
-Once you have submitted an issue and someone has responded positively, you can begin working on the changes in your fork. [You will learn how to fork a repo, next.](fork-repo)
 
 :::{tip}
 Focus on making small, meaningful contributions. Most first contributions are small updates to documentation—these are great for building confidence as they often can be merged more quickly.
