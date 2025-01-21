@@ -35,7 +35,8 @@ The steps for making your first contribution to an open source repo. In this les
 
 ## Documentation counts! 
 
-Many people's first contributions are to documentation! Documentation contributions can be incredibly valuable as developers often don't have time to work on documentation and code!
+It's common for your first contribution
+to be to documentation! Documentation contributions can be incredibly valuable as developers often don't have time to work on documentation and code!
 
 Fixing typos and other small documentation issues makes for great, easy-to-create (and review) first pull requests. In fact, if you find that the contributing information isn't detailed enough, that could also be your first contribution!
 
