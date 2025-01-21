@@ -26,7 +26,7 @@ In this lesson, you will learn how to <kbd>fork</kbd> (or create a copy of) a Gi
 **1. Fork the pyOpenSci practice GitHub repository**
 *******
 
-Fork the <a href="http://www.github.com/pyopensci/repo-here" target="_blank">pyOpenSci demo repository on GitHub</a>. Remember that a fork is a copy of a repository that is owned by someone else or an organization that lives in your GitHub account.
+Fork the [pyOpenSci example repo](https://github.com/pyOpenSci/pyos-demo-package-contribute). Remember that a fork is a copy of a repository that is owned by someone else or an organization that lives in your GitHub account.
 
 **2. Open the file that you proposed changes to in the issue you selected in the [how to identify an issue lesson](2-identify-issue).**
 *******
