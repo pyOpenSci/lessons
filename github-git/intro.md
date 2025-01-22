@@ -90,15 +90,6 @@ https://www.youtube.com/watch?v=eWxxfttcMts
 Clone a GitHub Repo <6-clone-repo>
 :::
 
-:::{toctree}
-:caption: How To
-:maxdepth: 2
-:hidden:
-
-
-Navigate the Social Dynamics of GitHub <github-social-platform>
-
-:::
 
 :::{toctree}
 :caption: Background  
@@ -108,4 +99,5 @@ Navigate the Social Dynamics of GitHub <github-social-platform>
 Use GitHub With Friends (vs. by yourself)  <self>
 What is Git/GitHub <what-is-git-github>
 GitHub Social platform <github-social-platform>
+Use GitHub codespaces <github-codespaces>
 :::
