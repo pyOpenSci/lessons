@@ -31,12 +31,6 @@ Fork the [pyOpenSci example repo](https://github.com/pyOpenSci/pyos-demo-package
 **2. Open the file that you proposed changes to in the issue you selected in the [how to identify an issue lesson](2-identify-issue).**
 *******
 
-In the previous issue, you selected or identified something that you wanted to fix in a GitHub repo. Ideally, if this is your first contribution, that fix is small and could potentially be completed in the GitHub online interface. 
-
-* Select the file that you decided to work on in GitHub
-* Click on the edit <kbd><i class="fa-solid fa-pencil"></i></kbd> button in the GitHub interface.
-* Make the edits that you proposed to make.
-* Hit the <kbd>commit</kbd> button to save your edits
 
 If you need more guidance, an overview of all of these steps is below.
 :::
