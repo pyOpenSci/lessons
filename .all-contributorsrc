@@ -45,6 +45,15 @@
         "code",
         "review"
       ]
+    },
+    {
+      "login": "jsdodge",
+      "name": "J. Steven Dodge",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4602669?v=4",
+      "profile": "https://www.sfu.ca/lux/author/j.-steven-dodge/",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
