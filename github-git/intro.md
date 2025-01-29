@@ -17,14 +17,12 @@ kernelspec:
 This might belong in the background section.
 :::
 
-🚧 These lessons are under heavy construction and will continue to change through March 2025 🚧 
-
 GitHub is a social coding platform.
-GitHub can be used in two primary ways: **independently** or **collaboratively**. 
+GitHub can be used in two primary ways: **independently** or **collaboratively**.
 
 ## Use GitHub by yourself
 
-Most scientists start using GitHub (and git) on their own. In this scenario, Git is a personal version control system, enabling you to track changes and maintain a complete work history. Working on your own is ideal for personal projects, preliminary research, or prototyping, as it allows you to revert to earlier versions if needed. 
+Most scientists start using GitHub (and git) on their own. In this scenario, Git is a personal version control system, enabling you to track changes and maintain a complete work history. Working on your own is ideal for personal projects, preliminary research, or prototyping, as it allows you to revert to earlier versions if needed.
 
 If you are using GitHub on your own, your workflow probably looks something like this:
 
@@ -40,7 +38,7 @@ If you are using GitHub on your own, your workflow probably looks something like
 
 ### Use Git and GitHub collaboratively
 
-In the open source world, GitHub is used to work collaboratively on software. GitHub is a shared platform where contributors can propose changes, review each other's work, and integrate updates through features like pull requests and issue tracking. 
+In the open source world, GitHub is used to work collaboratively on software. GitHub is a shared platform where contributors can propose changes, review each other's work, and integrate updates through features like pull requests and issue tracking.
 
 In a collaborative setting, your workflow looks something like this:
 
@@ -58,39 +56,35 @@ Note that the big change in workflow is that you are forking a main repository r
 
 :::
 
-
 ## What's next
 
-In this lesson series, you will learn how to work collaboratively using GitHub. The lessons will combine the technical elements you need to use git and GitHub with the social dynamics that are not often taught. 
+In this lesson series, you will learn how to work collaboratively using GitHub. The lessons will combine the technical elements you need to use git and GitHub with the social dynamics that are not often taught.
 
 :::{todo}
 resources
-https://www.youtube.com/watch?v=eWxxfttcMts
+<https://www.youtube.com/watch?v=eWxxfttcMts>
 :::
-
 
 :::{toctree}
 :caption: Contribute to Another Repo
 :maxdepth: 2
 :hidden:
 
-0. Your contributing path <0-first-contribution>
-1. Ways to contribute <ways-to-contribute>
-2. Get to know the repo <1-get-to-know-repo>
-3. Find an issue <2-identify-issue>
-4. Fork GitHub Repo <3-fork-repo>
-5. Edit & commit files <4-edit-commit-files>
-6. Submit Pull Request <5-pull-request>
+0. Your contributing path <your-first-contribution>
+2. Get to know the repo <get-to-know-repo>
+3. Find an issue <identify-issue>
+4. Fork GitHub Repo <fork-repo>
+5. Edit & commit files <edit-commit-files>
+6. Submit Pull Request <pull-request>
 
-::: 
+:::
 
 :::{toctree}
 :caption: Work locally
 :hidden:
 
-Clone a GitHub Repo <6-clone-repo>
+Clone a GitHub Repo <clone-repo>
 :::
-
 
 :::{toctree}
 :caption: Background  
@@ -101,4 +95,5 @@ Use GitHub With Friends (vs. by yourself)  <self>
 What is Git/GitHub <what-is-git-github>
 GitHub Social platform <github-social-platform>
 Use GitHub codespaces <github-codespaces>
+Ways to contribute <ways-to-contribute>
 :::

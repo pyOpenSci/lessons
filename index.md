@@ -62,7 +62,7 @@ TODO: let's merge this with the conditional lesson
 ::::
 
 ::::{grid-item}
-:::{card} [✿ Collaborative GitHub ✿](github-git/0-first-contribution)
+:::{card} [✿ Collaborative GitHub ✿](github-git/your-first-contribution)
 :class-card: left-aligned
 
 Learn how to make your first contribution to an open source code hosted on GitHub.
