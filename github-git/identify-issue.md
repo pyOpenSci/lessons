@@ -11,22 +11,13 @@ kernelspec:
   name: python3
 ---
 
-(identify-issue)=
-# Identify an issue to work on 
+(identify-github-issue)=
+
+# Identify an issue to work on
 
 Open issues are where developers track bugs, new features, or other improvements needed in the repo. Whether you have a specific fix in mind or are looking for ideas, you should start by exploring existing open issues.
 
-In this lesson you will create or comment on an issue that you'd like to fix in GitHub repository that you don't own. 
-
-:::{admonition} Activity: Create (or find) an issue for a bug that you'd like to fix 
-
-1. Navigate to the [pyOpenSci example repo](https://github.com/pyOpenSci/pyos-demo-package-contribute). 
-2. Explore the documentation and code. You will find many items that need to be fixed, including spelling errors, typos, and more.
-3. Pick a file that you'd like to work on. Open a new issue specifying what you'd like to fix.
-4. Wait for someone on the pyOpenSci team to respond to you with next steps. 
-
-Once you have submitted an issue and someone has responded positively, you can begin working on the changes in your fork. [You will learn how to fork a repo, next.](fork-repo)
-:::
+In this lesson you will create or comment on an issue that you'd like to fix in GitHub repository that you don't own.
 
 As you scan the issues, look for beginner-friendly labels. Beginner-friendly labels are a clear message that the project welcomes new contributors. Many projects label issues as **good first issue** or **beginner-friendly** to highlight approachable tasks that are approachable for new contributors.
 
@@ -38,20 +29,21 @@ Your comment might look like this:
 
 > Hey maintainer team 👋. I'm interested in working on this issue. Is there anything specific that I should consider before getting started?
 
-If you’re **looking for something to work on,** browse the issues to find one that interests you and comment on it to let maintainers know that you'd like to help. 
+If you’re **looking for something to work on,** browse the issues to find one that interests you and comment on it to let maintainers know that you'd like to help.
 
 :::{tip}
 Leaving comments in a new repository can feel intimidating, but most maintainers appreciate respectful communication and enthusiasm. If a project isn’t open to contributions, that’s okay—there are plenty of welcoming projects to explore!
 :::
 
 (create-issue)=
+
 ### How to create a new issue
 
 :::{tip}
 Some projects use individual templates for bugs, documentation fixes, and new feature requests. Other projects might have no templates.
 :::
 
-If an issue doesn’t already exist for the thing you'd like to work on, here’s how to create a new one: 
+If an issue doesn’t already exist for the thing you'd like to work on, here’s how to create a new one:
 
 1. Click on the new issues button. If there is a template that you can select for the issue, use one.
 
@@ -60,8 +52,6 @@ If an issue doesn’t already exist for the thing you'd like to work on, here’
    * Explain the problem or fix you’re proposing.
    * For bugs, include steps to reproduce the issue.
    * For documentation, link to the page and describe what you’d like to update or enhance.
-
-
 
 :::{figure} /images/github/open-issue.gif
 :alt: alt text here
@@ -80,7 +70,6 @@ If you don’t hear back after a few weeks, a polite nudge is fine:
 
 > Hi team 👋, just following up on my issue. Let me know if you’d like me to move forward with a pull request or if there’s anything I should address first.
 
-
 ## Tips for submitting good issues
 
 * Search First: Before creating a new issue, check if someone else has already reported it.
@@ -94,10 +83,11 @@ Examples of Good Issue Titles
 * Fix: Bug in xxx module that causes x, y, z to happen.
 
 Examples of less useful issue titles:
+
 * Update documentation.
 * Fix formatting.
 * Be Constructive: Avoid blaming or harsh criticism. Instead, frame concerns as suggestions.
-    
+
 Less Constructive: “This feature is broken and useless.”
 
 Constructive: “I encountered an issue when using this feature. Here’s the error and steps to reproduce it.”
@@ -106,15 +96,13 @@ Constructive: “I encountered an issue when using this feature. Here’s the er
 
 If the maintainers invite you to submit a pull request, it's time to:
 
-* [Fork the repository](fork-repo) if you haven't already.
-* [Make your changes on a new branch in your fork.](4-edit-commit-files)
-* [Submit a pull request](5-pull-request) with your updates. 
+* [Fork the repository](fork-repository) if you haven't already.
+* [Make your changes on a new branch in your fork.](edit-commit-files)
+* [Submit a pull request](pull-request) with your updates.
 
 A gentle nudge is ok if maintainers don't respond after a few weeks. That might look something like this:
 
-> Hey, maintainer team 👋. I'm just following up to see if you have any feedback on my issue here to fix ___add brief description here__. Please let me know if you want me to move forward with a pull request or if you have any feedback or concerns about the issue!
-
-
+> Hey, maintainer team 👋. I'm just following up to see if you have any feedback on my issue here to fix _**add brief description here**. Please let me know if you want me to move forward with a pull request or if you have any feedback or concerns about the issue!
 
 :::{tip}
 Focus on making small, meaningful contributions. Most first contributions are small updates to documentation—these are great for building confidence as they often can be merged more quickly.

@@ -11,7 +11,6 @@ kernelspec:
   name: python3
 ---
 
-(get-to-know-repo)=
 # Get to Know a (new to you) GitHub Repository
 
 :::{admonition} What you will learn:
@@ -22,20 +21,7 @@ In this tutorial, you will get to know a GitHub repo that you want to contribute
 
 The activity that you will complete is below. Read on, however, to learn more about the steps.
 
-:::{admonition} Activity 1: Get to know the repository
 
-In your browser, navigate to [https://github.com/pyOpenSci/pyos-demo-package-contribute/](https://github.com/pyOpenSci/pyos-demo-package-contribute/).
-
-* Check out the README and CONTRIBUTING files.
-
-### Answer these questions
-
-* Does the repository accept contributions? If so, what types of contributions are accepted?
-* Does the repository use specific code or text formatting standards or liters?
-* Does the repository have continuous integration (CI) set up?
-* What is the license associated with the code in the repository?
-* Are the issues labeled and are there "good first issue" or "help wanted" labels 
-:::
 
 (contributing)=
 ## How to get to know a repo

@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-(clone-repo)=
+(clone-repository)=
 # Clone a GitHub Repository to Work Locally 
 How to clone a repo. 
 

@@ -21,25 +21,6 @@ kernelspec:
 In this lesson, you will learn how to <kbd>fork</kbd> (or create a copy of) a GitHub repo into your own **GitHub.com** account. You can practice forking the pyOpenSci example repository. 
 ::: 
 
-:::{admonition} Activity: Fork a repository and modify a file
-
-**1. Fork the pyOpenSci practice GitHub repository**
-*******
-
-Fork the <a href="http://www.github.com/pyopensci/repo-here" target="_blank">pyOpenSci demo repository on GitHub</a>. Remember that a fork is a copy of a repository that is owned by someone else or an organization that lives in your GitHub account.
-
-**2. Open the file that you proposed changes to in the issue you selected in the [how to identify an issue lesson](2-identify-issue).**
-*******
-
-In the previous issue, you selected or identified something that you wanted to fix in a GitHub repo. Ideally, if this is your first contribution, that fix is small and could potentially be completed in the GitHub online interface. 
-
-* Select the file that you decided to work on in GitHub
-* Click on the edit <kbd><i class="fa-solid fa-pencil"></i></kbd> button in the GitHub interface.
-* Make the edits that you proposed to make.
-* Hit the <kbd>commit</kbd> button to save your edits
-
-If you need more guidance, an overview of all of these steps is below.
-:::
 
 
 ## How to fork a GitHub repository
@@ -48,13 +29,13 @@ To fork a GitHub repository:
 
 1. Navigate to the repo page that you wish to <kbd><i class="fa-solid fa-code-fork"></i> Fork</kbd> - for example:
 
-`https://github.com/pyopensci/repo-name`
+`https://github.com/pyopensci/pyos-demo-package-contribute`
 
 2. On that page, you will see a button in the upper right-hand corner that says <kbd><i class="fa-solid fa-code-fork"></i> Fork</kbd>. The number next to that button tells you how many times the repository has already been forked by other users (or how many other repository copies exist on GitHub.com. 
 3. Click on the <kbd><i class="fa-solid fa-code-fork"></i> Fork</kbd> button and select your user account when it asks you where you want to fork the repo. 
 4. Once you have forked the repo, you will have a copy in your account. Navigate to your repo page. The URL should look something like this:
 
-`https://github.com/your-user-name/repo-name`
+`https://github.com/your-user-name/pyos-demo-package-contribute`
 
 
 :::{figure} /images/github/fork-repo-animated.gif
@@ -79,7 +60,7 @@ For example, the repository that you will work within this lesson is owned by `p
 
 `https://github.com/pyopensci/repo-name`
 
-(fork-repo)=
+
 ## What is forking a GitHub repository?
 
 :::{figure} /images/github/fork-repo.png
