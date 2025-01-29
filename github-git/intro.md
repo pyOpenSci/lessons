@@ -75,11 +75,12 @@ https://www.youtube.com/watch?v=eWxxfttcMts
 :hidden:
 
 0. Your contributing path <0-first-contribution>
-1. Get to know the repo <1-get-to-know-repo>
-2. Find an issue <2-identify-issue>
-3. Fork GitHub Repo <3-fork-repo>
-4. Edit & commit files <4-edit-commit-files>
-5. Submit Pull Request <5-pull-request>
+1. Ways to contribute <ways-to-contribute>
+2. Get to know the repo <1-get-to-know-repo>
+3. Find an issue <2-identify-issue>
+4. Fork GitHub Repo <3-fork-repo>
+5. Edit & commit files <4-edit-commit-files>
+6. Submit Pull Request <5-pull-request>
 
 ::: 
 

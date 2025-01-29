@@ -13,24 +13,34 @@ kernelspec:
 
 # Your first edits to a file in your fork 
 
-In the previous lesson, [you identified something that you wanted to fix in our example GitHub repository](3-identify-issue). Ideally, the fix that you identified is small, text-based, and can be made by modifying a single file. 
+:::{todo}
+Github has changed things a bit. If you edit the file in place, it automatically directs you to a pr workflow in the repo that you are in.
 
-After you [forked the repository that you want to contribute to](3-fork-repo) and received approval from a maintainer to work on the issue, it's time to move forward with a pull request!
+So I think we want to break this down into two things
+
+1. The drive-by pull request
+ * Click on the edit button in the repo that you want to make changes.
+ * If you don't have permissions, it will automatically ask you about making a branch, which will be from your fork.
+
+2. The pr from your fork. If the fork already exists, then you can still edit the file in place. 
+   
+:::
+
+In the previous lesson, [you identified something that you wanted to fix in our example GitHub repository](2-identify-issue). Ideally, the fix that you identified is small, text-based, and can be made by modifying a single file. 
+
+After you [forked the repository that you want to contribute to](3-fork-repo) and received approval from a maintainer to work on the issue, it's time to start making the changes you suggested. 
 
 :::{admonition} What you'll learn here
 :class: tip
 In this lesson, you will edit a file in the demo pyOpenSci repository using the GitHub interface in your [forked repo](3-fork-repo). You will then commit your changes.
-
 :::
 
 
 Here, you will make the changes that you proposed to work on using only the native GitHub interface. 
-You do not need to [clone or make a copy of your repo locally](clone-repo) to do this! 
+To do this, you do not need to [clone or make a copy of your repo locally](clone-repo). 
 
 
 :::{admonition} Activity: Make a change to a file and commit it to your fork 
-
-It's time to make the changes to a file in your fork that you proposed in the open issue:
 
 1. Navigate to your fork on GitHub.com
 2. In the GitHub interface, click on the file that you proposed to modify or fix [in the identify issue lesson](2-identify-issue): instructions on how to do this are below
@@ -46,7 +56,10 @@ Some examples:
 > 
 > fix: fixed typo in docstring text 
 
-*An overview of all of these steps is below.*
+:::
+
+:::{figure} /images/github/edit-commit-file.gif
+
 :::
 
 
@@ -56,20 +69,20 @@ Editing a file on GitHub allows you to focus on the contributing workflow withou
 
 Following this process, you can edit as many files as you wish. However, on GitHub, you must edit and commit changes to them individually. 
 
-### How to edit a file on GitHub
+### Editing files on GitHub vs GitHub Codespaces vs Locally
 
-TODO: add a screen capture of opening and editing a file. 
+In the above image, you edit the file online at GitHub.com. To do this, you navigate to the page that you want to edit and click on the <kbd><i class="fa-solid fa-pencil"></i></kbd> edit button. This approach is a great way to start contributing as you don't have to
 
+1. use the command line to edit the file
+2. know how to use .git
 
+However, the one small downside of this approach is that you can only edit and commit one file at a time. 
 
-:::{admonition} GitHub Codespaces Provide Online GitHub Development Environments
+An alternative way to edit multiple files on GitHub is to use GitHub Codespaces. 
 
-GitHub Codespaces are cloud development environments that can be created and used on GitHub.
+[GitHub codespaces](github-codespaces) provide online GitHub development environments that allow you to edit multiple files and commit them together using an IDE (interactive development environment) such as VsCode. 
 
-Projects may sometimes offer [GitHub codespaces](github-codespaces), which allows you to edit multiple files and commit them together. You can also create a CodeSpace yourself in your fork! 
-
-GitHub Codespaces allows you to work on content in a cloud-based coding environment using an interface like VSCode fully in your browser. If set up correctly, they can contain a project's development environment.
-:::
+Sometimes, maintainers will set up a codespace for you to use. Or, you can also set one up yourself in your fork. GitHub codespaces also come with GitHub setup, which means that you can commit files to your fork within VsCODE vs needing to know how to use the command line. 
 
 ## What is a commit?
 
@@ -80,7 +93,7 @@ Here are 3 points to remember when you think about commits:
 2. Each commit that you make represents a set of changes to one or more files in your repository at a specific time.
 
 :::{figure}  /images/github/git-commits-files.png
-:alt: A visual example demonstrating how Git tracks changes to a document through commits. The image shows an “Original File” with its initial text, followed by two commits. The first commit adds a new paragraph of text, with the changes highlighted in green and the commit message, “Fix: added a new paragraph to clarify text.” The second commit fixes typos in the text, with the edits also highlighted in green, along with the commit message, “Fix: copy edits.” At the bottom, a comparison shows the document after each commit, illustrating how the file evolves with changes.
+:alt: A visual example demonstrating how Git tracks changes to a document through commits. The image shows an “Original File” with its initial text, followed by two commits. The first commit adds a new paragraph of text, with the changes highlighted in green and the commit message, “Fix: added a new paragraph to clarify text.” The second commit fixes typos in the text, with the edits highlighted in green and the commit message, “Fix: copy edits.” At the bottom, a comparison shows the document after each commit, illustrating how the file evolves with changes.
 
 :::
 
@@ -92,6 +105,8 @@ Here are 3 points to remember when you think about commits:
 
 :::
 
+## Up next - create a pull request
+Once you have made the changes to the files that you wish to change in your branch, you are ready to open a [pull request](5-pull-request). You will learn how to do that next.
 
 :::{todo}
 It might be cool to show first contributions like my first on to nbconvert could be interesting? Other people might have examples too from the community that we could share with some stories about it??

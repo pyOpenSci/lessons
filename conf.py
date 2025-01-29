@@ -22,7 +22,7 @@ organization_name = "pyOpenSci"
 
 # -- Project information -----------------------------------------------------
 
-project = "pyOpenSci Python Package Guide"
+project = "pyOpenSci Open Source Lessons"
 copyright = f"{current_year}, {organization_name}"
 author = "pyOpenSci Community"
 # Version is needed to avoid "cant describe anything fatal error"
