@@ -24,8 +24,8 @@ myst_html_meta:
 ---
 
 (fork-repository)=
-# A Guide to Forks on GitHub Forks
 
+# A Guide to Forks on GitHub Forks
 
 :::{admonition} What You Will Learn  
 :class: tip  
@@ -39,7 +39,7 @@ Forking a repository **creates a copy** in your GitHub account while keeping a l
 
 - <i class="fa-solid fa-pencil" style="color: #81c0aa;"></i> **Edit without concern**: Work on your fork without affecting the original project.  
 - <i class="fa-solid fa-arrows-rotate" style="color: #81c0aa;"></i> **Stay up to date**: Sync your fork with the latest changes from the original repo.  
-- <i class="fa-solid fa-paper-plane" style="color: #81c0aa;"></i> **Propose changes**: Suggest edits by submitting a **pull request** to the original repository.   
+- <i class="fa-solid fa-paper-plane" style="color: #81c0aa;"></i> **Propose changes**: Suggest edits by submitting a **pull request** to the original repository.
 
 > **<i class="fa-solid fa-lightbulb" style="color: #81c0aa;"></i> Example**: You want to fix a typo in a project’s documentation. Instead of requesting permission, you fork the repo, make the fix, and submit a pull request with your update.
 
@@ -64,20 +64,17 @@ The URL of your fork will be:
 
 `https://github.com/your-username/pyos-demo-package-contribute`
 
-
 :::{tip}
-The number next to the <kbd><i class="fa-solid fa-code-fork"></i> button tells you how many times other users have forked the repository. 
+The number next to the <kbd><i class="fa-solid fa-code-fork"></i> button tells you how many times other users have forked the repository.
 :::
 
-
 :::{figure} /images/github/fork-repo-animated.gif
-:alt: GIF showing how to fork a repository on GitHub 
+:alt: GIF showing how to fork a repository on GitHub
 
 To fork a repo, navigate to it on GitHub and click the **Fork** button. Your copy will appear under your account.  
 :::
 
-
-:::{admonition} Who owns the repo? 
+:::{admonition} Who owns the repo?
 
 Every GitHub repository has an **owner**, which can be:  
 
@@ -87,15 +84,15 @@ Every GitHub repository has an **owner**, which can be:
 The **owner’s username appears first in the URL**, showing who controls the repository.  
 
 **Example**:  
- - A personal repo: `https://github.com/your-gh-username/my-project`  
- - An organization-owned repo: `https://github.com/pyOpenSci/repo-name`  
+
+- A personal repo: `https://github.com/your-gh-username/my-project`  
+- An organization-owned repo: `https://github.com/pyOpenSci/repo-name`  
 
 If you **fork a repo**, your GitHub username becomes the owner of the fork:  
 
 > **Forked URL:** `https://github.com/your-username/repository-name`
 
 :::
-
 
 ## What happens after you fork a repo?  
 
@@ -105,27 +102,28 @@ Your fork **is a separate copy**, but it remains linked to the original reposito
 - **The original repo stays at:** `https://github.com/original-owner/repository-name`  
 
 > **<i class="fa-solid fa-lightbulb" style="color: #81c0aa;"></i>  You can now:**  
+>
 > - Make changes without affecting the original repository.  
 > - Keep your fork updated as the original repo evolves.  
 > - Submit changes back using a **pull request**.  
- 
+
 ::::{todo}
  /images/github/fork-structure.png  
 :alt: "Diagram showing how forking creates a personal copy linked to the original."  
 Graphic: A simple diagram showing "Original Repo → Fork → Your Account".  
 ::::
 
-
 ## Keep your fork in sync  
 
 Your fork doesn't automatically get updated when the **original repository is updated**. Periodically, you will need to **sync your fork** to keep it current.  
 
 To sync a GitHub fork:
+
 1. **Go to your fork** on GitHub.  
 2. **Click the** <i class="fa-solid fa-arrows-rotate" style="color: #81c0aa;"></i> **Sync fork** **button** (available on GitHub’s UI).  
 3. Your fork's main branch will now match the latest version of the original repository. This means that it has the most recent commits that have been made to the parent repository.  
 
-:::{todo} 
+:::{todo}
 /images/github/sync-fork.png  
 :alt: "GitHub interface showing how to sync a fork with the original repo."  
 Graphi:  Screenshot of GitHub’s "Sync Fork" button  
@@ -145,4 +143,3 @@ Graphi:  Screenshot of GitHub’s "Sync Fork" button
 Now that you’ve forked a repository, the next step is to **edit a file and commit your changes**.  
 [Learn how to edit and commit files →](edit-commit-files)  
 :::
-
