@@ -66,3 +66,81 @@ Move this to the pr page once I create it.
 Example Pull Request Description:
 
 :::
+
+## 🔍 Social Cues for Contributing to Open Source  
+
+When contributing to an open-source project, it’s not just about **fixing code**—  
+it’s also about **collaborating effectively with maintainers and the community**.  
+Here are key social cues to follow:  
+
+### 1️⃣ Help Maintainers Keep Track of Who’s Working on What  
+
+<i class="fa-solid fa-list-check" style="color: #6ec9c3;"></i> **Open an issue first before submitting a PR.**  
+- This prevents duplicate work and ensures the maintainers **know who is working on what**.  
+- If an issue already exists, **comment on it** instead of creating a new one.  
+
+<i class="fa-solid fa-triangle-exclamation" style="color: #6ec9c3;"></i> **Avoid surprising maintainers with a PR.**  
+- Some projects may not be ready for the change you're suggesting.  
+- Opening an issue first allows maintainers to **provide guidance before you start coding**.  
+
+---
+
+### 2️⃣ Respect the Project’s Process  
+
+<i class="fa-solid fa-book-open" style="color: #6ec9c3;"></i> **Follow issue templates and contribution guidelines.**  
+- Many projects have structured templates—**use them** to provide all necessary details.  
+- If guidelines exist, reference them in your issue to show you're **aligning with their workflow**.  
+
+<i class="fa-solid fa-compass-drafting" style="color: #6ec9c3;"></i> **Ask before making major changes.**  
+- If your fix changes functionality, check with maintainers before proceeding.  
+- A simple “Would this be useful?” can save **time for both you and the maintainers**.  
+
+---
+
+### 3️⃣ Acknowledge the Maintainers’ Time & Role  
+
+<i class="fa-solid fa-handshake-angle" style="color: #6ec9c3;"></i> **Maintain respectful communication.**  
+- Many maintainers **volunteer their time**—make your requests **clear and easy to understand**.  
+- If you're waiting on a response, be patient, and after a reasonable time, you can **politely follow up**.  
+
+<i class="fa-solid fa-user-tag" style="color: #6ec9c3;"></i> **Tag maintainers (when appropriate).**  
+- If you know who maintains the repo, consider **@mentioning them** in your issue to establish a connection.  
+- Example: `@maintainer-name, I’d love to help fix this! Any guidance before I start?`  
+
+---
+
+### 4️⃣ Communicate Like You Would in Real Life  
+
+<i class="fa-solid fa-comments" style="color: #6ec9c3;"></i> **Be polite and professional.**  
+- Open source is about **collaborating with people you’ve never met**.  
+- Treat maintainers **as you would a colleague**—respectful and appreciative of their time.  
+
+<i class="fa-solid fa-hand-wave" style="color: #6ec9c3;"></i> **Introduce yourself in your first issue comment.**  
+- If you’re new, a friendly introduction can make it easier to build relationships.  
+- Example:  
+  > “Hey everyone! 👋 I’m new to contributing here and would love to help with this issue. Let me know if there’s anything I should consider before getting started!”  
+
+---
+
+### 5️⃣ Build Trust Through Small Contributions  
+
+<i class="fa-solid fa-user-check" style="color: #6ec9c3;"></i> **Start small to establish credibility.**  
+- First contributions aren’t just about code—they're about **building trust with the community**.  
+- **Small fixes** (like documentation updates or typo corrections) are a great way to get started.  
+
+<i class="fa-solid fa-layer-group" style="color: #6ec9c3;"></i> **Contributions add up over time.**  
+- Even small changes **help the project grow** and demonstrate your commitment.  
+- Once maintainers recognize your contributions, they’re more likely to engage with your work.  
+
+---
+
+### **✨ Summary: Contribute Thoughtfully & Respectfully**  
+✅ Open issues before submitting PRs to **help maintainers stay organized**.  
+✅ Follow contribution guidelines to **respect the project’s workflow**.  
+✅ Communicate professionally to **build relationships in the open-source community**.  
+✅ Start with **small, impactful contributions** to establish trust.  
+
+---
+
+🚀 **By keeping these social cues in mind, you’ll not only contribute code but also  
+become a valued member of the open-source community!**  

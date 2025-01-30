@@ -9,49 +9,88 @@ kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
+myst_html_meta:
+    "title": "Identify an issue in an open source project: Contribute to Open Source on GitHub for beginners"
+    "description lang=en": "When contributing to open source software, one of the first steps is identifying an issue to work on. Learn about the ways you can identify both what the project needs help with and what you'd like to work on."
+    "keywords": "GitHub, OpenSource, beginner-friendly"
+    "property=og:locale": "en_US"
+    "og:image": /images/github/steps-to-contribute.png
+    "og:image:alt": An image that shows the steps for contributing to open source on GitHub.
 ---
 
 (identify-github-issue)=
 
-# Identify an issue to work on
+# Identify an Issue to Work On: Collaborative GitHub for Open Source  
 
-Open issues are where developers track bugs, new features, or other improvements needed in the repo. Whether you have a specific fix in mind or are looking for ideas, you should start by exploring existing open issues.
+Contributing to an open source project starts with identifying an issue to work on. Open issues help developers track bugs, new features, or needed improvements in a repository. Whether you have a specific fix in mind or are looking for ideas, exploring existing issues is the best place to start.  
 
-In this lesson you will create or comment on an issue that you'd like to fix in GitHub repository that you don't own.
+As discussed in the [get to know a repo lesson](labels-responsive), the way issues are labeled and organized can both help you find issues that maintianers want help with and also tell you a lot about a project. If you see 
+beginner-friendly labels like **"good first issue"** or **"help wanted,"** it's a clear signal that the maintainers welcome new contributors. Further those might be good issues for you to start working on!  
 
-As you scan the issues, look for beginner-friendly labels. Beginner-friendly labels are a clear message that the project welcomes new contributors. Many projects label issues as **good first issue** or **beginner-friendly** to highlight approachable tasks that are approachable for new contributors.
+:::{figure} /images/github/github-issues-good-first-issue.png  
+:alt: "A screenshot of an open GitHub issue for the pyOpenSci pyosMeta project, showing labels like 'good first issue'. pyOpenSci curates beginner-friendly issues for sprints and first-time contributors."  
 
-## Open or comment on an issue
-  
-If you **have an idea already of what you'd like to work on**, check if an issue exists for it. If it does, comment on the issue to indicate your interest. If not, create a new issue and wait for feedback.
+The image shows an open GitHub issue for the pyOpenSci pyosMeta project.
+pyOpenSci runs beginner-friendly sprints and spends time curating issues for  
+new contributors to work on during these events.
+:::  
 
-Your comment might look like this:
+This lesson guides you through **finding or creating an issue** in a repository you don’t own. 
 
-> Hey maintainer team 👋. I'm interested in working on this issue. Is there anything specific that I should consider before getting started?
 
-If you’re **looking for something to work on,** browse the issues to find one that interests you and comment on it to let maintainers know that you'd like to help.
+## Start by scanning existing project issues 
 
-:::{tip}
-Leaving comments in a new repository can feel intimidating, but most maintainers appreciate respectful communication and enthusiasm. If a project isn’t open to contributions, that’s okay—there are plenty of welcoming projects to explore!
-:::
+When contributing to a new open source project, the best place to start is by **scanning open issues**. This helps you find tasks maintainers need help with and ensures you don’t duplicate existing work.  
+
+
+### 1. You already have identified an issue 
+
+Sometimes, while using a project or reading its documentation, you notice a bug, typo, or improvement. Before starting to work on it, check if the issue **already exists** in the repository.  
+
+- **If the issue exists**, leave a comment to let others know you're interested in working on it.  
+
+
+Your comment might look like this:  
+
+> Hey maintainer team 👋. I’d like to work on this issue. Is there anything specific I should consider before getting started?  
+
+If the issue you identified doesn't exist yet, you can create a new one. You will learn how to do that below. 
+
+> **<i class="fa-solid fa-handshake-angle" style="color: #81c0aa;"></i> Social Cue:** Opening an issue (or commenting on an existing one) helps maintainers track who is working on what and prevents duplicate work. It also ensures the issue can be properly closed once your pull request is merged. A PR without an issue might catch maintainers off guard, so confirming before starting makes collaboration smoother.  
+
+
+### 2. You're looking for an issue to work on 
+
+If you don’t have a specific issue in mind, explore the **open issues** list to find something that interests you. A great place to start is by looking for labels like **"good first issue"** or **"help wanted"**—these are beginner-friendly and often well-scoped.  
+
+- **Start small**—fixing typos, improving documentation, or tackling minor bugs are great first contributions.  
+- **Leave a comment** on the issue to let maintainers know you'd like to help.  
+
+:::{tip}  
+Leaving comments in a new repository can feel intimidating, but most 
+maintainers appreciate respectful communication and enthusiasm. If a project 
+isn’t open to contributions, they will let you know—and there are plenty of 
+other projects to explore!  
+:::  
 
 (create-issue)=
 
-### How to create a new issue
-
-:::{tip}
-Some projects use individual templates for bugs, documentation fixes, and new feature requests. Other projects might have no templates.
-:::
+## How to create a new issue
 
 If an issue doesn’t already exist for the thing you'd like to work on, here’s how to create a new one:
 
-1. Click on the new issues button. If there is a template that you can select for the issue, use one.
+1. Go to the Issues tab in GitHub
+2. Click on the {bdg-success}`New issue` button.
 
-1. Write a **clear title** summarizing what you’d like to fix. Some repositories use templates—fill them out if available.
-1. Be **specific about what you'd like to fix**:
-   * Explain the problem or fix you’re proposing.
-   * For bugs, include steps to reproduce the issue.
-   * For documentation, link to the page and describe what you’d like to update or enhance.
+:::{tip}  
+Some projects use templates for reporting **bugs, documentation fixes, or new features**. If a template is available, fill it out—it helps maintainers quickly understand your issue.  
+::: 
+
+4. Create a **clear title** summarizing what you’d like to fix.  
+5. Be **specific about what you'd like to fix**:  
+   - Explain the problem or fix you’re proposing.  
+   - For **bugs**, include steps to reproduce the issue.  
+   - For **documentation**, link to the page and describe what you’d like to update or enhance. 
 
 :::{figure} /images/github/open-issue.gif
 :alt: alt text here
@@ -61,36 +100,40 @@ If an issue doesn’t already exist for the thing you'd like to work on, here’
 :::{admonition} Why Detail Matters
 :class: tip
 
-Maintainers are often volunteers, so the more information you provide, the easier it is for them to support you. Investing time in crafting a clear issue upfront pays off later.
+Maintainers are often volunteers, so the more information you provide, the easier it is for them to support you. A well-crafted issue saves time and helps get faster responses.
+
+**<i class="fa-solid fa-magnifying-glass" style="color: #6ec9c3;"></i> Social Cue:** Before submitting the issue, ask yourself:
+ * Could someone unfamiliar with the project understand this issue?
+ * Did I provide enough detail for a maintainer to respond without extra questions?
 :::
 
-**Be patient**: Once you have opened your issue, be patient. Maintainers might take time to respond. Their timeline depends on factors like how active the repo is, the size of the maintainer team, and their personal schedules. Responses can take days or weeks.
+## Examples of Good vs. Less Useful Issue Titles
 
-If you don’t hear back after a few weeks, a polite nudge is fine:
+| ✅ Good Issue Titles                        | 🚫 Less Useful Titles  |
+|-------------------------------------------------|---------------------------|
+| Add: update docstring in the `function_name_here()` function.| Update documentation. |
+| Fix: Typo in the documentation page for `doc-page-here`. | Fix formatting. |
+| Fix: Bug in `xxx` module that causes `x, y, z` to happen. | This feature is broken. |
+| Update the `module_name.py` module with a clearer docstring. | Bad UI, please fix. |
 
-> Hi team 👋, just following up on my issue. Let me know if you’d like me to move forward with a pull request or if there’s anything I should address first.
 
-## Tips for submitting good issues
+> **<i class="fa-solid fa-user-tag" style="color: #6ec9c3;"></i> Social Cue:** For smaller projects, tagging a maintainer can help get feedback faster. However, check contributor guidelines first to see if this is encouraged. Example:  
+> `@maintainer-name, I'd love to help with this! Let me know if there's anything I should consider before starting.`  
 
-* Search First: Before creating a new issue, check if someone else has already reported it.
-* Be Clear: Provide a detailed, reproducible example when reporting bugs or proposing fixes. Make your GitHub issue title specific enough that people can tell what the issue is about without reading all the details. This helps maintainers and contributors quickly identify overlapping issues.
 
-Examples of Good Issue Titles
+### After you've opened an issue
 
-* Add: update docstring in the function_name_here() function.
-* Update the module_name.py module with a clearer module docstring.
-* Fix: Typo in the documentation page for doc-page-here.
-* Fix: Bug in xxx module that causes x, y, z to happen.
+Once you've submitted your issue, give maintainers time to respond.  
 
-Examples of less useful issue titles:
+**<i class="fa-solid fa-hourglass-start"></i> Be Patient:** Maintainers balance many tasks, and response times vary based on project activity, team size, and personal schedules.  
 
-* Update documentation.
-* Fix formatting.
-* Be Constructive: Avoid blaming or harsh criticism. Instead, frame concerns as suggestions.
+If you don’t hear back after a few weeks, a polite nudge is fine:  
 
-Less Constructive: “This feature is broken and useless.”
+> Hi team 👋, just following up on my issue. Let me know if you’d like me to move forward with a pull request or if there’s anything I should address first.  
 
-Constructive: “I encountered an issue when using this feature. Here’s the error and steps to reproduce it.”
+:::{tip}
+Focus on making small, meaningful contributions. Most first contributions are small updates to documentation—these are great for building confidence as they often can be merged more quickly.
+:::
 
 ## What happens next
 
@@ -100,10 +143,3 @@ If the maintainers invite you to submit a pull request, it's time to:
 * [Make your changes on a new branch in your fork.](edit-commit-files)
 * [Submit a pull request](pull-request) with your updates.
 
-A gentle nudge is ok if maintainers don't respond after a few weeks. That might look something like this:
-
-> Hey, maintainer team 👋. I'm just following up to see if you have any feedback on my issue here to fix _**add brief description here**. Please let me know if you want me to move forward with a pull request or if you have any feedback or concerns about the issue!
-
-:::{tip}
-Focus on making small, meaningful contributions. Most first contributions are small updates to documentation—these are great for building confidence as they often can be merged more quickly.
-:::

@@ -34,7 +34,7 @@ The **README** provides an overview of the project, its purpose, and how it is u
 - **Review the README file**: The [**README.md** file](https://github.com/pyOpenSci/pyos-demo-package-contribute/blob/main/README.md) will help you understand the project's goals.  
 - **Read the CONTRIBUTING guide**: The [**CONTRIBUTING.md** file](https://github.com/pyOpenSci/pyos-demo-package-contribute/blob/main/CONTRIBUTING.md) explains what types of contributions are accepted and the expected workflow.  
 
-**<i class="fa-solid fa-handshake-angle" style="color: #81c0aa;"></i> Social cue:** If these files clearly **welcome contributions** and outline next steps, it’s a good sign that the maintainers are open to outside help.
+**<i class="fa-solid fa-handshake-angle" style="color: #81c0aa;"></i> Social cue:** If these files clearly **welcome contributions** and outline next steps, it’s a good sign that the maintainers are open to contributions.
 
 :::{figure} /images/github/github-contributing-file.png
 :alt: "Screenshot of the GitHub repository ‘pyos-demo-package-contribute’ showing files and folders, including README.md, CONTRIBUTING.md, and LICENSE. The sidebar highlights metadata, such as the repository description, links, and license details. The README.md and CONTRIBUTING.md files are highlighted."
@@ -42,6 +42,7 @@ The **README** provides an overview of the project, its purpose, and how it is u
 Above is a screenshot of the pyOpenSci practice repo that you will use. Notice the CONTRIBUTING.md file. You should read this file after checking out the README file.
 :::
 
+(labels-responsive)=
 ### 2. Look at project activity and maintainer responsiveness  
 
 - Scan the **issues and pull requests** sections on GitHub to see how long it generally takes for maintainers to respond.  
@@ -52,14 +53,14 @@ Above is a screenshot of the pyOpenSci practice repo that you will use. Notice t
 
 ### 3. Understand the project’s infrastructure  
 
-Some repositories have specific **coding and workflow requirements**. Make sure to check:  
+Some repositories have specific **code and text format and workflow requirements**. Make sure to check if the project uses:  
 - **Code formatters and linters**: Does the project use [code formatters or linters](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#python-package-code-style-format-and-linters)?  
-- **Continuous Integration (CI)**: Are there automated tests that run when a new PR is submitted?  
+- **Continuous Integration (CI)**: Are there automated tests and checks that run when a new PR is submitted?  
 - **Licensing**: The [project’s license](https://www.pyopensci.org/python-package-guide/documentation/repository-files/license-files.html) dictates how you can use, modify, and distribute the code.  
-  - The **MIT and BSD-3 licenses** permit broad use with attribution; these licenses are comment in the scientific open source ecosystem.  
+  - The **MIT and BSD-3 licenses** permit broad use with attribution; these licenses are common in the scientific open source ecosystem.  
   - A **GPL license** requires derivative works to follow the same open source terms.  This is what's known as a [copy-left license](https://www.pyopensci.org/python-package-guide/documentation/repository-files/license-files.html#use-open-permissive-licenses-when-possible). 
 
-**<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Social cue:** If the project follows **consistent coding standards and has CI in place**, it likely has an **organized review process**, making contributions easier. further, if they use tools such as the [pre-commit ci bot](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#pre-commit-ci), code formatting and linting might be possible using CI vs. setting up a development process and cleaning / linting code and text that way. 
+**<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Social cue:** If the project follows **consistent coding standards and has CI in place**, it likely has an **organized review process**, that is setup to accept contributions. Further, if the project uses tools such as the [pre-commit ci bot](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#pre-commit-ci), code formatting and linting might be possible on GitHub within the pull request it self using CI. This means you won't need to setup a development environment to "clean up" any changes that you make in a PR.  
 
 ### 4. Check for a Code of Conduct  
 
@@ -67,7 +68,7 @@ A **Code of Conduct** helps ensure a **welcoming and respectful** community.
 - If one exists, read it to understand community expectations.  
 - If missing, check discussions in issues and pull requests to gauge how maintainers interact with contributors.  
 
-**<i class="fa-solid fa-scale-balanced" style="color: #81c0aa;"></i> Social cue:** A clear CoC signals an **inclusive and structured** community. If discussions show **helpful, constructive feedback**, it's a good sign of a positive project culture.
+**<i class="fa-solid fa-scale-balanced" style="color: #81c0aa;"></i> Social cue:** A clear code of conduct signals an **inclusive and structured** community. If discussions show **helpful, constructive feedback**, it's a good sign of a positive project culture.
 
 ### 5. See if contributors are acknowledged  
 
@@ -78,4 +79,8 @@ A **Code of Conduct** helps ensure a **welcoming and respectful** community.
 
 ---
 
-By following these steps, you can determine whether a project is **welcoming, responsive, and well-maintained**, making it a great place to contribute! 🚀
+The above steps will help you determine whether a project is **welcoming, responsive, and well-maintained**, making it a great place to contribute! 🚀
+
+
+## Next steps
+Once you have explored and gotten to know the repository and decided that it's a good project to contribute to, it's time to [find an issue to work](identify-issue). You will learn more about that next.  
