@@ -9,6 +9,11 @@ kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
+myst_html_meta:
+  "title": "How to Clone a GitHub Repository to Work Locally: Collaborative GitHub for beginners"
+  "description lang=en": "Learn how to clone or make a copy of a GitHub repository online on your computer so you can work locally."
+  "keywords": "GitHub, OpenSource"
+  "property=og:locale": "en_US"
 ---
 
 (clone-repository)=

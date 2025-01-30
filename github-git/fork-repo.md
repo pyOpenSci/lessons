@@ -9,6 +9,11 @@ kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
+myst_html_meta:
+  "title": "How to fork a GitHub repository and make a copy of it in your GitHub account: Intro to Collaborative GitHub"
+  "description lang=en": "A complete guide to forking or making a copy of a GitHub repository that you don't own into your own account."
+  "keywords": "GitHub, OpenSource, beginner-friendly"
+  "property=og:locale": "en_US"
 ---
 
 (fork-repository)=

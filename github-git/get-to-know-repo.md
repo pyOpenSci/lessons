@@ -9,6 +9,11 @@ kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
+myst_html_meta:
+  "title": "Get to know a (new to you) GitHub repository: Contribute to Open Source code and documentation."
+  "description lang=en": "It's useful to get to know a GitHub repo by reading the README and CONTRIBUTING files before getting started. Learn what to look for when getting to know a new repository. A beginner-friendly guide."
+  "keywords": "GitHub, OpenSource, beginner-friendly"
+  "property=og:locale": "en_US"
 ---
 
 # Get to Know a (new to you) GitHub Repository
