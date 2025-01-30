@@ -10,7 +10,7 @@ kernelspec:
   language: python
   name: python3
 myst_html_meta:
-  "title": "Collaborative GitHub for Beginners: How to submit a GitHub pull request"
+  "title": "How to submit a GitHub pull request: Collaborative GitHub for beginners"
   "description lang=en": "Learn how to submit a pull request after making changes to a file in a GitHub repository"
   "keywords": "GitHub, OpenSource"
   "property=og:locale": "en_US"
