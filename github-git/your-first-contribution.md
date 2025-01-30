@@ -26,13 +26,11 @@ og:image:alt: An image that shows the steps for contributing to open source on G
 
 :::{admonition} What you will learn
 
-Completing this activity will give you the technical and social skills needed to contribute to an open source GitHub
-repository successfully. You will use the [pyOpenSci example GitHub repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) to practice making contributions.
+Completing this set of activities will give you the technical and social skills needed to collaborate and contribute to an open source GitHub
+repository. You will use the [pyOpenSci example GitHub repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) as a safe space to practice making contributions.
 :::
 
-Here, you will learn how to collaborate on code and documentation using GitHub. After completing the activities below, you will be able to contribute to a GitHub repository you don't own with confidence. 
-
-This page introduces all of the steps and walks you through each one. Each activity has a related lesson that will help you navigate and understand the social and technical elements associated with the process.
+This page introduces all of the steps and walks you through each one. Each activity below has a lesson that will help you understand the social and technical elements of the contribution process.
 
 ## An overview of the collaborative GitHub workflow
 
@@ -48,7 +46,9 @@ The steps for making your first contribution to an open source repo. In this les
 
 First, identify and get to know the repository you want to contribute to. Use the [pyOpenSci learning repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) to test out the process.
 
-[Getting to know that repository](get-to-know-repo) will save you and the maintainers time when you make your first contribution. Ideally, the repository has documented the types of contributions they welcome and how they want contributions to happen. Reading through that documentation first will help you get started quickly and minimize the questions you ask the maintainer team. Most often, the best place for a new contributor to start, regardless of their experience contributing, is the [contributing guide](https://www.pyopensci.org/python-package-guide/documentation/repository-files/contributing-file.html) and the [README file](https://www.pyopensci.org/python-package-guide/documentation/repository-files/readme-file-best-practices.html). 
+[Getting to know that repository](get-to-know-repo) will save you and the maintainers time when you make your first contribution. You can think about like doing some research on a blog post before sitting down and writing it. 
+
+Ideally, the repository you have chosen has documented the types of contributions they welcome and what process they want contributors to follow. Reading through that documentation first will help you get started quickly and minimize the questions you ask the maintainer team. Most often, the best place for a new contributor to start, regardless of their experience contributing, is the [contributing guide](https://www.pyopensci.org/python-package-guide/documentation/repository-files/contributing-file.html) and the [README file](https://www.pyopensci.org/python-package-guide/documentation/repository-files/readme-file-best-practices.html). 
 
 :::{button-link} get-to-know-repo.html
 :color: primary
@@ -61,7 +61,7 @@ First, identify and get to know the repository you want to contribute to. Use th
 
 Open a new browser tab after reading through the [get-to-know a repo lesson](get-to-know-repo). Navigate to [https://github.com/pyOpenSci/pyos-demo-package-contribute/](https://github.com/pyOpenSci/pyos-demo-package-contribute/).
 
-* Check out the [README](https://github.com/pyOpenSci/pyos-demo-package-contribute/blob/main/README.md) and [CONTRIBUTING](https://github.com/pyOpenSci/pyos-demo-package-contribute/blob/main/CONTRIBUTING.md) files.
+* Review the [README](https://github.com/pyOpenSci/pyos-demo-package-contribute/blob/main/README.md) and [CONTRIBUTING](https://github.com/pyOpenSci/pyos-demo-package-contribute/blob/main/CONTRIBUTING.md) files.
 
 **Answer these questions**
 
