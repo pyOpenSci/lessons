@@ -10,7 +10,7 @@ kernelspec:
   language: python
   name: python3
 myst_html_meta:
-  "title": "How to edit and commit changes to a file on GitHub"
+  "title": "How to edit and commit changes to a file on GitHub: Intro to Collaborative GitHub"
   "description lang=en": "Learn how to edit a file and then commit changes to that file to version control. All in the GitHub interface."
   "keywords": "GitHub, OpenSource, beginner-friendly"
   "property=og:locale": "en_US"
