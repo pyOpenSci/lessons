@@ -105,11 +105,11 @@ html_theme_options = {
         # "text": "Python Packaging",
         "image_dark": "logo-dark-mode.png",
         "image_light": "logo-light-mode.png",
-        "alt_text": "pyOpenSci Python Package Guide. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower",
+        "alt_text": "pyOpenSci Open Source Lessons. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower",
     },
     # Increase this as lessons are added - 
     # set low to hide links to other pyos sites and allow nav between lessons
-    "header_links_before_dropdown": 3,
+    "header_links_before_dropdown": 5,
     "use_edit_page_button": True,
     "show_nav_level": 2,
     "navigation_depth": 3,

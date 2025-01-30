@@ -10,12 +10,12 @@ kernelspec:
   language: python
   name: python3
 myst_html_meta:
-  "title": "Intro to Collaborative GitHub: Make your first contribution to open source"
-  "description lang=en": "Learn the steps involved with using GitHub to collaborate and contribute to open source code and documentation. A beginner-friendly guide."
-  "keywords": "GitHub, OpenSource, beginner-friendly"
-  "property=og:locale": "en_US"
-og:image: /images/github/steps-to-contribute.png
-og:image:alt: An image that shows the steps for contributing to open source on GitHub.
+    "title": "Intro to Collaborative GitHub: Make your first contribution to open source"
+    "description lang=en": "Learn the steps involved with using GitHub to collaborate and contribute to open source code and documentation. A beginner-friendly guide."
+    "keywords": "GitHub, OpenSource, beginner-friendly"
+    "property=og:locale": "en_US"
+    "og:image": /images/github/steps-to-contribute.png
+    "og:image:alt": An image that shows the steps for contributing to open source on GitHub.
 ---
 
 # Mastering GitHub Collaboration Skills 
