@@ -84,7 +84,7 @@ Next, [identify an issue or bug that you want to work on](identify-issue). Somet
 :color: primary
 :shadow:
 
-<i class="fa-brands fa-leanpub" style="color: #6ec9c3;"></i> Learn how to identify and open an GitHub issue
+<i class="fa-brands fa-leanpub" style="color: #6ec9c3;"></i> Learn how to identify and open a GitHub issue
 :::
 
 :::{admonition} Activity 2: Create an issue for a bug that you'd like to fix
@@ -130,7 +130,7 @@ Once you've successfully forked the repo, it's time to edit the file you want to
 :color: primary
 :shadow:
 
-<i class="fa-brands fa-leanpub" style="color: #6ec9c3;"></i> Learn more about editing & committing files on GitHub
+<i class="fa-brands fa-leanpub" style="color: #6ec9c3;"></i> Learn how to  edit & commit files on GitHub
 :::
 
 :::{admonition} Activity: Make a change to a file and commit it to your fork
@@ -161,7 +161,7 @@ Once your edits are [committed to git version control](edit-commit-files), open 
 :color: primary
 :shadow:
 
-<i class="fa-brands fa-leanpub" style="color: #6ec9c3;"></i> Learn more about creating your first GitHub pull request
+<i class="fa-brands fa-leanpub" style="color: #6ec9c3;"></i> Learn how to create a GitHub pull request
 :::
 
 :::{admonition} Activity: Submit a PR to the pyOpenSci parent repository
