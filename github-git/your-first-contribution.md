@@ -20,6 +20,10 @@ myst_html_meta:
 
 # Mastering GitHub Collaboration Skills 
 
+Contributing to open source in a public space like GitHub can feel intimidating. You may not know the project maintainers, feel unsure about your GitHub skills, or wonder where to begin.
+
+This lesson series will teach you how to collaborate on code and documentation using GitHub. It will help you confidently contribute to a GitHub repository and build skills to collaborate with colleagues (some of whom you may not have met in real life!). 
+
 (first-contribution)=
 
 ## Get started with your first open source contribution 
@@ -174,9 +178,14 @@ Once your PR is open, it's time to sit back and wait for the maintainers, collab
 
 ## Many people's first contributions are to documentation 
 
-In this lesson, you make your first open source contribution by updating documentation (including docstrings) rather than code. Many people start with small fixes like typos, which are simpler to contribute as you don't always need a development environment but are still valuable. Developers often focus on code, leaving less time for writing and editing documentation. So your small contributions can have a large impact.
+In this lesson, you make your first open source contribution by updating documentation (including docstrings) rather than code. Many people start with small fixes like typos, which are simpler to contribute as you don't always need a development environment but are still **highly valuable**. 
 
-Further, if you go to contribute and find that the contributing guidelines lack detail, that could also be a useful place for you to start. 
+### <i class="fa-solid fa-rocket"></i> Fresh eyes make a difference! <i class="fa-solid fa-rocket"></i>
+
+When you’re new to a project, you may notice gaps and unclear explanations that long-time contributors might overlook. Maintainers and developers are often too close to their own work to see what’s missing. Your perspective helps make the project more accessible to future contributors.
+
+By catching confusing phrasing, outdated information, or missing details (even in contributing documentation), you improve the onboarding experience for others while making a meaningful first contribution!
+
 
 :::{admonition} A real-life first contribution to PyPI
 

@@ -24,7 +24,7 @@ myst_html_meta:
 ---
 
 (fork-repository)=
-# How to Fork a GitHub Repository 
+# A Guide to Forks on GitHub Forks
 
 
 :::{admonition} What You Will Learn  
@@ -48,6 +48,8 @@ Forking a repository **creates a copy** in your GitHub account while keeping a l
 
 When you fork a GitHub repository, you make a copy of the files and the commit history into your personal account. This allows you to work on the files independently before suggesting changes through a pull request to make to the parent repository you forked from.
 :::
+
+By forking, everyone collaborates on their own copies of the project, ensuring the original files stay intact. All changes are tracked in the file history and can be undone if needed. You can fork a repository directly from its main page on GitHub.com.
 
 ## How to fork a GitHub repository
 
@@ -74,22 +76,6 @@ The number next to the <kbd><i class="fa-solid fa-code-fork"></i> button tells y
 To fork a repo, navigate to it on GitHub and click the **Fork** button. Your copy will appear under your account.  
 :::
 
-### Setting up a pull request: base vs. head
-
-When creating a **pull request (PR)**, you must define where your changes should be added and where they come from.  
-
-- **<i class="fa-solid fa-database" style="color: #81c0aa;"></i> Base:** The repository where you want your changes to be merged. *(This is usually the original repo you forked.)*  
-- **<i class="fa-solid fa-code-branch" style="color: #81c0aa;"></i> Head:** The repository containing your changes. *(This is your fork. The copy of the repo that you own, where you made edits.)*  
-
-> **🔹 Quick way to remember:** The **head** is "ahead" of the base, meaning it has new changes that the base repository does **not** yet have.  
-
-:::{todo}
- 
-/images/github/base-vs-head.png  
-:alt: "Diagram showing how base and head work in GitHub pull requests."  
-Create Graphic: Simple diagram with arrows from "Your Fork (Head)" → "Original Repo (Base)"  
-
-:::
 
 :::{admonition} Who owns the repo? 
 
@@ -101,7 +87,7 @@ Every GitHub repository has an **owner**, which can be:
 The **owner’s username appears first in the URL**, showing who controls the repository.  
 
 **Example**:  
- - A personal repo: `https://github.com/lwasser/my-project`  
+ - A personal repo: `https://github.com/your-gh-username/my-project`  
  - An organization-owned repo: `https://github.com/pyOpenSci/repo-name`  
 
 If you **fork a repo**, your GitHub username becomes the owner of the fork:  
@@ -109,6 +95,7 @@ If you **fork a repo**, your GitHub username becomes the owner of the fork:
 > **Forked URL:** `https://github.com/your-username/repository-name`
 
 :::
+
 
 ## What happens after you fork a repo?  
 
@@ -125,7 +112,7 @@ Your fork **is a separate copy**, but it remains linked to the original reposito
 ::::{todo}
  /images/github/fork-structure.png  
 :alt: "Diagram showing how forking creates a personal copy linked to the original."  
-# [Graphic Suggestion: A simple diagram showing "Original Repo → Fork → Your Account".]  
+Graphic: A simple diagram showing "Original Repo → Fork → Your Account".  
 ::::
 
 
@@ -141,7 +128,7 @@ To sync a GitHub fork:
 :::{todo} 
 /images/github/sync-fork.png  
 :alt: "GitHub interface showing how to sync a fork with the original repo."  
-# [Graphic Suggestion: Screenshot of GitHub’s "Sync Fork" button.]  
+Graphi:  Screenshot of GitHub’s "Sync Fork" button  
 :::
 
 ---
@@ -149,8 +136,8 @@ To sync a GitHub fork:
 ## Takeaways  
 
 ✅ **Forking creates a personal copy of a repository** that you can edit freely.  
-✅ **Your fork stays linked** to the original, allowing you to propose changes.  
-✅ **Sync your fork regularly** to keep it up to date.  
+✅ **Your fork stays linked** to the original repo, allowing you to propose changes.  
+✅ **Sync your fork regularly** to keep it up to date if you plan to contribute to the repo more over time.  
 
 :::{admonition} Next steps  
 :class: important  
@@ -158,9 +145,4 @@ To sync a GitHub fork:
 Now that you’ve forked a repository, the next step is to **edit a file and commit your changes**.  
 [Learn how to edit and commit files →](edit-commit-files)  
 :::
-
-
-
-
-
 
