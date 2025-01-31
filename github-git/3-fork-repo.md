@@ -26,7 +26,7 @@ In this lesson, you will learn how to <kbd>fork</kbd> (or create a copy of) a Gi
 **1. Fork the pyOpenSci practice GitHub repository**
 *******
 
-Fork the [pyOpenSci example repo](https://github.com/pyOpenSci/pyos-demo-package-contribute). Remember that a fork is a copy of a repository that is owned by someone else or an organization that lives in your GitHub account.
+Fork the [pyOpenSci example repo](https://github.com/pyOpenSci/pyos-demo-package-contribute). Remember that a fork is a copy of a repository that is owned by someone else.
 
 **2. Open the file that you proposed changes to in the issue you selected in the [how to identify an issue lesson](2-identify-issue).**
 *******
@@ -63,13 +63,13 @@ To fork a repo, first, navigate to the repo you want to fork. Then click the **f
 
 When a repository is stored on **GitHub.com**, it is assigned a unique URL (i.e. link on the **GitHub.com** website) that can be used to find the repository and access its files. While repositories on **GitHub.com** can be made either public or private, the default is public for free **GitHub** accounts.
 
-In either case (public or private), the URL links to a **GitHub** repository always follows the same format: 
+In either case (public or private), the URL links to a **GitHub** repository always follow the same format: 
 
 `https://github.com/username/repository-name`
 
-The username is the username owner of the repo owner. The username can either be an individual such as `lwasser` (your **GitHub** username), or it can represent an organization such as `pyOpenSci`.
+The username is the owner of the repository. The username can either be an individual such as `lwasser` (your **GitHub** username), or it can represent an organization such as `pyOpenSci`.
 
-For example, the repository that you will work within this lesson is owned by `pyopensci.` Therefore, the URL looks like this:
+For example, the repository that you will work within this lesson is owned by `pyopensci`. Therefore, the URL looks like this:
 
 `https://github.com/pyopensci/repo-name`
 
@@ -97,4 +97,4 @@ By forking, everyone collaborates on their own copies of the project, ensuring t
 
 It also means you can update your fork anytime, as the parent repository is updated to ensure it stays in sync.
 
-2. If you have already forked the repository but some time has passed. You should consider updating or syncing your fork. GitHub has a sync button that you can use to do this (`pyopensci/repo-name`). This will ensure that all of the files in your repository are current.
+2. If you have already forked the repository but some time has passed. You should consider updating or syncing your fork. GitHub has a sync button that you can use to do this (<kbd>Sync fork</kbd>). This will ensure that all of the files in your repository are current.
