@@ -16,7 +16,7 @@ kernelspec:
 
 Open issues are where developers track bugs, new features, or other improvements needed in the repo. Whether you have a specific fix in mind or are looking for ideas, you should start by exploring existing open issues.
 
-In this lesson you will create or comment on an issue that you'd like to fix in GitHub repository that you don't own. 
+In this lesson you will create or comment on an issue that you'd like to fix in a GitHub repository that you don't own. 
 
 :::{admonition} Activity: Create (or find) an issue for a bug that you'd like to fix 
 
@@ -28,7 +28,7 @@ In this lesson you will create or comment on an issue that you'd like to fix in 
 Once you have submitted an issue and someone has responded positively, you can begin working on the changes in your fork. [You will learn how to fork a repo, next.](fork-repo)
 :::
 
-As you scan the issues, look for beginner-friendly labels. Beginner-friendly labels are a clear message that the project welcomes new contributors. Many projects label issues as **good first issue** or **beginner-friendly** to highlight approachable tasks that are approachable for new contributors.
+As you scan the issues, look for beginner-friendly labels. Beginner-friendly labels are a clear message that the project welcomes new contributors. Many projects label issues as **good first issue** or **beginner-friendly** to highlight tasks that are approachable for new contributors.
 
 ## Open or comment on an issue
   
@@ -96,7 +96,8 @@ Examples of Good Issue Titles
 Examples of less useful issue titles:
 * Update documentation.
 * Fix formatting.
-* Be Constructive: Avoid blaming or harsh criticism. Instead, frame concerns as suggestions.
+
+Be Constructive: Avoid blaming or harsh criticism. Instead, frame concerns as suggestions.
     
 Less Constructive: “This feature is broken and useless.”
 
