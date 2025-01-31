@@ -71,11 +71,11 @@ resources
 :hidden:
 
 0. Your contributing path <your-first-contribution>
-2. Get to know the repo <get-to-know-repo>
-3. Find an issue <identify-issue>
-4. Fork GitHub Repo <fork-repo>
-5. Edit & commit files <edit-commit-files>
-6. Submit Pull Request <pull-request>
+1. Get to know the repo <get-to-know-repo>
+2. Find an issue <identify-issue>
+3. Fork GitHub Repo <fork-repo>
+4. Edit & commit files <edit-commit-files>
+5. Submit Pull Request <pull-request>
 
 :::
 
