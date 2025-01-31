@@ -21,6 +21,12 @@ Link to relevant sections that cover each of the topics below
 
 # The social side of open source: Engage, build trust & support contributors  
 
+:::{figure} /images/github/open-source-social-network.png
+:alt: A digital illustration visualizing open-source collaboration on GitHub. At the center, a “Main Repo” connects to contributors performing key actions: forking (branching icon), submitting pull requests (PRs) (merge arrows), reviewing code (magnifying glass over documents), and engaging in discussions (speech bubbles and coding icon). The pyOpenSci logo appears in the bottom right, reinforcing the theme of community-driven contributions.
+
+
+:::
+
 ## Why social etiquette matters in open source  
 
 Contributing to open source isn’t just about code—it’s about **collaborating with people you may never meet in real life**. Unlike traditional workplaces, GitHub interactions happen asynchronously, across time zones, and often with volunteers.  
