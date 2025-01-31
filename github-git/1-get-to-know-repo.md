@@ -31,7 +31,7 @@ In your browser, navigate to [https://github.com/pyOpenSci/pyos-demo-package-con
 ### Answer these questions
 
 * Does the repository accept contributions? If so, what types of contributions are accepted?
-* Does the repository use specific code or text formatting standards or liters?
+* Does the repository use specific code or text formatting standards or linters?
 * Does the repository have continuous integration (CI) set up?
 * What is the license associated with the code in the repository?
 * Are the issues labeled and are there "good first issue" or "help wanted" labels 
