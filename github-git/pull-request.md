@@ -59,10 +59,13 @@ Animated gif showing that GitHub will prompt you to make a new pul request when 
 When you setup your pull request, you will need to specify the head and the base. The head refers to the branch that is a-HEAD of the parent repository--ie a branch on your fork! The base is the parent repository that you wish to submit changes to.
 :::
 
-When you create your pull request, take note of the head and base targets.
-The repo that you wish to update is the base repo) and the
-repo that contains the content that you want to use to update the base
-(the head repo).
+When creating a **pull request (PR)**, you need to define where your changes should be added and where they come from. 
+
+- **<i class="fa-solid fa-database" style="color: #81c0aa;"></i> Base:** The repository where you want your changes to be merged. *(This is usually the original repo you forked.)*  
+- **<i class="fa-solid fa-code-branch" style="color: #81c0aa;"></i> Head:** The repository containing your changes. *(This is your fork. The copy of the repo that you own, where you made edits.)*  
+
+
+> **🔹 Quick way to remember:** The **head** is "ahead" of the base, meaning it has new changes that the base repository does **not** yet have.
 
 In this example, you want to update:
 
@@ -75,17 +78,6 @@ In this example, you want to update:
 > go to the right place. If you accidentally select the wrong base, your PR might not 
 > reach the maintainers you intended. Double-check this before submitting!  
 
-The above pull request configuration tells **GitHub** to update the base repository with contents from your forked repository or the head repository.
-
-
-### Set up a pull request: base vs. head
-
-When creating a **pull request (PR)**, you must define where your changes should be added and where they come from.  
-
-- **<i class="fa-solid fa-database" style="color: #81c0aa;"></i> Base:** The repository where you want your changes to be merged. *(This is usually the original repo you forked.)*  
-- **<i class="fa-solid fa-code-branch" style="color: #81c0aa;"></i> Head:** The repository containing your changes. *(This is your fork. The copy of the repo that you own, where you made edits.)*  
-
-> **🔹 Quick way to remember:** The **head** is "ahead" of the base, meaning it has new changes that the base repository does **not** yet have.  
 
 :::{todo}
  
@@ -135,8 +127,14 @@ title and description, click on “Create Pull Request” one more time to submi
 If you go to the parent repository, you will see the PR listed there.
 
 :::{tip}
-You can modify the title and description of your pull request at any time - even after you've submitted the pull request.
+Take note that your pull request can be modified at any time, but do so with caution. 
+
+* You can modify the title and description of your pull request even after you've submitted it.
+* New commits to your working branch will be visible in your open PR until they are merged.
+* 
+Any changes made to it will potentially delay a review from maintainers. It's best to submit the PR, review it, and leave it unchanged until you get feedback. 
 :::
+
 
 ## Close or move a Pull Request to draft
 
@@ -157,6 +155,12 @@ When you create a **pull request (PR)**, GitHub directs you to the parent reposi
 
 The repo owner may request modifications before merging. Any future commits to the same branch will be added to the PR until it is merged.
 
-::: {note}
-<i class="fa-solid fa-wand-sparkles"></i> New commits to your working branch will continue updating the open PR until it is merged.
+
+
+
+:::{admonition} You did it! 
+:class: seealso  
+
+Once you've opened your **pull request (PR)**, you wait for a response from the maintainer team! Congratulations on submitting a contribution to open source! 
+
 :::
