@@ -24,7 +24,7 @@ The activity that you will complete is below. Read on, however, to learn more ab
 
 :::{admonition} Activity 1: Get to know the repository
 
-In your browser, navigate to [https://github.com/pyOpenSci/pyos-demo-package-contribute/](https://github.com/pyOpenSci/pyos-demo-package-contribute/).
+In your browser, navigate to <https://github.com/pyOpenSci/pyos-demo-package-contribute/>.
 
 * Check out the README and CONTRIBUTING files.
 
