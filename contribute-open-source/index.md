@@ -158,7 +158,7 @@ Clone a GitHub Repo <clone-repo>
 :hidden:
 
 What is Git/GitHub <what-is-git-github>
-GitHub Social platform <github-social-platform>
+Social Etiquette in Open Source  <social-open-source>
 Use GitHub codespaces <github-codespaces>
 Ways to contribute <ways-to-contribute>
 :::
