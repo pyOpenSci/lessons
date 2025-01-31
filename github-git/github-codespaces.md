@@ -19,6 +19,7 @@ However, in some cases, developers have set up a codespace for you to use on Git
 
 Codespaces are a feature that is specific to GitHub and are free for up to 60 hours a month. After that 60 hours, you need to pay for the service.
 
+(about-codespace)=
 ## What is a codespace
 
 GitHub Codespaces is a cloud-based development environment integrated into GitHub. It provides fully configured, container-based environments that you can use to modify files in a GitHub repository.
