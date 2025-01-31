@@ -9,9 +9,13 @@ kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
+myst_html_meta:
+  "title": "Get to know a (new to you) GitHub repository: Contribute to Open Source code and documentation."
+  "description lang=en": "It's useful to get to know a GitHub repo by reading the README and CONTRIBUTING files before getting started. Learn what to look for when getting to know a new repository. A beginner-friendly guide."
+  "keywords": "GitHub, OpenSource, beginner-friendly"
+  "property=og:locale": "en_US"
 ---
 
-(get-to-know-repo)=
 # Get to Know a (new to you) GitHub Repository
 
 :::{admonition} What you will learn:
@@ -20,31 +24,17 @@ kernelspec:
 In this tutorial, you will get to know a GitHub repo that you want to contribute to. You will learn how to find the CONTRIBUTING.md file in our [example GitHub repo](https://github.com/pyOpenSci/pyos-demo-package-contribute) and identify the process for submitting a contribution to the repo.
 :::
 
-The activity that you will complete is below. Read on, however, to learn more about the steps.
+## How to get to know a GitHub repo  
 
-:::{admonition} Activity 1: Get to know the repository
+Before contributing, it's important to **familiarize yourself with the repository** to ensure your contribution aligns with the project's needs. Doing this **saves time** for both you and the maintainers, making the process smoother.  
 
-In your browser, navigate to <https://github.com/pyOpenSci/pyos-demo-package-contribute/>.
+### 1. Check the README and CONTRIBUTING guide  
 
-* Check out the README and CONTRIBUTING files.
+The **README** provides an overview of the project, its purpose, and how it is used. Often, it also links to the project's contributing and development guides.  
+- **Review the README file**: The [**README.md** file](https://github.com/pyOpenSci/pyos-demo-package-contribute/blob/main/README.md) will help you understand the project's goals.  
+- **Read the CONTRIBUTING guide**: The [**CONTRIBUTING.md** file](https://github.com/pyOpenSci/pyos-demo-package-contribute/blob/main/CONTRIBUTING.md) explains what types of contributions are accepted and the expected workflow.  
 
-### Answer these questions
-
-* Does the repository accept contributions? If so, what types of contributions are accepted?
-* Does the repository use specific code or text formatting standards or linters?
-* Does the repository have continuous integration (CI) set up?
-* What is the license associated with the code in the repository?
-* Are the issues labeled and are there "good first issue" or "help wanted" labels 
-:::
-
-(contributing)=
-## How to get to know a repo
-
-Familiarize yourself with the repository you want to contribute to:
-
-* **Check out the README file**: The [**README.md** file](https://github.com/pyOpenSci/pyos-demo-package-contribute/blob/main/README.md) provides an overview of the project, its purpose, and how it is used. Often, it also links to the project's contributing and development guides, if they exist.
-* **Read the contributing guide**: The [**CONTRIBUTING.md** file](https://github.com/pyOpenSci/pyos-demo-package-contribute/blob/main/CONTRIBUTING.md) explains what types of contributions the project accepts and the workflows contributors should follow.
-* **Evaluate the documentation**: Consider whether the documentation (README, CONTRIBUTING, or others) is comprehensive and up to date. If it's not, this could be a great starting point for your first contribution!
+**<i class="fa-solid fa-handshake-angle" style="color: #81c0aa;"></i> Social cue:** If these files clearly **welcome contributions** and outline next steps, it’s a good sign that the maintainers are open to contributions.
 
 :::{figure} /images/github/github-contributing-file.png
 :alt: "Screenshot of the GitHub repository ‘pyos-demo-package-contribute’ showing files and folders, including README.md, CONTRIBUTING.md, and LICENSE. The sidebar highlights metadata, such as the repository description, links, and license details. The README.md and CONTRIBUTING.md files are highlighted."
@@ -52,27 +42,45 @@ Familiarize yourself with the repository you want to contribute to:
 Above is a screenshot of the pyOpenSci practice repo that you will use. Notice the CONTRIBUTING.md file. You should read this file after checking out the README file.
 :::
 
-### Get to know the project's infrastructure
+(labels-responsive)=
+### 2. Look at project activity and maintainer responsiveness  
 
-* **Code formatters and linters**: Does the project use any [code formatters or linters](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#python-package-code-style-format-and-linters) in its workflows? This information is often found in the development or contributing guide.
-* **Continuous Integration (CI)**: Does the project have [Continuous Integration](https://www.pyopensci.org/python-package-guide/continuous-integration/ci.html#what-is-continuous-integration) set up to run tests when a new pull request or change is submitted?
-* **License**: Check the [project’s license](https://www.pyopensci.org/python-package-guide/documentation/repository-files/license-files.html) to understand the terms for using, modifying, and contributing to the code. For example:
-  - An MIT license permits broad use, modification, and distribution with attribution.
-  - A GPL license requires that derivative works are open-sourced under the same terms.
-  Understanding the project's license helps you understand your rights and responsibilities as a contributor.
+- Scan the **issues and pull requests** sections on GitHub to see how long it generally takes for maintainers to respond.  
+- Check the **date of the latest commit** to determine whether the project is actively maintained.  
+- Look for **"good first issue"** or **"help wanted"** labels in the issues. These labels suggest that the maintainer team welcomes contributions and might be more beginner-friendly.  
 
-### Project organization 
+> **<i class="fa-regular fa-clock" style="color: #81c0aa;"></i> Social cue:** If maintainers **regularly respond** and merge contributions, your work is more likely to be reviewed and accepted in a timely manner as well.
 
-* Look for labels like **"good first issue"** or **"help wanted"** on the repository’s issues page. These highlight tasks ideal for beginners. If you don’t see these labels, ask maintainers for guidance on where to start.
-* Check if the repository includes a **Code of Conduct** or community guidelines. These outline expectations for respectful collaboration. If absent, observe discussions in issues or pull requests or ask maintainers for clarification.
+### 3. Understand the project’s infrastructure  
 
-### Social cues and repository activity
+Some repositories have specific **code and text format and workflow requirements**. Make sure to check if the project uses:  
+- **Code formatters and linters**: Does the project use [code formatters or linters](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#python-package-code-style-format-and-linters)?  
+- **Continuous Integration (CI)**: Are there automated tests and checks that run when a new PR is submitted?  
+- **Licensing**: The [project’s license](https://www.pyopensci.org/python-package-guide/documentation/repository-files/license-files.html) dictates how you can use, modify, and distribute the code.  
+  - The **MIT and BSD-3 licenses** permit broad use with attribution; these licenses are common in the scientific open source ecosystem.  
+  - A **GPL license** requires derivative works to follow the same open source terms.  This is what's known as a [copy-left license](https://www.pyopensci.org/python-package-guide/documentation/repository-files/license-files.html#use-open-permissive-licenses-when-possible). 
 
-You might also want to evaluate the activity and health of the community. This can signal whether the project is actively maintained.
+> **<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Social cue:** If the project follows **consistent coding standards and has CI in place**, it likely has an **organized review process**, that is setup to accept contributions. Further, if the project uses tools such as the [pre-commit ci bot](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#pre-commit-ci), code formatting and linting might be possible on GitHub within the pull request it self using CI. This means you won't need to setup a development environment to "clean up" any changes that you make in a PR.  
 
-* What is the date of the most recent commit to the repository?
-* Are there a lot of open issues and pull requests?
-* How long does it take for maintainers to respond to open issues or pull requests?
-* Does the repository have many forks and stars? While not a definitive metric, these can indicate community interest and engagement.
+### 4. Check for a Code of Conduct  
 
-If the project has recent commits, a responsive maintainer team, and clear documentation, it is likely a good candidate for contributions. Conversely, many unresolved issues or stale pull requests might indicate less active maintenance.
+A **Code of Conduct** helps ensure a **welcoming and respectful** community.  
+- If one exists, read it to understand community expectations.  
+- If missing, check discussions in issues and pull requests to gauge how maintainers interact with contributors.  
+
+> **<i class="fa-solid fa-scale-balanced" style="color: #81c0aa;"></i> Social cue:** A clear code of conduct signals an **inclusive and structured** community. If discussions show **helpful, constructive feedback**, it's a good sign of a positive project culture.
+
+### 5. See if contributors are acknowledged  
+
+- Do maintainers **thank contributors** in merged PRs or reference them in the README?  
+- Is there a **CONTRIBUTORS file** or an **all-contributors bot** recognizing contributions?  
+
+> **<i class="fa-solid fa-users" style="color: #81c0aa;"></i> Social cue:** If past contributors are **acknowledged and appreciated**, it suggests a community that values participation.
+
+---
+
+The above steps will help you determine whether a project is **welcoming, responsive, and well-maintained**, making it a great place to contribute! 🚀
+
+
+## Next steps
+Once you have explored and gotten to know the repository and decided that it's a good project to contribute to, it's time to [find an issue to work](identify-issue). You will learn more about that next.  
