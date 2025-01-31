@@ -52,7 +52,7 @@ Editing a file directly in the GitHub interface is a straight forward process.
 
 ## Ways to edit a file: GitHub vs. GitHub Codespaces  
 
-GitHub now offers **two ways** to edit files directly in the interface or using the [cloud-based GitHub Codespaces](/github-git/github-codespaces.html#what-is-a-codespace). If you’re making a small change, use GitHub’s interface. If you need to edit multiple files, try Codespaces. 
+GitHub now offers **two ways** to edit files directly in the interface or using the [cloud-based GitHub Codespaces](about-codespace). If you’re making a small change, use GitHub’s interface. If you need to edit multiple files, try Codespaces. 
 
 | | Option  | When to Use | Pros | Limitations |  
 |-|---------|------------|------|-------------|  
