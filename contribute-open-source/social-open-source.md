@@ -10,13 +10,14 @@ kernelspec:
   language: python
   name: python3
 myst_html_meta:
-  "title": "How to edit and commit changes to a file on GitHub: Intro to Collaborative GitHub"
-  "description lang=en": "Learn how to edit a file and then commit changes to that file to version control. All in the GitHub interface."
+  "title": "The social side of open source: Engage, build trust & support contributors"
+  "description lang=en": "A guide to the social elements that will make contributing to open source more impactful, valuable, and successful."
   "keywords": "GitHub, OpenSource, beginner-friendly"
   "property=og:locale": "en_US"
-og:image: /images/github/steps-to-contribute.png
-og:image:alt: An image that shows the steps for contributing to open source on GitHub.
 ---
+:::{todo}
+Link to relevant sections that cover each of the topics below
+:::
 
 # The social side of open source: Engage, build trust & support contributors  
 
