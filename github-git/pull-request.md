@@ -88,12 +88,12 @@ You can also click on the commit titles to see the specific changes in each comm
 
 ### Step 4: Finalize and submit your PR
 
-Once you've reviewed your PR and evertyhing looks good, it's time to submit it.
+Once you've reviewed your PR and everything looks good, it's time to submit it.
 
 Add a descriptive title and write a brief description of your changes. Pull request titles should be concise and descriptive of the content in the pull request. When you have added your
 title and description, click on “Create Pull Request” one more time to submit the PR.
 
-If you go to the parent repotiory you will see the PR listed there.
+If you go to the parent repository, you will see the PR listed there.
 
 :::{tip}
 You can modify the title and description of your pull request at any time - even after you've submitted the pull request.
@@ -101,7 +101,7 @@ You can modify the title and description of your pull request at any time - even
 
 ## Close a Pull Request
 
-If you're not ready to submit, you can close a PR anytime via the **Close pull request** button. You can reopen it later if needed.
+You can close a PR anytime via the **Close pull request** button if you're not ready to submit. You can reopen it later if needed.
 
 ## Who Can Merge a Pull Request?
 

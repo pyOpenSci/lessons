@@ -43,13 +43,13 @@ On the main **GitHub.com** page of the repository, you can click on the green bu
 
 `https://github.com/your-username/repo-name`
 
-
+::::{todo}
 :::{figure} /images/github/image-coming-soon.png
 :alt: alt text here
 
  You can make a local copy of your forked repository on your computer with the git clone command. 
 :::
-
+::::
 
 :::{tip} 
 You can copy the URL directly from your web browser, or in some cases, you might already know the URL. However, in many cases, you will come across a new **GitHub.com** repository on your own and will need to follow these instructions to copy the URL for future use. 

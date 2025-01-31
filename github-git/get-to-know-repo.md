@@ -49,7 +49,7 @@ Above is a screenshot of the pyOpenSci practice repo that you will use. Notice t
 - Check the **date of the latest commit** to determine whether the project is actively maintained.  
 - Look for **"good first issue"** or **"help wanted"** labels in the issues. These labels suggest that the maintainer team welcomes contributions and might be more beginner-friendly.  
 
-**<i class="fa-regular fa-clock" style="color: #81c0aa;"></i> Social cue:** If maintainers **regularly respond** and merge contributions, your work is more likely to be reviewed and accepted in a timely manner as well.
+> **<i class="fa-regular fa-clock" style="color: #81c0aa;"></i> Social cue:** If maintainers **regularly respond** and merge contributions, your work is more likely to be reviewed and accepted in a timely manner as well.
 
 ### 3. Understand the project’s infrastructure  
 
@@ -60,7 +60,7 @@ Some repositories have specific **code and text format and workflow requirements
   - The **MIT and BSD-3 licenses** permit broad use with attribution; these licenses are common in the scientific open source ecosystem.  
   - A **GPL license** requires derivative works to follow the same open source terms.  This is what's known as a [copy-left license](https://www.pyopensci.org/python-package-guide/documentation/repository-files/license-files.html#use-open-permissive-licenses-when-possible). 
 
-**<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Social cue:** If the project follows **consistent coding standards and has CI in place**, it likely has an **organized review process**, that is setup to accept contributions. Further, if the project uses tools such as the [pre-commit ci bot](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#pre-commit-ci), code formatting and linting might be possible on GitHub within the pull request it self using CI. This means you won't need to setup a development environment to "clean up" any changes that you make in a PR.  
+> **<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Social cue:** If the project follows **consistent coding standards and has CI in place**, it likely has an **organized review process**, that is setup to accept contributions. Further, if the project uses tools such as the [pre-commit ci bot](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#pre-commit-ci), code formatting and linting might be possible on GitHub within the pull request it self using CI. This means you won't need to setup a development environment to "clean up" any changes that you make in a PR.  
 
 ### 4. Check for a Code of Conduct  
 
@@ -68,14 +68,14 @@ A **Code of Conduct** helps ensure a **welcoming and respectful** community.
 - If one exists, read it to understand community expectations.  
 - If missing, check discussions in issues and pull requests to gauge how maintainers interact with contributors.  
 
-**<i class="fa-solid fa-scale-balanced" style="color: #81c0aa;"></i> Social cue:** A clear code of conduct signals an **inclusive and structured** community. If discussions show **helpful, constructive feedback**, it's a good sign of a positive project culture.
+> **<i class="fa-solid fa-scale-balanced" style="color: #81c0aa;"></i> Social cue:** A clear code of conduct signals an **inclusive and structured** community. If discussions show **helpful, constructive feedback**, it's a good sign of a positive project culture.
 
 ### 5. See if contributors are acknowledged  
 
 - Do maintainers **thank contributors** in merged PRs or reference them in the README?  
 - Is there a **CONTRIBUTORS file** or an **all-contributors bot** recognizing contributions?  
 
-**<i class="fa-solid fa-users" style="color: #81c0aa;"></i> Social cue:** If past contributors are **acknowledged and appreciated**, it suggests a community that values participation.
+> **<i class="fa-solid fa-users" style="color: #81c0aa;"></i> Social cue:** If past contributors are **acknowledged and appreciated**, it suggests a community that values participation.
 
 ---
 

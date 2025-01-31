@@ -13,8 +13,6 @@ kernelspec:
 
 # An overview of Git & GitHub
 
-🚧 These lessons are under heavy construction and will continue to change through March 2025 🚧 
-
 Version control is essential in open source software development and increasingly important in sharing and working on open science workflows. GitHub is the most commonly used cloud-based version control platform. GitHub integrates the power of Git with online collaboration and project management tools.
 
 Many think about GitHub as a social coding platform.
@@ -45,33 +43,35 @@ Git is a powerful **version control system** that enables teams to track, manage
 - **Track Changes**  
   Git keeps a detailed history of all changes made to your files. This is critical for open science and open source, as it provides a transparent record of how data, code, or documents have evolved over time.
 
-
+::::{todo}
 :::{figure}  /images/github/image-coming-soon.png
 :alt: Alt here
 
 The graphic here shows the commit history: commit 1, commit 2, commit 3, and review merge into main. 
 :::
+::::
 
 - **Branching and Merging**  
   Branches allow users to work independently on new features, experiments, or ideas without affecting the main project. This is particularly useful in research for testing hypotheses or in software development for building new features. Once work is complete, branches can be merged back into the main project.
 
-
+::::{todo}
 :::{figure}  /images/github/image-coming-soon.png
 :alt: Alt here
 
 Graphic here showing commit branching   
 :::
+::::
 
 - **Distributed Version Control**  
   Git enables every collaborator to own a full copy of the project and its history. This decentralization supports the open workflows of both open science and open source by allowing everyone to work offline and maintain redundancy.
 
-
+::::{todo}
 :::{figure}  /images/github/image-coming-soon.png
 :alt: Alt here
 
 Graphic here showing a main repo and then numerous forks    
 :::
-
+::::
 - **Collaboration Across Teams**  
   Git makes it easy for multiple contributors to work on the same project. It provides tools to integrate changes, resolve conflicts, and ensure everyone's contributions are recognized—a key aspect of inclusive open workflows.
 
