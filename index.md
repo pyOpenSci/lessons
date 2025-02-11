@@ -18,15 +18,13 @@ Learn how to navigate the technical and social elements of making a contribution
 
 * [Your First Contribution](pyos-first-contribution)
 * [Get to know a new repo](new-repo)
-* [Find an issue to work on](identify-github-issue) 
-* [Fork a repo](fork-repository) 
+* [Find an issue to work on](identify-github-issue)
+* [Fork a repo](fork-repository)
 * [Edit & commit files](pyos-edit-commit-files)
 * [Submit a pull request](pyos-pull-request)
 
 :::
 ::::
-
-
 
 ::::{grid-item}
 :::{card} ✿ Clean Code ✿
@@ -59,7 +57,6 @@ TODO: let's merge this with the conditional lesson
 :::
 ::::
 
-
 ::::{grid-item}
 :::{card} ✿ Package & Share Your Code ✿
 :class-card: left-aligned
@@ -71,8 +68,6 @@ TODO: let's merge this with the conditional lesson
 
 :::
 ::::
-
-
 
 :::::
 
@@ -86,12 +81,11 @@ code using best practices and tools.
 
 :::{toctree}
 :hidden:
-:caption: Write Better Code 
+:caption: Write Better Code
 :maxdepth: 2
 
 Write Better Code <write-better-code/index>
 :::
-
 
 :::{toctree}
 :hidden:
@@ -101,15 +95,10 @@ Write Better Code <write-better-code/index>
 Package & Share Code <package-share-code/index>
 :::
 
-
 :::{toctree}
 :hidden:
 :caption: GitHub
 :maxdepth: 2
 
 Contribute Open Source <contribute-open-source/index>
-:::
-
-:::{todolist}
-
 :::

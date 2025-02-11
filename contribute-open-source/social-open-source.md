@@ -15,10 +15,8 @@ myst_html_meta:
   "keywords": "GitHub, OpenSource, beginner-friendly"
   "property=og:locale": "en_US"
 ---
-:::{todo}
-Link to relevant sections that cover each of the topics below
-:::
 
+(social-github)=
 # The social side of open source: Engage, build trust & support contributors  
 
 :::{figure} /images/github/open-source-social-network.png
