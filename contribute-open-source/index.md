@@ -128,6 +128,7 @@ resources
 :hidden:
 
 About These Lessons  <self>
+Social Etiquette in Open Source  <social-open-source>
 
 :::
 
@@ -158,7 +159,6 @@ Clone a GitHub Repo <clone-repo>
 :hidden:
 
 What is Git/GitHub <what-is-git-github>
-Social Etiquette in Open Source  <social-open-source>
 Use GitHub codespaces <github-codespaces>
 Ways to contribute <ways-to-contribute>
 :::
