@@ -93,13 +93,14 @@ Since most GitHub collaboration is asynchronous, effective communication ensures
 
 ## 2️⃣ Start Small and Contribute Sustainably
 
-Contributing should not be overwhelming and should be sustainable. Starting with small contributions will help you build confidence and credibility while keeping contributions manageable
+Contributing should not be overwhelming and should be sustainable. Starting with small contributions will help you build confidence and credibility while keeping contributions manageable.
 
 ### <i class="fa-solid fa-user-check" style="color: #81c0aa;"></i> Making contributing less intimidating  
 
 - **Start small to build confidence.**  
   - First contributions don’t have to be big—**fixing typos or improving docs** is a great start. Just make sure that the project that you're contributing to welcomes these types of contributions before starting one!  
-  - These small changes **help the project** and **show maintainers that you’re engaged**.  
+  - These small changes **help the project** and **show maintainers that you’re engaged**.
+  - If the project you are looking to contribute to has **good first issues**, these are an excellent way to get started. Those are issues the maintainers marked as being good for onboarding; find them by filtering for that label in the Issues section.
 
 - **Contributions add up over time.**  
   - Even small contributions build credibility—once maintainers recognize you, they will likely review your work faster.
