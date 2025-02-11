@@ -14,7 +14,7 @@ kernelspec:
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 (cite-your-code)=
-# Ways to Add a Citation to Your Code
+# How to Add a Citation to Your Code
 
 [Sharing](share-your-code) and making your code **citable** supports others **acknowledge your work, build upon it, and give you credit**. Citation further supports making workflows open and documenting all parts of the scientific process. 
 
@@ -29,7 +29,6 @@ kernelspec:
 
 
 <i class="fa-solid fa-rocket"></i> This lesson assumes that your code is already  **hosted on [GitHub or GitLab](share-your-code) with an [open license](open-license).**  
-:::
 
 (zenodo)=
 ## What is Zenodo?
@@ -59,7 +58,6 @@ Each release gets a unique DOI, while the repository keeps a persistent record, 
 
 1. Go to [zenodo.org](https://zenodo.org/) and sign in using your GitHub account
 2. Go to your profile drop-down and select “GitHub
-
 
 :::{figure} /images/zenodo/zenodo-account.png
 :alt: Text here
@@ -147,13 +145,10 @@ Be sure to use the cite-all versions badge, which will always resolve to the mos
 Once you have created a GitHub release, you will see a badge next to the repository with a DOI. You can click on that badge to get a copy-able markdown version of the rendered badge that you can add to your README file. 
 :::
 
-
 ### Step 6: Optional--Add your DOI to the GitHub repo: the citation.cff file
 
 Now that you have a DOI, add a [CITATION.cff](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files) file to your GitHub repository to make it easy for others to cite your package.
 Once you have a DOI, you can add a [citation.cff file](https://citation-file-format.github.io/) to your GitHub or GitLab repository. A `CITATION.cff` file standardizes citation information, making it easy for others to cite your work correctly.
-
-
 
 ## What is a DOI?
 
@@ -165,9 +160,8 @@ By using a DOI, you can make your work more discoverable and citable, enabling o
 
 There are multiple ways to get a DOI for your work and to make your code citable. Each way has its own benefits:
 
-
 1. **Write and publish a paper about your code in a journal like JOSS (Journal of Open Source Software) via pyOpenSci** if you have written a Python package or another methods-focused scientific Journal. If you go the publication route, you will receive a cross-ref DOI that can be easily connected to your ORCID.  
-3. **Use a platform like [Zenodo](zenodo)**. If you use Zenodo to create a DOI for your work, you will receive a DOI that is not CrossRef compatible. However, you can still add entries for that DOI in your ORCID profile page. 
+1. **Use a platform like [Zenodo](zenodo)**. If you use Zenodo to create a DOI for your work, you will receive a DOI that is not CrossRef compatible. However, you can still add entries for that DOI in your ORCID profile page. 
 
 ### CrossRef vs. Zenodo DOIs - What's the difference?
 
