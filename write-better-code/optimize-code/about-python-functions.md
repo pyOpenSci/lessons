@@ -50,9 +50,9 @@ Functions can help you to both eliminate repetition and improve efficiency by ma
 
 Modular code is separated into independent units that can be reused and even combined to complete a longer chain of tasks.
 
-:::{figure} ../images/clean-code/functions-for-all-things.png
+:::{figure} /images/clean-code/functions-for-all-things.png
 :alt: You can implement strategies such as loops and functions in your code to replace tasks that you are performing over and over. Source: Francois Michonneau.
-:target: ../images/clean-code/functions-for-all-things.png
+:target: /images/clean-code/functions-for-all-things.png
 
 You can use loops and functions in your code to replace repeating tasks.  
 Source: Francois Michonneau.

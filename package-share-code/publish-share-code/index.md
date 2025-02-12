@@ -15,26 +15,6 @@ kernelspec:
 
 # Publish & share your code
 
-:::{toctree}
-:hidden:
-:caption: Share code
-:maxdepth: 2
-
-Intro <self>
-Share your Code <share-code>
-Cite your Code <cite-code>
-Publish your Code <publish-code>
-:::
-
-:::{toctree}
-:hidden:
-:caption: Activities 
-:maxdepth: 2
-
-
-Activities: Share your Code <activity-1-share-code>
-
-:::
 
 ## Sharing and Citing Your Code
 
@@ -52,5 +32,10 @@ There are many ways to [**share** your code](share-your-code). Platforms like [G
 
 2. **Use a platform like Zenodo** If you don't want to publish formally but still want your code to be citable, you can use tools like [Zenodo](zenodo). Zenodo allows you to give proper credit to contributors and add credibility to your work without going through a formal publication process. Citing code encourages transparency and reproducibility, making it easier for others to build upon your efforts.
 
+:::{toctree}
+:hidden:
+:maxdepth: 2
+:glob:
 
-
+*
+:::

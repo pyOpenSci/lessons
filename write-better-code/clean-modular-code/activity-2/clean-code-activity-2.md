@@ -14,7 +14,7 @@ kernelspec:
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 (activity-2)=
-# DRY Code & Functions: Activity 2 
+# Activity 2: DRY Code & Functions
 
 In [activity 1](../activity-1/clean-code-activity-1), you took some code and made it cleaner and easier to understand by:
 

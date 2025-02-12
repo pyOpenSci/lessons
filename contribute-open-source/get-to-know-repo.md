@@ -16,6 +16,7 @@ myst_html_meta:
   "property=og:locale": "en_US"
 ---
 
+(new-repo)=
 # Get to Know a (new to you) GitHub Repository
 
 :::{admonition} What you will learn:
