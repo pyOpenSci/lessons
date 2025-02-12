@@ -13,7 +13,7 @@ kernelspec:
 
 # Code spaces and contributing to open source
 
-[In the edit commit files lesson](edit-commit-files), you learned how to directly change a file on GitHub in the browser. You didn't need a special development environment to make that change in this lesson.
+[In the edit commit files lesson](pyos-edit-commit-files), you learned how to directly change a file on GitHub in the browser. You didn't need a special development environment to make that change in this lesson.
 
 However, in some cases, developers have set up a codespace for you to use on GitHub. A codespace is a cloud-based development environment that has been set up for you (or that you can create yourself) with all of the tool and dependencies that you need to work on a project.
 

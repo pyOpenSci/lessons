@@ -27,9 +27,9 @@ GitHub is a **social coding platform** that allows individuals and teams to mana
 
 ## GitHub and open source  
 
-**Open source software (OSS)** is code that is publicly accessible—anyone can view, modify, and distribute it. GitHub provides the tools needed for open source projects to store code publically, manage contributions, track and address issues, and collaborate efficiently. 
+**Open source software (OSS)** is code that is publicly accessible—anyone can view, modify, and distribute it. GitHub provides the tools needed for open source projects to store code publically, manage contributions, track and address issues, and collaborate efficiently.
 
-Specifically, in the Python language, the software is often [associated with packaging](https://www.pyopensci.org/python-package-guide/tutorials/intro.html), where you package up code and make it easier for a user to install on their computer. Reusable sofware allow developers and scientists to share common workflows rather than needing to recreate the code needed for each workflow themselves from scratch. 
+Specifically, in the Python language, the software is often [associated with packaging](https://www.pyopensci.org/python-package-guide/tutorials/intro.html), where you package up code and make it easier for a user to install on their computer. Reusable sofware allow developers and scientists to share common workflows rather than needing to recreate the code needed for each workflow themselves from scratch.
 
 ### Why open source communities use GitHub  
 
@@ -97,8 +97,6 @@ GitHub is widely used in **open source** and **team-based projects** where multi
 > **<i class="fa-solid fa-users" style="color: #81c0aa;"></i> Social cue:**  
 > Working on GitHub is more than writing code—it’s about **communication, teamwork, and reviewing each other's work**.  
 
-
-
 ## Summary  
 
 | | **Feature**         | **Solo Use**                     | **Collaborative Use**                 |  
@@ -111,15 +109,14 @@ GitHub is widely used in **open source** and **team-based projects** where multi
 :::{admonition} What's next?  
 :class: seealso  
 Now that you understand GitHub's role in **open source** and **collaboration**,  
-you're ready to dive into **contributing to a project!** 
+you're ready to dive into **contributing to a project!**
 
 *****
 
-<i class="fa-brands fa-github-alt"></i> [Get started with activities to guide you through your first contribution →](your-first-contribution)  
-<i class="fa-brands fa-github-alt"></i> [Learn how to identify an issue →](identify-issue)   
+<i class="fa-brands fa-github-alt"></i> [Get started with activities to guide you through your first contribution →](pyos-first-contribution)  
+<i class="fa-brands fa-github-alt"></i> [Learn how to identify an issue →](identify-github-issue)
 <i class="fa-brands fa-github-alt"></i> [Learn how to fork a repository →](fork-repository)  
 :::
-
 
 :::{todo}
 resources
@@ -159,7 +156,6 @@ Clone a GitHub Repo <clone-repo>
 :caption: Background  
 :maxdepth: 2
 :hidden:
-
 
 What is Git/GitHub <what-is-git-github>
 GitHub Social platform <github-social-platform>

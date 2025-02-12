@@ -16,12 +16,12 @@
 
 Learn how to navigate the technical and social elements of making a contribution to open source code on GitHub.
 
-* [Your First Contribution](your-first-contribution)
+* [Your First Contribution](pyos-first-contribution)
 * [Get to know a new repo](new-repo)
-* [Find an issue to work on](identify-issue) 
+* [Find an issue to work on](identify-github-issue) 
 * [Fork a repo](fork-repository) 
-* [Edit & commit files](edit-commit-files)
-* [Submit a pull request](pull-request)
+* [Edit & commit files](pyos-edit-commit-files)
+* [Submit a pull request](pyos-pull-request)
 
 :::
 ::::

@@ -141,5 +141,5 @@ Graphi:  Screenshot of GitHub’s "Sync Fork" button
 :class: important  
 
 Now that you’ve forked a repository, the next step is to **edit a file and commit your changes**.  
-[Learn how to edit and commit files →](edit-commit-files)  
+[Learn how to edit and commit files →](pyos-edit-commit-files)  
 :::

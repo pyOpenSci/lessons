@@ -177,5 +177,5 @@ Focus on making small, meaningful contributions. Most first contributions are sm
 If the maintainers invite you to submit a pull request, it's time to:
 
 - [Fork the repository](fork-repository) if you haven't already.
-- [Make your changes on a new branch in your fork.](edit-commit-files)
-- [Submit a pull request](pull-request) with your updates.
+- [Make your changes on a new branch in your fork.](pyos-edit-commit-files)
+- [Submit a pull request](pyos-pull-request) with your updates.
