@@ -88,4 +88,4 @@ The above steps will help you determine whether a project is **welcoming, respon
 
 ## Next steps
 
-Once you have explored and gotten to know the repository and decided that it's a good project to contribute to, it's time to [find an issue to work](identify-issue). You will learn more about that next.  
+Once you have explored and gotten to know the repository and decided that it's a good project to contribute to, it's time to [find an issue to work](identify-github-issue). You will learn more about that next.  

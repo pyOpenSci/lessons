@@ -17,8 +17,8 @@ myst_html_meta:
     "og:image": /images/github/steps-to-contribute.png
     "og:image:alt": An image that shows the steps for contributing to open source on GitHub.
 ---
-
-# Mastering GitHub Collaboration Skills 
+(pyos-first-contribution)=
+# Your First Open Source Contribution
 
 Contributing to open source in a public space like GitHub can feel intimidating. You may not know the project maintainers, feel unsure about your GitHub skills, or wonder where to begin.
 
@@ -82,7 +82,7 @@ Open a new browser tab after reading through the [get-to-know a repo lesson](get
 
 ### Step 2: Find an issue to work on
 
-Next, [identify an issue or bug that you want to work on](identify-issue). Sometimes, there is already an open issue in a repo that you want to address. So, reading through existing open issues before opening a new one is always a good idea. If you already have a fix in mind that doesn't exist in the existing issue list, you will [create a new issue](create-issue) in the repo.
+Next, [identify an issue or bug that you want to work on](identify-github-issue). Sometimes, there is already an open issue in a repo that you want to address. So, reading through existing open issues before opening a new one is always a good idea. If you already have a fix in mind that doesn't exist in the existing issue list, you will [create a new issue](create-issue) in the repo.
 
 :::{button-link} identify-issue.html
 :color: primary
@@ -140,7 +140,7 @@ Once you've successfully forked the repo, it's time to edit the file you want to
 :::{admonition} Activity: Make a change to a file and commit it to your fork
 
 1. Navigate to your fork on GitHub.com
-2. In the GitHub interface, click on the file that you proposed to modify or fix [in the identify issue lesson](identify-issue)
+2. In the GitHub interface, click on the file that you proposed to modify or fix [in the identify issue lesson](identify-github-issue)
 3. Click on the edit <kbd><i class="fa-solid fa-pencil"></i></kbd> button in the GitHub interface.
 4. Make the edits to the file that you proposed in your issue.
 5. Hit the <kbd>commit</kbd> button to save your edits
@@ -159,7 +159,7 @@ Commit message examples:
 
 ### Step 5: Submit a pull request
 
-Once your edits are [committed to git version control](edit-commit-files), open a <kbd>Pull Request</kbd> to the parent repository.
+Once your edits are [committed to git version control](pyos-edit-commit-files), open a <kbd>Pull Request</kbd> to the parent repository.
 
 :::{button-link} pull-request.html
 :color: primary

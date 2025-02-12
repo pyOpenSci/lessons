@@ -15,13 +15,11 @@ kernelspec:
 
 More here
 
-
 :::{toctree}
 :hidden:
 :maxdepth: 2
 :glob:
 
 *
+
 :::
-
-

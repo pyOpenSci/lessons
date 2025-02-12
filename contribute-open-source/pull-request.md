@@ -15,10 +15,10 @@ myst_html_meta:
   "keywords": "GitHub, OpenSource"
   "property=og:locale": "en_US"
 ---
-
+(pyos-pull-request)=
 # About Pull Requests
 
-In the last lesson, you learned how to [make and commit a change to a document in a GitHub repository](edit-commit-files).
+In the last lesson, you learned how to [make and commit a change to a document in a GitHub repository](pyos-edit-commit-files).
 In this lesson, you will learn how to submit a pull request after making changes to a file in a GitHub repository.  
 
 A GitHub pull request (**PR**):
