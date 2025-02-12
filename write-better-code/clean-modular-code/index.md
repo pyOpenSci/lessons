@@ -25,29 +25,23 @@ jupyter:
 # Write Clean, Modular, DRY Code
 
 :::{toctree}
+:caption: LESSONS
 :hidden:
-:caption: Clean, Expressive Code
 :maxdepth: 2
+:glob:
 
-Intro <self>
-Python Code Style <python-pep-8>
-Don't Repeat Yourself <python-dry-modular-code>
-Expressive Code <python-write-expressive-code>
-Write Pseudocode <write-pseudocode>
+*
 :::
-
-
 
 :::{toctree}
-:hidden:
-:caption: Activities
+:caption: ACTIVITIES
 :maxdepth: 2
+:glob:
 
-Activity overview <clean-code-present>
-Clean Code: Activity 1 <activity-1/clean-code-activity-1>
-Clean Code: Activity 2 <activity-2/clean-code-activity-2>
-Clean Code: Activity 3 <activity-3/clean-code-activity-3>
+activity-*/*
 :::
+
+
 
 :::{note}
 After completing this lesson, you will be able to:

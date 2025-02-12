@@ -11,18 +11,17 @@ kernelspec:
   name: python3
 ---
 
-+++ {"editable": true, "slideshow": {"slide_type": ""}}
+# Optimize your code
 
-# Running Code
+More here
+
 
 :::{toctree}
 :hidden:
-:caption: Package Code
 :maxdepth: 2
+:glob:
 
-Intro <self>
-Execute Script <execute-script>
-Execute Package <execute-package>
+*
 :::
 
 

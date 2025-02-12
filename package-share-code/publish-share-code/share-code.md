@@ -101,7 +101,7 @@ Another option is to [publish your package to PyPI](https://www.pyopensci.org/py
 
 :::{figure-md} pypi-conda-publication
 
-<img src="../images/python-packaging/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You turn your code into distribution files (sdist and wheel) that PyPI accepts. Then, there is an arrow toward the PyPI repository where you publish both distributions. From PyPI, if you create a conda-forge recipe, you can then publish to conda-forge. " width="700px">
+<img src="/images/python-packaging/publish-python-package-pypi-conda.png" alt="Image showing the progression of creating a Python package, building it and then publishing to PyPI and conda-forge. You turn your code into distribution files (sdist and wheel) that PyPI accepts. Then, there is an arrow toward the PyPI repository where you publish both distributions. From PyPI, if you create a conda-forge recipe, you can then publish to conda-forge. " width="700px">
 
 The Python package software publishing workflow from GitHub to PyPI and conda-forge. [Learn how to creat a Python package, here.](https://www.pyopensci.org/python-package-guide/tutorials)
 :::
@@ -139,7 +139,7 @@ You can learn more about [how to publish to conda-forge in our Python Packaging 
 Even if you haven't published your code in an academic Journal, you can create a DOI that allows you to cite it using [Zenodo](zenodo). While you can upload code and other types of documents to Zenodo at any time, if you are using GitHub, you can create a direct connection to Zenodo, which will not only provide a DOI for the GitHub repository but also allow you to create new sub-DOIs for every new version of your code that you make.
 
 
-:::{figure} ../images/zenodo-github-connect.svg
+:::{figure} /images/zenodo-github-connect.svg
 ---
 alt: "alt here."
 name: zenodo-github-connect

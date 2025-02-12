@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Share Your Code Activities
+# ACTIVITY: Share Your Code
 
 
 :::{note}
@@ -53,7 +53,7 @@ Because you own this fork, you can make any changes you wish to the code.
 1. Fork the [pyospackage repository](https://github.com/pyOpenSci/pyosPackage) on GitHub.
 
 
-:::{figure} ../images/github/github-fork-repo.gif
+:::{figure} /images/github/github-fork-repo.gif
 ---
 alt: "alt here."
 name: fork-github-repo
