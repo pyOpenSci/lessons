@@ -15,8 +15,13 @@ myst_html_meta:
   "keywords": "GitHub, OpenSource"
   "property=og:locale": "en_US"
 ---
+
 (pyos-pull-request)=
 # About Pull Requests
+
+> In this lesson, you’ll learn how to:  
+> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Submit a pull request with changes to a file in your fork to the parent repo using the GitHub interface
+> 
 
 In the last lesson, you learned how to [make and commit a change to a document in a GitHub repository](pyos-edit-commit-files).
 In this lesson, you will learn how to submit a pull request after making changes to a file in a GitHub repository.  
@@ -24,7 +29,7 @@ In this lesson, you will learn how to submit a pull request after making changes
 A GitHub pull request (**PR**):
 
 1. **Allows you to suggest changes rather than making them directly to a repo you don't own** in a transparent way. You can't break things by submitting a PR!
-1. **Supports Review**: A pull request also triggers a review process where other repository owners and users can review and comment on your changes and suggest edits to your changes line-by-line. This makes incorporateing your changes fully transparent.
+1. **Supports Review**: A pull request also triggers a review process where other repository owners and users can review and comment on your changes and suggest edits to your changes line-by-line. This makes incorporating your changes fully transparent.
 1. **Maintainers to manage contributions**: PRs allow maintainers to document, approve, and merge contributions into the project in a consistent way.
 
 > **<i class="fa-solid fa-handshake-angle" style="color: #81c0aa;"></i> Social cue:** 
@@ -38,7 +43,7 @@ Pull requests empower you to contribute to the work of others in an open and acc
 
 ### Step 1: Open your GitHub pull request
 
-To start a new pull request,click the <kbd>`New pull request`</kbd> button on the main page of your forked repository. Or, if you recently made a change to a branch in your fork, then GitHub will recognize is and prompt you to submit a PR (see the image below).
+To start a new pull request, click the <kbd>`New pull request`</kbd> button on the main page of your forked repository. Or, if you recently made a change to a branch in your fork, then GitHub will recognize it and prompt you to submit a PR (see the image below).
 
 :::{figure} /images/github/github-create-pull-request.png
 To create a pull request, go to the Pull Request tab in your account. Then click on the New pull request button.
@@ -127,14 +132,13 @@ title and description, click on “Create Pull Request” one more time to submi
 If you go to the parent repository, you will see the PR listed there.
 
 :::{tip}
-Take note that your pull request can be modified at any time, but do so with caution. 
+Note that your pull request can be modified at any time, but do so cautiously. 
 
 * You can modify the title and description of your pull request even after you've submitted it.
 * New commits to your working branch will be visible in your open PR until they are merged.
 * 
 Any changes made to it will potentially delay a review from maintainers. It's best to submit the PR, review it, and leave it unchanged until you get feedback. 
 :::
-
 
 ## Close or move a Pull Request to draft
 
@@ -156,11 +160,11 @@ When you create a **pull request (PR)**, GitHub directs you to the parent reposi
 The repo owner may request modifications before merging. Any future commits to the same branch will be added to the PR until it is merged.
 
 
-
-
 :::{admonition} You did it! 
 :class: seealso  
 
 Once you've opened your **pull request (PR)**, you wait for a response from the maintainer team! Congratulations on submitting a contribution to open source! 
 
+If you want to dig deeper, you may want to learn how to clone a repo and work on changes locally on your computer.
+[<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Learn how to clone a GitHub repository →](clone-repo)  
 :::

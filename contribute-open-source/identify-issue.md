@@ -19,13 +19,15 @@ myst_html_meta:
 ---
 
 (identify-github-issue)=
-
 # Identify an Issue to Work On: Collaborative GitHub for Open Source  
+
+> This lesson guides you through:  
+> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> **Finding or creating an issue** in a repository you don’t own.
 
 Contributing to an open source project starts with identifying an issue to work on. Open issues help developers track bugs, new features, or needed improvements in a repository. Whether you have a specific fix in mind or are looking for ideas, exploring existing issues is the best place to start.  
 
-As discussed in the [get to know a repo lesson](labels-responsive), the way issues are labeled and organized can both help you find issues that maintainers want help with and also tell you a lot about a project. If you see
-beginner-friendly labels like **"good first issue"** or **"help wanted,"** it's a clear signal that the maintainers welcome new contributors. Further those might be good issues for you to start working on!  
+As discussed in the [get to know a repo lesson](labels-responsive), how issues are labeled and organized can help you find issues that maintainers want help with and tell you a lot about a project. If you see
+beginner-friendly labels like **"good first issue"** or **"help wanted,"** it's a clear signal that the maintainers welcome new contributors. Further, those might be good issues for you to start working on!  
 
 :::{figure} /images/github/github-issues-good-first-issue.png  
 :alt: "A screenshot of an open GitHub issue for the pyOpenSci pyosMeta project, showing labels like 'good first issue'. pyOpenSci curates beginner-friendly issues for sprints and first-time contributors."  
@@ -35,7 +37,7 @@ pyOpenSci runs beginner-friendly sprints and spends time curating issues for
 new contributors to work on during these events.
 :::  
 
-This lesson guides you through **finding or creating an issue** in a repository you don’t own.
+
 
 ## How to find an issue to work on
 
@@ -158,6 +160,11 @@ Maintainers are often volunteers, so the more information you provide, the easie
 Add section on issue templates, how they work, what they are
 :::
 
+
+:::{tip}
+Focus on making small, meaningful contributions. Most first contributions are small updates to documentation—these are great for building confidence as they often can be merged more quickly.
+:::
+
 ### After you've opened an issue
 
 Once you've submitted your issue, give maintainers time to respond.  
@@ -168,14 +175,16 @@ If you don’t hear back after a few weeks, a polite nudge is fine:
 
 > Hi team 👋, just following up on my issue. Let me know if you’d like me to move forward with a pull request or if there’s anything I should address first.  
 
-:::{tip}
-Focus on making small, meaningful contributions. Most first contributions are small updates to documentation—these are great for building confidence as they often can be merged more quickly.
-:::
 
-## What happens next
+
+:::{admonition} What's next?  
+:class: seealso 
 
 If the maintainers invite you to submit a pull request, it's time to:
 
-- [Fork the repository](fork-repository) if you haven't already.
-- [Make your changes on a new branch in your fork.](pyos-edit-commit-files)
-- [Submit a pull request](pyos-pull-request) with your updates.
+
+* [<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Fork the repository](fork-repository) if you haven't already.
+* [<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Make your changes on a new branch in your fork.](pyos-edit-commit-files)
+* [ <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Submit a pull request](pyos-pull-request) with your updates.
+
+:::

@@ -19,19 +19,17 @@ og:image:alt: An image that shows the steps for contributing to open source on G
 ---
 
 (pyos-edit-commit-files)=
-
 # Your First Edits to a File in Your Fork: Edit & Commit
 
-Now that you've [identified and comment on an issue](identify-github-issue), [forked the repository](fork-repo) and received approval to work on an issue, it's time to make your changes.  
+> In this lesson, you’ll learn how to:  
+> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i>edit a file directly in your **fork** using GitHub’s interface and commit the changes using only the native GitHub interface
+>
+> If you want to work on the files locally on your laptop, you will need to [clone or make a copy of your repo locally](clone-repo).
 
-> **💡 Reminder:** Your fix should be **small and text-based**, like updating documentation or fixing a typo.  
+Now that you've [identified and commented on an issue](identify-github-issue), [forked the repository](fork-repo), and received approval to work on an issue, it's time to make your changes.  
 
-:::{admonition} What you'll learn  
-:class: tip  
-You’ll edit a file directly in your **fork** using GitHub’s interface and commit the changes using only the native GitHub interface.
-
-NOTE: If you want to work on the files locally on your laptop, you will need to [clone or make a copy of your repo locally](clone-repo).
-
+:::{tip}
+💡 Your fix should be **small and text-based**, like updating documentation or fixing a typo.  
 :::
 
 ## How to edit a file in your fork  
@@ -90,14 +88,8 @@ You can always **undo or revert** changes using Git.
 :::{admonition} What's next?  
 :class: seealso  
 
-<i class="fa-brands fa-github-alt"></i> Once you've committed your changes, you can open a **pull request (PR)** to suggest your edits to the main project.  
+Once you've committed your changes, you can open a **<i class="fa-brands fa-github-alt"></i> pull request (PR)** to suggest your edits to the main project.  
 
-*****
-
-[Learn how to create a pull request →](pyos-pull-request)  
+[<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Learn how to create a pull request →](pyos-pull-request)  
 :::
 
-:::{todo}
-
-It might be cool to show first contributions like my first on to nbconvert could be interesting? Other people might have examples from the community that we could share some stories about.
-:::
