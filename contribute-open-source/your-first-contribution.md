@@ -28,11 +28,11 @@ This lesson series will teach you how to collaborate on code and documentation u
 
 ## Get started with your first open source contribution 
 
-:::{admonition} What you will learn
+> This lesson covers:  
+> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Completing this set of activities will give you the technical and social skills needed to collaborate and contribute to an open source GitHub
+repository.
+> You will use the [pyOpenSci example GitHub repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) as a safe space to practice making contributions. 
 
-Completing this set of activities will give you the technical and social skills needed to collaborate and contribute to an open source GitHub
-repository. You will use the [pyOpenSci example GitHub repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) as a safe space to practice making contributions.
-:::
 
 This page introduces all of the steps and walks you through each one. Each activity below has a lesson that will help you understand the social and technical elements of the contribution process.
 
@@ -187,7 +187,19 @@ When you’re new to a project, you may notice gaps and unclear explanations tha
 By catching confusing phrasing, outdated information, or missing details (even in contributing documentation), you improve the onboarding experience for others while making a meaningful first contribution!
 
 
-:::{admonition} A real-life first contribution to PyPI
+:::{admonition} A first contribution to PyPI
 
 [Here is an example issue that resulted in 2 small pull requests to PyPI (warehouse)](https://github.com/pypi/warehouse/issues/17374). In this case, the images were outdated, so it was a bug in the documentation that needed to be fixed. However, while getting to know the repository, the author also found issues with the development documentation, so they submitted a pull request to address that as well. Both pull requests were small.
+:::
+
+:::{admonition} What's next?  
+:class: seealso 
+
+The upcoming lessons will teach you the skills to complete all of the activities on this page. You will learn:
+
+* <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to get to know a GitHub repo](get-to-know-repo)
+* <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to find an issue to work on](identify-issue)
+* <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to for a GitHub repo](fork-repo)
+* <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to edit and commit files using the GitHub interface](edit-commit-files)
+*  <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to submit a Pull Request with your suggested changes](pull-request) 
 :::

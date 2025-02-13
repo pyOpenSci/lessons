@@ -109,13 +109,14 @@ html_theme_options = {
     },
     # Increase this as lessons are added - 
     # set low to hide links to other pyos sites and allow nav between lessons
-    "header_links_before_dropdown": 5,
+    "header_links_before_dropdown": 3,
     "use_edit_page_button": True,
     "show_nav_level": 2,
     "navigation_depth": 3,
     "show_toc_level": 1,
     "navbar_align": "left",  # [left, content, right] For testing that the navbar items align properly
     "github_url": "https://github.com/pyopensci/lessons",
+    "announcement": "Want to learn how to create a Python package? <a href='https://www.pyopensci.org/python-package-guide/tutorials/intro.html'>Go here!</a>",
     "footer_start": ["code_of_conduct", "copyright"],
     "footer_end": [],
     "navigation_with_keys": False,

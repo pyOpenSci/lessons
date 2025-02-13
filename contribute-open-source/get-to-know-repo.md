@@ -19,11 +19,13 @@ myst_html_meta:
 (new-repo)=
 # Get to Know a (new to you) GitHub Repository
 
-:::{admonition} What you will learn:
-:class: tip
 
-In this tutorial, you will get to know a GitHub repo that you want to contribute to. You will learn how to find the CONTRIBUTING.md file in our [example GitHub repo](https://github.com/pyOpenSci/pyos-demo-package-contribute) and identify the process for submitting a contribution to the repo.
-:::
+
+> This lesson covers:  
+> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> How to get to know a GitHub repo that you want to contribute to.
+> 
+>You will learn how to find the CONTRIBUTING.md file in our [example GitHub repo](https://github.com/pyOpenSci/pyos-demo-package-contribute) and identify the process for submitting a contribution to the repo.
+
 
 ## How to get to know a GitHub repo  
 
@@ -86,6 +88,10 @@ A **Code of Conduct** helps ensure a **welcoming and respectful** community.
 
 The above steps will help you determine whether a project is **welcoming, responsive, and well-maintained**, making it a great place to contribute! 🚀
 
-## Next steps
 
-Once you have explored and gotten to know the repository and decided that it's a good project to contribute to, it's time to [find an issue to work](identify-github-issue). You will learn more about that next.  
+:::{admonition} What's next?  
+:class: seealso 
+
+Once you have explored and gotten to know the repository and decided that it's a good project to contribute to, it's time to [<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> find an issue to work](identify-github-issue). You will learn more about that next.  
+
+:::

@@ -24,14 +24,12 @@ myst_html_meta:
 ---
 
 (fork-repository)=
-
 # A Guide to Forks on GitHub Forks
 
-:::{admonition} What You Will Learn  
-:class: tip  
-
-In this lesson, you’ll learn how to **fork** (copy) a GitHub repository to your own account. Forking lets you work on a project independently before suggesting changes.  
-:::
+> In this lesson, you’ll learn how to:  
+> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> **fork** (copy) a GitHub repository to your own account
+>
+>  Forking lets you work on a project independently before suggesting changes.
 
 ## What is forking and why use it?  
 
@@ -41,7 +39,9 @@ Forking a repository **creates a copy** in your GitHub account while keeping a l
 - <i class="fa-solid fa-arrows-rotate" style="color: #81c0aa;"></i> **Stay up to date**: Sync your fork with the latest changes from the original repo.  
 - <i class="fa-solid fa-paper-plane" style="color: #81c0aa;"></i> **Propose changes**: Suggest edits by submitting a **pull request** to the original repository.
 
-> **<i class="fa-solid fa-lightbulb" style="color: #81c0aa;"></i> Example**: You want to fix a typo in a project’s documentation. Instead of requesting permission, you fork the repo, make the fix, and submit a pull request with your update.
+:::{tip}
+<i class="fa-solid fa-lightbulb" style="color: #81c0aa;"></i> You want to fix a typo in a project’s documentation. Instead of requesting permission, you fork the repo, make the fix, and submit a pull request with your update.
+:::
 
 :::{figure} /images/github/fork-repo.png
 :alt: ""
@@ -121,7 +121,7 @@ To sync a GitHub fork:
 
 1. **Go to your fork** on GitHub.  
 2. **Click the** <i class="fa-solid fa-arrows-rotate" style="color: #81c0aa;"></i> **Sync fork** **button** (available on GitHub’s UI).  
-3. Your fork's main branch will now match the latest version of the original repository. This means that it has the most recent commits that have been made to the parent repository.  
+3. Your fork's main branch will now match the latest version of the original repository. This means that your fork contains the most recent commits that have been made to the parent repository.  
 
 :::{todo}
 /images/github/sync-fork.png  
@@ -137,9 +137,11 @@ Graphi:  Screenshot of GitHub’s "Sync Fork" button
 ✅ **Your fork stays linked** to the original repo, allowing you to propose changes.  
 ✅ **Sync your fork regularly** to keep it up to date if you plan to contribute to the repo more over time.  
 
-:::{admonition} Next steps  
-:class: important  
 
-Now that you’ve forked a repository, the next step is to **edit a file and commit your changes**.  
-[Learn how to edit and commit files →](pyos-edit-commit-files)  
+:::{admonition} What's next?  
+:class: seealso 
+
+Now that you’ve forked a repository, the next step is    
+[<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> to edit and commit files  →](pyos-edit-commit-files)  
+
 :::
