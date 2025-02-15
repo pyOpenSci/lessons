@@ -105,7 +105,6 @@ Even if you find an open issue that interests you, it’s important to check if 
 > If the last comment is old, the contributor may have moved on. Asking politely shows respect for their effort.  
 
 (create-issue)=
-
 ## How to create a new issue
 
 If an issue doesn’t already exist for the thing you'd like to work on, here’s how to create a new one:
@@ -138,7 +137,7 @@ Some projects use templates for reporting **bugs, documentation fixes, or new fe
 - For **new features**: describe what will happen once it is implemented
 
 :::{figure} /images/github/open-issue.gif
-:alt: alt text here
+:alt: The image shows a GitHub repository named pyos-demo-package-contribute under the pyOpenSci organization. It is a public demo package for practicing open source contributions. The repository has one branch, no tags, and three commits, with the latest commit by lwasser titled “fix: package name.” It contains directories like docs, src/pyosDemo, and tests, along with key files such as README.md, LICENSE, and CONTRIBUTING.md. The sidebar links to www.pyopensci.org and displays repository activity, including one watcher, one fork, and no stars. The cursor hovers over the “Issues” tab, suggesting an intent to explore or open an issue.
 
 :::
 
