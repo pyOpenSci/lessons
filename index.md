@@ -14,7 +14,7 @@
 :::{card} ✿ Contribute to Open Source ✿]
 :class-card: left-aligned
 
-Learn how to navigate the technical and social elements of making a contribution to open source code on GitHub.
+Learn how to navigate the technical and [social elements](social-github) of making a contribution to open source code on GitHub.
 
 * [Your First Contribution](pyos-first-contribution)
 * [Get to know a new repo](new-repo)
