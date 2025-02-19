@@ -41,8 +41,8 @@ For contributors:
  
 For maintainers: 
 
-* **1️⃣ Support contributors to help them feel confident and welcome** 
-* **2️⃣ Develop contributing documentation that outlines the types of contributions you can support**
+* **1️⃣ Support contributors by building a welcoming project** 
+* **2️⃣ Develop contributing documentation to guide contributors to success**
 * **3️⃣ Acknowledge contributors and their contributions** 
 :::
 
@@ -50,7 +50,7 @@ For maintainers:
 
 ### 1️⃣ Engage thoughtfully in open source communities 
 
-Since most GitHub collaboration is asynchronous, effective communication ensures your contributions are received well and help move projects forward. Learn how to interact professionally in issues, pull requests, and discussions to make collaboration smooth and efficient. 
+Since most GitHub collaboration is asynchronous, effective communication ensures your contributions follow the project norms, increase the value of your contribution, and help move projects forward. Learn how to interact professionally in issues, pull requests, and discussions to make collaboration smooth and efficient. 
 
 #### <i class="fa-solid fa-list-check"  style="color: #81c0aa;"></i> Keep maintainers informed  
 
@@ -59,8 +59,10 @@ Since most GitHub collaboration is asynchronous, effective communication ensures
   - If an issue already exists, **comment instead of opening a new one**.  
 
 - **Avoid surprising maintainers with an unexpected PR.**  
-  - Some projects **may not be ready** for your change.  
-  - Opening an issue first allows maintainers to **guide your work before you start coding**.  
+  - Some projects **may not be receptive** to your change. For example,
+     your suggested change may be out of the project's scope or conflict
+     with the project's future direction.
+  - Opening an issue first allows maintainers to **offer feedback and guide your work before you start coding**.  
 
 ---
 
@@ -71,7 +73,7 @@ Since most GitHub collaboration is asynchronous, effective communication ensures
   - If a project has contribution guidelines, reference them to show you’re **aligning with their process**.  
 
 - **Ask before making major changes.**  
-  - A simple *“Would this be useful?”* in an issue can save **time for both you and the maintainers**.  
+  - A simple *“Would this be useful?”* in an issue can save **time and frustration for you and the maintainers**.  
 
 ---
 
@@ -79,7 +81,9 @@ Since most GitHub collaboration is asynchronous, effective communication ensures
 
 - **Be patient and respectful.**  
   - Many maintainers **volunteer their time**—make your requests **clear and easy to understand**.  
-  - If you're waiting on a response, give it time before **politely following up**.  
+  - If you're waiting on a response, give it time before **politely following up**. 
+  - Maintainers understand that you are excited to receive a response, yet they may
+     also have many additional requests. Please respect their effort and timelines.
 
 - **Be concise and avoid unnecessary comments.**  
   - We live in an age of too many notifications. Keep your responses short, polite and to the point. 
@@ -95,18 +99,20 @@ Contributing should be sustainable, not overwhelming. **Starting small** helps y
   - First contributions don’t have to be big—**fixing typos or improving docs** is a great start. Just make sure that the project that you're contributing to welcomes these types of contributions before starting one!  
   - These small changes **help the project** and **show maintainers that you’re engaged**.
   - If the project you are looking to contribute to has **good first issues**, these are an excellent way to get started. Those are issues the maintainers marked as being good for onboarding; find them by filtering for that label in the Issues section.
+  - When making changes, try to keep them small and scoped to one topic or area. This results in better code reviews and often faster responses.
 
 #### <i class="fa-solid fa-user-check" style="color: #81c0aa;"></i> Start small 
 
 - **Begin with small, manageable contributions.**  
   - **Fixing typos, improving documentation, or tackling minor issues** are great first steps. Just be sure that the project **welcomes small contributions** before starting one.  
+  - If in doubt, review the project's Contributors' Guide.
 
 #### <i class="fa-solid fa-cubes" style="color: #81c0aa;"></i> Follow through and build credibility 
 
 * **Be consistent and follow through** helps you build trust with the maintainer team. 
   - As maintainers recognize your efforts, **they may also review your work more quickly**.
 
-* **Contributions add up over time.**  
+* **Contributions and trust adds up over time.**  
   - Even small contributions build credibility. And they will help you build skills and confidence needed to contribute more in the future
 
 ### 3️⃣ Build trust through transparent collaboration 
@@ -128,7 +134,9 @@ Trust is the foundation of all collaboration—especially in open source, where 
     > “I’d love to take this on! I’ll start by updating the docs and submit a PR soon.”  
 
 - **Follow the project’s workflow and be responsive.**  
-  - Maintain good communication—if a maintainer asks for changes, reply and iterate.  
+  - Maintain good communication—if a maintainer asks for changes, reply and iterate.
+  - Keep the communication focused on the code and not the person. For example, responding "you're wrong"
+    is not helpful; instead, calmly explain the technical approach you took and asking for "Thoughts?" or "Additional ideas" will result in improving the project through respectful collaboration.
   - If you can’t finish something, let them know so someone else can pick it up.   
 
 ---
@@ -138,7 +146,7 @@ Trust is the foundation of all collaboration—especially in open source, where 
 Many contributors hesitate to get involved due to **imposter syndrome or fear of making mistakes**.  
 Maintainers and experienced contributors can help by making GitHub feel more accessible.  
 
-If you have the bandwidth, try to be welcoming and supportive. If you don't have bandwidth, it's ok-—gently nudge new contributors toward beginner-friendly projects or helpful resources.  
+If you have the bandwidth, try to be welcoming and supportive. If you don't have bandwidth, it's ok-—gently nudge new contributors toward beginner-friendly projects or helpful resources. If you don't have time personally to review a PR, it's better to acknowledge it "Thanks for your PR. I'm currently unable to review. If another maintainer can take a look, I would appreciate it."
 
 ---
 
