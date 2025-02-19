@@ -148,6 +148,11 @@ Maintainers and experienced contributors can help by making GitHub feel more acc
 
 If you have the bandwidth, try to be welcoming and supportive. If you don't have bandwidth, it's ok-—gently nudge new contributors toward beginner-friendly projects or helpful resources. If you don't have time personally to review a PR, it's better to acknowledge it "Thanks for your PR. I'm currently unable to review. If another maintainer can take a look, I would appreciate it."
 
+:::{tip}
+If a new contributor contributes something to your project. Consider, inviting them to make another contribution in the future. This is a great way to build a community of contributors over time that consistently give back to your project. 
+
+:::
+
 ---
 
 ### 1️⃣ <i class="fa-solid fa-handshake-angle" style="color: #81c0aa;"></i> Support contributors to help them feel confident and welcome  
