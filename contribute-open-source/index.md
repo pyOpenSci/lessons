@@ -21,7 +21,7 @@ myst_html_meta:
 [GitHub is one of many **social coding platforms**](what-is-git-github) that allows individuals and teams to manage, track, and collaborate on software projects. Social coding platforms play a key role in **open source development**, enabling contributors worldwide to work on, improve, and maintain code and documentation together.   
  
 > This guide covers:   
-> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [The social aspects of contributing to an open source project](github-social-platform) 
+> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [The social aspects of contributing to an open source project](social-github) 
 > 
 > <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to get started contributing to open source](pyos-first-contribution) 
 >  
@@ -32,7 +32,7 @@ myst_html_meta:
 > * [How to edit & commit files](pyos-edit-commit-files) 
 > * [How to submit a pull request](pyos-pull-request) 
 >   
-> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [What GitHub is](](what-is-git-github)) and how it supports **open source communities** 
+> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [What GitHub is](what-is-git-github) and how it supports **open source communities** 
  
 ## Social coding platforms and open source   
  
@@ -48,7 +48,7 @@ Specifically, in the Python language, the software is often [associated with Pyt
 - **<i class="fa-solid fa-shield-halved" style="color: #81c0aa;"></i> Permission control**: Maintainers decide what contributions get merged.   
  
 > **<i class="fa-solid fa-handshake-angle" style="color: #81c0aa;"></i> Social cue:**   
-> Contributing to open source is [more than just writing code](github-social-platform). GitHub allows you to collaborate, discuss ideas, and learn from others.   
+> Contributing to open source is [more than just writing code](social-github). GitHub allows you to collaborate, discuss ideas, and learn from others.   
  
 ## Why contribute to open source?   
  
@@ -139,42 +139,40 @@ resources
 <https://www.youtube.com/watch?v=eWxxfttcMts> 
 ::: 
  
-:::{toctree} 
-:maxdepth: 2 
-:hidden: 
+:::{toctree}
+:maxdepth: 2
+:hidden:
  
-About These Lessons  <self> 
-Social Etiquette in Open Source  <social-open-source> 
+About These Lessons  <self>
+Social Etiquette in Open Source  <social-open-source>
+:::
  
-::: 
+:::{toctree}
+:caption: Contribute to Another Repo
+:maxdepth: 2
+:hidden:
  
-:::{toctree} 
-:caption: Contribute to Another Repo 
-:maxdepth: 2 
-:hidden: 
+0. Your contributing path <your-first-contribution>
+1. Get to know the repo <get-to-know-repo>
+2. Find an issue <identify-issue>
+3. Fork GitHub Repo <fork-repo>
+4. Edit & commit files <edit-commit-files>
+5. Submit Pull Request <pull-request>
+:::
  
-0. Your contributing path <your-first-contribution> 
-1. Get to know the repo <get-to-know-repo> 
-2. Find an issue <identify-issue> 
-3. Fork GitHub Repo <fork-repo> 
-4. Edit & commit files <edit-commit-files> 
-5. Submit Pull Request <pull-request> 
+:::{toctree}
+:caption: Work locally
+:hidden:
  
-::: 
+Clone a GitHub Repo <clone-repo>
+:::
  
-:::{toctree} 
-:caption: Work locally 
-:hidden: 
+:::{toctree}
+:caption: Background  
+:maxdepth: 2
+:hidden:
  
-Clone a GitHub Repo <clone-repo> 
-::: 
- 
-:::{toctree} 
-:caption: Background   
-:maxdepth: 2 
-:hidden: 
- 
-What is Git/GitHub <what-is-git-github> 
-Use GitHub codespaces <github-codespaces> 
-Ways to contribute <ways-to-contribute> 
-::: 
+What is Git/GitHub <what-is-git-github>
+Use GitHub codespaces <github-codespaces>
+Ways to contribute <ways-to-contribute>
+:::
