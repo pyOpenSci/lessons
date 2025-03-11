@@ -27,7 +27,7 @@ myst_html_meta:
 >  
 > <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> The technical aspects of contributing including: 
 > * [How to get to know a new repo](new-repo) 
-> * [How to an issue to work on](identify-github-issue)  
+> * [How to find an issue to work on](identify-github-issue)  
 > * [How to fork a repo](fork-repository)  
 > * [How to edit & commit files](pyos-edit-commit-files) 
 > * [How to submit a pull request](pyos-pull-request) 
@@ -38,7 +38,7 @@ myst_html_meta:
  
 **Open source software (OSS)** is code that is publicly accessible—anyone can view, modify, and distribute it. GitHub provides the tools needed for open source projects to store code publically, manage contributions, track and address issues, and collaborate efficiently. 
  
-Specifically, in the Python language, the software is often [associated with Python software](https://www.pyopensci.org/python-package-guide/tutorials/intro.html), where you package up code and make it easier for a user to install on their computer. Reusable sofware allow developers and scientists to share common workflows rather than needing to recreate the code needed for each workflow themselves from scratch. 
+Specifically, in the Python language, the software is often [associated with Python packages](https://www.pyopensci.org/python-package-guide/tutorials/intro.html), where you bundle up code and make it easier for a user to install on their computer. Reusable software allows developers and scientists to share common workflows rather than needing to recreate the code needed for each workflow from scratch. 
  
 ### Why open source communities use GitHub   
  
