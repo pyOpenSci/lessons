@@ -83,8 +83,8 @@ def docs_test(session):
     session.notify("build-translations", ["release-build", *TEST_PARAMETERS])
 
 
-@nox.session(name="docs-live")
-def docs_live(session):
+@nox.session(name="serve")
+def docs_serve(session):
     """
     Build and launch a local copy of the guide.
 
