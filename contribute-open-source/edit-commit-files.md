@@ -19,46 +19,47 @@ og:image:alt: An image that shows the steps for contributing to open source on G
 ---
 
 (pyos-edit-commit-files)=
+
 # Your First Edits to a File in Your Fork: Edit & Commit
 
-> In this lesson, you’ll learn how to:  
+> In this lesson, you’ll learn how to:
 > <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i>edit a file directly in your **fork** using GitHub’s interface and commit the changes using only the native GitHub interface
 >
 > If you want to work on the files locally on your laptop, you will need to [clone or make a copy of your repo locally](clone-repo).
 
-Now that you've [identified and commented on an issue](identify-github-issue), [forked the repository](fork-repo), and received approval to work on an issue, it's time to make your changes.  
+Now that you've [identified and commented on an issue](identify-github-issue), [forked the repository](fork-repo), and received approval to work on an issue, it's time to make your changes.
 
 :::{tip}
-💡 Your fix should be **small and text-based**, like updating documentation or fixing a typo.  
+💡 Your fix should be **small and text-based**, like updating documentation or fixing a typo.
 :::
 
-## How to edit a file in your fork  
+## How to edit a file in your fork
 
-GitHub lets you edit files right in your browser. Here’s how:  
+GitHub lets you edit files right in your browser. Here’s how:
 
-1. Navigate to **your fork** of the repository.  
-2. Find the file you want to edit.  
-3. Click the <kbd><i class="fa-solid fa-pencil" style="color: #81c0aa;"></i> Edit</kbd> button.  
+1. Navigate to **your fork** of the repository.
+2. Find the file you want to edit.
+3. Click the <kbd><i class="fa-solid fa-pencil" style="color: #81c0aa;"></i> Edit</kbd> button.
 4. Make your changes and **commit** them.
 
 :::{figure} /images/github/edit-commit-file.gif
-:alt: "GIF showing how to edit and commit a file on GitHub."  
+:alt: "GIF showing how to edit and commit a file on GitHub."
 
 Editing a file directly in the GitHub interface is a straight forward process.
 :::
 
-> **⚡ Quick tip:** You can edit as many files as you want, but GitHub only lets you commit them **one at a time** in the browser.  
+> **⚡ Quick tip:** You can edit as many files as you want, but GitHub only lets you commit them **one at a time** in the browser.
 
-## Ways to edit a file: GitHub vs. GitHub Codespaces  
+## Ways to edit a file: GitHub vs. GitHub Codespaces
 
 GitHub now offers **two ways** to edit files directly in the interface or using the [cloud-based GitHub Codespaces](about-codespace). If you’re making a small change, use GitHub’s interface. If you need to edit multiple files, try Codespaces.
 
-| | Option  | When to Use | Pros | Limitations |  
-|-|---------|------------|------|-------------|  
-| | **GitHub Interface** <i class="fa-solid fa-pencil" style="color: #81c0aa;"></i> | Quick edits (typos, small fixes) | No setup needed, edit in browser | Can only commit one file at a time |  
-| | **GitHub Codespaces** <i class="fa-solid fa-laptop-code" style="color: #81c0aa;"></i> | Editing multiple files | Full VS Code environment in browser | Requires configuration but once configured, you can reuse it |  
+| | Option  | When to Use | Pros | Limitations |
+|-|---------|------------|------|-------------|
+| | **GitHub Interface** <i class="fa-solid fa-pencil" style="color: #81c0aa;"></i> | Quick edits (typos, small fixes) | No setup needed, edit in browser | Can only commit one file at a time |
+| | **GitHub Codespaces** <i class="fa-solid fa-laptop-code" style="color: #81c0aa;"></i> | Editing multiple files | Full VS Code environment in browser | Requires configuration but once configured, you can reuse it |
 
-> **💡 Need to edit multiple files using a coding editor like VsCode or Jupyter?** Learn more about using [GitHub Codespaces](github-codespaces).  
+> **💡 Need to edit multiple files using a coding editor like VsCode or Jupyter?** Learn more about using [GitHub Codespaces](github-codespaces).
 
 ## What is a commit?
 
@@ -85,11 +86,10 @@ Each commit represents **a set of changes** at a specific time.
 You can always **undo or revert** changes using Git.
 :::
 
-:::{admonition} What's next?  
-:class: seealso  
+:::{admonition} What's next?
+:class: seealso
 
-Once you've committed your changes, you can open a **<i class="fa-brands fa-github-alt"></i> pull request (PR)** to suggest your edits to the main project.  
+Once you've committed your changes, you can open a **<i class="fa-brands fa-github-alt"></i> pull request (PR)** to suggest your edits to the main project.
 
-[<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Learn how to create a pull request →](pyos-pull-request)  
+[<i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Learn how to create a pull request →](pyos-pull-request)
 :::
-
