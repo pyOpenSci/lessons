@@ -30,7 +30,7 @@ A GitHub pull request (**PR**):
  
 1. **Allows you to suggest changes rather than making them directly to a repo you don't own** in a transparent way. You can't break things by submitting a PR! 
 1. **Supports Review**: A pull request also triggers a review process where other repository owners and users can review and comment on your changes and suggest edits to your changes line-by-line. This makes incorporating your changes fully transparent. 
-1. **Maintainers to manage contributions**: PRs allow maintainers to document, approve, and merge contributions into the project in a consistent way. 
+1. **Allows maintainers to manage contributions**: PRs allow maintainers to document, approve, and merge contributions into the project in a consistent way. 
  
 > **<i class="fa-solid fa-handshake-angle" style="color: #81c0aa;"></i> Social cue:**  
 > A pull request is a **collaborative tool**—it lets maintainers review changes  
