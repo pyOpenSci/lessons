@@ -62,8 +62,9 @@ Animated gif showing that GitHub will prompt you to make a new pul request when 
 ### Step 2: Setup your pull request targets (head and base)
 
 :::{figure} /images/github/github-pr-targets-head-base.png
-When you setup your pull request, you will need to specify the head and the base. The head refers to the branch that is a-HEAD of the parent repository--ie a branch on your fork! The base is the parent repository that you wish to submit changes to.
+When you setup your pull request, you need to specify the head and the base. The head refers to the branch and associated repository that is **a-HEAD** of the parent repository--for example, a branch on your fork! The base is the parent repository that you wish to submit changes to.
 :::
+
 
 When creating a **pull request (PR)**, you need to define where your changes should be added and where they come from.
 
@@ -82,6 +83,12 @@ In this example, you want to update:
 > go to the right place. If you accidentally select the wrong base, your PR might not
 > reach the maintainers you intended. Double-check this before submitting!
 
+:::{admonition} What is a branch
+
+A branch is a working version of a git repository that you can use to work on features, bugs, and more. Branches allow you to work on files in isolation, rather than working on the main version of the repository.
+[Learn more about GitHub branches here.](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)
+:::
+
 :::{todo}
 
 /images/github/base-vs-head.png
@@ -92,7 +99,7 @@ Create Graphic: Simple diagram with arrows from "Your Fork (Head)" → "Original
 
 ### Step 3: Review your own pull request first
 
-When comparing repositories in a **pull request (PR)**, GitHub provides a **diff view** of changes between files (diff as in difference). Before submitting the pr, carefully review these changes to ensure that what you intended to submit is in the PR (and nothing else).
+When comparing repositories in a **pull request (PR)**, GitHub provides a **diff view** of changes between files (diff as in difference). Before submitting the PR, carefully review these changes to ensure that what you intended to submit is in the PR (and nothing else).
 
 Since others will review your PR, take time to **clean up unnecessary changes** before submitting. Your time upfront will lead to the PR being merged sooner and will make it easier for others to review.
 
@@ -105,6 +112,7 @@ Before you submit your PR, check:
 
 1. **The number of files:** Do they match what you intended to modify?
 2. **Review changes in each file:** Are all modifications correct and expected?
+3. **Make sure there aren't merge conflicts:** A merge conflict occurs when two or more people edit the same lines of a file, and Git doesn’t know which changes to accept. This most commonly happens when you modify a file on a branch, but someone else also updates those same lines in the parent repository before your changes are merged. You can check if your PR has merge conflicts by looking at the bottom of the PR page.
 
 :::{figure} /images/github/pr-check-files.gif
 

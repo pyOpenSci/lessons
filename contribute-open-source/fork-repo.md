@@ -32,7 +32,7 @@ myst_html_meta:
 >
 > Forking lets you work on a project independently before suggesting changes.
 
-## What is forking, and why use it?
+## What is forking and why use it?
 
 Forking a repository **creates a copy** in your GitHub account while keeping a link to the original.
 
