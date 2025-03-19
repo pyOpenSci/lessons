@@ -65,7 +65,8 @@ Animated gif showing that GitHub will prompt you to make a new pul request when 
 When you setup your pull request, you need to specify the head and the base. The head refers to the branch and associated repository that is **a-HEAD** of the parent repository--for example, a branch on your fork! The base is the parent repository that you wish to submit changes to.
 :::
 
-When creating a **pull request (PR)**, you must define where your changes should be added and where they come from.
+
+When creating a **pull request (PR)**, you need to define where your changes should be added and where they come from.
 
 - **<i class="fa-solid fa-database" style="color: #81c0aa;"></i> Base:** The repository where you want your changes to be merged. *(This is usually the original repo you forked.)*
 - **<i class="fa-solid fa-code-branch" style="color: #81c0aa;"></i> Head:** The repository containing your changes. *(This is your fork. The copy of the repo that you own, where you made edits.)*

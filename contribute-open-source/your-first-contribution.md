@@ -18,21 +18,21 @@ myst_html_meta:
     "og:image:alt": An image that shows the steps for contributing to open source on GitHub.
 ---
 (pyos-first-contribution)=
+
 # Your First Open Source Contribution
 
 Contributing to open source in a public space like GitHub can feel intimidating. You may not know the project maintainers, feel unsure about your GitHub skills, or wonder where to begin.
 
-This lesson series will teach you how to collaborate on code and documentation using GitHub. It will help you confidently contribute to a GitHub repository and build skills to collaborate with colleagues (some of whom you may not have met in real life!). 
+This lesson series will teach you how to collaborate on code and documentation using GitHub. It will help you confidently contribute to a GitHub repository and build skills to collaborate with colleagues (some of whom you may not have met in real life!).
 
 (first-contribution)=
 
-## Get started with your first open source contribution 
+## Get started with your first open source contribution
 
-> This lesson covers:  
+> This lesson covers:
 > <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> Completing this set of activities will give you the technical and social skills needed to collaborate and contribute to an open source GitHub
 repository.
-> You will use the [pyOpenSci example GitHub repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) as a safe space to practice making contributions. 
-
+> You will use the [pyOpenSci example GitHub repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) as a safe space to practice making contributions.
 
 This page introduces all of the steps and walks you through each one. Each activity below has a lesson that will help you understand the social and technical elements of the contribution process.
 
@@ -50,9 +50,9 @@ The steps for making your first contribution to an open source repo. In this les
 
 First, identify and get to know the repository you want to contribute to. Use the [pyOpenSci learning repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) to test out the process.
 
-[Getting to know that repository](get-to-know-repo) will save you and the maintainers time when you make your first contribution. You can think about like doing some research on a blog post before sitting down and writing it. 
+[Getting to know that repository](get-to-know-repo) will save you and the maintainers time when you make your first contribution. You can think about like doing some research on a blog post before sitting down and writing it.
 
-Ideally, the repository you have chosen has documented the types of contributions they welcome and what process they want contributors to follow. Reading through that documentation first will help you get started quickly and minimize the questions you ask the maintainer team. Most often, the best place for a new contributor to start, regardless of their experience contributing, is the [contributing guide](https://www.pyopensci.org/python-package-guide/documentation/repository-files/contributing-file.html) and the [README file](https://www.pyopensci.org/python-package-guide/documentation/repository-files/readme-file-best-practices.html). 
+Ideally, the repository you have chosen has documented the types of contributions they welcome and what process they want contributors to follow. Reading through that documentation first will help you get started quickly and minimize the questions you ask the maintainer team. Most often, the best place for a new contributor to start, regardless of their experience contributing, is the [contributing guide](https://www.pyopensci.org/python-package-guide/documentation/repository-files/contributing-file.html) and the [README file](https://www.pyopensci.org/python-package-guide/documentation/repository-files/readme-file-best-practices.html).
 
 :::{button-link} get-to-know-repo.html
 :color: primary
@@ -118,6 +118,7 @@ Once you have created an issue or identified what you wish to work on, you will 
 
 **Fork the pyOpenSci practice GitHub repository**
 *******
+
 * Navigate to the [pyOpenSci example repo](https://github.com/pyOpenSci/pyos-demo-package-contribute).
 * Fork the repository.
 
@@ -176,9 +177,9 @@ Once your PR is open, it's time to sit back and wait for the maintainers, collab
 
 ********
 
-## Many people's first contributions are to documentation 
+## Many people's first contributions are to documentation
 
-In this lesson, you make your first open source contribution by updating documentation (including docstrings) rather than code. Many people start with small fixes like typos, which are simpler to contribute as you don't always need a development environment but are still **highly valuable**. 
+In this lesson, you make your first open source contribution by updating documentation (including docstrings) rather than code. Many people start with small fixes like typos, which are simpler to contribute as you don't always need a development environment but are still **highly valuable**.
 
 ### <i class="fa-solid fa-rocket"></i> Fresh eyes make a difference! <i class="fa-solid fa-rocket"></i>
 
@@ -186,14 +187,13 @@ When you’re new to a project, you may notice gaps and unclear explanations tha
 
 By catching confusing phrasing, outdated information, or missing details (even in contributing documentation), you improve the onboarding experience for others while making a meaningful first contribution!
 
-
 :::{admonition} A first contribution to PyPI
 
 [Here is an example issue that resulted in 2 small pull requests to PyPI (warehouse)](https://github.com/pypi/warehouse/issues/17374). In this case, the images were outdated, so it was a bug in the documentation that needed to be fixed. However, while getting to know the repository, the author also found issues with the development documentation, so they submitted a pull request to address that as well. Both pull requests were small.
 :::
 
-:::{admonition} What's next?  
-:class: seealso 
+:::{admonition} What's next?
+:class: seealso
 
 The upcoming lessons will teach you the skills to complete all of the activities on this page. You will learn:
 
@@ -201,5 +201,5 @@ The upcoming lessons will teach you the skills to complete all of the activities
 * <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to find an issue to work on](identify-issue)
 * <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to for a GitHub repo](fork-repo)
 * <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to edit and commit files using the GitHub interface](edit-commit-files)
-*  <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to submit a Pull Request with your suggested changes](pull-request) 
+* <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to submit a Pull Request with your suggested changes](pull-request)
 :::

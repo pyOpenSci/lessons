@@ -18,42 +18,57 @@ myst_html_meta:
 
 # Introduction to GitHub and Open Source Collaboration
 
-GitHub is a **social coding platform** that allows individuals and teams to manage, track, and collaborate on software projects. It plays a key role in **open source development**, enabling contributors worldwide to work on, improve and maintain code and documentation together.
+[GitHub is one of many **social coding platforms**](what-is-git-github) that allows individuals and teams to manage, track, and collaborate on software projects. Social coding platforms play a key role in **open source development**, enabling contributors worldwide to work on, improve, and maintain code and documentation together.
 
 > This guide covers:
-> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> What GitHub is and how it supports **open source communities**
-> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> How GitHub is used for **both solo work and collaborative projects**
-> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> The difference between **personal vs. team workflows**
+> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [The social aspects of contributing to an open source project](social-github)
+>
+> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to get started contributing to open source](pyos-first-contribution)
+>
+> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> The technical aspects of contributing including:
+>
+> * [How to get to know a new repo](new-repo)
+> * [How to find an issue to work on](identify-github-issue)
+> * [How to fork a repo](fork-repository)
+> * [How to edit & commit files](pyos-edit-commit-files)
+> * [How to submit a pull request](pyos-pull-request)
+>
+> <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [What GitHub is](what-is-git-github) and how it supports **open source communities**
 
-## GitHub and open source
+## Social coding platforms and open source
 
 **Open source software (OSS)** is code that is publicly accessible—anyone can view, modify, and distribute it. GitHub provides the tools needed for open source projects to store code publically, manage contributions, track and address issues, and collaborate efficiently.
 
-Specifically, in the Python language, the software is often [associated with packaging](https://www.pyopensci.org/python-package-guide/tutorials/intro.html), where you package up code and make it easier for a user to install on their computer. Reusable sofware allow developers and scientists to share common workflows rather than needing to recreate the code needed for each workflow themselves from scratch.
+Specifically, in the Python language, the software is often [associated with Python packages](https://www.pyopensci.org/python-package-guide/tutorials/intro.html), where you bundle up code and make it easier for a user to install on their computer. Reusable software allows developers and scientists to share common workflows rather than needing to recreate the code needed for each workflow from scratch.
 
 ### Why open source communities use GitHub
 
-- **<i class="fa-solid fa-globe" style="color: #81c0aa;"></i> Global collaboration**: Developers from around the world can contribute.
-- **<i class="fa-solid fa-code-branch" style="color: #81c0aa;"></i> Version control**: Track every change made to the project.
-- **<i class="fa-solid fa-comments" style="color: #81c0aa;"></i> Transparent discussions**: Use issues and pull requests to propose and review changes.
-- **<i class="fa-solid fa-shield-halved" style="color: #81c0aa;"></i> Permission control**: Maintainers decide what contributions get merged.
+* **<i class="fa-solid fa-globe" style="color: #81c0aa;"></i> Global collaboration**: Developers from around the world can contribute.
+* **<i class="fa-solid fa-code-branch" style="color: #81c0aa;"></i> Version control**: Track every change made to the project.
+* **<i class="fa-solid fa-comments" style="color: #81c0aa;"></i> Transparent discussions**: Use issues and pull requests to propose and review changes.
+* **<i class="fa-solid fa-shield-halved" style="color: #81c0aa;"></i> Permission control**: Maintainers decide what contributions get merged.
 
 > **<i class="fa-solid fa-handshake-angle" style="color: #81c0aa;"></i> Social cue:**
-> Contributing to open source is more than just writing code.
-> GitHub allows you to collaborate, discuss ideas, and learn from others.
+> Contributing to open source is [more than just writing code](social-github). GitHub allows you to collaborate, discuss ideas, and learn from others.
 
 ## Why contribute to open source?
 
 Contributing to open source is a way to **build skills, expand your network, and give back** to projects you care about.
 
-- **Improve your skills**: Gain hands-on experience with real-world projects.
-- **Grow your network**: Connect with developers, maintainers, and potential collaborators.
-- **Showcase your work**: Contributions become part of your **public portfolio**.
-- **Support tools you use**: Many contributors improve projects they rely on for work or hobbies.
-- **Learn from others**: See how experienced developers write and manage code.
+* **Improve your skills**: Gain hands-on experience with real-world projects.
+* **Grow your network**: Connect with developers, maintainers, and potential collaborators.
+* **Showcase your work**: Contributions become part of your **public portfolio**.
+* **Support tools you use**: Many contributors improve projects they rely on for work or hobbies.
+* **Learn from others**: See how experienced developers write and manage code.
 
 > **<i class="fa-solid fa-handshake" style="color: #81c0aa;"></i> Social cue:**
 > Open source is collaborative—every contribution, big or small, helps the community.
+
+:::{admonition} Open source and academia
+:class: note
+
+Academia heavily values publications for career advancement, yet open source contributions are often not recognized and valued in traditional academic credit systems despite being essential to scientific progress. pyOpenSci is an organization committed to helping scientists get support and recognition for their important work in developing and supporting open source through [peer review](https://www.pyopensci.org/about-peer-review/index.html) and its vibrant and supportive [community of practice](https://www.pyopensci.org/our-community/index.html).
+:::
 
 ## Using GitHub for personal projects
 
@@ -108,15 +123,20 @@ GitHub is widely used in **open source** and **team-based projects** where multi
 
 :::{admonition} What's next?
 :class: seealso
+
 Now that you understand GitHub's role in **open source** and **collaboration**,
 you're ready to dive into **contributing to a project!**
 
 *****
 
-<i class="fa-brands fa-github-alt"></i> [Get started with activities to guide you through your first contribution →](pyos-first-contribution)
-<i class="fa-brands fa-github-alt"></i> [Learn how to identify an issue →](identify-github-issue)
-<i class="fa-brands fa-github-alt"></i> [Learn how to fork a repository →](fork-repository)
+* <i class="fa-brands fa-github-alt"></i> [Get started with activities to guide you through your first contribution →](pyos-first-contribution)
+* <i class="fa-brands fa-github-alt"></i> [Learn how to identify an issue →](identify-github-issue)
+* <i class="fa-brands fa-github-alt"></i> [Learn how to fork a repository →](fork-repository)
 :::
+
+*********
+
+*This work was supported by the Better Scientific Software Fellowship Program, a collaborative effort of the U.S. Department of Energy (DOE), Office of Advanced Scientific Research via ANL under Contract DE-AC02-06CH11357 and the National Nuclear Security Administration Advanced Simulation and Computing Program via LLNL under Contract DE-AC52-07NA27344; and by the National Science Foundation (NSF) via SHI under Grant No. 2327079.*
 
 :::{todo}
 resources
@@ -129,7 +149,6 @@ resources
 
 About These Lessons  <self>
 Social Etiquette in Open Source  <social-open-source>
-
 :::
 
 :::{toctree}
@@ -143,7 +162,6 @@ Social Etiquette in Open Source  <social-open-source>
 3. Fork GitHub Repo <fork-repo>
 4. Edit & commit files <edit-commit-files>
 5. Submit Pull Request <pull-request>
-
 :::
 
 :::{toctree}
