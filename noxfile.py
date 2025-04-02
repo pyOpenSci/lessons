@@ -49,7 +49,7 @@ RELEASE_LANGUAGES = []
 
 @nox.session
 def docs(session):
-    """Build the packaging guide."""
+    """Build the lessons repo."""
     session.install("-e", ".")
     session.run(
         SPHINX_BUILD,

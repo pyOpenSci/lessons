@@ -58,8 +58,9 @@ extensions = [
     "sphinxext.opengraph",
     "sphinx_favicon",
     "sphinx.ext.todo",
-    #"sphinx_codeautolink",
+    # "sphinx_codeautolink",
     "sphinx.ext.todo",
+    "sphinxcontrib.youtube",
 ]
 
 # colon fence for card support in md
@@ -107,7 +108,7 @@ html_theme_options = {
         "image_light": "logo-light-mode.png",
         "alt_text": "pyOpenSci Open Source Lessons. The pyOpenSci logo is a purple flower with pyOpenSci under it. The o in open sci is the center of the flower",
     },
-    # Increase this as lessons are added - 
+    # Increase this as lessons are added -
     # set low to hide links to other pyos sites and allow nav between lessons
     "header_links_before_dropdown": 3,
     "use_edit_page_button": True,
