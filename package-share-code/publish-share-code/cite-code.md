@@ -82,10 +82,10 @@ Go to your account drop down and click on GitHub. You will see a list of reposit
 
 Click the <kbd><i class="fa-solid fa-arrows-rotate"></i> Sync Now</kbd> button in the **<i class="fa-brands fa-github"></i> Get started** section of the page to update the displayed list of GitHub repos. The repos that Zenodo fetches are the ones that you have ownership of or write access to.
 
-The more repositories that you have access to, the longer the sync process will take. It’s normal for it to take a few minutes and maybe 5 minutes or more.
+The sync process will take longer if you have many access to many repositories. This might mean waiting a few minutes or more.
 
 :::{tip}
-If you have access to many GitHub repositories through both your own account and other organization accounts that you may have access too, the sync button may take a long time to run. It could take 5 minutes or more for someone with hundreds to thousands of repos). Be patient.
+If you have access to many GitHub repositories through both your own account and other organization accounts that you may have access to, the sync button may take a long time to run. It could take 5 minutes or more for someone with hundreds to thousands of repos). Be patient.
 :::
 
 ### Step 3. <i class="fa-solid fa-toggle-off"></i> Flip the switch <i class="fa-solid fa-toggle-on"></i>
@@ -106,7 +106,7 @@ Once your repos are synced, you can turn "on" the connection between GitHub and 
 :::{figure} /images/zenodo/zenodo-switch-on.png
 :alt: text
 
-Once Zenoodo is connected to GitHub, the toggle will say <kbd>On <i class="fa-solid fa-toggle-on"></i></kbd>
+Once Zenodo is connected to GitHub, the toggle will say <kbd>On <i class="fa-solid fa-toggle-on"></i></kbd>
 :::
 
 ### Step 4: Create a release of your package on GitHub
