@@ -14,10 +14,10 @@ kernelspec:
 +++ {"editable": true, "slideshow": {"slide_type": ""}}
 
 (cite-your-code)=
+
 # How to Add a Citation to Your Code
 
-[Sharing](share-your-code) and making your code **citable** supports others **acknowledge your work, build upon it, and give you credit**. Citation further supports making workflows open and documenting all parts of the scientific process. 
-
+[Sharing](share-your-code) and making your code **citable** supports others **acknowledge your work, build upon it, and give you credit**. Citation further supports making workflows open and documenting all parts of the scientific process.
 
 :::{admonition} What you will learn
 :class: note
@@ -27,14 +27,18 @@ kernelspec:
 * What a DOI is
 :::
 
-
-<i class="fa-solid fa-rocket"></i> This lesson assumes that your code is already  **hosted on [GitHub or GitLab](share-your-code) with an [open license](open-license).**  
+<i class="fa-solid fa-rocket"></i> This lesson assumes that your code is already  **hosted on [GitHub or GitLab](share-your-code) with an [open license](open-license).**
 
 (zenodo)=
-## What is Zenodo?
-[Zenodo](https://zenodo.org/) is a free, open platform for sharing and archiving research outputs, including datasets and software. It assigns a unique **DOI** to each item, making your work **citable and easily discoverable**.  
 
-Zenodo integrates with GitHub, allowing you to generate DOIs for your repositories in just a few clicks. It also supports versioning, so each code release gets an updated DOI. These features make Zenodo a go-to choice for researchers looking to share their work and receive proper credit. 
+## What is Zenodo?
+
+[Zenodo](https://zenodo.org/) is a free, open platform for sharing and archiving research outputs, including datasets and software. It assigns a unique **DOI** to each item, making your work **citable and easily discoverable**.
+
+Zenodo integrates with GitHub, allowing you to generate DOIs for your repositories in just a few clicks. It also supports versioning, so each code release gets an updated DOI. These features make Zenodo a go-to choice for researchers looking to share their work and receive proper credit.
+
+:::{youtube} 1pI4QU-7c98
+:::
 
 :::{admonition} pyOpensci on Zenodo
 :class: tip
@@ -42,19 +46,19 @@ Zenodo integrates with GitHub, allowing you to generate DOIs for your repositori
 pyOpenSci has a [Zenodo community](https://zenodo.org/communities/pyopensci/records?q=&l=list&p=1&s=10&sort=newest) where we "publish" talks that the community gives about the organization.
 :::
 
-### How does Zenodo work?  
+### How does Zenodo work?
 
-[Zenodo](https://zenodo.org/) makes creating a **DOI** for your GitHub repository easy, ensuring your code is **citable and discoverable**. To create a DOI for your repo, you need to: 
+[Zenodo](https://zenodo.org/) makes creating a **DOI** for your GitHub repository easy, ensuring your code is **citable and discoverable**. To create a DOI for your repo, you need to:
 
-1. <i class="fas fa-link" style="color:#81c0aa;"></i> **Link your GitHub account** to Zenodo.  
-2. <i class="fas fa-cogs" style="color:#81c0aa;"></i> **Enable your repository** in Zenodo’s settings.  
-3. <i class="fas fa-box-open" style="color:#81c0aa;"></i> **Create a release on GitHub**—Zenodo will automatically generate a **DOI** and archive it.  
+1. <i class="fas fa-link" style="color:#81c0aa;"></i> **Link your GitHub account** to Zenodo.
+2. <i class="fas fa-cogs" style="color:#81c0aa;"></i> **Enable your repository** in Zenodo’s settings.
+3. <i class="fas fa-box-open" style="color:#81c0aa;"></i> **Create a release on GitHub**—Zenodo will automatically generate a **DOI** and archive it.
 
-Each release gets a unique DOI, while the repository keeps a persistent record, making it easy to track versions and credit your work.  
+Each release gets a unique DOI, while the repository keeps a persistent record, making it easy to track versions and credit your work.
 
 ## How to create a DOI for a Python package on GitHub
 
-### Step 1: Login to Zenodo 
+### Step 1: Login to Zenodo
 
 1. Go to [zenodo.org](https://zenodo.org/) and sign in using your GitHub account
 2. Go to your profile drop-down and select “GitHub
@@ -66,7 +70,6 @@ You should see a screen like the one below. If you‘ve never used Zenodo before
 
 :::
 
-
 When you go to the Zenodo GitHub page, you will see a list of repositories if you've used Zenodo before and synced your repos. If you haven't yet synced them, read on to learn how.
 
 :::{figure} /images/zenodo/zenodo-sync-repos.gif
@@ -77,23 +80,20 @@ Go to your account drop down and click on GitHub. You will see a list of reposit
 
 ### Step 2. <i class="fa-solid fa-arrows-rotate"></i> Sync your GitHub repos
 
-Click the <kbd><i class="fa-solid fa-arrows-rotate"></i> Sync Now</kbd> button in the **<i class="fa-brands fa-github"></i> Get started** section of the page to update the displayed list of GitHub repos. The repos that Zenodo fetches are the ones that you have ownership of or write access to. 
+Click the <kbd><i class="fa-solid fa-arrows-rotate"></i> Sync Now</kbd> button in the **<i class="fa-brands fa-github"></i> Get started** section of the page to update the displayed list of GitHub repos. The repos that Zenodo fetches are the ones that you have ownership of or write access to.
 
-The more repositories that you have access to, the longer the sync process will take. It’s normal for it to take a few minutes and maybe 5 minutes or more. 
-
+The sync process will take longer if you have many access to many repositories. This might mean waiting a few minutes or more.
 
 :::{tip}
-If you have access to many GitHub repositories through both your own account and other organization accounts that you may have access too, the sync button may take a long time to run. It could take 5 minutes or more for someone with hundreds to thousands of repos). Be patient. 
+If you have access to many GitHub repositories through both your own account and other organization accounts that you may have access to, the sync button may take a long time to run. It could take 5 minutes or more for someone with hundreds to thousands of repos). Be patient.
 :::
 
 ### Step 3. <i class="fa-solid fa-toggle-off"></i> Flip the switch <i class="fa-solid fa-toggle-on"></i>
 
-
-Once your repos are synced, you can "<i class="fa-solid fa-toggle-off"></i> flip the switch <i class="fa-solid fa-toggle-on"></i>" or turn on a connection between GitHub and Zenodo for your Python package. 
+Once your repos are synced, you can "<i class="fa-solid fa-toggle-off"></i> flip the switch <i class="fa-solid fa-toggle-on"></i>" or turn on a connection between GitHub and Zenodo for your Python package.
 
 :::{figure} /images/zenodo/zenodo-flip-the-switch.png
 :alt: text
-
 
 :::
 
@@ -106,22 +106,21 @@ Once your repos are synced, you can turn "on" the connection between GitHub and 
 :::{figure} /images/zenodo/zenodo-switch-on.png
 :alt: text
 
-Once Zenoodo is connected to GitHub, the toggle will say <kbd>On <i class="fa-solid fa-toggle-on"></i></kbd>
+Once Zenodo is connected to GitHub, the toggle will say <kbd>On <i class="fa-solid fa-toggle-on"></i></kbd>
 :::
 
+### Step 4: Create a release of your package on GitHub
 
-### Step 4: Create a release of your package on GitHub 
-
-Head over to your repository on GitHub. 
+Head over to your repository on GitHub.
 
 * Go to the releases tab in GitHub. The URL will look something like this:
-     * `https://github.com/your-gh-username/ff-2024-create-python-package/releases
+  * `https://github.com/your-gh-username/ff-2024-create-python-package/releases
 238636`
 
 * Click the <kbd style="background-color: #238636; color:#fff; padding:.5em;">Create new release</kbd> button
 * Create a new tagged release
 
-You can generate automatic release notes or type in notes yourself. 
+You can generate automatic release notes or type in notes yourself.
 
 * When you are ready to publish your release, scroll to the bottom of the page and click <kbd style="background-color: #238636; color:#fff; padding:.5em;">Publish Release</kbd>. When you publish your release, Zendo will begin to do its job—generating a DOI for the repository and the release and processing the metadata for the release.
 
@@ -133,7 +132,7 @@ Once you are ready, you can create a release. Once you have created the release,
 
 ### Step 5: Add your Zenodo badge in markdown to your project README file
 
-After you create a release, you will see a badge on the Zenodo website. If you click on it, it will provide you with a copyable badge format for markdown and other formats. Copy the badge in markdown format. You will add this to your readme file. 
+After you create a release, you will see a badge on the Zenodo website. If you click on it, it will provide you with a copyable badge format for markdown and other formats. Copy the badge in markdown format. You will add this to your readme file.
 
 :::{important}
 Be sure to use the cite-all versions badge, which will always resolve to the most current DOI rather than a specific point in time.
@@ -142,7 +141,7 @@ Be sure to use the cite-all versions badge, which will always resolve to the mos
 :::{figure} /images/zenodo/zenodo-badge.png
 :alt: text
 
-Once you have created a GitHub release, you will see a badge next to the repository with a DOI. You can click on that badge to get a copy-able markdown version of the rendered badge that you can add to your README file. 
+Once you have created a GitHub release, you will see a badge next to the repository with a DOI. You can click on that badge to get a copy-able markdown version of the rendered badge that you can add to your README file.
 :::
 
 ### Step 6: Optional--Add your DOI to the GitHub repo: the citation.cff file
@@ -160,8 +159,8 @@ By using a DOI, you can make your work more discoverable and citable, enabling o
 
 There are multiple ways to get a DOI for your work and to make your code citable. Each way has its own benefits:
 
-1. **Write and publish a paper about your code in a journal like JOSS (Journal of Open Source Software) via pyOpenSci** if you have written a Python package or another methods-focused scientific Journal. If you go the publication route, you will receive a cross-ref DOI that can be easily connected to your ORCID.  
-1. **Use a platform like [Zenodo](zenodo)**. If you use Zenodo to create a DOI for your work, you will receive a DOI that is not CrossRef compatible. However, you can still add entries for that DOI in your ORCID profile page. 
+1. **Write and publish a paper about your code in a journal like JOSS (Journal of Open Source Software) via pyOpenSci** if you have written a Python package or another methods-focused scientific Journal. If you go the publication route, you will receive a cross-ref DOI that can be easily connected to your ORCID.
+1. **Use a platform like [Zenodo](zenodo)**. If you use Zenodo to create a DOI for your work, you will receive a DOI that is not CrossRef compatible. However, you can still add entries for that DOI in your ORCID profile page.
 
 ### CrossRef vs. Zenodo DOIs - What's the difference?
 

@@ -26,6 +26,7 @@ dependencies = [
     "pandas",
     "sphinx-codeautolink",
     "rich",
+    "sphinxcontrib-youtube",
 ]
 
 [project.optional-dependencies]
