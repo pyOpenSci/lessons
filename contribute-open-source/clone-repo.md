@@ -93,4 +93,24 @@ The paths returned should look something like this:
 
 `https://github.com/your-username/repo-name`
 
+To ensure you will be able to sync any changes from the original repository to your fork, use:
+
+`$ git remote add upstream https://github.com/ORIGINAL-OWNER/ORIGINAL-REPOSITORY`
+
+Once you have an upstream repo added, you can sync your fork by first importing any changes to the original,
+
+`$ git fetch upstream`
+
+switching back to your fork,
+
+`$ git checkout main`
+
+merging the changes to your local instance of the fork,
+
+`$ git merge upstream/main`
+
+then finally pushing to your fork itself.
+
+`$ git push origin main`
+
 :::
