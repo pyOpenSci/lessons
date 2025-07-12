@@ -62,6 +62,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/slobentanzer"><img src="https://avatars.githubusercontent.com/u/13223629?v=4?s=100" width="100px;" alt="Sebastian Lobentanzer"/><br /><sub><b>Sebastian Lobentanzer</b></sub></a><br /><a href="https://github.com/pyOpenSci/lessons/commits?author=slobentanzer" title="Code">💻</a> <a href="https://github.com/pyOpenSci/lessons/pulls?q=is%3Apr+reviewed-by%3Aslobentanzer" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://space.mit.edu/home/guenther/"><img src="https://avatars.githubusercontent.com/u/498688?v=4?s=100" width="100px;" alt="Hans Moritz Günther"/><br /><sub><b>Hans Moritz Günther</b></sub></a><br /><a href="https://github.com/pyOpenSci/lessons/commits?author=hamogu" title="Code">💻</a> <a href="https://github.com/pyOpenSci/lessons/pulls?q=is%3Apr+reviewed-by%3Ahamogu" title="Reviewed Pull Requests">👀</a></td>
     </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/infinite0x20"><img src="https://avatars.githubusercontent.com/u/66569284?v=4?s=100" width="100px;" alt="s choi"/><br /><sub><b>s choi</b></sub></a><br /><a href="https://github.com/pyOpenSci/lessons/commits?author=infinite0x20" title="Code">💻</a> <a href="https://github.com/pyOpenSci/lessons/pulls?q=is%3Apr+reviewed-by%3Ainfinite0x20" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
   </tbody>
 </table>
 
