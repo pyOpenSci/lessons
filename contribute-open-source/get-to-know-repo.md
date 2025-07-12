@@ -59,7 +59,11 @@ Above is a screenshot of the pyOpenSci practice repo that you will use. Notice t
 Some repositories have specific **code and text format and workflow requirements**. Make sure to check if the project uses:
 
 - **Code formatters and linters**: Does the project use [code formatters or linters](https://www.pyopensci.org/python-package-guide/package-structure-code/code-style-linting-format.html#python-package-code-style-format-and-linters)?
-- **Continuous Integration (CI)**: Are there automated tests and checks that run when a new PR is submitted?
+
+  A code formatter automatically tidies how your code looks, while a linter scans it to warn you about possible mistakes—all before you run it.
+- **Continuous Integration (CI)**: Are there automated tests and checks that run when a new Pull Request (PR) is submitted?
+
+  Continuous Integration is a service that automatically builds and tests your code every time someone pushes or opens a pull request, catching problems early.
 - **Licensing**: The [project’s license](https://www.pyopensci.org/python-package-guide/documentation/repository-files/license-files.html) dictates how you can use, modify, and distribute the code.
   - The **MIT and BSD-3 licenses** permit broad use with attribution; these licenses are common in the scientific open source ecosystem.
   - A **GPL license** requires derivative works to follow the same open source terms.  This is what's known as a [copy-left license](https://www.pyopensci.org/python-package-guide/documentation/repository-files/license-files.html#use-open-permissive-licenses-when-possible).
