@@ -56,7 +56,7 @@ You will notice the Pull Request button in different places in the GitHub interf
 
 :::{figure} /images/github/create-pr-fork.gif
 
-Animated gif showing that GitHub will prompt you to make a new pul request when it notices new commits to a branch in your fork.
+Animated gif showing that GitHub will prompt you to make a new pull request when it notices new commits to a branch in your fork.
 :::
 
 ### Step 2: Setup your pull request targets (head and base)
