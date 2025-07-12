@@ -50,7 +50,7 @@ The steps for making your first contribution to an open source repo. In this les
 
 First, identify and get to know the repository you want to contribute to. Use the [pyOpenSci learning repository](https://github.com/pyOpenSci/pyos-demo-package-contribute) to test out the process.
 
-[Getting to know that repository](get-to-know-repo) will save you and the maintainers time when you make your first contribution. You can think about like doing some research on a blog post before sitting down and writing it.
+[Getting to know that repository](get-to-know-repo) will save you and the maintainers time when you make your first contribution. You can think it about like doing some research on a blog post before sitting down and writing it.
 
 Ideally, the repository you have chosen has documented the types of contributions they welcome and what process they want contributors to follow. Reading through that documentation first will help you get started quickly and minimize the questions you ask the maintainer team. Most often, the best place for a new contributor to start, regardless of their experience contributing, is the [contributing guide](https://www.pyopensci.org/python-package-guide/documentation/repository-files/contributing-file.html) and the [README file](https://www.pyopensci.org/python-package-guide/documentation/repository-files/readme-file-best-practices.html).
 
