@@ -199,7 +199,7 @@ The upcoming lessons will teach you the skills to complete all of the activities
 
 * <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to get to know a GitHub repo](get-to-know-repo)
 * <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to find an issue to work on](identify-issue)
-* <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to for a GitHub repo](fork-repo)
+* <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to fork a GitHub repo](fork-repo)
 * <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to edit and commit files using the GitHub interface](edit-commit-files)
 * <i class="fa-solid fa-circle-check" style="color: #81c0aa;"></i> [How to submit a Pull Request with your suggested changes](pull-request)
 :::
