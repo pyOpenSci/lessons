@@ -39,7 +39,7 @@ This page introduces all of the steps and walks you through each one. Each activ
 ## An overview of the collaborative GitHub workflow
 
 :::{figure} /images/github/steps-to-contribute.png
-:alt: alt text here
+:alt: An image of the GitHub workflow in five steps, arranged in a cycle around the PyOpenSci logo and connected by arrows. Step 1: Get to Know the repo; Step 2: Identify an Issue; Step 3: Fork the Repo; Step 4: Make Your Changes; Step 5: Submit a Pull Request.
 
 The steps for making your first contribution to an open source repo. In this lesson, you will do all of your work on GitHub.com, meaning you don't need to clone or make a copy of your repository locally. This is a great way to get started with contributing. It minimizes the command line skills that you will need to use git.
 :::
