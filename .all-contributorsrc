@@ -94,6 +94,16 @@
         "code",
         "review"
       ]
+    },
+    {
+      "login": "EvelynMS1",
+      "name": "Evelyn Montes Sobal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/102782127?v=4",
+      "profile": "https://github.com/EvelynMS1",
+      "contributions": [
+        "code",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
