@@ -108,6 +108,21 @@ Your fork **is a separate copy**, but it remains linked to the original reposito
 > - Keep your fork updated as the original repo evolves.
 > - Submit changes back using a **pull request**.
 
+:::{admonition} GitHub Actions Testing
+
+If the source repository has existing Actions, they are turned off in the 
+forked copy for security reasons.
+
+- It is important to understand all implications of Actions tests before running them in your own fork
+- Tests run in Actions often require repository secrets to execute, these are not available to forks
+
+Repositories create tests that run based on triggers, such as pull requests, merges, and
+even on a regular schedule. These may not be appropriate to run in your fork. However, there are cases where running functional tests locally may be beneficial in order to pre-validate changes that you are staging for a future pull request. 
+
+Most repositories write these tests and include them in their repository tree, which will be included in your fork. When you submit a pull request, the same tests will execute from the main repository. You should consult documentation available on the source repository for the recommended method to run their tests. 
+:::
+
+
 ::::{todo}
  /images/github/fork-structure.png
 :alt: "Diagram showing how forking creates a personal copy linked to the original."

@@ -117,7 +117,7 @@ Once you have created an issue or identified what you wish to work on, you will 
 :::{admonition} Activity: Fork a repository and modify a file
 
 **Fork the pyOpenSci practice GitHub repository**
-*******
+
 
 * Navigate to the [pyOpenSci example repo](https://github.com/pyOpenSci/pyos-demo-package-contribute).
 * Fork the repository.
@@ -125,7 +125,7 @@ Once you have created an issue or identified what you wish to work on, you will 
 *Remember that a fork is a copy of a repository that is owned by someone else or an organization that lives in your GitHub account.*
 :::
 
-********
+******
 
 ### Step 4: Edit and commit your changes
 
