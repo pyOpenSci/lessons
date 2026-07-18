@@ -715,7 +715,7 @@ def format_date(date_parts: list) -> str:
     Returns
     -------
     pd.datetime
-        A date formatted as a `pd.datetime` object.
+        A date formatted as a pd.datetime object.
     """
     date_str = f"{date_parts[0][0]}-{date_parts[0][1]:02d}-{date_parts[0][2]:02d}"
     return pd.to_datetime(date_str, format="%Y-%m-%d")
@@ -732,7 +732,7 @@ def clean_title(value):
     Returns
     -------
     Any
-        The first element of the list `value`.
+        The first element of the list value.
     """
     print("hi", value)
     return value[0]

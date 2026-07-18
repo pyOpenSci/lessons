@@ -127,14 +127,13 @@ GitHub is widely used in **open source** and **team-based projects** where multi
 Now that you understand GitHub's role in **open source** and **collaboration**,
 you're ready to dive into **contributing to a project!**
 
-*****
 
 * <i class="fa-brands fa-github-alt"></i> [Get started with activities to guide you through your first contribution →](pyos-first-contribution)
 * <i class="fa-brands fa-github-alt"></i> [Learn how to identify an issue →](identify-github-issue)
 * <i class="fa-brands fa-github-alt"></i> [Learn how to fork a repository →](fork-repository)
 :::
 
-*********
+
 
 *This work was supported by the Better Scientific Software Fellowship Program, a collaborative effort of the U.S. Department of Energy (DOE), Office of Advanced Scientific Research via ANL under Contract DE-AC02-06CH11357 and the National Nuclear Security Administration Advanced Simulation and Computing Program via LLNL under Contract DE-AC52-07NA27344; and by the National Science Foundation (NSF) via SHI under Grant No. 2327079.*
 
