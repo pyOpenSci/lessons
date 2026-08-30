@@ -133,6 +133,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "bluedotblue",
+      "name": "bluedotblue",
+      "avatar_url": "https://avatars.githubusercontent.com/u/121519363?v=4",
+      "profile": "https://github.com/bluedotblue",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
