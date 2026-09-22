@@ -127,7 +127,7 @@ You can also click on the commit titles to see the specific changes in each comm
 
 Once you've reviewed your PR and everything looks good, it's time to submit it.
 
-Add a descriptive title and write a brief description of your changes. Pull request titles should be concise and descriptive of the content in the pull request. Within the PR description, it is important to include `closes #` issue number or `addresses #` issue number so once the maintainer merges your PR, Github will close the issue number. 
+Add a descriptive title and write a brief description of your changes. Pull request titles should be concise and descriptive of the content in the pull request. Within the PR description, it is important to include `closes #IssueNumber` or `addresses #IssueNumber` so once the maintainer merges your PR, GitHub will close the issue automatically. 
 
 When you have added your title and description, click on “Create Pull Request” one more time to submit the PR.
 
