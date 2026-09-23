@@ -127,14 +127,30 @@ You can also click on the commit titles to see the specific changes in each comm
 
 Once you've reviewed your PR and everything looks good, it's time to submit it.
 
-Add a descriptive title and write a brief description of your changes. Pull request titles should be concise and descriptive of the content in the pull request. Within the PR description, it is important to include `closes #IssueNumber` or `addresses #IssueNumber` so once the maintainer merges your PR, GitHub will close the issue automatically. 
-
-When you have added your title and description, click on “Create Pull Request” one more time to submit the PR.
+Add a descriptive title and write a brief description of your changes. Pull request
+titles should be concise and descriptive of the content in the pull request.
 
 > **<i class="fa-solid fa-pen-to-square" style="color: #81c0aa;"></i> Social cue:**
 > A **clear, descriptive PR title** helps maintainers quickly understand your changes.
 > A good title is specific: **"Fix typo in README"** is better than **"Updated file"**.
 > Your description should also **explain why** the change was made.
+
+If your pull request resolves an existing issue, you can link the PR to that issue
+in the description. To have GitHub automatically close the issue when the PR is merged,
+use one of GitHub's closing keywords followed by the issue number:
+
+- `close`, `closes`, or `closed`
+- `fix`, `fixes`, or `fixed`
+- `resolve`, `resolves`, or `resolved`
+
+For example: `closes #123`.
+
+You can also use wording such as `addresses #123` to reference an issue, but this
+only creates a link between the pull request and the issue. It does not automatically
+close the issue when the PR is merged.
+
+When you have added your title and description, click on “Create Pull Request” one more
+time to submit the PR.
 
 If you go to the parent repository, you will see the PR listed there.
 
